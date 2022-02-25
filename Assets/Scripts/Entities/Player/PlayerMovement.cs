@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float _playerSpeed = 10f;
     private Vector3 _playerVelocity;
+
+    private const float gravityValue = -9.8f;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public void ProcessInput(float horizontal, float vertical)
     {
         var move = new Vector3(horizontal, 0, vertical);
+        move.y += gravityValue * Time.deltaTime;
         _chController.Move(move * Time.deltaTime * _playerSpeed);
         //gameObject.transform.forward = move;
+        
     }
 }

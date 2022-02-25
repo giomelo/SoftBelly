@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde72b5f0e614afb84ffe596bbd55353, type: 3}
-  m_Name: Plant 1
+  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
+  m_Name: Manjericao
   m_EditorClassIdentifier: 
   PlantName: 
-  number: 0
+  PlantState: 0
+  plantId: 0

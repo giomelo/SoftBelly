@@ -13,6 +13,9 @@ namespace Systems.Plants.Bases
         public string PlantName;
 
         public PlantState PlantState = PlantState.Seed;
+
+        public int plantId;
+
         #endregion
     }
 
