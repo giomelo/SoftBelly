@@ -20,13 +20,9 @@ namespace Systems.Plantation
         [SerializeField]
         private GameObject plot;
 
-        private void Start()
-        {
-            CreatGrid();
-        }
-
         public void CreatGrid()
         {
+            DeleteGrid();
             for (int i = 0; i < Width; i++)
             {
                 for (int j = 0; j < Height; j++)
@@ -36,6 +32,21 @@ namespace Systems.Plantation
                     var plotInstance = Instantiate(plot, pos, Quaternion.identity);
                     plotInstance.transform.parent = this.transform;
                 }
+            }
+        }
+
+        private void DeleteGrid()
+        {
+            // for (int i = 0; i < transform.childCount; i++)
+            // {
+            //     Debug.Log(transform.childCount);
+            //     Debug.Log(i);
+            //     DestroyImmediate(transform.GetChild(i).gameObject);
+            // }
+
+            foreach (Transform child in transform)
+            {
+                DestroyImmediate(child.gameObject);
             }
         }
     }
