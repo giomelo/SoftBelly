@@ -1,8 +1,9 @@
+using _Scripts.Singleton;
 using UnityEngine;
 
 namespace Systems.Plantation
 {
-    public class GridSystem : MonoBehaviour
+    public class GridSystem : MonoSingleton<GridSystem>
     {
         [SerializeField]
         private int Width = 10;
@@ -19,6 +20,8 @@ namespace Systems.Plantation
 
         [SerializeField]
         private GameObject plot;
+
+        public static int PlotsId = 0;
 
         public void CreatGrid()
         {

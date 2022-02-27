@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Systems.Plants.Bases;
+using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
 /// <summary>
@@ -55,17 +55,12 @@ public class PlayerInputHandler : MonoBehaviour
         if (!Input.GetMouseButton(0)) return;
         Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
-        
-        if (Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer))
-        {
 
-            if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
-            Debug.Log(hit.transform.name);
-            if (plotScript.IsAvaliable)
-            {
-                plotScript.ThisPlantHolder.currentPlant = currentPlantTest;
-            }
-        }
+
+        if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer)) return;
+        if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
+        if (!plotScript.CheckAvaible()) return;
+        plotScript.ChangePlant(currentPlantTest);
+        PlantEvents.OnPlantedCall(plotScript.PlotId);
     }
 }

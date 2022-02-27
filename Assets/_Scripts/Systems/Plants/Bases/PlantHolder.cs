@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 
-namespace Systems.Plants.Bases
+namespace _Scripts.Systems.Plants.Bases
 {
     public class PlantHolder : MonoBehaviour
     {
         #region Fields
-        public PlantBase currentPlant;
+       
+        #endregion
+        
+        #region Methods
+       
         #endregion
     }
 

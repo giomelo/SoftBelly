@@ -1,4 +1,4 @@
-﻿namespace Enums
+﻿namespace _Scripts.Enums
 {
     public enum PlantState
     {
