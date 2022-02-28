@@ -40,16 +40,12 @@ namespace Systems.Plantation
 
         private void DeleteGrid()
         {
-            // for (int i = 0; i < transform.childCount; i++)
-            // {
-            //     Debug.Log(transform.childCount);
-            //     Debug.Log(i);
-            //     DestroyImmediate(transform.GetChild(i).gameObject);
-            // }
-
-            foreach (Transform child in transform)
+            int len = transform.childCount;
+            for (int i = 0; i < len; i++)
             {
-                DestroyImmediate(child.gameObject);
+                Debug.Log(transform.childCount);
+                Debug.Log(i);
+                DestroyImmediate(transform.GetChild(0).gameObject);
             }
         }
     }

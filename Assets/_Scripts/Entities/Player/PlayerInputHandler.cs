@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -22,9 +24,10 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField]
     private PlantationInteraction plantInteraction;
 
-    private const int CollisionLayer = 1 << 8;
+    private const int CollisionLayer = 1 << 6;
 
     public PlantBase currentPlantTest;
+    private float _radius = 7f;
 
     #endregion
     // Update is called once per frame
@@ -56,11 +59,17 @@ public class PlayerInputHandler : MonoBehaviour
         Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-
+        
         if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer)) return;
         if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
         if (!plotScript.CheckAvaible()) return;
+        if (!CheckDistanceFromPlayer(hit.transform)) return;
         plotScript.ChangePlant(currentPlantTest);
         PlantEvents.OnPlantedCall(plotScript.PlotId);
+    }
+
+    private bool CheckDistanceFromPlayer(Transform plot)
+    {
+        return Vector3.Distance(plot.position ,transform.position) <= _radius;
     }
 }
