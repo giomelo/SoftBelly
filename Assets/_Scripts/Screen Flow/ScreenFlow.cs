@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,11 @@ public class ScreenFlow : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     public Text progressText;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     public void LoadScene(string sceneIndex)
     {
