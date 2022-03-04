@@ -14,11 +14,6 @@ public class Plot : MonoBehaviour
     {
         currentPlant = plant;
     }
-
-    private void Start()
-    {
-       //PlantEvents.Instance.OnPlanted += ChangePlant; 
-    }
     public void Display(int id)
     {
         if (id != this.PlotId) return;
@@ -37,7 +32,7 @@ public class Plot : MonoBehaviour
         PlantEvents.OnPlanted -= Display;
     }
 
-    public bool CheckAvaible()
+    public bool CheckAvailable()
     {
         return currentPlant == null;
     }

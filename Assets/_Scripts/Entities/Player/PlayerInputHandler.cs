@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Entities.Player;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -22,11 +23,11 @@ public class PlayerInputHandler : MonoBehaviour
     
     [Header("PlantInputs")]
     [SerializeField]
-    private PlantationInteraction plantInteraction;
+    private PlayerPlantationInteraction plantInteraction;
 
     private const int CollisionLayer = 1 << 6;
 
-    public PlantBase currentPlantTest;
+
     private float _radius = 7f;
 
     #endregion
@@ -58,14 +59,13 @@ public class PlayerInputHandler : MonoBehaviour
         if (!Input.GetMouseButton(0)) return;
         Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
         
         if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer)) return;
         if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
-        if (!plotScript.CheckAvaible()) return;
+        if (!plotScript.CheckAvailable()) return;
         if (!CheckDistanceFromPlayer(hit.transform)) return;
-        plotScript.ChangePlant(currentPlantTest);
-        PlantEvents.OnPlantedCall(plotScript.PlotId);
+        
+        plantInteraction.HandleInput(plotScript);
     }
 
     private bool CheckDistanceFromPlayer(Transform plot)

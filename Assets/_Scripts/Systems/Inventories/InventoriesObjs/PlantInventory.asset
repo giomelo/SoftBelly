@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
-  m_Name: Manjericao
+  m_Script: {fileID: 11500000, guid: 7b287e1f673d5d0429511ea96e41c037, type: 3}
+  m_Name: PlantInventory
   m_EditorClassIdentifier: 
-  ItemId: Manjericao
-  PlantDisplayObjs:
-  - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  maxAmountPerSlots: 20
+  Width: 10
+  Height: 10
+  itensType: 1

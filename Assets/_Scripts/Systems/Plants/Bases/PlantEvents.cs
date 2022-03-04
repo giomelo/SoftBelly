@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Plants.Bases
 {
+    /// <summary>
+    /// Class responsible for call the event when the player plants
+    /// </summary>
     public static class PlantEvents
     {
         public static Action<int> OnPlanted;

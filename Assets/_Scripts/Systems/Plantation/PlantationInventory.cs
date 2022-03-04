@@ -1,23 +1,28 @@
 using System;
 using System.Collections.Generic;
+using _Scripts.Editor.FlagsAtributeEditor;
+using _Scripts.Enums;
 using _Scripts.Singleton;
+using _Scripts.Systems.Item;
+using UnityEngine;
 
 namespace _Scripts.Systems.Plantation
 {
-    [Serializable]
-    public struct ExposedDictionary {
-        public string name;
-        public int value;
-    }
-
+    /// <summary>
+    /// Scriptable object tha has the StorageBehavior
+    /// </summary>
+    [CreateAssetMenu(fileName = "PlantInventory", menuName = "Inventories/PlantInventory")]
     public class PlantationInventory : StorageBehaviour
     {
-        public ExposedDictionary[] slots;
-        public Dictionary<string, int> Slots = new Dictionary<string, int>(10);
-        
-        public PlantationInventory(Dictionary<string, int> slots) : base(slots)
+        [SerializeField]
+        protected int Width = 4;
+        [SerializeField]
+        protected int Height = 4;
+        [EnumFlagsAtribute]
+        public ItemType itensType;
+        public PlantationInventory()
         {
-            
+            Slots = new Dictionary<ItemBehaviour, int>(Width * Height);
         }
     }
 }

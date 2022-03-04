@@ -1,47 +1,63 @@
 using System.Collections.Generic;
 using _Scripts.Singleton;
+using _Scripts.Systems.Item;
 using UnityEngine;
 
 namespace _Scripts.Systems.Plantation
 {
-   public abstract class StorageBehaviour
+   /// <summary>
+   /// Behavior for all types of storage, handles the main methods like addItens, removeItens, searchItens
+   /// </summary>
+   public abstract class StorageBehaviour : ScriptableObject
    {
-      private readonly Dictionary<string, int> _slots;
+      protected Dictionary<ItemBehaviour, int> Slots;
+      public int maxAmountPerSlots = 20;
 
-      protected StorageBehaviour(Dictionary<string, int> slots)
+      protected StorageBehaviour(Dictionary<ItemBehaviour, int> slots)
       {
-         _slots = slots;
+         Slots = slots;
+      }
+      protected StorageBehaviour()
+      {
+        
       }
 
-      public void AddItem(string key, int amount)
+      public void AddItem(ItemBehaviour key, int amount)
       {
-         if (_slots.ContainsKey(key))
+         if (Slots.ContainsKey(key))
          {
-            _slots[key] += amount;
+            Slots[key] += amount;
          }
          else
          {
-            _slots.Add(key, amount);
+            Slots.Add(key, amount);
          }
       }
 
-      public void RemoveItem(string key, int amount)
+      public void RemoveItem(ItemBehaviour key, int amount)
       {
-         _slots[key] -= amount;
-         if (_slots[key] <= 0)
+         Slots[key] -= amount;
+         if (Slots[key] <= 0)
          {
-            _slots.Remove(key);
+            Slots.Remove(key);
          }
       }
 
       public void Display()
       {
-         foreach (var (key, value) in _slots)
+         foreach (var (key, value) in Slots)
          {
-            Debug.Log(key);
+            Debug.Log(key.ItemId);
             Debug.Log(value);
 
          }
+      }
+
+      public bool CheckIfSlotIsFull(ItemBehaviour key)
+      {
+         var amountInSlot = Slots[key];
+         var value = amountInSlot + 1;
+         return value > maxAmountPerSlots;
       }
    }
 }

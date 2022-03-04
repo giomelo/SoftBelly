@@ -1,18 +1,44 @@
-using System.Collections;
 using System.Collections.Generic;
-using _Scripts.Systems.Plantation;
+using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
-public class StorageHolder : MonoBehaviour
+namespace _Scripts.Systems.Plantation
 {
-    private void Start()
+    
+    /// <summary>
+    /// Class tha holds the current storage
+    /// </summary>
+    
+    public class StorageHolder : MonoBehaviour
     {
-        Dictionary<string, int> slots = new Dictionary<string, int>(10);
-        StorageBehaviour storage = new PlantationInventory(slots);
-        storage.AddItem("oi", 10);
-        storage.AddItem("oi2", 11);
-        storage.RemoveItem("oi", 9);
-        storage.AddItem("oi2", 5);
-        storage.Display();
+        public StorageBehaviour Storage;
+        //This is for exposing the dictionary in the inspector(unity dont have serialized dictionaries)
+        [SerializeField] private List<ExposedInventory> exposedInventory = new();
+        private void Start()
+        {
+            // Dictionary<string, int> slots = new Dictionary<string, int>(PlantationInventory.Size);
+            // StorageBehaviour storage = new PlantationInventory(slots);
+            // PlantBase plant1 = ScriptableObject.CreateInstance<PlantBase>();
+            // plant1.Init("oi");
+            // PlantBase plant2 = ScriptableObject.CreateInstance<PlantBase>();
+            // plant2.Init("oi2");
+            // Storage.AddItem(plant1, 10);
+            // Storage.AddItem(plant2, 11);
+            // Storage.RemoveItem(plant1, 9);
+            // Storage.AddItem(plant2, 5);
+            InitInventory();
+            Storage.Display();
+        }
+        
+        private void InitInventory()
+        {
+            foreach (var i in exposedInventory)
+            {
+                Storage.AddItem(i.item, i.amount);
+            }
+        }
     }
+    
+   
 }

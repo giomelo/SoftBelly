@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Systems.Plantation
 {
+    /// <summary>
+    /// System for creat a plot grid
+    /// </summary>
     public class GridSystem : MonoSingleton<GridSystem>
     {
         [SerializeField]

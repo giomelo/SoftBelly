@@ -1,4 +1,5 @@
 using _Scripts.Enums;
+using _Scripts.Systems.Item;
 using UnityEngine;
 
 namespace _Scripts.Systems.Plants.Bases
@@ -7,13 +8,11 @@ namespace _Scripts.Systems.Plants.Bases
     /// Base class for creating plants as scriptables objects
     /// </summary>
     [CreateAssetMenu(fileName = "Plant", menuName = "Plant")]
-    public class PlantBase : ScriptableObject
+    public class PlantBase : ItemBehaviour
     {
         #region Fields
 
         public PlantState PlantState { get; protected set; } =  PlantState.Seed;
-
-        private int _plantId;
 
         public GameObject[] PlantDisplayObjs = new GameObject[3];
 
@@ -21,9 +20,13 @@ namespace _Scripts.Systems.Plants.Bases
 
         #region Methods
 
-
-
         #endregion
+
+
+        public PlantBase(string id) : base(id)
+        {
+            ItemId = id;
+        }
     }
 
 }
