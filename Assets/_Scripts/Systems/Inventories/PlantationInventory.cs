@@ -1,12 +1,11 @@
-using System;
 using System.Collections.Generic;
 using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
-using _Scripts.Singleton;
 using _Scripts.Systems.Item;
+using _Scripts.Systems.Plantation;
 using UnityEngine;
 
-namespace _Scripts.Systems.Plantation
+namespace _Scripts.Systems.Inventories
 {
     /// <summary>
     /// Scriptable object tha has the StorageBehavior
@@ -14,12 +13,6 @@ namespace _Scripts.Systems.Plantation
     [CreateAssetMenu(fileName = "PlantInventory", menuName = "Inventories/PlantInventory")]
     public class PlantationInventory : StorageBehaviour
     {
-        [SerializeField]
-        protected int Width = 4;
-        [SerializeField]
-        protected int Height = 4;
-        [EnumFlagsAtribute]
-        public ItemType itensType;
         public PlantationInventory()
         {
             Slots = new Dictionary<ItemBehaviour, int>(Width * Height);

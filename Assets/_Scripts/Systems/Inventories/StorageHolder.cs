@@ -13,8 +13,10 @@ namespace _Scripts.Systems.Plantation
     public class StorageHolder : MonoBehaviour
     {
         public StorageBehaviour Storage;
+        
         //This is for exposing the dictionary in the inspector(unity dont have serialized dictionaries)
-        [SerializeField] private List<ExposedInventory> exposedInventory = new();
+        [SerializeField] 
+        private List<ExposedInventory> exposedInventory = new();
         private void Start()
         {
             // Dictionary<string, int> slots = new Dictionary<string, int>(PlantationInventory.Size);
