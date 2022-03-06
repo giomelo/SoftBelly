@@ -15,7 +15,7 @@ namespace _Scripts.Systems.Plants.Bases
         public static Action OnPlotSelected;
 
         public static PlantBase CurrentPlant;
-        public static Plot currentPlot;
+        public static Plot CurrentPlot;
         
         public static void OnPlantedCall(Plot id)
         {
@@ -31,8 +31,8 @@ namespace _Scripts.Systems.Plants.Bases
         public static void OnPlantedSelected()
         {
             Debug.Log("retirou");
-            UIController.Instance.storageHolder.Storage.RemoveItem(CurrentPlant, 1);
-            OnPlantedCall(currentPlot);
+     
+            OnPlantedCall(CurrentPlot);
         }
     }
 }

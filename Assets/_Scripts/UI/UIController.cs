@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Item;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -8,9 +10,7 @@ using UnityEngine;
 
 namespace _Scripts.UI
 {
-   
-
-    public class UIController : MonoSingleton<UIController>
+    public class UIController : MonoBehaviour
     {
         [SerializeField]
         private GameObject inventoryObject;
@@ -23,16 +23,15 @@ namespace _Scripts.UI
         [SerializeField]
         private Transform startPosition;
         [SerializeField]
-        private List<UISlot> uiSlots;
-        [SerializeField]
         private GameObject slotPrefab;
         [SerializeField]
         private Transform slotDisplay;
+        [SerializeField]
+        private PlantProprieties proprietiesDisplay;
 
         private void Start()
         {
             if (_slotsCreated) return;
-            uiSlots = new List<UISlot>(storageHolder.Storage.Width * storageHolder.Storage.Height);
         }
         private void OnEnable()
         {
@@ -60,9 +59,10 @@ namespace _Scripts.UI
         {
             int index = 0;
             _slotsCreated = true;
-            for (int i = 0; i < storageHolder.Storage.Width; i++)
+ 
+            for (int i = 0; i < storageHolder.Storage.Height; i++)
             {
-                for (int j = 0; j < storageHolder.Storage.Height; j++)
+                for (int j = 0; j < storageHolder.Storage.Width; j++)
                 {
                     var position = startPosition.position;
                     var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
@@ -81,7 +81,8 @@ namespace _Scripts.UI
         /// <param name="index"></param>
         private void UpdateSlots(Transform slot, int index)
         {
-            if (!slot.TryGetComponent<PlantSlot>(out var slotScript)) return;
+            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            slotScript.AddSubject(this);
             if (index >= storageHolder.Storage.Slots.Count) return;
             if (storageHolder.Storage.Slots.ElementAt(index).Value > 0)
             {
@@ -97,8 +98,8 @@ namespace _Scripts.UI
 
         private void ResetSlot(Transform slot, int index)
         {
-            if (!slot.TryGetComponent<PlantSlot>(out var slotScript)) return;
-            var prefabScript = slotPrefab.GetComponent<PlantSlot>();
+            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            var prefabScript = slotPrefab.GetComponent<SlotBase>();
             slotScript.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
             slotScript.uiSlot.item = null;
             slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
@@ -115,6 +116,13 @@ namespace _Scripts.UI
         public void DisposeInventory()
         {
             inventoryObject.SetActive(false);
+        }
+
+        public void DisplayCurrentProprieties(PlantBase item)
+        {
+            proprietiesDisplay.ScientificName.text = item.ScientificName;
+            proprietiesDisplay.PlantName.text = item.ItemId;
+            proprietiesDisplay.ProprietiesText.text = item.PlantProprieties;
         }
     }
 }

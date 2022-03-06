@@ -14,10 +14,12 @@ namespace _Scripts.Systems.Inventories
       public Dictionary<ItemBehaviour, int> Slots;
       public int maxAmountPerSlots = 20;
       [EnumFlagsAtribute]
-      public ItemType itensType; 
-      
-      [SerializeField] public int Width = 4;
-      [SerializeField] public int Height = 4;
+      public ItemType itensType;
+
+      [SerializeField] 
+      public int Width;
+      [SerializeField] 
+      public int Height;
       protected StorageBehaviour(Dictionary<ItemBehaviour, int> slots)
       {
          Slots = slots;

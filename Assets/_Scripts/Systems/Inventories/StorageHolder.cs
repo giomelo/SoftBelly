@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using _Scripts.Systems.Inventories;
-using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
-namespace _Scripts.Systems.Plantation
+namespace _Scripts.Systems.Inventories
 {
     
     /// <summary>

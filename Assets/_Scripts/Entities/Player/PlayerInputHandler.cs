@@ -64,7 +64,7 @@ namespace _Scripts.Entities.Player
             if (!plotScript.CheckAvailable()) return;
             
             PlantEvents.OnPlotSelected();
-            PlantEvents.currentPlot = plotScript;
+            PlantEvents.CurrentPlot = plotScript;
             // plantInteraction.HandleInput(plotScript);
         }
 

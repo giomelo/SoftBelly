@@ -23,10 +23,11 @@ namespace _Scripts.Systems.Item
         //     ItemType = itemType;
         // }
 
-        public void Init(string id, ItemType itemType)
+        public void Init(string id, ItemType itemType, Sprite sprite)
         {
             ItemId = id;
             ItemType = itemType;
+            ImageDisplay = sprite;
         }
     }
 }

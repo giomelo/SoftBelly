@@ -16,18 +16,10 @@ namespace _Scripts.Systems.Plants.Bases
         
         public GameObject[] PlantDisplayObjs = new GameObject[3];
         
+        public string ScientificName;
+        [TextArea] 
+        public string PlantProprieties;
         #endregion
-        
-        #region Methods
-        
-        // public PlantBase(string id, ItemType itemType) : base(id, itemType)
-        // {
-        //     ItemId = id;
-        //     ItemType = itemType;
-        // }
-        #endregion
-
-
     }
 
 }
