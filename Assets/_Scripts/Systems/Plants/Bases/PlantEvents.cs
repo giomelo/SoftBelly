@@ -1,6 +1,8 @@
 using System;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Plantation;
+using _Scripts.UI;
+using UnityEngine;
 
 namespace _Scripts.Systems.Plants.Bases
 {
@@ -28,6 +30,8 @@ namespace _Scripts.Systems.Plants.Bases
 
         public static void OnPlantedSelected()
         {
+            Debug.Log("retirou");
+            UIController.Instance.storageHolder.Storage.RemoveItem(CurrentPlant, 1);
             OnPlantedCall(currentPlot);
         }
     }

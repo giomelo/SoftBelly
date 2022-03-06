@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Singleton;
@@ -15,8 +14,7 @@ namespace _Scripts.UI
     {
         [SerializeField]
         private GameObject inventoryObject;
-        [SerializeField]
-        private StorageHolder storageHolder;
+        public StorageHolder storageHolder;
 
         private bool _slotsCreated = false;
         private const float YOffset = 80f;
@@ -48,8 +46,14 @@ namespace _Scripts.UI
         private void DisplayPlantInventory()
         {
             inventoryObject.SetActive(true);
-            if (_slotsCreated) return;
+            if (_slotsCreated)
+            {
+                UpdateInventory();
+                return;
+            }
+
             CreateSlots();
+            
         }
 
         private void CreateSlots()
@@ -64,7 +68,7 @@ namespace _Scripts.UI
                     var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
 
                     var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity, slotDisplay);
-                    UpdateSlots(slotInstance, index);
+                    UpdateSlots(slotInstance.transform, index);
                     index++;
                 }
             }
@@ -75,14 +79,37 @@ namespace _Scripts.UI
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void UpdateSlots(GameObject slot, int index)
+        private void UpdateSlots(Transform slot, int index)
         {
-            if (!slot.transform.TryGetComponent<Slot>(out var slotScript)) return;
+            if (!slot.TryGetComponent<PlantSlot>(out var slotScript)) return;
             if (index >= storageHolder.Storage.Slots.Count) return;
-            slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.ToString();
-            slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Key;
-            slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Key.ImageDisplay;
+            if (storageHolder.Storage.Slots.ElementAt(index).Value > 0)
+            {
+                slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.ToString();
+                slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Key;
+                slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Key.ImageDisplay;
+            }
+            else
+            {
+                ResetSlot(slot, index);
+            }
+        }
 
+        private void ResetSlot(Transform slot, int index)
+        {
+            if (!slot.TryGetComponent<PlantSlot>(out var slotScript)) return;
+            var prefabScript = slotPrefab.GetComponent<PlantSlot>();
+            slotScript.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
+            slotScript.uiSlot.item = null;
+            slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
+        }
+
+        private void UpdateInventory()
+        {
+            for (int i = 0; i < slotDisplay.childCount; i++)
+            {
+                UpdateSlots(slotDisplay.GetChild(i), i);
+            }
         }
 
         public void DisposeInventory()

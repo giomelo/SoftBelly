@@ -11,14 +11,13 @@ namespace _Scripts.Systems.Plants.Bases
     public class PlantBase : ItemBehaviour
     {
         #region Fields
-        [Header("Plant Stuff")]
-
-        public PlantState PlantState =  PlantState.Seed;
-
+        [field: Header("Plant Stuff")]
+        public PlantState PlantState { get; }  = PlantState.Seed;
+        
         public GameObject[] PlantDisplayObjs = new GameObject[3];
-
+        
         #endregion
-
+        
         #region Methods
         
         // public PlantBase(string id, ItemType itemType) : base(id, itemType)

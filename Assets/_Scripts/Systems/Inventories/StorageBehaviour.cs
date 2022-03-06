@@ -43,10 +43,10 @@ namespace _Scripts.Systems.Inventories
       public void RemoveItem(ItemBehaviour key, int amount)
       {
          Slots[key] -= amount;
-         if (Slots[key] <= 0)
-         {
-            Slots.Remove(key);
-         }
+         // if (Slots[key] <= 0)
+         // {
+         //    Slots.Remove(key);
+         // }
       }
 
       public void Display()

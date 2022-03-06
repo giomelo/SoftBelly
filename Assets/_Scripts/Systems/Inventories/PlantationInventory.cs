@@ -8,7 +8,7 @@ using UnityEngine;
 namespace _Scripts.Systems.Inventories
 {
     /// <summary>
-    /// Scriptable object tha has the StorageBehavior
+    /// Scriptable object that has the StorageBehavior
     /// </summary>
     [CreateAssetMenu(fileName = "PlantInventory", menuName = "Inventories/PlantInventory")]
     public class PlantationInventory : StorageBehaviour

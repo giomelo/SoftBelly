@@ -8,7 +8,7 @@ namespace _Scripts.UI
     /// <summary>
     /// This class is for hold UI slots information like, sprite, text for display the amount of the item etc
     /// </summary>
-    public class Slot : MonoBehaviour
+    public class PlantSlot : MonoBehaviour
     {
         [SerializeField] 
         public UISlot uiSlot;
@@ -19,12 +19,14 @@ namespace _Scripts.UI
         /// </summary>
         private void OnSlotClicked()
         {
+            if (uiSlot.item == null) return;
             UIController.Instance.DisposeInventory();
             PlantEvents.CurrentPlant = (PlantBase)uiSlot.item;
             PlantEvents.OnPlantedSelected();
+            Debug.Log("oi");
         }
 
-        private void OnEnable()
+        private void Start()
         {
             if (!TryGetComponent<Button>(out var button)) return;
             button.onClick.AddListener(OnSlotClicked);
