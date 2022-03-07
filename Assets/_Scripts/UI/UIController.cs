@@ -10,6 +10,9 @@ using UnityEngine;
 
 namespace _Scripts.UI
 {
+    /// <summary>
+    /// Controller for the ui for the inventory
+    /// </summary>
     public class UIController : MonoBehaviour
     {
         [SerializeField]
@@ -28,6 +31,9 @@ namespace _Scripts.UI
         private Transform slotDisplay;
         [SerializeField]
         private PlantProprieties proprietiesDisplay;
+        
+        [SerializeField]
+        private int inventoryId;
 
         private void Start()
         {
@@ -42,8 +48,14 @@ namespace _Scripts.UI
         {
             PlantEvents.OnPlotSelected -= DisplayPlantInventory;
         }
-        private void DisplayPlantInventory()
+        /// <summary>
+        /// Active the inventory
+        /// </summary>
+        private void DisplayPlantInventory(int id)
         {
+            Debug.Log(id);
+            Debug.Log(inventoryId);
+            if (inventoryId != id) return;
             inventoryObject.SetActive(true);
             if (_slotsCreated)
             {
@@ -54,7 +66,9 @@ namespace _Scripts.UI
             CreateSlots();
             
         }
-
+        /// <summary>
+        /// Instantiate and update slots of the inventory first time
+        /// </summary>
         private void CreateSlots()
         {
             int index = 0;
@@ -95,7 +109,12 @@ namespace _Scripts.UI
                 ResetSlot(slot, index);
             }
         }
-
+        
+        /// <summary>
+        /// Reset the slot to the original state(blank item)
+        /// </summary>
+        /// <param name="slot"></param>
+        /// <param name="index"></param>
         private void ResetSlot(Transform slot, int index)
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
@@ -104,7 +123,10 @@ namespace _Scripts.UI
             slotScript.uiSlot.item = null;
             slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
         }
-
+        
+        /// <summary>
+        /// Foreach slot update the slot with the new information in the dictionary
+        /// </summary>
         private void UpdateInventory()
         {
             for (int i = 0; i < slotDisplay.childCount; i++)
@@ -112,17 +134,31 @@ namespace _Scripts.UI
                 UpdateSlots(slotDisplay.GetChild(i), i);
             }
         }
-
+        
+        /// <summary>
+        /// Dispose the inventory
+        /// </summary>
         public void DisposeInventory()
         {
             inventoryObject.SetActive(false);
         }
-
-        public void DisplayCurrentProprieties(PlantBase item)
+        
+        /// <summary>
+        /// Display plant proprieties for now
+        /// </summary>
+        /// <param name="item"></param>
+        public void DisplayCurrentProprieties(SeedBase item)
         {
             proprietiesDisplay.ScientificName.text = item.ScientificName;
             proprietiesDisplay.PlantName.text = item.ItemId;
             proprietiesDisplay.ProprietiesText.text = item.PlantProprieties;
+        }
+
+        public void ResetCurrentProprieties()
+        {
+            proprietiesDisplay.ScientificName.text = "";
+            proprietiesDisplay.PlantName.text = "";
+            proprietiesDisplay.ProprietiesText.text = "";
         }
     }
 }

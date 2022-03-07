@@ -20,8 +20,6 @@ namespace _Scripts.Entities.Player
         private Camera mainCamera;
     
         [Header("PlantInputs")]
-        [SerializeField]
-        private PlayerPlantationInteraction plantInteraction;
 
         private const int CollisionLayer = 1 << 6;
 
@@ -61,11 +59,19 @@ namespace _Scripts.Entities.Player
             if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform)) return;
             if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
-            if (!plotScript.CheckAvailable()) return;
-            
-            PlantEvents.OnPlotSelected();
-            PlantEvents.CurrentPlot = plotScript;
-            // plantInteraction.HandleInput(plotScript);
+            if (plotScript.CheckAvailable())
+            {
+                //Inventory id
+                PlantEvents.OnPlotSelected(0);
+                PlantEvents.CurrentPlot = plotScript;
+            }
+            else
+            {
+                //Check if the plant is ready to harvest
+                if(!plotScript.CheckIfReady()) return;
+                PlantEvents.OnHarvestCall(plotScript);
+
+            }
         }
 
         private bool CheckDistanceFromPlayer(Transform plot)

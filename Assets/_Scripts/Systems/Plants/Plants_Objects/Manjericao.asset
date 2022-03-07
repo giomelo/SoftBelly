@@ -17,7 +17,8 @@ MonoBehaviour:
   ImageDisplay: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   PlantDisplayObjs:
   - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
+  - {fileID: 7447280070264944617, guid: 50dcb60bf8999d34d9afd67583e9f494, type: 3}
   ScientificName: Tjasrjoaiw
   PlantProprieties: essa planta eh boa
+  GrowTime: 10

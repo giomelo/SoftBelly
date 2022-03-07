@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,12 +32,20 @@ namespace _Scripts.Systems.Inventories
             Storage.Display();
         }
         
+        /// <summary>
+        /// Method for transform the exposed inventory to the original dictionary inventory
+        /// </summary>
         private void InitInventory()
         {
             foreach (var i in exposedInventory)
             {
                 Storage.AddItem(i.item, i.amount);
             }
+        }
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this.gameObject);
         }
     }
     

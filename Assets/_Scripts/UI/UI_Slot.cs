@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace _Scripts.UI
 {
+    /// <summary>
+    /// Ui slot base components
+    /// </summary>
     [Serializable]
     public struct UISlot
     {

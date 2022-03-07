@@ -12,9 +12,10 @@ namespace _Scripts.Systems.Plants.Bases
     public static class PlantEvents
     {
         public static Action<Plot> OnPlanted;
-        public static Action OnPlotSelected;
+        public static Action<Plot> OnHarvest;
+        public static Action<int> OnPlotSelected;
 
-        public static PlantBase CurrentPlant;
+        public static SeedBase CurrentPlant;
         public static Plot CurrentPlot;
         
         public static void OnPlantedCall(Plot id)
@@ -23,15 +24,17 @@ namespace _Scripts.Systems.Plants.Bases
             OnPlanted?.Invoke(id);
         }
 
-        public static void OnPlotSelectedCall()
+        public static void OnPlotSelectedCall(int id)
         {
-            OnPlotSelected?.Invoke();
+            OnPlotSelected?.Invoke(id);
         }
 
+        public static void OnHarvestCall(Plot id)
+        {
+            OnHarvest?.Invoke(id);
+        }
         public static void OnPlantedSelected()
         {
-            Debug.Log("retirou");
-     
             OnPlantedCall(CurrentPlot);
         }
     }

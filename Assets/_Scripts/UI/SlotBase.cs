@@ -2,6 +2,9 @@
 
 namespace _Scripts.UI
 {
+    /// <summary>
+    /// Base slot class for different slots in the game
+    /// </summary>
     public abstract class SlotBase : MonoBehaviour
     {
         [SerializeField] 

@@ -13,13 +13,13 @@ namespace _Scripts.UI
     {
 
         /// <summary>
-        /// When the user select a slot with a plant
+        /// When the user select a slot with a plant call the event OnPLantedSelected
         /// </summary>
         private void OnSlotClicked()
         {
             if (uiSlot.item == null) return;
             _subject.DisposeInventory();
-            PlantEvents.CurrentPlant = (PlantBase)uiSlot.item;
+            PlantEvents.CurrentPlant = (SeedBase)uiSlot.item;
             _subject.storageHolder.Storage.RemoveItem(PlantEvents.CurrentPlant, 1);
             PlantEvents.OnPlantedSelected();
         }
@@ -29,12 +29,24 @@ namespace _Scripts.UI
             if (!TryGetComponent<Button>(out var button)) return;
             button.onClick.AddListener(OnSlotClicked);
         }
-
+        
+        /// <summary>
+        /// On mouse enter, display current plant proprieties
+        /// </summary>
         public void MouseEnter()
         {
             Debug.Log("mouseEnter");
-            if (uiSlot.item == null) return;
-            _subject.DisplayCurrentProprieties((PlantBase)uiSlot.item);
+            if (uiSlot.item == null)
+            {
+                _subject.ResetCurrentProprieties();
+                return;
+            }
+            _subject.DisplayCurrentProprieties((SeedBase)uiSlot.item);
+        }
+        
+        public void MouseExit()
+        {
+            _subject.ResetCurrentProprieties();
         }
     }
 }
