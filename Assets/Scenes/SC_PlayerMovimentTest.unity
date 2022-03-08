@@ -3522,10 +3522,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Storage: {fileID: 11400000, guid: 45af2d0168cacc24e9f1ee2bd290fbfd, type: 2}
   exposedInventory:
-  - item: {fileID: 11400000, guid: 95705774772e77548aa8295edd0019ab, type: 2}
-    amount: 5
-  - item: {fileID: 11400000, guid: dad2fd774ab409e4e86a0a06becf1fc4, type: 2}
-    amount: 2
+  - key: 0
+    item:
+      item: {fileID: 11400000, guid: dad2fd774ab409e4e86a0a06becf1fc4, type: 2}
+      amount: 20
+  - key: 1
+    item:
+      item: {fileID: 11400000, guid: 95705774772e77548aa8295edd0019ab, type: 2}
+      amount: 2
 --- !u!114 &1911862404
 MonoBehaviour:
   m_ObjectHideFlags: 0

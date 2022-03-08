@@ -11,8 +11,20 @@ namespace _Scripts.Systems.Inventories
     [Serializable]
     public struct ExposedInventory
     {
+        public int key;
+        public ItemObj item;
+    }
+    
+    [Serializable]
+    public struct ItemObj
+    {
         public ItemBehaviour item;
         public int amount;
-       
+
+        public ItemObj(ItemBehaviour itemBehaviour, int i)
+        {
+            item = itemBehaviour;
+            amount = i;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
@@ -11,7 +12,7 @@ namespace _Scripts.Systems.Inventories
    /// </summary>
    public abstract class StorageBehaviour : ScriptableObject
    {
-      public Dictionary<ItemBehaviour, int> Slots;
+      public Dictionary<int, ItemObj> Slots;
       public int maxAmountPerSlots = 20;
       [EnumFlagsAtribute]
       public ItemType itensType;
@@ -20,7 +21,7 @@ namespace _Scripts.Systems.Inventories
       public int Width;
       [SerializeField] 
       public int Height;
-      protected StorageBehaviour(Dictionary<ItemBehaviour, int> slots)
+      protected StorageBehaviour(Dictionary<int, ItemObj> slots)
       {
          Slots = slots;
       }
@@ -29,22 +30,31 @@ namespace _Scripts.Systems.Inventories
         
       }
 
-      public void AddItem(ItemBehaviour key, int amount)
+      public void AddItem(int key, int amount, ItemBehaviour item)
       {
-         if (!itensType.HasFlag(key.ItemType)) return;
+         if (!itensType.HasFlag(item.ItemType)) return;
          if (Slots.ContainsKey(key))
          {
-            Slots[key] += amount;
+            if (CheckIfSlotIsFull(key))
+            {
+               Debug.Log("Full");
+               Slots.Add(key, new ItemObj(item, amount));
+            }
+            var auxObj = Slots[key];
+            auxObj.amount += amount;
+            Slots[key] = auxObj;
          }
          else
          {
-            Slots.Add(key, amount);
+            Slots.Add(key, new ItemObj(item, amount));
          }
       }
 
-      public void RemoveItem(ItemBehaviour key, int amount)
+      public void RemoveItem(int key, int amount)
       {
-         Slots[key] -= amount;
+         var auxObj = Slots[key];
+         auxObj.amount -= amount;
+         Slots[key] = auxObj;
          // if (Slots[key] <= 0)
          // {
          //    Slots.Remove(key);
@@ -55,17 +65,31 @@ namespace _Scripts.Systems.Inventories
       {
          foreach (var (key, value) in Slots)
          {
-            Debug.Log(key.ItemId);
+            Debug.Log(value.item.ItemId);
             Debug.Log(value);
 
          }
       }
 
-      public bool CheckIfSlotIsFull(ItemBehaviour key)
+      public bool CheckIfSlotIsFull(int key)
       {
-         var amountInSlot = Slots[key];
+         var amountInSlot = Slots[key].amount;
+         Debug.Log(Slots[key]);
          var value = amountInSlot + 1;
          return value > maxAmountPerSlots;
+      }
+
+      private bool CheckIfContainsKey(ItemBehaviour key)
+      {
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            // if (Slots.ElementAt(i).Key == key)
+            // {
+            //    return true;
+            // }
+         }
+
+         return false;
       }
    }
 }

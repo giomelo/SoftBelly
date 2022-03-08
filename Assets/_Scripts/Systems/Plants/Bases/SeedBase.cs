@@ -8,7 +8,7 @@ namespace _Scripts.Systems.Plants.Bases
     /// Base class for creating plants as scriptables objects
     /// </summary>
     [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
-    public class SeedBase : ItemBehaviour
+    public class SeedBase: ItemBehaviour
     {
         #region Fields
         [field: Header("Plant Stuff")]

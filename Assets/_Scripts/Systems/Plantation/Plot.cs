@@ -52,7 +52,6 @@ namespace _Scripts.Systems.Plantation
             PlantEvents.OnPlanted += Display;
             PlantEvents.OnHarvest += Harvest;
         }
-
         private void OnDisable()
         {
             PlantEvents.OnPlanted -= Display;

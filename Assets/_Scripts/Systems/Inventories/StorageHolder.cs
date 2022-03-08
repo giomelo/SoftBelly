@@ -37,9 +37,9 @@ namespace _Scripts.Systems.Inventories
         /// </summary>
         private void InitInventory()
         {
-            foreach (var i in exposedInventory)
+            for (int i = 0; i < exposedInventory.Count; i++)
             {
-                Storage.AddItem(i.item, i.amount);
+                Storage.AddItem(i,exposedInventory[i].item.amount, exposedInventory[i].item.item);
             }
         }
 

@@ -15,7 +15,7 @@ namespace _Scripts.Systems.Inventories
     {
         public LabInventory()
         {
-            Slots = new Dictionary<ItemBehaviour, int>(Width * Height);
+            Slots = new Dictionary<int, ItemObj>(Width * Height);
         }
     }
 }

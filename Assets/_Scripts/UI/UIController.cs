@@ -35,6 +35,8 @@ namespace _Scripts.UI
         [SerializeField]
         private int inventoryId;
 
+        private int _currentSlot = 0;
+
         private void Start()
         {
             if (_slotsCreated) return;
@@ -98,11 +100,14 @@ namespace _Scripts.UI
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
             if (index >= storageHolder.Storage.Slots.Count) return;
-            if (storageHolder.Storage.Slots.ElementAt(index).Value > 0)
+            if (storageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
-                slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.ToString();
-                slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Key;
-                slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Key.ImageDisplay;
+                slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
+                slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Value.item;
+                slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
+                if (_slotsCreated) return;
+                slotScript.uiSlot.slotId = _currentSlot;
+                _currentSlot++;
             }
             else
             {

@@ -17,7 +17,7 @@ namespace _Scripts.Systems.Plants.Bases
 
         public static SeedBase CurrentPlant;
         public static Plot CurrentPlot;
-        
+
         public static void OnPlantedCall(Plot id)
         {
             //this is the same as doing: if(Onplanted != null)
