@@ -30,23 +30,25 @@ namespace _Scripts.Systems.Inventories
         
       }
 
-      public void AddItem(int key, int amount, ItemBehaviour item)
+      public void AddItem(int amount, ItemBehaviour item)
       {
          if (!itensType.HasFlag(item.ItemType)) return;
-         if (Slots.ContainsKey(key))
+         var index = CheckIfSlotAreAvailabe(item);
+         if (CheckIfContainsKey(item))
          {
-            if (CheckIfSlotIsFull(key))
+            index = CheckIfSlotAreAvailabe(item);
+            if (index == Slots.Count)
             {
-               Debug.Log("Full");
-               Slots.Add(key, new ItemObj(item, amount));
+               Slots.Add(index, new ItemObj(item, amount));
+               return;
             }
-            var auxObj = Slots[key];
+            var auxObj = Slots[index];
             auxObj.amount += amount;
-            Slots[key] = auxObj;
+            Slots[index] = auxObj;
          }
          else
          {
-            Slots.Add(key, new ItemObj(item, amount));
+            Slots.Add(index, new ItemObj(item, amount));
          }
       }
 
@@ -61,6 +63,20 @@ namespace _Scripts.Systems.Inventories
          // }
       }
 
+      public void RemoveItemByItem(ItemBehaviour item)
+      {
+         int last = 0;
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            if (Slots.ElementAt(i).Value.item != item) continue;
+            last = i;
+            if (Slots.ElementAt(i).Value.amount < Slots.ElementAt(last).Value.amount)
+            {
+               
+            }
+         }
+      }
+
       public void Display()
       {
          foreach (var (key, value) in Slots)
@@ -70,25 +86,30 @@ namespace _Scripts.Systems.Inventories
 
          }
       }
-
-      public bool CheckIfSlotIsFull(int key)
-      {
-         var amountInSlot = Slots[key].amount;
-         Debug.Log(Slots[key]);
-         var value = amountInSlot + 1;
-         return value > maxAmountPerSlots;
-      }
-
-      private bool CheckIfContainsKey(ItemBehaviour key)
+      //Chek if there is space in the slot, else create new slot
+      public int CheckIfSlotAreAvailabe(ItemBehaviour item)
       {
          for(int i = 0; i < Slots.Count; i++)
          {
-            // if (Slots.ElementAt(i).Key == key)
-            // {
-            //    return true;
-            // }
+            if (Slots.ElementAt(i).Value.item != item) continue;
+            var amountInSlot = Slots.ElementAt(i).Value.amount;
+            if (amountInSlot < maxAmountPerSlots)
+            {
+               return i;
+            }
          }
+         return Slots.Count;
+      }
 
+      private bool CheckIfContainsKey(ItemBehaviour item)
+      {
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            if (Slots.ElementAt(i).Value.item == item)
+            {
+               return true;
+            }
+         }
          return false;
       }
    }

@@ -39,7 +39,7 @@ namespace _Scripts.Systems.Inventories
         {
             for (int i = 0; i < exposedInventory.Count; i++)
             {
-                Storage.AddItem(i,exposedInventory[i].item.amount, exposedInventory[i].item.item);
+                Storage.AddItem(exposedInventory[i].item.amount, exposedInventory[i].item.item);
             }
         }
 

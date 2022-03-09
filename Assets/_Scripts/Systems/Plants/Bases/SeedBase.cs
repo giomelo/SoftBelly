@@ -7,7 +7,7 @@ namespace _Scripts.Systems.Plants.Bases
     /// <summary>
     /// Base class for creating plants as scriptables objects
     /// </summary>
-    [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
+    [CreateAssetMenu(fileName = "Plant", menuName = "Item/Seed")]
     public class SeedBase: ItemBehaviour
     {
         #region Fields
@@ -23,7 +23,12 @@ namespace _Scripts.Systems.Plants.Bases
         [Header("Time needed to full grow the seed")]
         [Tooltip("In seconds")]
         public float GrowTime;
-
+        
+        [Header("Grow up seed")]
+        public PlantBase PlantBase;
+        
+        
+        
         #endregion
     }
 

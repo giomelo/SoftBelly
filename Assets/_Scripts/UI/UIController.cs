@@ -74,8 +74,7 @@ namespace _Scripts.UI
         private void CreateSlots()
         {
             int index = 0;
-            _slotsCreated = true;
- 
+            
             for (int i = 0; i < storageHolder.Storage.Height; i++)
             {
                 for (int j = 0; j < storageHolder.Storage.Width; j++)
@@ -88,6 +87,8 @@ namespace _Scripts.UI
                     index++;
                 }
             }
+            _slotsCreated = true;
+
         }
 
         /// <summary>
@@ -99,19 +100,22 @@ namespace _Scripts.UI
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
-            if (index >= storageHolder.Storage.Slots.Count) return;
+            Debug.Log(storageHolder.Storage.Slots.Count);
+            if (index >= storageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
             if (storageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
                 slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
                 slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Value.item;
                 slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
                 if (_slotsCreated) return;
+                
                 slotScript.uiSlot.slotId = _currentSlot;
                 _currentSlot++;
+                Debug.Log("currentSlot" + _currentSlot);
             }
             else
             {
-                ResetSlot(slot, index);
+                ResetSlot(slot);
             }
         }
         
@@ -120,7 +124,7 @@ namespace _Scripts.UI
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void ResetSlot(Transform slot, int index)
+        private void ResetSlot(Transform slot)
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             var prefabScript = slotPrefab.GetComponent<SlotBase>();
