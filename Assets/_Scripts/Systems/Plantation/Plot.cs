@@ -103,14 +103,15 @@ namespace _Scripts.Systems.Plantation
             return PlantState == PlantState.Ready;
         }
 
-        public void Harvest(Plot id)
+        private void Harvest(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
             if (transform.childCount <= 0) return;
             
             Destroy(transform.GetChild(0).gameObject);
+            PlantEvents.PlantCollected = id.currentPlant.PlantBase;
+            PlantEvents.OnLabInventoryAction(1);
             StartCoroutine(ClearPlot());
-
         }
 
         private IEnumerator ClearPlot()

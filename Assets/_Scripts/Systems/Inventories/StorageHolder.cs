@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts.Systems.Inventories
@@ -46,6 +47,20 @@ namespace _Scripts.Systems.Inventories
         private void Awake()
         {
             DontDestroyOnLoad(this.gameObject);
+        }
+
+        public void UpdateExposedInventory()
+        {
+            exposedInventory.Clear();
+            for (int i = 0; i < Storage.Slots.Count; i++)
+            {
+                ExposedInventory aux = new ExposedInventory();
+                aux.key =  Storage.Slots.ElementAt(i).Key;
+                ItemObj item = new ItemObj(Storage.Slots.ElementAt(i).Value.item,
+                    Storage.Slots.ElementAt(i).Value.amount);
+                aux.item = item;
+                exposedInventory.Add(aux);
+            }
         }
     }
     

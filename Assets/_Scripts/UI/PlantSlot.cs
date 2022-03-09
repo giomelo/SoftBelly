@@ -20,7 +20,7 @@ namespace _Scripts.UI
             if (uiSlot.item == null) return;
             _subject.DisposeInventory();
             PlantEvents.CurrentPlant = (SeedBase)uiSlot.item;
-            _subject.storageHolder.Storage.RemoveItem( uiSlot.slotId,1);
+            _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             PlantEvents.OnPlantedSelected();
         }
 

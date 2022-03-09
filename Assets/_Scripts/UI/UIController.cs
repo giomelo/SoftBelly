@@ -1,9 +1,7 @@
-using System.Collections.Generic;
+
 using System.Linq;
-using _Scripts.Singleton;
+using _Scripts.Enums;
 using _Scripts.Systems.Inventories;
-using _Scripts.Systems.Item;
-using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -17,7 +15,7 @@ namespace _Scripts.UI
     {
         [SerializeField]
         private GameObject inventoryObject;
-        public StorageHolder storageHolder;
+        public StorageHolder StorageHolder { get; private set; }
 
         private bool _slotsCreated = false;
         private const float YOffset = 80f;
@@ -36,19 +34,32 @@ namespace _Scripts.UI
         private int inventoryId;
 
         private int _currentSlot = 0;
+        
+        [SerializeField]
+        private InventoryType inventoryType;
 
         private void Start()
         {
             if (_slotsCreated) return;
+            var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
+            foreach (StorageHolder s in storagesInScene)
+            {
+                if (s.Storage.InventoryType == inventoryType)
+                {
+                    StorageHolder = s;
+                }
+            }
         }
         private void OnEnable()
         {
             PlantEvents.OnPlotSelected += DisplayPlantInventory;
+            PlantEvents.LabInventoryAction += AddHarvestedPlant;
         }
 
         private void OnDisable()
         {
             PlantEvents.OnPlotSelected -= DisplayPlantInventory;
+            PlantEvents.LabInventoryAction -= AddHarvestedPlant;
         }
         /// <summary>
         /// Active the inventory
@@ -75,9 +86,9 @@ namespace _Scripts.UI
         {
             int index = 0;
             
-            for (int i = 0; i < storageHolder.Storage.Height; i++)
+            for (int i = 0; i < StorageHolder.Storage.Height; i++)
             {
-                for (int j = 0; j < storageHolder.Storage.Width; j++)
+                for (int j = 0; j < StorageHolder.Storage.Width; j++)
                 {
                     var position = startPosition.position;
                     var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
@@ -100,13 +111,13 @@ namespace _Scripts.UI
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
-            Debug.Log(storageHolder.Storage.Slots.Count);
-            if (index >= storageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
-            if (storageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
+            Debug.Log(StorageHolder.Storage.Slots.Count);
+            if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
+            if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
-                slotScript.uiSlot.amount.text = storageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
-                slotScript.uiSlot.item = storageHolder.Storage.Slots.ElementAt(index).Value.item;
-                slotScript.uiSlot.itemImage.sprite = storageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
+                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
+                slotScript.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
+                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
                 if (_slotsCreated) return;
                 
                 slotScript.uiSlot.slotId = _currentSlot;
@@ -168,6 +179,13 @@ namespace _Scripts.UI
             proprietiesDisplay.ScientificName.text = "";
             proprietiesDisplay.PlantName.text = "";
             proprietiesDisplay.ProprietiesText.text = "";
+        }
+
+        private void AddHarvestedPlant(int id)
+        {
+            if (inventoryId != id) return;
+            StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
+            StorageHolder.UpdateExposedInventory();
         }
     }
 }

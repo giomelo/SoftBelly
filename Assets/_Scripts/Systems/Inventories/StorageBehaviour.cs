@@ -21,6 +21,8 @@ namespace _Scripts.Systems.Inventories
       public int Width;
       [SerializeField] 
       public int Height;
+
+      public InventoryType InventoryType;
       protected StorageBehaviour(Dictionary<int, ItemObj> slots)
       {
          Slots = slots;
@@ -63,17 +65,28 @@ namespace _Scripts.Systems.Inventories
          // }
       }
 
-      public void RemoveItemByItem(ItemBehaviour item)
+      public void RemoveItem(ItemBehaviour item)
       {
-         int last = 0;
+         bool first = true;
+         var last = 0;
+         var index = 0;
          for(int i = 0; i < Slots.Count; i++)
          {
             if (Slots.ElementAt(i).Value.item != item) continue;
-            last = i;
-            if (Slots.ElementAt(i).Value.amount < Slots.ElementAt(last).Value.amount)
+            if (first)
             {
-               
+               last = Slots.ElementAt(i).Value.amount;
+               first = false;
             }
+            if (Slots.ElementAt(i).Value.amount < last)
+            {
+               last = Slots.ElementAt(i).Value.amount;
+               index = i;
+            }
+            var auxObj = Slots[index];
+            auxObj.amount -= 1;
+            Slots[index] = auxObj;
+            
          }
       }
 
