@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Enums;
+using _Scripts.Singleton;
 using _Scripts.Systems.Plants.Bases;
 using Systems.Plantation;
 using UnityEngine;
@@ -11,8 +13,6 @@ namespace _Scripts.Systems.Plantation
     {
         public int PlotId;
         private SeedBase currentPlant;
-        [SerializeField]
-        private float currentGrowthTime;
         public PlantState PlantState { get; private set; }  = PlantState.Seed;
         public void ChangePlant(Plot id)
         {
@@ -29,7 +29,7 @@ namespace _Scripts.Systems.Plantation
             if (id.PlotId != this.PlotId) return;
             
             currentPlant = PlantEvents.CurrentPlant;
-            currentGrowthTime = currentPlant.GrowTime;
+            PlantTimeController.Instance.PlantTimer.Add(PlotId, currentPlant.GrowTime);
             StartCoroutine(Grow());
             
            CreatePlant();
@@ -66,17 +66,18 @@ namespace _Scripts.Systems.Plantation
         private IEnumerator Grow()
         {
             yield return new WaitForSeconds(1f);
-            currentGrowthTime -= 1;
-            if (currentGrowthTime <= currentPlant.GrowTime / 2 && PlantState == PlantState.Seed)
+            PlantTimeController.Instance.PlantTimer[PlotId] -= 1;
+            if (PlantTimeController.Instance.PlantTimer[PlotId] <= currentPlant.GrowTime / 2 && PlantState == PlantState.Seed)
             {
                 SetState();
                 CreatePlant();
                 
             }
-            if (currentGrowthTime <= 0)
+            if (PlantTimeController.Instance.PlantTimer[PlotId] <= 0)
             {
                 SetState();
                 CreatePlant();
+                PlantTimeController.Instance.ClearSlot(PlotId);
             }
             else
             {

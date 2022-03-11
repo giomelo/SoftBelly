@@ -1,6 +1,7 @@
 
 using System.Linq;
 using _Scripts.Enums;
+using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -18,8 +19,8 @@ namespace _Scripts.UI
         public StorageHolder StorageHolder { get; private set; }
 
         private bool _slotsCreated = false;
-        private const float YOffset = 80f;
-        private const float XOffset = 50f;
+        private const float YOffset = 50f;
+        private const float XOffset = 30f;
 
         [SerializeField]
         private Transform startPosition;
