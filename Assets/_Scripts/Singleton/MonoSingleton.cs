@@ -22,6 +22,11 @@ namespace _Scripts.Singleton
         }
 
         private void Awake() {
+            if(_instance != null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             _instance = (T)this;
             Init();
         }

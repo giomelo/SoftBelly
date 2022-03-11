@@ -13,6 +13,17 @@ namespace _Scripts.Systems.Inventories
     [CreateAssetMenu(fileName = "LabInventory", menuName = "Inventories/LabInventory")]
     public class LabInventory : StorageBehaviour
     {
+        private static LabInventory Instance;
+
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Destroy(this);
+                return;
+            }
+            Instance = this;
+        }
         public LabInventory()
         {
             Slots = new Dictionary<int, ItemObj>(Width * Height);

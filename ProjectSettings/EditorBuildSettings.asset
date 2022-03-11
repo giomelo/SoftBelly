@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SC_PlayerMovimentTest.unity
     guid: 1b1b4350fe38c5e4e8ee2f4a662ebd65
+  - enabled: 1
+    path: Assets/Scenes/SC_Lab.unity
+    guid: ba38dea1fc6d59c479823e99e635e879
   m_configObjects: {}

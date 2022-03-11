@@ -13,7 +13,7 @@ namespace _Scripts.Systems.Inventories
     public class StorageHolder : MonoBehaviour
     {
         public StorageBehaviour Storage;
-        
+
         //This is for exposing the dictionary in the inspector(unity dont have serialized dictionaries)
         [SerializeField] 
         private List<ExposedInventory> exposedInventory = new();
@@ -23,12 +23,6 @@ namespace _Scripts.Systems.Inventories
             // StorageBehaviour storage = new PlantationInventory(slots);
             // PlantBase plant1 = ScriptableObject.CreateInstance<PlantBase>();
             // plant1.Init("oi");
-            // PlantBase plant2 = ScriptableObject.CreateInstance<PlantBase>();
-            // plant2.Init("oi2");
-            // Storage.AddItem(plant1, 10);
-            // Storage.AddItem(plant2, 11);
-            // Storage.RemoveItem(plant1, 9);
-            // Storage.AddItem(plant2, 5);
             InitInventory();
             Storage.Display();
         }
@@ -44,10 +38,7 @@ namespace _Scripts.Systems.Inventories
             }
         }
 
-        private void Awake()
-        {
-            DontDestroyOnLoad(this.gameObject);
-        }
+
 
         public void UpdateExposedInventory()
         {

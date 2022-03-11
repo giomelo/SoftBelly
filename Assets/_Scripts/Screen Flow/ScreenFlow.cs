@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using _Scripts.Singleton;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class ScreenFlow : MonoBehaviour
+public class ScreenFlow : MonoSingleton<ScreenFlow>
 {
     public GameObject LoadingScreen;
     public Slider Slider;
@@ -14,15 +15,14 @@ public class ScreenFlow : MonoBehaviour
 
     #region Camera
 
-        public Transform Camera;
-        public Transform OptionsTarget;
+    //public Transform Camera;
+    //public Transform OptionsTarget;
 
     #endregion
-   
 
     private void Start()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public void LoadScene(string sceneIndex)

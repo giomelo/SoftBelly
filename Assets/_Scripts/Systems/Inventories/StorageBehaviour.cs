@@ -3,6 +3,7 @@ using System.Linq;
 using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Systems.Inventories

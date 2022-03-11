@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using _Scripts.Singleton;
+using _Scripts.Systems.Plantation;
 using UnityEngine;
 
 namespace Systems.Plantation
@@ -26,8 +28,11 @@ namespace Systems.Plantation
 
         public static int PlotsId = 0;
 
+        public List<Plot> Plots = new List<Plot>();
+
         public void CreatGrid()
         {
+            Plots.Clear();
             DeleteGrid();
             for (int i = 0; i < Width; i++)
             {
@@ -37,6 +42,7 @@ namespace Systems.Plantation
                     var pos = new Vector3(position.x + OffsetX * j, position.y, position.z+ OffsetZ * i);
                     var plotInstance = Instantiate(plot, pos, Quaternion.identity);
                     plotInstance.transform.parent = this.transform;
+                    Plots.Add(plotInstance.transform.GetChild(0).GetComponent<Plot>());
                 }
             }
         }
@@ -50,6 +56,17 @@ namespace Systems.Plantation
                 Debug.Log(i);
                 DestroyImmediate(transform.GetChild(0).gameObject);
             }
+        }
+
+        private void Start()
+        {
+            PlotsId = 0;
+            foreach (var plot in Plots)
+            {
+                plot.PlotId = PlotsId;
+                PlotsId++;
+            }
+            PlantTimeController.Instance.CreatPlants();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace _Scripts.UI
         public StorageHolder StorageHolder { get; private set; }
 
         private bool _slotsCreated = false;
-        private const float YOffset = 50f;
-        private const float XOffset = 30f;
+        private const float YOffset = 80f;
+        private const float XOffset = 50f;
 
         [SerializeField]
         private Transform startPosition;

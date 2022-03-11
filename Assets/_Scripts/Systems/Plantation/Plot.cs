@@ -24,12 +24,16 @@ namespace _Scripts.Systems.Plantation
         /// Create plant in the plot
         /// </summary>
         /// <param name="id"></param>
-        private void Display(Plot id)
+        public void Display(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
             
             currentPlant = PlantEvents.CurrentPlant;
-            PlantTimeController.Instance.PlantTimer.Add(PlotId, currentPlant.GrowTime);
+            if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
+            {
+                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(currentPlant, currentPlant.GrowTime));
+            }
+         
             StartCoroutine(Grow());
             
            CreatePlant();
@@ -42,13 +46,20 @@ namespace _Scripts.Systems.Plantation
             {
                 Destroy(transform.GetChild(0).gameObject);
             }
+
+            if(PlantTimeController.Instance.PlantTimer[PlotId].Time <= currentPlant.GrowTime / 2 &&
+                PlantState == PlantState.Seed)
+            {
+                SetState();
+            }
+
+            CheckState();
             var newDisplay = Instantiate(currentPlant.PlantDisplayObjs[(int)PlantState],
                 this.transform.position, Quaternion.identity);
             newDisplay.transform.parent = this.transform;
         }
         private void OnEnable()
         {
-            PlotId = GridSystem.PlotsId++;
             PlantEvents.OnPlanted += Display;
             PlantEvents.OnHarvest += Harvest;
         }
@@ -66,14 +77,17 @@ namespace _Scripts.Systems.Plantation
         private IEnumerator Grow()
         {
             yield return new WaitForSeconds(1f);
-            PlantTimeController.Instance.PlantTimer[PlotId] -= 1;
-            if (PlantTimeController.Instance.PlantTimer[PlotId] <= currentPlant.GrowTime / 2 && PlantState == PlantState.Seed)
+            var aux = PlantTimeController.Instance.PlantTimer[PlotId].Time;
+            aux -= 1;
+            var p = new PlantPlot(currentPlant, aux);
+            PlantTimeController.Instance.PlantTimer[PlotId] = p;
+            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= currentPlant.GrowTime / 2 && PlantState == PlantState.Seed)
             {
                 SetState();
                 CreatePlant();
                 
             }
-            if (PlantTimeController.Instance.PlantTimer[PlotId] <= 0)
+            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)
             {
                 SetState();
                 CreatePlant();
@@ -84,6 +98,19 @@ namespace _Scripts.Systems.Plantation
                 StartCoroutine(Grow());
             }
 
+        }
+
+        private void CheckState()
+        {
+            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= currentPlant.GrowTime / 2 &&
+                PlantState == PlantState.Seed)
+            {
+                SetState();
+            }
+
+            if (!(PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)) return;
+            SetState();
+            PlantTimeController.Instance.ClearSlot(PlotId);
         }
         
         public void SetState()

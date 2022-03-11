@@ -14,7 +14,6 @@ namespace _Scripts.UI
         public Image itemImage;
         public Text amount;
         public ItemBehaviour item;
-        public GameObject obj;
         public int slotId;
     }
     
