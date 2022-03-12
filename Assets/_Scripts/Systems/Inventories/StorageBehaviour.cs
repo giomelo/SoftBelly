@@ -65,12 +65,44 @@ namespace _Scripts.Systems.Inventories
          //    Slots.Remove(key);
          // }
       }
-
+      
+      /// <summary>
+      /// Find the slot with the minor amount and remove from it
+      /// </summary>
+      /// <param name="item"></param>
       public void RemoveItem(ItemBehaviour item)
       {
          bool first = true;
          var last = 0;
          var index = 0;
+         // IOrderedEnumerable<KeyValuePair<int, ItemObj>> items = Slots.Where(slot => slot.Value.item == item)
+         //    .OrderBy(slot => slot.Value.amount);
+         // foreach (KeyValuePair<int, ItemObj> i in items)
+         // {
+         //    Debug.Log(items.);
+         // }
+         //
+         // var auxObj = Slots[index];
+         // auxObj.amount -= 1;
+         // Slots[index] = auxObj;
+         // for (int i = 0; i < items.Count(); i++)
+         // {
+         //    Debug.Log(i);
+         //    if (first)
+         //    {
+         //       last = Slots.ElementAt(i).Value.amount;
+         //       first = false;
+         //    }
+         //    if (Slots.ElementAt(i).Value.amount < last)
+         //    {
+         //       last = Slots.ElementAt(i).Value.amount;
+         //       index = i;
+         //    }
+         //    
+         //    var auxObj = Slots[index];
+         //    auxObj.amount -= 1;
+         //    Slots[index] = auxObj;
+         // }
          for(int i = 0; i < Slots.Count; i++)
          {
             if (Slots.ElementAt(i).Value.item != item) continue;
@@ -79,16 +111,16 @@ namespace _Scripts.Systems.Inventories
                last = Slots.ElementAt(i).Value.amount;
                first = false;
             }
-            if (Slots.ElementAt(i).Value.amount < last)
-            {
-               last = Slots.ElementAt(i).Value.amount;
-               index = i;
-            }
-            var auxObj = Slots[index];
-            auxObj.amount -= 1;
-            Slots[index] = auxObj;
-            
+
+            if (Slots.ElementAt(i).Value.amount >= last) continue;
+            last = Slots.ElementAt(i).Value.amount;
+            index = i;
          }
+
+         Debug.Log(index);
+         var auxObj = Slots.ElementAt(index).Value;
+         auxObj.amount -= 1;
+         Slots[index] = auxObj;
       }
 
       public void Display()

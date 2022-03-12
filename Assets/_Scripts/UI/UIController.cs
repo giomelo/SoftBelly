@@ -19,22 +19,27 @@ namespace _Scripts.UI
         public StorageHolder StorageHolder { get; private set; }
 
         private bool _slotsCreated = false;
+        [Header("Slots offsets")]
         private const float YOffset = 80f;
         private const float XOffset = 50f;
-
+        [Header("Slots start position")]
         [SerializeField]
         private Transform startPosition;
         [SerializeField]
         private GameObject slotPrefab;
+        
+        [Header("Place where the slots are gonna be created")]
         [SerializeField]
         private Transform slotDisplay;
+        [Header("Proprieties")]
         [SerializeField]
         private PlantProprieties proprietiesDisplay;
         
+        [Tooltip("Each inventory in the scene has to have one unique inventoryId")]
         [SerializeField]
         private int inventoryId;
 
-        private int _currentSlot = 0;
+        private int _currentSlot;
         
         [SerializeField]
         private InventoryType inventoryType;
@@ -67,8 +72,6 @@ namespace _Scripts.UI
         /// </summary>
         private void DisplayPlantInventory(int id)
         {
-            Debug.Log(id);
-            Debug.Log(inventoryId);
             if (inventoryId != id) return;
             inventoryObject.SetActive(true);
             if (_slotsCreated)
@@ -112,7 +115,6 @@ namespace _Scripts.UI
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
-            Debug.Log(StorageHolder.Storage.Slots.Count);
             if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
             if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
@@ -123,7 +125,6 @@ namespace _Scripts.UI
                 
                 slotScript.uiSlot.slotId = _currentSlot;
                 _currentSlot++;
-                Debug.Log("currentSlot" + _currentSlot);
             }
             else
             {

@@ -52,8 +52,6 @@ namespace Systems.Plantation
             int len = transform.childCount;
             for (int i = 0; i < len; i++)
             {
-                Debug.Log(transform.childCount);
-                Debug.Log(i);
                 DestroyImmediate(transform.GetChild(0).gameObject);
             }
         }

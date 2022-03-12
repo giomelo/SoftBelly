@@ -34,19 +34,51 @@ namespace _Scripts.Singleton
 
         public void CreatPlants()
         {
-            Debug.Log("oi");
             if (PlantTimer.Count == 0)  return;
-
             for (int i = 0; i < PlantTimer.Count; i++)
             {
-                Debug.Log(PlantTimer.ElementAt(i));
                 foreach (var plot in GridSystem.Instance.Plots.Where(t => PlantTimer.ElementAt(i).Key == t.PlotId))
                 {
-                    Debug.Log(plot.PlotId);
                     PlantEvents.CurrentPlant = (SeedBase) PlantTimer.ElementAt(i).Value.Plant;
                     plot.Display(plot);
                 }
             }
+        }
+        
+        /// <summary>
+        /// Grow plant in plot
+        /// </summary>
+        /// <param name="plot"></param>
+        /// <returns></returns>
+        public IEnumerator Grow(Plot plot)
+        {
+            yield return new WaitForSeconds(1f);
+            var aux = PlantTimer[plot.PlotId].Time;
+            aux -= 1;
+            var p = new PlantPlot(plot.CurrentPlant, aux);
+            PlantTimer[plot.PlotId] = p;
+          
+            if (PlantTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime / 2 && plot.PlantState == PlantState.Seed)
+            {
+                if (!plot.IsDestroyed)
+                {
+                    plot.SetState();
+                    plot.CreatePlant();
+                }
+            }
+            if (PlantTimer[plot.PlotId].Time <= 0)
+            {
+                if (!plot.IsDestroyed)
+                {
+                    plot.SetState();
+                    plot.CreatePlant();
+                }
+            }
+            else
+            {
+                StartCoroutine(Grow(plot));
+            }
+
         }
     }
 }

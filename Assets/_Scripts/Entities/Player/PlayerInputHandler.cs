@@ -1,3 +1,4 @@
+using _Scripts.Singleton;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -69,6 +70,7 @@ namespace _Scripts.Entities.Player
             {
                 //Check if the plant is ready to harvest
                 if(!plotScript.CheckIfReady()) return;
+                PlantTimeController.Instance.ClearSlot(plotScript.PlotId);
                 PlantEvents.OnHarvestCall(plotScript);
 
             }
