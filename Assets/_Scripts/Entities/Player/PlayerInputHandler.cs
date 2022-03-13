@@ -78,11 +78,18 @@ namespace _Scripts.Entities.Player
             }
             else
             {
-                LabEvents.OnChestSelected(1);
+                switch (hit.transform.tag)
+                {
+                    case "Chest":
+                        LabEvents.OnChestSelectedCall(1);
+                        break;
+                    case "Machine":
+                        break;
+                }
+                
             }
             
         }
-
         private bool CheckDistanceFromPlayer(Transform plot)
         {
             return Vector3.Distance(plot.position ,transform.position) <= _radius;

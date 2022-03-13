@@ -1,14 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using _Scripts.Editor.FlagsAtributeEditor;
+using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
 
-
-/// <summary>
-/// Base class for creating plants as scriptables objects
-/// </summary>
-[CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
-public class PlantBase : ItemBehaviour
+namespace _Scripts.Systems.Plants.Bases
 {
-  
+    /// <summary>
+    /// Base class for creating plants as scriptables objects
+    /// </summary>
+    [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
+    public class PlantBase : ItemBehaviour
+    {
+        [EnumFlagsAtribute]
+        [Header("Plant Stuff")] 
+        public MedicalSymptoms MedicalSymptoms;
+    }
 }
