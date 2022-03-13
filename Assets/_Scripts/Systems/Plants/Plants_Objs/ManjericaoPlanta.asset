@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: ManjericaoPlanta
   m_EditorClassIdentifier: 
-  ItemId: 
-  ItemType: 0
-  ImageDisplay: {fileID: 0}
+  ItemId: "Manjeric\xE3o"
+  ItemType: 2
+  ImageDisplay: {fileID: 21300000, guid: 14d9cbcc7db785d43924d921d6de4aeb, type: 3}
+  Proprieties: 
