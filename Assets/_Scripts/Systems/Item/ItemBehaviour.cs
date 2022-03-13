@@ -16,6 +16,8 @@ namespace _Scripts.Systems.Item
         public ItemType ItemType;
 
         public Sprite ImageDisplay;
+        [TextArea]
+        public string Proprieties;
 
         // public ItemBehaviour(string id, ItemType itemType)
         // {

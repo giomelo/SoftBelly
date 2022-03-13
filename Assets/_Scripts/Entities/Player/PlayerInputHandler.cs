@@ -1,4 +1,5 @@
 using _Scripts.Singleton;
+using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -44,7 +45,6 @@ namespace _Scripts.Entities.Player
             float vertical = Input.GetAxis("Vertical");
 
             if (horizontal == 0 && vertical == 0) return;
-
             playerMovement.ProcessInput(horizontal, vertical);
         }
     
@@ -57,23 +57,30 @@ namespace _Scripts.Entities.Player
             Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         
-            if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit, CollisionLayer)) return;
+            if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform)) return;
-            if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
-            if (plotScript.CheckAvailable())
+            if (hit.transform.TryGetComponent<Plot>(out var plotScript))
             {
-                //Inventory id
-                PlantEvents.OnPlotSelected(0);
-                PlantEvents.CurrentPlot = plotScript;
+                if (plotScript.CheckAvailable())
+                {
+                    //Inventory id
+                    PlantEvents.OnPlotSelected(0);
+                    PlantEvents.CurrentPlot = plotScript;
+                }
+                else
+                {
+                    //Check if the plant is ready to harvest
+                    if(!plotScript.CheckIfReady()) return;
+                    PlantTimeController.Instance.ClearSlot(plotScript.PlotId);
+                    PlantEvents.OnHarvestCall(plotScript);
+
+                }
             }
             else
             {
-                //Check if the plant is ready to harvest
-                if(!plotScript.CheckIfReady()) return;
-                PlantTimeController.Instance.ClearSlot(plotScript.PlotId);
-                PlantEvents.OnHarvestCall(plotScript);
-
+                LabEvents.OnChestSelected(1);
             }
+            
         }
 
         private bool CheckDistanceFromPlayer(Transform plot)

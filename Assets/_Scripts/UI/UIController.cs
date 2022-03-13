@@ -3,6 +3,8 @@ using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Item;
+using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -20,8 +22,10 @@ namespace _Scripts.UI
 
         private bool _slotsCreated = false;
         [Header("Slots offsets")]
-        private const float YOffset = 80f;
-        private const float XOffset = 50f;
+        [SerializeField]
+        private float YOffset = 50f;
+        [SerializeField]
+        private float XOffset = 30f;
         [Header("Slots start position")]
         [SerializeField]
         private Transform startPosition;
@@ -48,6 +52,7 @@ namespace _Scripts.UI
         {
             if (_slotsCreated) return;
             var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
             foreach (StorageHolder s in storagesInScene)
             {
                 if (s.Storage.InventoryType == inventoryType)
@@ -58,19 +63,21 @@ namespace _Scripts.UI
         }
         private void OnEnable()
         {
-            PlantEvents.OnPlotSelected += DisplayPlantInventory;
+            PlantEvents.OnPlotSelected += DisplayInventory;
             PlantEvents.LabInventoryAction += AddHarvestedPlant;
+            LabEvents.OnChestSelected += DisplayInventory;
         }
 
         private void OnDisable()
         {
-            PlantEvents.OnPlotSelected -= DisplayPlantInventory;
+            PlantEvents.OnPlotSelected -= DisplayInventory;
             PlantEvents.LabInventoryAction -= AddHarvestedPlant;
+            LabEvents.OnChestSelected -= DisplayInventory;
         }
         /// <summary>
         /// Active the inventory
         /// </summary>
-        private void DisplayPlantInventory(int id)
+        private void DisplayInventory(int id)
         {
             if (inventoryId != id) return;
             inventoryObject.SetActive(true);
@@ -169,11 +176,11 @@ namespace _Scripts.UI
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(SeedBase item)
+        public void DisplayCurrentProprieties(ItemBehaviour item)
         {
-            proprietiesDisplay.ScientificName.text = item.ScientificName;
+            //proprietiesDisplay.ScientificName.text = item.ScientificName;
             proprietiesDisplay.PlantName.text = item.ItemId;
-            proprietiesDisplay.ProprietiesText.text = item.PlantProprieties;
+            proprietiesDisplay.ProprietiesText.text = item.Proprieties;
         }
 
         public void ResetCurrentProprieties()

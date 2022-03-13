@@ -13,7 +13,7 @@ namespace _Scripts.Entities.Player
         private float _playerSpeed = 10f;
         private Vector3 _playerVelocity;
 
-        private const float gravityValue = -9.8f;
+        private const float gravityValue = -12;
 
         // Start is called before the first frame update
         private void Start()
@@ -32,7 +32,6 @@ namespace _Scripts.Entities.Player
             move.y += gravityValue * Time.deltaTime;
             _chController.Move(move * Time.deltaTime * _playerSpeed);
             //gameObject.transform.forward = move;
-        
         }
     }
 }
