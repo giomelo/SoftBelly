@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SC_Lab.unity
     guid: ba38dea1fc6d59c479823e99e635e879
+  - enabled: 1
+    path: Assets/Scenes/StoreTest.unity
+    guid: a0bb22bebd8e9c14398bec58ffa9fe6e
   m_configObjects: {}

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Store;
+using _Scripts.Systems.Item;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +9,8 @@ public class Store : MonoBehaviour
 {
     public static Store store;
     public int Price = 0;
-    public string Item = " ";
+    [SerializeField]
+    private ItemBehaviour _item;
     public Text textoBtn;
     
     public void Start()
@@ -18,8 +21,7 @@ public class Store : MonoBehaviour
 
     void NameBtn()
     {
-        textoBtn.text = Item + " - Price: " + Price;
-        
+        textoBtn.text = _item.ItemId + " - Price: " + Price;
     }
 
     public void ClickBuy()
@@ -28,12 +30,13 @@ public class Store : MonoBehaviour
         {
             UniversalVariables.Money -= Price; 
             ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Money;
-            ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive((false));
+            ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
+            StoreController.Instance.AddItem(_item);
         }
         else
         {
             ControllerMoneyTXT.controllerMoneyTxt.TxtAvisoSemMoney.text = "Insufficient money!";
-            ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive((true));
+            ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(true);
             StartCoroutine(EsperarAviso());
         }
     }

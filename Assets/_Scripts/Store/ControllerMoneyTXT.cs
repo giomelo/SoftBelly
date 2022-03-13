@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerMoneyTXT : MonoBehaviour
+namespace _Scripts.Store
 {
-    // Controlar o texto da grana na tela.
-    public static ControllerMoneyTXT controllerMoneyTxt;
-    public Text TxtMoney;
-    public Text TxtAvisoSemMoney;
-    public GameObject PainelAviso;
-
-    public void Start()
+    public class ControllerMoneyTXT : MonoBehaviour
     {
-        controllerMoneyTxt = this;
-        TxtMoney.text = "Money: " + UniversalVariables.Money;
+        // Controlar o texto da grana na tela.
+        public static ControllerMoneyTXT controllerMoneyTxt;
+        public Text TxtMoney;
+        public Text TxtAvisoSemMoney;
+        public GameObject PainelAviso;
+
+        public void Start()
+        {
+            controllerMoneyTxt = this;
+            TxtMoney.text = "Money: " + UniversalVariables.Money;
+        }
     }
 }

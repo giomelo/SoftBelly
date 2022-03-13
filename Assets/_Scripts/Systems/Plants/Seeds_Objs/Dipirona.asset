@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
-  m_Name: Plant
+  m_Name: Dipirona
   m_EditorClassIdentifier: 
-  ItemId: Planta
+  ItemId: Dipirona
   ItemType: 1
   ImageDisplay: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Proprieties: 
+  Price: 0
   PlantDisplayObjs:
-  - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
-  - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
-  - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
+  - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
+  - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
+  - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}
   ScientificName: wadwad wad wa
   PlantProprieties: foi o bolsonaro
-  GrowTime: 0
+  GrowTime: 10
+  PlantBase: {fileID: 11400000, guid: 12277013e969ede49942103b2a747dc8, type: 2}

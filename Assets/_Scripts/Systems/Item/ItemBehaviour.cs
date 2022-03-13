@@ -18,6 +18,8 @@ namespace _Scripts.Systems.Item
         public Sprite ImageDisplay;
         [TextArea]
         public string Proprieties;
+        
+        public float Price;
 
         // public ItemBehaviour(string id, ItemType itemType)
         // {
@@ -25,11 +27,12 @@ namespace _Scripts.Systems.Item
         //     ItemType = itemType;
         // }
 
-        public void Init(string id, ItemType itemType, Sprite sprite)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
+            Price = price;
         }
     }
 }

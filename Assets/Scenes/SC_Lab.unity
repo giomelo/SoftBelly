@@ -2877,7 +2877,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 537322528}
         m_TargetAssemblyTypeName: _Scripts.UI.UIController, Assembly-CSharp
         m_MethodName: DisposeInventory
         m_Mode: 1
@@ -5328,10 +5328,10 @@ Transform:
   - {fileID: 543450652899397499}
   - {fileID: 1700073596}
   - {fileID: 27542837}
+  - {fileID: 1412567691}
   - {fileID: 115792194}
   - {fileID: 1794998256}
   - {fileID: 951459446}
-  - {fileID: 1412567691}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

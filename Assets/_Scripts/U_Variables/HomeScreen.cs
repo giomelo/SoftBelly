@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeScreen : MonoBehaviour
+namespace _Scripts.U_Variables
 {
-    public static HomeScreen homeScreen;
-    // Codigo apenas para startar variaveis(COLOCAR APENAS NO START)
-    public void Start()
+    public class HomeScreen : MonoBehaviour
     {
-        homeScreen = this;
-        UniversalVariables.Money = 100;
-    }
+        public static HomeScreen homeScreen;
+        // Codigo apenas para startar variaveis(COLOCAR APENAS NO START)
+        public void Start()
+        {
+            homeScreen = this;
+            UniversalVariables.Money = 100;
+        }
 
+    }
 }
