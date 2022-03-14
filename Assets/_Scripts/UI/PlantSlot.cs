@@ -29,6 +29,21 @@ namespace _Scripts.UI
             if (!TryGetComponent<Button>(out var button)) return;
             button.onClick.AddListener(OnSlotClicked);
         }
+        
+        public void MouseEnter()
+        {
+            if (uiSlot.item == null)
+            {
+                _subject.ResetCurrentProprieties();
+                return;
+            }
+            _subject.DisplayCurrentProprieties(uiSlot.item);
+        }
+        
+        public void MouseExit()
+        {
+            _subject.ResetCurrentProprieties();
+        }
 
     }
 }

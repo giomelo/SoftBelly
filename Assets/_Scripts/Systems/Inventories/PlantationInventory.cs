@@ -27,7 +27,7 @@ namespace _Scripts.Systems.Inventories
         }
         public PlantationInventory()
         {
-            Slots = new Dictionary<int, ItemObj>(Width * Height);
+            Slots = new Dictionary<int, ItemObj>(Size);
         }
         
     }

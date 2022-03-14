@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: cedeb6621f6be324890d7b784025aa05, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1673,6 +1673,8 @@ MonoBehaviour:
     ProprietiesText: {fileID: 1907400121}
   inventoryId: 1
   inventoryType: 1
+  Width: 5
+  Height: 4
 --- !u!4 &695123643
 Transform:
   m_ObjectHideFlags: 0
@@ -2336,7 +2338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881535105}
-  m_LocalRotation: {x: 0.23452018, y: -0.0010883434, z: 0.00026256117, w: 0.9721106}
+  m_LocalRotation: {x: 0.23452018, y: -0.0010883436, z: 0.00026256123, w: 0.9721106}
   m_LocalPosition: {x: -3.844083, y: 12.42, z: -23.083017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3243,7 +3245,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362416649}
-  m_LocalRotation: {x: 0.23452018, y: -0.0010883434, z: 0.00026256117, w: 0.9721106}
+  m_LocalRotation: {x: 0.23452018, y: -0.0010883436, z: 0.00026256123, w: 0.9721106}
   m_LocalPosition: {x: -3.844083, y: 12.42, z: -23.083017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4262,6 +4264,8 @@ MonoBehaviour:
     ProprietiesText: {fileID: 875253812}
   inventoryId: 0
   inventoryType: 0
+  Width: 6
+  Height: 3
 --- !u!1001 &1977345986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4469,7 +4473,6 @@ MonoBehaviour:
     item:
       item: {fileID: 11400000, guid: 95705774772e77548aa8295edd0019ab, type: 2}
       amount: 2
-  item: {fileID: 11400000, guid: dad2fd774ab409e4e86a0a06becf1fc4, type: 2}
 --- !u!1 &1989403056
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4733,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Storage: {fileID: 11400000, guid: 8c464e778da23214e9b649e06af2c5b2, type: 2}
   exposedInventory: []
-  item: {fileID: 0}
 --- !u!1 &2137721800
 GameObject:
   m_ObjectHideFlags: 0

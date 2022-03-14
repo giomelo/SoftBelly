@@ -19,9 +19,10 @@ namespace _Scripts.Systems.Inventories
       public ItemType itensType;
 
       [SerializeField] 
-      public int Width;
-      [SerializeField] 
-      public int Height;
+      public int Size;
+
+      [Header("This id is for putting items in the inventory")]
+      public int storageId;
 
       public InventoryType InventoryType;
       protected StorageBehaviour(Dictionary<int, ItemObj> slots)

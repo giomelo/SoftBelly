@@ -41,12 +41,15 @@ namespace _Scripts.UI
         
         [Tooltip("Each inventory in the scene has to have one unique inventoryId")]
         [SerializeField]
-        private int inventoryId;
+        public int inventoryId;
 
         private int _currentSlot;
         
         [SerializeField]
         private InventoryType inventoryType;
+
+        public int Width;
+        public int Height;
 
         private void Start()
         {
@@ -77,7 +80,7 @@ namespace _Scripts.UI
         /// <summary>
         /// Active the inventory
         /// </summary>
-        private void DisplayInventory(int id)
+        public void DisplayInventory(int id)
         {
             if (inventoryId != id) return;
             inventoryObject.SetActive(true);
@@ -88,7 +91,6 @@ namespace _Scripts.UI
             }
 
             CreateSlots();
-            
         }
         /// <summary>
         /// Instantiate and update slots of the inventory first time
@@ -97,9 +99,9 @@ namespace _Scripts.UI
         {
             int index = 0;
             
-            for (int i = 0; i < StorageHolder.Storage.Height; i++)
+            for (int i = 0; i < Height; i++)
             {
-                for (int j = 0; j < StorageHolder.Storage.Width; j++)
+                for (int j = 0; j < Width; j++)
                 {
                     var position = startPosition.position;
                     var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
@@ -170,6 +172,7 @@ namespace _Scripts.UI
         public void DisposeInventory()
         {
             inventoryObject.SetActive(false);
+            LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);
         }
         
         /// <summary>
@@ -192,7 +195,7 @@ namespace _Scripts.UI
 
         private void AddHarvestedPlant(int id)
         {
-            if (inventoryId != id) return;
+            if (StorageHolder.Storage.storageId != id) return;
             StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
             StorageHolder.UpdateExposedInventory();
         }

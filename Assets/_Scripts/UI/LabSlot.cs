@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +14,10 @@ namespace _Scripts.UI
     {
         private void OnSlotClicked()
         {
-            // if (uiSlot.item == null) return;
-            // _subject.DisposeInventory();
-            // PlantEvents.CurrentPlant = (SeedBase)uiSlot.item;
-            // _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
-            // PlantEvents.OnPlantedSelected();
+            if (LabEvents.SlotSelected == null) return;
+            LabEvents.IngredientSelected = uiSlot.item;
+            _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
+            //PlantEvents.OnPlantedSelected();
         }
 
         private void Start()

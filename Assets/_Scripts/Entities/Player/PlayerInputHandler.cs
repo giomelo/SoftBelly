@@ -1,5 +1,6 @@
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab;
+using _Scripts.Systems.Lab.Machines;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -84,15 +85,18 @@ namespace _Scripts.Entities.Player
                         LabEvents.OnChestSelectedCall(1);
                         break;
                     case "Machine":
+                        Debug.Log("Machine");
+                        if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
+                        LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
                         break;
                 }
                 
             }
             
         }
-        private bool CheckDistanceFromPlayer(Transform plot)
+        private bool CheckDistanceFromPlayer(Transform obj)
         {
-            return Vector3.Distance(plot.position ,transform.position) <= _radius;
+            return Vector3.Distance(obj.position ,transform.position) <= _radius;
         }
     }
 }

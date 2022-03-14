@@ -18,8 +18,6 @@ namespace _Scripts.Systems.Inventories
         //This is for exposing the dictionary in the inspector(unity dont have serialized dictionaries)
         [SerializeField] 
         private List<ExposedInventory> exposedInventory = new();
-        [SerializeField]
-        private ItemBehaviour item;
         private void Start()
         {
             // Dictionary<string, int> slots = new Dictionary<string, int>(PlantationInventory.Size);
@@ -28,12 +26,6 @@ namespace _Scripts.Systems.Inventories
             // plant1.Init("oi");
             InitInventory();
             //Storage.Display();
-            if (item != null)
-            {
-                Storage.RemoveItem(item);
-            }
-           
-            
         }
         
         /// <summary>
