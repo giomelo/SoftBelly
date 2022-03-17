@@ -14,10 +14,10 @@ namespace _Scripts.UI
     {
         private void OnSlotClicked()
         {
-            if (LabEvents.SlotSelected == null) return;
+            if (!LabEvents.IsMachineSlotSelected) return;
             LabEvents.IngredientSelected = uiSlot.item;
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
-            //PlantEvents.OnPlantedSelected();
+            LabEvents.OnIngredientSelectedCall();
         }
 
         private void Start()

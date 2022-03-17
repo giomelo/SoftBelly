@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using System;
 using System.Collections;
@@ -68,11 +67,9 @@ namespace _Scripts.Singleton
             }
             if (PlantTimer[plot.PlotId].Time <= 0)
             {
-                if (!plot.IsDestroyed)
-                {
-                    plot.SetState();
-                    plot.CreatePlant();
-                }
+                if (plot.IsDestroyed) yield break;
+                plot.SetState();
+                plot.CreatePlant();
             }
             else
             {

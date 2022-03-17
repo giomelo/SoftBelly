@@ -290,7 +290,7 @@ MonoBehaviour:
     itemImage: {fileID: 1453354400442846924}
     amount: {fileID: 6640219884870990213}
     item: {fileID: 0}
-    obj: {fileID: 9206015739198898211}
+    slotId: 0
 --- !u!114 &6324052544417645792
 MonoBehaviour:
   m_ObjectHideFlags: 0

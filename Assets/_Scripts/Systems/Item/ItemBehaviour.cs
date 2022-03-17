@@ -1,4 +1,3 @@
-using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +11,6 @@ namespace _Scripts.Systems.Item
     {
         [Header("Item Stuff")]
         public string ItemId;
-        [EnumFlagsAtribute]
         public ItemType ItemType;
 
         public Sprite ImageDisplay;

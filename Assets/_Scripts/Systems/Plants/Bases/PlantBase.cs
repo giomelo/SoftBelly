@@ -1,4 +1,3 @@
-using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
@@ -11,7 +10,6 @@ namespace _Scripts.Systems.Plants.Bases
     [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
     public class PlantBase : ItemBehaviour
     {
-        [EnumFlagsAtribute]
         [Header("Plant Stuff")] 
         public MedicalSymptoms MedicalSymptoms;
     }

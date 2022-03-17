@@ -600,15 +600,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.894083
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.75301814
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1662,8 +1662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1979233263}
-  YOffset: 50
-  XOffset: 30
+  YOffset: 70
+  XOffset: 50
   startPosition: {fileID: 519211133}
   slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
   slotDisplay: {fileID: 677312869}
@@ -2053,7 +2053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0.05, y: 11.44, z: -22.33}
+  m_FollowOffset: {x: 0.030000005, y: 6.84, z: -14.380001}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2338,8 +2338,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881535105}
-  m_LocalRotation: {x: 0.23452018, y: -0.0010883436, z: 0.00026256123, w: 0.9721106}
-  m_LocalPosition: {x: -3.844083, y: 12.42, z: -23.083017}
+  m_LocalRotation: {x: 0.2201742, y: -0.0010175246, z: 0.00022966873, w: 0.97546005}
+  m_LocalPosition: {x: -0.17, y: 8.25, z: -18.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3229,7 +3229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7756411, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3245,8 +3245,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362416649}
-  m_LocalRotation: {x: 0.23452018, y: -0.0010883436, z: 0.00026256123, w: 0.9721106}
-  m_LocalPosition: {x: -3.844083, y: 12.42, z: -23.083017}
+  m_LocalRotation: {x: 0.2201742, y: -0.0010175246, z: 0.00022966873, w: 0.97546005}
+  m_LocalPosition: {x: -0.17, y: 8.25, z: -18.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4253,8 +4253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 48374986}
-  YOffset: 70
-  XOffset: 50
+  YOffset: 180
+  XOffset: 110
   startPosition: {fileID: 2075742765}
   slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
   slotDisplay: {fileID: 1898713139}

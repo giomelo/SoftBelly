@@ -1,14 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using _Scripts.Enums;
 
-namespace _Scripts.Editor.FlagsAtributeEditor
+namespace _Scripts.Editor
 {
-    public class EnumFlagsAtribute : PropertyAttribute
-    {
-        public EnumFlagsAtribute() { }
-    }
- 
-    [CustomPropertyDrawer(typeof(EnumFlagsAtribute))]
+   
+    [CustomPropertyDrawer(typeof(EnumFlagsAttribute))]
     public class EnumFlagsAttributeDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect _position, SerializedProperty _property, GUIContent _label)

@@ -3,6 +3,8 @@
     /// <summary>
     /// Define plant state
     /// </summary>
+    
+    
     public enum InventoryType
     {
        Plantation,

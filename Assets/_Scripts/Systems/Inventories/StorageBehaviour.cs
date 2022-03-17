@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using _Scripts.Editor.FlagsAtributeEditor;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
-using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 namespace _Scripts.Systems.Inventories
 {
@@ -15,7 +14,7 @@ namespace _Scripts.Systems.Inventories
    {
       public Dictionary<int, ItemObj> Slots;
       public int maxAmountPerSlots = 20;
-      [EnumFlagsAtribute]
+      [EnumFlagsAttribute]
       public ItemType itensType;
 
       [SerializeField] 
@@ -23,7 +22,7 @@ namespace _Scripts.Systems.Inventories
 
       [Header("This id is for putting items in the inventory")]
       public int storageId;
-
+      
       public InventoryType InventoryType;
       protected StorageBehaviour(Dictionary<int, ItemObj> slots)
       {

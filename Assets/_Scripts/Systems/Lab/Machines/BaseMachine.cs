@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
-using _Scripts.Systems.Item;
+
+using _Scripts.Enums;
 using _Scripts.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Systems.Lab.Machines
 {
@@ -16,7 +14,7 @@ namespace _Scripts.Systems.Lab.Machines
         [Header("UIController of this machine")]
         [SerializeField]
         private UIController uiController;
-
+        public MachineState MachineState { get; set; } = MachineState.Empty;
        
 
         private void OnEnable()
@@ -39,8 +37,11 @@ namespace _Scripts.Systems.Lab.Machines
 
         private void OnDispose(BaseMachine id)
         {
+            if (LabEvents.CurrentMachine == null) return;
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             machineLayer.SetActive(false);
+            LabEvents.IsMachineSlotSelected = false;
+            LabEvents.CurrentMachine = null;
         }
 
        
