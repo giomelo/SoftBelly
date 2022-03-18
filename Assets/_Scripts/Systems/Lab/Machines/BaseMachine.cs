@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.UI;
 using UnityEngine;
@@ -12,10 +13,10 @@ namespace _Scripts.Systems.Lab.Machines
         [SerializeField]
         private GameObject machineLayer;
         [Header("UIController of this machine")]
-        [SerializeField]
-        private UIController uiController;
+        public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
-       
+        [SerializeField]
+        private List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
 
         private void OnEnable()
         {
@@ -41,9 +42,13 @@ namespace _Scripts.Systems.Lab.Machines
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             machineLayer.SetActive(false);
             LabEvents.IsMachineSlotSelected = false;
+            foreach (BaseMachineSlot u in IngredientsSlots)
+            {
+                u.UnHighLight();
+            }
             LabEvents.CurrentMachine = null;
+            
         }
 
-       
     }
 }

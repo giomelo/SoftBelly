@@ -26,5 +26,6 @@ namespace _Scripts.Systems.Lab
         public Text Amount;
         public GameObject Slot;
         public MachineSlotType Type;
+        public int slotId;//each slot in the machina has a diferent slotId
     }
 }

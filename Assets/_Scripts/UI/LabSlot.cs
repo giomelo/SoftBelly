@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -16,8 +17,9 @@ namespace _Scripts.UI
         {
             if (!LabEvents.IsMachineSlotSelected) return;
             LabEvents.IngredientSelected = uiSlot.item;
+            LabEvents.OnIngredientSelectedCall(uiSlot.item);
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
-            LabEvents.OnIngredientSelectedCall();
+            _subject.UpdateInventory();
         }
 
         private void Start()

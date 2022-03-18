@@ -161,7 +161,7 @@ namespace _Scripts.UI
         /// <summary>
         /// Foreach slot update the slot with the new information in the dictionary
         /// </summary>
-        private void UpdateInventory()
+        public void UpdateInventory()
         {
             for (int i = 0; i < slotDisplay.childCount; i++)
             {

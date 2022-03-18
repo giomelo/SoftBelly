@@ -10,7 +10,7 @@ namespace _Scripts.Systems.Lab
         public static Action<int> OnChestSelected;
         public static Action<BaseMachine> OnMachineSelected;
         public static Action<BaseMachine> OnMachineDispose;
-        public static Action OnIngredientSelected;
+        public static Action<ItemBehaviour> OnIngredientSelected;
 
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
@@ -34,10 +34,9 @@ namespace _Scripts.Systems.Lab
             OnMachineDispose?.Invoke(id);
         }
         
-        public static void OnIngredientSelectedCall()
+        public static void OnIngredientSelectedCall(ItemBehaviour item)
         {
-            MachineSlot.MachineSlot.item= IngredientSelected;
-            OnIngredientSelected?.Invoke();
+            OnIngredientSelected?.Invoke(item);
         }
 
     }
