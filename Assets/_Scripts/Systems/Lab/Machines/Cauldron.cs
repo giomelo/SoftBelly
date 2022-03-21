@@ -2,11 +2,11 @@
 
 namespace _Scripts.Systems.Lab.Machines
 {
-    public class Cauldron : BaseMachine, IBurn, IMix
+    public class Cauldron : BaseMachine, ITimerMachine
     {
-        public void Burn()
+        public void Work()
         {
-            
+            StartMachine();
         }
     }
 }

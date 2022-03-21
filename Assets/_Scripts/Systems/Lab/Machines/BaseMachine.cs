@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using _Scripts.Enums;
+using _Scripts.Systems.Lab.Recipes;
 using _Scripts.UI;
 using UnityEngine;
 
@@ -17,7 +18,9 @@ namespace _Scripts.Systems.Lab.Machines
         public MachineState MachineState { get; set; } = MachineState.Empty;
         [SerializeField]
         private List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
-
+        [SerializeField]
+        private List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
+        
         private void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
@@ -42,13 +45,28 @@ namespace _Scripts.Systems.Lab.Machines
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             machineLayer.SetActive(false);
             LabEvents.IsMachineSlotSelected = false;
-            foreach (BaseMachineSlot u in IngredientsSlots)
+            foreach (var u in IngredientsSlots)
             {
                 u.UnHighLight();
             }
             LabEvents.CurrentMachine = null;
             
         }
-
+        /// <summary>
+        /// Button for machines that have timer
+        /// </summary>
+        public void StartMachine()
+        {
+            List<MachineSlot> ingredients = new List<MachineSlot>();
+            foreach (var slotMachineObj in IngredientsSlots)
+            {
+                ingredients.Add(slotMachineObj.Slot.MachineSlot);
+            }
+            var currentRecipe = ScriptableObject.CreateInstance<RecipeObj>();
+            currentRecipe.Init(ingredients);
+            if (!AllRecipes.Instance.CheckRecipe(currentRecipe)) return;
+        
+            Debug.Log("Receita Existe");
+        }
     }
 }

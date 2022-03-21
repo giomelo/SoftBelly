@@ -20,7 +20,7 @@ namespace _Scripts.Systems.Plants.Bases
         public static Plot CurrentPlot;
         public static PlantBase PlantCollected;
 
-        public static void OnPlantedCall(Plot id)
+        private static void OnPlantedCall(Plot id)
         {
             //this is the same as doing: if(Onplanted != null)
             OnPlanted?.Invoke(id);
