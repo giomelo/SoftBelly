@@ -3,5 +3,6 @@
     public interface ITimerMachine
     {
         public abstract void Work();
+        
     }
 }

@@ -16,8 +16,9 @@ namespace _Scripts.UI
         private void OnSlotClicked()
         {
             if (!LabEvents.IsMachineSlotSelected) return;
+            
             LabEvents.IngredientSelected = uiSlot.item;
-            LabEvents.OnIngredientSelectedCall(uiSlot.item);
+            LabEvents.OnIngredientSelectedCall();
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             _subject.UpdateInventory();
         }

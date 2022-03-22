@@ -11,6 +11,7 @@ namespace _Scripts.Systems.Lab
         public static Action<BaseMachine> OnMachineSelected;
         public static Action<BaseMachine> OnMachineDispose;
         public static Action<ItemBehaviour> OnIngredientSelected;
+        public static Action<BaseMachine> OnMachineStarted; //When the machine started(for audio and effects)
 
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
@@ -21,6 +22,11 @@ namespace _Scripts.Systems.Lab
         public static void OnChestSelectedCall(int id)
         {
             OnChestSelected?.Invoke(id);
+        }
+
+        public static void OnMachineStartedCall(BaseMachine machine)
+        {
+            OnMachineStarted?.Invoke(machine);
         }
         
         public static void OnMachineSelectedCall(BaseMachine id)
@@ -34,9 +40,9 @@ namespace _Scripts.Systems.Lab
             OnMachineDispose?.Invoke(id);
         }
         
-        public static void OnIngredientSelectedCall(ItemBehaviour item)
+        public static void OnIngredientSelectedCall()
         {
-            OnIngredientSelected?.Invoke(item);
+            OnIngredientSelected?.Invoke(IngredientSelected);
         }
 
     }

@@ -19,7 +19,7 @@ public class Store : MonoBehaviour
         NameBtn();
     }
 
-    void NameBtn()
+    private void NameBtn()
     {
         textoBtn.text = _item.ItemId + " - Price: " + Price;
     }
@@ -41,7 +41,7 @@ public class Store : MonoBehaviour
         }
     }
 
-    IEnumerator EsperarAviso()
+    private IEnumerator EsperarAviso()
     {
         yield return new WaitForSeconds(1f);
         ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);

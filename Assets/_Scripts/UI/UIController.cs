@@ -125,9 +125,9 @@ namespace _Scripts.UI
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
-            Debug.Log(StorageHolder.Storage.Slots.Count);
+        
             if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
-            Debug.Log("oi");
+
             if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
                 slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();

@@ -116,8 +116,7 @@ namespace _Scripts.Systems.Inventories
             last = Slots.ElementAt(i).Value.amount;
             index = i;
          }
-
-         Debug.Log(index);
+         
          var auxObj = Slots.ElementAt(index).Value;
          auxObj.amount -= 1;
          Slots[index] = auxObj;
@@ -127,8 +126,8 @@ namespace _Scripts.Systems.Inventories
       {
          foreach (var (key, value) in Slots)
          {
-            Debug.Log(value.item.ItemId);
-            Debug.Log(value);
+            //Debug.Log(value.item.ItemId);
+            //Debug.Log(value);
 
          }
       }

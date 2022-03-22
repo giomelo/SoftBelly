@@ -1,3 +1,4 @@
+using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Lab.Machines;
@@ -85,8 +86,8 @@ namespace _Scripts.Entities.Player
                         LabEvents.OnChestSelectedCall(1);
                         break;
                     case "Machine":
-                        Debug.Log("Machine");
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
+                        if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
                         LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
                         break;
                 }

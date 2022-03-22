@@ -20,12 +20,7 @@ namespace _Scripts.Systems.Inventories
         private List<ExposedInventory> exposedInventory = new();
         private void Start()
         {
-            // Dictionary<string, int> slots = new Dictionary<string, int>(PlantationInventory.Size);
-            // StorageBehaviour storage = new PlantationInventory(slots);
-            // PlantBase plant1 = ScriptableObject.CreateInstance<PlantBase>();
-            // plant1.Init("oi");
             InitInventory();
-            //Storage.Display();
         }
         
         /// <summary>

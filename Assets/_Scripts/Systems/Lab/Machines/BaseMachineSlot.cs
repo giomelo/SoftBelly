@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace _Scripts.Systems.Lab.Machines
     public class BaseMachineSlot : MonoBehaviour
     {
         public UIMachineSlot Slot;
+        
         
         public void OnMachineSlotSelected()
         {
@@ -28,16 +30,21 @@ namespace _Scripts.Systems.Lab.Machines
             Slot.Image.sprite = null;
             Slot.Amount.text = "00";
          
-                if (LabEvents.CurrentMachine == null)
-                {
-                    Debug.LogError("Missing UiController of this machine");
-                    return;
-                }
-                LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
-                        Slot.MachineSlot.item);
-           
+            if (LabEvents.CurrentMachine == null)
+            {
+                Debug.LogError("Missing UiController of this machine");
+                return;
+            }
+
+            if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
+            if (Slot.MachineSlot.item == null) return;
+            
+            LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
+                Slot.MachineSlot.item);
             Slot.MachineSlot.item = null;
-            Slot.MachineSlot.amount = 0;   
+            Slot.MachineSlot.amount = 0;
+
+
 
         }
         
@@ -45,6 +52,7 @@ namespace _Scripts.Systems.Lab.Machines
         private void AddItemSlot(ItemBehaviour item)
         {
             if (LabEvents.MachineSlot.slotId != Slot.slotId) return;
+            
             Slot.MachineSlot.item = item;
             Slot.MachineSlot.amount++;
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();

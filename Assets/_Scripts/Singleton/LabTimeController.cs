@@ -4,6 +4,7 @@ using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
+using _Scripts.Systems.Lab.Recipes;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using Systems.Plantation;
@@ -16,13 +17,11 @@ namespace _Scripts.Singleton
     /// </summary>
     public class LabTimeController : MonoSingleton<LabTimeController>
     {
-        public Dictionary<int, PlantPlot> LabTimer { get; } = new Dictionary<int,PlantPlot>();
-        public static int MachinesId = 0;
-        [SerializeField]
-        public List<MachineHolder> allMachines = new List<MachineHolder>();
-        public void AddTime(int plotId, float time, ItemBehaviour plant)
+        public Dictionary<int, MachineStoreValues> LabTimer { get; } = new Dictionary<int,MachineStoreValues>();
+        
+        public void AddTime(int machineId, float time, RecipeObj recipe)
         {
-            LabTimer.Add(plotId, new PlantPlot(plant, time));
+            LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
         }
 
         public void ClearSlot(int id)
@@ -33,59 +32,37 @@ namespace _Scripts.Singleton
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);
-            MachinesId = 0;
-            foreach (var machine in allMachines)
-            {
-                machine.MachineId = MachinesId;
-                MachinesId++;
-            }
         }
-        
-
-        public void CreatPlants()
+        public void DisplayMachines()
         {
             if (LabTimer.Count == 0)  return;
             for (int i = 0; i < LabTimer.Count; i++)
             {
-                foreach (var plot in GridSystem.Instance.Plots.Where(t => LabTimer.ElementAt(i).Key == t.PlotId))
+                foreach (var machine in MachineSystemController.Instance.allMachines.Where(t => LabTimer.ElementAt(i).Key == t.CurrentMachine.MachineId))
                 {
-                    PlantEvents.CurrentPlant = (SeedBase) LabTimer.ElementAt(i).Value.Plant;
-                    plot.Display(plot);
+                    machine.CurrentMachine.CurrentRecipe = LabTimer.ElementAt(i).Value.CurrentRecipeObj;
+                    machine.CurrentMachine.CreateResult();
                 }
             }
         }
-
-        /// <summary>
-        /// Grow plant in plot
-        /// </summary>
-        /// <param name="plot"></param>
-        /// <returns></returns>
-        public IEnumerator Grow(Plot plot)
+        public IEnumerator WorkMachine(BaseMachine machine)
         {
             yield return new WaitForSeconds(1f);
-            var aux = LabTimer[plot.PlotId].Time;
+            Debug.Log("WorkingMachine");
+            var aux = LabTimer[machine.MachineId].Time;
             aux -= 1;
-            var p = new PlantPlot(plot.CurrentPlant, aux);
-            LabTimer[plot.PlotId] = p;
-
-            if (LabTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime / 2 && plot.PlantState == PlantState.Seed)
+            var p = new MachineStoreValues(machine.CurrentRecipe, aux);
+            LabTimer[machine.MachineId] = p;
+            
+            if (LabTimer[machine.MachineId].Time <= 0)
             {
-                if (!plot.IsDestroyed)
-                {
-                    plot.SetState();
-                    plot.CreatePlant();
-                }
-            }
-
-            if (LabTimer[plot.PlotId].Time <= 0)
-            {
-                if (plot.IsDestroyed) yield break;
-                plot.SetState();
-                plot.CreatePlant();
+                if (machine.IsDestroyed) yield break;
+                machine.SetState(MachineState.Ready);
+                machine.CreateResult();
             }
             else
             {
-                StartCoroutine(Grow(plot));
+                StartCoroutine(WorkMachine(machine));
             }
         }
     }
