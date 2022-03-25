@@ -58,10 +58,18 @@ namespace _Scripts.Singleton
             PlantTimer[plot.PlotId] = p;
             Debug.Log("Grow");
             //thrist cicle 
-            if (PlantTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime /plot.CurrentPlant.WaterCicles  || PlantTimer[plot.PlotId].Time <= 0)
-            {
-                plot.SetThirsty(true);
+            if (PlantTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime /plot.CurrentPlant.WaterCicles)
+            {   
                 StartCoroutine(Thirst(plot));
+                if (GridSystem.Instance != null)
+                {
+                    var scenePlot = GridSystem.Instance.Plots.Where(p => p.PlotId == plot.PlotId);
+                    foreach(Plot plotAux in scenePlot)
+                    {
+                        plotAux.SetThirsty(true);
+                        yield break;
+                    }
+                }
                 yield break;
             }
             
@@ -81,6 +89,7 @@ namespace _Scripts.Singleton
             }
             else
             {
+                if(plot.IsThirsty) yield break;
                 StartCoroutine(Grow(plot));
             }
 
@@ -89,6 +98,8 @@ namespace _Scripts.Singleton
         public IEnumerator Thirst(Plot plot)
         {
             yield return new WaitForSeconds(1f);
+            plot.IsThirsty = true;
+            
             Debug.Log("Thirst");
             var aux = PlantTimer[plot.PlotId].Time;
             var auxThirsty = PlantTimer[plot.PlotId].ThristTime;
@@ -97,18 +108,26 @@ namespace _Scripts.Singleton
             PlantTimer[plot.PlotId] = p;
           
             Debug.Log(PlantTimer[plot.PlotId].ThristTime); 
+            Debug.Log(plot.IsThirsty);
             if (plot.IsThirsty)
             {
                 if (PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.GrowTime + plot.CurrentPlant.GrowTime/plot.CurrentPlant.WaterCicles)
                 {
-                    if (plot.IsDestroyed) yield break;
-                    plot.SetDead(true);
-                    yield break;
+                    plot.IsDead = true;
+                    if(GridSystem.Instance == null) yield break;
+                    var scenePlot = GridSystem.Instance.Plots.Where(p => p.PlotId == plot.PlotId);
+                    foreach(Plot plotAux in scenePlot)
+                    {
+                        plotAux.SetDead(true);
+                        yield break;
+                    }
+                  
                 }
                 StartCoroutine(Thirst(plot));
             }
             else
             {
+                Debug.Log("Aqui");
                 StartCoroutine(Grow(plot));
             }
         }

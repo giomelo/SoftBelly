@@ -23,6 +23,6 @@ MonoBehaviour:
   - {fileID: 7447280070264944617, guid: 50dcb60bf8999d34d9afd67583e9f494, type: 3}
   ScientificName: Tjasrjoaiw
   PlantProprieties: essa planta eh boa
-  GrowTime: 5
+  GrowTime: 6
   WaterCicles: 2
   PlantBase: {fileID: 11400000, guid: f26ebfe23e1ede6419b41a8c7ffb75ff, type: 2}

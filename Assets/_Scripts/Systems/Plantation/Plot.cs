@@ -15,18 +15,28 @@ namespace _Scripts.Systems.Plantation
         public int PlotId;
         public SeedBase CurrentPlant;
         public PlantState PlantState = PlantState.Seed;
-        public bool IsThirsty { get; private set; }
-        public bool IsDead { get; private set; }
-        public bool IsDestroyed { get; private set; }
+        public bool IsThirsty;
+        public bool IsDead;
+        public bool IsDestroyed { get;private set;}
         [SerializeField]
         private GameObject thirstyObj;
         [SerializeField]
         private GameObject deathObj;
 
+        private void Start()
+        {
+            IsDestroyed = false;
+            Debug.LogWarning(IsDestroyed);
+        }
         public void ChangePlant(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
             CurrentPlant = PlantEvents.CurrentPlant;
+        }
+
+        public bool GetIsDestroyed()
+        {
+            return IsDestroyed;
         }
         /// <summary>
         /// Create plant in the plot
@@ -40,10 +50,15 @@ namespace _Scripts.Systems.Plantation
             if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
             {
                 PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0));
+                 StartCoroutine(PlantTimeController.Instance.Grow(this));
             }
-            StartCoroutine(PlantTimeController.Instance.Grow(this));
             
            CreatePlant();
+        }
+
+        private void CheckIfThirsty()
+        {
+           // if(PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.GrowTime)
         }
 
         public void CreatePlant()
@@ -63,9 +78,9 @@ namespace _Scripts.Systems.Plantation
         {
             PlantEvents.OnPlanted += Display;
             PlantEvents.OnHarvest += Harvest;
-            IsDestroyed = false;
+         
         }
-        private void OnDisable()
+        private void OnDestroy()
         {
             PlantEvents.OnPlanted -= Display;
             PlantEvents.OnHarvest -= Harvest;
@@ -79,14 +94,28 @@ namespace _Scripts.Systems.Plantation
         
         private void CheckState()
         {
+            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= CurrentPlant.GrowTime /CurrentPlant.WaterCicles && !IsDead)
+            {
+                SetThirsty(true); 
+            }
+            if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.GrowTime + CurrentPlant.GrowTime/CurrentPlant.WaterCicles)
+            {
+                SetDead(true);
+            }
             if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= CurrentPlant.GrowTime / 2 &&
                 PlantState == PlantState.Seed)
             {
                 SetState(PlantState.Growing);
-                return;
             }
-            if (!(PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)) return;
-            SetState(PlantState.Ready);
+            if(PlantTimeController.Instance.PlantTimer[PlotId].Time >= CurrentPlant.GrowTime / 2)
+            {
+                 SetState(PlantState.Seed);
+            }
+            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)
+            {
+                SetState(PlantState.Ready);
+            }
+          
         }
         
         public void SetState(PlantState state)
