@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Lab.Recipes;
 using _Scripts.UI;
 using UnityEngine;
@@ -67,7 +68,7 @@ namespace _Scripts.Systems.Lab.Machines
         public void StartMachine()
         {
             //if (machine.MachineId != MachineId) return;
-            List<MachineSlot> ingredients = new List<MachineSlot>();
+            List<ItemObj> ingredients = new List<ItemObj>();
             foreach (var slotMachineObj in IngredientsSlots)
             {
                 ingredients.Add(slotMachineObj.Slot.MachineSlot);
@@ -107,7 +108,12 @@ namespace _Scripts.Systems.Lab.Machines
                 ResultsSlots[i].Slot.Image.sprite = CurrentRecipe.Results[i].item.ImageDisplay;
                 ResultsSlots[i].Slot.Amount.text = CurrentRecipe.Results[i].amount.ToString();
                 ResultsSlots[i].Slot.MachineSlot.item = CurrentRecipe.Results[i].item;
+                ResultsSlots[i].Slot.MachineSlot.amount = CurrentRecipe.Results[i].amount;
+            }
 
+            for (int i = 0; i < IngredientsSlots.Count; i++)
+            {
+                IngredientsSlots[i].ResetSlot();
             }
         }
     }

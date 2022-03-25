@@ -12,7 +12,9 @@ namespace _Scripts.Systems.Lab
         public static Action<BaseMachine> OnMachineDispose;
         public static Action<ItemBehaviour> OnIngredientSelected;
         public static Action<BaseMachine> OnMachineStarted; //When the machine started(for audio and effects)
-
+        public static Action<BaseMachine> OnMachineFinished; //When the machine finished(for audio and effects)
+        
+        
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
         public static UIMachineSlot MachineSlot;

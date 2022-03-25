@@ -9,14 +9,23 @@ namespace _Scripts.Systems.Lab.Machines
     public class BaseMachineSlot : MonoBehaviour
     {
         public UIMachineSlot Slot;
-        
-        
         public void OnMachineSlotSelected()
         {
-            if (Slot.Type != MachineSlotType.Ingredient) return;
-            LabEvents.MachineSlot = Slot;
-            LabEvents.IsMachineSlotSelected = true;
-            HighLightSlot();
+            if (Slot.Type == MachineSlotType.Ingredient)
+            {
+                LabEvents.MachineSlot = Slot;
+                LabEvents.IsMachineSlotSelected = true;
+                HighLightSlot();
+            }
+            else
+            {
+                if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready)
+                {
+                    UnHighLight();
+                    LabEvents.CurrentMachine.uiController.UpdateInventory();
+                }
+            }
+           
         }
 
         private void HighLightSlot()
@@ -39,13 +48,21 @@ namespace _Scripts.Systems.Lab.Machines
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
             
+            Debug.Log("Add");
             LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
                 Slot.MachineSlot.item);
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
 
+        }
 
-
+        public void ResetSlot()
+        {
+            Slot.Image.color = Color.white;
+            Slot.Image.sprite = null;
+            Slot.Amount.text = "00";
+            Slot.MachineSlot.item = null;
+            Slot.MachineSlot.amount = 0;
         }
         
         //set the slot to the current item

@@ -35,7 +35,11 @@ namespace _Scripts.Systems.Inventories
 
       public void AddItem(int amount, ItemBehaviour item)
       {
-         if (!itensType.HasFlag(item.ItemType)) return;
+         if (!itensType.HasFlag(item.ItemType))
+         {
+            Debug.LogWarning("Item não pode ser adicionado nesse inventário");
+            return;
+         }
          var index = CheckIfSlotAreAvailabe(item);
          if (CheckIfContainsKey(item))
          {

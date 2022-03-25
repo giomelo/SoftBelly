@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Systems.Inventories;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Recipes
@@ -10,21 +11,21 @@ namespace _Scripts.Systems.Lab.Recipes
     [CreateAssetMenu(fileName = "Recipe")]
     public class RecipeObj : ScriptableObject
     {
-        public List<MachineSlot> Ingredients = new List<MachineSlot>();
-        public List<MachineSlot> Results = new List<MachineSlot>();
+        public List<ItemObj> Ingredients = new List<ItemObj>();
+        public List<ItemObj> Results = new List<ItemObj>();
 
-        public RecipeObj(List<MachineSlot> ingredients)
+        public RecipeObj(List<ItemObj> ingredients)
         {
             Ingredients = ingredients;
         }
         
-        public RecipeObj(List<MachineSlot> ingredients, List<MachineSlot> results)
+        public RecipeObj(List<ItemObj> ingredients, List<ItemObj> results)
         {
             Ingredients = ingredients;
             Results = results;
         }
 
-        public void Init(List<MachineSlot> ingredients)
+        public void Init(List<ItemObj> ingredients)
         {
             Ingredients = ingredients;
         }

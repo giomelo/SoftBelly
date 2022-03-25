@@ -11,6 +11,7 @@ namespace _Scripts.Systems.Item
     {
         [Header("Item Stuff")]
         public string ItemId;
+        [EnumFlagsAttribute]
         public ItemType ItemType;
 
         public Sprite ImageDisplay;
