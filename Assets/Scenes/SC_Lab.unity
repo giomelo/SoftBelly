@@ -3599,7 +3599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: scene
-      value: SC_PlayerMovimentTest
+      value: SC_Patients
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_RootOrder
@@ -3619,7 +3619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.32
+      value: -12.72
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_LocalPosition.y

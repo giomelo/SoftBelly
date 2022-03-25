@@ -1,10 +1,8 @@
-﻿using System;
-using _Scripts.Enums;
+﻿using _Scripts.Enums;
 using _Scripts.Systems.Item;
-using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
-namespace _Scripts.Systems.Lab.Machines
+namespace _Scripts.Systems.Lab.Machines.Base
 {
     public class BaseMachineSlot : MonoBehaviour
     {
@@ -19,11 +17,11 @@ namespace _Scripts.Systems.Lab.Machines
             }
             else
             {
-                if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready)
-                {
-                    UnHighLight();
-                    LabEvents.CurrentMachine.uiController.UpdateInventory();
-                }
+                if (LabEvents.CurrentMachine == null ||
+                    LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
+                
+                UnHighLight();
+                LabEvents.CurrentMachine.uiController.UpdateInventory();
             }
            
         }

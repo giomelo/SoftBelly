@@ -1,6 +1,7 @@
 ﻿using System;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
+using _Scripts.Systems.Lab.Machines.Base;
 using JetBrains.Annotations;
 
 namespace _Scripts.Systems.Lab
@@ -30,6 +31,12 @@ namespace _Scripts.Systems.Lab
         {
             OnMachineStarted?.Invoke(machine);
         }
+        
+        public static void OnMachineFinishedCall(BaseMachine machine)
+        {
+            OnMachineFinished?.Invoke(machine);
+        }
+
         
         public static void OnMachineSelectedCall(BaseMachine id)
         {

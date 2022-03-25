@@ -1,6 +1,6 @@
 ﻿using _Scripts.Systems.Lab.Recipes;
 
-namespace _Scripts.Systems.Lab.Machines
+namespace _Scripts.Systems.Lab.Machines.Base
 {
     public struct MachineStoreValues
     {

@@ -3,11 +3,11 @@ using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 
 namespace _Scripts.Systems.Lab.Machines
 {
-    public class Cauldron : BaseMachine, IBurn
+    public class HerbDryer : BaseMachine, ITimerMachine
     {
-        public void Burn()
+        public void Work()
         {
-            throw new System.NotImplementedException();
+            StartMachine();
         }
     }
 }

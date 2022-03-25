@@ -7,6 +7,7 @@ TagManager:
   - Storage
   - Chest
   - Machine
+  - WateringCan
   layers:
   - Default
   - TransparentFX

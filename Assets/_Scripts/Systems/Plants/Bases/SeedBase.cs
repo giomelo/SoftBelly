@@ -23,7 +23,7 @@ namespace _Scripts.Systems.Plants.Bases
         [Header("Time needed to full grow the seed")]
         [Tooltip("In seconds")]
         public float GrowTime;
-        
+        public float WaterCicles = 2;
         [Header("Grow up seed")]
         public PlantBase PlantBase;
         

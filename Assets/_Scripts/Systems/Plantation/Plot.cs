@@ -15,16 +15,19 @@ namespace _Scripts.Systems.Plantation
         public int PlotId;
         public SeedBase CurrentPlant;
         public PlantState PlantState = PlantState.Seed;
+        public bool IsThirsty { get; private set; }
+        public bool IsDead { get; private set; }
         public bool IsDestroyed { get; private set; }
+        [SerializeField]
+        private GameObject thirstyObj;
+        [SerializeField]
+        private GameObject deathObj;
 
         public void ChangePlant(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
             CurrentPlant = PlantEvents.CurrentPlant;
         }
-        
-        
-        
         /// <summary>
         /// Create plant in the plot
         /// </summary>
@@ -36,9 +39,8 @@ namespace _Scripts.Systems.Plantation
             CurrentPlant = PlantEvents.CurrentPlant;
             if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
             {
-                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime));
+                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0));
             }
-         
             StartCoroutine(PlantTimeController.Instance.Grow(this));
             
            CreatePlant();
@@ -80,24 +82,28 @@ namespace _Scripts.Systems.Plantation
             if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= CurrentPlant.GrowTime / 2 &&
                 PlantState == PlantState.Seed)
             {
-                SetState();
+                SetState(PlantState.Growing);
+                return;
             }
-
             if (!(PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)) return;
-            SetState();
+            SetState(PlantState.Ready);
         }
         
-        public void SetState()
+        public void SetState(PlantState state)
         {
-            switch (PlantState)
-            {
-                case PlantState.Seed:
-                    PlantState = PlantState.Growing;
-                    break;
-                case PlantState.Growing:
-                    PlantState = PlantState.Ready;
-                    break;
-            }
+            PlantState = state;
+        }
+
+        public void SetThirsty(bool value)
+        {
+            IsThirsty = value;
+            thirstyObj.SetActive(value);
+        }
+        public void SetDead(bool value)
+        {
+            thirstyObj.SetActive(false);
+            IsDead = value;
+            deathObj.SetActive(value);
         }
 
         public bool CheckIfReady()

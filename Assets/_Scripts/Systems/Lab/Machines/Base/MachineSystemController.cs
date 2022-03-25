@@ -2,7 +2,7 @@
 using _Scripts.Singleton;
 using UnityEngine;
 
-namespace _Scripts.Systems.Lab.Machines
+namespace _Scripts.Systems.Lab.Machines.Base
 {
     public class MachineSystemController : MonoSingleton<MachineSystemController>
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
+using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Recipes;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;

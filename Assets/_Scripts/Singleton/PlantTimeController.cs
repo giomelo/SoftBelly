@@ -16,9 +16,9 @@ namespace _Scripts.Singleton
     {
         public Dictionary<int, PlantPlot> PlantTimer { get; } = new Dictionary<int,PlantPlot>();
 
-        public void AddTime(int plotId, float time, ItemBehaviour plant)
+        public void AddTime(int plotId, float time, ItemBehaviour plant, float thirstTime)
         {
-            PlantTimer.Add(plotId, new PlantPlot(plant, time));
+            PlantTimer.Add(plotId, new PlantPlot(plant, time, thirstTime));
         }
 
         public void ClearSlot(int id)
@@ -54,21 +54,29 @@ namespace _Scripts.Singleton
             yield return new WaitForSeconds(1f);
             var aux = PlantTimer[plot.PlotId].Time;
             aux -= 1;
-            var p = new PlantPlot(plot.CurrentPlant, aux);
+            var p = new PlantPlot(plot.CurrentPlant, aux, 0);
             PlantTimer[plot.PlotId] = p;
-          
+            Debug.Log("Grow");
+            //thrist cicle 
+            if (PlantTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime /plot.CurrentPlant.WaterCicles  || PlantTimer[plot.PlotId].Time <= 0)
+            {
+                plot.SetThirsty(true);
+                StartCoroutine(Thirst(plot));
+                yield break;
+            }
+            
             if (PlantTimer[plot.PlotId].Time <= plot.CurrentPlant.GrowTime / 2 && plot.PlantState == PlantState.Seed)
             {
                 if (!plot.IsDestroyed)
                 {
-                    plot.SetState();
+                    plot.SetState(PlantState.Growing);
                     plot.CreatePlant();
                 }
             }
             if (PlantTimer[plot.PlotId].Time <= 0)
             {
                 if (plot.IsDestroyed) yield break;
-                plot.SetState();
+                plot.SetState(PlantState.Ready);
                 plot.CreatePlant();
             }
             else
@@ -76,6 +84,33 @@ namespace _Scripts.Singleton
                 StartCoroutine(Grow(plot));
             }
 
+        }
+
+        public IEnumerator Thirst(Plot plot)
+        {
+            yield return new WaitForSeconds(1f);
+            Debug.Log("Thirst");
+            var aux = PlantTimer[plot.PlotId].Time;
+            var auxThirsty = PlantTimer[plot.PlotId].ThristTime;
+            auxThirsty += 1;
+            var p = new PlantPlot(plot.CurrentPlant, aux, auxThirsty);
+            PlantTimer[plot.PlotId] = p;
+          
+            Debug.Log(PlantTimer[plot.PlotId].ThristTime); 
+            if (plot.IsThirsty)
+            {
+                if (PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.GrowTime + plot.CurrentPlant.GrowTime/plot.CurrentPlant.WaterCicles)
+                {
+                    if (plot.IsDestroyed) yield break;
+                    plot.SetDead(true);
+                    yield break;
+                }
+                StartCoroutine(Thirst(plot));
+            }
+            else
+            {
+                StartCoroutine(Grow(plot));
+            }
         }
     }
 }

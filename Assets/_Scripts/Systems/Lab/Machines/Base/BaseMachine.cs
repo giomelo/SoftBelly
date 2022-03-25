@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
@@ -7,7 +6,7 @@ using _Scripts.Systems.Lab.Recipes;
 using _Scripts.UI;
 using UnityEngine;
 
-namespace _Scripts.Systems.Lab.Machines
+namespace _Scripts.Systems.Lab.Machines.Base
 {
     public abstract class BaseMachine : MonoBehaviour
     {
@@ -115,6 +114,8 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 IngredientsSlots[i].ResetSlot();
             }
+
+            LabEvents.OnMachineFinishedCall(this);
         }
     }
 }
