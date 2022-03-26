@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using Systems.Plantation;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
-/// <summary>
-/// Editor script for instantiate grid without play mode
-/// </summary>
-
-[CustomEditor(typeof(GridSystem))]
-public class GridEditor : Editor
+namespace _Scripts.Editor
 {
-    public override void OnInspectorGUI()
+    /// <summary>
+    /// Editor script for instantiate grid without play mode
+    /// </summary>
+
+    [CustomEditor(typeof(GridSystem))]
+    public class GridEditor : UnityEditor.Editor
     {
-        base.OnInspectorGUI();
-
-        GridSystem grid = (GridSystem) target;
-
-        if (GUILayout.Button("GenerateGrid"))
+        public override void OnInspectorGUI()
         {
-            grid.CreatGrid();
+            base.OnInspectorGUI();
+
+            GridSystem grid = (GridSystem) target;
+
+            if (GUILayout.Button("GenerateGrid"))
+            {
+                grid.CreatGrid();
+            }
         }
     }
 }

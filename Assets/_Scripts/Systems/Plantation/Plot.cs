@@ -15,8 +15,8 @@ namespace _Scripts.Systems.Plantation
         public int PlotId;
         public SeedBase CurrentPlant;
         public PlantState PlantState = PlantState.Seed;
-        public bool IsThirsty;
-        public bool IsDead;
+        public bool IsThirsty { get; private set; }
+        public bool IsDead { get; private set; }
         public bool IsDestroyed { get;private set;}
         [SerializeField]
         private GameObject thirstyObj;
@@ -38,6 +38,7 @@ namespace _Scripts.Systems.Plantation
         {
             return IsDestroyed;
         }
+        
         /// <summary>
         /// Create plant in the plot
         /// </summary>
@@ -53,14 +54,24 @@ namespace _Scripts.Systems.Plantation
                  StartCoroutine(PlantTimeController.Instance.Grow(this));
             }
             
-           CreatePlant();
+            CreatePlant();
         }
 
-        private void CheckIfThirsty()
+        public bool CheckIfThirsty()
         {
-           // if(PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.GrowTime)
+            return IsThirsty;
         }
 
+        public void ResetThirsty()
+        {
+            IsThirsty = false;
+            StopCoroutine(PlantTimeController.Instance.Thirst(this));
+            thirstyObj.SetActive(false);
+            var p = new PlantPlot(CurrentPlant, PlantTimeController.Instance.PlantTimer[PlotId].Time, 0);
+            PlantTimeController.Instance.PlantTimer[PlotId] = p;
+           
+            //StartCoroutine(PlantTimeController.Instance.Grow(this));
+        }
         public void CreatePlant()
         {
             //Create plant obj
@@ -91,14 +102,14 @@ namespace _Scripts.Systems.Plantation
         {
             return CurrentPlant == null;
         }
-        
+
         private void CheckState()
         {
-            if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= CurrentPlant.GrowTime /CurrentPlant.WaterCicles && !IsDead)
+            if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles && !IsDead)
             {
                 SetThirsty(true); 
             }
-            if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.GrowTime + CurrentPlant.GrowTime/CurrentPlant.WaterCicles)
+            if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles * 3)
             {
                 SetDead(true);
             }
@@ -126,12 +137,14 @@ namespace _Scripts.Systems.Plantation
         public void SetThirsty(bool value)
         {
             IsThirsty = value;
+            if (thirstyObj == null) return;
             thirstyObj.SetActive(value);
         }
         public void SetDead(bool value)
         {
-            thirstyObj.SetActive(false);
             IsDead = value;
+            if (thirstyObj == null) return;
+            thirstyObj.SetActive(false);
             deathObj.SetActive(value);
         }
 
@@ -145,9 +158,13 @@ namespace _Scripts.Systems.Plantation
             if (id.PlotId != this.PlotId) return;
             if (transform.childCount <= 0) return;
             
+            IsThirsty = false;
+            thirstyObj.SetActive(false);
             Destroy(transform.GetChild(0).gameObject);
             PlantEvents.PlantCollected = id.CurrentPlant.PlantBase;
             PlantEvents.OnLabInventoryAction(1);
+            StopCoroutine(PlantTimeController.Instance.Thirst(this));
+            PlantTimeController.Instance.ClearSlot(PlotId);
             StartCoroutine(ClearPlot());
         }
         
