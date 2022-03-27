@@ -20,10 +20,7 @@ namespace _Scripts.Entities.Player
   
         [SerializeField]
         private PlayerMovement playerMovement;
-    
-        [SerializeField]
-        private Camera mainCamera;
-    
+
         [Header("PlantInputs")]
 
         private const int CollisionLayer = 1 << 6;
@@ -75,10 +72,10 @@ namespace _Scripts.Entities.Player
         private void PlantInput()
         {
             if (!Input.GetMouseButton(0)) return;
-            Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         
-            if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
+            if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform, _radius)) return;
             if (hit.transform.TryGetComponent<Plot>(out var plotScript))
             {
@@ -117,10 +114,10 @@ namespace _Scripts.Entities.Player
         private void PutWaterInput()
         {
             if (!Input.GetMouseButton(1)) return;
-            Ray direction = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         
-            if (!Physics.Raycast(mainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
+            if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform, _radius)) return;
             if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
             if (plotScript.CheckAvailable()) return;

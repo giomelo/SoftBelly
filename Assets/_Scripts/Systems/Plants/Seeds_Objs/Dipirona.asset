@@ -17,6 +17,7 @@ MonoBehaviour:
   ImageDisplay: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Proprieties: 
   Price: 0
+  ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
   PlantDisplayObjs:
   - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
   - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
@@ -24,4 +25,5 @@ MonoBehaviour:
   ScientificName: wadwad wad wa
   PlantProprieties: foi o bolsonaro
   GrowTime: 10
+  WaterCicles: 2
   PlantBase: {fileID: 11400000, guid: 12277013e969ede49942103b2a747dc8, type: 2}

@@ -1,5 +1,7 @@
 
+using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Entities.Player;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
@@ -50,6 +52,9 @@ namespace _Scripts.UI
 
         public int Width;
         public int Height;
+        private GameObject proprietiesObj;
+        [SerializeField]
+        private List<GameObject> poolProprieties = new List<GameObject>();
 
         private void Start()
         {
@@ -174,6 +179,7 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
+            ResetCurrentProprieties();
             inventoryObject.SetActive(false);
             LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);
         }
@@ -182,18 +188,50 @@ namespace _Scripts.UI
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(ItemBehaviour item)
+        public void DisplayCurrentProprieties(GameObject item)
         {
-            //proprietiesDisplay.ScientificName.text = item.ScientificName;
-            proprietiesDisplay.PlantName.text = item.ItemId;
-            proprietiesDisplay.ProprietiesText.text = item.Proprieties;
+            // //proprietiesDisplay.ScientificName.text = item.ScientificName;
+            // proprietiesDisplay.PlantName.text = item.ItemId;
+            // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
+            GameObject aux = null;
+            foreach (GameObject go in poolProprieties)
+            {
+                Debug.Log(go);
+                Debug.Log(item);
+                if (go.name == string.Format("{0}(Clone)", item.name))
+                {
+                    aux = go;
+                }
+                
+            }
+            
+            if (aux == null)
+            {
+                var pos = new Vector3(Input.mousePosition.x + 50, Input.mousePosition.y, 0);
+                proprietiesObj = Instantiate(item, pos, Quaternion.identity, inventoryObject.transform);
+                
+                //proprietiesObj.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+                proprietiesObj.SetActive(true);
+                poolProprieties.Add(proprietiesObj);
+            }else
+            {
+                var pos = new Vector3(Input.mousePosition.x + 50, Input.mousePosition.y, 0);
+                aux.transform.position = pos;
+                aux.SetActive(true);
+            }
+    
         }
 
         public void ResetCurrentProprieties()
         {
-            proprietiesDisplay.ScientificName.text = "";
-            proprietiesDisplay.PlantName.text = "";
-            proprietiesDisplay.ProprietiesText.text = "";
+            // proprietiesDisplay.ScientificName.text = "";
+            // proprietiesDisplay.PlantName.text = "";
+            // proprietiesDisplay.ProprietiesText.text = "";
+            foreach (GameObject go in poolProprieties)
+            {
+                go.SetActive(false);
+
+            }
         }
 
         private void AddHarvestedPlant(int id)

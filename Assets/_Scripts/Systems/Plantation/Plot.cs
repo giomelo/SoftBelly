@@ -160,12 +160,18 @@ namespace _Scripts.Systems.Plantation
             
             IsThirsty = false;
             thirstyObj.SetActive(false);
+            deathObj.SetActive(false);
             Destroy(transform.GetChild(0).gameObject);
             PlantEvents.PlantCollected = id.CurrentPlant.PlantBase;
-            PlantEvents.OnLabInventoryAction(1);
             StopCoroutine(PlantTimeController.Instance.Thirst(this));
             PlantTimeController.Instance.ClearSlot(PlotId);
             StartCoroutine(ClearPlot());
+
+            if (!IsDead)
+            {
+                PlantEvents.OnLabInventoryAction(1);
+            }
+            
         }
         
         /// <summary>

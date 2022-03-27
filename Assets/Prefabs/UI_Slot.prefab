@@ -353,7 +353,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6984802342598996509}
-          m_TargetAssemblyTypeName: _Scripts.UI.PlantSlot, Assembly-CSharp
+          m_TargetAssemblyTypeName: _Scripts.UI.SlotBase, Assembly-CSharp
           m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
@@ -369,7 +369,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6984802342598996509}
-          m_TargetAssemblyTypeName: _Scripts.UI.PlantSlot, Assembly-CSharp
+          m_TargetAssemblyTypeName: _Scripts.UI.SlotBase, Assembly-CSharp
           m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:

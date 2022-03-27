@@ -20,6 +20,8 @@ namespace _Scripts.Systems.Item
         
         public float Price;
 
+        public GameObject ItemProprietiesGO;
+
         // public ItemBehaviour(string id, ItemType itemType)
         // {
         //     ItemId = id;

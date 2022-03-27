@@ -16,5 +16,24 @@ namespace _Scripts.UI
         {
             _subject = subject;
         }
+        
+        public void MouseEnter()
+        {
+            if (uiSlot.item == null)
+            {
+                _subject.ResetCurrentProprieties();
+                return;
+            }
+
+            if (uiSlot.item.ItemProprietiesGO == null) return;
+            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO);
+            Debug.Log("mouseEnter");
+        }
+        
+        public void MouseExit()
+        {
+            Debug.Log("mouseExit");
+            _subject.ResetCurrentProprieties();
+        }
     }
 }
