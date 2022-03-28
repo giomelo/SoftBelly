@@ -56,6 +56,9 @@ namespace _Scripts.UI
         [SerializeField]
         private List<GameObject> poolProprieties = new List<GameObject>();
 
+        private float xOffsetProprieties = 210f;
+        private float yOffsetProprieties = 80f;
+
         private void Start()
         {
             if (_slotsCreated) return;
@@ -188,17 +191,20 @@ namespace _Scripts.UI
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(GameObject item)
+        public void DisplayCurrentProprieties(GameObject item, Transform local)
         {
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
             GameObject aux = null;
+            var position = local.transform.position;
+            Debug.Log(position);
+            var pos = new Vector3(position.x + xOffsetProprieties, position.y - yOffsetProprieties, 0);
             foreach (GameObject go in poolProprieties)
             {
                 Debug.Log(go);
                 Debug.Log(item);
-                if (go.name == string.Format("{0}(Clone)", item.name))
+                if (go.name == $"{item.name}(Clone)")
                 {
                     aux = go;
                 }
@@ -207,7 +213,6 @@ namespace _Scripts.UI
             
             if (aux == null)
             {
-                var pos = new Vector3(Input.mousePosition.x + 50, Input.mousePosition.y, 0);
                 proprietiesObj = Instantiate(item, pos, Quaternion.identity, inventoryObject.transform);
                 
                 //proprietiesObj.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
@@ -215,7 +220,6 @@ namespace _Scripts.UI
                 poolProprieties.Add(proprietiesObj);
             }else
             {
-                var pos = new Vector3(Input.mousePosition.x + 50, Input.mousePosition.y, 0);
                 aux.transform.position = pos;
                 aux.SetActive(true);
             }

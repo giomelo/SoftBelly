@@ -26,7 +26,7 @@ namespace _Scripts.UI
             }
 
             if (uiSlot.item.ItemProprietiesGO == null) return;
-            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO);
+            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO, this.transform);
             Debug.Log("mouseEnter");
         }
         
