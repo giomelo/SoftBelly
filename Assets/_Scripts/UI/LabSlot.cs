@@ -17,7 +17,13 @@ namespace _Scripts.UI
         {
             if (!LabEvents.IsMachineSlotSelected) return;
             
+      
             LabEvents.IngredientSelected = uiSlot.item;
+            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            {
+                Debug.Log("This item cant be put in this slot");
+                return;
+            }
             LabEvents.OnIngredientSelectedCall();
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             _subject.UpdateInventory();

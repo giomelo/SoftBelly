@@ -10,7 +10,10 @@ namespace _Scripts.Systems.Plants.Bases
     [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
     public class PlantBase : ItemBehaviour
     {
+        public bool isDried;
         [Header("Plant Stuff")] 
         public MedicalSymptoms MedicalSymptoms;
+
+        public Sprite DriedPlant;
     }
 }

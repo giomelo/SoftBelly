@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Scripts.Enums;
+using UnityEngine;
 
 namespace _Scripts.UI
 {
@@ -11,6 +12,7 @@ namespace _Scripts.UI
         public UISlot uiSlot;
 
         protected UIController _subject;
+
 
         public void AddSubject(UIController subject)
         {

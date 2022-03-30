@@ -17,12 +17,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [Header("UIController of this machine")]
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
-        [SerializeField]
-        private List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
+        [SerializeField] protected List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
         [SerializeField]
         private List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
-        private float _machineWorkingTime;
+        private float machineWorkingTime;
+        
+        [SerializeField]
+        private float machineBurnTime;
         
         public int MachineId;
         public RecipeObj CurrentRecipe;
@@ -64,7 +66,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// <summary>
         /// Button for machines that have timer
         /// </summary>
-        public void StartMachine()
+        protected void StartMachine()
         {
             //if (machine.MachineId != MachineId) return;
             List<ItemObj> ingredients = new List<ItemObj>();
@@ -82,7 +84,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Debug.Log("Receita Existe");
             if (!LabTimeController.Instance.LabTimer.ContainsKey(MachineId))
             {
-                LabTimeController.Instance.AddTime(MachineId, _machineWorkingTime, CurrentRecipe);
+                LabTimeController.Instance.AddTime(MachineId, machineWorkingTime, CurrentRecipe);
             }
             MachineState = MachineState.Working;
             uiController.DisposeInventory();

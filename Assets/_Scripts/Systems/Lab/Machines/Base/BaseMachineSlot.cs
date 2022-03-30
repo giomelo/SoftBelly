@@ -7,6 +7,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
     public class BaseMachineSlot : MonoBehaviour
     {
         public UIMachineSlot Slot;
+        
         public void OnMachineSlotSelected()
         {
             if (Slot.Type == MachineSlotType.Ingredient)
@@ -67,7 +68,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         private void AddItemSlot(ItemBehaviour item)
         {
             if (LabEvents.MachineSlot.slotId != Slot.slotId) return;
-            
+
+            if (Slot.MachineSlot.amount >= Slot.maxPerSlot) return;
             Slot.MachineSlot.item = item;
             Slot.MachineSlot.amount++;
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();

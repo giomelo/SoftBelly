@@ -12,6 +12,7 @@ namespace _Scripts.Enums
         Plant,
         Potion,
         Ingredient,
-        Other
+        Other,
+        Garbage
     }
 }

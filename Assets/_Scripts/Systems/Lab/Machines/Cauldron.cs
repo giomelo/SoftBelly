@@ -7,7 +7,7 @@ namespace _Scripts.Systems.Lab.Machines
     {
         public void Burn()
         {
-            throw new System.NotImplementedException();
+            StartMachine();
         }
     }
 }
