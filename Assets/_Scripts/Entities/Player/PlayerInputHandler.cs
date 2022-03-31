@@ -88,7 +88,7 @@ namespace _Scripts.Entities.Player
                 else
                 {
                     //Check if the plant is ready to harvest
-                    if(!plotScript.CheckIfReady()) return;
+                    if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
                     PlantEvents.OnHarvestCall(plotScript);
 
                 }

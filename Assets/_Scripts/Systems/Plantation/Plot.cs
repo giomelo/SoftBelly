@@ -15,7 +15,7 @@ namespace _Scripts.Systems.Plantation
         public int PlotId;
         public SeedBase CurrentPlant;
         public PlantState PlantState = PlantState.Seed;
-        public bool IsThirsty { get; private set; }
+        public bool IsThirsty;
         public bool IsDead { get; private set; }
         public bool IsDestroyed { get;private set;}
         [SerializeField]
@@ -70,7 +70,7 @@ namespace _Scripts.Systems.Plantation
             var p = new PlantPlot(CurrentPlant, PlantTimeController.Instance.PlantTimer[PlotId].Time, 0);
             PlantTimeController.Instance.PlantTimer[PlotId] = p;
            
-            //StartCoroutine(PlantTimeController.Instance.Grow(this));
+           // StartCoroutine(PlantTimeController.Instance.Grow(this));
         }
         public void CreatePlant()
         {

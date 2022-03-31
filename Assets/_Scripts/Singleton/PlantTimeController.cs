@@ -58,21 +58,26 @@ namespace _Scripts.Singleton
             auxThirsty += 1;
             var p = new PlantPlot(plot.CurrentPlant, aux, auxThirsty);
             PlantTimer[plot.PlotId] = p;
-            
+            Debug.LogWarning("Grow");
             //thrist cicle 
+            Debug.Log("Thirst time: " + PlantTimer[plot.PlotId].ThristTime);
             if (PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.WaterCicles)
             {  
                 auxThirsty = 0;
                 p = new PlantPlot(plot.CurrentPlant, aux, auxThirsty);
                 PlantTimer[plot.PlotId] = p;
-                StartCoroutine(Thirst(plot));
-                if (GridSystem.Instance == null) yield break;
-                var scenePlot = GridSystem.Instance.Plots.Where(p => p.PlotId == plot.PlotId);
-                foreach(var plotAux in scenePlot)
+                if (GridSystem.Instance != null)
                 {
-                    plotAux.SetThirsty(true);
-                    yield break;
+                    var scenePlot = GridSystem.Instance.Plots.Where(p => p.PlotId == plot.PlotId);
+                    foreach(var plotAux in scenePlot)
+                    {
+                        plotAux.SetThirsty(true);
+                    }
+                }else{
+                    plot.IsThirsty = true;
                 }
+                
+                StartCoroutine(Thirst(plot));
                 yield break;
             }
             
@@ -87,18 +92,21 @@ namespace _Scripts.Singleton
             if (PlantTimer[plot.PlotId].Time <= 0)
             {
                 plot.SetState(PlantState.Ready);
-                if (plot.IsDestroyed) yield break;
+                if (!plot.IsDestroyed)
+                {   
+                    plot.CreatePlant();
+                }
                 //StartCoroutine(Grow(plot));
-                plot.CreatePlant();
+            
             }
-            Debug.LogWarning("Grow");
+            
             StartCoroutine(Grow(plot));
 
         }
         public IEnumerator Thirst(Plot plot)
         {
             yield return new WaitForSeconds(1f);
-            
+            Debug.LogWarning("Thist");
             IEnumerable<Plot> scenePlot = null;
             Plot auxPlot = null;
             //plot.SetThirsty(true);
@@ -108,6 +116,7 @@ namespace _Scripts.Singleton
                 foreach(Plot plotAux in scenePlot)
                 {
                     auxPlot = plotAux;
+                    plot = auxPlot;
                 }
             }
             if (!PlantTimer.ContainsKey(plot.PlotId))yield break;
