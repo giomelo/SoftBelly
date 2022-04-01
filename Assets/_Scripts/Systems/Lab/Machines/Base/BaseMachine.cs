@@ -14,6 +14,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         //public List<UIMachineSlot> Results  = new List<UIMachineSlot>();
         [SerializeField]
         private GameObject machineLayer;
+        [SerializeField]
+        private GameObject workingHUD;
         [Header("UIController of this machine")]
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
@@ -90,6 +92,19 @@ namespace _Scripts.Systems.Lab.Machines.Base
             uiController.DisposeInventory();
             StartCoroutine(LabTimeController.Instance.WorkMachine(this));
             LabEvents.OnMachineStartedCall(this);
+            MachineProcess(machineWorkingTime);
+        }
+
+        protected void MachineProcess(float machineWorkingTime)
+        {
+
+            if (workingHUD)
+            {
+                GameObject HUD = GameObject.Instantiate(workingHUD, transform);
+                MoveNeedle needle = HUD.GetComponentInChildren<MoveNeedle>();
+                needle.needleTime = machineWorkingTime;
+            }
+                
         }
 
         public void SetState(MachineState state)

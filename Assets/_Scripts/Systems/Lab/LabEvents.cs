@@ -3,6 +3,7 @@ using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
 using _Scripts.Systems.Lab.Machines.Base;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace _Scripts.Systems.Lab
 {
@@ -14,8 +15,8 @@ namespace _Scripts.Systems.Lab
         public static Action<ItemBehaviour> OnIngredientSelected;
         public static Action<BaseMachine> OnMachineStarted; //When the machine started(for audio and effects)
         public static Action<BaseMachine> OnMachineFinished; //When the machine finished(for audio and effects)
-        
-        
+
+
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
         public static UIMachineSlot MachineSlot;
@@ -31,7 +32,7 @@ namespace _Scripts.Systems.Lab
         {
             OnMachineStarted?.Invoke(machine);
         }
-        
+
         public static void OnMachineFinishedCall(BaseMachine machine)
         {
             OnMachineFinished?.Invoke(machine);
