@@ -868,6 +868,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7663600658821745524, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
   m_PrefabInstance: {fileID: 352324175}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &453346553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453346555}
+  - component: {fileID: 453346554}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &453346554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453346553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f974f00e99084468bbe3ded92d2b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerPrefab: {fileID: 6542153347766425058, guid: 3725a1e8e35408a429b51f7d43b4ec36, type: 3}
+--- !u!4 &453346555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453346553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 875.7053, y: 529.4385, z: 197.6098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474601288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1319,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 869636282}
   deathObj: {fileID: 1083816333}
 --- !u!64 &581022250
@@ -1704,6 +1750,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 283226014}
   deathObj: {fileID: 1126885373}
 --- !u!64 &652475046
@@ -2098,6 +2145,8 @@ MonoBehaviour:
   Width: 5
   Height: 4
   poolProprieties: []
+  xOffsetProprieties: 210
+  yOffsetProprieties: 80
 --- !u!4 &695123643
 Transform:
   m_ObjectHideFlags: 0
@@ -3820,6 +3869,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 584984798}
   deathObj: {fileID: 398957097}
 --- !u!64 &1169060677
@@ -3939,7 +3989,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193427060
 GameObject:
@@ -3991,6 +4041,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 301923613}
   deathObj: {fileID: 1058156638}
 --- !u!64 &1193427063
@@ -4057,50 +4108,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193427060}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1200599175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1200599177}
-  - component: {fileID: 1200599176}
-  m_Layer: 0
-  m_Name: PlantController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1200599176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200599175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753dd6f87d2348c4b384900520b983cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1200599177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200599175}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.313389, y: -1.1668434, z: 28.579693}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201488178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,6 +4275,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 655005346}
   deathObj: {fileID: 1363438133}
 --- !u!64 &1353202097
@@ -4403,7 +4411,7 @@ Transform:
   m_Children:
   - {fileID: 810588455}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 26.035, y: 0, z: 0}
 --- !u!1 &1363438133
 GameObject:
@@ -4651,6 +4659,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 680253025}
   deathObj: {fileID: 726460780}
 --- !u!64 &1491465734
@@ -4798,6 +4807,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 809746473}
   deathObj: {fileID: 578496994}
 --- !u!64 &1533132150
@@ -4914,6 +4924,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 1904776323}
   deathObj: {fileID: 1846006193}
 --- !u!64 &1586962466
@@ -5796,6 +5807,8 @@ MonoBehaviour:
   Width: 6
   Height: 3
   poolProprieties: []
+  xOffsetProprieties: 210
+  yOffsetProprieties: 80
 --- !u!1001 &1977345986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6133,6 +6146,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 582237706}
   deathObj: {fileID: 1153709466}
 --- !u!64 &2000747467
@@ -6569,6 +6583,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137721800}
   m_CullTransparentMesh: 1
+--- !u!114 &6542153346309150208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542153346309150223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753dd6f87d2348c4b384900520b983cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dic: []
+--- !u!4 &6542153346309150209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542153346309150223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.313389, y: -1.1668434, z: 28.579693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6542153346309150223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6542153346309150209}
+  - component: {fileID: 6542153346309150208}
+  m_Layer: 0
+  m_Name: PlantController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &8597566822933986632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6579,6 +6638,10 @@ PrefabInstance:
     - target: {fileID: 8597566823444321639, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
+      propertyPath: scene
+      value: SC_Lab_HUD
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_RootOrder

@@ -26,7 +26,6 @@ namespace _Scripts.Systems.Plantation
         private void Start()
         {
             IsDestroyed = false;
-            Debug.LogWarning(IsDestroyed);
         }
         public void ChangePlant(Plot id)
         {
@@ -46,11 +45,11 @@ namespace _Scripts.Systems.Plantation
         public void Display(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
-            
+
             CurrentPlant = PlantEvents.CurrentPlant;
             if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
             {
-                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0));
+                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0, false));
                  StartCoroutine(PlantTimeController.Instance.Grow(this));
             }
             
@@ -67,7 +66,7 @@ namespace _Scripts.Systems.Plantation
             IsThirsty = false;
             StopCoroutine(PlantTimeController.Instance.Thirst(this));
             thirstyObj.SetActive(false);
-            var p = new PlantPlot(CurrentPlant, PlantTimeController.Instance.PlantTimer[PlotId].Time, 0);
+            var p = new PlantPlot(CurrentPlant, PlantTimeController.Instance.PlantTimer[PlotId].Time, 0, false);
             PlantTimeController.Instance.PlantTimer[PlotId] = p;
            
            // StartCoroutine(PlantTimeController.Instance.Grow(this));
@@ -105,9 +104,13 @@ namespace _Scripts.Systems.Plantation
 
         private void CheckState()
         {
-            if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles && !IsDead)
+            Debug.Log(PlantTimeController.Instance.PlantTimer[PlotId].ThristTime);
+            Debug.Log(CurrentPlant.WaterCicles);
+            if (PlantTimeController.Instance.PlantTimer[PlotId].IsThirsty && !IsDead)
             {
+                Debug.LogWarning("Created thist");
                 SetThirsty(true); 
+                Debug.Log("DISPLATYYYTTYYTTT------------------------");
             }
             if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles * 3)
             {
@@ -163,7 +166,9 @@ namespace _Scripts.Systems.Plantation
             deathObj.SetActive(false);
             Destroy(transform.GetChild(0).gameObject);
             PlantEvents.PlantCollected = id.CurrentPlant.PlantBase;
+            
             StopCoroutine(PlantTimeController.Instance.Thirst(this));
+            
             PlantTimeController.Instance.ClearSlot(PlotId);
             StartCoroutine(ClearPlot());
 

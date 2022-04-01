@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
@@ -20,7 +21,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
         [SerializeField] protected List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
-        [SerializeField] protected List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
+        [SerializeField] public List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
         private float machineWorkingTime;
         
@@ -30,7 +31,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public int MachineId;
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; private set; }
-
         private void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
@@ -51,6 +51,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
             uiController.DisplayInventory(id.uiController.inventoryId);
         }
 
+        public bool CheckIfCollectedAllResults()
+        {
+            foreach (var slots in ResultsSlots)
+            {
+                if (slots.Slot.MachineSlot.item != null) return false;
+            }
+            return true;
+        }
         private void OnDispose(BaseMachine id)
         {
             if (LabEvents.CurrentMachine == null) return;
@@ -59,7 +67,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.IsMachineSlotSelected = false;
             foreach (var u in IngredientsSlots)
             {
-                u.UnHighLight();
+                u.UnHighLight(u.Slot);
             }
             LabEvents.CurrentMachine = null;
             

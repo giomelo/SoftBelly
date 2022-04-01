@@ -30,6 +30,7 @@ namespace Systems.Plantation
 
         public List<Plot> Plots = new List<Plot>();
 
+
         public void CreatGrid()
         {
             Plots.Clear();
@@ -55,7 +56,6 @@ namespace Systems.Plantation
                 DestroyImmediate(transform.GetChild(0).gameObject);
             }
         }
-
         private void Start()
         {
             PlotsId = 0;

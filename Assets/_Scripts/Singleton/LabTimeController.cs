@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Enums;
@@ -9,17 +10,18 @@ using _Scripts.Systems.Lab.Recipes;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using Systems.Plantation;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Singleton
 {
+
     /// <summary>
     /// Timer controller for machines that need a timer
     /// </summary>
     public class LabTimeController : MonoSingleton<LabTimeController>
     {
-        public Dictionary<int, MachineStoreValues> LabTimer { get; } = new Dictionary<int,MachineStoreValues>();
-        
+        public Dictionary<int, MachineStoreValues> LabTimer { get; } = new Dictionary<int, MachineStoreValues>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
@@ -41,20 +43,37 @@ namespace _Scripts.Singleton
             {
                 foreach (var machine in MachineSystemController.Instance.allMachines.Where(t => LabTimer.ElementAt(i).Key == t.CurrentMachine.MachineId))
                 {
-                    machine.CurrentMachine.CurrentRecipe = LabTimer.ElementAt(i).Value.CurrentRecipeObj;
+                    if (LabTimer[machine.CurrentMachine.MachineId].Time >= 0)
+                    {
+                        machine.CurrentMachine.MachineState = MachineState.Working;
+                        return;
+                    }
+                    machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;
                     machine.CurrentMachine.CreateResult();
+                    //machine.CurrentMachine.MachineState = MachineState.Ready;
                 }
             }
         }
         public IEnumerator WorkMachine(BaseMachine machine)
         {
             yield return new WaitForSeconds(1f);
+            IEnumerable<MachineHolder> sceneMachine = null;
+            if (MachineSystemController.Instance != null)
+            {
+                sceneMachine = MachineSystemController.Instance.allMachines.Where(p => p.CurrentMachine.MachineId == machine.MachineId);
+                foreach(var machineAux in sceneMachine)
+                {
+                    machine = machineAux.CurrentMachine;
+                }
+            }
+            
             Debug.Log("WorkingMachine");
             var aux = LabTimer[machine.MachineId].Time;
             aux -= 1;
             var p = new MachineStoreValues(machine.CurrentRecipe, aux);
+            Debug.Log("Time: " + LabTimer[machine.MachineId].Time);
             LabTimer[machine.MachineId] = p;
-            
+            Debug.Log(sceneMachine);
             if (LabTimer[machine.MachineId].Time <= 0)
             {
                 if (machine.IsDestroyed) yield break;

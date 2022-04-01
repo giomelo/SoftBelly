@@ -12,25 +12,23 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             if (Slot.Type == MachineSlotType.Ingredient)
             {
-                if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready)
+                if (LabEvents.IsMachineSlotSelected)
                 {
-                    UnHighLight();
-                    LabEvents.CurrentMachine.uiController.UpdateInventory();
+                    UnHighLight(LabEvents.MachineSlot);
                 }
-                else
-                {
-                    LabEvents.MachineSlot = Slot;
-                    LabEvents.IsMachineSlotSelected = true;
-                    HighLightSlot();
-                }
-               
+                
+                LabEvents.IsMachineSlotSelected = true;
+                LabEvents.MachineSlot = Slot;
+                HighLightSlot();
             }
             else
             {
-                if (LabEvents.CurrentMachine == null ||
-                    LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
+                // if (LabEvents.CurrentMachine == null ||
+                //     LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
+
+                if (LabEvents.CurrentMachine == null || Slot.MachineSlot.item == null) return;
                 
-                UnHighLight();
+                UnHighLight(Slot);
                 LabEvents.CurrentMachine.uiController.UpdateInventory();
             }
            
@@ -41,36 +39,60 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Image.color = Color.green;
         }
 
-        public void UnHighLight()
+        public void UnHighLight(UIMachineSlot slot)
         {
-            Slot.Image.color = Color.white;
-            Slot.Image.sprite = null;
-            Slot.Amount.text = "00";
-         
             if (LabEvents.CurrentMachine == null)
             {
                 Debug.LogError("Missing UiController of this machine");
                 return;
             }
+            
+            slot.Image.color = Color.white;
+            slot.Image.sprite = null;
+            slot.Amount.text = "00";
 
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
             
-            Debug.Log("Add");
             LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
                 Slot.MachineSlot.item);
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
 
+            var currentMachine = LabEvents.CurrentMachine;
+            for (int i = 0; i < 2; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        if (currentMachine == currentMachine as Cauldron)
+                        {
+                            if (LabEvents.CurrentMachine.CheckIfCollectedAllResults())
+                            {
+                                LabEvents.CurrentMachine.SetState(MachineState.Empty);
+                            }
+                        }
+                        break;
+                    case 1:
+                        if (currentMachine == currentMachine as HerbDryer)
+                        {
+                            LabEvents.CurrentMachine.SetState(MachineState.Empty);
+                        }
+                        break;
+                }
+            }
+         
+          
         }
 
-        public void ResetSlot()
+     
+        public void ResetSlot(UIMachineSlot slot)
         {
-            Slot.Image.color = Color.white;
-            Slot.Image.sprite = null;
-            Slot.Amount.text = "00";
-            Slot.MachineSlot.item = null;
-            Slot.MachineSlot.amount = 0;
+            slot.Image.color = Color.white;
+            slot.Image.sprite = null;
+            slot.Amount.text = "00";
+            slot.MachineSlot.item = null;
+            slot.MachineSlot.amount = 0;
         }
         
         //set the slot to the current item

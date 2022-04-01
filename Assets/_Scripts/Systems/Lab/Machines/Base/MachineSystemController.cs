@@ -11,12 +11,12 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public List<MachineHolder> allMachines = new List<MachineHolder>();
         private void Start()
         {
-            MachinesId = 0;
-            foreach (var machine in allMachines)
-            {
-                machine.CurrentMachine.MachineId = MachinesId;
-                MachinesId++;
-            }
+            // MachinesId = 0;
+            // foreach (var machine in allMachines)
+            // {
+            //     machine.CurrentMachine.MachineId = MachinesId;
+            //     MachinesId++;
+            // }
 
             LabTimeController.Instance.DisplayMachines();
         }
