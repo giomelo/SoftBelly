@@ -15,9 +15,7 @@ namespace _Scripts.Systems.Item
         public ItemType ItemType;
 
         public Sprite ImageDisplay;
-        [TextArea]
-        public string Proprieties;
-        
+
         public float Price;
 
         public GameObject ItemProprietiesGO;
@@ -28,12 +26,13 @@ namespace _Scripts.Systems.Item
         //     ItemType = itemType;
         // }
 
-        public void Init(string id, ItemType itemType, Sprite sprite, float price)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
+            ItemProprietiesGO = itemProprietiesGo;
         }
     }
 }

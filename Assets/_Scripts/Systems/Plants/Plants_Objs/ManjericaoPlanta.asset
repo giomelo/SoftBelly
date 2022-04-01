@@ -15,4 +15,8 @@ MonoBehaviour:
   ItemId: "Manjeric\xE3o"
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 14d9cbcc7db785d43924d921d6de4aeb, type: 3}
-  Proprieties: 
+  Price: 0
+  ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
+  isDried: 0
+  MedicalSymptoms: 0
+  DriedPlant: {fileID: 21300000, guid: caa3537358c561c438a5a2d3a8851b28, type: 3}

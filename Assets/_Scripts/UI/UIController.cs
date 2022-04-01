@@ -55,8 +55,11 @@ namespace _Scripts.UI
         private GameObject proprietiesObj;
         [SerializeField]
         private List<GameObject> poolProprieties = new List<GameObject>();
-
+        
+        [SerializeField]
+        [Header("Offset for display proprieties")]
         private float xOffsetProprieties = 210f;
+        [SerializeField]
         private float yOffsetProprieties = 80f;
 
         private void Start()
@@ -196,6 +199,7 @@ namespace _Scripts.UI
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
+            Debug.Log("oi");
             GameObject aux = null;
             var position = local.transform.position;
             Debug.Log(position);

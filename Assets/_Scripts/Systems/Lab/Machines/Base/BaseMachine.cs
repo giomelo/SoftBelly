@@ -20,8 +20,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
         [SerializeField] protected List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
-        [SerializeField]
-        private List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
+        [SerializeField] protected List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
         private float machineWorkingTime;
         
@@ -68,7 +67,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// <summary>
         /// Button for machines that have timer
         /// </summary>
-        protected void StartMachine()
+        protected virtual void StartMachine()
         {
             //if (machine.MachineId != MachineId) return;
             List<ItemObj> ingredients = new List<ItemObj>();
@@ -84,6 +83,16 @@ namespace _Scripts.Systems.Lab.Machines.Base
             if (CurrentRecipe == null) return;
 
             Debug.Log("Receita Existe");
+           
+            StartTime();
+            
+            LabEvents.OnMachineStartedCall(this); //event for calling machine hud
+            
+            MachineProcess(machineWorkingTime);
+        }
+
+        protected void StartTime()
+        { 
             if (!LabTimeController.Instance.LabTimer.ContainsKey(MachineId))
             {
                 LabTimeController.Instance.AddTime(MachineId, machineWorkingTime, CurrentRecipe);
@@ -91,13 +100,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
             MachineState = MachineState.Working;
             uiController.DisposeInventory();
             StartCoroutine(LabTimeController.Instance.WorkMachine(this));
-            LabEvents.OnMachineStartedCall(this);
-            MachineProcess(machineWorkingTime);
         }
 
-        protected void MachineProcess(float machineWorkingTime)
+        private void MachineProcess(float machineWorkingTime)
         {
-
             if (workingHUD)
             {
                 GameObject HUD = GameObject.Instantiate(workingHUD, transform);
@@ -111,28 +117,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             MachineState = state;
         }
+
         /// <summary>
         /// Create the ingredient result of the machine
         /// </summary>
-        public void CreateResult()
-        {
-            for (int i = 0; i < ResultsSlots.Count; i++)
-            {
-                Debug.Log("Results");
-                Debug.Log(ResultsSlots[i].Slot);
-                Debug.Log(CurrentRecipe);
-                ResultsSlots[i].Slot.Image.sprite = CurrentRecipe.Results[i].item.ImageDisplay;
-                ResultsSlots[i].Slot.Amount.text = CurrentRecipe.Results[i].amount.ToString();
-                ResultsSlots[i].Slot.MachineSlot.item = CurrentRecipe.Results[i].item;
-                ResultsSlots[i].Slot.MachineSlot.amount = CurrentRecipe.Results[i].amount;
-            }
-
-            for (int i = 0; i < IngredientsSlots.Count; i++)
-            {
-                IngredientsSlots[i].ResetSlot();
-            }
-
-            LabEvents.OnMachineFinishedCall(this);
-        }
+        public abstract void CreateResult();
     }
 }

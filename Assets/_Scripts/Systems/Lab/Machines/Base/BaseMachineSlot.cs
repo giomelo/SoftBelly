@@ -12,9 +12,18 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             if (Slot.Type == MachineSlotType.Ingredient)
             {
-                LabEvents.MachineSlot = Slot;
-                LabEvents.IsMachineSlotSelected = true;
-                HighLightSlot();
+                if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready)
+                {
+                    UnHighLight();
+                    LabEvents.CurrentMachine.uiController.UpdateInventory();
+                }
+                else
+                {
+                    LabEvents.MachineSlot = Slot;
+                    LabEvents.IsMachineSlotSelected = true;
+                    HighLightSlot();
+                }
+               
             }
             else
             {
@@ -68,12 +77,11 @@ namespace _Scripts.Systems.Lab.Machines.Base
         private void AddItemSlot(ItemBehaviour item)
         {
             if (LabEvents.MachineSlot.slotId != Slot.slotId) return;
-
-            if (Slot.MachineSlot.amount >= Slot.maxPerSlot) return;
             Slot.MachineSlot.item = item;
             Slot.MachineSlot.amount++;
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();
             Slot.Image.sprite = item.ImageDisplay;
+            LabEvents.MachineSlot = Slot;
         }
 
         private void OnEnable()

@@ -21,6 +21,7 @@ namespace _Scripts.UI
         
         public void MouseEnter()
         {
+            
             if (uiSlot.item == null)
             {
                 _subject.ResetCurrentProprieties();
@@ -29,7 +30,7 @@ namespace _Scripts.UI
 
             if (uiSlot.item.ItemProprietiesGO == null) return;
             _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO, this.transform);
-            Debug.Log("mouseEnter");
+           
         }
         
         public void MouseExit()

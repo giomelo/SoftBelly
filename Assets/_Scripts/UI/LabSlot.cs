@@ -19,11 +19,17 @@ namespace _Scripts.UI
             
       
             LabEvents.IngredientSelected = uiSlot.item;
+            //if (Slot.MachineSlot.amount >= Slot.maxPerSlot) return;
             if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
             {
                 Debug.Log("This item cant be put in this slot");
                 return;
             }
+
+            Debug.Log(LabEvents.MachineSlot.MachineSlot.amount);
+            Debug.Log(LabEvents.MachineSlot.maxPerSlot);
+
+            if (LabEvents.MachineSlot.MachineSlot.amount >= LabEvents.MachineSlot.maxPerSlot) return;
             LabEvents.OnIngredientSelectedCall();
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             _subject.UpdateInventory();

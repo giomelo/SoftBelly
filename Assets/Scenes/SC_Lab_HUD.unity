@@ -1130,7 +1130,7 @@ MonoBehaviour:
   YOffset: 210
   XOffset: 130
   startPosition: {fileID: 645423582}
-  slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
+  slotPrefab: {fileID: 9206015739198898211, guid: 2581a288a4034ab42990753fe2e3cf66, type: 3}
   slotDisplay: {fileID: 1194514295}
   proprietiesDisplay:
     PlantName: {fileID: 539377314}
@@ -1141,6 +1141,8 @@ MonoBehaviour:
   Width: 5
   Height: 3
   poolProprieties: []
+  xOffsetProprieties: 210
+  yOffsetProprieties: 80
 --- !u!1 &539377312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 108
+      value: 21.000038
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2289,11 +2291,19 @@ MonoBehaviour:
   machineLayer: {fileID: 1519111834}
   workingHUD: {fileID: 0}
   uiController: {fileID: 976766620}
-  IngredientsSlots: []
-  ResultsSlots: []
-  machineWorkingTime: 0
+  IngredientsSlots:
+  - {fileID: 1216451570}
+  - {fileID: 2010858166}
+  - {fileID: 1619523381}
+  - {fileID: 446664074}
+  ResultsSlots:
+  - {fileID: 1216451570}
+  - {fileID: 2010858166}
+  - {fileID: 1619523381}
+  - {fileID: 446664074}
+  machineWorkingTime: 10
   machineBurnTime: 0
-  MachineId: 0
+  MachineId: 1
   CurrentRecipe: {fileID: 0}
 --- !u!114 &725722558
 MonoBehaviour:
@@ -2307,7 +2317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e3d92a929247f1b683cc135d6d32a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentMachine: {fileID: 0}
+  CurrentMachine: {fileID: 725722556}
 --- !u!65 &725722559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2772,7 +2782,7 @@ PrefabInstance:
       objectReference: {fileID: 446664071}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.slotId
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.maxPerSlot
@@ -2852,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 107.999985
+      value: 21.000023
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3331,7 +3341,7 @@ PrefabInstance:
       objectReference: {fileID: 1619523378}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.slotId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.maxPerSlot
@@ -3411,7 +3421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 107.999985
+      value: 21.000023
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3491,6 +3501,8 @@ MonoBehaviour:
   Width: 2
   Height: 9
   poolProprieties: []
+  xOffsetProprieties: 210
+  yOffsetProprieties: 80
 --- !u!1001 &993679940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5322,7 +5334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1450188839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5966,7 +5978,7 @@ MonoBehaviour:
   - {fileID: 574364284}
   ResultsSlots:
   - {fileID: 8589334044272614516}
-  machineWorkingTime: 2
+  machineWorkingTime: 10
   machineBurnTime: 0
   MachineId: 0
   CurrentRecipe: {fileID: 0}
@@ -6975,6 +6987,8 @@ MonoBehaviour:
   Width: 2
   Height: 9
   poolProprieties: []
+  xOffsetProprieties: 210
+  yOffsetProprieties: 80
 --- !u!1 &1759305099
 GameObject:
   m_ObjectHideFlags: 0
@@ -7819,8 +7833,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: _Scripts.Systems.Lab.Machines.Cauldron, Assembly-CSharp
+      - m_Target: {fileID: 725722556}
+        m_TargetAssemblyTypeName: _Scripts.Systems.Lab.Machines.HerbDryer, Assembly-CSharp
         m_MethodName: Work
         m_Mode: 1
         m_Arguments:
@@ -8157,7 +8171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 107.999985
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

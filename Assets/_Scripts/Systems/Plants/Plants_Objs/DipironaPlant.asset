@@ -15,5 +15,8 @@ MonoBehaviour:
   ItemId: Dipirona
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: cf66e75149ba56341b8d4b45f05ac890, type: 3}
-  Proprieties: 
   Price: 0
+  ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
+  isDried: 0
+  MedicalSymptoms: 0
+  DriedPlant: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
