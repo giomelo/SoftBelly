@@ -1,12 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using _Scripts.Systems.Lab.Machines;
 using UnityEngine;
 
-namespace _Scripts
+public class TimerFaceScreen : MonoBehaviour
 {
-    public class TimerFaceScreen : MonoBehaviour
+    void Update()
     {
-        void Update()
-        {
-            transform.LookAt(Camera.main.transform.position, Vector3.up);
-        }
+        transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
 }

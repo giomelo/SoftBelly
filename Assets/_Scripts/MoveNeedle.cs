@@ -1,34 +1,41 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Scripts
+public class MoveNeedle : MonoBehaviour
 {
-    public class MoveNeedle : MonoBehaviour
+    public float needleTime;
+
+    public GameObject check;
+
+    Vector2 needlePos;
+
+    private void Start()
     {
-        public float needleTime;
-        Vector2 needlePos;
+        needlePos = transform.localPosition;
+        StartCoroutine(StartNeedle());
+    }
 
-        private void Start()
+    public IEnumerator StartNeedle()
+    {
+        yield return new WaitForSeconds(0.9f);
+        while (true)
         {
-            needlePos = transform.localPosition;
-            StartCoroutine(StartNeedle());
-        }
-
-        public IEnumerator StartNeedle()
-        {
-            while (true)
+            if (needlePos.x >= -0.34f)
             {
-                if (needlePos.x >= -0.34f)
-                {
-                    needlePos.x -= (0.7f / needleTime);
-                    transform.localPosition = needlePos;
-                } else
-                {
-                    yield return new WaitForSeconds(1);
-                    Destroy(transform.parent.gameObject);
-                }
+                needlePos.x -= (0.7f / needleTime);
+                transform.localPosition = needlePos;
+            } else
+            {
+                Animator anim = transform.parent.gameObject.GetComponent<Animator>();
+                check.SetActive(true);
+                anim.Play("default.TH_CheckFades");
+                yield return new WaitForSeconds(5);
+                anim.Play("default.TH_FadeOut");
                 yield return new WaitForSeconds(1);
+                Destroy(transform.parent.gameObject);
             }
+            yield return new WaitForSeconds(1);
         }
     }
 }
