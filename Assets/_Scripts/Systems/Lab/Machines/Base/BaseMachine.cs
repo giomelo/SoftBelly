@@ -35,12 +35,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             LabEvents.OnMachineSelected += OnCLicked;
             LabEvents.OnMachineDispose += OnDispose;
+            LabEvents.OnMachineStarted += MachineProcess;
             IsDestroyed = false;
         }
         private void OnDisable()
         {
             LabEvents.OnMachineSelected -= OnCLicked;
             LabEvents.OnMachineDispose -= OnDispose;
+            LabEvents.OnMachineStarted -= MachineProcess;
             IsDestroyed = true;
         }
 
@@ -95,8 +97,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             StartTime();
             
             LabEvents.OnMachineStartedCall(this); //event for calling machine hud
-            
-            MachineProcess(machineWorkingTime);
         }
 
         protected void StartTime()
@@ -110,13 +110,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
             StartCoroutine(LabTimeController.Instance.WorkMachine(this));
         }
 
-        private void MachineProcess(float machineWorkingTime)
+        private void MachineProcess(BaseMachine machine)
         {
+            if (machine.MachineId != MachineId) return;
             if (workingHUD)
             {
                 GameObject HUD = GameObject.Instantiate(workingHUD, transform);
                 MoveNeedle needle = HUD.GetComponentInChildren<MoveNeedle>();
-                needle.needleTime = machineWorkingTime;
+                needle.needleTime = machine.machineWorkingTime;
             }
                 
         }

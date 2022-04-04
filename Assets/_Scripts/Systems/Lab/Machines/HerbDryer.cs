@@ -33,6 +33,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         protected override void StartMachine()
         {
+            LabEvents.OnMachineStartedCall(this);
             PlacePlants();
             StartTime();
         }

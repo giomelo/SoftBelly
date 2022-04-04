@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   machineLayer: {fileID: 1519111834}
-  workingHUD: {fileID: 0}
+  workingHUD: {fileID: 7779532446181393301, guid: eeb9ae9dc5f7f494fb1bf1499c863e28, type: 3}
   uiController: {fileID: 976766620}
   IngredientsSlots:
   - {fileID: 1216451570}
