@@ -53,6 +53,8 @@ namespace _Scripts.Singleton
                     //machine.CurrentMachine.MachineState = MachineState.Ready;
                 }
             }
+            
+            
         }
         public IEnumerator WorkMachine(BaseMachine machine)
         {
@@ -76,6 +78,7 @@ namespace _Scripts.Singleton
             Debug.Log(sceneMachine);
             if (LabTimer[machine.MachineId].Time <= 0)
             {
+                LabTimer.Remove(machine.MachineId);//remove to make machine brun the igrerdient
                 if (machine.IsDestroyed) yield break;
                 machine.SetState(MachineState.Ready);
                 machine.CreateResult();

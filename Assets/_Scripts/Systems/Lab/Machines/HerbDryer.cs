@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using _Scripts.Systems.Plants.Bases;
@@ -22,6 +23,7 @@ namespace _Scripts.Systems.Lab.Machines
                 ingredients.Add(slotMachineObj.Slot.MachineSlot);
             }
             StartMachine();
+
         }
 
         private void PlacePlants()
@@ -42,21 +44,28 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
                 
-                
                 Debug.Log("Results");
-                Debug.Log(ResultsSlots[i].Slot);
                 var newDriedPlant = ScriptableObject.CreateInstance<PlantBase>();
+                
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
-                newDriedPlant.Init("DriedPlant", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlant,currentPlant.Price, currentPlant.ItemProprietiesGO);
-
-                IngredientsSlots[i].gameObject.SetActive(false);
-                ResultsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
-                ResultsSlots[i].Slot.MachineSlot.item = newDriedPlant;
-                ResultsSlots[i].Slot.Amount.text = 1.ToString();
-                ResultsSlots[i].Slot.MachineSlot.amount = 1;
-
-
+                newDriedPlant.name = currentPlant.ItemId + "Dried";
+                newDriedPlant.Init(currentPlant.ItemId + "Dried", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlant,currentPlant.Price, currentPlant.ItemProprietiesGO);
+                
+                IngredientsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
+                IngredientsSlots[i].Slot.MachineSlot.item = newDriedPlant;
+                IngredientsSlots[i].Slot.Amount.text = 1.ToString();
+                IngredientsSlots[i].Slot.MachineSlot.amount = 1;
             }
+
+            foreach (var machine in MachineSystemController.Instance.allMachines)
+            {
+                if(machine.CurrentMachine == machine.CurrentMachine as HerbDryer)
+                {
+                    machine.CurrentMachine.SetSlotType();
+                }
+            }
+            
+            LabEvents.OnMachineFinishedCall(this);
         }
     }
 }

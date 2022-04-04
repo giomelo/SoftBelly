@@ -40,23 +40,29 @@ namespace _Scripts.Systems.Inventories
             Debug.LogWarning("Item não pode ser adicionado nesse inventário");
             return;
          }
-         var index = CheckIfSlotAreAvailabe(item);
+         var index = 0;
          if (CheckIfContainsKey(item))
          {
             index = CheckIfSlotAreAvailabe(item);
-            if (index == Slots.Count)
-            {
-               Slots.Add(index, new ItemObj(item, amount));
-               return;
-            }
-            var auxObj = Slots[index];
-            auxObj.amount += amount;
-            Slots[index] = auxObj;
          }
          else
          {
-            Slots.Add(index, new ItemObj(item, amount));
+            index = ReturnFirstEmptySlot();
          }
+         Put(index, item, amount);
+      }
+
+      private void Put(int index, ItemBehaviour item, int amount)
+      {
+         if (index == Slots.Count)
+         {
+            Slots.Add(index, new ItemObj(item, amount));
+            return;
+         }
+         var auxObj = Slots[index];
+         auxObj.amount += amount;
+         auxObj.item = item;
+         Slots[index] = auxObj;   
       }
 
       public void RemoveItem(int key, int amount)
@@ -69,6 +75,19 @@ namespace _Scripts.Systems.Inventories
          //    Slots.Remove(key);
          // }
       }
+
+      private int ReturnFirstEmptySlot()
+      {
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            var amountInSlot = Slots.ElementAt(i).Value.amount;
+            if (amountInSlot <= 0)
+            {
+               return i;
+            }
+         }
+         return Slots.Count;
+      }
       
       /// <summary>
       /// Find the slot with the minor amount and remove from it
@@ -79,34 +98,6 @@ namespace _Scripts.Systems.Inventories
          bool first = true;
          var last = 0;
          var index = 0;
-         // IOrderedEnumerable<KeyValuePair<int, ItemObj>> items = Slots.Where(slot => slot.Value.item == item)
-         //    .OrderBy(slot => slot.Value.amount);
-         // foreach (KeyValuePair<int, ItemObj> i in items)
-         // {
-         //    Debug.Log(items.);
-         // }
-         //
-         // var auxObj = Slots[index];
-         // auxObj.amount -= 1;
-         // Slots[index] = auxObj;
-         // for (int i = 0; i < items.Count(); i++)
-         // {
-         //    Debug.Log(i);
-         //    if (first)
-         //    {
-         //       last = Slots.ElementAt(i).Value.amount;
-         //       first = false;
-         //    }
-         //    if (Slots.ElementAt(i).Value.amount < last)
-         //    {
-         //       last = Slots.ElementAt(i).Value.amount;
-         //       index = i;
-         //    }
-         //    
-         //    var auxObj = Slots[index];
-         //    auxObj.amount -= 1;
-         //    Slots[index] = auxObj;
-         // }
          for(int i = 0; i < Slots.Count; i++)
          {
             if (Slots.ElementAt(i).Value.item != item) continue;
@@ -140,8 +131,9 @@ namespace _Scripts.Systems.Inventories
       {
          for(int i = 0; i < Slots.Count; i++)
          {
-            if (Slots.ElementAt(i).Value.item != item) continue;
             var amountInSlot = Slots.ElementAt(i).Value.amount;
+            if (!Slots.ElementAt(i).Value.item.Equals(item)) continue;
+            
             if (amountInSlot < maxAmountPerSlots)
             {
                return i;
@@ -154,8 +146,9 @@ namespace _Scripts.Systems.Inventories
       {
          for(int i = 0; i < Slots.Count; i++)
          {
-            if (Slots.ElementAt(i).Value.item == item)
+            if (Slots.ElementAt(i).Value.item.Equals(item))
             {
+               Debug.LogWarning("True");
                return true;
             }
          }

@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Enums;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,12 +21,8 @@ namespace _Scripts.Systems.Item
 
         public GameObject ItemProprietiesGO;
 
-        // public ItemBehaviour(string id, ItemType itemType)
-        // {
-        //     ItemId = id;
-        //     ItemType = itemType;
-        // }
-
+        private static int ItemsIdCounter = 0;
+        
         public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo)
         {
             ItemId = id;
@@ -33,6 +30,22 @@ namespace _Scripts.Systems.Item
             ImageDisplay = sprite;
             Price = price;
             ItemProprietiesGO = itemProprietiesGo;
+        }
+        
+        public bool Equals(ItemBehaviour other)
+        {
+            return ItemId == other.ItemId;
+        }
+
+        // public override bool Equals(object other)
+        // {
+        //     var aux = other as ItemBehaviour;
+        //     return ItemId == aux.ItemId;
+        // }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(base.GetHashCode(), ItemId);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [Header("UIController of this machine")]
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
-        [SerializeField] protected List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
+        [SerializeField] public List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
         [SerializeField] public List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
         private float machineWorkingTime;
@@ -67,7 +67,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.IsMachineSlotSelected = false;
             foreach (var u in IngredientsSlots)
             {
-                u.UnHighLight(u.Slot);
+                u.UnHighLight();
             }
             LabEvents.CurrentMachine = null;
             
@@ -130,5 +130,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// Create the ingredient result of the machine
         /// </summary>
         public abstract void CreateResult();
+        
+        public void SetSlotType()
+        {
+            Debug.LogWarning("SLOTTYPE CHANGED"); 
+            foreach (var slot in IngredientsSlots)
+            {
+                if (slot.Slot.MachineSlot.item == null) continue;
+                slot.Slot.Type = MachineSlotType.Result;
+            }
+        }
     }
 }

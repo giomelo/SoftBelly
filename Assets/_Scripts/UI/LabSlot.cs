@@ -15,7 +15,10 @@ namespace _Scripts.UI
     {
         private void OnSlotClicked()
         {
-            if (!LabEvents.IsMachineSlotSelected) return;
+            if (!LabEvents.IsMachineSlotSelected)
+            {
+                return;
+            }
             
       
             LabEvents.IngredientSelected = uiSlot.item;

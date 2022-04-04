@@ -14,7 +14,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 if (LabEvents.IsMachineSlotSelected)
                 {
-                    UnHighLight(LabEvents.MachineSlot);
+                    UnHighLightSlot(LabEvents.MachineSlot);
                 }
                 
                 LabEvents.IsMachineSlotSelected = true;
@@ -28,8 +28,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
                 if (LabEvents.CurrentMachine == null || Slot.MachineSlot.item == null) return;
                 
-                UnHighLight(Slot);
-                LabEvents.CurrentMachine.uiController.UpdateInventory();
+                UnHighLight();
+                
             }
            
         }
@@ -39,7 +39,13 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Image.color = Color.green;
         }
 
-        public void UnHighLight(UIMachineSlot slot)
+        private static void UnHighLightSlot(UIMachineSlot slot)
+        {
+            slot.Image.color = Color.white;
+            slot.Image.sprite = null;
+            slot.Amount.text = "00";
+        }
+        public void UnHighLight()
         {
             if (LabEvents.CurrentMachine == null)
             {
@@ -47,15 +53,17 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 return;
             }
             
-            slot.Image.color = Color.white;
-            slot.Image.sprite = null;
-            slot.Amount.text = "00";
+            Slot.Image.color = Color.white;
+            Slot.Image.sprite = null;
+            Slot.Amount.text = "00";
 
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
             
             LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
                 Slot.MachineSlot.item);
+            LabEvents.CurrentMachine.uiController.UpdateInventory();
+            Debug.LogWarning("Item");
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
 
@@ -77,6 +85,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         if (currentMachine == currentMachine as HerbDryer)
                         {
                             LabEvents.CurrentMachine.SetState(MachineState.Empty);
+                            SetType(MachineSlotType.Ingredient);
                         }
                         break;
                 }
@@ -86,7 +95,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         }
 
      
-        public void ResetSlot(UIMachineSlot slot)
+        public static void ResetSlot(UIMachineSlot slot)
         {
             slot.Image.color = Color.white;
             slot.Image.sprite = null;
@@ -104,6 +113,13 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();
             Slot.Image.sprite = item.ImageDisplay;
             LabEvents.MachineSlot = Slot;
+        }
+
+     
+
+        private void SetType(MachineSlotType type)
+        {
+            Slot.Type = type;
         }
 
         private void OnEnable()

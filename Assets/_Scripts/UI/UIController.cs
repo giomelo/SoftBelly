@@ -37,10 +37,8 @@ namespace _Scripts.UI
         [Header("Place where the slots are gonna be created")]
         [SerializeField]
         private Transform slotDisplay;
-        [Header("Proprieties")]
-        [SerializeField]
-        private PlantProprieties proprietiesDisplay;
-        
+
+
         [Tooltip("Each inventory in the scene has to have one unique inventoryId")]
         [SerializeField]
         public int inventoryId;
