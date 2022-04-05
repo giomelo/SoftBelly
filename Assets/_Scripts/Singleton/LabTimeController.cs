@@ -46,6 +46,7 @@ namespace _Scripts.Singleton
                     if (LabTimer[machine.CurrentMachine.MachineId].Time >= 0)
                     {
                         machine.CurrentMachine.MachineState = MachineState.Working;
+                        machine.CurrentMachine.MachineProcess(machine.CurrentMachine);
                         return;
                     }
                     machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;

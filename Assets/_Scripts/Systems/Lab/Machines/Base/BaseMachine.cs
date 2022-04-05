@@ -16,7 +16,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [SerializeField]
         private GameObject machineLayer;
         [SerializeField]
-        private GameObject workingHUD;
+        public GameObject workingHUD;
         [Header("UIController of this machine")]
         public UIController uiController;
         public MachineState MachineState { get; set; } = MachineState.Empty;
@@ -110,16 +110,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
             StartCoroutine(LabTimeController.Instance.WorkMachine(this));
         }
 
-        private void MachineProcess(BaseMachine machine)
+        public void MachineProcess(BaseMachine machine)
         {
             if (machine.MachineId != MachineId) return;
             if (workingHUD)
             {
                 GameObject HUD = GameObject.Instantiate(workingHUD, transform);
                 MoveNeedle needle = HUD.GetComponentInChildren<MoveNeedle>();
-                needle.needleTime = machine.machineWorkingTime;
+                StartCoroutine(needle.StartNeedle(machine.machineWorkingTime));
             }
-                
         }
 
         public void SetState(MachineState state)

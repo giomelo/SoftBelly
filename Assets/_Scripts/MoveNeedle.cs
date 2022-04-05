@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class MoveNeedle : MonoBehaviour
 {
-    public float needleTime;
+    public float needleTime = 0;
 
     public GameObject check;
 
     Vector2 needlePos;
+    private Animator anim;
 
     private void Start()
     {
         needlePos = transform.localPosition;
-        StartCoroutine(StartNeedle());
+        anim = transform.parent.gameObject.GetComponent<Animator>();
     }
 
-    public IEnumerator StartNeedle()
+    public IEnumerator StartNeedle(float time)
     {
         yield return new WaitForSeconds(0.9f);
-        while (true)
-        {
+
             if (needlePos.x >= -0.34f)
             {
-                needlePos.x -= (0.7f / needleTime);
+                needlePos.x -= (0.7f / time);
                 transform.localPosition = needlePos;
+                StartCoroutine(StartNeedle(time));
             } else
             {
-                Animator anim = transform.parent.gameObject.GetComponent<Animator>();
                 check.SetActive(true);
                 anim.Play("default.TH_CheckFades");
                 yield return new WaitForSeconds(5);
@@ -37,5 +37,4 @@ public class MoveNeedle : MonoBehaviour
             }
             yield return new WaitForSeconds(1);
         }
-    }
 }

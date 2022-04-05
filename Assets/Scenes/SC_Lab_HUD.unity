@@ -2067,7 +2067,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696734475}
-  m_LocalRotation: {x: 0.2771227, y: 0.018374972, z: -0.005300736, w: 0.96064425}
+  m_LocalRotation: {x: 0.2771227, y: 0.018375007, z: -0.005300746, w: 0.96064425}
   m_LocalPosition: {x: 0.13000003, y: 9.2, z: -3.6900005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2292,11 +2292,7 @@ MonoBehaviour:
   - {fileID: 2010858166}
   - {fileID: 1619523381}
   - {fileID: 446664074}
-  ResultsSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  ResultsSlots: []
   machineWorkingTime: 3
   machineBurnTime: 0
   MachineId: 1
@@ -5832,7 +5828,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490286515}
-  m_LocalRotation: {x: 0.2771227, y: 0.018374972, z: -0.005300736, w: 0.96064425}
+  m_LocalRotation: {x: 0.2771227, y: 0.018375007, z: -0.005300746, w: 0.96064425}
   m_LocalPosition: {x: 0.13000003, y: 9.2, z: -3.6900005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
