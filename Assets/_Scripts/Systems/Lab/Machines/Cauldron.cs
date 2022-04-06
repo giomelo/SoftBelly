@@ -17,7 +17,7 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 Debug.Log("Results");
                 Debug.Log(ResultsSlots[i].Slot);
-                Debug.Log(CurrentRecipe);
+                Debug.Log("Current recipe: " + CurrentRecipe);
                 Debug.Log(ResultsSlots[i]);
                 ResultsSlots[i].Slot.Image.sprite = CurrentRecipe.Results[i].item.ImageDisplay;
                 ResultsSlots[i].Slot.Amount.text = CurrentRecipe.Results[i].amount.ToString();

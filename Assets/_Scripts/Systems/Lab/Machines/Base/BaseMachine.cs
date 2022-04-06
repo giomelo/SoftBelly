@@ -23,7 +23,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [SerializeField] public List<BaseMachineSlot> IngredientsSlots = new List<BaseMachineSlot>();
         [SerializeField] public List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
-        private float machineWorkingTime;
+        public float machineWorkingTime;
         
         [SerializeField]
         private float machineBurnTime;
@@ -117,7 +117,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 GameObject HUD = GameObject.Instantiate(workingHUD, transform);
                 MoveNeedle needle = HUD.GetComponentInChildren<MoveNeedle>();
-                StartCoroutine(needle.StartNeedle(machine.machineWorkingTime));
+                StartCoroutine(needle.StartNeedle(machine));
             }
         }
 

@@ -73,15 +73,19 @@ namespace _Scripts.Singleton
             Debug.Log("WorkingMachine");
             var aux = LabTimer[machine.MachineId].Time;
             aux -= 1;
-            var p = new MachineStoreValues(machine.CurrentRecipe, aux);
+            var p = new MachineStoreValues(LabTimer[machine.MachineId].CurrentRecipeObj, aux);
             Debug.Log("Time: " + LabTimer[machine.MachineId].Time);
             LabTimer[machine.MachineId] = p;
             Debug.Log(sceneMachine);
+            machine.CurrentRecipe = LabTimer[machine.MachineId].CurrentRecipeObj;
+            
             if (LabTimer[machine.MachineId].Time <= 0)
             {
                 LabTimer.Remove(machine.MachineId);//remove to make machine brun the igrerdient
                 if (machine.IsDestroyed) yield break;
                 machine.SetState(MachineState.Ready);
+                Debug.LogWarning(machine);
+                
                 machine.CreateResult();
             }
             else
