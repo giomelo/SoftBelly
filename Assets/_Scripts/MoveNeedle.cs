@@ -14,8 +14,9 @@ public class MoveNeedle : MonoBehaviour
     Vector2 needlePos;
     private Animator anim;
     private float maxTime;
+    private bool started = true;    //Usado para que a posição de needle só seja atualizada uma vez quando o objeto for criado
 
-    private void Start()
+    private void Awake()
     {
         needlePos = transform.localPosition;
         anim = transform.parent.gameObject.GetComponent<Animator>();
@@ -23,20 +24,10 @@ public class MoveNeedle : MonoBehaviour
 
     public IEnumerator StartNeedle(BaseMachine machine)
     {
-        const float step = 0.7f;
-        
-        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId)) yield break;
-        maxTime = machine.machineWorkingTime;
-        var time = LabTimeController.Instance.LabTimer[machine.MachineId].Time;
-        needlePos.x = step/maxTime * time;
-        
-        yield return new WaitForSeconds(0.9f);
-        if (needlePos.x >= -0.34f)
-        {
-            needlePos.x -= step * (maxTime - time);
-            transform.localPosition = needlePos;
-            StartCoroutine(StartNeedle(machine));
-        } else
+        const float step = 0.7f; //Constante indicando o espaço total percorrido do início ao fim do trajeto de Needle
+
+        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId))    //machine não existe mais? então o timer acabou.
+                                                                                    //toque umas animações, destrua o parent e termine o IEnum
         {
             check.SetActive(true);
             anim.Play("default.TH_CheckFades");
@@ -44,7 +35,27 @@ public class MoveNeedle : MonoBehaviour
             anim.Play("default.TH_FadeOut");
             yield return new WaitForSeconds(1);
             Destroy(transform.parent.gameObject);
+            yield break;
         }
+
+        maxTime = machine.machineWorkingTime;
+        var time = LabTimeController.Instance.LabTimer[machine.MachineId].Time;
+
+        if (started)    //entramos aqui sempre que o objeto for criado na cena novamente para atualizarmos sua posição X
+        {
+            needlePos.x -= step / maxTime * (maxTime - time);   //a posição nova será baseada no tempo percorrido * (step/maxTime),
+                                                                //que nos dá a distância de um "passo" baseado no tempo de trabalho da máquina
+            transform.localPosition = needlePos;
+        }
+
         yield return new WaitForSeconds(1);
+        if (needlePos.x >= -0.34f)  //Usamos a posição do objeto para determinar se devemos continuar andando, não o tempo. Sincronizar isso com TIME pode dar errado.
+        {
+            needlePos.x -= step/maxTime;    // step/maxTime nos dá a posição máxima do needle (step) dividida em partes pequenas
+                                            // baseadas no tempo de trabalho total da máquina, então tiramos isso de X
+            transform.localPosition = needlePos;
+            started = false;
+            StartCoroutine(StartNeedle(machine));
         }
+    }
 }
