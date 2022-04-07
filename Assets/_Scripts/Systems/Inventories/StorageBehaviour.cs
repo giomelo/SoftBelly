@@ -105,10 +105,11 @@ namespace _Scripts.Systems.Inventories
          var index = 0;
          for(int i = 0; i < Slots.Count; i++)
          {
-            if (Slots.ElementAt(i).Value.item != item) continue;
+            if (!Slots.ElementAt(i).Value.item.Equals(item)) continue;
             if (first)
             {
                last = Slots.ElementAt(i).Value.amount;
+               index = i;
                first = false;
             }
 
@@ -119,6 +120,11 @@ namespace _Scripts.Systems.Inventories
          
          var auxObj = Slots.ElementAt(index).Value;
          auxObj.amount -= 1;
+
+         if (auxObj.amount <= 0)
+         {
+            auxObj.item = null;
+         }
          Slots[index] = auxObj;
       }
 
@@ -153,7 +159,6 @@ namespace _Scripts.Systems.Inventories
          {
             if (Slots.ElementAt(i).Value.item.Equals(item))
             {
-               Debug.LogWarning("True");
                return true;
             }
          }

@@ -29,15 +29,16 @@ namespace _Scripts.Systems.Patients
 
         public void OnTriggerEnter(Collider other)
         {     
-                if (LabInventory.Instance.CheckIfContainsKey(_order.Order))
+                if (LabInventoryHolder.Instance.Storage.CheckIfContainsKey(_order.Order))
                 {
-                    LabInventory.Instance.RemoveItem(_order.Order);
+                    LabInventoryHolder.Instance.Storage.RemoveItem(_order.Order);
+                    LabInventoryHolder.Instance.UpdateExposedInventory();
                     Debug.Log("deu");
                 }
-            else
-            {
-                Debug.Log("naodeu");
-            }  
+                else
+                {
+                    Debug.Log("naodeu");
+                }  
         }
     }
 }

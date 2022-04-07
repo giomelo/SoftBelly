@@ -27,7 +27,7 @@ namespace _Scripts.Systems.Lab.Machines
 
             for (int i = 0; i < IngredientsSlots.Count; i++)
             {
-                BaseMachineSlot.ResetSlot(IngredientsSlots[i].Slot);
+                IngredientsSlots[i].ResetSlot();
             }
 
             LabEvents.OnMachineFinishedCall(this);

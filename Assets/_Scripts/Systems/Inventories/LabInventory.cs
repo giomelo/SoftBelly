@@ -12,16 +12,16 @@ namespace _Scripts.Systems.Inventories
     [CreateAssetMenu(fileName = "LabInventory", menuName = "Inventories/LabInventory")]
     public class LabInventory : StorageBehaviour
     {
-        public static LabInventory Instance;
+        private static LabInventory _instance;
 
         private void Awake()
         {
-            if (Instance != null)
+            if (_instance != null)
             {
                 Destroy(this);
                 return;
             }
-            Instance = this;
+            _instance = this;
         }
         public LabInventory()
         {

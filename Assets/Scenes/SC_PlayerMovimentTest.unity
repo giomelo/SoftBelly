@@ -868,51 +868,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7663600658821745524, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
   m_PrefabInstance: {fileID: 352324175}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &453346553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 453346555}
-  - component: {fileID: 453346554}
-  m_Layer: 0
-  m_Name: Timer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &453346554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453346553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f974f00e99084468bbe3ded92d2b92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerPrefab: {fileID: 6542153347766425058, guid: 3725a1e8e35408a429b51f7d43b4ec36, type: 3}
---- !u!4 &453346555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453346553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 875.7053, y: 529.4385, z: 197.6098}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474601288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,10 +2091,6 @@ MonoBehaviour:
   startPosition: {fileID: 519211133}
   slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
   slotDisplay: {fileID: 677312869}
-  proprietiesDisplay:
-    PlantName: {fileID: 822587292}
-    ScientificName: {fileID: 325822760}
-    ProprietiesText: {fileID: 1907400121}
   inventoryId: 1
   inventoryType: 1
   Width: 5
@@ -5798,10 +5749,6 @@ MonoBehaviour:
   startPosition: {fileID: 2075742765}
   slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
   slotDisplay: {fileID: 1898713139}
-  proprietiesDisplay:
-    PlantName: {fileID: 1655199644}
-    ScientificName: {fileID: 474601290}
-    ProprietiesText: {fileID: 875253812}
   inventoryId: 0
   inventoryType: 0
   Width: 6
@@ -6609,7 +6556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6542153346309150223
 GameObject:

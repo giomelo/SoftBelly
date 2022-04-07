@@ -36,7 +36,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         private void HighLightSlot()
         {
-            if (Slot.MachineSlot.item == null) return;
+            if (Slot.MachineSlot.item != null) return;
             Slot.Image.color = Color.green;
         }
 
@@ -96,13 +96,13 @@ namespace _Scripts.Systems.Lab.Machines.Base
         }
 
      
-        public static void ResetSlot(UIMachineSlot slot)
+        public void ResetSlot()
         {
-            slot.Image.color = Color.white;
-            slot.Image.sprite = null;
-            slot.Amount.text = "00";
-            slot.MachineSlot.item = null;
-            slot.MachineSlot.amount = 0;
+            Slot.Image.color = Color.white;
+            Slot.Image.sprite = null;
+            Slot.Amount.text = "00";
+            Slot.MachineSlot.item = null;
+            Slot.MachineSlot.amount = 0;
         }
         
         //set the slot to the current item

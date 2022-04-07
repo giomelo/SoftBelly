@@ -1318,7 +1318,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: SC_PlayerMovimentTest
+          m_StringArgument: SC_Garden
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &409304461

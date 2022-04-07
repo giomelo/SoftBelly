@@ -6,16 +6,16 @@ namespace _Scripts.Systems.Inventories
 {
     public class LabInventoryHolder : StorageHolder , IDontDestroyOnLoad<LabInventoryHolder>
     {
-        private static LabInventoryHolder _instance;
+        public static LabInventoryHolder Instance;
         
         private void Awake()
         {
-            if (_instance != null)
+            if (Instance != null)
             {
                 Destroy(this.gameObject);
                 return;
             }
-            _instance = this;
+            Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
     }

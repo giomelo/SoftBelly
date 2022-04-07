@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
@@ -34,6 +35,7 @@ namespace _Scripts.UI
 
             if (LabEvents.MachineSlot.MachineSlot.amount >= LabEvents.MachineSlot.maxPerSlot) return;
             LabEvents.OnIngredientSelectedCall();
+            //LabEvents.OnItemRemoved(uiSlot.slotId, 1, InventoryType.Lab);
             _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             _subject.UpdateInventory();
         }

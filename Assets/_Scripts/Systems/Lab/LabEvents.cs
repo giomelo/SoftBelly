@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
 using _Scripts.Systems.Lab.Machines.Base;
@@ -16,12 +17,18 @@ namespace _Scripts.Systems.Lab
         public static Action<BaseMachine> OnMachineStarted; //When the machine started(for audio and effects)
         public static Action<BaseMachine> OnMachineFinished; //When the machine finished(for audio and effects)
 
-
+        public static Action<int,int, InventoryType> OnItemRemoved;
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
         public static UIMachineSlot MachineSlot;
         public static ItemBehaviour IngredientSelected;
-        public static bool IsMachineSlotSelected; 
+        public static bool IsMachineSlotSelected;
+
+
+        public static void OnItemRemovedCall(int key, int amount,InventoryType type)
+        {
+            OnItemRemoved?.Invoke(key,amount,type);
+        }
 
         public static void OnChestSelectedCall(int id)
         {

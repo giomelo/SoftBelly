@@ -5533,7 +5533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: scene
-      value: SC_PlayerMovimentTest
+      value: SC_Garden
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_RootOrder
@@ -5967,7 +5967,7 @@ MonoBehaviour:
   - {fileID: 574364284}
   ResultsSlots:
   - {fileID: 8589334044272614516}
-  machineWorkingTime: 2
+  machineWorkingTime: 5
   machineBurnTime: 0
   MachineId: 0
   CurrentRecipe: {fileID: 0}

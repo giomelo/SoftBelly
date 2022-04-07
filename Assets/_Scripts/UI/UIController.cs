@@ -78,6 +78,7 @@ namespace _Scripts.UI
             PlantEvents.OnPlotSelected += DisplayInventory;
             PlantEvents.LabInventoryAction += AddHarvestedPlant;
             LabEvents.OnChestSelected += DisplayInventory;
+            LabEvents.OnItemRemoved += RemoveItemAllInventoryTypes;
         }
 
         private void OnDisable()
@@ -85,6 +86,7 @@ namespace _Scripts.UI
             PlantEvents.OnPlotSelected -= DisplayInventory;
             PlantEvents.LabInventoryAction -= AddHarvestedPlant;
             LabEvents.OnChestSelected -= DisplayInventory;
+            LabEvents.OnItemRemoved -= RemoveItemAllInventoryTypes;
         }
         /// <summary>
         /// Active the inventory
@@ -98,8 +100,9 @@ namespace _Scripts.UI
                 UpdateInventory();
                 return;
             }
-
+            
             CreateSlots();
+            UpdateInventory();
         }
         /// <summary>
         /// Instantiate and update slots of the inventory first time
@@ -245,6 +248,15 @@ namespace _Scripts.UI
             if (StorageHolder.Storage.storageId != id) return;
             StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
             StorageHolder.UpdateExposedInventory();
+        }
+        
+        //remove em todos os inventários da cena o item
+        private void RemoveItemAllInventoryTypes(int key, int amount, InventoryType type)
+        {
+            if (inventoryType != type) return;
+
+            StorageHolder.Storage.RemoveItem(key, amount);
+            UpdateInventory();
         }
     }
 }

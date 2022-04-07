@@ -539,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -43.689636, y: -13.71637}
+  m_AnchoredPosition: {x: -43.689697, y: -13.71637}
   m_SizeDelta: {x: -557.69, y: -280.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271118291
@@ -774,7 +774,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SC_PlayerMovimentTest
+          m_StringArgument: SC_Garden
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &455188029
