@@ -36,6 +36,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         private void HighLightSlot()
         {
+            if (Slot.MachineSlot.item == null) return;
             Slot.Image.color = Color.green;
         }
 

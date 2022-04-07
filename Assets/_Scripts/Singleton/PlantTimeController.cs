@@ -89,7 +89,8 @@ namespace _Scripts.Singleton
                     plot = plotAux;
                 }
             }
-            
+
+            if (!PlantTimer.ContainsKey(plot.PlotId)) yield break;
             var aux = PlantTimer[plot.PlotId].Time;
             var auxThirsty = PlantTimer[plot.PlotId].ThristTime;
             aux -= 1;
