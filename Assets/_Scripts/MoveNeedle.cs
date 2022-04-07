@@ -24,6 +24,9 @@ public class MoveNeedle : MonoBehaviour
 
     public IEnumerator StartNeedle(BaseMachine machine)
     {
+        if (started)
+            yield return new WaitForSeconds(0.1f); //SOLUÇÃO TEMPORÁRIA PARA HERB DRYER
+
         const float step = 0.7f; //Constante indicando o espaço total percorrido do início ao fim do trajeto de Needle
 
         if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId))    //machine não existe mais? então o timer acabou.
