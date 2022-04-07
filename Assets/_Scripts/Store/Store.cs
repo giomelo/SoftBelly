@@ -21,7 +21,7 @@ public class Store : MonoBehaviour
 
     private void NameBtn()
     {
-        textoBtn.text = _item.ItemId + " - Price: " + Price;
+        textoBtn.text = _item.ItemId + " - Price: " + _item.Price;
     }
 
     public void ClickBuy()

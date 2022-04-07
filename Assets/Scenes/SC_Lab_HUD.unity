@@ -5967,7 +5967,7 @@ MonoBehaviour:
   - {fileID: 574364284}
   ResultsSlots:
   - {fileID: 8589334044272614516}
-  machineWorkingTime: 13
+  machineWorkingTime: 2
   machineBurnTime: 0
   MachineId: 0
   CurrentRecipe: {fileID: 0}
