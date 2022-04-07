@@ -88,6 +88,11 @@ namespace _Scripts.Systems.Inventories
          }
          return Slots.Count;
       }
+
+        public void VerifyItem()
+        {
+
+        }
       
       /// <summary>
       /// Find the slot with the minor amount and remove from it
@@ -142,7 +147,7 @@ namespace _Scripts.Systems.Inventories
          return Slots.Count;
       }
 
-      private bool CheckIfContainsKey(ItemBehaviour item)
+      public bool CheckIfContainsKey(ItemBehaviour item)
       {
          for(int i = 0; i < Slots.Count; i++)
          {
