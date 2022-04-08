@@ -111,18 +111,29 @@ namespace _Scripts.UI
         {
             int index = 0;
             
-            for (int i = 0; i < Height; i++)
+            // for (int i = 0; i < Height; i++)
+            // {
+            //     for (int j = 0; j < Width; j++)
+            //     {
+            //         var position = startPosition.position;
+            //         var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
+            //
+            //         var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
+            //         slotInstance.transform.SetParent(slotDisplay);
+            //         UpdateSlots(slotInstance.transform, index);
+            //         index++;
+            //     }
+            // }
+            
+            for (int i = 0; i < StorageHolder.Storage.Size; i++)
             {
-                for (int j = 0; j < Width; j++)
-                {
-                    var position = startPosition.position;
-                    var pos = new Vector3(position.x + XOffset * j,position.y - YOffset * i, position.z);
-
-                    var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
-                    slotInstance.transform.SetParent(slotDisplay);
-                    UpdateSlots(slotInstance.transform, index);
-                    index++;
-                }
+                var position = startPosition.position;
+                var pos = new Vector3(position.x ,position.y, position.z);
+            
+                var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
+                slotInstance.transform.SetParent(slotDisplay);
+                UpdateSlots(slotInstance.transform, index);
+                index++;
             }
             _slotsCreated = true;
 
