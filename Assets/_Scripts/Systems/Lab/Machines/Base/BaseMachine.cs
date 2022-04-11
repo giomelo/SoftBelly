@@ -24,10 +24,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [SerializeField] public List<BaseMachineSlot> ResultsSlots = new List<BaseMachineSlot>();
         [SerializeField]
         public float machineWorkingTime;
-        
-        [SerializeField]
-        private float machineBurnTime;
-        
+
         public int MachineId;
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; private set; }
