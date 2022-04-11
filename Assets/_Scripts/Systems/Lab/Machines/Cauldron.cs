@@ -4,13 +4,9 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines
 {
-    public class Cauldron : BaseMachine, IBurn
+    public class Cauldron : Burn, ITimerMachine
     {
-        public void Burn()
-        {
-            StartMachine();
-        }
-
+        
         public override void CreateResult()
         {
             for (int i = 0; i < ResultsSlots.Count; i++)
@@ -31,6 +27,11 @@ namespace _Scripts.Systems.Lab.Machines
             }
 
             LabEvents.OnMachineFinishedCall(this);
+        }
+
+        public void Work()
+        {
+            StartMachine();
         }
     }
 }

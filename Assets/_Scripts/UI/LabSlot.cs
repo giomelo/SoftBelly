@@ -24,6 +24,7 @@ namespace _Scripts.UI
       
             LabEvents.IngredientSelected = uiSlot.item;
             //if (Slot.MachineSlot.amount >= Slot.maxPerSlot) return;
+            if (LabEvents.IngredientSelected == null) return;
             if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
             {
                 Debug.Log("This item cant be put in this slot");

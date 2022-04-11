@@ -34,8 +34,6 @@ namespace _Scripts.Systems.Inventories
             }
         }
 
-
-
         public void UpdateExposedInventory()
         {
             exposedInventory.Clear();

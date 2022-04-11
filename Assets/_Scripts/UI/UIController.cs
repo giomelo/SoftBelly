@@ -23,11 +23,6 @@ namespace _Scripts.UI
         public StorageHolder StorageHolder { get; private set; }
 
         private bool _slotsCreated = false;
-        [Header("Slots offsets")]
-        [SerializeField]
-        private float YOffset = 50f;
-        [SerializeField]
-        private float XOffset = 30f;
         [Header("Slots start position")]
         [SerializeField]
         private Transform startPosition;
@@ -148,23 +143,25 @@ namespace _Scripts.UI
         {
             if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             slotScript.AddSubject(this);
-        
-            if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
-
-            if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
+            if (!_slotsCreated)
             {
-                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
-                slotScript.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
-                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
-                if (_slotsCreated) return;
-                
                 slotScript.uiSlot.slotId = _currentSlot;
                 _currentSlot++;
+            }
+            if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
+            Debug.LogWarning("Index: " + index);
+            if (StorageHolder.Storage.Slots[index].amount > 0)
+            {
+                Debug.LogWarning("Element: " + StorageHolder.Storage.Slots[index].item.ItemId);
+                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots[index].amount.ToString();
+                slotScript.uiSlot.item = StorageHolder.Storage.Slots[index].item;
+                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots[index].item.ImageDisplay;
             }
             else
             {
                 ResetSlot(slot);
             }
+           
         }
         
         /// <summary>

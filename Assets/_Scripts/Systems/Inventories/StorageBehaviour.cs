@@ -47,9 +47,12 @@ namespace _Scripts.Systems.Inventories
          }
          else
          {
+            
             index = ReturnFirstEmptySlot();
+            Debug.Log("Index: " + index);
          }
          Put(index, item, amount);
+         Display();
       }
 
       private void Put(int index, ItemBehaviour item, int amount)
@@ -78,6 +81,7 @@ namespace _Scripts.Systems.Inventories
 
       private int ReturnFirstEmptySlot()
       {
+         Debug.LogWarning("EmptySlot");
          for(int i = 0; i < Slots.Count; i++)
          {
             var amountInSlot = Slots.ElementAt(i).Value.amount;
@@ -89,11 +93,6 @@ namespace _Scripts.Systems.Inventories
          return Slots.Count;
       }
 
-        public void VerifyItem()
-        {
-
-        }
-      
       /// <summary>
       /// Find the slot with the minor amount and remove from it
       /// </summary>
@@ -132,8 +131,8 @@ namespace _Scripts.Systems.Inventories
       {
          foreach (var (key, value) in Slots)
          {
-            //Debug.Log(value.item.ItemId);
-            //Debug.Log(value);
+            Debug.Log("Item: " + value.item.ItemId);
+            Debug.Log("Amount: " + value.amount);
 
          }
       }

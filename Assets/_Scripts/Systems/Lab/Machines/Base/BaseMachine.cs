@@ -31,6 +31,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public int MachineId;
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; private set; }
+        private MachineHolder thisMachineHolder;
+
+        public bool CanBurn;
+
+        private void Start()
+        {
+            thisMachineHolder = gameObject.GetComponent<MachineHolder>();
+        }
         private void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
@@ -107,7 +115,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
             MachineState = MachineState.Working;
             uiController.DisposeInventory();
-            StartCoroutine(LabTimeController.Instance.WorkMachine(this));
+            StartCoroutine(LabTimeController.Instance.WorkMachine(thisMachineHolder));
         }
 
         public void MachineProcess(BaseMachine machine)
