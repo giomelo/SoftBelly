@@ -1631,7 +1631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &537322527
 Transform:
   m_ObjectHideFlags: 0
@@ -2767,7 +2767,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696734475}
-  m_LocalRotation: {x: 0.2771227, y: 0.018375007, z: -0.005300746, w: 0.96064425}
+  m_LocalRotation: {x: 0.2771227, y: 0.018374972, z: -0.005300736, w: 0.96064425}
   m_LocalPosition: {x: 0.13000003, y: 9.2, z: -3.6900005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6931,7 +6931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490286515}
-  m_LocalRotation: {x: 0.2771227, y: 0.018375007, z: -0.005300746, w: 0.96064425}
+  m_LocalRotation: {x: 0.2771227, y: 0.018374972, z: -0.005300736, w: 0.96064425}
   m_LocalPosition: {x: 0.13000003, y: 9.2, z: -3.6900005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7292,7 +7292,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1758013191}
+      - m_Target: {fileID: 976766620}
         m_TargetAssemblyTypeName: _Scripts.UI.UIController, Assembly-CSharp
         m_MethodName: DisposeInventory
         m_Mode: 1
@@ -8882,7 +8882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1901990949
 RectTransform:
   m_ObjectHideFlags: 0
