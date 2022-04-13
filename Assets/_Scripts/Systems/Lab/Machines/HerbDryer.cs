@@ -11,19 +11,29 @@ namespace _Scripts.Systems.Lab.Machines
 {
     public class HerbDryer : BaseMachine, ITimerMachine
     {
-        private List<GameObject> plantsPos = new List<GameObject>();
-        private List<ItemObj> ingredients = new List<ItemObj>();
+        public List<GameObject> plantsPos = new List<GameObject>();
+        public List<ItemObj> ingredients = new List<ItemObj>();
         public void Work()
         {
             //se o usuário clicou no botão e a máquina ainda está exibindo os resultados
             if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready) return;
             
-            foreach (var slotMachineObj in IngredientsSlots)
+            for (int i =0; i< IngredientsSlots.Count; i++)
             {
-                ingredients.Add(slotMachineObj.Slot.MachineSlot);
+                ingredients.Add(IngredientsSlots[i].Slot.MachineSlot);
+                if (IngredientsSlots[i].Slot.MachineSlot.item != null)
+                {
+                    //Instantiate()
+                    //cria o objeto da planta no local
+                }
             }
             StartMachine();
 
+        }
+
+        private void UpdatePlantObjects()
+        {
+            
         }
 
         private void PlacePlants()
