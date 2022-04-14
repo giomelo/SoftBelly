@@ -22,22 +22,30 @@ public class MoveNeedle : MonoBehaviour
         anim = transform.parent.gameObject.GetComponent<Animator>();
     }
 
-    public IEnumerator StartNeedle(BaseMachine machine)
+    public IEnumerator StartNeedle(BaseMachine machine, float prevTime = 9001)
     {
         if (started)
-            yield return new WaitForSeconds(0.1f); //SOLU��O TEMPOR�RIA PARA HERB DRYER
+            yield return new WaitForSeconds(0.05f); //delay usado quando a máquina é (re)criada na cena para que tudo fora do IEnum possa ser iniciado antes de entrarmos aqui
 
         const float step = 0.7f; //Constante indicando o espa�o total percorrido do in�cio ao fim do trajeto de Needle
 
-        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId))    //machine n�o existe mais? ent�o o timer acabou.//toque umas anima��es, destrua o parent e termine o IEnum
+        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId) || prevTime == 0)    //machine n�o existe mais? ent�o o timer acabou.//toque umas anima��es, destrua o parent e termine o IEnum
         {
             check.SetActive(true);
             anim.Play("default.TH_CheckFades");
-            yield return new WaitForSeconds(5);
-            anim.Play("default.TH_FadeOut");
-            yield return new WaitForSeconds(1);
-            Destroy(transform.parent.gameObject);
-            yield break;
+            bool ISSOQUEIMA = false;
+            if (ISSOQUEIMA)
+            {
+                print("editar aqui");
+            }
+            else
+            {
+                yield return new WaitForSeconds(5);
+                anim.Play("default.TH_FadeOut");
+                yield return new WaitForSeconds(1);
+                Destroy(transform.parent.gameObject);
+                yield break;
+            }
         }
 
         maxTime = machine.machineWorkingTime;
@@ -51,13 +59,13 @@ public class MoveNeedle : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
-        if (needlePos.x >= -0.34f)  //Usamos a posi��o do objeto para determinar se devemos continuar andando, n�o o tempo. Sincronizar isso com TIME pode dar errado.
+        if (needlePos.x >= -0.34f || time == 0)  //Usamos a posi��o do objeto para determinar se devemos continuar andando, n�o o tempo. Sincronizar isso com TIME pode dar errado.
         {
             needlePos.x -= step/maxTime;    // step/maxTime nos d� a posi��o m�xima do needle (step) dividida em partes pequenas
                                             // baseadas no tempo de trabalho total da m�quina, ent�o tiramos isso de X
             transform.localPosition = needlePos;
             started = false;
-            StartCoroutine(StartNeedle(machine));
+            StartCoroutine(StartNeedle(machine, time));
         }
     }
 }
