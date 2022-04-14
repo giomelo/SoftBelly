@@ -14,7 +14,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 if (LabEvents.IsMachineSlotSelected)
                 {
-                    UnHighLightSlot(LabEvents.MachineSlot);
+                    if (LabEvents.MachineSlot.MachineSlot.item == null)
+                    {
+                        UnHighLightSlot(LabEvents.MachineSlot);
+                    }
                 }
                 
                 LabEvents.IsMachineSlotSelected = true;
@@ -85,8 +88,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
                     case 1:
                         if (currentMachine == currentMachine as HerbDryer)
                         {
+                            var herbDryer = currentMachine as HerbDryer;
                             LabEvents.CurrentMachine.SetState(MachineState.Empty);
                             SetType(MachineSlotType.Ingredient);
+                            herbDryer.RemovePlantObject(Slot.slotId);
                         }
                         break;
                 }
@@ -115,8 +120,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Image.sprite = item.ImageDisplay;
             LabEvents.MachineSlot = Slot;
         }
-
-     
 
         private void SetType(MachineSlotType type)
         {

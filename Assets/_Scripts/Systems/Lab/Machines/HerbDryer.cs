@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Enums;
+using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.Base;
@@ -11,7 +12,8 @@ namespace _Scripts.Systems.Lab.Machines
 {
     public class HerbDryer : BaseMachine, ITimerMachine
     {
-        public List<GameObject> plantsPos = new List<GameObject>();
+        public List<Transform> plantsPos = new List<Transform>();
+        [HideInInspector]
         public List<ItemObj> ingredients = new List<ItemObj>();
         public void Work()
         {
@@ -23,29 +25,52 @@ namespace _Scripts.Systems.Lab.Machines
                 ingredients.Add(IngredientsSlots[i].Slot.MachineSlot);
                 if (IngredientsSlots[i].Slot.MachineSlot.item != null)
                 {
-                    //Instantiate()
-                    //cria o objeto da planta no local
+                    PlacePlants(i);
                 }
             }
             StartMachine();
 
         }
 
-        private void UpdatePlantObjects()
+        public void UpdatePlantObjects()
         {
-            
+            for (int i = 0; i < IngredientsSlots.Count; i++)
+            {
+                if (IngredientsSlots[i].Slot.MachineSlot.item != null)
+                {
+                    PlacePlants(i);
+                }
+            }
         }
 
-        private void PlacePlants()
+        public void RemovePlantObject(int index)
         {
-            
+            Destroy(plantsPos[index].GetChild(0).gameObject);
+        }
+
+        private void PlacePlants(int index)
+        {
+            PlantBase currentPlant = IngredientsSlots[index].Slot.MachineSlot.item as PlantBase;
+            if (currentPlant != null)
+            {
+                var plant = Instantiate((Object) currentPlant.DryingPlant, plantsPos[index].position,
+                    Quaternion.identity, plantsPos[index]);
+            }
         }
 
         protected override void StartMachine()
         {
+            SetSlotsLabTimer();
             LabEvents.OnMachineStartedCall(this);
-            PlacePlants();
             StartTime();
+        }
+
+        private void SetSlotsLabTimer()
+        {
+            foreach (var slot in IngredientsSlots)
+            {
+                LabTimeController.Instance.HerbIngredientsSlot.Add(slot.Slot.MachineSlot);
+            }
         }
 
         public override void CreateResult()

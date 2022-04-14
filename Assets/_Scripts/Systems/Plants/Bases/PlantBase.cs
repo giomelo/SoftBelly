@@ -16,5 +16,7 @@ namespace _Scripts.Systems.Plants.Bases
         public MedicalSymptoms MedicalSymptoms;
 
         public Sprite DriedPlant;
+
+        public GameObject DryingPlant;
     }
 }

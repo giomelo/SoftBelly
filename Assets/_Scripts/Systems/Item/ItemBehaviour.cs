@@ -20,8 +20,6 @@ namespace _Scripts.Systems.Item
         public float Price;
 
         public GameObject ItemProprietiesGO;
-
-        private static int ItemsIdCounter = 0;
         
         public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo)
         {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Enums;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines;
 using _Scripts.Systems.Lab.Machines.Base;
@@ -23,6 +24,8 @@ namespace _Scripts.Singleton
     public class LabTimeController : MonoSingleton<LabTimeController>
     {
         public Dictionary<int, MachineStoreValues> LabTimer { get; } = new Dictionary<int, MachineStoreValues>();
+
+        public List<ItemObj> HerbIngredientsSlot = new List<ItemObj>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
@@ -37,6 +40,14 @@ namespace _Scripts.Singleton
         {
             DontDestroyOnLoad(this.gameObject);
         }
+
+        private void SetSlotsHerbDryer(HerbDryer machine)
+        {
+            for (int i =0; i< HerbIngredientsSlot.Count; i++)
+            {
+                machine.IngredientsSlots[i].Slot.MachineSlot = HerbIngredientsSlot[i];
+            }
+        }
         public void DisplayMachines()
         {
             if (LabTimer.Count == 0)  return;
@@ -44,23 +55,33 @@ namespace _Scripts.Singleton
             {
                 foreach (var machine in MachineSystemController.Instance.allMachines.Where(t => LabTimer.ElementAt(i).Key == t.CurrentMachine.MachineId))
                 {
-                    if (LabTimer[machine.CurrentMachine.MachineId].Time >= 0)
+                    if (machine.CurrentMachine as HerbDryer)
+                    {
+                        HerbDryer herbDryer = machine.CurrentMachine as HerbDryer;
+                        SetSlotsHerbDryer(herbDryer);
+                        herbDryer.UpdatePlantObjects();
+                    }
+                    if (LabTimer[machine.CurrentMachine.MachineId].Time > 0)
                     {
                         machine.CurrentMachine.MachineState = MachineState.Working;
                         machine.CurrentMachine.MachineProcess(machine.CurrentMachine);
-
-                        if (!(machine.CurrentMachine as Burn)) return;
-                        Burn burnMachine = machine.CurrentMachine as Burn;
-                        if (LabTimer[machine.CurrentMachine.MachineId].Time <= -burnMachine.BurnTime)
-                        {
-                            //queimou
-                            burnMachine.CreateBurnedResult();
-                        }
-                        return;
-                        
                     }
-                    machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;
-                    machine.CurrentMachine.CreateResult();
+                    else
+                    {
+                        machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;
+                        machine.CurrentMachine.CreateResult();
+                        
+                        if (machine.CurrentMachine as Burn)
+                        {
+                            Burn burnMachine = machine.CurrentMachine as Burn;
+                            if (LabTimer[machine.CurrentMachine.MachineId].Time <= -burnMachine.BurnTime)
+                            {
+                                //queimou
+                                burnMachine.CreateBurnedResult();
+                            }
+                            return;
+                        }
+                    }
                     //machine.CurrentMachine.MachineState = MachineState.Ready;
                 }
             }

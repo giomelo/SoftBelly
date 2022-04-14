@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using _Scripts.Systems.Lab.Machines;
 using UnityEngine;
 
 public class TimerFaceScreen : MonoBehaviour

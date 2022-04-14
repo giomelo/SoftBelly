@@ -3090,15 +3090,15 @@ MonoBehaviour:
   - {fileID: 1619523381}
   - {fileID: 446664074}
   ResultsSlots: []
-  machineWorkingTime: 3
+  machineWorkingTime: 10
   MachineId: 1
   CurrentRecipe: {fileID: 0}
   CanBurn: 0
   plantsPos:
-  - {fileID: 710755279}
-  - {fileID: 1173292185}
-  - {fileID: 97450335}
-  - {fileID: 104165196}
+  - {fileID: 710755280}
+  - {fileID: 1173292186}
+  - {fileID: 97450336}
+  - {fileID: 104165197}
   ingredients: []
 --- !u!114 &725722558
 MonoBehaviour:
@@ -3303,6 +3303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1187fd5cd4e3798b3110f9e460f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HerbIngredientsSlot: []
 --- !u!4 &768828984
 Transform:
   m_ObjectHideFlags: 0
