@@ -3013,7 +3013,7 @@ MonoBehaviour:
   machineWorkingTime: 10
   MachineId: 1
   CurrentRecipe: {fileID: 0}
-  CanBurn: 0
+  thisMachineHolder: {fileID: 0}
   plantsPos:
   - {fileID: 710755280}
   - {fileID: 1173292186}
@@ -5974,7 +5974,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450477730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 18.150066, y: -21.744417, z: 7.59289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6685,7 +6685,7 @@ MonoBehaviour:
   machineWorkingTime: 5
   MachineId: 0
   CurrentRecipe: {fileID: 0}
-  CanBurn: 0
+  thisMachineHolder: {fileID: 0}
   BurnedResult:
     item: {fileID: 11400000, guid: 48644255e5517df41af3478c75904cf8, type: 2}
     amount: 1
