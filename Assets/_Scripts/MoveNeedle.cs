@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Singleton;
+using _Scripts.Enums;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
@@ -31,7 +32,7 @@ public class MoveNeedle : MonoBehaviour
 
         const float step = 0.7f; //Constante indicando o espa�o total percorrido do in�cio ao fim do trajeto de Needle
 
-        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId) || prevTime == 0 || endLoop)    //machine n�o existe mais? ent�o o timer acabou.//toque umas anima��es, destrua o parent e termine o IEnum
+        if (!LabTimeController.Instance.LabTimer.ContainsKey(machine.MachineId) || prevTime <= 0 || endLoop)    //machine n�o existe mais? ent�o o timer acabou.//toque umas anima��es, destrua o parent e termine o IEnum
         {
             if (!endLoop)
             {
@@ -42,24 +43,26 @@ public class MoveNeedle : MonoBehaviour
             if (machine as Burn)
             {
                 Burn burnMachine = machine as Burn;
-                if (machine.MachineId != 0 && LabTimeController.Instance.LabTimer[machine.MachineId].Time <= -burnMachine.BurnTime)
-                {
+                if (prevTime <= -burnMachine.BurnTime * 50)
                     anim.Play("default.TH_FailFade");
-                }
             }
-            else
+            if (machine.MachineState == MachineState.Empty)
             {
-                // A ser feito: tocar animação de fadeout quando interagir com a máquina
-
-                //  fadeout toca aqui por um timer
-                //yield return new WaitForSeconds(5);
-                //anim.Play("default.TH_FadeOut");
-                //yield return new WaitForSeconds(1);
-                //Destroy(transform.parent.gameObject);
-                //yield break;
+                if (machine as Burn)
+                {
+                    Burn burnMachine = machine as Burn;
+                    if (prevTime <= -burnMachine.BurnTime * 50)
+                        anim.Play("default.TH_FailOut");
+                    else
+                        anim.Play("default.TH_FadeOut");
+                }
+                else
+                    anim.Play("default.TH_FadeOut");
+                Destroy(transform.parent.gameObject, 1);
+                yield break;
             }
-            yield return new WaitForFixedUpdate(); //Impedindo um stack overflow
-            StartCoroutine(StartNeedle(machine, 0, true));
+            yield return new WaitForFixedUpdate();
+            StartCoroutine(StartNeedle(machine, prevTime-1, true));
         }
 
         if (!endLoop)
@@ -69,6 +72,12 @@ public class MoveNeedle : MonoBehaviour
 
             if (started)    //entramos aqui sempre que o objeto for criado na cena novamente para atualizarmos sua posi��o X
             {
+                print("");
+                print("");
+                print("");
+                print("o tempo era " + time);
+                print("");
+                print("");
                 needlePos.x -= step / maxTime * (maxTime - time);   //a posi��o nova ser� baseada no tempo percorrido * (step/maxTime),
                                                                     //que nos d� a dist�ncia de um "passo" baseado no tempo de trabalho da m�quina
                 transform.localPosition = needlePos;
