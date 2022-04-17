@@ -28,6 +28,7 @@ namespace _Scripts.Singleton
         public List<ItemObj> HerbIngredientsSlot = new List<ItemObj>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
+            Debug.Log("Tempo: " + time);
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
         }
 
@@ -102,12 +103,13 @@ namespace _Scripts.Singleton
                 }
             }
             Debug.Log("WorkingMachine");
+            if(!LabTimer.ContainsKey(currentMachine.MachineId)) yield break;
+            
             var aux = LabTimer[currentMachine.MachineId].Time;
             aux -= 1;
             var p = new MachineStoreValues(LabTimer[currentMachine.MachineId].CurrentRecipeObj, aux);
             Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
             LabTimer[machine.CurrentMachine.MachineId] = p;
-            Debug.Log(sceneMachine);
             currentMachine.CurrentRecipe = LabTimer[currentMachine.MachineId].CurrentRecipeObj;
             
             if (LabTimer[currentMachine.MachineId].Time <= 0)
@@ -121,12 +123,15 @@ namespace _Scripts.Singleton
                     Burn burnMachine = machine.CurrentMachine as Burn;
                     if (LabTimer[currentMachine.MachineId].Time >= -burnMachine.BurnTime)
                     {
+                        if(!LabTimer.ContainsKey(currentMachine.MachineId)) yield break;
                         StartCoroutine(WorkMachine(machine));
+                        
                     }
                     else
                     {
                         //queimou
                         burnMachine.CreateBurnedResult();
+                      
                         LabTimer.Remove(currentMachine.MachineId);
                     }
                 }

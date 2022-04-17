@@ -72,12 +72,6 @@ public class MoveNeedle : MonoBehaviour
 
             if (started)    //entramos aqui sempre que o objeto for criado na cena novamente para atualizarmos sua posi��o X
             {
-                print("");
-                print("");
-                print("");
-                print("o tempo era " + time);
-                print("");
-                print("");
                 needlePos.x -= step / maxTime * (maxTime - time);   //a posi��o nova ser� baseada no tempo percorrido * (step/maxTime),
                                                                     //que nos d� a dist�ncia de um "passo" baseado no tempo de trabalho da m�quina
                 transform.localPosition = needlePos;

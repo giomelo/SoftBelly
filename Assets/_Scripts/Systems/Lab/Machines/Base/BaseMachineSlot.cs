@@ -1,4 +1,5 @@
 ﻿using _Scripts.Enums;
+using _Scripts.Singleton;
 using _Scripts.Systems.Item;
 using UnityEngine;
 
@@ -82,6 +83,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
                             if (LabEvents.CurrentMachine.CheckIfCollectedAllResults())
                             {
                                 LabEvents.CurrentMachine.SetState(MachineState.Empty);
+                                LabTimeController.Instance.LabTimer.Remove(currentMachine.MachineId);
                             }
                         }
                         break;
@@ -90,6 +92,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         {
                             var herbDryer = currentMachine as HerbDryer;
                             LabEvents.CurrentMachine.SetState(MachineState.Empty);
+                          
                             SetType(MachineSlotType.Ingredient);
                             herbDryer.RemovePlantObject(Slot.slotId);
                         }

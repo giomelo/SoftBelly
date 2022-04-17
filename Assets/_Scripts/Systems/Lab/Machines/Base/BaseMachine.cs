@@ -28,9 +28,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public int MachineId;
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; private set; }
-        private MachineHolder thisMachineHolder;
-
-        public bool CanBurn;
+        public MachineHolder thisMachineHolder;
+        
 
         private void Start()
         {
