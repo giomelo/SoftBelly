@@ -20,7 +20,7 @@ namespace _Scripts.Systems.Item
         public float Price;
 
         public GameObject ItemProprietiesGO;
-        
+
         public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo)
         {
             ItemId = id;

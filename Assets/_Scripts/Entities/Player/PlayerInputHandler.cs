@@ -3,6 +3,7 @@ using _Scripts.Singleton;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Lab.Machines;
 using _Scripts.Systems.Lab.Machines.Base;
+using _Scripts.Systems.Patients;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -104,6 +105,10 @@ namespace _Scripts.Entities.Player
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
                         if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
                         LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
+                        break;
+                    case "Patient":
+                        if (!hit.transform.TryGetComponent<Patient>(out var patientScript)) return;
+                        PatientsEvents.OnOrderDeliveredCall(patientScript);
                         break;
                 }
                 

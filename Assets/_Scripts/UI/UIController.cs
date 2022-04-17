@@ -192,6 +192,7 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
+            Debug.Log("Dispose");
             ResetCurrentProprieties();
             inventoryObject.SetActive(false);
             LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);

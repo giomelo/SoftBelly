@@ -7,38 +7,58 @@ namespace _Scripts.Systems.Patients
 {
     public class Patient : NpcBase
     {
-        [SerializeField]
-        private OrderObj _order;
+        public OrderObj Order;
 
         //public
         private void Start()
         {
             SetOrder();
-            DisplayOrder();
         }
 
         private void DisplayOrder()
         {
-            _order.Object.SetActive(true);
+            Order.Object.SetActive(true);
         }
 
         public void SetOrder()
         {
-            _order.Order = PatientsController.Instance.GenerateRandomOrder();
+            Order.Order = PatientsController.Instance.GenerateRandomOrder();
         }
 
         public void OnTriggerEnter(Collider other)
-        {     
-                if (LabInventoryHolder.Instance.Storage.CheckIfContainsKey(_order.Order))
-                {
-                    LabInventoryHolder.Instance.Storage.RemoveItem(_order.Order);
-                    LabInventoryHolder.Instance.UpdateExposedInventory();
-                    Debug.Log("deu");
-                }
-                else
-                {
-                    Debug.Log("naodeu");
-                }  
+        {
+            DisplayOrder();
+            PatientsEvents.OnOrderViewCall(this);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            PatientsEvents.OnOrderDisableCall();
+        }
+
+        private void OnEnable()
+        {
+            PatientsEvents.OnOrderDelivered += Deliver;
+        }
+
+        private void OnDisable()
+        {
+            PatientsEvents.OnOrderDelivered -= Deliver;
+        }
+        
+
+        public void Deliver(Patient p)
+        {
+            if (LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order))
+            {
+                LabInventoryHolder.Instance.Storage.RemoveItem(p.Order.Order);
+                LabInventoryHolder.Instance.UpdateExposedInventory();
+                Debug.Log("deu");
+            }
+            else
+            {
+                Debug.Log("naodeu");
+            }  
         }
     }
 }
