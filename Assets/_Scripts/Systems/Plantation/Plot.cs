@@ -104,13 +104,9 @@ namespace _Scripts.Systems.Plantation
 
         private void CheckState()
         {
-            Debug.Log(PlantTimeController.Instance.PlantTimer[PlotId].ThristTime);
-            Debug.Log(CurrentPlant.WaterCicles);
             if (PlantTimeController.Instance.PlantTimer[PlotId].IsThirsty && !IsDead)
             {
-                Debug.LogWarning("Created thist");
-                SetThirsty(true); 
-                Debug.Log("DISPLATYYYTTYYTTT------------------------");
+                SetThirsty(true);
             }
             if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles * 3)
             {

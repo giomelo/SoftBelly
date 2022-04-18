@@ -35,7 +35,6 @@ namespace _Scripts.UI
         
         public void MouseExit()
         {
-            Debug.Log("mouseExit");
             _subject.ResetCurrentProprieties();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Item;
+using _Scripts.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace _Scripts.Systems.Patients
     {
         public List<ItemBehaviour> PossiblesOrders = new List<ItemBehaviour>();
         [SerializeField]
-        private TextMeshProUGUI orderText;
+        public TextMeshProUGUI orderText;
         [SerializeField]
         private GameObject orderTextGameObject;
         private readonly float _timePerCharacter = 0.1f;
@@ -28,7 +29,7 @@ namespace _Scripts.Systems.Patients
         {
             orderTextGameObject.SetActive(true);
             orderText.text = "";
-            WriterText.Instance.AddWriter(orderText, p.Order.OrderDescription, _timePerCharacter,true);
+            UIAssistant.Instance.textWriterSingle = WriterText.Instance.AddWriter(orderText, p.Order.OrderDescription, _timePerCharacter,true, true);
         }
         private void DisableText()
         {

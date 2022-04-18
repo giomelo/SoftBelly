@@ -95,13 +95,11 @@ namespace _Scripts.Singleton
             var auxThirsty = PlantTimer[plot.PlotId].ThristTime;
             aux -= 1;
             auxThirsty += 1;
-            Debug.Log("Sede :" + auxThirsty);
-            Debug.Log("Plot ID :" + plot.PlotId);
+
             var p = new PlantPlot(plot.CurrentPlant, aux, auxThirsty, false);
             PlantTimer[plot.PlotId] = p;
-            Debug.LogWarning("Grow");
-            
-            
+
+
             //thrist cicle 
             Debug.Log("Thirst time: " + PlantTimer[plot.PlotId].ThristTime);
             if (PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.WaterCicles && !plot.IsThirsty)

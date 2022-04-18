@@ -42,9 +42,6 @@ namespace _Scripts.UI
         
         [SerializeField]
         private InventoryType inventoryType;
-
-        public int Width;
-        public int Height;
         private GameObject proprietiesObj;
         [SerializeField]
         private List<GameObject> poolProprieties = new List<GameObject>();
@@ -192,7 +189,6 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
-            Debug.Log("Dispose");
             ResetCurrentProprieties();
             inventoryObject.SetActive(false);
             LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);
@@ -207,15 +203,11 @@ namespace _Scripts.UI
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
-            Debug.Log("oi");
             GameObject aux = null;
             var position = local.transform.position;
-            Debug.Log(position);
             var pos = new Vector3(position.x + xOffsetProprieties, position.y - yOffsetProprieties, 0);
             foreach (GameObject go in poolProprieties)
             {
-                Debug.Log(go);
-                Debug.Log(item);
                 if (go.name == $"{item.name}(Clone)")
                 {
                     aux = go;
@@ -240,9 +232,6 @@ namespace _Scripts.UI
 
         public void ResetCurrentProprieties()
         {
-            // proprietiesDisplay.ScientificName.text = "";
-            // proprietiesDisplay.PlantName.text = "";
-            // proprietiesDisplay.ProprietiesText.text = "";
             foreach (GameObject go in poolProprieties)
             {
                 go.SetActive(false);

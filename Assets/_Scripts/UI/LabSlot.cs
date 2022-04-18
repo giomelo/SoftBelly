@@ -29,7 +29,6 @@ namespace _Scripts.UI
             }
             if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
             {
-                Debug.Log("This item cant be put in this slot");
                 return;
             }
 

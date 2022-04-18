@@ -155,9 +155,7 @@ namespace _Scripts.Entities.Player
         {
             if (option)
             {
-                
                 _isHolding = true;
-                Debug.Log( _isHolding);
                 waterCanObj.SetParent(waterCanPlace);
                 waterCanObj.position = waterCanPlace.position;
                 waterCanObj.GetComponent<Rigidbody>().isKinematic = true;

@@ -68,7 +68,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
                 Slot.MachineSlot.item);
             LabEvents.CurrentMachine.uiController.UpdateInventory();
-            Debug.LogWarning("Item");
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
 

@@ -29,6 +29,7 @@ namespace _Scripts.Systems.Patients
         {
             DisplayOrder();
             PatientsEvents.OnOrderViewCall(this);
+            
         }
 
         private void OnTriggerExit(Collider other)
@@ -53,11 +54,11 @@ namespace _Scripts.Systems.Patients
             {
                 LabInventoryHolder.Instance.Storage.RemoveItem(p.Order.Order);
                 LabInventoryHolder.Instance.UpdateExposedInventory();
-                Debug.Log("deu");
+               
             }
             else
             {
-                Debug.Log("naodeu");
+               
             }  
         }
     }

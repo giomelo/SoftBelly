@@ -75,12 +75,10 @@ namespace _Scripts.Systems.Lab.Machines
 
         public override void CreateResult()
         {
-            Debug.Log("Created");
             for (int i = 0; i < IngredientsSlots.Count; i++)
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
                 
-                Debug.Log("Results");
                 var newDriedPlant = ScriptableObject.CreateInstance<PlantBase>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;

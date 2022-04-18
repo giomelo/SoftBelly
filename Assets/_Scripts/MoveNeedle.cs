@@ -40,7 +40,7 @@ public class MoveNeedle : MonoBehaviour
                 check.SetActive(true);
                 anim.Play("default.TH_CheckFades");
             }
-            if (machine as Burn)
+            if (machine.CanBurn)
             {
                 Burn burnMachine = machine as Burn;
                 if (prevTime <= -burnMachine.BurnTime * 50)
@@ -48,7 +48,7 @@ public class MoveNeedle : MonoBehaviour
             }
             if (machine.MachineState == MachineState.Empty)
             {
-                if (machine as Burn)
+                if (machine.CanBurn)
                 {
                     Burn burnMachine = machine as Burn;
                     if (prevTime <= -burnMachine.BurnTime * 50)

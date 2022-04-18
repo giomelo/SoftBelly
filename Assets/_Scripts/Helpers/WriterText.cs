@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.IO;
+using _Scripts.Helpers;
 using _Scripts.Singleton;
 using TMPro;
 using UnityEngine;
@@ -9,15 +11,35 @@ namespace _Scripts.Helpers
     public class WriterText : MonoSingleton<WriterText>
     {
         private List<TextWriterSingle> _textWriterSingle = new List<TextWriterSingle>();
-        public void AddWriter(TextMeshProUGUI uiText, string textToWrite, float timerPerCharacter, bool invisibleCharacters)
+        public TextWriterSingle AddWriter(TextMeshProUGUI uiText, string textToWrite, float timerPerCharacter, bool invisibleCharacters, bool removeWriterBeforeAdd)
         {
-            _textWriterSingle.Add(new TextWriterSingle(uiText, textToWrite, timerPerCharacter, invisibleCharacters));
+            if (removeWriterBeforeAdd)
+            {
+                RemoveWriter(uiText);
+            }
+
+            TextWriterSingle textWriter =
+                new TextWriterSingle(uiText, textToWrite, timerPerCharacter, invisibleCharacters);
+            _textWriterSingle.Add(textWriter);
+            return textWriter;
         }
         public void ResetWriter()
         {
             foreach (var text in _textWriterSingle)
             {
                 text?.ResetWriter();
+            }
+        }
+
+        public void RemoveWriter(TextMeshProUGUI uiText)
+        {
+            for (int i = 0; i < _textWriterSingle.Count; i++)
+            {
+                if (_textWriterSingle[i].GetText() == uiText)
+                {
+                    _textWriterSingle.RemoveAt(i);
+                    i--;
+                }
             }
         }
 
@@ -87,5 +109,22 @@ public class TextWriterSingle
         }
 
         return false;
+    }
+
+    public TextMeshProUGUI GetText()
+    {
+        return _uiText;
+    }
+
+    public bool IsActive()
+    {
+        return _characterIndex < _textToWrite.Length;
+    }
+
+    public void WriteAllAndDestroy()
+    {
+        _uiText.text = _textToWrite;
+        _characterIndex = _textToWrite.Length;
+        WriterText.Instance.RemoveWriter(_uiText);
     }
 }

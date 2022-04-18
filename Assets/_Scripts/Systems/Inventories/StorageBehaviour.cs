@@ -49,7 +49,6 @@ namespace _Scripts.Systems.Inventories
          {
             
             index = ReturnFirstEmptySlot();
-            Debug.Log("Index: " + index);
          }
          Put(index, item, amount);
          Display();
@@ -81,7 +80,6 @@ namespace _Scripts.Systems.Inventories
 
       private int ReturnFirstEmptySlot()
       {
-         Debug.LogWarning("EmptySlot");
          for(int i = 0; i < Slots.Count; i++)
          {
             var amountInSlot = Slots.ElementAt(i).Value.amount;

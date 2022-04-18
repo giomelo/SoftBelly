@@ -29,6 +29,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; private set; }
         public MachineHolder thisMachineHolder;
+
+        public bool CanBurn;
         
 
         private void Start()
@@ -96,8 +98,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             
             if (CurrentRecipe == null) return;
 
-            Debug.Log("Receita Existe");
-           
             StartTime();
             
             LabEvents.OnMachineStartedCall(this); //event for calling machine hud
@@ -137,7 +137,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
         
         public void SetSlotType()
         {
-            Debug.LogWarning("SLOTTYPE CHANGED"); 
             foreach (var slot in IngredientsSlots)
             {
                 if (slot.Slot.MachineSlot.item == null) continue;

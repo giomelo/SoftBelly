@@ -28,7 +28,6 @@ namespace _Scripts.Singleton
         public List<ItemObj> HerbIngredientsSlot = new List<ItemObj>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
-            Debug.Log("Tempo: " + time);
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
         }
 
@@ -71,14 +70,15 @@ namespace _Scripts.Singleton
                     {
                         machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;
                         machine.CurrentMachine.CreateResult();
-                        
-                        if (machine.CurrentMachine as Burn)
+                        machine.CurrentMachine.MachineProcess(machine.CurrentMachine);
+                        if (machine.CurrentMachine.CanBurn)
                         {
                             Burn burnMachine = machine.CurrentMachine as Burn;
                             if (LabTimer[machine.CurrentMachine.MachineId].Time <= -burnMachine.BurnTime)
                             {
                                 //queimou
                                 burnMachine.CreateBurnedResult();
+                                machine.CurrentMachine.MachineProcess(machine.CurrentMachine);
                             }
                             return;
                         }
@@ -92,52 +92,65 @@ namespace _Scripts.Singleton
         public IEnumerator WorkMachine(MachineHolder machine)
         {
             yield return new WaitForSeconds(1f);
+            
+            //pega a maquina da cena
             IEnumerable<MachineHolder> sceneMachine = null;
             var currentMachine = machine.CurrentMachine;
             if (MachineSystemController.Instance != null)
             {
                 sceneMachine = MachineSystemController.Instance.allMachines.Where(p => p.CurrentMachine.MachineId == currentMachine.MachineId);
+                Debug.LogWarning("Maquinas: " + sceneMachine.Count());
                 foreach(var machineAux in sceneMachine)
                 {
                     currentMachine = machineAux.CurrentMachine;
                 }
             }
             Debug.Log("WorkingMachine");
+            //se a máquina parou de funcionar
             if(!LabTimer.ContainsKey(currentMachine.MachineId)) yield break;
             
+            
+            //subtrai o tempo da maquina
             var aux = LabTimer[currentMachine.MachineId].Time;
             aux -= 1;
             var p = new MachineStoreValues(LabTimer[currentMachine.MachineId].CurrentRecipeObj, aux);
-            Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
-            LabTimer[machine.CurrentMachine.MachineId] = p;
+            LabTimer[currentMachine.MachineId] = p;
             currentMachine.CurrentRecipe = LabTimer[currentMachine.MachineId].CurrentRecipeObj;
+            Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
             
+            //se o tempo passou de zero
             if (LabTimer[currentMachine.MachineId].Time <= 0)
             {
-                if (currentMachine.IsDestroyed) yield break;
-                if(currentMachine.MachineState == MachineState.Empty) yield break;
-                currentMachine.SetState(MachineState.Ready);
-                currentMachine.CreateResult();
-                if (machine.CurrentMachine as Burn)
+                //se a maquina nao existe na cena
+                if (!currentMachine.IsDestroyed)
                 {
-                    Burn burnMachine = machine.CurrentMachine as Burn;
+                    if (currentMachine.MachineState != MachineState.Empty)
+                    {
+                        currentMachine.SetState(MachineState.Ready);
+                        currentMachine.CreateResult();
+                    }
+                }
+
+                //se a maquina pode queimar/passar do tempo ela continuar rodando
+                if (currentMachine.CanBurn)
+                {
+                    Burn burnMachine = currentMachine as Burn;
                     if (LabTimer[currentMachine.MachineId].Time >= -burnMachine.BurnTime)
                     {
                         if(!LabTimer.ContainsKey(currentMachine.MachineId)) yield break;
                         StartCoroutine(WorkMachine(machine));
-                        
                     }
                     else
                     {
                         //queimou
+                        if (currentMachine.IsDestroyed) yield break;
                         burnMachine.CreateBurnedResult();
-                      
                         LabTimer.Remove(currentMachine.MachineId);
                     }
                 }
                 else
                 {
-                    LabTimer.Remove(currentMachine.MachineId);//remove to make machine brun the igrerdient
+                    LabTimer.Remove(currentMachine.MachineId);
                 }
                
             }
