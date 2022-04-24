@@ -23,7 +23,6 @@ namespace _Scripts.Systems.Patients
         {
             DisplayOrder();
             PatientsEvents.OnOrderViewCall(this);
-            
         }
 
         private void OnTriggerExit(Collider other)

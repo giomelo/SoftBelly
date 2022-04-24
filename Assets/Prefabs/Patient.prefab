@@ -119,7 +119,8 @@ MonoBehaviour:
     Order: {fileID: 0}
     OrderSprite: {fileID: 0}
     Object: {fileID: 7207621149209005852}
-    OrderDescription: awdawdawdawd
+    OrderDescription: "Ol\xE1, quebrei minha perna ontem voc\xEA tem algo para os
+      ossos ai?"
 --- !u!136 &7207621148705051298
 CapsuleCollider:
   m_ObjectHideFlags: 0

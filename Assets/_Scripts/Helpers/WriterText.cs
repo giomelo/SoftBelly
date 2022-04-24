@@ -97,8 +97,11 @@ public class TextWriterSingle
             {
                 text += "<color=#00000000>" + _textToWrite.Substring(_characterIndex) + "</color>";
             }
-            
-            _uiText.text = text;
+
+            if (_uiText != null)
+            {
+                _uiText.text = text;
+            }
 
             if (_characterIndex >= _textToWrite.Length)
             {
