@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-using _Scripts.Systems.Npcs;
+using _Scripts.Entities.Npcs;
 using _Scripts.Systems.Inventories;
 
 namespace _Scripts.Systems.Patients
@@ -8,12 +8,6 @@ namespace _Scripts.Systems.Patients
     public class Patient : NpcBase
     {
         public OrderObj Order;
-
-        //public
-        private void Start()
-        {
-            SetOrder();
-        }
 
         private void DisplayOrder()
         {
@@ -48,7 +42,7 @@ namespace _Scripts.Systems.Patients
         }
         
 
-        public void Deliver(Patient p)
+        public static void Deliver(Patient p)
         {
             if (LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order))
             {

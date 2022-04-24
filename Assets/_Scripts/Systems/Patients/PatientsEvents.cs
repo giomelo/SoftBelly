@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace _Scripts.Systems.Patients
 {
@@ -7,7 +8,7 @@ namespace _Scripts.Systems.Patients
         public static Action<Patient> OnOrderDelivered;
         public static Action<Patient> OnOrderView;
         public static Action OnOrderDisable;
-
+        public static Action<Transform> OnPatientArrived;
         public static void OnOrderDisableCall()
         {
             OnOrderDisable?.Invoke();
@@ -21,6 +22,10 @@ namespace _Scripts.Systems.Patients
         public static void OnOrderViewCall(Patient p)
         {
             OnOrderView?.Invoke(p);
+        }
+        public static void OnPatientArrivedCall(Transform p)
+        {
+            OnPatientArrived?.Invoke(p);
         }
     }
 }
