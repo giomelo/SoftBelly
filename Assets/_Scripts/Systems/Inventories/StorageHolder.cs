@@ -10,7 +10,6 @@ namespace _Scripts.Systems.Inventories
     /// <summary>
     /// Class tha holds the current storage
     /// </summary>
-    
     public class StorageHolder : MonoBehaviour
     {
         public StorageBehaviour Storage;

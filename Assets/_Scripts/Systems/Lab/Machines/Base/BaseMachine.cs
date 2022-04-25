@@ -9,6 +9,7 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.Base
 {
+    [RequireComponent(typeof(MachineHolder))]
     public abstract class BaseMachine : MonoBehaviour
     {
         //public List<UIMachineSlot> Ingredients = new List<UIMachineSlot>();
