@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Inventories
 {
-    public class LabInventoryHolder : StorageHolder , IDontDestroyOnLoad<LabInventoryHolder>
+    public class LabInventoryHolder : StorageHolder
     {
         public static LabInventoryHolder Instance;
         

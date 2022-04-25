@@ -31,11 +31,6 @@ namespace _Scripts.Singleton
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
         }
 
-        public void ClearSlot(int id)
-        {
-            LabTimer.Remove(id);
-        }
-
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);

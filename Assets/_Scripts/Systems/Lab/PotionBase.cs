@@ -6,6 +6,5 @@ namespace _Scripts.Systems.Lab
     [CreateAssetMenu(fileName = "Potion", menuName = "Item/Potion")]
     public class PotionBase : ItemBehaviour
     {
-        
     }
 }

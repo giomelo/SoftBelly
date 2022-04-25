@@ -8,6 +8,7 @@ TagManager:
   - Chest
   - Machine
   - WateringCan
+  - Drag
   layers:
   - Default
   - TransparentFX

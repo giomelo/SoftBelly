@@ -55,6 +55,11 @@ namespace _Scripts.Systems.Lab.Machines.Base
         private void OnCLicked(BaseMachine id)
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
+            
+            if (LabEvents.CurrentMachine as Pestle)
+            {
+                GameManager.Instance.CamSwicher.ChangeCamera();
+            }
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
         }
@@ -77,7 +82,12 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 u.UnHighLight();
             }
+            if (LabEvents.CurrentMachine as Pestle)
+            {
+                GameManager.Instance.CamSwicher.ChangeCamera();
+            }
             LabEvents.CurrentMachine = null;
+            
             
         }
         /// <summary>

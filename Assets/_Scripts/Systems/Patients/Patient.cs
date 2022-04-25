@@ -16,7 +16,7 @@ namespace _Scripts.Systems.Patients
 
         public void SetOrder()
         {
-            Order.Order = PatientsController.Instance.GenerateRandomOrder();
+            PatientsController.Instance.GenerateRandomOrder(ref Order.Order, ref Order.OrderDescription);
         }
 
         public void OnTriggerEnter(Collider other)

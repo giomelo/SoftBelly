@@ -48,6 +48,7 @@ namespace _Scripts.Systems.Lab
         
         public static void OnMachineSelectedCall(BaseMachine id)
         {
+            if (CurrentMachine != null) return;
             CurrentMachine = id;
             OnMachineSelected?.Invoke(id);
         }

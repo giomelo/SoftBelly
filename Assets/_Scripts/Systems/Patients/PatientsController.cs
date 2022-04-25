@@ -12,9 +12,17 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.Systems.Patients
 {
+    [Serializable]
+    public struct OrdersAndDescriptions
+    {
+        public ItemBehaviour Item;
+        [TextArea]
+        public List<string> PossibleDescriptions;
+    }
+    
     public class PatientsController : MonoSingleton<PatientsController>
     {
-        public List<ItemBehaviour> PossiblesOrders = new List<ItemBehaviour>();
+        public List<OrdersAndDescriptions> PossiblesOrders = new List<OrdersAndDescriptions>();
         [SerializeField]
         public TextMeshProUGUI orderText;
         [SerializeField]
@@ -23,14 +31,15 @@ namespace _Scripts.Systems.Patients
         
         [SerializeField]
         private GameObject patientPrefab;
-        private bool hasPatient = false;
         [SerializeField]
         private Transform patientStart;
         [SerializeField]
         private Transform patientEnd;
-        public ItemBehaviour GenerateRandomOrder()
+        public void GenerateRandomOrder(ref ItemBehaviour item, ref string description)
         {
-            return PossiblesOrders[Random.Range(0, PossiblesOrders.Count - 1)];
+            int index = Random.Range(0, PossiblesOrders.Count - 1);
+            item = PossiblesOrders[index].Item;
+            description = PossiblesOrders[index].PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)];
         }
 
         public void GenaratePatient()
