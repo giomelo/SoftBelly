@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 namespace _Scripts.Helpers
 {
+    /// <summary>
+    /// Basic typewriter text for texts
+    /// </summary>
     public class WriterText : MonoSingleton<WriterText>
     {
         private List<TextWriterSingle> _textWriterSingle = new List<TextWriterSingle>();
@@ -30,16 +33,14 @@ namespace _Scripts.Helpers
                 text?.ResetWriter();
             }
         }
-
+        
         public void RemoveWriter(TextMeshProUGUI uiText)
         {
             for (int i = 0; i < _textWriterSingle.Count; i++)
             {
-                if (_textWriterSingle[i].GetText() == uiText)
-                {
-                    _textWriterSingle.RemoveAt(i);
-                    i--;
-                }
+                if (_textWriterSingle[i].GetText() != uiText) continue;
+                _textWriterSingle.RemoveAt(i);
+                i--;
             }
         }
 
@@ -47,7 +48,7 @@ namespace _Scripts.Helpers
         {
             for (int i =0; i< _textWriterSingle.Count; i++)
             {
-                bool destroyInstance = _textWriterSingle[i].Update();
+                var destroyInstance = _textWriterSingle[i].Update();
 
                 if (!destroyInstance) continue;
                 _textWriterSingle.RemoveAt(i);
@@ -75,7 +76,10 @@ public class TextWriterSingle
         _characterIndex = 0;
         _invisibleCharacters = invisibleCharacters;
     }
-
+    
+    /// <summary>
+    /// Reset the text
+    /// </summary>
     public void ResetWriter()
     {
         _characterIndex = 0;

@@ -49,8 +49,8 @@ namespace _Scripts.Systems.Plantation
             CurrentPlant = PlantEvents.CurrentPlant;
             if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
             {
-                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0, false));
-                 StartCoroutine(PlantTimeController.Instance.Grow(this));
+                PlantTimeController.Instance.AddTime(PlotId, CurrentPlant.GrowTime, CurrentPlant, 0, false);
+                StartCoroutine(PlantTimeController.Instance.Grow(this));
             }
             
             CreatePlant();

@@ -29,7 +29,6 @@ namespace _Scripts.Systems.Lab.Machines
                 }
             }
             StartMachine();
-
         }
 
         public void UpdatePlantObjects()

@@ -9,6 +9,9 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.Base
 {
+    /// <summary>
+    /// Class for all machines
+    /// </summary>
     [RequireComponent(typeof(MachineHolder))]
     public abstract class BaseMachine : MonoBehaviour
     {
@@ -52,19 +55,27 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.OnMachineStarted -= MachineProcess;
             IsDestroyed = true;
         }
-
+        /// <summary>
+        /// When machine is clicked
+        /// </summary>
+        /// <param name="id"></param>
         private void OnCLicked(BaseMachine id)
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             
             if (LabEvents.CurrentMachine as Pestle)
             {
-                GameManager.Instance.CamSwicher.ChangeCamera();
+                GameManager.Instance.camSwitcher.ChangeCamera();
             }
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
         }
-
+        
+        /// <summary>
+        /// Method for check all results in slot were collected, machines like the caldron only work if the player
+        /// had collected all the remaining results from previous work
+        /// </summary>
+        /// <returns></returns>
         public bool CheckIfCollectedAllResults()
         {
             foreach (var slots in ResultsSlots)
@@ -73,6 +84,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
             return true;
         }
+        /// <summary>
+        /// Close Machine
+        /// </summary>
+        /// <param name="id"></param>
         private void OnDispose(BaseMachine id)
         {
             if (LabEvents.CurrentMachine == null) return;
@@ -85,7 +100,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
             if (LabEvents.CurrentMachine as Pestle)
             {
-                GameManager.Instance.CamSwicher.ChangeCamera();
+                GameManager.Instance.camSwitcher.ChangeCamera();
             }
             LabEvents.CurrentMachine = null;
             
@@ -108,12 +123,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
             CurrentRecipe = AllRecipes.Instance.CheckRecipe(auxRecipe);
             
             if (CurrentRecipe == null) return;
-
             StartTime();
-            
             LabEvents.OnMachineStartedCall(this); //event for calling machine hud
         }
-
+        
         protected void StartTime()
         { 
             if (!LabTimeController.Instance.LabTimer.ContainsKey(MachineId))
@@ -124,7 +137,11 @@ namespace _Scripts.Systems.Lab.Machines.Base
             uiController.DisposeInventory();
             StartCoroutine(LabTimeController.Instance.WorkMachine(thisMachineHolder));
         }
-
+        
+        /// <summary>
+        /// ui machine process
+        /// </summary>
+        /// <param name="machine"></param>
         public void MachineProcess(BaseMachine machine)
         {
             if (machine.MachineId != MachineId) return;
@@ -146,6 +163,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// </summary>
         public abstract void CreateResult();
         
+        /// <summary>
+        /// Set ingredient slot for result slot, machines like herb dryer only have one slot for collection and putting
+        /// </summary>
         public void SetSlotType()
         {
             foreach (var slot in IngredientsSlots)

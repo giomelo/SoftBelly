@@ -23,8 +23,6 @@ namespace _Scripts.Systems.Lab
         public static UIMachineSlot MachineSlot;
         public static ItemBehaviour IngredientSelected;
         public static bool IsMachineSlotSelected;
-
-
         public static void OnItemRemovedCall(int key, int amount,InventoryType type)
         {
             OnItemRemoved?.Invoke(key,amount,type);

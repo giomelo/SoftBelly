@@ -18,7 +18,6 @@ namespace _Scripts.Entities.Player
         #region Fields
     
         [Header("Movement")]
-  
         [SerializeField]
         private PlayerMovement playerMovement;
 
@@ -26,26 +25,23 @@ namespace _Scripts.Entities.Player
 
         private const int CollisionLayer = 1 << 6;
 
-
-        private readonly float _radius = 7f;
+        private const float Radius = 7f;
 
         [Header("Water Inputs")] 
         private bool _isHolding;
 
-        private readonly float _distanceWaterCan = 3f;
-        
+        private const float DistanceWaterCan = 3f;
+
         [SerializeField]
         private Transform waterCanObj;
         [SerializeField]
         private Transform waterCanPlace;
         
-
         #endregion
 
         private void Start()
         {
-            InvokeRepeating(nameof(PutWaterInput), 1,0.1f); 
-           
+            InvokeRepeating(nameof(PutWaterInput), 1,0.1f);
             InvokeRepeating(nameof(PlantInput), 1,0.1f); 
         }
         // Update is called once per frame
@@ -60,8 +56,8 @@ namespace _Scripts.Entities.Player
         /// </summary>
         private void HandleMovementInput()
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            var horizontal = Input.GetAxis("Horizontal");
+            var vertical = Input.GetAxis("Vertical");
 
             if (horizontal == 0 && vertical == 0) return;
             playerMovement.ProcessInput(horizontal, vertical);
@@ -77,7 +73,8 @@ namespace _Scripts.Entities.Player
             RaycastHit hit;
         
             if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
-            if (!CheckDistanceFromPlayer(hit.transform, _radius)) return;
+            if (!CheckDistanceFromPlayer(hit.transform, Radius)) return;
+            //if is clicking a plot
             if (hit.transform.TryGetComponent<Plot>(out var plotScript))
             {
                 if (plotScript.CheckAvailable())
@@ -96,6 +93,7 @@ namespace _Scripts.Entities.Player
             }
             else
             {
+                //if is not clicking a plot what is it clicking
                 switch (hit.transform.tag)
                 {
                     case "Chest":
@@ -115,7 +113,10 @@ namespace _Scripts.Entities.Player
             }
             
         }
-
+        
+        /// <summary>
+        /// Check if plant input is pressed for puting water
+        /// </summary>
         private void PutWaterInput()
         {
             if (!Input.GetMouseButton(1)) return;
@@ -123,7 +124,7 @@ namespace _Scripts.Entities.Player
             RaycastHit hit;
         
             if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
-            if (!CheckDistanceFromPlayer(hit.transform, _radius)) return;
+            if (!CheckDistanceFromPlayer(hit.transform, Radius)) return;
             if (!hit.transform.TryGetComponent<Plot>(out var plotScript)) return;
             if (plotScript.CheckAvailable()) return;
             if (!plotScript.CheckIfThirsty()) return;
@@ -138,15 +139,13 @@ namespace _Scripts.Entities.Player
         private void WaterInput()
         {
             if (!Input.GetKeyDown(KeyCode.E)) return;
-            
             if (_isHolding)
             {
                 PutWaterCan(false);
             }else
             {
                
-                if (!CheckDistanceFromPlayer(waterCanObj, _distanceWaterCan)) return;
-               
+                if (!CheckDistanceFromPlayer(waterCanObj, DistanceWaterCan)) return;
                 PutWaterCan(true);
             }
         }

@@ -3,9 +3,12 @@ using UnityEngine;
 
 namespace _Scripts.Singleton
 {
+    /// <summary>
+    /// Dont destroy controller
+    /// </summary>
     public class GeneralGameController : MonoSingleton<GeneralGameController>
     {
-        public bool HasPatient {get; set; }
+        public bool HasPatient { get; set; }
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);
@@ -26,7 +29,8 @@ namespace _Scripts.Singleton
         {
             HasPatient = true;
         }
-        public void NoPatient(Patient p)
+
+        private void NoPatient(Patient p)
         {
             HasPatient = false;
         }

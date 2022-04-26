@@ -14,7 +14,7 @@ namespace _Scripts.Systems.Inventories
    {
       public Dictionary<int, ItemObj> Slots;
       public int maxAmountPerSlots = 20;
-      [EnumFlagsAttribute]
+      [EnumFlags]
       public ItemType itensType;
 
       [SerializeField] 

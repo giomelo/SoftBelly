@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.Base
 {
+    /// <summary>
+    /// Class for slots in machine
+    /// </summary>
     public class BaseMachineSlot : MonoBehaviour
     {
         public UIMachineSlot Slot;

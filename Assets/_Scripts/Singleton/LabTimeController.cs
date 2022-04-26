@@ -35,7 +35,12 @@ namespace _Scripts.Singleton
         {
             DontDestroyOnLoad(this.gameObject);
         }
-
+        
+        /// <summary>
+        /// Herb machine result depends on the variables in the machine slot, so in start i have to set the slot to the
+        /// the previous slot
+        /// </summary>
+        /// <param name="machine"></param>
         private void SetSlotsHerbDryer(HerbDryer machine)
         {
             for (int i =0; i< HerbIngredientsSlot.Count; i++)
@@ -43,6 +48,9 @@ namespace _Scripts.Singleton
                 machine.IngredientsSlots[i].Slot.MachineSlot = HerbIngredientsSlot[i];
             }
         }
+        /// <summary>
+        /// Display machines in start
+        /// </summary>
         public void DisplayMachines()
         {
             if (LabTimer.Count == 0)  return;

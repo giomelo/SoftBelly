@@ -12,7 +12,7 @@ namespace _Scripts.Systems.Item
     {
         [Header("Item Stuff")]
         public string ItemId;
-        [EnumFlagsAttribute]
+        [EnumFlags]
         public ItemType ItemType;
 
         public Sprite ImageDisplay;

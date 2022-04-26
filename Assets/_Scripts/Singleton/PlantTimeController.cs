@@ -18,10 +18,13 @@ namespace _Scripts.Singleton
         public int key;
         public PlantPlot value;
     }
-
+    
+    /// <summary>
+    /// Class for control timer in plants
+    /// </summary>
     public class PlantTimeController : MonoSingleton<PlantTimeController>
     {
-        public Dictionary<int, PlantPlot> PlantTimer { get; } = new Dictionary<int,PlantPlot>();
+        public Dictionary<int, PlantPlot> PlantTimer { get; private set; } = new Dictionary<int,PlantPlot>();
         public List<ExposedDic> dic = new List<ExposedDic>();
         public void AddTime(int plotId, float time, SeedBase plant, float thirstTime, bool isThirsty)
         {
@@ -199,11 +202,6 @@ namespace _Scripts.Singleton
             //         StartCoroutine(Grow(plot));
             //     }
             // }
-        }
-
-        private void SetDeadPlot(Plot plot)
-        {
-            
         }
     }
 }

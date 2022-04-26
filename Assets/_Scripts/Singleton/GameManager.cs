@@ -5,9 +5,12 @@ using UnityEngine;
 
 namespace _Scripts.Singleton
 {
+    /// <summary>
+    /// Manager for store basic scripts and camera
+    /// </summary>
     public class GameManager : MonoSingleton<GameManager>
     {
         public Camera MainCamera;
-        public CineMachineSwicher CamSwicher;
+        public CineMachineSwitcher camSwitcher;
     }
 }

@@ -5,7 +5,6 @@ namespace _Scripts.Entities.Player
     /// <summary>
     /// Handle the player movment
     /// </summary>
-
     public class PlayerMovement : MonoBehaviour
     {
         private CharacterController _chController;

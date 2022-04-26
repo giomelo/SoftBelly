@@ -12,11 +12,11 @@ namespace _Scripts.Systems.Inventories
         {
             if (Instance != null)
             {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
                 return;
             }
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
     

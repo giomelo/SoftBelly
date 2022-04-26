@@ -12,7 +12,8 @@ namespace _Scripts.Store
 
         private void Start()
         {
-            var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
+            //pick the plantation storage
+            var storagesInScene = FindObjectsOfType<StorageHolder>();
             // ReSharper disable once SuggestVarOrType_SimpleTypes
             foreach (StorageHolder s in storagesInScene)
             {

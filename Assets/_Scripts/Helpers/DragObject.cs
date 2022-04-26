@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace _Scripts.Helpers
 {
+    /// <summary>
+    /// Basic drag object
+    /// </summary>
     public class DragObject : MonoBehaviour
     {
         private Vector3 mOffset;

@@ -12,7 +12,7 @@ namespace _Scripts.Systems.Plants.Bases
     {
         public bool isDried;
         [Header("Plant Stuff")] 
-        [EnumFlagsAttribute]
+        [EnumFlags]
         public MedicalSymptoms MedicalSymptoms;
 
         public Sprite DriedPlant;

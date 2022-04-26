@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace _Scripts.Helpers
 {
+    /// <summary>
+    /// Basic audio system
+    /// </summary>
     public class AudioSystem : MonoSingleton<AudioSystem>
     {
         [SerializeField]

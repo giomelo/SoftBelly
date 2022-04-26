@@ -4,7 +4,10 @@ using Cinemachine;
 
 namespace _Scripts.Helpers
 {
-    public class CineMachineSwicher : MonoBehaviour
+    /// <summary>
+    /// Basic camswitcher control
+    /// </summary>
+    public class CineMachineSwitcher : MonoBehaviour
     {
         [SerializeField]
         private CinemachineVirtualCamera worldCam;

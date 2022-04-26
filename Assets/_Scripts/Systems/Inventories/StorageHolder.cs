@@ -32,7 +32,9 @@ namespace _Scripts.Systems.Inventories
                 Storage.AddItem(exposedInventory[i].item.amount, exposedInventory[i].item.item);
             }
         }
-
+        /// <summary>
+        /// Update the exposed inventory in the inspecto
+        /// </summary>
         public void UpdateExposedInventory()
         {
             exposedInventory.Clear();
