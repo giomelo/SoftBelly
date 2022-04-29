@@ -18,12 +18,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
             if (Slot.Type == MachineSlotType.Ingredient)
             {
                 if (LabEvents.IsMachineSlotSelected)
-                {
-                    if (LabEvents.MachineSlot.MachineSlot.item == null)
-                    {
-                        UnHighLightSlot(LabEvents.MachineSlot);
-                    }
-                    else
+                { 
+                    UnHighLightSlot(LabEvents.MachineSlot);
+                    if (LabEvents.MachineSlot.MachineSlot.item != null)
                     {
                         if (LabEvents.MachineSlot.Equals(Slot))
                         {
@@ -39,11 +36,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 // if (LabEvents.CurrentMachine == null ||
                 //     LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
-
                 if (LabEvents.CurrentMachine == null || Slot.MachineSlot.item == null) return;
                 
                 UnHighLight();
-                
             }
            
         }
@@ -53,11 +48,17 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.HighImage.color = Color.green;
         }
 
-        private static void UnHighLightSlot(UIMachineSlot slot)
+        private void UnHighLightSlot(UIMachineSlot slot)
         {
             slot.HighImage.color = Color.black;
-            slot.Image.sprite = null;
-            slot.Amount.text = "00";
+            //slot.Image.sprite = null;
+            //slot.Amount.text = "00";
+        }
+        private void UnHighLightSlot()
+        {
+            Slot.HighImage.color = Color.black;
+            Slot.Image.sprite = null;
+            Slot.Amount.text = "00";
         }
         public void UnHighLight()
         {
@@ -113,6 +114,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
             UnHighLightSlot(Slot);
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
+            Slot.Image.sprite = null;
+            Slot.Amount.text ="00";
         }
         
         //set the slot to the current item

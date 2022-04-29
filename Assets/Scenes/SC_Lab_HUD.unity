@@ -13713,6 +13713,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIMachineSLot
       objectReference: {fileID: 0}
+    - target: {fileID: 9129396579205929895, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9575472
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129396579205929895, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9575472
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129396579205929895, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
 --- !u!1 &2010858163 stripped
