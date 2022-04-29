@@ -8,7 +8,7 @@ namespace _Scripts.Enums
     [Flags]
     public enum MedicalSymptoms
     {
-        DorDeCabeça,
-        Febre
+        DorDeCabeça = 1,
+        Febre = 2
     }
 }

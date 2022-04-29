@@ -8,11 +8,11 @@ namespace _Scripts.Enums
     [Flags]
     public enum ItemType
     {
-        Seed,
-        Plant,
-        Potion,
-        Ingredient,
-        Other,
-        Garbage
+        Seed = 1,
+        Plant = 2,
+        Potion = 4,
+        Ingredient = 8,
+        Other = 16,
+        Garbage = 32
     }
 }

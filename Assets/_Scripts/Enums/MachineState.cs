@@ -5,8 +5,8 @@
     /// </summary>
     public enum MachineState
     {
-        Empty,
-        Working,
-        Ready
+        Empty = 0,
+        Working = 1,
+        Ready = 2
     }
 }

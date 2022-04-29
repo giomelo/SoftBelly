@@ -3,10 +3,9 @@
     /// <summary>
     /// Define inventoryType
     /// </summary>
-
     public enum InventoryType
     {
-       Plantation,
-       Lab
+       Plantation = 1,
+       Lab  = 2
     }
 }

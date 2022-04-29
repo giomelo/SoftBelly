@@ -5,8 +5,8 @@
     /// </summary>
     public enum PatientState
     {
-        Entering,
-        Waiting,
-        Leaving
+        Entering = 0,
+        Waiting = 1,
+        Leaving = 2
     }
 }
