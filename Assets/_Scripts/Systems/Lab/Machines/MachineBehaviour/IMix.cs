@@ -2,6 +2,6 @@
 {
     public interface IMix
     {
-        
+        public abstract void Work();
     }
 }

@@ -13,10 +13,14 @@ namespace _Scripts.Helpers
     {
         private Vector3 mOffset;
         private float mZCoord;
+        private Vector3 _startPosition;
+        protected bool canDrag = false;
 
         private void OnMouseDown()
         {
-            var position = gameObject.transform.position;
+            if (!canDrag) return;
+            _startPosition = gameObject.transform.position;
+            var position = _startPosition;
             mZCoord = GameManager.Instance.MainCamera.WorldToScreenPoint(
                 position).z;
             // Store offset = gameobject world pos - mouse world pos
@@ -26,7 +30,9 @@ namespace _Scripts.Helpers
 
         private void OnMouseUp()
         {
+            if (!canDrag) return;
             Cursor.visible = true;
+            transform.position = _startPosition;
         }
 
 
@@ -44,6 +50,7 @@ namespace _Scripts.Helpers
         
         private void OnMouseDrag()
         {
+            if (!canDrag) return;
             if (LabEvents.CurrentMachine == null ) return;
             if (LabEvents.CurrentMachine as Pestle)
             {

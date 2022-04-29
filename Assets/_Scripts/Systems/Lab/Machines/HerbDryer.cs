@@ -44,6 +44,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         public void RemovePlantObject(int index)
         {
+            if (plantsPos[index].transform.childCount <= 0) return;
             Destroy(plantsPos[index].GetChild(0).gameObject);
         }
 

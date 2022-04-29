@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using _Scripts.Systems.Lab.Recipes;
 using _Scripts.UI;
 using UnityEngine;
@@ -103,13 +104,25 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 GameManager.Instance.camSwitcher.ChangeCamera();
             }
             LabEvents.CurrentMachine = null;
-            
-            
         }
         /// <summary>
         /// Button for machines that have timer
         /// </summary>
         protected virtual void StartMachine()
+        {
+            SetRecipe();
+            
+            if (CurrentRecipe == null) return;
+
+            if (LabEvents.CurrentMachine is ITimerMachine)
+            {
+                StartTime();
+                Debug.LogWarning("Timer");
+                LabEvents.OnMachineStartedCall(this); //event for calling machine hud
+            }
+        }
+
+        private void SetRecipe()
         {
             //if (machine.MachineId != MachineId) return;
             List<ItemObj> ingredients = new List<ItemObj>();
@@ -121,10 +134,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             auxRecipe.Init(ingredients);
             
             CurrentRecipe = AllRecipes.Instance.CheckRecipe(auxRecipe);
-            
-            if (CurrentRecipe == null) return;
-            StartTime();
-            LabEvents.OnMachineStartedCall(this); //event for calling machine hud
         }
         
         protected void StartTime()

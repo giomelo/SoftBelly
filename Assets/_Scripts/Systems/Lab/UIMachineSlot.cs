@@ -18,6 +18,7 @@ namespace _Scripts.Systems.Lab
     {
         public ItemObj MachineSlot;
         public Image Image;
+        public Image HighImage;
         public Text Amount;
         public MachineSlotType Type;
         public int slotId;//each slot in the machina has a diferent slotId

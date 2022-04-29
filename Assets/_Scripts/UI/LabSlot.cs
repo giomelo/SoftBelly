@@ -16,6 +16,7 @@ namespace _Scripts.UI
     {
         private void OnSlotClicked()
         {
+         
             if (!LabEvents.IsMachineSlotSelected)
             {
                 return;
@@ -25,13 +26,14 @@ namespace _Scripts.UI
             if (LabEvents.IngredientSelected == null) return;
             if (LabEvents.MachineSlot.MachineSlot.item != null)
             {
+                // checa se o item so slot selecionado é igual ao item do slot do inventario
                 if (!LabEvents.IngredientSelected.Equals(LabEvents.MachineSlot.MachineSlot.item)) return;
             }
+            //checa se o slot pode receber esse item
             if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
             {
                 return;
             }
-
             if (LabEvents.MachineSlot.MachineSlot.amount >= LabEvents.MachineSlot.maxPerSlot) return;
             LabEvents.OnIngredientSelectedCall();
             //LabEvents.OnItemRemoved(uiSlot.slotId, 1, InventoryType.Lab);

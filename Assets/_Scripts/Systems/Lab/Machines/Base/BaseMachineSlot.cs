@@ -14,6 +14,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         
         public void OnMachineSlotSelected()
         {
+            if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.Type == MachineSlotType.Ingredient)
             {
                 if (LabEvents.IsMachineSlotSelected)
@@ -22,8 +23,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
                     {
                         UnHighLightSlot(LabEvents.MachineSlot);
                     }
+                    else
+                    {
+                        if (LabEvents.MachineSlot.Equals(Slot))
+                        {
+                            RemoveItemSlot();
+                        }
+                    }
                 }
-                
                 LabEvents.IsMachineSlotSelected = true;
                 LabEvents.MachineSlot = Slot;
                 HighLightSlot();
@@ -43,13 +50,12 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         private void HighLightSlot()
         {
-            if (Slot.MachineSlot.item != null) return;
-            Slot.Image.color = Color.green;
+            Slot.HighImage.color = Color.green;
         }
 
         private static void UnHighLightSlot(UIMachineSlot slot)
         {
-            slot.Image.color = Color.white;
+            slot.HighImage.color = Color.black;
             slot.Image.sprite = null;
             slot.Amount.text = "00";
         }
@@ -60,11 +66,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 Debug.LogError("Missing UiController of this machine");
                 return;
             }
-            
-            Slot.Image.color = Color.white;
-            Slot.Image.sprite = null;
-            Slot.Amount.text = "00";
 
+            UnHighLightSlot(Slot);
+            
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
             
@@ -101,16 +105,12 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         break;
                 }
             }
-         
-          
         }
-
+        
      
         public void ResetSlot()
         {
-            Slot.Image.color = Color.white;
-            Slot.Image.sprite = null;
-            Slot.Amount.text = "00";
+            UnHighLightSlot(Slot);
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
         }
@@ -124,6 +124,18 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();
             Slot.Image.sprite = item.ImageDisplay;
             LabEvents.MachineSlot = Slot;
+        }
+
+        private void RemoveItemSlot()
+        {
+            Slot.MachineSlot.amount--;
+            Slot.Amount.text = Slot.MachineSlot.amount.ToString();
+            LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(1, Slot.MachineSlot.item);
+            LabEvents.CurrentMachine.uiController.UpdateInventory();
+            if (Slot.MachineSlot.amount <= 0)
+            {
+                ResetSlot();
+            }
         }
 
         private void SetType(MachineSlotType type)
