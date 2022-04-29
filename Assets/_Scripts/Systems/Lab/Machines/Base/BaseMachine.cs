@@ -183,5 +183,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 slot.Slot.Type = MachineSlotType.Result;
             }
         }
+
+        public virtual bool CheckIfSlotCanReciveIngredient()
+        {
+            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

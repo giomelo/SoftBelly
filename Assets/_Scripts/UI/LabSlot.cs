@@ -30,7 +30,7 @@ namespace _Scripts.UI
                 if (!LabEvents.IngredientSelected.Equals(LabEvents.MachineSlot.MachineSlot.item)) return;
             }
             //checa se o slot pode receber esse item
-            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            if (!LabEvents.CurrentMachine.CheckIfSlotCanReciveIngredient())
             {
                 return;
             }
@@ -46,6 +46,5 @@ namespace _Scripts.UI
             if (!TryGetComponent<Button>(out var button)) return;
             button.onClick.AddListener(OnSlotClicked);
         }
-        
     }
 }

@@ -75,6 +75,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         public override void CreateResult()
         {
+            Debug.LogWarning("Results!");
             for (int i = 0; i < IngredientsSlots.Count; i++)
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
@@ -83,8 +84,8 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newDriedPlant.name = currentPlant.ItemId + "Dried";
-                newDriedPlant.Init(currentPlant.ItemId + "Dried", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlant,currentPlant.Price, currentPlant.ItemProprietiesGO);
-                
+                newDriedPlant.Init(currentPlant.ItemId + "Dried", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlantImage,currentPlant.Price, currentPlant.ItemProprietiesGO);
+                //newDriedPlant.isDried = true;
                 IngredientsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newDriedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -100,6 +101,19 @@ namespace _Scripts.Systems.Lab.Machines
             }
             
             LabEvents.OnMachineFinishedCall(this);
+        }
+
+        public override bool CheckIfSlotCanReciveIngredient()
+        {
+            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            {
+                return false;
+            }
+
+            if (!(LabEvents.IngredientSelected as PlantBase)) return true;
+            var plant = LabEvents.IngredientSelected as PlantBase;
+            
+            return !plant.isDried;
         }
     }
 }

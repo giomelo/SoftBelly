@@ -1,9 +1,18 @@
+using System;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
 
 namespace _Scripts.Systems.Plants.Bases
 {
+    [Serializable]
+    public struct DriedPlant
+    {
+        public Sprite DriedPlantImage;
+
+        public GameObject DryingPlant;
+    }
+    
     /// <summary>
     /// Base class for creating plants as scriptables objects
     /// </summary>
@@ -14,8 +23,8 @@ namespace _Scripts.Systems.Plants.Bases
         [Header("Plant Stuff")] 
         [EnumFlags]
         public MedicalSymptoms MedicalSymptoms;
-
-        public Sprite DriedPlant;
+        //public DriedPlant DriedPlant;
+        public Sprite DriedPlantImage;
 
         public GameObject DryingPlant;
     }
