@@ -97,7 +97,16 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.IsMachineSlotSelected = false;
             foreach (var u in IngredientsSlots)
             {
-                u.ResetSlot();
+                if (LabEvents.CurrentMachine.MachineState == MachineState.Working)
+                {
+                    u.UnHighLight();
+                }
+                else
+                {
+                    u.UnHighLight();
+                    u.ResetSlot();
+                }
+                
             }
             if (LabEvents.CurrentMachine as Pestle)
             {

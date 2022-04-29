@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: EucaliptoPlant
   m_EditorClassIdentifier: 
   ItemId: Eucalipto
-  ItemType: 2
+  ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 14d9cbcc7db785d43924d921d6de4aeb, type: 3}
   Price: 20
   ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
   isDried: 0
   MedicalSymptoms: 0
-  DriedPlant: {fileID: 21300000, guid: caa3537358c561c438a5a2d3a8851b28, type: 3}
+  DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
   DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}

@@ -37,8 +37,16 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 // if (LabEvents.CurrentMachine == null ||
                 //     LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
                 if (LabEvents.CurrentMachine == null || Slot.MachineSlot.item == null) return;
+                if (LabEvents.CurrentMachine.MachineState == MachineState.Ready)
+                {
+                    //RemoveItemSlot();
+                    UnHighLight();
+                }
+                // else
+                // {
+                //     UnHighLight();
+                // }
                 
-                UnHighLight();
             }
            
         }
@@ -72,12 +80,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
-            
-            LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(Slot.MachineSlot.amount,
-                Slot.MachineSlot.item);
-            LabEvents.CurrentMachine.uiController.UpdateInventory();
-            Slot.MachineSlot.item = null;
-            Slot.MachineSlot.amount = 0;
+            RemoveItemSlot();
 
             var currentMachine = LabEvents.CurrentMachine;
             for (int i = 0; i < 2; i++)
@@ -99,7 +102,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         {
                             var herbDryer = currentMachine as HerbDryer;
                             LabEvents.CurrentMachine.SetState(MachineState.Empty);
-                          
                             SetType(MachineSlotType.Ingredient);
                             herbDryer.RemovePlantObject(Slot.slotId);
                         }

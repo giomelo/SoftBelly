@@ -1625,7 +1625,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 2
+  m_Priority: 1
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -3934,7 +3934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.itemRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_Pivot.x
@@ -4531,7 +4531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696734475}
-  m_LocalRotation: {x: 0.27712274, y: 0.018374972, z: -0.0053007365, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374925, z: -0.005300723, w: 0.9606442}
   m_LocalPosition: {x: 19.300001, y: 7.8500004, z: -10.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4975,10 +4975,10 @@ MonoBehaviour:
   - {fileID: 1619523381}
   - {fileID: 446664074}
   ResultsSlots: []
-  machineWorkingTime: 10
+  machineWorkingTime: 5
   MachineId: 1
   CurrentRecipe: {fileID: 0}
-  thisMachineHolder: {fileID: 0}
+  thisMachineHolder: {fileID: 725722558}
   CanBurn: 0
   plantsPos:
   - {fileID: 710755280}
@@ -5692,7 +5692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.itemRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_Pivot.x
@@ -6440,7 +6440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.itemRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_Pivot.x
@@ -9713,7 +9713,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490286515}
-  m_LocalRotation: {x: 0.27712274, y: 0.018374972, z: -0.0053007365, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374925, z: -0.005300723, w: 0.9606442}
   m_LocalPosition: {x: 19.300001, y: 7.8500004, z: -10.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10365,18 +10365,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1495761045}
-        m_TargetAssemblyTypeName: _Scripts.UI.UIController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13623,7 +13611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: Slot.itemRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
       propertyPath: m_Pivot.x
