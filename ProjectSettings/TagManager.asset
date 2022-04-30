@@ -9,6 +9,7 @@ TagManager:
   - Machine
   - WateringCan
   - Drag
+  - Smash
   layers:
   - Default
   - TransparentFX

@@ -9,9 +9,19 @@ namespace _Scripts.Systems.Lab.Machines
 {
     public class PestleObject : DragObject
     {
+        [SerializeField]
+        private Pestle machine;
         public void StartDrag()
         {
             canDrag = true;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.transform.CompareTag("Smash"))
+            {
+                Debug.LogWarning("Smashed");
+            }
         }
     }
 }

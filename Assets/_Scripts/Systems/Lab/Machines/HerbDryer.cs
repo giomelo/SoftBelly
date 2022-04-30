@@ -53,7 +53,7 @@ namespace _Scripts.Systems.Lab.Machines
             PlantBase currentPlant = IngredientsSlots[index].Slot.MachineSlot.item as PlantBase;
             if (currentPlant != null)
             {
-                var plant = Instantiate((Object) currentPlant.DryingPlant, plantsPos[index].position,
+                var plant = Instantiate((Object) currentPlant.DriedPlant.DryingPlant, plantsPos[index].position,
                     Quaternion.identity, plantsPos[index]);
             }
         }
@@ -84,8 +84,8 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newDriedPlant.name = currentPlant.ItemId + "Dried";
-                newDriedPlant.Init(currentPlant.ItemId + "Dried", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlantImage,currentPlant.Price, currentPlant.ItemProprietiesGO);
-                //newDriedPlant.isDried = true;
+                newDriedPlant.Init(currentPlant.ItemId + "Dried", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.DriedPlant.DriedPlantImage,currentPlant.Price, currentPlant.ItemProprietiesGO);
+                newDriedPlant.isDried = true;
                 IngredientsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newDriedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();

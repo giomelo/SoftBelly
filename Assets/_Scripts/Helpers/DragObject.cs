@@ -16,14 +16,19 @@ namespace _Scripts.Helpers
         private Vector3 _startPosition;
         protected bool canDrag = false;
 
+        private void Start()
+        {
+            _startPosition = gameObject.transform.position;
+        }
+
         private void OnMouseDown()
         {
             if (!canDrag) return;
             _startPosition = gameObject.transform.position;
             var position = _startPosition;
             mZCoord = GameManager.Instance.MainCamera.WorldToScreenPoint(
-                position).z;
-            // Store offset = gameobject world pos - mouse world pos
+              position).z;
+              // Store offset = gameobject world pos - mouse world pos
             mOffset = position - GetMouseAsWorldPoint();
             Cursor.visible = false;
         }
@@ -54,8 +59,14 @@ namespace _Scripts.Helpers
             if (LabEvents.CurrentMachine == null ) return;
             if (LabEvents.CurrentMachine as Pestle)
             {
-                transform.position = GetMouseAsWorldPoint() + mOffset;
+                transform.position = new Vector3(_startPosition.x, GetMouseAsWorldPoint().y + mOffset.y, GetMouseAsWorldPoint().z + mOffset.z);
             }
+        }
+
+        public void ResetObj()
+        {
+            Cursor.visible = true;
+            transform.position = _startPosition;
         }
     }
 }

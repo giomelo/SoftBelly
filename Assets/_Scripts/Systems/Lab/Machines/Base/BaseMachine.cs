@@ -112,7 +112,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 GameManager.Instance.camSwitcher.ChangeCamera();
             }
+
+            if (LabEvents.CurrentMachine as Pestle)
+            {
+                Pestle pesltle = LabEvents.CurrentMachine as Pestle;
+                pesltle.OnDisposeMachine();
+            }
             LabEvents.CurrentMachine = null;
+            
+          
         }
         /// <summary>
         /// Button for machines that have timer
