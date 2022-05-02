@@ -6,17 +6,13 @@ namespace _Scripts
 {
     public class TimerFaceScreen : MonoBehaviour
     {
-        void Update()
-        {
-            //transform.LookAt(GameManager.Instance.MainCamera.transform.position, Vector3.up);
-        }
 
         private void Start()
         {
             StartCoroutine(Look());
         }
 
-        public IEnumerator Look()
+        private IEnumerator Look()
         {
             transform.LookAt(GameManager.Instance.MainCamera.transform.transform.position, Vector3.up);
             yield return new WaitForSeconds(0.1f);

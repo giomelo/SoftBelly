@@ -32,7 +32,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public int MachineId;
         public RecipeObj CurrentRecipe;
-        public bool IsDestroyed { get; private set; }
+        public bool IsDestroyed { get; protected set; }
         public MachineHolder thisMachineHolder;
 
         public bool CanBurn;
@@ -60,7 +60,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// When machine is clicked
         /// </summary>
         /// <param name="id"></param>
-        private void OnCLicked(BaseMachine id)
+        protected void OnCLicked(BaseMachine id)
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             
@@ -89,7 +89,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// Close Machine
         /// </summary>
         /// <param name="id"></param>
-        private void OnDispose(BaseMachine id)
+        protected void OnDispose(BaseMachine id)
         {
             if (LabEvents.CurrentMachine == null) return;
             if (uiController.inventoryId != id.uiController.inventoryId) return;
@@ -100,6 +100,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 if (LabEvents.CurrentMachine.MachineState == MachineState.Working)
                 {
                     u.UnHighLight();
+                    u.ResetSlot();
                 }
                 else
                 {

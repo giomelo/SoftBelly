@@ -16,8 +16,9 @@ namespace _Scripts.Systems.Lab
         public static Action<ItemBehaviour> OnIngredientSelected;
         public static Action<BaseMachine> OnMachineStarted; //When the machine started(for audio and effects)
         public static Action<BaseMachine> OnMachineFinished; //When the machine finished(for audio and effects)
-
         public static Action<int,int, InventoryType> OnItemRemoved;
+        public static Action OnItemSmashed; //Called when pestle smashed an item
+        
         [CanBeNull] public static BaseMachine CurrentMachine = null;
 
         public static UIMachineSlot MachineSlot;
@@ -26,6 +27,11 @@ namespace _Scripts.Systems.Lab
         public static void OnItemRemovedCall(int key, int amount,InventoryType type)
         {
             OnItemRemoved?.Invoke(key,amount,type);
+        }
+
+        public static void OnItemSmashedCall()
+        {
+            OnItemSmashed?.Invoke();
         }
 
         public static void OnChestSelectedCall(int id)

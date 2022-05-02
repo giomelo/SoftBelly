@@ -54,7 +54,13 @@ namespace _Scripts.Singleton
                 dic.Add(aux);
             }
         }
-
+        
+        
+        // The code is an example of how to create a new plant.
+        // The code starts by checking if the PlantTimer has reached 0, which means that no plants have been created yet.
+        // If it hasn't reached 0, then the code will loop through all of the plots in the grid system and check if their thirst time has passed.
+        // If so, then they will be set as thirsty and displayed on the plot.
+            
         public void CreatPlants()
         {
             if (PlantTimer.Count == 0)  return;
