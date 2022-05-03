@@ -96,7 +96,10 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 if(machine.CurrentMachine == machine.CurrentMachine as HerbDryer)
                 {
-                    machine.CurrentMachine.SetSlotType();
+                    if(machine.CurrentMachine.MachineState == MachineState.Ready)
+                    {
+                        machine.CurrentMachine.SetSlotType();
+                    }
                 }
             }
             

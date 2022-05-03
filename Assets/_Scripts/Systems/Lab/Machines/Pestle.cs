@@ -85,5 +85,17 @@ namespace _Scripts.Systems.Lab.Machines
             LabEvents.OnItemSmashed -= AddHits;
             LabEvents.OnItemSmashed -= Create;
         }
+
+        protected override void FinishMachine()
+        {
+            GameManager.Instance.camSwitcher.ChangeCamera();
+            Pestle pesltle = LabEvents.CurrentMachine as Pestle;
+            pesltle.OnDisposeMachine();
+        }
+
+        protected override void InitMachine()
+        {
+            GameManager.Instance.camSwitcher.ChangeCamera();
+        }
     }
 }

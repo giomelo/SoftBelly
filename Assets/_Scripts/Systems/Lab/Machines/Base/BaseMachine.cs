@@ -64,12 +64,18 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
             
-            if (LabEvents.CurrentMachine as Pestle)
-            {
-                GameManager.Instance.camSwitcher.ChangeCamera();
-            }
+            // if (LabEvents.CurrentMachine as Pestle)
+            // {
+            //     GameManager.Instance.camSwitcher.ChangeCamera();
+            // }
+            InitMachine();
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
+        }
+
+        protected virtual void InitMachine()
+        {
+
         }
         
         /// <summary>
@@ -97,31 +103,27 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.IsMachineSlotSelected = false;
             foreach (var u in IngredientsSlots)
             {
-                if (LabEvents.CurrentMachine.MachineState == MachineState.Working)
+                u.UnHighLight();
+                if(LabEvents.CurrentMachine is not HerbDryer)
                 {
-                    u.UnHighLight();
                     u.ResetSlot();
                 }
-                else
-                {
-                    u.UnHighLight();
-                    u.ResetSlot();
-                }
-                
             }
-            if (LabEvents.CurrentMachine as Pestle)
-            {
-                GameManager.Instance.camSwitcher.ChangeCamera();
-            }
-
-            if (LabEvents.CurrentMachine as Pestle)
-            {
-                Pestle pesltle = LabEvents.CurrentMachine as Pestle;
-                pesltle.OnDisposeMachine();
-            }
+            // if (LabEvents.CurrentMachine as Pestle)
+            // {
+            //     GameManager.Instance.camSwitcher.ChangeCamera();
+            //     Pestle pesltle = LabEvents.CurrentMachine as Pestle;
+            //     pesltle.OnDisposeMachine();
+            // }
+            FinishMachine();
             LabEvents.CurrentMachine = null;
             
           
+        }
+
+        protected virtual void FinishMachine()
+        {
+
         }
         /// <summary>
         /// Button for machines that have timer

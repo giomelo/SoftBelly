@@ -11,14 +11,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
     public class BaseMachineSlot : MonoBehaviour
     {
         public UIMachineSlot Slot;
-        
+
         public void OnMachineSlotSelected()
         {
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.Type == MachineSlotType.Ingredient)
             {
                 if (LabEvents.IsMachineSlotSelected)
-                { 
+                {
                     UnHighLightSlot(LabEvents.MachineSlot);
                     if (LabEvents.MachineSlot.MachineSlot.item != null)
                     {
@@ -46,9 +46,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
                 // {
                 //     UnHighLight();
                 // }
-                
+
             }
-           
+
         }
 
         private void HighLightSlot()
@@ -77,49 +77,41 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
 
             UnHighLightSlot(Slot);
-            
+
             if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.MachineSlot.item == null) return;
             RemoveItemSlot();
 
             var currentMachine = LabEvents.CurrentMachine;
-            for (int i = 0; i < 2; i++)
+            LabEvents.CurrentMachine.SetState(MachineState.Empty);
+
+            if (currentMachine == currentMachine as Cauldron)
             {
-                switch (i)
+                if (LabEvents.CurrentMachine.CheckIfCollectedAllResults())
                 {
-                    case 0:
-                        if (currentMachine == currentMachine as Cauldron)
-                        {
-                            if (LabEvents.CurrentMachine.CheckIfCollectedAllResults())
-                            {
-                                LabEvents.CurrentMachine.SetState(MachineState.Empty);
-                                LabTimeController.Instance.LabTimer.Remove(currentMachine.MachineId);
-                            }
-                        }
-                        break;
-                    case 1:
-                        if (currentMachine == currentMachine as HerbDryer)
-                        {
-                            var herbDryer = currentMachine as HerbDryer;
-                            LabEvents.CurrentMachine.SetState(MachineState.Empty);
-                            SetType(MachineSlotType.Ingredient);
-                            herbDryer.RemovePlantObject(Slot.slotId);
-                        }
-                        break;
+                    LabTimeController.Instance.LabTimer.Remove(currentMachine.MachineId);
                 }
             }
+
+            if (currentMachine == currentMachine as HerbDryer)
+            {
+                //teste if has to remove machine here
+                var herbDryer = currentMachine as HerbDryer;
+                SetType(MachineSlotType.Ingredient);
+                herbDryer.RemovePlantObject(Slot.slotId);
+            }
         }
-        
-     
+
+
         public void ResetSlot()
         {
             UnHighLightSlot(Slot);
             Slot.MachineSlot.item = null;
             Slot.MachineSlot.amount = 0;
             Slot.Image.sprite = null;
-            Slot.Amount.text ="00";
+            Slot.Amount.text = "00";
         }
-        
+
         //set the slot to the current item
         private void AddItemSlot(ItemBehaviour item)
         {
