@@ -18,8 +18,9 @@ namespace _Scripts.Systems.Lab.Machines
         public void Work()
         {
             //se o usuário clicou no botão e a máquina ainda está exibindo os resultados
-            if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Ready) return;
-            
+            if (LabEvents.CurrentMachine != null && MachineState == MachineState.Ready) return;
+            //ser nao tem item
+            if (!CheckIfHasItem()) return;
             for (int i =0; i< IngredientsSlots.Count; i++)
             {
                 ingredients.Add(IngredientsSlots[i].Slot.MachineSlot);
@@ -117,6 +118,22 @@ namespace _Scripts.Systems.Lab.Machines
             var plant = LabEvents.IngredientSelected as PlantBase;
             
             return !plant.isDried;
+        }
+
+        protected override void OnSlotDispose(BaseMachineSlot slot)
+        {
+            
+        }
+
+        public override void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            //test if has to remove machine here
+            slot.SetType(MachineSlotType.Ingredient);
+            RemovePlantObject(slot.Slot.slotId);
+            if (CheckIfCollectedAllResults())
+            {
+                SetState(MachineState.Empty);
+            }
         }
     }
 }

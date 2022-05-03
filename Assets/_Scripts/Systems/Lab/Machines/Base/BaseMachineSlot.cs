@@ -14,7 +14,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public void OnMachineSlotSelected()
         {
-            if (LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
+            if (LabEvents.CurrentMachine != null && LabEvents.CurrentMachine.MachineState == MachineState.Working) return;
             if (Slot.Type == MachineSlotType.Ingredient)
             {
                 if (LabEvents.IsMachineSlotSelected)
@@ -34,8 +34,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
             else
             {
-                // if (LabEvents.CurrentMachine == null ||
-                //     LabEvents.CurrentMachine.MachineState != MachineState.Ready) return;
                 if (LabEvents.CurrentMachine == null || Slot.MachineSlot.item == null) return;
                 if (LabEvents.CurrentMachine.MachineState == MachineState.Ready)
                 {
@@ -62,12 +60,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
             //slot.Image.sprite = null;
             //slot.Amount.text = "00";
         }
-        private void UnHighLightSlot()
-        {
-            Slot.HighImage.color = Color.black;
-            Slot.Image.sprite = null;
-            Slot.Amount.text = "00";
-        }
         public void UnHighLight()
         {
             if (LabEvents.CurrentMachine == null)
@@ -82,24 +74,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             if (Slot.MachineSlot.item == null) return;
             RemoveItemSlot();
 
-            var currentMachine = LabEvents.CurrentMachine;
-            LabEvents.CurrentMachine.SetState(MachineState.Empty);
-
-            if (currentMachine == currentMachine as Cauldron)
-            {
-                if (LabEvents.CurrentMachine.CheckIfCollectedAllResults())
-                {
-                    LabTimeController.Instance.LabTimer.Remove(currentMachine.MachineId);
-                }
-            }
-
-            if (currentMachine == currentMachine as HerbDryer)
-            {
-                //teste if has to remove machine here
-                var herbDryer = currentMachine as HerbDryer;
-                SetType(MachineSlotType.Ingredient);
-                herbDryer.RemovePlantObject(Slot.slotId);
-            }
+            LabEvents.CurrentMachine.CheckFinishMachine(this);
         }
 
 
@@ -135,7 +110,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             }
         }
 
-        private void SetType(MachineSlotType type)
+        public void SetType(MachineSlotType type)
         {
             Slot.Type = type;
         }

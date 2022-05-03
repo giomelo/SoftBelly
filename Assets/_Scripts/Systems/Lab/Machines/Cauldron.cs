@@ -1,4 +1,6 @@
-﻿using _Scripts.Systems.Lab.Machines.Base;
+﻿using _Scripts.Enums;
+using _Scripts.Singleton;
+using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using UnityEngine;
 
@@ -28,6 +30,15 @@ namespace _Scripts.Systems.Lab.Machines
         public void Work()
         {
             StartMachine();
+        }
+
+        public override void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            if (CheckIfCollectedAllResults())
+            {
+                LabTimeController.Instance.LabTimer.Remove(MachineId);
+                SetState(MachineState.Empty);
+            }
         }
     }
 }

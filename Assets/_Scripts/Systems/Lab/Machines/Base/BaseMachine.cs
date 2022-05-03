@@ -63,11 +63,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
         protected void OnCLicked(BaseMachine id)
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
-            
-            // if (LabEvents.CurrentMachine as Pestle)
-            // {
-            //     GameManager.Instance.camSwitcher.ChangeCamera();
-            // }
             InitMachine();
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
@@ -89,6 +84,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
             {
                 if (slots.Slot.MachineSlot.item != null) return false;
             }
+            foreach (var slots in IngredientsSlots)
+            {
+                if (slots.Slot.MachineSlot.item != null) return false;
+            }
             return true;
         }
         /// <summary>
@@ -104,21 +103,19 @@ namespace _Scripts.Systems.Lab.Machines.Base
             foreach (var u in IngredientsSlots)
             {
                 u.UnHighLight();
-                if(LabEvents.CurrentMachine is not HerbDryer)
-                {
-                    u.ResetSlot();
-                }
+                OnSlotDispose(u);
             }
-            // if (LabEvents.CurrentMachine as Pestle)
-            // {
-            //     GameManager.Instance.camSwitcher.ChangeCamera();
-            //     Pestle pesltle = LabEvents.CurrentMachine as Pestle;
-            //     pesltle.OnDisposeMachine();
-            // }
             FinishMachine();
             LabEvents.CurrentMachine = null;
-            
-          
+        }
+        
+        /// <summary>
+        /// When the machine is dispose what to do with the slot
+        /// </summary>
+        /// <param name="slot"></param>
+        protected virtual void OnSlotDispose(BaseMachineSlot slot)
+        {
+            slot.ResetSlot();
         }
 
         protected virtual void FinishMachine()
@@ -206,12 +203,28 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public virtual bool CheckIfSlotCanReciveIngredient()
         {
-            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            return LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType);
+        }
+        
+        /// <summary>
+        /// For all machines called after clicked in machine slot
+        /// </summary>
+        public virtual void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            
+        }
+
+        public virtual bool CheckIfHasItem()
+        {
+            foreach (var item in IngredientsSlots)
             {
-                return false;
+                if (item.Slot.MachineSlot.item != null)
+                {
+                    return true;
+                }
             }
 
-            return true;
+            return false;
         }
     }
 }
