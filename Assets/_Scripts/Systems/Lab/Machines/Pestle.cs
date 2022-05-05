@@ -24,7 +24,28 @@ namespace _Scripts.Systems.Lab.Machines
         
         public override void CreateResult()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < IngredientsSlots.Count; i++)
+            {
+                if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
+                
+                var newSmashedPlant = ScriptableObject.CreateInstance<PlantBase>();
+                
+                PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
+                newSmashedPlant.name = currentPlant.ItemId + "Smashed";
+                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprietiesGO);
+                IngredientsSlots[i].Slot.Image.sprite = newSmashedPlant.ImageDisplay;
+                IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
+                IngredientsSlots[i].Slot.Amount.text = 1.ToString();
+                IngredientsSlots[i].Slot.MachineSlot.amount = 1;
+            }
+
+            if(MachineState == MachineState.Ready)
+            {
+                SetSlotType();
+            }
+
+            ResetMachine();
+            LabEvents.OnMachineFinishedCall(this);
         }
 
         public void Work()
@@ -38,22 +59,35 @@ namespace _Scripts.Systems.Lab.Machines
 
         public void Create()
         {
+            if(MachineState == MachineState.Ready) return;
             PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
             var plant = Instantiate(currentPlant.SmashedPlant.SmashedPlantObj, ingredientPos.position,
                 Quaternion.identity, ingredientPos);
             itemSmashed.Add(plant);
-            if (itemSmashed.Count > 1)
+            //checa se foi o primeiro item criado
+            if (itemSmashed.Count <= 1) return;
+            
+            foreach (var item in itemSmashed)
             {
-                foreach (var item in itemSmashed)
-                {
-                    Vector3 scale = item.transform.localScale;
-                    item.transform.localScale = scale * 0.8f;
-                }
+                Vector3 scale = item.transform.localScale;
+                item.transform.localScale = scale * 0.8f;
             }
+        }
+        
+        // destroi todos os itens criados pela maquina
+        public void ResetMachine()
+        {
+            for (int i = 0; i < ingredientPos.childCount; i++)
+            {
+                Destroy(ingredientPos.GetChild(i).gameObject);
+            }
+
+            itemSmashed.Clear();
         }
         
         public void OnDisposeMachine()
         {
+            ResetMachine();
             SetState(MachineState.Empty);
             PestleObj.ResetObj();
         }
@@ -61,10 +95,9 @@ namespace _Scripts.Systems.Lab.Machines
         public void AddHits()
         {
             _currentHits++;
-            if (_currentHits == _hitsNecessaries)
-            {
-                MachineState = MachineState.Ready;
-            }
+            if (_currentHits != _hitsNecessaries) return;
+            MachineState = MachineState.Ready;
+            CreateResult();
         }
 
         private void OnEnable()
@@ -89,13 +122,23 @@ namespace _Scripts.Systems.Lab.Machines
         protected override void FinishMachine()
         {
             GameManager.Instance.camSwitcher.ChangeCamera();
-            Pestle pesltle = LabEvents.CurrentMachine as Pestle;
-            pesltle.OnDisposeMachine();
+            //Pestle pesltle = LabEvents.CurrentMachine as Pestle;
+            OnDisposeMachine();
         }
 
         protected override void InitMachine()
         {
             GameManager.Instance.camSwitcher.ChangeCamera();
+        }
+        
+        public override void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            //test if has to remove machine here
+            slot.SetType(MachineSlotType.Ingredient);
+            if (CheckIfCollectedAllResults())
+            {
+                SetState(MachineState.Empty);
+            }
         }
     }
 }

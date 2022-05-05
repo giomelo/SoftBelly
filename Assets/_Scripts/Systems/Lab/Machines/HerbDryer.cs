@@ -93,15 +93,10 @@ namespace _Scripts.Systems.Lab.Machines
                 IngredientsSlots[i].Slot.MachineSlot.amount = 1;
             }
 
-            foreach (var machine in MachineSystemController.Instance.allMachines)
+     
+            if(MachineState == MachineState.Ready)
             {
-                if(machine.CurrentMachine == machine.CurrentMachine as HerbDryer)
-                {
-                    if(machine.CurrentMachine.MachineState == MachineState.Ready)
-                    {
-                        machine.CurrentMachine.SetSlotType();
-                    }
-                }
+                SetSlotType();
             }
             
             LabEvents.OnMachineFinishedCall(this);
