@@ -121,14 +121,14 @@ namespace _Scripts.Systems.Lab.Machines
 
         protected override void FinishMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCamera();
+            GameManager.Instance.camSwitcher.ChangeCameraPestle();
             //Pestle pesltle = LabEvents.CurrentMachine as Pestle;
             OnDisposeMachine();
         }
 
         protected override void InitMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCamera();
+            GameManager.Instance.camSwitcher.ChangeCameraPestle();
         }
         
         public override void CheckFinishMachine(BaseMachineSlot slot)

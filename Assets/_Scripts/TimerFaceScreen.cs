@@ -6,7 +6,6 @@ namespace _Scripts
 {
     public class TimerFaceScreen : MonoBehaviour
     {
-
         private void Start()
         {
             StartCoroutine(Look());

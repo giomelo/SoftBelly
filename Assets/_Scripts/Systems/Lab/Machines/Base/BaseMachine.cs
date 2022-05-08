@@ -16,8 +16,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
     [RequireComponent(typeof(MachineHolder))]
     public abstract class BaseMachine : MonoBehaviour
     {
-        //public List<UIMachineSlot> Ingredients = new List<UIMachineSlot>();
-        //public List<UIMachineSlot> Results  = new List<UIMachineSlot>();
         [SerializeField]
         private GameObject machineLayer;
         [SerializeField]
