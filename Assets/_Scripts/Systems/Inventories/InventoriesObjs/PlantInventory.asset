@@ -16,4 +16,4 @@ MonoBehaviour:
   itensType: 1
   Size: 30
   storageId: 0
-  InventoryType: 0
+  InventoryType: 1

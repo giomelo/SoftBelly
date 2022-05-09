@@ -12,23 +12,21 @@ namespace _Scripts.Systems.Lab.Machines
     {
         [SerializeField]
         private Pestle Machine;
-        public void StartDrag()
+        public override void StartDrag()
         {
             canDrag = true;
             Machine = LabEvents.CurrentMachine as Pestle;
-        }
-        public void StopDrag()
-        {
-            canDrag = false;
         }
 
         private void OnCollisionEnter(Collision collision)
         {
             if (!collision.transform.CompareTag("Smash")) return;
+            if (!Machine.CanHit) return;
             Debug.LogWarning("Smashed");
             if (LabEvents.CurrentMachine.MachineState != MachineState.Ready)
             {
                 LabEvents.OnItemSmashedCall();
+                StartCoroutine(Machine.ResetCoolDown());
             }
         }
     }

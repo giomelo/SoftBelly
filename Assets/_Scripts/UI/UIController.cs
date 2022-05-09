@@ -51,6 +51,9 @@ namespace _Scripts.UI
         private float xOffsetProprieties = 210f;
         [SerializeField]
         private float yOffsetProprieties = 80f;
+        [Header("Show invenotry button")]
+        [SerializeField]
+        private GameObject showButton; // show invenotry button
 
         private void Start()
         {
@@ -253,6 +256,18 @@ namespace _Scripts.UI
 
             StorageHolder.Storage.RemoveItem(key, amount);
             UpdateInventory();
+        }
+
+        public void HideInventory()
+        {
+            inventoryObject.SetActive(false);
+            showButton.SetActive(true);
+        }
+
+        public void ShowInventory()
+        {
+            inventoryObject.SetActive(true);
+            showButton.SetActive(false);
         }
     }
 }

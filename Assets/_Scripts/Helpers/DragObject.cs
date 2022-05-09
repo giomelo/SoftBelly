@@ -9,16 +9,25 @@ namespace _Scripts.Helpers
     /// <summary>
     /// Basic drag object
     /// </summary>
-    public class DragObject : MonoBehaviour
+    public abstract class DragObject : MonoBehaviour
     {
         private Vector3 mOffset;
         private float mZCoord;
         private Vector3 _startPosition;
         protected bool canDrag = false;
+        [SerializeField] private bool _canDragBoth;
 
         private void Start()
         {
             _startPosition = gameObject.transform.position;
+        }
+        public virtual void StartDrag()
+        {
+            canDrag = true;
+        }
+        public virtual void StopDrag()
+        {
+            canDrag = false;
         }
 
         private void OnMouseDown()
@@ -56,10 +65,15 @@ namespace _Scripts.Helpers
         private void OnMouseDrag()
         {
             if (!canDrag) return;
-            if (LabEvents.CurrentMachine == null ) return;
-            if (LabEvents.CurrentMachine as Pestle)
+            if (LabEvents.CurrentMachine == null) return;
+            if (!_canDragBoth)
             {
                 transform.position = new Vector3(_startPosition.x, GetMouseAsWorldPoint().y + mOffset.y, GetMouseAsWorldPoint().z + mOffset.z);
+            }
+            else
+            {
+                transform.position = new Vector3(GetMouseAsWorldPoint().x, GetMouseAsWorldPoint().y + mOffset.y, GetMouseAsWorldPoint().z + mOffset.z);
+
             }
         }
 

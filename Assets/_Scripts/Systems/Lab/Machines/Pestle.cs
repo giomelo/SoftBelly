@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Helpers;
@@ -10,10 +11,10 @@ using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines
 {
-    public class Pestle : BaseMachine, IMix
+    public class Pestle : BaseMachine
     {
         [SerializeField]
-        private PestleObject PestleObj;
+        private DragObject PestleObj;
         [SerializeField]
         private Transform ingredientPos;
 
@@ -21,6 +22,8 @@ namespace _Scripts.Systems.Lab.Machines
         private int _currentHits;
         
         private List<GameObject> itemSmashed = new List<GameObject>();
+        private readonly int _coolDown = 1;
+        public bool CanHit = true;
         
         public override void CreateResult()
         {
@@ -123,6 +126,7 @@ namespace _Scripts.Systems.Lab.Machines
         {
             GameManager.Instance.camSwitcher.ChangeCameraPestle();
             //Pestle pesltle = LabEvents.CurrentMachine as Pestle;
+            PestleObj.StopDrag();
             OnDisposeMachine();
         }
 
@@ -139,6 +143,13 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 SetState(MachineState.Empty);
             }
+        }
+
+        public IEnumerator ResetCoolDown()
+        {
+            CanHit = false;
+            yield return new WaitForSeconds(_coolDown);
+            CanHit = true;
         }
     }
 }
