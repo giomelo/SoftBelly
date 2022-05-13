@@ -11,13 +11,6 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             if (!other.transform.TryGetComponent<IngredientObj>(out var ingredient)) return;
             MixPan.OnIngredientAddCall(ingredient);
         }
-
-        // private void OnCollisionEnter(Collision collision)
-        // {
-        //     Debug.Log("oi");
-        //     if (!collision.transform.TryGetComponent<IngredientObj>(out var ingredient)) return;
-        //     MixPan.OnIngredientAddCall(ingredient);
-        // }
     }
 }
 

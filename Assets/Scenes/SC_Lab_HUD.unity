@@ -6370,7 +6370,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696734475}
-  m_LocalRotation: {x: 0.27712274, y: 0.018374972, z: -0.0053007365, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374925, z: -0.005300723, w: 0.9606442}
   m_LocalPosition: {x: 19.300001, y: 7.8500004, z: -10.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7807,7 +7807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430b3623f6974ad1b04931f09d2151a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canDragBoth: 1
+  canDragBoth: 0
   IngredientDescription: wadwad a
 --- !u!54 &848821090
 Rigidbody:
@@ -7937,7 +7937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430b3623f6974ad1b04931f09d2151a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canDragBoth: 1
+  canDragBoth: 0
   IngredientDescription: wad wa
 --- !u!54 &853057299
 Rigidbody:
@@ -11204,7 +11204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430b3623f6974ad1b04931f09d2151a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canDragBoth: 1
+  canDragBoth: 0
   IngredientDescription: pitada de 2
 --- !u!54 &1239761304
 Rigidbody:
@@ -11475,7 +11475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430b3623f6974ad1b04931f09d2151a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canDragBoth: 1
+  canDragBoth: 0
   IngredientDescription: pitade de sal
 --- !u!54 &1276171482
 Rigidbody:
@@ -13394,7 +13394,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490286515}
-  m_LocalRotation: {x: 0.27712274, y: 0.018374972, z: -0.0053007365, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374925, z: -0.005300723, w: 0.9606442}
   m_LocalPosition: {x: 19.300001, y: 7.8500004, z: -10.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16129,7 +16129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff59c0b5ad4515b0b3fddeb19dd817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canDragBoth: 0
+  canDragBoth: 0
   Machine: {fileID: 1841520279}
 --- !u!54 &1809877031
 Rigidbody:

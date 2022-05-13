@@ -14,7 +14,7 @@ namespace _Scripts.Systems.Lab.Machines
         private Pestle Machine;
         public override void StartDrag()
         {
-            canDrag = true;
+            CanDrag = true;
             Machine = LabEvents.CurrentMachine as Pestle;
         }
 

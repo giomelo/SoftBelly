@@ -6,7 +6,7 @@ namespace _Scripts.Systems.Lab
     {
         public override void StartDrag()
         {
-            canDrag = true;
+            CanDrag = true;
         }
     }
 }
