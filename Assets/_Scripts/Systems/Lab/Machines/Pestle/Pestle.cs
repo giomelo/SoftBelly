@@ -103,21 +103,23 @@ namespace _Scripts.Systems.Lab.Machines
             CreateResult();
         }
 
-        private void OnEnable()
+        public override void OnEnable()
         {
-            LabEvents.OnMachineSelected += OnCLicked;
-            LabEvents.OnMachineDispose += OnDispose;
-            LabEvents.OnMachineStarted += MachineProcess;
-            IsDestroyed = false;
+            // LabEvents.OnMachineSelected += OnCLicked;
+            // LabEvents.OnMachineDispose += OnDispose;
+            // LabEvents.OnMachineStarted += MachineProcess;
+            // IsDestroyed = false;
+            base.OnEnable();
             LabEvents.OnItemSmashed += AddHits;
             LabEvents.OnItemSmashed += Create;
         }
-        private void OnDisable()
+        public override void OnDisable()
         {
-            LabEvents.OnMachineSelected -= OnCLicked;
-            LabEvents.OnMachineDispose -= OnDispose;
-            LabEvents.OnMachineStarted -= MachineProcess;
-            IsDestroyed = true;
+            // LabEvents.OnMachineSelected -= OnCLicked;
+            // LabEvents.OnMachineDispose -= OnDispose;
+            // LabEvents.OnMachineStarted -= MachineProcess;
+            // IsDestroyed = true;
+            base.OnDisable();
             LabEvents.OnItemSmashed -= AddHits;
             LabEvents.OnItemSmashed -= Create;
         }

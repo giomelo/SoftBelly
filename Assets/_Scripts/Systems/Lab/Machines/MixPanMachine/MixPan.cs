@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace _Scripts.Systems.Lab.Machines
+namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 {
     public class MixPan : BaseMachine, IMix
     {
@@ -16,6 +19,38 @@ namespace _Scripts.Systems.Lab.Machines
         private GameObject ingredietnsShelf;
         [SerializeField]
         private Transform pos;
+        
+        [SerializeField]
+        private TextMeshProUGUI decoratorsText;
+        [SerializeField]
+        private Button resetButton;
+
+        public static Action<IngredientObj> OnIngredientAdd;
+
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            OnIngredientAdd += AddText;
+        }
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            OnIngredientAdd -= AddText;
+        }
+
+        private void AddText(IngredientObj ingredient)
+        {
+            decoratorsText.text += ingredient.IngredientDescription + "+";
+        }
+
+        private void ResetText()
+        {
+            decoratorsText.text = "";
+        }
+        public static void OnIngredientAddCall(IngredientObj i)
+        {
+            OnIngredientAdd?.Invoke(i);
+        }
         public override void CreateResult()
         {
             throw new System.NotImplementedException();

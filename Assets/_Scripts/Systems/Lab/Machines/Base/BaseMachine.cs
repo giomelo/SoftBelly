@@ -40,14 +40,14 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             thisMachineHolder = gameObject.GetComponent<MachineHolder>();
         }
-        private void OnEnable()
+        public virtual void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
             LabEvents.OnMachineDispose += OnDispose;
             LabEvents.OnMachineStarted += MachineProcess;
             IsDestroyed = false;
         }
-        private void OnDisable()
+        public virtual void OnDisable()
         {
             LabEvents.OnMachineSelected -= OnCLicked;
             LabEvents.OnMachineDispose -= OnDispose;
