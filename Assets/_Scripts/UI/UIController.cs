@@ -201,7 +201,7 @@ namespace _Scripts.UI
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(GameObject item, Transform local)
+        public void DisplayCurrentProprieties(GameObject item, Transform local, ItemBehaviour itemS)
         {
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
@@ -229,6 +229,7 @@ namespace _Scripts.UI
             {
                 aux.transform.position = pos;
                 aux.SetActive(true);
+                aux.transform.GetComponent<ItemProprieties>().text.text = itemS.ItemProprieties.ItemProprietiesDescription;
             }
     
         }

@@ -1,10 +1,19 @@
 using System;
 using _Scripts.Enums;
+using _Scripts.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Systems.Item
 {
+    [Serializable]
+    public struct ItemProprietiesInspector
+    {
+        public GameObject ItemProprietiesGO;
+        [TextArea]
+        public string ItemProprietiesDescription;
+    }
+    
     /// <summary>
     /// Base item class behavior for all items
     /// </summary>
@@ -19,15 +28,16 @@ namespace _Scripts.Systems.Item
 
         public float Price;
 
-        public GameObject ItemProprietiesGO;
-
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo)
+        public ItemProprietiesInspector ItemProprieties;
+        
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprietiesGO = itemProprietiesGo;
+            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
+            ItemProprieties.ItemProprietiesDescription = itemDescription;
         }
         
         public bool Equals(ItemBehaviour other)

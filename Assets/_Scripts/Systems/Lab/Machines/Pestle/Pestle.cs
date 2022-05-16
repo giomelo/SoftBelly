@@ -35,7 +35,7 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newSmashedPlant.name = currentPlant.ItemId + "Smashed";
-                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprietiesGO);
+                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name);
                 IngredientsSlots[i].Slot.Image.sprite = newSmashedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();

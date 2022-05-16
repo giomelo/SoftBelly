@@ -2207,11 +2207,10 @@ MonoBehaviour:
   slotDisplay: {fileID: 677312869}
   inventoryId: 1
   inventoryType: 1
-  Width: 5
-  Height: 4
   poolProprieties: []
   xOffsetProprieties: 210
   yOffsetProprieties: 80
+  showButton: {fileID: 0}
 --- !u!4 &695123643
 Transform:
   m_ObjectHideFlags: 0
@@ -4283,6 +4282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 881535108}
+  camSwitcher: {fileID: 0}
 --- !u!4 &1183068293
 Transform:
   m_ObjectHideFlags: 0
@@ -6444,12 +6444,11 @@ MonoBehaviour:
   slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
   slotDisplay: {fileID: 1802303687}
   inventoryId: 0
-  inventoryType: 0
-  Width: 6
-  Height: 3
+  inventoryType: 1
   poolProprieties: []
   xOffsetProprieties: 210
   yOffsetProprieties: 80
+  showButton: {fileID: 0}
 --- !u!1001 &1977345986
 PrefabInstance:
   m_ObjectHideFlags: 0

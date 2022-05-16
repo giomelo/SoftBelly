@@ -1,19 +1,23 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Helpers;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 {
-    public class IngredientObj : DragObject
+    public class SpoonObj : DragObject
     {
-        public string IngredientDescription;
+        public override void StartDrag()
+        {
+            CanDrag = true;
+        }
 
         public override void Start()
         {
             base.Start();
+            CanDrag = true;
             rb = GetComponent<Rigidbody>();
         }
-
         public override void OnMouseUp()
         {
             base.OnMouseUp();

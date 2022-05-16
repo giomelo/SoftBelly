@@ -19,6 +19,12 @@ namespace _Scripts.Systems.Plants.Bases
         public Sprite SmashedPlantImage;
         public GameObject SmashedPlantObj;
     }
+    [Serializable]
+    public struct MixedPlant
+    {
+        public Sprite MixedPlantImage;
+        public GameObject MixedPlantObject;
+    }
     
     /// <summary>
     /// Base class for creating plants as scriptables objects
@@ -32,5 +38,6 @@ namespace _Scripts.Systems.Plants.Bases
         public MedicalSymptoms MedicalSymptoms;
         public DriedPlant DriedPlant;
         public SmashedPlant SmashedPlant;
+        public MixedPlant MixedPlant;
     }
 }

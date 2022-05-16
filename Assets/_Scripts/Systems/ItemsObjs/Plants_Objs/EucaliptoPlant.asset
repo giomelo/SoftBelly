@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: EucaliptoPlant
@@ -16,7 +16,9 @@ MonoBehaviour:
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 14d9cbcc7db785d43924d921d6de4aeb, type: 3}
   Price: 20
-  ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
+  ItemProprieties:
+    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
+    ItemProprietiesDescription: Eucalipto Planta regagem baixa
   isDried: 0
   MedicalSymptoms: 0
   DriedPlant:
@@ -25,3 +27,6 @@ MonoBehaviour:
   SmashedPlant:
     SmashedPlantImage: {fileID: 21300000, guid: 1fe16206d8d1cc1429e68193c47e0006, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
+  MixedPlant:
+    MixedPlantImage: {fileID: 0}
+    MixedPlantObject: {fileID: 0}

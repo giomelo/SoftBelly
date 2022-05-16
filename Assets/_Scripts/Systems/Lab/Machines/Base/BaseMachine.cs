@@ -34,9 +34,13 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public MachineHolder thisMachineHolder;
 
         public bool CanBurn;
-        
 
-        private void Start()
+        public static void GenerateNewPropriets()
+        {
+            
+        }
+
+        public virtual void Start()
         {
             thisMachineHolder = gameObject.GetComponent<MachineHolder>();
         }

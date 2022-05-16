@@ -5,6 +5,7 @@ using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
+using _Scripts.Systems.Plants.Bases;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         [SerializeField]
         private List<DragObject> decorators = new List<DragObject>();
         [SerializeField]
+        private SpoonObj spoonObj; 
+        [SerializeField]
         private GameObject ingredietnsShelf;
         [SerializeField]
         private Transform pos;
@@ -26,6 +29,14 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         private Button resetButton;
 
         public static Action<IngredientObj> OnIngredientAdd;
+        private Dictionary<IngredientObj, int> decoratorsAdded = new Dictionary<IngredientObj, int>(); //lista para adicionar todos os ingredientes
+        [SerializeField]
+        private ProgressBar progressBar;
+        public override void Start()
+        {
+            base.Start();
+            resetButton.onClick.AddListener(ResetMachine);
+        }
 
         public override void OnEnable()
         {
@@ -40,12 +51,19 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 
         private void AddText(IngredientObj ingredient)
         {
-            decoratorsText.text += ingredient.IngredientDescription + "+";
+            
+            if (decoratorsAdded.ContainsKey(ingredient))
+                decoratorsAdded[ingredient] += 1;
+            else
+                decoratorsAdded.Add(ingredient, 1);
+            SetText();
+                
         }
 
         private void ResetText()
         {
             decoratorsText.text = "";
+            decoratorsAdded.Clear();
         }
         public static void OnIngredientAddCall(IngredientObj i)
         {
@@ -53,7 +71,50 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         }
         public override void CreateResult()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < IngredientsSlots.Count; i++)
+            {
+                if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
+                
+                var newMixedPlant = ScriptableObject.CreateInstance<PlantBase>();
+                
+                PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
+                newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
+                GameObject obj = Resources.Load<GameObject>("Prefabs/UI/Radial");
+
+                newMixedPlant.Init(newMixedPlant.name + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, "oii");
+                IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
+                IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
+                IngredientsSlots[i].Slot.Amount.text = 1.ToString();
+                IngredientsSlots[i].Slot.MachineSlot.amount = 1;
+            }
+
+            if(MachineState == MachineState.Ready)
+            {
+                SetSlotType();
+            }
+
+            ResetMachine();
+            LabEvents.OnMachineFinishedCall(this);
+        }
+
+        private void ResetMachine()
+        {
+            ResetText();
+            ResetBar();
+        }
+
+        private void ResetBar()
+        {
+            progressBar.SetCurrentValue(0);
+        }
+
+        private void SetText()
+        {
+            decoratorsText.text = "";
+            foreach (KeyValuePair<IngredientObj, int> key in decoratorsAdded)
+            {
+                decoratorsText.text += " - " + key.Value + "x" + " " + key.Key.IngredientDescription;
+            }
         }
         
         protected override void InitMachine()
@@ -81,13 +142,17 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             {
                 ingredient.StartDrag();
             }
+            spoonObj.StartDrag();
             SetState(MachineState.Working);
             Create();
         }
         
         private void Create()
         {
-            
+            if(MachineState == MachineState.Ready) return;
+            PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
+            var plant = Instantiate(currentPlant.MixedPlant.MixedPlantObject, pos.position,
+                Quaternion.identity, pos);
         }
     }
 }

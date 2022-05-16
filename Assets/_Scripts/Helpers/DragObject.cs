@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Lab.Machines;
@@ -14,12 +16,16 @@ namespace _Scripts.Helpers
         private Vector3 _mOffset;
         private float _mZCoord;
         private Vector3 _startPosition;
+        private Vector3 _startRotation;
         protected bool CanDrag = false;
         [SerializeField] private bool canDragBoth;
+        protected Rigidbody rb;
 
-        private void Start()
+        public virtual void Start()
         {
-            _startPosition = gameObject.transform.position;
+            var transform1 = transform;
+            _startPosition = transform1.position;
+            _startRotation = transform1.eulerAngles;
         }
         public virtual void StartDrag()
         {
@@ -42,11 +48,12 @@ namespace _Scripts.Helpers
             Cursor.visible = false;
         }
 
-        private void OnMouseUp()
+        public virtual void OnMouseUp()
         {
             if (!CanDrag) return;
             Cursor.visible = true;
             transform.position = _startPosition;
+            transform.eulerAngles = _startRotation;
         }
 
 
@@ -81,6 +88,11 @@ namespace _Scripts.Helpers
         {
             Cursor.visible = true;
             transform.position = _startPosition;
+        }
+        protected IEnumerator BackRigidbody()
+        {
+            yield return new WaitForSeconds(0.5f);
+            rb.isKinematic = false;
         }
     }
 }

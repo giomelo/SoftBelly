@@ -21,15 +21,14 @@ namespace _Scripts.UI
         
         public void MouseEnter()
         {
-            
             if (uiSlot.item == null)
             {
                 _subject.ResetCurrentProprieties();
                 return;
             }
 
-            if (uiSlot.item.ItemProprietiesGO == null) return;
-            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO, this.transform);
+            if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
+            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.transform, uiSlot.item);
            
         }
         
