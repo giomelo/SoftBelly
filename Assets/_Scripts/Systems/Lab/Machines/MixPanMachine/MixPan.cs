@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Helpers;
@@ -32,6 +33,13 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         private Dictionary<IngredientObj, int> decoratorsAdded = new Dictionary<IngredientObj, int>(); //lista para adicionar todos os ingredientes
         [SerializeField]
         private ProgressBar progressBar;
+
+        private float _coolDown = 1f;
+        private int _currentHits;
+        private int _hitsNecessaries = 10;
+
+        public bool CanHit { get; set; }
+
         public override void Start()
         {
             base.Start();
@@ -42,11 +50,13 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         {
             base.OnEnable();
             OnIngredientAdd += AddText;
+            LabEvents.OnItemMixed += AddHits;
         }
         public override void OnDisable()
         {
             base.OnDisable();
             OnIngredientAdd -= AddText;
+            LabEvents.OnItemMixed -= AddHits;
         }
 
         private void AddText(IngredientObj ingredient)
@@ -79,9 +89,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
-                GameObject obj = Resources.Load<GameObject>("Prefabs/UI/Radial");
 
-                newMixedPlant.Init(newMixedPlant.name + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, "oii");
+                newMixedPlant.Init(newMixedPlant.name + "Mixed " +  decoratorsText.text, IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name + "Mixed " +  decoratorsText.text);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -153,6 +162,20 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
             var plant = Instantiate(currentPlant.MixedPlant.MixedPlantObject, pos.position,
                 Quaternion.identity, pos);
+        }
+
+        public IEnumerator ResetCoolDown()
+        {
+            CanHit = false;
+            yield return new WaitForSeconds(_coolDown);
+            CanHit = true;
+        }
+        public void AddHits()
+        {
+            _currentHits++;
+            if (_currentHits != _hitsNecessaries) return;
+            MachineState = MachineState.Ready;
+            CreateResult();
         }
     }
 }

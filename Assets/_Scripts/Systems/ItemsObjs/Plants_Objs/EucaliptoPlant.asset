@@ -28,5 +28,5 @@ MonoBehaviour:
     SmashedPlantImage: {fileID: 21300000, guid: 1fe16206d8d1cc1429e68193c47e0006, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
   MixedPlant:
-    MixedPlantImage: {fileID: 0}
-    MixedPlantObject: {fileID: 0}
+    MixedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
+    MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}

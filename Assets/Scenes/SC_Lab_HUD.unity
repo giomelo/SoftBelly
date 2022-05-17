@@ -2480,6 +2480,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d9f79bc1fd33d6439bb997cd715bf9f, type: 3}
   m_PrefabInstance: {fileID: 237383809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &256399674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256399675}
+  m_Layer: 6
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256399675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256399674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 687389980}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259362813
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,6 +6234,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1829333362}
+  - {fileID: 256399675}
   m_Father: {fileID: 1342383600}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6289,7 +6321,8 @@ MonoBehaviour:
   machineLayer: {fileID: 1269805158}
   workingHUD: {fileID: 7779532446181393301, guid: eeb9ae9dc5f7f494fb1bf1499c863e28, type: 3}
   uiController: {fileID: 277386216}
-  IngredientsSlots: []
+  IngredientsSlots:
+  - {fileID: 1889738603}
   ResultsSlots: []
   machineWorkingTime: 0
   MachineId: 3
@@ -6301,12 +6334,12 @@ MonoBehaviour:
   - {fileID: 1239761303}
   - {fileID: 853057298}
   - {fileID: 848821089}
-  spoonObj: {fileID: 0}
+  spoonObj: {fileID: 959199113}
   ingredietnsShelf: {fileID: 633447838}
-  pos: {fileID: 0}
+  pos: {fileID: 256399675}
   decoratorsText: {fileID: 31951133}
   resetButton: {fileID: 123184677}
-  progressBar: {fileID: 0}
+  progressBar: {fileID: 862499152}
 --- !u!4 &694342854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee4799025480ad8478f2b39c2b77dccf, type: 3}
@@ -8077,6 +8110,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2010776443266010431, guid: a6e69bb427e06064ca3a80bcc3abb952, type: 3}
   m_PrefabInstance: {fileID: 862499150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &862499152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2010776443266010428, guid: a6e69bb427e06064ca3a80bcc3abb952, type: 3}
+  m_PrefabInstance: {fileID: 862499150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9d16b3efc667e40bfd1e879c28d974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &870733357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d9f79bc1fd33d6439bb997cd715bf9f, type: 3}
@@ -8960,6 +9004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDragBoth: 1
+  Machine: {fileID: 687389985}
 --- !u!54 &959199116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8971,8 +9016,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -17239,6 +17284,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
   m_PrefabInstance: {fileID: 1889738600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1889738603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2428748375888562397, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
+  m_PrefabInstance: {fileID: 1889738600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f246c9bcf645b99ba207ac68a061e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1891978842
 GameObject:
   m_ObjectHideFlags: 0
