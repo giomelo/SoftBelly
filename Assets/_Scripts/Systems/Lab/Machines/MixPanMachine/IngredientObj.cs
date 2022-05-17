@@ -6,7 +6,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 {
     public class IngredientObj : DragObject
     {
-        public string IngredientDescription;
+        public IngredientToppingSO Ingredient;
 
         public override void Start()
         {

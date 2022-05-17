@@ -108,6 +108,10 @@ namespace _Scripts.Entities.Player
                         if (!hit.transform.TryGetComponent<Patient>(out var patientScript)) return;
                         PatientsEvents.OnOrderDeliveredCall(patientScript);
                         break;
+                    case "Book":
+                        if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
+                        bookScript.OpenBook();
+                        break;
                 }
                 
             }

@@ -6,6 +6,7 @@ using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
+using _Scripts.Systems.Lab.Machines.PestleMachine;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -31,11 +32,11 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
                 
-                var newSmashedPlant = ScriptableObject.CreateInstance<PlantBase>();
+                var newSmashedPlant = ScriptableObject.CreateInstance<SmashedItemBase>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newSmashedPlant.name = currentPlant.ItemId + "Smashed";
-                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name);
+                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name, currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newSmashedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();

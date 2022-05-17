@@ -31,6 +31,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public int MachineId;
         public RecipeObj CurrentRecipe;
         public bool IsDestroyed { get; protected set; }
+        [HideInInspector]
         public MachineHolder thisMachineHolder;
 
         public bool CanBurn;

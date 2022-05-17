@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using _Scripts.Enums;
+using _Scripts.Systems.Lab.Machines.MixPanMachine;
 using _Scripts.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +32,7 @@ namespace _Scripts.Systems.Item
 
         public ItemProprietiesInspector ItemProprieties;
         
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
+        public virtual void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
         {
             ItemId = id;
             ItemType = itemType;
@@ -39,7 +41,7 @@ namespace _Scripts.Systems.Item
             ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
             ItemProprieties.ItemProprietiesDescription = itemDescription;
         }
-        
+
         public bool Equals(ItemBehaviour other)
         {
             return ItemId == other.ItemId;

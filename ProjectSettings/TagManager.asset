@@ -11,6 +11,7 @@ TagManager:
   - Drag
   - Smash
   - Mixed
+  - Book
   layers:
   - Default
   - TransparentFX

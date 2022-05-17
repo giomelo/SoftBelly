@@ -25,7 +25,7 @@ namespace _Scripts.Helpers
         #endif
         
         [SerializeField]
-        private float Maximum = 100f;
+        public float Maximum = 100f;
         [SerializeField]
         private float Minimum = 0f;
         public float Current;
@@ -54,9 +54,14 @@ namespace _Scripts.Helpers
             Current = value;
             GetCurrentFill();
         }
-        
+        public void AddCurrentValue(float value)
+        {
+            Current += value;
+            GetCurrentFill();
+        }
         private void Update()
         {
+            
         }
     }
 }

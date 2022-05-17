@@ -21,18 +21,11 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             CanDrag = true;
             rb = GetComponent<Rigidbody>();
         }
-        public override void OnMouseUp()
-        {
-            base.OnMouseUp();
-            rb.isKinematic = true;
-            StartCoroutine(BackRigidbody());
-        }
-        
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (!collision.transform.CompareTag("Mixed")) return;
+        private void OnTriggerEnter(Collider other)
+        { 
+            Debug.Log("oi");
+            if (!other.transform.CompareTag("Mixed")) return;
             if (!Machine.CanHit) return;
-            Debug.LogWarning("Smashed");
             if (LabEvents.CurrentMachine.MachineState != MachineState.Ready)
             {
                 LabEvents.OnItemMixedCall();

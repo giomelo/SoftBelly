@@ -9,7 +9,9 @@ using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using _Scripts.Systems.Plants.Bases;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using ProgressBar = _Scripts.Helpers.ProgressBar;
 
 namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 {
@@ -34,7 +36,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         [SerializeField]
         private ProgressBar progressBar;
 
-        private float _coolDown = 1f;
+        private float _coolDown = 0.5f;
         private int _currentHits;
         private int _hitsNecessaries = 10;
 
@@ -43,7 +45,9 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         public override void Start()
         {
             base.Start();
-            resetButton.onClick.AddListener(ResetMachine);
+            progressBar.Maximum = _hitsNecessaries;
+            CanHit = true;
+            resetButton.onClick.AddListener(RestartMachine);
         }
 
         public override void OnEnable()
@@ -85,12 +89,12 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
                 
-                var newMixedPlant = ScriptableObject.CreateInstance<PlantBase>();
+                var newMixedPlant = ScriptableObject.CreateInstance<MixedItemBase>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
 
-                newMixedPlant.Init(newMixedPlant.name + "Mixed " +  decoratorsText.text, IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name + "Mixed " +  decoratorsText.text);
+                newMixedPlant.Init(newMixedPlant.name, IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name, GenerateToppingList(), currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -102,16 +106,25 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 SetSlotType();
             }
 
-            ResetMachine();
+            RestartMachine();
             LabEvents.OnMachineFinishedCall(this);
         }
 
-        private void ResetMachine()
+        private void RestartMachine()
         {
-            ResetText();
-            ResetBar();
+           DeleteObject();
+           ResetText();
+           ResetBar();
         }
 
+        private void DeleteObject()
+        {
+            if (pos.childCount <= 0) return;
+            for (int i = 0; i < pos.childCount; i++)
+            {
+                Destroy(pos.GetChild(i).gameObject);
+            }
+        }
         private void ResetBar()
         {
             progressBar.SetCurrentValue(0);
@@ -122,7 +135,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             decoratorsText.text = "";
             foreach (KeyValuePair<IngredientObj, int> key in decoratorsAdded)
             {
-                decoratorsText.text += " - " + key.Value + "x" + " " + key.Key.IngredientDescription;
+                decoratorsText.text += " - " + key.Value + "x" + " " + key.Key.Ingredient.IngredientDescription;
             }
         }
         
@@ -136,6 +149,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             GameManager.Instance.camSwitcher.ChangeCameraMix();
             OnDisposeMachine();
             ingredietnsShelf.SetActive(false);
+            RestartMachine();
+            MachineState = MachineState.Empty;
         }
 
         private void OnDisposeMachine()
@@ -172,10 +187,34 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         }
         public void AddHits()
         {
+            Debug.Log("hit");
             _currentHits++;
+            progressBar.AddCurrentValue(1);
             if (_currentHits != _hitsNecessaries) return;
             MachineState = MachineState.Ready;
             CreateResult();
+        }
+        
+        public override void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            //test if has to remove machine here
+            slot.SetType(MachineSlotType.Ingredient);
+            if (CheckIfCollectedAllResults())
+            {
+                SetState(MachineState.Empty);
+            }
+        }
+
+        private List<IngredientsList> GenerateToppingList()
+        {
+            List<IngredientsList> aux = new List<IngredientsList>();
+            foreach (KeyValuePair<IngredientObj, int> key in decoratorsAdded)
+            {
+                IngredientsList obj = new IngredientsList(key.Key.Ingredient, key.Value);
+                aux.Add(obj);
+            }
+
+            return aux;
         }
     }
 }
