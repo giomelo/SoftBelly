@@ -19,9 +19,9 @@ namespace _Scripts.Systems.Lab
             Price = price;
             ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
             ItemProprieties.ItemProprietiesDescription = itemDescription;
-            IngredientsList = list;
             Cure = cure;
         }
+        
         // a planta que tiver o sintoma vai se transformar na poção que cura o sintoma
         /// <summary>
         /// vai servir para checar a poção cura o sintoma cura o sintoma pedido

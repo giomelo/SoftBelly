@@ -89,12 +89,12 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             {
                 if (IngredientsSlots[i].Slot.MachineSlot.item == null) continue;
                 
-                var newMixedPlant = ScriptableObject.CreateInstance<MixedItemBase>();
+                var newMixedPlant = ScriptableObject.CreateInstance<BaseMixedItem>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
 
-                newMixedPlant.Init(newMixedPlant.name, IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name, GenerateToppingList(), currentPlant);
+                newMixedPlant.Init(newMixedPlant.name, ItemType.MixedPlant, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name, GenerateToppingList(), currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -115,6 +115,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
            DeleteObject();
            ResetText();
            ResetBar();
+           _currentHits = 0;
         }
 
         private void DeleteObject()
@@ -148,14 +149,13 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         {
             GameManager.Instance.camSwitcher.ChangeCameraMix();
             OnDisposeMachine();
-            ingredietnsShelf.SetActive(false);
-            RestartMachine();
-            MachineState = MachineState.Empty;
         }
 
         private void OnDisposeMachine()
         {
-            
+            ingredietnsShelf.SetActive(false);
+            RestartMachine();
+            MachineState = MachineState.Empty;
         }
 
         public void Work()

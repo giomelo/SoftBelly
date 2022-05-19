@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using _Scripts.Systems.Item;
+using _Scripts.Systems.Lab.Machines.MixPanMachine;
 using UnityEngine;
 
 namespace _Scripts.Systems.Plants.Bases
@@ -21,6 +23,7 @@ namespace _Scripts.Systems.Plants.Bases
         public float WaterCicles = 2;
         [Header("Grow up seed")]
         public PlantBase PlantBase;
+        
         
         #endregion
     }

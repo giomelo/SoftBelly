@@ -15,6 +15,8 @@ namespace _Scripts.Helpers
         private CinemachineVirtualCamera pestleCam;
         [SerializeField]
         private CinemachineVirtualCamera mixCam;
+        [SerializeField]
+        private CinemachineVirtualCamera potionCam;
         private bool _isOnWorld = true;
 
         public void ChangeCameraPestle()
@@ -42,6 +44,21 @@ namespace _Scripts.Helpers
             else
             {
                 mixCam.Priority = 1;
+                worldCam.Priority = 2;
+            }
+            
+            _isOnWorld = !_isOnWorld;
+        }
+        public void ChangeCameraPotion()
+        {
+            if (_isOnWorld)
+            {
+                potionCam.Priority = 2;
+                worldCam.Priority = 1;
+            }
+            else
+            {
+                potionCam.Priority = 1;
                 worldCam.Priority = 2;
             }
             

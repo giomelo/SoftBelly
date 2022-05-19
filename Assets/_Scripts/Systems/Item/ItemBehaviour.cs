@@ -21,8 +21,7 @@ namespace _Scripts.Systems.Item
     /// </summary>
     public abstract class ItemBehaviour : ScriptableObject
     {
-        [Header("Item Stuff")]
-        public string ItemId;
+        [Header("Item Stuff")] public string ItemId = "";
         [EnumFlags]
         public ItemType ItemType;
 
@@ -31,7 +30,7 @@ namespace _Scripts.Systems.Item
         public float Price;
 
         public ItemProprietiesInspector ItemProprieties;
-        
+
         public virtual void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
         {
             ItemId = id;

@@ -1,5 +1,9 @@
-﻿namespace _Scripts.Systems.Lab.Machines.MixPanMachine
+﻿using System;
+using UnityEngine;
+
+namespace _Scripts.Systems.Lab.Machines.MixPanMachine
 {
+    [Serializable]
     public struct IngredientsList
     {
         public IngredientToppingSO Ingredient;

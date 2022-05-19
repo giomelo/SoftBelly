@@ -13,6 +13,9 @@ namespace _Scripts.Enums
         Potion = 4,
         Ingredient = 8,
         Other = 16,
-        Garbage = 32
+        Garbage = 32,
+        MixedPlant = 64,
+        Burned = 128,
+        Dryed = 256
     }
 }
