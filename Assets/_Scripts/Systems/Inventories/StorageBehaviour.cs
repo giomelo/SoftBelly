@@ -4,6 +4,7 @@ using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
 using System;
+using _Scripts.Systems.Lab;
 
 namespace _Scripts.Systems.Inventories
 {
@@ -150,6 +151,24 @@ namespace _Scripts.Systems.Inventories
          return Slots.Count;
       }
 
+      public ItemBehaviour CheckIfContainsKey(MedicalSymptoms item)
+      {
+         ItemBehaviour aux = null;
+
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            //ser o item comparando nao eh uma poção
+            if (!(Slots.ElementAt(i).Value.item as PotionBase)) continue;
+            PotionBase auxInventory = Slots.ElementAt(i).Value.item as PotionBase;
+            if (!auxInventory.CheckIfPortionHasCure(item)) continue;
+            aux = auxInventory;
+               
+         }
+
+
+         return aux;
+      }
+
       public bool CheckIfContainsKey(ItemBehaviour item)
       {
          for(int i = 0; i < Slots.Count; i++)
@@ -159,6 +178,7 @@ namespace _Scripts.Systems.Inventories
                return true;
             }
          }
+
          return false;
       }
    }

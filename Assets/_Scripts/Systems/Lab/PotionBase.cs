@@ -11,6 +11,7 @@ namespace _Scripts.Systems.Lab
     {
         public List<IngredientsList> IngredientsList = new List<IngredientsList>();
         public MedicalSymptoms Cure;
+        public PotionType PotionType;
         public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, MedicalSymptoms cure)
         {
             ItemId = id;

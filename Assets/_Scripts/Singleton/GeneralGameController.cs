@@ -17,13 +17,11 @@ namespace _Scripts.Singleton
         private void OnEnable()
         {
             PatientsEvents.OnPatientArrived += SetPatient;
-            PatientsEvents.OnOrderDelivered += NoPatient;
         }
 
         private void OnDisable()
         {
             PatientsEvents.OnPatientArrived -= SetPatient;
-            PatientsEvents.OnOrderDelivered -= NoPatient;
         }
         private void SetPatient(Transform obj)
         {

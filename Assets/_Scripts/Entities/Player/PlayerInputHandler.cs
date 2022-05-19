@@ -42,7 +42,7 @@ namespace _Scripts.Entities.Player
         private void Start()
         {
             InvokeRepeating(nameof(PutWaterInput), 1,0.1f);
-            InvokeRepeating(nameof(PlantInput), 1,0.1f); 
+            InvokeRepeating(nameof(PlantInput), 1,0.05f); 
         }
         // Update is called once per frame
         private void Update()
@@ -74,28 +74,27 @@ namespace _Scripts.Entities.Player
         
             if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform, Radius)) return;
-            //if is clicking a plot
-            if (hit.transform.TryGetComponent<Plot>(out var plotScript))
-            {
-                if (plotScript.CheckAvailable())
-                {
-                    //Inventory id
-                    PlantEvents.OnPlotSelected(0);
-                    PlantEvents.CurrentPlot = plotScript;
-                }
-                else
-                {
-                    //Check if the plant is ready to harvest
-                    if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
-                    PlantEvents.OnHarvestCall(plotScript);
-
-                }
-            }
-            else
-            {
-                //if is not clicking a plot what is it clicking
+            Debug.Log("oi" + hit.transform.tag);
                 switch (hit.transform.tag)
                 {
+                    case "Plot":
+                        if (hit.transform.TryGetComponent<Plot>(out var plotScript))
+                        {
+                            if (plotScript.CheckAvailable())
+                            {
+                                //Inventory id
+                                PlantEvents.OnPlotSelected(0);
+                                PlantEvents.CurrentPlot = plotScript;
+                            }
+                            else
+                            {
+                                //Check if the plant is ready to harvest
+                                if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
+                                PlantEvents.OnHarvestCall(plotScript);
+
+                            }
+                        }
+                        break;
                     case "Chest":
                         LabEvents.OnChestSelectedCall(1);
                         break;
@@ -105,7 +104,9 @@ namespace _Scripts.Entities.Player
                         LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
                         break;
                     case "Patient":
+                        Debug.Log("oi");
                         if (!hit.transform.TryGetComponent<Patient>(out var patientScript)) return;
+                        
                         PatientsEvents.OnOrderDeliveredCall(patientScript);
                         break;
                     case "Book":
@@ -115,15 +116,14 @@ namespace _Scripts.Entities.Player
                 }
                 
             }
-            
-        }
-        
+
         /// <summary>
         /// Check if plant input is pressed for puting water
         /// </summary>
         private void PutWaterInput()
         {
             if (!Input.GetMouseButton(1)) return;
+            if (!_isHolding) return;
             Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         

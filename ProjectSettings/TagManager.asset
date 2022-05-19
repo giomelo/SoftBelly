@@ -12,6 +12,8 @@ TagManager:
   - Smash
   - Mixed
   - Book
+  - Patient
+  - Plot
   layers:
   - Default
   - TransparentFX

@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 996202666}
-  CamSwicher: {fileID: 0}
+  camSwitcher: {fileID: 0}
 --- !u!4 &239867191
 Transform:
   m_ObjectHideFlags: 0
@@ -230,11 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PossiblesOrders:
-  - Item: {fileID: 11400000, guid: 48644255e5517df41af3478c75904cf8, type: 2}
+  - Item: 2
     PossibleDescriptions:
-    - Opcao 1
-    - Opcao 2
-    - Opcao 3
+    - "Febre1\t"
+    - "Febre2\t"
+    - Febre3
   orderText: {fileID: 1920869153}
   orderTextGameObject: {fileID: 1595995186}
   patientPrefab: {fileID: 7207621148705051324, guid: aca586fedce829d49a09b9b6e813ca91, type: 3}
@@ -488,7 +488,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951041343}
-  m_LocalRotation: {x: 0.27712274, y: 0.018375, z: -0.0053007454, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374968, z: -0.0053007356, w: 0.9606442}
   m_LocalPosition: {x: -0.46, y: 8.9800005, z: -17.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -608,7 +608,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996202663}
-  m_LocalRotation: {x: 0.27712274, y: 0.018375, z: -0.0053007454, w: 0.9606442}
+  m_LocalRotation: {x: 0.27712274, y: 0.018374968, z: -0.0053007356, w: 0.9606442}
   m_LocalPosition: {x: -0.46, y: 8.9800005, z: -17.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

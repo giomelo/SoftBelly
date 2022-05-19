@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5209131833328830803}
   m_Layer: 6
   m_Name: Plot
-  m_TagString: Untagged
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   PlotId: 0
   CurrentPlant: {fileID: 0}
   PlantState: 0
+  IsThirsty: 0
   thirstyObj: {fileID: 4103361092509266635}
   deathObj: {fileID: 7917654204527349327}
 --- !u!1 &5100728590782441449
@@ -211,7 +212,7 @@ GameObject:
   - component: {fileID: 5100728590782441462}
   m_Layer: 6
   m_Name: P_PlotBase
-  m_TagString: Untagged
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

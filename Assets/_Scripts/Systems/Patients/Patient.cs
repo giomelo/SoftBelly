@@ -44,9 +44,11 @@ namespace _Scripts.Systems.Patients
         //Called when the player clicks a patient
         private void Deliver(Patient p)
         {
-            if (LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order))
+            Debug.Log("Entregado");
+            var item = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order);
+            if (item != null)
             {
-                LabInventoryHolder.Instance.Storage.RemoveItem(p.Order.Order);
+                LabInventoryHolder.Instance.Storage.RemoveItem(item);
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 SetState(PatientState.Leaving);
                 

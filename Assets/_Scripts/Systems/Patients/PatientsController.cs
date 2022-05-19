@@ -17,7 +17,7 @@ namespace _Scripts.Systems.Patients
     [Serializable]
     public struct OrdersAndDescriptions
     {
-        public ItemBehaviour Item;
+        public MedicalSymptoms Item;
         [TextArea]
         public List<string> PossibleDescriptions;
     }
@@ -37,7 +37,7 @@ namespace _Scripts.Systems.Patients
         [SerializeField]
         public Transform patientStart;
         public Transform patientEnd;
-        public void GenerateRandomOrder(ref ItemBehaviour item, ref string description)
+        public void GenerateRandomOrder(ref MedicalSymptoms item, ref string description)
         {
             var index = Random.Range(0, PossiblesOrders.Count - 1);
             item = PossiblesOrders[index].Item;
