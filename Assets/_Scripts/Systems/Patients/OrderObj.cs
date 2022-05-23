@@ -13,5 +13,7 @@ namespace _Scripts.Systems.Patients
         public GameObject Object;
         [TextArea]
         public string OrderDescription;
+
+        public int Money;
     }
 }

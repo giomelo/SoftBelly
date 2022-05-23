@@ -1,51 +1,51 @@
-using System;
 using System.Collections;
 using _Scripts.Singleton;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-public class ScreenFlow : MonoSingleton<ScreenFlow>
+namespace _Scripts.Screen_Flow
 {
-    public GameObject LoadingScreen;
-    public Slider Slider;
-    public Text ProgressText;
-    public GameObject OptionsScreen;
-
-    #region Camera
-
-    //public Transform Camera;
-    //public Transform OptionsTarget;
-
-    #endregion
-
-    private void Start()
+    public class ScreenFlow : MonoSingleton<ScreenFlow>
     {
-        //DontDestroyOnLoad(this.gameObject);
-    }
+        public GameObject LoadingScreen;
+        public Slider Slider;
+        public Text ProgressText;
+        public GameObject OptionsScreen;
 
-    public void LoadScene(string sceneIndex)
-    {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-    }
+        #region Camera
 
-    IEnumerator LoadAsynchronously(string sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        //public Transform Camera;
+        //public Transform OptionsTarget;
 
-        LoadingScreen.SetActive(true);
+        #endregion
 
-        while (!operation.isDone)
+        private void Start()
         {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            Slider.value = progress;
-            ProgressText.text = progress * 100f + "%";
-            yield return null;
+            //DontDestroyOnLoad(this.gameObject);
         }
-    }
 
-    #region Options Screen
+        public void LoadScene(string sceneIndex)
+        {
+            StartCoroutine(LoadAsynchronously(sceneIndex));
+        }
+
+        IEnumerator LoadAsynchronously(string sceneIndex)
+        {
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+            LoadingScreen.SetActive(true);
+
+            while (!operation.isDone)
+            {
+                float progress = Mathf.Clamp01(operation.progress / .9f);
+                Slider.value = progress;
+                ProgressText.text = progress * 100f + "%";
+                yield return null;
+            }
+        }
+
+        #region Options Screen
 
         public void OptionsScreenOn()
         {
@@ -59,11 +59,12 @@ public class ScreenFlow : MonoSingleton<ScreenFlow>
             OptionsScreen.SetActive(false);
         }
 
-    #endregion
+        #endregion
     
 
-    public void BtnQuit()
-    {
-        Application.Quit();
+        public void BtnQuit()
+        {
+            Application.Quit();
+        }
     }
 }

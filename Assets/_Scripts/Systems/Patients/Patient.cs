@@ -3,6 +3,7 @@ using System;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
 using _Scripts.Systems.Inventories;
+using _Scripts.U_Variables;
 
 namespace _Scripts.Systems.Patients
 {
@@ -21,14 +22,21 @@ namespace _Scripts.Systems.Patients
             PatientsController.Instance.GenerateRandomOrder(ref Order.Order, ref Order.OrderDescription);
         }
 
+        public void Destroy()
+        {
+            Destroy(this.gameObject);
+        }
+
         public void OnTriggerEnter(Collider other)
         {
+            if(State != PatientState.Waiting) return;
             DisplayOrder();
             PatientsEvents.OnOrderViewCall(this);
         }
 
         private void OnTriggerExit(Collider other)
         {
+            if(State != PatientState.Waiting) return;
             PatientsEvents.OnOrderDisableCall();
         }
 
@@ -51,12 +59,17 @@ namespace _Scripts.Systems.Patients
                 LabInventoryHolder.Instance.Storage.RemoveItem(item);
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 SetState(PatientState.Leaving);
-                
+                GiveMoney();
             }
             else
             {
                //nao possui o item
             }  
+        }
+
+        private void GiveMoney()
+        {
+            UniversalVariables.Instance.ModifyMoney(Order.Money, true);
         }
 
         private void CheckState()
@@ -76,6 +89,7 @@ namespace _Scripts.Systems.Patients
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         public void SetState(PatientState state)
         {
             State = state;

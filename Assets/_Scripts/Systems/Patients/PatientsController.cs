@@ -62,13 +62,24 @@ namespace _Scripts.Systems.Patients
         }
         
         //Check if the agent arrived the destination
+        // ReSharper disable Unity.PerformanceAnalysis
         private IEnumerator Arrived(Patient p, NpcBase npc)
         {
             yield return new WaitForSeconds(1.0f);
             if (npc.CheckIfIsInDestination())
             {
-                p.SetState(PatientState.Waiting);
-                yield break;
+                if (p.State == PatientState.Entering)
+                {
+                    p.SetState(PatientState.Waiting);
+                    yield break;
+                }
+                else
+                {
+                    p.Destroy();
+                    Invoke(nameof(GeneratePatient), Random.Range(0.5f, 4));
+                    yield break;
+                }
+
             }
             StartCoroutine(Arrived(p, npc));
         }

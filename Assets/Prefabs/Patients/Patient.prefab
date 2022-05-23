@@ -121,6 +121,7 @@ MonoBehaviour:
     Object: {fileID: 7207621149209005852}
     OrderDescription: "Ol\xE1, quebrei minha perna ontem voc\xEA tem algo para os
       ossos ai?"
+    Money: 20
 --- !u!136 &7207621148705051298
 CapsuleCollider:
   m_ObjectHideFlags: 0

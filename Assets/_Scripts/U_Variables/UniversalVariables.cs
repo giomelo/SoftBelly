@@ -1,17 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using _Scripts.Singleton;
+using _Scripts.UI;
 
-public class UniversalVariables : MonoBehaviour
+namespace _Scripts.U_Variables
 {
-    public static UniversalVariables universalVariables;
+    public class UniversalVariables : MonoSingleton<UniversalVariables>
+    {
 
-    //Variavél de dinheiro para a loja e venda das curas para os pacientes
-    public static int Money = 100;
-   public void Start()
-   {
-        universalVariables = this;
-        //DontDestroyOnLoad(this.gameObject);
-   }
+        //Variavél de dinheiro para a loja e venda das curas para os pacientes
+        public static int Money = 100;
+
+        public void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
+        public void ModifyMoney(int amount, bool add)
+        {
+            if (add)
+                Money += amount;
+            else
+                Money -= amount;
+
+            HUD_Controller.Instance.UpdateMoneyText();
+        }
+    }
 }

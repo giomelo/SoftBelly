@@ -1,20 +1,26 @@
+using _Scripts.Singleton;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab
 {
-    public class Book : MonoBehaviour
+    public class Book : MonoSingleton<Book>
     {
         [SerializeField]
         private GameObject bookLayer;
 
-
-        public void OpenBook()
+        private void Start()
         {
-            bookLayer.SetActive(true);
+            DontDestroyOnLoad(this.gameObject);
+        } 
+        private void Update()
+        {
+            if (!Input.GetKeyDown(KeyCode.Tab)) return;
+            BookLayer();
         }
-        public void CloseBook()
+
+        public void BookLayer()
         {
-            bookLayer.SetActive(false);
+            bookLayer.SetActive(!bookLayer.activeInHierarchy);
         }
     }
 }

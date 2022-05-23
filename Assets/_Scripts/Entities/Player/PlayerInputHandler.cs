@@ -109,10 +109,10 @@ namespace _Scripts.Entities.Player
                         
                         PatientsEvents.OnOrderDeliveredCall(patientScript);
                         break;
-                    case "Book":
-                        if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
-                        bookScript.OpenBook();
-                        break;
+                    // case "Book":
+                    //     if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
+                    //     bookScript.OpenBook();
+                    //     break;
                 }
                 
             }
