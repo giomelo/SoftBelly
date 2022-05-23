@@ -26,6 +26,7 @@ namespace _Scripts.Singleton
         public Dictionary<int, MachineStoreValues> LabTimer { get; } = new Dictionary<int, MachineStoreValues>();
 
         public List<ItemObj> HerbIngredientsSlot = new List<ItemObj>();
+        public List<ItemObj> CaldruonIngredientsSlot = new List<ItemObj>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
@@ -49,6 +50,18 @@ namespace _Scripts.Singleton
             }
         }
         /// <summary>
+        /// Cauldroun machine result depends on the variables in the machine slot, so in start i have to set the slot to the
+        /// the previous slot
+        /// </summary>
+        /// <param name="machine"></param>
+        private void SetSlotsCaldruon(Cauldron machine)
+        {
+            for (int i =0; i< CaldruonIngredientsSlot.Count; i++)
+            {
+                machine.IngredientsSlots[i].Slot.MachineSlot = CaldruonIngredientsSlot[i];
+            }
+        }
+        /// <summary>
         /// Display machines in start
         /// </summary>
         public void DisplayMachines()
@@ -64,6 +77,15 @@ namespace _Scripts.Singleton
                         SetSlotsHerbDryer(herbDryer);
                         herbDryer.UpdatePlantObjects();
                     }
+                    else
+                    {
+                        if (machine.CurrentMachine as Cauldron)
+                        {
+                            Cauldron cauldron = machine.CurrentMachine as Cauldron;
+                            SetSlotsCaldruon(cauldron);
+                        }
+                        
+                    }
                     if (LabTimer[machine.CurrentMachine.MachineId].Time > 0)
                     {
                         machine.CurrentMachine.MachineState = MachineState.Working;
@@ -71,6 +93,7 @@ namespace _Scripts.Singleton
                     }
                     else
                     {
+                        machine.CurrentMachine.MachineState = MachineState.Ready;
                         machine.CurrentMachine.CurrentRecipe = LabTimer[machine.CurrentMachine.MachineId].CurrentRecipeObj;
                         machine.CurrentMachine.CreateResult();
                         machine.CurrentMachine.MachineProcess(machine.CurrentMachine);

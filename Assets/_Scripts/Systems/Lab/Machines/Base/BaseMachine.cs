@@ -130,9 +130,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// </summary>
         protected virtual void StartMachine()
         {
-            SetRecipe();
-            
-            if (CurrentRecipe == null) return;
+            // SetRecipe();
+            //
+            // if (CurrentRecipe == null) return;
 
             if (LabEvents.CurrentMachine is ITimerMachine)
             {

@@ -8960,6 +8960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HerbIngredientsSlot: []
+  CaldruonIngredientsSlot: []
 --- !u!4 &768828984
 Transform:
   m_ObjectHideFlags: 0
@@ -15744,7 +15745,7 @@ MonoBehaviour:
   - {fileID: 588819610}
   ResultsSlots: []
   machineWorkingTime: 0
-  MachineId: 0
+  MachineId: 4
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 1295542689}
   CanBurn: 0
@@ -18462,7 +18463,8 @@ MonoBehaviour:
   BurnedResult:
     item: {fileID: 11400000, guid: 48644255e5517df41af3478c75904cf8, type: 2}
     amount: 1
-  BurnTime: 5
+  BurnTime: 6
+  ingredients: []
 --- !u!1001 &1496037023
 PrefabInstance:
   m_ObjectHideFlags: 0

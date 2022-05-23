@@ -18,7 +18,7 @@ MonoBehaviour:
   Price: 20
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: Eucalipto Planta regagem baixa
+    ItemProprietiesDescription: "Eucalipto Planta regagem baixa  temperatura: > 150\xB0C"
   MedicalSymptoms: 2
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
@@ -31,3 +31,5 @@ MonoBehaviour:
     MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
   PotionStuff:
     PotionSprite: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
+  BurnedPlant:
+    BurnedPlantImage: {fileID: 21300000, guid: 71315b40dc1f7584688cabac766c3611, type: 3}

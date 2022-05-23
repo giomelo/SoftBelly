@@ -27,6 +27,12 @@ namespace _Scripts.Systems.Plants.Bases
         public Sprite MixedPlantImage;
         public GameObject MixedPlantObject;
     }
+    
+    [Serializable]
+    public struct BurnedPlant
+    {
+        public Sprite BurnedPlantImage;
+    }
 
     [Serializable]
     public struct PotionStuff
@@ -46,7 +52,21 @@ namespace _Scripts.Systems.Plants.Bases
         public SmashedPlant SmashedPlant;
         public MixedPlant MixedPlant;
         public PotionStuff PotionStuff;
+        public BurnedPlant BurnedPlant;
         
-
+        
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BurnedPlant burnedPlant, MixedPlant mixedPlant, DriedPlant driedPlant, PotionStuff potion, SmashedPlant smashedPlant)
+        {
+            ItemId = id;
+            ItemType = itemType;
+            ImageDisplay = sprite;
+            Price = price;
+            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
+            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            DriedPlant = driedPlant;
+            SmashedPlant = smashedPlant;
+            MixedPlant = mixedPlant;
+            BurnedPlant = burnedPlant;
+        }
     }
 }

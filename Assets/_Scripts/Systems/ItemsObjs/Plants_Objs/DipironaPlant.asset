@@ -18,8 +18,7 @@ MonoBehaviour:
   Price: 10
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
-    ItemProprietiesDescription: Dipirona Planta Regagem Alta
-  isDried: 0
+    ItemProprietiesDescription: "Dipirona Planta Regagem Alta temperatura: > 100\xB0C"
   MedicalSymptoms: 0
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
@@ -30,3 +29,7 @@ MonoBehaviour:
   MixedPlant:
     MixedPlantImage: {fileID: 21300000, guid: cf66e75149ba56341b8d4b45f05ac890, type: 3}
     MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
+  PotionStuff:
+    PotionSprite: {fileID: 21300000, guid: 607d7956ff6812641acef20e28d3e2da, type: 3}
+  BurnedPlant:
+    BurnedPlantImage: {fileID: 21300000, guid: afdbaa79cabf93b46a5255ff76596bf8, type: 3}
