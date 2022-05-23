@@ -19,7 +19,7 @@ MonoBehaviour:
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
     ItemProprietiesDescription: "Dipirona Planta Regagem Alta temperatura: > 100\xB0C"
-  MedicalSymptoms: 0
+  MedicalSymptoms: 1
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}

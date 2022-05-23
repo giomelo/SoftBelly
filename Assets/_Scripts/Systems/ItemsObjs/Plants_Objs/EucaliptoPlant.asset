@@ -24,7 +24,7 @@ MonoBehaviour:
     DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
   SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: 1fe16206d8d1cc1429e68193c47e0006, type: 3}
+    SmashedPlantImage: {fileID: 21300000, guid: 76b4232ffd990fc4d88c8a10f154e73a, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
   MixedPlant:
     MixedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
