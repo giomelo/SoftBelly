@@ -151,7 +151,7 @@ namespace _Scripts.Systems.Inventories
          return Slots.Count;
       }
 
-      public ItemBehaviour CheckIfContainsKey(MedicalSymptoms item)
+      public ItemBehaviour CheckIfContainsKey(MedicalSymptoms item, PotionType type)
       {
          ItemBehaviour aux = null;
 
@@ -161,10 +161,9 @@ namespace _Scripts.Systems.Inventories
             if (!(Slots.ElementAt(i).Value.item as PotionBase)) continue;
             PotionBase auxInventory = Slots.ElementAt(i).Value.item as PotionBase;
             if (!auxInventory.CheckIfPortionHasCure(item)) continue;
+            //if (!auxInventory.CheckIfPotionIsType(type)) continue;
             aux = auxInventory;
-               
          }
-
 
          return aux;
       }

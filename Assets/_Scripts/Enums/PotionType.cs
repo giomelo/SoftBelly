@@ -1,12 +1,16 @@
 ﻿namespace _Scripts.Enums
 {
     /// <summary>
-    /// Define plant state
+    /// Define potion type
     /// </summary>
     public enum PotionType
     {
         Xarope,
-        Cha,
-        Decocação
+        Chá,
+        Vinho,
+        Cataplasma,
+        Maceração,
+        Suco,
+        Infusao
     }
 }

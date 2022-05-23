@@ -36,10 +36,10 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                 potion.name = currentPlant.ItemId + " Potion ";
                 string symtoms = GenerateSymtompsDescription(currentPlant.MedicalSymptoms);
                 Debug.Log(symtoms);
-                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff.PotionSprite,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, potion.name + " " + symtoms, mixedPlant.IngredientsList, currentPlant.MedicalSymptoms);
+                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff.PotionSprite,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, potion.name + " " + symtoms, mixedPlant.IngredientsList, currentPlant.MedicalSymptoms, PotionType.Chá);
                 IngredientsSlots[i].Slot.Image.sprite = potion.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = potion;
-                IngredientsSlots[i].Slot.Amount.text = 1.ToString();
+                IngredientsSlots[i].Slot.Amount.text = 1.ToString(); 
                 IngredientsSlots[i].Slot.MachineSlot.amount = 1;
             }
 

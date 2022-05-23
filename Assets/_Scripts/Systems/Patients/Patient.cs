@@ -19,7 +19,7 @@ namespace _Scripts.Systems.Patients
 
         public void SetOrder()
         {
-            PatientsController.Instance.GenerateRandomOrder(ref Order.Order, ref Order.OrderDescription);
+            PatientsController.Instance.GenerateRandomOrder(ref Order.Order, ref Order.OrderDescription, ref Order.PotionType);
         }
 
         public void Destroy()
@@ -53,7 +53,7 @@ namespace _Scripts.Systems.Patients
         private void Deliver(Patient p)
         {
             Debug.Log("Entregado");
-            var item = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order);
+            var item = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order, p.Order.PotionType);
             if (item != null)
             {
                 LabInventoryHolder.Instance.Storage.RemoveItem(item);

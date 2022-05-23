@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _Scripts.Singleton;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace _Scripts.Systems.Lab
 {
     public class Book : MonoSingleton<Book>
     {
+        [SerializeField]
+        private List<GameObject> pags;
         [SerializeField]
         private GameObject bookLayer;
 

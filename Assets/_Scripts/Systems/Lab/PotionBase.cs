@@ -12,7 +12,7 @@ namespace _Scripts.Systems.Lab
         public List<IngredientsList> IngredientsList = new List<IngredientsList>();
         public MedicalSymptoms Cure;
         public PotionType PotionType;
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, MedicalSymptoms cure)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, MedicalSymptoms cure, PotionType potionType)
         {
             ItemId = id;
             ItemType = itemType;
@@ -21,6 +21,8 @@ namespace _Scripts.Systems.Lab
             ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
             ItemProprieties.ItemProprietiesDescription = itemDescription;
             Cure = cure;
+            IngredientsList = list;
+            PotionType = potionType;
         }
         
         // a planta que tiver o sintoma vai se transformar na poção que cura o sintoma
@@ -32,6 +34,11 @@ namespace _Scripts.Systems.Lab
         public bool CheckIfPortionHasCure(MedicalSymptoms symptom)
         {
             return Cure.HasFlag(symptom);
+        }
+
+        public bool CheckIfPotionIsType(PotionType type)
+        {
+            return PotionType == type;
         }
     }
 }

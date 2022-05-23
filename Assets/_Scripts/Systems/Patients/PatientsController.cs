@@ -37,11 +37,16 @@ namespace _Scripts.Systems.Patients
         [SerializeField]
         public Transform patientStart;
         public Transform patientEnd;
-        public void GenerateRandomOrder(ref MedicalSymptoms item, ref string description)
+        public void GenerateRandomOrder(ref MedicalSymptoms item, ref string description, ref PotionType potionType)
         {
+            var type = RandomEnumValues.RandomEnumValue<PotionType>();
+            potionType = type;
             var index = Random.Range(0, PossiblesOrders.Count - 1);
             item = PossiblesOrders[index].Item;
-            description = PossiblesOrders[index].PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)];
+            description =
+                PossiblesOrders[index]
+                    .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)] +
+                "Tipo: " + potionType.ToString();
         }
         
         //Instantiate patient
