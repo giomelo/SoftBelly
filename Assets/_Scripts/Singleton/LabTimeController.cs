@@ -27,6 +27,7 @@ namespace _Scripts.Singleton
 
         public List<ItemObj> HerbIngredientsSlot = new List<ItemObj>();
         public List<ItemObj> CaldruonIngredientsSlot = new List<ItemObj>();
+        public List<ItemObj> CaldruonResultsSlot = new List<ItemObj>();
         public void AddTime(int machineId, float time, RecipeObj recipe)
         {
             LabTimer.Add(machineId, new MachineStoreValues(recipe, time));
@@ -59,6 +60,11 @@ namespace _Scripts.Singleton
             for (int i =0; i< CaldruonIngredientsSlot.Count; i++)
             {
                 machine.IngredientsSlots[i].Slot.MachineSlot = CaldruonIngredientsSlot[i];
+            }
+            
+            for (int i =0; i< CaldruonResultsSlot.Count; i++)
+            {
+                machine.ResultsSlots[i].Slot.MachineSlot = CaldruonResultsSlot[i];
             }
         }
         /// <summary>
@@ -150,10 +156,13 @@ namespace _Scripts.Singleton
                 //se a maquina nao existe na cena
                 if (!currentMachine.IsDestroyed)
                 {
-                    if (currentMachine.MachineState != MachineState.Empty)
+                    if (currentMachine.MachineState == MachineState.Working)
                     {
-                        currentMachine.SetState(MachineState.Ready);
-                        currentMachine.CreateResult();
+                        if (currentMachine.MachineState != MachineState.Ready)
+                        {
+                            currentMachine.SetState(MachineState.Ready);
+                            currentMachine.CreateResult();
+                        }
                     }
                 }
 

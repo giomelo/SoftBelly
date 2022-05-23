@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
@@ -13,7 +14,10 @@ namespace _Scripts.Systems.Lab.Machines
     {
         [HideInInspector]
         public List<ItemObj> ingredients = new List<ItemObj>();
+        [HideInInspector]
+        public List<ItemObj> results = new List<ItemObj>();
         
+        // ReSharper disable Unity.PerformanceAnalysis
         public override void CreateResult()
         {
             Debug.LogWarning("Results!!");
@@ -31,6 +35,7 @@ namespace _Scripts.Systems.Lab.Machines
             // }
             //
             // LabEvents.OnMachineFinishedCall(this);
+            
             for (int i = 0; i < ResultsSlots.Count; i++)
             {
                 var newBurned = ScriptableObject.CreateInstance<PlantBase>();
@@ -45,12 +50,23 @@ namespace _Scripts.Systems.Lab.Machines
                 
             }
 
-            // for (int i = 0; i < IngredientsSlots.Count; i++)
-            // {
-            //     IngredientsSlots[i].ResetSlot();
-            // }
+            SetSlotResults();
+            StartCoroutine(voltarSlot());
+            for (int i = 0; i < ResultsSlots.Count; i++)
+            {
+                results.Add(ResultsSlots[i].Slot.MachineSlot);
+            }
 
             LabEvents.OnMachineFinishedCall(this);
+        }
+
+        IEnumerator voltarSlot()
+        {
+            yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < IngredientsSlots.Count; i++)
+            {
+                IngredientsSlots[i].ResetSlot();
+            }
         }
 
         public void Work()
@@ -63,7 +79,6 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 ingredients.Add(IngredientsSlots[i].Slot.MachineSlot);
             }
-
             StartMachine();
         }
 
@@ -80,6 +95,13 @@ namespace _Scripts.Systems.Lab.Machines
             foreach (var slot in IngredientsSlots)
             {
                 LabTimeController.Instance.CaldruonIngredientsSlot.Add(slot.Slot.MachineSlot);
+            }
+        }
+        private void SetSlotResults()
+        {
+            foreach (var slot in ResultsSlots)
+            {
+                LabTimeController.Instance.CaldruonResultsSlot.Add(slot.Slot.MachineSlot);
             }
         }
         protected override void OnSlotDispose(BaseMachineSlot slot)
