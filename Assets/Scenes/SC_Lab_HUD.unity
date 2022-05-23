@@ -1414,19 +1414,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " CHA TRADICIONAL: -> caldeirao\r\n    -aquecer a gua, e colocar a planta\r\n   
-    INFUSAO: -> pilao, caldeirao\r\n    -retirar principios ativos leve cozimento,
-    escorre a gua em cima do vegetal/planta\r\n    CATAPLASMA: -> pilao, panela pra
-    misturar\r\n    - dores, ulcera\xE7\xE3o, feridas, edemas, ou inflama\xE7\xF5es
-    na pele, tritura ou esmaga as plantas frescas at\xE9 a consist\xEAncia de pasta\r\n   
-    mistura-se com vaselina, lanolina ou banha de porco\r\n    MACERA\xC7\xC3O: ->
-    pilao, panela pra misturar, coador\r\n    - colocar a planta de molho em alcool,
-    vinagre ou vinho e deixar em contato por horas \xE1s vezes dias, depois deve
-    ser coado\r\n\r\n    VINHOS MEDICINAIS: -> pilao, panela pra misturar, coador\r\n   
-    - mesma coisa da macera\xE7\xE3o\r\n    SUCO FRESTO: - pilao, panela pra misturar,
-    coador\r\n    - espremer e mistrurar com agua\r\n    XAROPE: -> pilao, panela
-    de misturar, coador\r\n    - 850 gramas de a\xE7icar com agua, aquece mistrura
-    com a planta"
+  m_text: " Roque isso ainda nao esta em pr\xE1tica\nCHA TRADICIONAL: -> caldeirao\r\n   
+    -aquecer a gua, e colocar a planta\r\n    INFUSAO: -> pilao, caldeirao\r\n   
+    -retirar principios ativos leve cozimento, escorre a gua em cima do vegetal/planta\r\n   
+    CATAPLASMA: -> pilao, panela pra misturar\r\n    - dores, ulcera\xE7\xE3o, feridas,
+    edemas, ou inflama\xE7\xF5es na pele, tritura ou esmaga as plantas frescas at\xE9
+    a consist\xEAncia de pasta\r\n    mistura-se com vaselina, lanolina ou banha
+    de porco\r\n    MACERA\xC7\xC3O: -> pilao, panela pra misturar, coador\r\n   
+    - colocar a planta de molho em alcool, vinagre ou vinho e deixar em contato por
+    horas \xE1s vezes dias, depois deve ser coado\r\n\r\n    VINHOS MEDICINAIS: ->
+    pilao, panela pra misturar, coador\r\n    - mesma coisa da macera\xE7\xE3o\r\n   
+    SUCO FRESTO: - pilao, panela pra misturar, coador\r\n    - espremer e mistrurar
+    com agua\r\n    XAROPE: -> pilao, panela de misturar, coador\r\n    - 850 gramas
+    de a\xE7icar com agua, aquece mistrura com a planta"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15669,7 +15669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1288714290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22545,7 +22545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1852008626
 RectTransform:
   m_ObjectHideFlags: 0
