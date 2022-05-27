@@ -140,16 +140,31 @@ namespace _Scripts.Singleton
             Debug.Log("WorkingMachine");
             //se a máquina parou de funcionar
             if(!LabTimer.ContainsKey(currentMachine.MachineId)) yield break;
-            
-            
-            //subtrai o tempo da maquina
-            var aux = LabTimer[currentMachine.MachineId].Time;
-            aux -= 1;
-            var p = new MachineStoreValues(LabTimer[currentMachine.MachineId].CurrentRecipeObj, aux);
-            LabTimer[currentMachine.MachineId] = p;
-            currentMachine.CurrentRecipe = LabTimer[currentMachine.MachineId].CurrentRecipeObj;
-            Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
-            
+
+            if (LabTimer[currentMachine.MachineId].Time > 0)
+            {
+                //subtrai o tempo da maquina
+                var aux = LabTimer[currentMachine.MachineId].Time;
+                aux -= 1;
+                var p = new MachineStoreValues(LabTimer[currentMachine.MachineId].CurrentRecipeObj, aux);
+                LabTimer[currentMachine.MachineId] = p;
+                currentMachine.CurrentRecipe = LabTimer[currentMachine.MachineId].CurrentRecipeObj;
+                Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
+            }
+            else
+            {
+                if (currentMachine.CanBurn)
+                {
+                    //subtrai o tempo da maquina
+                    var aux = LabTimer[currentMachine.MachineId].Time;
+                    aux -= 1;
+                    var p = new MachineStoreValues(LabTimer[currentMachine.MachineId].CurrentRecipeObj, aux);
+                    LabTimer[currentMachine.MachineId] = p;
+                    currentMachine.CurrentRecipe = LabTimer[currentMachine.MachineId].CurrentRecipeObj;
+                    Debug.Log("Time: " + LabTimer[currentMachine.MachineId].Time);
+                }
+            }
+
             //se o tempo passou de zero
             if (LabTimer[currentMachine.MachineId].Time <= 0)
             {
@@ -185,7 +200,7 @@ namespace _Scripts.Singleton
                 }
                 else
                 {
-                    LabTimer.Remove(currentMachine.MachineId);
+                    //LabTimer.Remove(currentMachine.MachineId);
                 }
                
             }

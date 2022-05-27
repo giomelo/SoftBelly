@@ -25,6 +25,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         if (LabEvents.MachineSlot.Equals(Slot))
                         {
                             RemoveItemSlot();
+                            if (LabTimeController.Instance.LabTimer.ContainsKey(LabEvents.CurrentMachine.MachineId))
+                            {
+                                LabTimeController.Instance.LabTimer.Remove(LabEvents.CurrentMachine.MachineId);
+                            }
                         }
                     }
                 }
