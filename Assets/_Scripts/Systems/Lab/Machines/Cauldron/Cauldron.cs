@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
@@ -41,17 +42,26 @@ namespace _Scripts.Systems.Lab.Machines
                 var newBurned = ScriptableObject.CreateInstance<PlantBase>();
 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
-                print(currentPlant.PotionStuff.PotionSprite);
+     
                 newBurned.name = currentPlant.ItemId + "Burned";
                 newBurned.Init(currentPlant.ItemId + "Burned", ItemType.Burned, currentPlant.BurnedPlant.BurnedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newBurned.name,  currentPlant.BurnedPlant,currentPlant.MixedPlant, currentPlant.DriedPlant, currentPlant.PotionStuff, 
-                    currentPlant.SmashedPlant, currentPlant.MedicalSymptoms, currentPlant.MachineList);
-                print(newBurned.PotionStuff.PotionSprite);
+                    currentPlant.SmashedPlant, currentPlant.MedicalSymptoms);
+          
                 ResultsSlots[i].Slot.Image.sprite = newBurned.ImageDisplay;
                 ResultsSlots[i].Slot.MachineSlot.item = newBurned;
                 ResultsSlots[i].Slot.Amount.text = 1.ToString();
                 ResultsSlots[i].Slot.MachineSlot.amount = 1;
+                newBurned.MachineList = new List<MachinesTypes>();
+                foreach (var type in currentPlant.MachineList)
+                {
+                    newBurned.AddMachine(type);
+                }
                 newBurned.AddMachine(MachineTypes);
 
+                foreach (var wd in newBurned.MachineList)
+                {
+                   Debug.Log(wd);
+                }
             }
 
             SetSlotResults();

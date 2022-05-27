@@ -84,19 +84,29 @@ namespace _Scripts.Systems.Lab.Machines
                 var newDriedPlant = ScriptableObject.CreateInstance<PlantBase>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
-                print(currentPlant.PotionStuff.PotionSprite);
+
                 newDriedPlant.name = currentPlant.ItemId + "Dried";
                 newDriedPlant.Init(currentPlant.ItemId + "Dried", ItemType.Dryed, currentPlant.DriedPlant.DriedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newDriedPlant.name, currentPlant.BurnedPlant,currentPlant.MixedPlant, currentPlant.DriedPlant, currentPlant.PotionStuff, 
-                    currentPlant.SmashedPlant, currentPlant.MedicalSymptoms, currentPlant.MachineList);
-                print(newDriedPlant.PotionStuff.PotionSprite);
+                    currentPlant.SmashedPlant, currentPlant.MedicalSymptoms);
+
                 IngredientsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newDriedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
                 IngredientsSlots[i].Slot.MachineSlot.amount = 1;
+                newDriedPlant.MachineList = new List<MachinesTypes>();
+                foreach (var type in currentPlant.MachineList)
+                {
+                    newDriedPlant.AddMachine(type);
+                }
+                
                 newDriedPlant.AddMachine(MachineTypes);
+                
+                
+                foreach (var wd in newDriedPlant.MachineList)
+                {
+                    Debug.Log(wd);
+                }
             }
-
-     
             if(MachineState == MachineState.Ready)
             {
                 SetSlotType();

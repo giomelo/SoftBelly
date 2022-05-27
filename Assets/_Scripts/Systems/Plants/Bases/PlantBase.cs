@@ -66,7 +66,7 @@ namespace _Scripts.Systems.Plants.Bases
             if (type == MachinesTypes.Nothing) return;
             MachineList.Add(type);
         }
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BurnedPlant burnedPlant, MixedPlant mixedPlant, DriedPlant driedPlant, PotionStuff potion, SmashedPlant smashedPlant, MedicalSymptoms medicalSymptoms, List<MachinesTypes> machineTypes )
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BurnedPlant burnedPlant, MixedPlant mixedPlant, DriedPlant driedPlant, PotionStuff potion, SmashedPlant smashedPlant, MedicalSymptoms medicalSymptoms)
         {
             ItemId = id;
             ItemType = itemType;
@@ -80,7 +80,7 @@ namespace _Scripts.Systems.Plants.Bases
             MixedPlant = mixedPlant;
             BurnedPlant = burnedPlant;
             MedicalSymptoms = medicalSymptoms;
-            MachineList = machineTypes;
+            //MachineList = machineTypes;
         }
     }
 }
