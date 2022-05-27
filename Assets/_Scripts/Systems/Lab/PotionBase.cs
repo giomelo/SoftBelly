@@ -9,10 +9,9 @@ namespace _Scripts.Systems.Lab
     [CreateAssetMenu(fileName = "Potion", menuName = "Item/Potion")]
     public class PotionBase : ItemBehaviour
     {
-        public List<IngredientsList> IngredientsList = new List<IngredientsList>();
         public MedicalSymptoms Cure;
         public PotionType PotionType;
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, MedicalSymptoms cure, PotionType potionType)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, MedicalSymptoms cure, PotionType potionType)
         {
             ItemId = id;
             ItemType = itemType;
@@ -21,7 +20,6 @@ namespace _Scripts.Systems.Lab
             ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
             ItemProprieties.ItemProprietiesDescription = itemDescription;
             Cure = cure;
-            IngredientsList = list;
             PotionType = potionType;
         }
         

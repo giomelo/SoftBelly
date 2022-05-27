@@ -99,6 +99,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
                 IngredientsSlots[i].Slot.MachineSlot.amount = 1;
+                
+                newMixedPlant.BasePlant.AddMachine(MachineTypes);
             }
 
             if(MachineState == MachineState.Ready)

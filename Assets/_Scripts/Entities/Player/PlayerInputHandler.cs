@@ -100,6 +100,7 @@ namespace _Scripts.Entities.Player
                         break;
                     case "Machine":
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
+                        if (LabEvents.CurrentMachine == machineScript.CurrentMachine) return;
                         if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
                         LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
                         break;

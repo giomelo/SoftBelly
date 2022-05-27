@@ -41,6 +41,7 @@ namespace _Scripts.Systems.Lab.Machines
                 IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
                 IngredientsSlots[i].Slot.MachineSlot.amount = 1;
+                newSmashedPlant.BasePlant.AddMachine(MachineTypes);
             }
 
             if(MachineState == MachineState.Ready)

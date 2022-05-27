@@ -1,16 +1,28 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Lab.Machines.MixPanMachine;
 using _Scripts.Systems.Plants.Bases;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
 {
+    [Serializable]
+    public struct PotionsTypes
+    {
+        public PotionType PotionType;
+        public List<MachinesTypes> MachinesTypes;
+        public List<IngredientsList> IngredientsList;
+    }
     public class PotionTransformer : BaseMachine
     {
+        [SerializeField]
+        private List<PotionsTypes> PotionsTypes;
         public override void CreateResult()
         {
             MachineState = MachineState.Ready;
@@ -36,7 +48,14 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                 potion.name = currentPlant.ItemId + " Potion ";
                 string symtoms = GenerateSymtompsDescription(currentPlant.MedicalSymptoms);
                 Debug.Log(symtoms);
-                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff.PotionSprite,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, potion.name + " " + symtoms, mixedPlant.IngredientsList, currentPlant.MedicalSymptoms, PotionType.Chá);
+                PotionType type;
+                if(mixedPlant == null)
+                    type = CreatePotionType(currentPlant.MachineList, null);
+                else
+                    type = CreatePotionType(currentPlant.MachineList, mixedPlant.IngredientsList);
+                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff.PotionSprite,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, potion.name + " " + symtoms + " " + type, currentPlant.MedicalSymptoms, 
+                    type);
+                print(currentPlant.PotionStuff.PotionSprite);
                 IngredientsSlots[i].Slot.Image.sprite = potion.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = potion;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString(); 
@@ -99,6 +118,26 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
             {
                 SetState(MachineState.Empty);
             }
+        }
+
+        private PotionType CreatePotionType(List<MachinesTypes> types,  [CanBeNull] List<IngredientsList> ingredientsList)
+        {
+            PotionType potionType = PotionType.Wrong;
+            foreach (var type in PotionsTypes)
+            {
+                if (!types.SequenceEqual(type.MachinesTypes)) continue;
+                if (ingredientsList != null)
+                {
+                    if (ingredientsList.SequenceEqual(type.IngredientsList))
+                        potionType = type.PotionType;
+                    
+                }
+                else
+                    potionType = type.PotionType;
+                
+            }
+
+            return potionType;
         }
     }
 }

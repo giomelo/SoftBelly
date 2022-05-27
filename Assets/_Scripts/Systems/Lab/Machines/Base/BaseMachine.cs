@@ -35,7 +35,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public MachineHolder thisMachineHolder;
 
         public bool CanBurn;
-
+        [SerializeField]
+        protected MachinesTypes MachineTypes;
         public static void GenerateNewPropriets()
         {
             

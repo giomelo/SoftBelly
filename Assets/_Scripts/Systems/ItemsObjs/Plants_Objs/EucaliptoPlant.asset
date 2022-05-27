@@ -33,3 +33,4 @@ MonoBehaviour:
     PotionSprite: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
   BurnedPlant:
     BurnedPlantImage: {fileID: 21300000, guid: 71315b40dc1f7584688cabac766c3611, type: 3}
+  MachineList: 030000000000000003000000

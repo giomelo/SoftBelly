@@ -10,7 +10,7 @@
         Vinho,
         Cataplasma,
         Maceração,
-        Suco,
-        Infusao
+        Infusao,
+        Wrong
     }
 }

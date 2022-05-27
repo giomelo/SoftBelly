@@ -8029,6 +8029,7 @@ MonoBehaviour:
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 687389982}
   CanBurn: 0
+  MachineTypes: 2
   decorators:
   - {fileID: 1276171481}
   - {fileID: 1239761303}
@@ -8604,6 +8605,7 @@ MonoBehaviour:
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 725722558}
   CanBurn: 0
+  MachineTypes: 3
   plantsPos:
   - {fileID: 710755280}
   - {fileID: 1173292186}
@@ -15750,6 +15752,34 @@ MonoBehaviour:
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 1295542689}
   CanBurn: 0
+  MachineTypes: 5
+  PotionsTypes:
+  - PotionType: 0
+    MachinesTypes: 030000000100000002000000
+    IngredientsList:
+    - Ingredient: {fileID: 11400000, guid: 6b10791adfcc0a143a3df5730980faca, type: 2}
+      Amount: 3
+  - PotionType: 1
+    MachinesTypes: 0300000000000000
+    IngredientsList: []
+  - PotionType: 2
+    MachinesTypes: 030000000100000002000000
+    IngredientsList:
+    - Ingredient: {fileID: 11400000, guid: 49e7d0fc4dfc3074f9c7d4815f58b780, type: 2}
+      Amount: 3
+  - PotionType: 3
+    MachinesTypes: 030000000100000002000000
+    IngredientsList:
+    - Ingredient: {fileID: 11400000, guid: 8e13834ecb7001d4a8d5af775ea0f34b, type: 2}
+      Amount: 3
+  - PotionType: 4
+    MachinesTypes: 030000000100000002000000
+    IngredientsList:
+    - Ingredient: {fileID: 11400000, guid: ff64223ccfbc9f64da930124df2700ed, type: 2}
+      Amount: 3
+  - PotionType: 5
+    MachinesTypes: 030000000100000000000000
+    IngredientsList: []
 --- !u!114 &1295542689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18461,6 +18491,7 @@ MonoBehaviour:
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 0}
   CanBurn: 1
+  MachineTypes: 0
   BurnedResult:
     item: {fileID: 11400000, guid: 48644255e5517df41af3478c75904cf8, type: 2}
     amount: 1
@@ -22527,6 +22558,7 @@ MonoBehaviour:
   CurrentRecipe: {fileID: 0}
   thisMachineHolder: {fileID: 1841520276}
   CanBurn: 0
+  MachineTypes: 1
   PestleObj: {fileID: 1809877027}
   ingredientPos: {fileID: 1090822844}
   CanHit: 1
