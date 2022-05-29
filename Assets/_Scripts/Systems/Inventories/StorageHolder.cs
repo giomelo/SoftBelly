@@ -49,6 +49,7 @@ namespace _Scripts.Systems.Inventories
                 exposedInventory.Add(aux);
             }
         }
+
     }
     
    

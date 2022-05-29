@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Systems.Item;
+using UnityEngine;
 
 namespace _Scripts.Systems.Inventories
 {
@@ -11,6 +12,7 @@ namespace _Scripts.Systems.Inventories
     [Serializable]
     public struct ExposedInventory
     {
+        [HideInInspector]
         public int key;
         public ItemObj item;
     }

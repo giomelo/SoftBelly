@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
-  m_Name: Eucalipto
+  m_Name: SalsaSeed
   m_EditorClassIdentifier: 
-  ItemId: Eucalipto
+  ItemId: Salsa seed
   ItemType: 1
   ImageDisplay: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Price: 10
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: awdawdawd
+    ItemProprietiesDescription: Salsa Semente Regagem baixa
   PlantDisplayObjs:
   - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
   - {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
   - {fileID: 7447280070264944617, guid: 50dcb60bf8999d34d9afd67583e9f494, type: 3}
-  GrowTime: 10
-  WaterCicles: 4
+  GrowTime: 12
+  WaterCicles: 5
   PlantBase: {fileID: 11400000, guid: f26ebfe23e1ede6419b41a8c7ffb75ff, type: 2}

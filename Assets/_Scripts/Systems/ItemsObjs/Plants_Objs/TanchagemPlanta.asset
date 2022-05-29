@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
-  m_Name: EucaliptoPlant
+  m_Name: TanchagemPlanta
   m_EditorClassIdentifier: 
-  ItemId: Eucalipto
+  ItemId: Tanchagem
   ItemType: 2
-  ImageDisplay: {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 76eb5ef3cf4b5c840b3aa92dacf7f47e, type: 3}
   Price: 20
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Eucalipto Planta temperatura: < 100\xB0C\nPropriedades:
-      Febre, Asma"
-  MedicalSymptoms: 131074
+    ItemProprietiesDescription: "Tanchagem Planta temperatura: < 100\xB0C\nPropriedades:
+      Alergia, Infec\xE7\xE3o na garganta, hemorragia"
+  MedicalSymptoms: 34820
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}

@@ -25,6 +25,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
                         if (LabEvents.MachineSlot.Equals(Slot))
                         {
                             RemoveItemSlot();
+                            
                             if (LabTimeController.Instance.LabTimer.ContainsKey(LabEvents.CurrentMachine.MachineId))
                             {
                                 LabTimeController.Instance.LabTimer.Remove(LabEvents.CurrentMachine.MachineId);
@@ -108,6 +109,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             Slot.Amount.text = Slot.MachineSlot.amount.ToString();
             LabEvents.CurrentMachine.uiController.StorageHolder.Storage.AddItem(1, Slot.MachineSlot.item);
             LabEvents.CurrentMachine.uiController.UpdateInventory();
+            LabEvents.CurrentMachine.uiController.ShowItemsAvailable(LabEvents.CurrentMachine);
             if (Slot.MachineSlot.amount <= 0)
             {
                 ResetSlot();

@@ -70,6 +70,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             InitMachine();
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
+            uiController.ShowItemsAvailable(id);
         }
 
         protected virtual void InitMachine()

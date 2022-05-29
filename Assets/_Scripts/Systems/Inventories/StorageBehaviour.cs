@@ -180,5 +180,11 @@ namespace _Scripts.Systems.Inventories
 
          return false;
       }
+      
+      
+      private int GenerateKey()
+      {
+         return Slots.Count;
+      }
    }
 }

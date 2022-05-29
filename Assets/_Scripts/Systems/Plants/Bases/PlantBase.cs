@@ -53,7 +53,7 @@ namespace _Scripts.Systems.Plants.Bases
         public MixedPlant MixedPlant;
         public PotionStuff PotionStuff;
         public BurnedPlant BurnedPlant;
-        public List<MachinesTypes> MachineList = new List<MachinesTypes>();
+        [HideInInspector] public List<MachinesTypes> MachineList = new List<MachinesTypes>();
 
 
         private void OnEnable()

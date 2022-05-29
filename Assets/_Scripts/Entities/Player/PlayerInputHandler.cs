@@ -99,6 +99,7 @@ namespace _Scripts.Entities.Player
                         LabEvents.OnChestSelectedCall(1);
                         break;
                     case "Machine":
+                        if (LabEvents.IsOnMachine) return;
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
                         if (LabEvents.CurrentMachine == machineScript.CurrentMachine) return;
                         if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;

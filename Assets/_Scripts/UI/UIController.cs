@@ -7,6 +7,7 @@ using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab;
+using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -54,6 +55,8 @@ namespace _Scripts.UI
         [Header("Show invenotry button")]
         [SerializeField]
         private GameObject showButton; // show invenotry button
+        [SerializeField]
+        private List<SlotBase> allSlots = new List<SlotBase>();
 
         private void Start()
         {
@@ -127,7 +130,11 @@ namespace _Scripts.UI
             
                 var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
                 slotInstance.transform.SetParent(slotDisplay);
-                UpdateSlots(slotInstance.transform, index);
+                if (slotInstance.TryGetComponent<SlotBase>(out var slotScript))
+                {
+                    allSlots.Add(slotScript);
+                    UpdateSlots(slotScript, index);
+                }
                 index++;
             }
             _slotsCreated = true;
@@ -139,21 +146,20 @@ namespace _Scripts.UI
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void UpdateSlots(Transform slot, int index)
+        private void UpdateSlots(SlotBase slot, int index)
         {
-            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
-            slotScript.AddSubject(this);
+            slot.AddSubject(this);
         
             if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
 
             if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
-                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
-                slotScript.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
-                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
+                slot.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
+                slot.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
+                slot.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
                 if (_slotsCreated) return;
                 
-                slotScript.uiSlot.slotId = _currentSlot;
+                slot.uiSlot.slotId = _currentSlot;
                 _currentSlot++;
             }
             else
@@ -167,13 +173,13 @@ namespace _Scripts.UI
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void ResetSlot(Transform slot)
+        private void ResetSlot(SlotBase slot)
         {
-            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            //if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             var prefabScript = slotPrefab.GetComponent<SlotBase>();
-            slotScript.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
-            slotScript.uiSlot.item = null;
-            slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
+            slot.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
+            slot.uiSlot.item = null;
+            slot.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
         }
         
         /// <summary>
@@ -181,9 +187,9 @@ namespace _Scripts.UI
         /// </summary>
         public void UpdateInventory()
         {
-            for (int i = 0; i < slotDisplay.childCount; i++)
+            for (int i = 0; i < allSlots.Count; i++)
             {
-                UpdateSlots(slotDisplay.GetChild(i), i);
+                UpdateSlots(allSlots[i], i);
             }
         }
         
@@ -269,6 +275,22 @@ namespace _Scripts.UI
         {
             inventoryObject.SetActive(true);
             showButton.SetActive(false);
+        }
+
+        public void ShowItemsAvailable(BaseMachine machineSlot)
+        {
+            Debug.LogWarning("Items");
+            var slot = machineSlot.IngredientsSlots[0].Slot;
+            
+            for (int i = 0; i < allSlots.Count; i++)
+            {
+                if (allSlots[i].uiSlot.item == null) continue;
+                allSlots[i].uiSlot.itemImage.color = Color.white;
+                if (!slot.itemRequired.HasFlag(allSlots[i].uiSlot.item.ItemType))
+                {
+                    allSlots[i].uiSlot.itemImage.color = Color.black;
+                }
+            }
         }
     }
 }

@@ -61,11 +61,13 @@ namespace _Scripts.Systems.Lab
         {
             //if (CurrentMachine != null) return;
             CurrentMachine = id;
+            IsOnMachine = true;
             OnMachineSelected?.Invoke(id);
         }
         
         public static void OnMachineDisposeCall(BaseMachine id)
         {
+            IsOnMachine = false;
             OnMachineDispose?.Invoke(id);
         }
         
