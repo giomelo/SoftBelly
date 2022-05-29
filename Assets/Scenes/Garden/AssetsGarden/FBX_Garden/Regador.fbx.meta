@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: e7082a062a0bd0f48a6a98f4935d6c1e
+guid: a87658222cd977c4c8a8ed3900b52d3b
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: EnvironmentPack_01
-    second: {fileID: 2100000, guid: a6ff8a393f7876e4daed06400f2c98ac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GardenEnvironment
-    second: {fileID: 2100000, guid: c470910bb6ebb284c81995115fe110e5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -57,7 +47,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

@@ -3,7 +3,27 @@ guid: 22440fc322079194ab525b21210f1048
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestBottom_L_ChestBottom_LMat
+    second: {fileID: 2100000, guid: 2b060fdb0bafe6548af90158c16283f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestTop_L_ChestTop_LMat
+    second: {fileID: 2100000, guid: 1230e36a00d672644b2539f0bd21bedf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HandleLeft_L_HandleLeft_LMat
+    second: {fileID: 2100000, guid: eade95ac3b4b91d498499a06b6bf6b70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HandleRight_L_HandleRight_LMat
+    second: {fileID: 2100000, guid: eade95ac3b4b91d498499a06b6bf6b70, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
