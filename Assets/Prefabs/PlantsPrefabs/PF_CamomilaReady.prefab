@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2386388334648222139}
   - component: {fileID: 1076088421730277309}
   m_Layer: 0
-  m_Name: PF_ManjericaoReady
+  m_Name: PF_CamomilaReady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a4f97ce93400834690eaab09f88c1c7, type: 2}
+  - {fileID: 2100000, guid: f71302b53843ff94983efd0d60e31563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

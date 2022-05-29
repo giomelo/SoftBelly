@@ -46,7 +46,7 @@ namespace _Scripts.Systems.Patients
             description =
                 PossiblesOrders[index]
                     .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)] +
-                "Tipo: " + potionType.ToString();
+                "Tipo: " + potionType;
         }
         
         //Instantiate patient

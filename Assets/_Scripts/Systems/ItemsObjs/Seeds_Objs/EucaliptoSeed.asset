@@ -20,9 +20,9 @@ MonoBehaviour:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
     ItemProprietiesDescription: Eucalipto Semente Regagem baixa
   PlantDisplayObjs:
-  - {fileID: 410886368486421786, guid: bc8cee29de5e5314ea887261529b7d40, type: 3}
-  - {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
-  - {fileID: 7447280070264944617, guid: 50dcb60bf8999d34d9afd67583e9f494, type: 3}
+  - {fileID: 410886368486421786, guid: 5f10f639f07adb247ba4666bf7514969, type: 3}
+  - {fileID: 7897824431601206407, guid: 714ca55b41db6364cbda492ba3ee809f, type: 3}
+  - {fileID: 7447280070264944617, guid: d97c8c45a739e6048969ab09a8c54f10, type: 3}
   GrowTime: 12
   WaterCicles: 5
   PlantBase: {fileID: 11400000, guid: 06f20a45e6229734db77f70a7e5aa80b, type: 2}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2201935619092132257}
   - component: {fileID: 8685980914125369684}
   m_Layer: 0
-  m_Name: PF_DipironaSeed
+  m_Name: PF_CamomilaSeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
