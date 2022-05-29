@@ -8,7 +8,7 @@ using _Scripts.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Store : MonoSingleton<Store>
+public class Store : MonoBehaviour
 {
     public int Price = 0;
     [SerializeField]

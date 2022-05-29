@@ -27,10 +27,23 @@ namespace _Scripts.Entities.Player
         /// <param name="vertical"></param>
         public void ProcessInput(float horizontal, float vertical)
         {
-            var move = new Vector3(horizontal, 0, vertical);
-            move.y += gravityValue * Time.deltaTime;
-            _chController.Move(move * Time.deltaTime * _playerSpeed);
-            //gameObject.transform.forward = move;
+            // var move = new Vector3(horizontal, 0, vertical);
+            // move.y += gravityValue * Time.deltaTime;
+            // _chController.Move(move * Time.deltaTime * _playerSpeed);
+            // //gameObject.transform.forward = move;
+        }
+        
+        void Move()
+        {
+            
+            _chController.Move( Time.deltaTime * _playerSpeed * Input.GetAxis("Vertical") * transform.forward);
+
+            transform.Rotate(0,Input.GetAxis("Horizontal") * 180 * Time.deltaTime,0);
+  
+        }
+        private void Update()
+        {
+            Move();
         }
     }
 }
