@@ -40,16 +40,17 @@ namespace _Scripts.Systems.Patients
         
         private Patient currentPatient;
         private NpcBase currentPatientNPC;
-        public void GenerateRandomOrder(ref MedicalSymptoms item, ref string description, ref PotionType potionType)
+        public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
-            potionType = type;
+            order.PotionType = type;
             var index = Random.Range(0, PossiblesOrders.Count - 1);
-            item = PossiblesOrders[index].Item;
-            description =
+            order.Order = PossiblesOrders[index].Item;
+            order.OrderDescription =
                 PossiblesOrders[index]
                     .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)] +
-                "Tipo: " + potionType;
+                "Tipo: " + order.PotionType ;
+            PatientsEvents.CurrentOrder = order;
         }
         
         //Instantiate patient
@@ -122,11 +123,27 @@ namespace _Scripts.Systems.Patients
 
         private void Start()
         {
-            GeneratePatient();
+            if (PatientsEvents.HasPatient)
+            {
+                SetPatient();
+            }
+            else
+            {
+                GeneratePatient();
+            }
+        }
+
+        private void SetPatient()
+        {
+            var patient = Instantiate(patientPrefab, patientEnd.position, Quaternion.identity).transform;
+            currentPatient = patient.GetComponent<Patient>();
+            currentPatientNPC = patient.GetComponent<NpcBase>();
+            currentPatient.Order = PatientsEvents.CurrentOrder;
         }
 
         public void RecusePatient()
         {
+            PatientsEvents.HasPatient = false;
             PatientsEvents.OnOrderDisableCall();
             currentPatient.SetState(PatientState.Leaving);
             StartCoroutine(Arrived(currentPatient, currentPatientNPC));

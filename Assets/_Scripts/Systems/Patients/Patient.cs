@@ -19,7 +19,7 @@ namespace _Scripts.Systems.Patients
 
         public void SetOrder()
         {
-            PatientsController.Instance.GenerateRandomOrder(ref Order.Order, ref Order.OrderDescription, ref Order.PotionType);
+            PatientsController.Instance.GenerateRandomOrder(ref Order);
         }
 
         public void Destroy()
@@ -60,6 +60,7 @@ namespace _Scripts.Systems.Patients
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 SetState(PatientState.Leaving);
                 GiveMoney();
+                PatientsEvents.HasPatient = false;
             }
             else
             {

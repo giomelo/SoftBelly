@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemId: Tanchagem semente
   ItemType: 1
-  ImageDisplay: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  ImageDisplay: {fileID: 21300000, guid: c30f0c0f797589c44a008a6e3365c98a, type: 3}
   Price: 10
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}

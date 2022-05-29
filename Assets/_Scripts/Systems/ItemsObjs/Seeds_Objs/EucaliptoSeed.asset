@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemId: Eucalipto Semente
   ItemType: 1
-  ImageDisplay: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  ImageDisplay: {fileID: 21300000, guid: 6ae40ddafda74f944b46b32b52158a6f, type: 3}
   Price: 10
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemId: Camomila semente
   ItemType: 1
-  ImageDisplay: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  ImageDisplay: {fileID: 21300000, guid: 2f6fc17f106b6ea42a65e68c15f9ed46, type: 3}
   Price: 20
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}

@@ -9,6 +9,9 @@ namespace _Scripts.Systems.Patients
         public static Action<Patient> OnOrderView;
         public static Action OnOrderDisable;
         public static Action<Transform> OnPatientArrived;
+
+        public static bool HasPatient;
+        public static OrderObj CurrentOrder;
         public static void OnOrderDisableCall()
         {
             OnOrderDisable?.Invoke();
@@ -25,6 +28,7 @@ namespace _Scripts.Systems.Patients
         }
         public static void OnPatientArrivedCall(Transform p)
         {
+            HasPatient = true;
             OnPatientArrived?.Invoke(p);
         }
     }
