@@ -12,6 +12,8 @@ namespace _Scripts.Screen_Flow
         public Slider Slider;
         public Text ProgressText;
         public GameObject OptionsScreen;
+        public GameObject credits;
+        public GameObject telaInicial;
 
         #region Camera
 
@@ -60,8 +62,17 @@ namespace _Scripts.Screen_Flow
         }
 
         #endregion
-    
 
+        public void Oncredidts()
+        {
+            credits.SetActive(true);
+            telaInicial.SetActive(false);
+        }
+        public void OUTcredidts()
+        {
+            credits.SetActive(false);
+            telaInicial.SetActive(true);
+        }
         public void BtnQuit()
         {
             Application.Quit();
