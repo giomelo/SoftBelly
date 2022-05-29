@@ -61,6 +61,7 @@ namespace _Scripts.Systems.Patients
                 SetState(PatientState.Leaving);
                 GiveMoney();
                 PatientsEvents.HasPatient = false;
+                StartCoroutine(PatientsController.Instance.Arrived(PatientsController.Instance.currentPatient, PatientsController.Instance.currentPatientNPC));
             }
             else
             {

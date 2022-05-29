@@ -38,8 +38,8 @@ namespace _Scripts.Systems.Patients
         public Transform patientStart;
         public Transform patientEnd;
         
-        private Patient currentPatient;
-        private NpcBase currentPatientNPC;
+        public Patient currentPatient;
+        public NpcBase currentPatientNPC;
         public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
@@ -74,7 +74,7 @@ namespace _Scripts.Systems.Patients
         
         //Check if the agent arrived the destination
         // ReSharper disable Unity.PerformanceAnalysis
-        private IEnumerator Arrived(Patient p, NpcBase npc)
+        public IEnumerator Arrived(Patient p, NpcBase npc)
         {
             yield return new WaitForSeconds(1.0f);
             Debug.Log("Check");
@@ -137,6 +137,7 @@ namespace _Scripts.Systems.Patients
         {
             var patient = Instantiate(patientPrefab, patientEnd.position, Quaternion.identity).transform;
             currentPatient = patient.GetComponent<Patient>();
+            currentPatient.SetState(PatientState.Waiting);
             currentPatientNPC = patient.GetComponent<NpcBase>();
             currentPatient.Order = PatientsEvents.CurrentOrder;
         }

@@ -74,7 +74,7 @@ namespace _Scripts.Entities.Player
         
             if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
             if (!CheckDistanceFromPlayer(hit.transform, Radius)) return;
-            Debug.Log("oi" + hit.transform.tag);
+ 
                 switch (hit.transform.tag)
                 {
                     case "Plot":
@@ -91,7 +91,6 @@ namespace _Scripts.Entities.Player
                                 //Check if the plant is ready to harvest
                                 if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
                                 PlantEvents.OnHarvestCall(plotScript);
-
                             }
                         }
                         break;

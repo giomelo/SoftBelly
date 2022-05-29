@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: SalsaSeed
   m_EditorClassIdentifier: 
-  ItemId: Salsa seed
+  ItemId: Salsa semente
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: a2d9de512cbcd544e8ee7f7612125a01, type: 3}
   Price: 10

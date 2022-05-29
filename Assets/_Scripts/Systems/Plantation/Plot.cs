@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Plants.Bases;
 using Systems.Plantation;
 using UnityEngine;
@@ -170,7 +171,9 @@ namespace _Scripts.Systems.Plantation
 
             if (!IsDead)
             {
-                PlantEvents.OnLabInventoryAction(1);
+                GridSystem.Instance.labStorage.Storage.AddItem(1, PlantEvents.PlantCollected);
+                //PlantEvents.OnLabInventoryAction(1);
+             
             }
             
         }

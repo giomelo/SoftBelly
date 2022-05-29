@@ -47,8 +47,7 @@ namespace _Scripts.Systems.Inventories
             index = CheckIfSlotAreAvailabe(item);
          }
          else
-         {
-            
+         { 
             index = ReturnFirstEmptySlot();
          }
          Put(index, item, amount);

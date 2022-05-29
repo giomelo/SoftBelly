@@ -38,6 +38,7 @@ namespace _Scripts.Systems.Plants.Bases
 
         public static void OnLabInventoryAction(int id)
         {
+            Debug.Log("lAbinventoryaction");
             LabInventoryAction?.Invoke(id);
         }
         public static void OnPlantedSelected()
