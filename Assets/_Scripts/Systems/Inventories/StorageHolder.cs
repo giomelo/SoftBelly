@@ -51,6 +51,5 @@ namespace _Scripts.Systems.Inventories
         }
 
     }
-    
-   
+
 }

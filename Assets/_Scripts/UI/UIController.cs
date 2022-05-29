@@ -167,6 +167,28 @@ namespace _Scripts.UI
                 ResetSlot(slot);
             }
         }
+        private void UpdateSlots(Transform slot, int index)
+        {
+            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            slotScript.AddSubject(this);
+        
+            if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
+
+            if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
+            {
+                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
+                slotScript.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
+                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
+                if (_slotsCreated) return;
+                
+                slotScript.uiSlot.slotId = _currentSlot;
+                _currentSlot++;
+            }
+            else
+            {
+                ResetSlot(slot);
+            }
+        }
         
         /// <summary>
         /// Reset the slot to the original state(blank item)
@@ -181,15 +203,23 @@ namespace _Scripts.UI
             slot.uiSlot.item = null;
             slot.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
         }
+        private void ResetSlot(Transform slot)
+        {
+            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            var prefabScript = slotPrefab.GetComponent<SlotBase>();
+            slotScript.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
+            slotScript.uiSlot.item = null;
+            slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
+        }
         
         /// <summary>
         /// Foreach slot update the slot with the new information in the dictionary
         /// </summary>
         public void UpdateInventory()
         {
-            for (int i = 0; i < allSlots.Count; i++)
+            for (int i = 0; i < slotDisplay.childCount; i++)
             {
-                UpdateSlots(allSlots[i], i);
+                UpdateSlots(slotDisplay.GetChild(i), i);
             }
         }
         
