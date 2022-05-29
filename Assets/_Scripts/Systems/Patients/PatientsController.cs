@@ -37,6 +37,9 @@ namespace _Scripts.Systems.Patients
         [SerializeField]
         public Transform patientStart;
         public Transform patientEnd;
+        
+        private Patient currentPatient;
+        private NpcBase currentPatientNPC;
         public void GenerateRandomOrder(ref MedicalSymptoms item, ref string description, ref PotionType potionType)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
@@ -61,6 +64,8 @@ namespace _Scripts.Systems.Patients
         {
             if (!p.TryGetComponent<NpcBase>(out var npcScript)) return;
             if (!p.TryGetComponent<Patient>(out var patientScript)) return;
+            currentPatient = patientScript;
+            currentPatientNPC = npcScript;
             patientScript.SetOrder();
             patientScript.SetState(PatientState.Entering);
             StartCoroutine(Arrived(patientScript, npcScript));
@@ -71,6 +76,7 @@ namespace _Scripts.Systems.Patients
         private IEnumerator Arrived(Patient p, NpcBase npc)
         {
             yield return new WaitForSeconds(1.0f);
+            Debug.Log("Check");
             if (npc.CheckIfIsInDestination())
             {
                 if (p.State == PatientState.Entering)
@@ -117,6 +123,13 @@ namespace _Scripts.Systems.Patients
         private void Start()
         {
             GeneratePatient();
+        }
+
+        public void RecusePatient()
+        {
+            PatientsEvents.OnOrderDisableCall();
+            currentPatient.SetState(PatientState.Leaving);
+            StartCoroutine(Arrived(currentPatient, currentPatientNPC));
         }
     }
 }
