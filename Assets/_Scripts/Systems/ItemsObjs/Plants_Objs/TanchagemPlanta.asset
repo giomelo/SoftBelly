@@ -22,16 +22,16 @@ MonoBehaviour:
       Alergia, Infec\xE7\xE3o na garganta, hemorragia"
   MedicalSymptoms: 34820
   DriedPlant:
-    DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
+    DriedPlantImage: {fileID: 21300000, guid: 3f4399109425916498fae6b42be70449, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
   SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: 76b4232ffd990fc4d88c8a10f154e73a, type: 3}
+    SmashedPlantImage: {fileID: 21300000, guid: 261443ad3e84bcd4a834ec32c4e9318a, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
   MixedPlant:
     MixedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
     MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
   PotionStuff:
-    PotionSprite: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
+    PotionSprite: {fileID: 21300000, guid: 982e6a3cf24e16f4ea363f4d0abe8e49, type: 3}
   BurnedPlant:
-    BurnedPlantImage: {fileID: 21300000, guid: 71315b40dc1f7584688cabac766c3611, type: 3}
+    BurnedPlantImage: {fileID: 21300000, guid: aa8a9096338f00542b0b117301fda088, type: 3}
   MachineList: 

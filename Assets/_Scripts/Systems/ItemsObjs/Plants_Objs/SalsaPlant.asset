@@ -22,16 +22,16 @@ MonoBehaviour:
       Elimina\xE7\xE3o de toxinas, Anemia"
   MedicalSymptoms: 4104
   DriedPlant:
-    DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
+    DriedPlantImage: {fileID: 21300000, guid: fffdcd23cf9e40e4d9a71edbf01d442d, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
   SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: 76b4232ffd990fc4d88c8a10f154e73a, type: 3}
+    SmashedPlantImage: {fileID: 21300000, guid: d198ef83f2dd4bb46aaaa4aaf34b388c, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
   MixedPlant:
-    MixedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
+    MixedPlantImage: {fileID: 21300000, guid: e5bdcef8910e4764cbce3995edb8f72a, type: 3}
     MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
   PotionStuff:
-    PotionSprite: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
+    PotionSprite: {fileID: 21300000, guid: 7372dff7ee609a84695a328dd90425b4, type: 3}
   BurnedPlant:
-    BurnedPlantImage: {fileID: 21300000, guid: 71315b40dc1f7584688cabac766c3611, type: 3}
+    BurnedPlantImage: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   MachineList: 

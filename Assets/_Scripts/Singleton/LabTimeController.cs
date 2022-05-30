@@ -121,6 +121,16 @@ namespace _Scripts.Singleton
             
             
         }
+
+        public void PrintLabTimer()
+        {
+            foreach (var x in LabTimer)
+            {
+                
+                Debug.LogWarning(x.Key + " " + x.Value);
+                Debug.LogWarning(LabTimer.Count);
+            }
+        }
         public IEnumerator WorkMachine(MachineHolder machine)
         {
             yield return new WaitForSeconds(1f);

@@ -68,6 +68,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         private void SetSlotsLabTimer()
         {
+            LabTimeController.Instance.HerbIngredientsSlot.Clear();
             foreach (var slot in IngredientsSlots)
             {
                 LabTimeController.Instance.HerbIngredientsSlot.Add(slot.Slot.MachineSlot);
@@ -138,10 +139,17 @@ namespace _Scripts.Systems.Lab.Machines
             //test if has to remove machine here
             slot.SetType(MachineSlotType.Ingredient);
             RemovePlantObject(slot.Slot.slotId);
+            LabTimeController.Instance.PrintLabTimer();
             if (CheckIfCollectedAllResults())
             {
                 SetState(MachineState.Empty);
+                  
+                if (LabTimeController.Instance.LabTimer.ContainsKey(LabEvents.CurrentMachine.MachineId))
+                {
+                    LabTimeController.Instance.LabTimer.Remove(LabEvents.CurrentMachine.MachineId);
+                }
             }
+            LabTimeController.Instance.PrintLabTimer();
         }
     }
 }

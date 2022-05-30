@@ -101,6 +101,11 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 LabTimeController.Instance.LabTimer.Remove(MachineId);
                 SetState(MachineState.Empty);
+                  
+                if (LabTimeController.Instance.LabTimer.ContainsKey(LabEvents.CurrentMachine.MachineId))
+                {
+                    LabTimeController.Instance.LabTimer.Remove(LabEvents.CurrentMachine.MachineId);
+                }
             }
         }
         private void SetSlotsLabTimer()

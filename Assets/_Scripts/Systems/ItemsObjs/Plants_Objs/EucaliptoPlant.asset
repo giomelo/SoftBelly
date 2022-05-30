@@ -22,16 +22,16 @@ MonoBehaviour:
       Febre, Asma"
   MedicalSymptoms: 131074
   DriedPlant:
-    DriedPlantImage: {fileID: 21300000, guid: ff60849bcac2ec240aeb4e06553461ee, type: 3}
+    DriedPlantImage: {fileID: 21300000, guid: d6668924f6e627842abb098d8ad60bbe, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
   SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: 76b4232ffd990fc4d88c8a10f154e73a, type: 3}
+    SmashedPlantImage: {fileID: 21300000, guid: 1a6cc38df3b86294692077cd5b3d9bdc, type: 3}
     SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
   MixedPlant:
-    MixedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
+    MixedPlantImage: {fileID: 21300000, guid: e3b8156b497233f44bff6f1a9140dc41, type: 3}
     MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
   PotionStuff:
-    PotionSprite: {fileID: 21300000, guid: fffe2fca5fdbc7643a6adbe13b4e6871, type: 3}
+    PotionSprite: {fileID: 21300000, guid: dd503e13e60520249952b7b49ac2b3b3, type: 3}
   BurnedPlant:
-    BurnedPlantImage: {fileID: 21300000, guid: 71315b40dc1f7584688cabac766c3611, type: 3}
+    BurnedPlantImage: {fileID: 21300000, guid: 8af04a0c1be7f2443b87477476c50849, type: 3}
   MachineList: 

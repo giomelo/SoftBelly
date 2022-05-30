@@ -47,7 +47,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             base.Start();
             progressBar.Maximum = _hitsNecessaries;
             CanHit = true;
-            resetButton.onClick.AddListener(RestartMachine);
+            resetButton.onClick.AddListener(Reset);
         }
 
         public override void OnEnable()
@@ -118,6 +118,13 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
            ResetText();
            ResetBar();
            _currentHits = 0;
+        }
+
+        private void Reset()
+        {
+            ResetText();
+            ResetBar();
+            _currentHits = 0;
         }
 
         private void DeleteObject()
@@ -204,6 +211,11 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             if (CheckIfCollectedAllResults())
             {
                 SetState(MachineState.Empty);
+                  
+                if (LabTimeController.Instance.LabTimer.ContainsKey(LabEvents.CurrentMachine.MachineId))
+                {
+                    LabTimeController.Instance.LabTimer.Remove(LabEvents.CurrentMachine.MachineId);
+                }
             }
         }
 
