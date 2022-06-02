@@ -27,6 +27,7 @@ namespace _Scripts.UI
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);
+        
         }
         private void Update()
         {
@@ -42,8 +43,10 @@ namespace _Scripts.UI
         
         public void PauseButton(ButtonsComponents button)
         {
+            
             switch (button.Button)
             {
+                
                 case UI.PauseButton.Controlls:
                     Debug.Log("Contorle");
                     controllsObj.SetActive(true);
@@ -61,6 +64,8 @@ namespace _Scripts.UI
                     currentMenu.SetActive(false);
                     break;
                 case UI.PauseButton.MainMenu:
+                    pauseObj.SetActive(false);
+                    Time.timeScale = 1;
                     ScreenFlow.Instance.LoadScene("Menu");
                     break;
                 case UI.PauseButton.Exit:
