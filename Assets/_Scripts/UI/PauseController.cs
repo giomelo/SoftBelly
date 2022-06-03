@@ -23,12 +23,7 @@ namespace _Scripts.UI
         [SerializeField]
         private GameObject optionsObj;
         private GameObject currentMenu;
-
-        private void Start()
-        {
-            DontDestroyOnLoad(this.gameObject);
         
-        }
         private void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Escape)) return;

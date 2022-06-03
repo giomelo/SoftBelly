@@ -58,6 +58,7 @@ namespace _Scripts.UI
         [SerializeField]
         private List<SlotBase> allSlots = new List<SlotBase>();
 
+        private int _limetedPos = 1520;
         private void Start()
         {
             if (_slotsCreated) return;
@@ -74,7 +75,6 @@ namespace _Scripts.UI
         private void OnEnable()
         {
             PlantEvents.OnPlotSelected += DisplayInventory;
-            PlantEvents.LabInventoryAction += AddHarvestedPlant;
             LabEvents.OnChestSelected += DisplayInventory;
             LabEvents.OnItemRemoved += RemoveItemAllInventoryTypes;
         }
@@ -82,7 +82,6 @@ namespace _Scripts.UI
         private void OnDisable()
         {
             PlantEvents.OnPlotSelected -= DisplayInventory;
-            PlantEvents.LabInventoryAction -= AddHarvestedPlant;
             LabEvents.OnChestSelected -= DisplayInventory;
             LabEvents.OnItemRemoved -= RemoveItemAllInventoryTypes;
         }
@@ -149,7 +148,11 @@ namespace _Scripts.UI
         private void UpdateSlots(SlotBase slot, int index)
         {
             slot.AddSubject(this);
-        
+            if (!_slotsCreated)
+            {
+                slot.uiSlot.slotId = _currentSlot;
+                _currentSlot++;
+            }
             if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
 
             if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
@@ -157,15 +160,14 @@ namespace _Scripts.UI
                 slot.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
                 slot.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
                 slot.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
-                if (_slotsCreated) return;
                 
-                slot.uiSlot.slotId = _currentSlot;
-                _currentSlot++;
+
             }
             else
             {
                 ResetSlot(slot);
             }
+            
         }
 
         /// <summary>
@@ -207,21 +209,30 @@ namespace _Scripts.UI
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(GameObject item, Transform local, ItemBehaviour itemS)
+        public void DisplayCurrentProprieties(GameObject item, GameObject local, ItemBehaviour itemS)
         {
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
             GameObject aux = null;
-            var position = local.transform.position;
-            var pos = new Vector3(position.x + xOffsetProprieties, position.y - yOffsetProprieties, 0);
+            int sinal = 1;
+            Transform rect = local.GetComponent<Transform>();
+            var position = rect.position;
+            if (position.x >= _limetedPos)
+            {
+                sinal = -1;
+            }
+            else
+            {
+                sinal = 1;
+            }
+            var pos = new Vector3(position.x + xOffsetProprieties * sinal, position.y - yOffsetProprieties, 0);
             foreach (GameObject go in poolProprieties)
             {
                 if (go.name == $"{item.name}(Clone)")
                 {
                     aux = go;
                 }
-                
             }
             
             if (aux == null)
@@ -249,13 +260,13 @@ namespace _Scripts.UI
             }
         }
 
-        private void AddHarvestedPlant(int id)
-        {
-            if (StorageHolder.Storage.storageId != id) return;
-            Debug.LogWarning("AddedPLant");
-            StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
-            StorageHolder.UpdateExposedInventory();
-        }
+        // private void AddHarvestedPlant(InventoryType type)
+        // {
+        //     if (StorageHolder.Storage.InventoryType != type) return;
+        //     Debug.LogWarning("AddedPLant");
+        //     StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
+        //     StorageHolder.UpdateExposedInventory();
+        // }
         
         //remove em todos os inventários da cena o item
         private void RemoveItemAllInventoryTypes(int key, int amount, InventoryType type)

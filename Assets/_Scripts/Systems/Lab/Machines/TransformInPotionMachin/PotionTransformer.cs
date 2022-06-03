@@ -46,7 +46,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                 }
 
                 potion.name = currentPlant.ItemId + " Potion ";
-                string symtoms = GenerateSymtompsDescription(currentPlant.MedicalSymptoms);
+                string symtoms = GenerateSymptomsDescription(currentPlant.MedicalSymptoms);
                 Debug.Log(symtoms);
                 PotionType type;
                 if(mixedPlant == null)
@@ -76,15 +76,19 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
             
         }
 
-        private string GenerateSymtompsDescription(MedicalSymptoms symptoms)
+        private string GenerateSymptomsDescription(List<SymptomsNivel> symptoms)
         {
             string returnvalue = "";
-            foreach (var value in Enum.GetValues(typeof(MedicalSymptoms)))
+            foreach (var value in symptoms)
             {
-                if (!symptoms.HasFlag((MedicalSymptoms) value)) continue;
-                Console.WriteLine((MedicalSymptoms) value);
-                returnvalue += " " + (MedicalSymptoms) value;
+                returnvalue += " " + value.Symptoms + "-" + value.Nivel;
             }
+            // foreach (var value in Enum.GetValues(typeof(MedicalSymptoms)))
+            // {
+            //     if (!symptoms.HasFlag((MedicalSymptoms) value)) continue;
+            //     Console.WriteLine((MedicalSymptoms) value);
+            //     returnvalue += " " + (MedicalSymptoms) value;
+            // }
 
             return returnvalue;
         }

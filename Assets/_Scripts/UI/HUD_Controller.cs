@@ -12,7 +12,6 @@ namespace _Scripts.UI
 
         private void Start()
         {
-            DontDestroyOnLoad(this.gameObject);
             UpdateMoneyText();
         }
 

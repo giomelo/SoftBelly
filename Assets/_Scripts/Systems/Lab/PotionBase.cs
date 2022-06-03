@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.MixPanMachine;
+using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab
@@ -9,9 +11,9 @@ namespace _Scripts.Systems.Lab
     [CreateAssetMenu(fileName = "Potion", menuName = "Item/Potion")]
     public class PotionBase : ItemBehaviour
     {
-        public MedicalSymptoms Cure;
+        public List<SymptomsNivel> Cure = new List<SymptomsNivel>();
         public PotionType PotionType;
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, MedicalSymptoms cure, PotionType potionType)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<SymptomsNivel> cure, PotionType potionType)
         {
             ItemId = id;
             ItemType = itemType;
@@ -31,7 +33,7 @@ namespace _Scripts.Systems.Lab
         /// <returns></returns>
         public bool CheckIfPortionHasCure(MedicalSymptoms symptom)
         {
-            return Cure.HasFlag(symptom);
+            return Cure.Any(s => s.Symptoms == symptom);
         }
 
         public bool CheckIfPotionIsType(PotionType type)

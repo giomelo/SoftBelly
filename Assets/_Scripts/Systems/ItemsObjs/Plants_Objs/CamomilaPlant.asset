@@ -21,7 +21,23 @@ MonoBehaviour:
     ItemProprietiesDescription: "Camomila Planta temperatura: < 100\xB0C\nPropriedades:
       Dor de cabe\xE7a, Alergia, Ansiedade, Dor no dente, Nauseas, Insonia, Estresse,
       Hemorragia"
-  MedicalSymptoms: 34645
+  MedicalSymptoms:
+  - Symptoms: 1
+    Nivel: 1
+  - Symptoms: 4
+    Nivel: 1
+  - Symptoms: 16
+    Nivel: 1
+  - Symptoms: 64
+    Nivel: 1
+  - Symptoms: 256
+    Nivel: 1
+  - Symptoms: 512
+    Nivel: 1
+  - Symptoms: 1024
+    Nivel: 1
+  - Symptoms: 32768
+    Nivel: 1
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: 341b02a4d10f75542bbbe81de896ad02, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}

@@ -39,15 +39,21 @@ namespace _Scripts.Systems.Plants.Bases
     {
         public Sprite PotionSprite;
     }
+    [Serializable]
+    public struct SymptomsNivel
+    {
+        public MedicalSymptoms Symptoms;
+        public SymtomsNivel Nivel;
+    }
+    
     /// <summary>
     /// Base class for creating plants as scriptables objects
     /// </summary>
     [CreateAssetMenu(fileName = "Plant", menuName = "Item/Plant")]
     public class PlantBase : ItemBehaviour
     {
-        [Header("Plant Stuff")] 
-        [EnumFlags]
-        public MedicalSymptoms MedicalSymptoms;
+        [Header("Plant Stuff")]
+        public List<SymptomsNivel> MedicalSymptoms;
         public DriedPlant DriedPlant;
         public SmashedPlant SmashedPlant;
         public MixedPlant MixedPlant;
@@ -66,7 +72,7 @@ namespace _Scripts.Systems.Plants.Bases
             if (type == MachinesTypes.Nothing) return;
             MachineList.Add(type);
         }
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BurnedPlant burnedPlant, MixedPlant mixedPlant, DriedPlant driedPlant, PotionStuff potion, SmashedPlant smashedPlant, MedicalSymptoms medicalSymptoms)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BurnedPlant burnedPlant, MixedPlant mixedPlant, DriedPlant driedPlant, PotionStuff potion, SmashedPlant smashedPlant, List<SymptomsNivel> medicalSymptoms)
         {
             ItemId = id;
             ItemType = itemType;

@@ -10,11 +10,6 @@ namespace _Scripts.Systems.Lab
         private List<GameObject> pags;
         [SerializeField]
         private GameObject bookLayer;
-
-        private void Start()
-        {
-            DontDestroyOnLoad(this.gameObject);
-        } 
         private void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Tab)) return;

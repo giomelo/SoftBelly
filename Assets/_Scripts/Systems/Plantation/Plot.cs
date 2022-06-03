@@ -169,13 +169,16 @@ namespace _Scripts.Systems.Plantation
             PlantTimeController.Instance.ClearSlot(PlotId);
             StartCoroutine(ClearPlot());
 
-            if (!IsDead)
+            if (IsDead)
+            {
+                IsDead = false;
+            }
+            else
             {
                 GridSystem.Instance.labStorage.Storage.AddItem(1, PlantEvents.PlantCollected);
-                //PlantEvents.OnLabInventoryAction(1);
-             
+                PlantEvents.OnLabInventoryAction();
             }
-            
+
         }
         
         /// <summary>

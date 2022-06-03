@@ -20,7 +20,11 @@ MonoBehaviour:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
     ItemProprietiesDescription: "Salsa Planta temperatura: < 100\xB0C\nPropriedades:
       Elimina\xE7\xE3o de toxinas, Anemia"
-  MedicalSymptoms: 4104
+  MedicalSymptoms:
+  - Symptoms: 8
+    Nivel: 1
+  - Symptoms: 4096
+    Nivel: 1
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: fffdcd23cf9e40e4d9a71edbf01d442d, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}

@@ -28,7 +28,7 @@ namespace _Scripts.UI
             }
 
             if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
-            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.transform, uiSlot.item);
+            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.gameObject, uiSlot.item);
            
         }
         
