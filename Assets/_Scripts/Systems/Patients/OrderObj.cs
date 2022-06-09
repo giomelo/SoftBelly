@@ -10,7 +10,6 @@ namespace _Scripts.Systems.Patients
     {
         public MedicalSymptoms Order;
         public Sprite OrderSprite;
-        public GameObject Object;
         [TextArea]
         public string OrderDescription;
         public int Money;

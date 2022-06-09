@@ -12,11 +12,6 @@ namespace _Scripts.Systems.Patients
         public OrderObj Order;
         public PatientState State { get; private set; }
 
-        private void DisplayOrder()
-        {
-            Order.Object.SetActive(true);
-        }
-
         public void SetOrder()
         {
             PatientsController.Instance.GenerateRandomOrder(ref Order);
@@ -29,8 +24,7 @@ namespace _Scripts.Systems.Patients
 
         public void OnTriggerEnter(Collider other)
         {
-            if(State != PatientState.Waiting) return;
-            DisplayOrder();
+            if (State != PatientState.Waiting) return;
             PatientsEvents.OnOrderViewCall(this);
         }
 
