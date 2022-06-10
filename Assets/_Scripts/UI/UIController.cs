@@ -127,8 +127,8 @@ namespace _Scripts.UI
                 var position = startPosition.position;
                 var pos = new Vector3(position.x ,position.y, position.z);
             
-                var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
-                slotInstance.transform.SetParent(slotDisplay);
+                var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity, slotDisplay);
+                //slotInstance.transform.SetParent(slotDisplay);
                 if (slotInstance.TryGetComponent<SlotBase>(out var slotScript))
                 {
                     allSlots.Add(slotScript);

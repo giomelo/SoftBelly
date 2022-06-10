@@ -3367,8 +3367,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1180379128}
   - {fileID: 695123643}
+  - {fileID: 1180379128}
   - {fileID: 1911862402}
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -3994,13 +3994,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1979233263}
   startPosition: {fileID: 519211133}
-  slotPrefab: {fileID: 9206015739198898211, guid: a707dc806c8798a468a512c9377aaa0a, type: 3}
+  slotPrefab: {fileID: 4984015946969901778, guid: 3b9e2819a20a32343936f82b47bf7f6b, type: 3}
   slotDisplay: {fileID: 677312869}
   inventoryId: 1
   inventoryType: 1
   poolProprieties: []
   xOffsetProprieties: 210
-  yOffsetProprieties: 80
+  yOffsetProprieties: 130
   showButton: {fileID: 0}
   allSlots: []
 --- !u!4 &695123643
@@ -4017,7 +4017,7 @@ Transform:
   m_Children:
   - {fileID: 1979233264}
   m_Father: {fileID: 583638247}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &715745439
 GameObject:
@@ -4205,7 +4205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355544881067145102, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6355544881067145102, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9058,8 +9058,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 90, y: 90}
-  m_Spacing: {x: 10, y: 40}
+  m_CellSize: {x: 103.5, y: 90}
+  m_Spacing: {x: 12.6, y: 66.07}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1813786841
@@ -10326,7 +10326,7 @@ MonoBehaviour:
   inventoryType: 1
   poolProprieties: []
   xOffsetProprieties: 210
-  yOffsetProprieties: 80
+  yOffsetProprieties: 130
   showButton: {fileID: 0}
   allSlots: []
 --- !u!1 &1923549922
