@@ -21,6 +21,7 @@ namespace _Scripts.UI
         
         public void MouseEnter()
         {
+            Debug.Log("Enter");
             if (uiSlot.item == null)
             {
                 _subject.ResetCurrentProprieties();
@@ -34,6 +35,7 @@ namespace _Scripts.UI
         
         public void MouseExit()
         {
+            Debug.Log("Exit");
             _subject.ResetCurrentProprieties();
         }
     }

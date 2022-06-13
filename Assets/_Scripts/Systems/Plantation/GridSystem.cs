@@ -29,8 +29,9 @@ namespace Systems.Plantation
         private GameObject plot;
 
         public static int PlotsId = 0;
-
+        
         public List<Plot> Plots = new List<Plot>();
+        [HideInInspector]
         public StorageHolder labStorage;
 
 

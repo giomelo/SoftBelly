@@ -59,6 +59,7 @@ namespace _Scripts.UI
         private List<SlotBase> allSlots = new List<SlotBase>();
 
         private int _limetedPos = 1520;
+
         private void Start()
         {
             if (_slotsCreated) return;
@@ -216,8 +217,11 @@ namespace _Scripts.UI
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
             GameObject aux = null;
             int sinal = 1;
-            Transform rect = local.GetComponent<Transform>();
+            RectTransform rect = local.GetComponent<RectTransform>();
+
             var position = rect.position;
+            float xOffset = xOffsetProprieties * Screen.width/2;
+            float yOffset = yOffsetProprieties * Screen.height/2;
             if (position.x >= _limetedPos)
             {
                 sinal = -1;
@@ -226,7 +230,7 @@ namespace _Scripts.UI
             {
                 sinal = 1;
             }
-            var pos = new Vector3(position.x + xOffsetProprieties * sinal, position.y - yOffsetProprieties, 0);
+            var pos = new Vector3(position.x + xOffset * sinal, position.y - yOffset, 0);
             foreach (GameObject go in poolProprieties)
             {
                 if (go.name == $"{item.name}(Clone)")
