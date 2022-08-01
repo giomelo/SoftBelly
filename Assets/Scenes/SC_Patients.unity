@@ -7628,7 +7628,7 @@ GameObject:
   - component: {fileID: 670559089}
   - component: {fileID: 670559088}
   m_Layer: 5
-  m_Name: Recusar (1)
+  m_Name: Entregar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7701,7 +7701,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 253345584}
         m_TargetAssemblyTypeName: _Scripts.Systems.Patients.PatientsController, Assembly-CSharp
-        m_MethodName: RecusePatient
+        m_MethodName: DeliverOrder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11260,7 +11260,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7793297, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

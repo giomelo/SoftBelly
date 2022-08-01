@@ -149,5 +149,10 @@ namespace _Scripts.Systems.Patients
             currentPatient.SetState(PatientState.Leaving);
             StartCoroutine(Arrived(currentPatient, currentPatientNPC));
         }
+
+        public void DeliverOrder()
+        {
+            PatientsEvents.OnOrderDeliveredCall(currentPatient);
+        }
     }
 }
