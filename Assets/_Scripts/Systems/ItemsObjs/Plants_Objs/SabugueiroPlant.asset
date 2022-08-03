@@ -22,7 +22,7 @@ MonoBehaviour:
       Febre, Alergia, Elimina\xE7\xE3o de toxinas"
   MedicalSymptoms:
   - Symptoms: 2
-    Nivel: 1
+    Nivel: 2
   - Symptoms: 4
     Nivel: 1
   - Symptoms: 8
