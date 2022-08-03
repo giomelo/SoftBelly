@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aniamtion : MonoBehaviour
+public class Animation : MonoBehaviour
 {
     [SerializeField]  Animator aniamtor;
     void OnEnable()
