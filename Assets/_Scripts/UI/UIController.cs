@@ -47,11 +47,11 @@ namespace _Scripts.UI
         [SerializeField]
         private List<GameObject> poolProprieties = new List<GameObject>();
         
-        [SerializeField]
+        
         [Header("Offset for display proprieties")]
-        private float xOffsetProprieties = 210f;
-        [SerializeField]
-        private float yOffsetProprieties = 80f;
+        private float xOffsetProprieties = 0.3f;
+       
+        private float yOffsetProprieties = 0.3f;
         [Header("Show invenotry button")]
         [SerializeField]
         private GameObject showButton; // show invenotry button
