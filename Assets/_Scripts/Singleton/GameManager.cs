@@ -12,5 +12,6 @@ namespace _Scripts.Singleton
     {
         public Camera MainCamera;
         public CineMachineSwitcher camSwitcher;
+        public Transform Player;
     }
 }
