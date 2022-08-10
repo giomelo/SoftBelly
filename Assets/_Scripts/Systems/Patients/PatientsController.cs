@@ -123,14 +123,14 @@ namespace _Scripts.Systems.Patients
 
         private void Start()
         {
-            if (PatientsEvents.HasPatient)
-            {
-                SetPatient();
-            }
-            else
-            {
-                GeneratePatient();
-            }
+            // if (PatientsEvents.HasPatient)
+            // {
+            //     SetPatient();
+            // }
+            // else
+            // {
+            //     GeneratePatient();
+            // }
         }
 
         private void SetPatient()

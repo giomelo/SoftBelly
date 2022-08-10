@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e2f7d9e5f95c81f45bc8d22a4a40a9f2, type: 2}
 --- !u!1001 &3366803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +133,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (131)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -964,6 +968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1192,7 +1200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &30303446
 MonoBehaviour:
@@ -1219,7 +1227,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &33611014
 PrefabInstance:
@@ -1231,6 +1239,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (186)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -1510,7 +1522,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &36855718
 RectTransform:
@@ -1852,6 +1864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -2114,6 +2130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (148)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 148
@@ -2175,6 +2195,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (177)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -2244,7 +2268,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &50698646
 RectTransform:
@@ -2722,7 +2746,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!20 &59587562
 Camera:
@@ -2816,13 +2840,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59587561}
-  m_LocalRotation: {x: 0.4666547, y: 0.0033229515, z: -0.0017532964, w: 0.88443166}
-  m_LocalPosition: {x: -78.92, y: 22.009998, z: 30.03001}
+  m_LocalRotation: {x: 0.4666547, y: 0.003322982, z: -0.0017533125, w: 0.88443166}
+  m_LocalPosition: {x: -78.92, y: 24.169998, z: 30.03001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 32.183, y: 2.192, z: -14.073}
 --- !u!1 &60371190
 GameObject:
@@ -3385,6 +3409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -3446,6 +3474,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (189)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -3543,6 +3575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3604,6 +3640,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (119)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -3782,6 +3822,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (115)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -3979,6 +4023,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (153)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 153
@@ -4040,6 +4088,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -4171,141 +4223,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120516391}
   m_CullTransparentMesh: 1
---- !u!1 &122295905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 122295906}
-  - component: {fileID: 122295908}
-  - component: {fileID: 122295907}
-  m_Layer: 5
-  m_Name: Text (TMP) (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &122295906
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122295905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1104931922}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 664, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &122295907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122295905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Luas:'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &122295908
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122295905}
-  m_CullTransparentMesh: 1
 --- !u!1001 &138624938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4316,6 +4233,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (114)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -4379,6 +4300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (146)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 146
@@ -4439,7 +4364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6690513753953016344, guid: e76bc18254cc9a645b4c4040fa184161, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6690513753953016344, guid: e76bc18254cc9a645b4c4040fa184161, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4485,6 +4410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen Flow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6690513753953016350, guid: e76bc18254cc9a645b4c4040fa184161, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6690513753953016351, guid: e76bc18254cc9a645b4c4040fa184161, type: 3}
       propertyPath: Slider
       value: 
@@ -4520,7 +4449,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &147956520
 RectTransform:
@@ -4732,141 +4661,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148943562}
   m_CullTransparentMesh: 1
---- !u!1 &150243898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 150243901}
-  - component: {fileID: 150243900}
-  - component: {fileID: 150243899}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &150243899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150243898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 000
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &150243900
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150243898}
-  m_CullTransparentMesh: 1
---- !u!224 &150243901
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150243898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1104931922}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -525, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &162673596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,6 +5136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -5403,6 +5201,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -5896,6 +5698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (117)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 117
@@ -6031,6 +5837,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (87)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -6283,7 +6093,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &216285878
 RectTransform:
@@ -6500,7 +6310,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &232055375
 RectTransform:
@@ -6792,6 +6602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -6936,6 +6750,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -7119,11 +6937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016549319938292867, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9072215535831817979, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
@@ -7142,6 +6960,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -7599,6 +7421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -7739,6 +7565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -7800,6 +7630,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -7941,6 +7775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -8002,6 +7840,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (171)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -8149,6 +7991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (109)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 109
@@ -8210,6 +8056,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (144)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -8496,7 +8346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515244561366524215, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_Name
@@ -8504,7 +8354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
@@ -8523,6 +8373,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (158)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -9000,6 +8854,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -9486,6 +9344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (162)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 162
@@ -9625,6 +9487,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (138)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -9774,7 +9640,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &352449266
 RectTransform:
@@ -10060,11 +9926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016549319938292867, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9072215535831817979, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
@@ -10297,6 +10163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -10395,6 +10265,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (147)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -10801,76 +10675,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391010109}
   m_CullTransparentMesh: 1
---- !u!1001 &393356512
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1147405589}
-    m_Modifications:
-    - target: {fileID: 994128095610453638, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_Name
-      value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453641, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: gravity
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.874448
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4006597
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20.284828
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 994128095610453647, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 59587562}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
---- !u!4 &393356513 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 994128095610453642, guid: a38552ee3c168ea408904e3ea626dbb6, type: 3}
-  m_PrefabInstance: {fileID: 393356512}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395314768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11006,126 +10810,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395314768}
   m_CullTransparentMesh: 1
---- !u!1 &399888194
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 399888199}
-  - component: {fileID: 399888198}
-  - component: {fileID: 399888197}
-  - component: {fileID: 399888196}
-  - component: {fileID: 399888195}
-  m_Layer: 5
-  m_Name: HudCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &399888195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399888194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a5ce06cb1af714bbc8dc68928cd66a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyText: {fileID: 957007592}
---- !u!114 &399888196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399888194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &399888197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399888194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 900}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &399888198
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399888194}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &399888199
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399888194}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 957007594}
-  - {fileID: 1664487046}
-  - {fileID: 1908148461}
-  - {fileID: 510576697}
-  - {fileID: 670612571}
-  - {fileID: 1629384927}
-  m_Father: {fileID: 1147405589}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &401190849
 GameObject:
   m_ObjectHideFlags: 0
@@ -11344,6 +11028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (145)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 145
@@ -11482,6 +11170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -11543,6 +11235,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (126)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -11606,6 +11302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (139)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 139
@@ -11667,6 +11367,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -12297,7 +12001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6501036127499568607, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8783611549757286521, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_Name
@@ -12305,7 +12009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8783611549757286521, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8817865185448960981, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_RootOrder
@@ -12368,6 +12072,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -12558,6 +12266,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (100)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -12816,7 +12528,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &470691414
 RectTransform:
@@ -12833,7 +12545,7 @@ RectTransform:
   - {fileID: 583596947}
   - {fileID: 783988946}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12996,7 +12708,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &481475141
 MonoBehaviour:
@@ -13051,7 +12763,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &481758915
 PrefabInstance:
@@ -13063,6 +12775,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (154)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -13131,7 +12847,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &482077169
 RectTransform:
@@ -13375,6 +13091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -13437,6 +13157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -13497,7 +13221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3791726364315524097, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3791726364315524097, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13539,9 +13263,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7515244561366524215, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_Name
       value: Frasco 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
@@ -13584,141 +13316,6 @@ Transform:
   m_Father: {fileID: 188889750}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &510576696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 510576697}
-  - component: {fileID: 510576699}
-  - component: {fileID: 510576698}
-  m_Layer: 5
-  m_Name: MoonText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &510576697
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510576696}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 664, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &510576698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510576696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Moons:'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &510576699
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510576696}
-  m_CullTransparentMesh: 1
 --- !u!1 &511191334
 GameObject:
   m_ObjectHideFlags: 0
@@ -13816,7 +13413,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &515740000
 RectTransform:
@@ -13988,6 +13585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (150)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 150
@@ -14085,6 +13686,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -14233,7 +13838,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &534316561
 RectTransform:
@@ -14409,7 +14014,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &537172311
 RectTransform:
@@ -14621,6 +14226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -14682,6 +14291,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -15090,6 +14703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (182)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 182
@@ -15150,7 +14767,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924831887998398745, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 924831887998398745, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_LocalScale.x
@@ -15207,6 +14824,14 @@ PrefabInstance:
     - target: {fileID: 8016549319938292867, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
       propertyPath: m_Name
       value: Frasco Vermelho
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016549319938292867, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072215535831817979, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6625bb03213ce4e84a86350c535ba3, type: 3}
@@ -15363,6 +14988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -15424,6 +15053,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (157)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -15490,7 +15123,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &583596947
 RectTransform:
@@ -15631,6 +15264,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -16227,7 +15864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3071600520591961880, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3071600520591961880, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -16280,6 +15917,14 @@ PrefabInstance:
     - target: {fileID: 5275312717731914370, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_Name
       value: Frasco Azul
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275312717731914370, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598853325173145850, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
@@ -16342,6 +15987,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (90)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -16517,7 +16166,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -16533,7 +16182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611451314}
-  m_LocalRotation: {x: 0.2771227, y: 0.018374974, z: -0.0053007365, w: 0.96064425}
+  m_LocalRotation: {x: 0.2771227, y: 0.018374939, z: -0.0053007263, w: 0.96064425}
   m_LocalPosition: {x: -6.962166, y: 5.0668716, z: -3.389295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16754,6 +16403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -16815,6 +16468,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (164)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -16878,6 +16535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (141)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 141
@@ -16940,6 +16601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -17001,6 +16666,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (183)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -17127,7 +16796,7 @@ Transform:
   - {fileID: 442485458}
   - {fileID: 319826481}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632289577
 GameObject:
@@ -17175,6 +16844,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (135)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -17442,6 +17115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (122)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 122
@@ -17636,6 +17313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (124)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 124
@@ -17703,7 +17384,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &650836441
 RectTransform:
@@ -18041,6 +17722,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -18410,6 +18095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (104)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 104
@@ -18586,141 +18275,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4325084358764199272, guid: fad9255fa42476940a8ee6722ceef345, type: 3}
   m_PrefabInstance: {fileID: 670523758}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &670612570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 670612571}
-  - component: {fileID: 670612573}
-  - component: {fileID: 670612572}
-  m_Layer: 5
-  m_Name: Reputation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &670612571
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670612570}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455, y: 295.99997}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &670612572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670612570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 000
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &670612573
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670612570}
-  m_CullTransparentMesh: 1
 --- !u!1001 &675960369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18731,6 +18285,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -19027,6 +18585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (106)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 106
@@ -19143,11 +18705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4702574865768944192, guid: 11ae387e403da63418d2fe9149b398ad, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6045128365437726776, guid: 11ae387e403da63418d2fe9149b398ad, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ae387e403da63418d2fe9149b398ad, type: 3}
@@ -19455,7 +19017,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &703424393
 RectTransform:
@@ -19653,6 +19215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (121)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 121
@@ -19749,7 +19315,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &710680692
 RectTransform:
@@ -19868,6 +19434,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -20114,6 +19684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -20175,6 +19749,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (128)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -20242,7 +19820,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &728938183
 MonoBehaviour:
@@ -20269,7 +19847,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &729679430
 PrefabInstance:
@@ -20281,6 +19859,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (95)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -20518,6 +20100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (173)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 173
@@ -20579,6 +20165,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -20801,6 +20391,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (143)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -21031,6 +20625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -21092,6 +20690,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (156)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -21281,6 +20883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (181)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 181
@@ -21342,6 +20948,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (176)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -21481,9 +21091,33 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6355544879329583925, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544879524107575, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544879639901321, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544880284243008, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6355544880284243009, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 8.100098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544880356722730, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544880589638463, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6355544881067145089, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_Name
@@ -21492,6 +21126,10 @@ PrefabInstance:
     - target: {fileID: 6355544881067145089, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355544881067145089, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6355544881067145102, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_Pivot.x
@@ -21589,6 +21227,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6355544881112471134, guid: 820ba661f711182429226b96acfa70e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6355544881112471135, guid: 820ba661f711182429226b96acfa70e0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -21637,6 +21279,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -22079,6 +21725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (88)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 88
@@ -22236,6 +21886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -22301,7 +21955,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &818989492
 RectTransform:
@@ -22342,7 +21996,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &819213167
 Transform:
@@ -22357,7 +22011,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822587290
 GameObject:
@@ -22525,6 +22179,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -22725,6 +22383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (136)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 136
@@ -22822,7 +22484,6 @@ Transform:
   - {fileID: 891127914}
   - {fileID: 1450416965}
   - {fileID: 1400415575}
-  - {fileID: 1104931922}
   m_Father: {fileID: 700330538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22974,6 +22635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (127)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 127
@@ -23101,6 +22766,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (172)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -23445,7 +23114,7 @@ Transform:
   - {fileID: 900191474}
   - {fileID: 1731024278}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858093165
 GameObject:
@@ -23611,6 +23280,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -24089,6 +23762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -24547,7 +24224,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881535105}
-  m_LocalRotation: {x: 0.4666547, y: 0.0033229515, z: -0.0017532964, w: 0.88443166}
+  m_LocalRotation: {x: 0.4666547, y: 0.003322982, z: -0.0017533125, w: 0.88443166}
   m_LocalPosition: {x: -2.8870654, y: 26.432577, z: -17.202763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24888,7 +24565,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &889483901
 RectTransform:
@@ -25064,7 +24741,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -25099,6 +24776,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (118)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -25321,7 +25002,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &899467356
 RectTransform:
@@ -25453,6 +25134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (194)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 194
@@ -25522,7 +25207,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &900621694
 RectTransform:
@@ -25663,6 +25348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -25724,6 +25413,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (113)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -26071,6 +25764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -26132,6 +25829,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -26617,7 +26318,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &943502872
 Transform:
@@ -26645,7 +26346,7 @@ Transform:
   - {fileID: 256842990}
   - {fileID: 1331041379}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &954090639
 PrefabInstance:
@@ -26657,6 +26358,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -26709,141 +26414,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
   m_PrefabInstance: {fileID: 954090639}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &957007591
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 957007594}
-  - component: {fileID: 957007593}
-  - component: {fileID: 957007592}
-  m_Layer: 5
-  m_Name: MoneyText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &957007592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957007591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 000
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &957007593
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957007591}
-  m_CullTransparentMesh: 1
---- !u!224 &957007594
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957007591}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -525, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &965277670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26946,6 +26516,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -27282,6 +26856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (151)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 151
@@ -27465,6 +27043,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (174)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -27844,6 +27426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -27997,6 +27583,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (133)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -28279,6 +27869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (163)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 163
@@ -28419,6 +28013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -28486,7 +28084,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1024937974
 RectTransform:
@@ -28649,6 +28247,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (101)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -29188,6 +28790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (180)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 180
@@ -29257,7 +28863,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1056603872
 RectTransform:
@@ -29398,6 +29004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -29465,7 +29075,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1065395558
 RectTransform:
@@ -29762,7 +29372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2664299600276240846, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8950267027618019302, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_RootOrder
@@ -29818,7 +29428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9150175160943470376, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
@@ -29837,6 +29447,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -29991,6 +29605,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -30294,124 +29912,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1104931917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1104931922}
-  - component: {fileID: 1104931921}
-  - component: {fileID: 1104931920}
-  - component: {fileID: 1104931919}
-  - component: {fileID: 1104931918}
-  m_Layer: 5
-  m_Name: HudCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1104931918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104931917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a5ce06cb1af714bbc8dc68928cd66a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyText: {fileID: 150243899}
---- !u!114 &1104931919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104931917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1104931920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104931917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 900}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1104931921
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104931917}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &1104931922
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104931917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 150243901}
-  - {fileID: 2146522572}
-  - {fileID: 1641444409}
-  - {fileID: 122295906}
-  m_Father: {fileID: 834851063}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1105437525
 GameObject:
   m_ObjectHideFlags: 0
@@ -30428,7 +29928,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1105437526
 RectTransform:
@@ -30646,7 +30146,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1113802230
 RectTransform:
@@ -30843,7 +30343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515244561366524215, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_Name
@@ -30851,7 +30351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8411851456098713306, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c464ba0cc17cd42ba60746bd99b32f, type: 3}
@@ -31003,7 +30503,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1128615045
 MonoBehaviour:
@@ -31733,7 +31233,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1147405589
 Transform:
@@ -31743,11 +31243,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147405588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.9, y: 4.7, z: -45.4}
+  m_LocalPosition: {x: 82.9, y: 2.54, z: -45.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 393356513}
   - {fileID: 508861540}
   - {fileID: 1337680244}
   - {fileID: 570591505}
@@ -31769,7 +31268,6 @@ Transform:
   - {fileID: 2019810667}
   - {fileID: 1770603485}
   - {fileID: 30303447}
-  - {fileID: 399888199}
   - {fileID: 1772688754}
   - {fileID: 1398504212}
   - {fileID: 1199520363}
@@ -31940,7 +31438,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1148278548
 RectTransform:
@@ -32187,6 +31685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (191)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 191
@@ -32326,6 +31828,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (116)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -32524,6 +32030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (94)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -32586,6 +32096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -32647,6 +32161,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -32716,7 +32234,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1175200892
 RectTransform:
@@ -32985,6 +32503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (108)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 108
@@ -33212,7 +32734,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1199520363
 Transform:
@@ -33227,7 +32749,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 25
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1203812134
 PrefabInstance:
@@ -33239,6 +32761,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (97)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -33431,7 +32957,7 @@ Transform:
   - {fileID: 1515100672}
   - {fileID: 1809901550}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208584141
 GameObject:
@@ -33720,6 +33246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 70
@@ -33781,6 +33311,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (123)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -33844,6 +33378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -33905,6 +33443,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (192)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -34183,6 +33725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -34250,7 +33796,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1233382687
 RectTransform:
@@ -34513,7 +34059,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239208009}
-  m_LocalRotation: {x: 0.4666547, y: 0.0033229515, z: -0.0017532964, w: 0.88443166}
+  m_LocalRotation: {x: 0.4666547, y: 0.003322982, z: -0.0017533125, w: 0.88443166}
   m_LocalPosition: {x: -105.42, y: 14.209999, z: -7.949287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34758,6 +34304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -34942,6 +34492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 102
@@ -35079,6 +34633,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -35339,6 +34897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -35407,7 +34969,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1276906829
 RectTransform:
@@ -35840,6 +35402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -35902,6 +35468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (140)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 140
@@ -35963,6 +35533,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (96)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -36117,6 +35691,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (105)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -36900,6 +36478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (85)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 85
@@ -37295,6 +36877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -37356,6 +36942,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (167)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -37419,6 +37009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -37480,6 +37074,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (193)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -37543,6 +37141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (120)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 120
@@ -37605,6 +37207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -37666,6 +37272,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (190)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -37804,6 +37414,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -38119,7 +37733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2664299600276240846, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8950267027618019302, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_RootOrder
@@ -38175,7 +37789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9150175160943470376, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb078eef2ceb4d47bd0941381c57272, type: 3}
@@ -38199,7 +37813,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1331311379
 MonoBehaviour:
@@ -38219,8 +37833,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 393356513}
-  m_Follow: {fileID: 393356513}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
@@ -38230,7 +37844,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38253,7 +37867,7 @@ Transform:
   m_Children:
   - {fileID: 1585718997}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!1 &1331806126
 GameObject:
@@ -38451,7 +38065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_LocalScale.x
@@ -38660,6 +38274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -38721,6 +38339,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (159)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -38885,7 +38507,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38901,7 +38523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362416649}
-  m_LocalRotation: {x: 0.4666547, y: 0.0033229515, z: -0.0017532964, w: 0.88443166}
+  m_LocalRotation: {x: 0.4666547, y: 0.003322982, z: -0.0017533125, w: 0.88443166}
   m_LocalPosition: {x: -2.8870654, y: 26.432577, z: -17.202763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39012,6 +38634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -39079,7 +38705,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1366362687
 RectTransform:
@@ -39248,6 +38874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -39309,6 +38939,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -39648,11 +39282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5275312717731914370, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6598853325173145850, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
@@ -39707,6 +39341,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (134)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -39777,7 +39415,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1398504208
 MonoBehaviour:
@@ -39871,7 +39509,7 @@ RectTransform:
   m_Children:
   - {fileID: 1767264900}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 24
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -40040,7 +39678,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40075,6 +39713,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (188)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -40274,6 +39916,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (155)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -40701,7 +40347,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &1415727192
 RectTransform:
@@ -40745,7 +40391,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1418699576
 RectTransform:
@@ -40877,6 +40523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (103)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 103
@@ -40978,6 +40628,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (152)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -41343,7 +40997,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783505, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -41377,7 +41031,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6501036127499568607, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8783611549757286521, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_Name
@@ -41385,7 +41039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8783611549757286521, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8817865185448960981, guid: 64e615b8b344ce04a997fd333e45a24c, type: 3}
       propertyPath: m_RootOrder
@@ -41664,6 +41318,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -42371,6 +42029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -42553,6 +42215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -42615,6 +42281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (86)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 86
@@ -42676,6 +42346,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (166)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -42967,6 +42641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -43105,6 +42783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (184)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 184
@@ -43171,7 +42853,7 @@ GameObject:
   m_TagString: Storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1508415410
 MonoBehaviour:
@@ -43208,7 +42890,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1514617888
 PrefabInstance:
@@ -43391,6 +43073,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (178)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -43959,6 +43645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (170)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 170
@@ -44096,6 +43786,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (185)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -45411,6 +45105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -45479,7 +45177,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1585718997
 Transform:
@@ -45622,11 +45320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5275312717731914370, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6598853325173145850, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65ccf09cfc9c8d4f888ae9f395d61ba, type: 3}
@@ -45962,6 +45660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (112)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -46023,6 +45725,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -46195,143 +45901,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4217417393691972513, guid: 0ff4b191b5334c54da23b8086fb72cd9, type: 3}
   m_PrefabInstance: {fileID: 1615820627}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1629384926
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1629384927}
-  - component: {fileID: 1629384929}
-  - component: {fileID: 1629384928}
-  m_Layer: 5
-  m_Name: ReputationText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1629384927
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629384926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -648, y: 296}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1629384928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629384926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Reputation
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1629384929
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629384926}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1630393175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46342,6 +45911,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (160)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -46404,6 +45977,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (129)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -46847,141 +46424,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639557854}
-  m_CullTransparentMesh: 1
---- !u!1 &1641444408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1641444409}
-  - component: {fileID: 1641444411}
-  - component: {fileID: 1641444410}
-  m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1641444409
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641444408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1104931922}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784.9999, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1641444410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641444408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 000
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1641444411
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641444408}
   m_CullTransparentMesh: 1
 --- !u!1001 &1642215675
 PrefabInstance:
@@ -47914,143 +47356,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1664487045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1664487046}
-  - component: {fileID: 1664487048}
-  - component: {fileID: 1664487047}
-  m_Layer: 5
-  m_Name: Money
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1664487046
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664487045}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -646, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1664487047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664487045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Money:
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1664487048
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664487045}
-  m_CullTransparentMesh: 1
 --- !u!1 &1665581054
 GameObject:
   m_ObjectHideFlags: 0
@@ -48471,6 +47776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -48773,6 +48082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (165)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 165
@@ -48969,6 +48282,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (175)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -49940,6 +49257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (195)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 195
@@ -50164,6 +49485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (107)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 107
@@ -50341,7 +49666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2025556673163358486, guid: 06876ea96005de94c98ea615b8f7dd3c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3937892677426864813, guid: 06876ea96005de94c98ea615b8f7dd3c, type: 3}
       propertyPath: m_Name
@@ -50349,7 +49674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937892677426864813, guid: 06876ea96005de94c98ea615b8f7dd3c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6299519599445428646, guid: 06876ea96005de94c98ea615b8f7dd3c, type: 3}
       propertyPath: m_RootOrder
@@ -50424,6 +49749,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -50544,7 +49873,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &1767264900
 RectTransform:
@@ -50582,7 +49911,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1770603485
 Transform:
@@ -50597,7 +49926,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770745002
 GameObject:
@@ -50651,7 +49980,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1772688750
 MonoBehaviour:
@@ -50744,7 +50073,7 @@ RectTransform:
   - {fileID: 1415727192}
   - {fileID: 36855718}
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -50941,6 +50270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (187)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 187
@@ -51002,6 +50335,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (137)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -51303,9 +50640,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1147405589}
     m_Modifications:
+    - target: {fileID: 621832519656100516, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243432941226794949, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006021463524734355, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059417562068080064, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4959413512239763519, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4959413512239763519, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
       propertyPath: m_LocalScale.x
@@ -51362,6 +50715,10 @@ PrefabInstance:
     - target: {fileID: 5735528724684769925, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
       propertyPath: m_Name
       value: RWChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735528724684769925, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1a2b1c63d478a442acdfcba69a271ae, type: 3}
@@ -51765,6 +51122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -51902,6 +51263,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (130)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -52829,6 +52194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (111)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 111
@@ -52890,6 +52259,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -53090,6 +52463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -53157,7 +52534,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1854228002
 RectTransform:
@@ -53491,6 +52868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -53552,6 +52933,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -53754,6 +53139,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -54547,7 +53936,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1904437060
 MonoBehaviour:
@@ -54574,7 +53963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1904852229
 PrefabInstance:
@@ -54586,6 +53975,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (91)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -54717,141 +54110,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907400119}
-  m_CullTransparentMesh: 1
---- !u!1 &1908148460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1908148461}
-  - component: {fileID: 1908148463}
-  - component: {fileID: 1908148462}
-  m_Layer: 5
-  m_Name: Moons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1908148461
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908148460}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399888199}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784.9999, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1908148462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908148460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 000
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1908148463
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908148460}
   m_CullTransparentMesh: 1
 --- !u!1 &1911862400
 GameObject:
@@ -55163,7 +54421,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1925700506
 RectTransform:
@@ -55465,7 +54723,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1935414638
 RectTransform:
@@ -55924,6 +55182,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (142)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -56646,7 +55908,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1980572200
 RectTransform:
@@ -57012,7 +56274,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1989232644
 RectTransform:
@@ -57233,6 +56495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (179)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 179
@@ -57361,6 +56627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -57422,6 +56692,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -57569,7 +56843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &2019810666
 MonoBehaviour:
@@ -57596,7 +56870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023955563
 GameObject:
@@ -57776,6 +57050,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -58113,6 +57391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -58174,6 +57456,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -58273,6 +57559,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (125)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -58390,11 +57680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7625536318036610965, guid: 5577cd46edce15341a90b738570c212c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8896054253092777453, guid: 5577cd46edce15341a90b738570c212c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5577cd46edce15341a90b738570c212c, type: 3}
@@ -58418,7 +57708,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &2052892916
 MonoBehaviour:
@@ -58448,7 +57738,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147405589}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2056868540
 PrefabInstance:
@@ -58460,6 +57750,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (161)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -58522,6 +57816,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -58988,6 +58286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (169)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 169
@@ -59049,6 +58351,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (149)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -59343,6 +58649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -59440,6 +58750,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (110)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -59549,6 +58863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (132)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -59610,6 +58928,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (168)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -59767,6 +59089,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -60167,6 +59493,10 @@ PrefabInstance:
     - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
@@ -60689,6 +60019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaoDePedra_LoPo (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 7131726799472565989, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7616478749227369567, guid: 108e1ec38cc82be4d9f72e1a1fb006b9, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -60806,143 +60140,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1247523580205908000, guid: e3e96e76c4a2fcd4bae8c15e8004d2e2, type: 3}
   m_PrefabInstance: {fileID: 2142808910}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2146522571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2146522572}
-  - component: {fileID: 2146522574}
-  - component: {fileID: 2146522573}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2146522572
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146522571}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1104931922}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -646, y: 369}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2146522573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146522571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Money:
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &2146522574
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146522571}
-  m_CullTransparentMesh: 1
 --- !u!4 &543450653645212587
 Transform:
   m_ObjectHideFlags: 0
