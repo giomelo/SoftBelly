@@ -16166,7 +16166,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24290,7 +24290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881535105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -24741,7 +24741,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -37844,7 +37844,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38062,6 +38062,18 @@ PrefabInstance:
     - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: scene
       value: SC_Lab_HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
+      propertyPath: cameraChanger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
+      propertyPath: cameraChanger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
+      propertyPath: cameraChanger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8597566823444321660, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: m_RootOrder
@@ -38507,7 +38519,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -39678,7 +39690,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40997,7 +41009,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783505, y: 1}
+    m_SensorSize: {x: 1.7786666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -60293,6 +60305,10 @@ PrefabInstance:
       propertyPath: scene
       value: SC_Lab_HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1927805688}
     - target: {fileID: 8597566823444321656, guid: 305ce1f698affc241abc9eb5d305c363, type: 3}
       propertyPath: position.x
       value: 97

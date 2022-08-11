@@ -16,7 +16,6 @@ namespace _Scripts.UI
     {
         private void OnSlotClicked()
         {
-         
             if (!LabEvents.IsMachineSlotSelected)
             {
                 return;

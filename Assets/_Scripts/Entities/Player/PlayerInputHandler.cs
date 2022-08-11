@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Lab;
@@ -36,8 +37,17 @@ namespace _Scripts.Entities.Player
         private Transform waterCanObj;
         [SerializeField]
         private Transform waterCanPlace;
-        
+        private static bool disableInput;
         #endregion
+
+        public static void DisableInputCall()
+        {
+            disableInput = true;
+        }
+        public static void EnableInputCall()
+        {
+            disableInput = false;
+        }
 
         private void Start()
         {
@@ -47,7 +57,8 @@ namespace _Scripts.Entities.Player
         // Update is called once per frame
         private void Update()
         {
-            HandleMovementInput();
+            if(!disableInput)
+                HandleMovementInput();
             WaterInput();
         }
     
