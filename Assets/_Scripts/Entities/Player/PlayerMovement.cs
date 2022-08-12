@@ -33,12 +33,10 @@ namespace _Scripts.Entities.Player
             //move.y += gravityValue * Time.deltaTime;
             _chController.Move(move * Time.deltaTime * _playerSpeed);
             Vector3 angle = new Vector3(move.x, 0, move.z);
-            if (move != Vector3.zero)
-            {
-                //gameObject.transform.forward = move;
-                Quaternion toRotation = Quaternion.LookRotation(angle, Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
-            }
+            if (move == Vector3.zero) return;
+            //gameObject.transform.forward = move;
+            Quaternion toRotation = Quaternion.LookRotation(angle, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
 
         }
     }

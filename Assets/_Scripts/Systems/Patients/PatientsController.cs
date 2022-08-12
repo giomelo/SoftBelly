@@ -133,6 +133,18 @@ namespace _Scripts.Systems.Patients
             // }
         }
 
+        public void Initialize()
+        {
+            if (PatientsEvents.HasPatient)
+            {
+                SetPatient();
+            }
+            else
+            {
+                //GeneratePatient();
+            }
+        }
+
         private void SetPatient()
         {
             var patient = Instantiate(patientPrefab, patientEnd.position, Quaternion.identity).transform;

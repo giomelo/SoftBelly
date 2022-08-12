@@ -19,6 +19,8 @@ namespace _Scripts.Helpers
         private CinemachineVirtualCamera potionCam;
         [SerializeField]
         private CinemachineVirtualCamera gardenCam;
+
+        public Camera mainLabcamera; 
         private bool _isOnWorld = false;
         private bool _isOnGarden = true;
 

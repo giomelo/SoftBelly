@@ -43,10 +43,12 @@ namespace _Scripts.Entities.Player
         public static void DisableInputCall()
         {
             disableInput = true;
+            Debug.LogWarning("disble");
         }
         public static void EnableInputCall()
         {
             disableInput = false;
+            Debug.LogWarning("enable");
         }
 
         private void Start()
@@ -58,7 +60,7 @@ namespace _Scripts.Entities.Player
         private void Update()
         {
             if(!disableInput)
-                HandleMovementInput();
+                 HandleMovementInput();
             WaterInput();
         }
     
@@ -79,11 +81,13 @@ namespace _Scripts.Entities.Player
         /// </summary>
         private void PlantInput()
         {
+            
             if (!Input.GetMouseButton(0)) return;
             Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         
             if (!Physics.Raycast(GameManager.Instance.MainCamera.transform.position, direction.direction, out hit,5000, CollisionLayer)) return;
+            Debug.Log("Ray");
             if (!CheckDistanceFromPlayer(hit.transform, Radius)) return;
  
                 switch (hit.transform.tag)
