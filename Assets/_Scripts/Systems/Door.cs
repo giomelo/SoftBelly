@@ -5,6 +5,7 @@ using _Scripts.Entities.Player;
 using _Scripts.Helpers;
 using _Scripts.Screen_Flow;
 using _Scripts.Singleton;
+using _Scripts.Store;
 using _Scripts.Systems.Patients;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +16,8 @@ namespace _Scripts.Systems
     {
         GARDEN,
         LAB,
-        PATIENTS
+        PATIENTS,
+        STORE
     }
     public class Door : MonoBehaviour
     {
@@ -30,6 +32,11 @@ namespace _Scripts.Systems
         
         private void OnTriggerEnter(Collider other)
         {
+           DoorCall();
+        }
+
+        public void DoorCall()
+        {
             //ScreenFlow.Instance.LoadScene(scene);
             PlayerInputHandler.DisableInputCall();
             GameManager.Instance.Player.position = position;
@@ -41,15 +48,18 @@ namespace _Scripts.Systems
                     GameManager.Instance.MainCamera = GameManager.Instance.camSwitcher.mainLabcamera;
                     break;
                 case DoorLocations.GARDEN:
-                    
+                    PlayerInputHandler.EnableInputCall();
+                    StoreController.Instance.StorageObject.SetActive(false);
                     break;
                 case DoorLocations.PATIENTS:
                     PatientsController.Instance.Initialize();
                     break;
-                
+                case DoorLocations.STORE:
+                    PlayerInputHandler.DisableInputCall();
+                    StoreController.Instance.StorageObject.SetActive(true);
+                    break;
             }
             //cameraChanger.Invoke();
-            
         }
 
         public IEnumerator BackInput()

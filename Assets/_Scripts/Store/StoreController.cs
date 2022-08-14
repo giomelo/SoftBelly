@@ -9,6 +9,7 @@ namespace _Scripts.Store
     public class StoreController : MonoSingleton<StoreController>
     {
         private StorageHolder StorageHolder;
+        public GameObject StorageObject;
 
         private void Start()
         {
