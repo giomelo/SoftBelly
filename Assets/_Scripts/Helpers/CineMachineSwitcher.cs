@@ -83,6 +83,7 @@ namespace _Scripts.Helpers
                 gardenCam.Priority = 2;
             }
             
+            _isOnWorld = true;
             _isOnGarden = !_isOnGarden;
         }
     }

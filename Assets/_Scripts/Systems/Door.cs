@@ -45,11 +45,10 @@ namespace _Scripts.Systems
                     break;
                 case DoorLocations.PATIENTS:
                     PatientsController.Instance.Initialize();
-                  
                     break;
                 
             }
-            cameraChanger.Invoke();
+            //cameraChanger.Invoke();
             
         }
 

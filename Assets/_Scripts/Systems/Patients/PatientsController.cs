@@ -137,11 +137,11 @@ namespace _Scripts.Systems.Patients
         {
             if (PatientsEvents.HasPatient)
             {
-                SetPatient();
+                //SetPatient();
             }
             else
             {
-                //GeneratePatient();
+                GeneratePatient();
             }
         }
 
