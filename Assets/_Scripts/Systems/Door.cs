@@ -40,18 +40,19 @@ namespace _Scripts.Systems
             //ScreenFlow.Instance.LoadScene(scene);
             PlayerInputHandler.DisableInputCall();
             GameManager.Instance.Player.position = position;
-            StartCoroutine(BackInput());
+         
             switch (doorTransport)
             {
                 // inicializar alguma coisa no ambiente
                 case DoorLocations.LAB:
+                    StartCoroutine(BackInput());
                     GameManager.Instance.MainCamera = GameManager.Instance.camSwitcher.mainLabcamera;
                     break;
                 case DoorLocations.GARDEN:
-                    PlayerInputHandler.EnableInputCall();
-                    StoreController.Instance.StorageObject.SetActive(false);
+                    StartCoroutine(BackInput());
                     break;
                 case DoorLocations.PATIENTS:
+                    StartCoroutine(BackInput());
                     PatientsController.Instance.Initialize();
                     break;
                 case DoorLocations.STORE:
@@ -66,7 +67,7 @@ namespace _Scripts.Systems
         {
             yield return new WaitForSeconds(1);
             PlayerInputHandler.EnableInputCall();
-            
+            StoreController.Instance.StorageObject.SetActive(false);
         }
     }
 }
