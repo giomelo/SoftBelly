@@ -50,7 +50,32 @@ namespace _Scripts.Systems.Patients
                 PossiblesOrders[index]
                     .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)] +
                 "Tipo: " + order.PotionType ;
+            order.Money = GenerateMoney(order.PotionType);
             PatientsEvents.CurrentOrder = order;
+        }
+
+        private int GenerateMoney(PotionType t)
+        {
+            switch (t)
+            {
+                case PotionType.Chá:
+                    return 10;
+                case PotionType.Cataplasma:
+                    return 20;
+                case PotionType.Infusao:
+                    return 20;
+                case PotionType.Maceração:
+                    return 30;
+                case PotionType.Vinho:
+                    return 40;
+                case PotionType.Xarope:
+                    return 40;
+                case PotionType.Wrong:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(t), t, null);
+            }
+            return 0;
         }
         
         //Instantiate patient

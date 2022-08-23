@@ -57,7 +57,7 @@ namespace _Scripts.UI
         private GameObject showButton; // show invenotry button
         [SerializeField]
         private List<SlotBase> allSlots = new List<SlotBase>();
-
+        [SerializeField]
         private int _limetedPos = 1520;
 
         private void Start()

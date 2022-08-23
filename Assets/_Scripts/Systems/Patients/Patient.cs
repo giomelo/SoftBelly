@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System;
+using System.Linq;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Lab;
+using _Scripts.Systems.Plants.Bases;
 using _Scripts.U_Variables;
 
 namespace _Scripts.Systems.Patients
@@ -10,6 +13,7 @@ namespace _Scripts.Systems.Patients
     public class Patient : NpcBase
     {
         public OrderObj Order;
+        private PotionBase _playerPotion = null;
         public PatientState State { get; private set; }
 
         public void SetOrder()
@@ -47,10 +51,10 @@ namespace _Scripts.Systems.Patients
         private void Deliver(Patient p)
         {
             Debug.Log("Entregado");
-            var item = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order, p.Order.PotionType);
-            if (item != null)
+            _playerPotion = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order, p.Order.PotionType);
+            if (_playerPotion != null)
             {
-                LabInventoryHolder.Instance.Storage.RemoveItem(item);
+                LabInventoryHolder.Instance.Storage.RemoveItem(_playerPotion);
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 SetState(PatientState.Leaving);
                 GiveMoney();
@@ -65,9 +69,30 @@ namespace _Scripts.Systems.Patients
 
         private void GiveMoney()
         {
-            UniversalVariables.Instance.ModifyMoney(Order.Money, true);
-        }
+            int initialMoney = Order.Money;
+            var aux = _playerPotion.Cure.Where(s => s.Symptoms == Order.Order);
+            SymptomsNivel s;
+            foreach (var i in aux)
+            {
+                s = i;
+            }
 
+            s.Nivel = (SymtomsNivel) 0;
+            switch (s.Nivel)
+            {
+                case SymtomsNivel.Medium:
+                    initialMoney += 10;
+                    break;
+                case SymtomsNivel.Strong:
+                    initialMoney += 20;
+                    break;
+            }
+            
+            UniversalVariables.Instance.ModifyMoney(initialMoney, true);
+        }
+        
+        
+        
         private void CheckState()
         {
             switch (State)

@@ -25,6 +25,16 @@ namespace _Scripts.Systems.Lab.Machines
         private List<GameObject> itemSmashed = new List<GameObject>();
         private readonly int _coolDown = 1;
         public bool CanHit = true;
+        [SerializeField]
+        private ProgressBar progressBar;
+        
+        public override void Start()
+        {
+            base.Start();
+            progressBar.Maximum = _hitsNecessaries;
+            CanHit = true;
+        }
+        
         
         public override void CreateResult()
         {
@@ -36,7 +46,7 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newSmashedPlant.name = currentPlant.ItemId + "Smashed";
-                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", IngredientsSlots[i].Slot.MachineSlot.item.ItemType, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name, currentPlant);
+                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", ItemType.Smashed, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name, currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newSmashedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -88,6 +98,8 @@ namespace _Scripts.Systems.Lab.Machines
             }
 
             itemSmashed.Clear();
+            _currentHits = 0;
+            ResetBar();
         }
         
         public void OnDisposeMachine()
@@ -100,11 +112,15 @@ namespace _Scripts.Systems.Lab.Machines
         public void AddHits()
         {
             _currentHits++;
+            progressBar.AddCurrentValue(1);
             if (_currentHits != _hitsNecessaries) return;
             MachineState = MachineState.Ready;
             CreateResult();
         }
-
+        private void ResetBar()
+        {
+            progressBar.SetCurrentValue(0);
+        }
         public override void OnEnable()
         {
             // LabEvents.OnMachineSelected += OnCLicked;
@@ -136,7 +152,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         protected override void InitMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCameraPestle();
+            //GameManager.Instance.camSwitcher.ChangeCameraPestle();
         }
         
         public override void CheckFinishMachine(BaseMachineSlot slot)

@@ -16,6 +16,7 @@ namespace _Scripts.Enums
         Garbage = 32,
         MixedPlant = 64,
         Burned = 128,
-        Dryed = 256
+        Dryed = 256,
+        Smashed = 512
     }
 }

@@ -110,6 +110,7 @@ namespace _Scripts.Entities.Player
                         }
                         break;
                     case "Chest":
+                        if (LabEvents.IsOnMachine) return;
                         LabEvents.OnChestSelectedCall(1);
                         break;
                     case "Machine":
