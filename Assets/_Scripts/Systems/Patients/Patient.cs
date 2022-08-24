@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
@@ -7,6 +9,8 @@ using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
 using _Scripts.U_Variables;
+using Random = UnityEngine.Random;
+using Time = _Scripts.U_Variables.Time;
 
 namespace _Scripts.Systems.Patients
 {
@@ -14,11 +18,30 @@ namespace _Scripts.Systems.Patients
     {
         public OrderObj Order;
         private PotionBase _playerPotion = null;
+
+        public Time TimeToEnter;
         public PatientState State { get; private set; }
 
         public void SetOrder()
         {
             PatientsController.Instance.GenerateRandomOrder(ref Order);
+        }
+
+        public IEnumerator CheckTime()
+        {
+            if (DaysController.Instance.time.Hours == TimeToEnter.Hours &&
+                DaysController.Instance.time.Minutes == TimeToEnter.Minutes)
+            {
+                SetState(PatientState.Entering);
+                StartCoroutine(PatientsController.Instance.Arrived(this, this));
+                yield break;
+            }
+            yield return new WaitForSeconds(1);
+            StartCoroutine(CheckTime());
+        }
+        public void SetTime()
+        {
+            TimeToEnter = DaysController.Instance.GenerateRandomTime();
         }
 
         public void Destroy()
@@ -98,7 +121,7 @@ namespace _Scripts.Systems.Patients
             switch (State)
             {
                 case PatientState.Entering:
-                    MoveToPosition(PatientsController.Instance.patientEnd.position);
+                    MoveToPosition(PatientsController.Instance.patientEnd[Random.Range(0, PatientsController.Instance.patientEnd.Length)].position);
                     break;
                 case PatientState.Waiting:
                     break;

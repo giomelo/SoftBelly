@@ -35,8 +35,8 @@ namespace _Scripts.UI
 
         public void UpdateTimeText()
         {
-            hoursText.text= DaysController.Instance.Hours.ToString("").PadLeft(2, '0');
-            secondsText.text= DaysController.Instance.Seconds.ToString("").PadLeft(2, '0');
+            hoursText.text= DaysController.Instance.time.Hours.ToString("").PadLeft(2, '0');
+            secondsText.text= DaysController.Instance.time.Minutes.ToString("").PadLeft(2, '0');
         }
     }
 }

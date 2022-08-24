@@ -9,6 +9,7 @@ namespace _Scripts.Systems.Patients
         public static Action<Patient> OnOrderView;
         public static Action OnOrderDisable;
         public static Action<Transform> OnPatientArrived;
+        public static Action StartDay;
 
         public static bool HasPatient;
         public static OrderObj CurrentOrder;
@@ -20,6 +21,10 @@ namespace _Scripts.Systems.Patients
         public static void OnOrderDeliveredCall(Patient p)
         {
             OnOrderDelivered?.Invoke(p);
+        }
+        public static void OnStartDayCall()
+        {
+            StartDay?.Invoke();
         }
 
         public static void OnOrderViewCall(Patient p)

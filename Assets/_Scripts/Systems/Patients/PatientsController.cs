@@ -22,7 +22,7 @@ namespace _Scripts.Systems.Patients
         [TextArea]
         public List<string> PossibleDescriptions;
     }
-    
+
     public class PatientsController : MonoSingleton<PatientsController>
     {
         public List<OrdersAndDescriptions> PossiblesOrders = new List<OrdersAndDescriptions>();
@@ -37,10 +37,14 @@ namespace _Scripts.Systems.Patients
         private GameObject patientPrefab;
         [SerializeField]
         public Transform patientStart;
-        public Transform patientEnd;
+        public Transform[] patientEnd;
         
         public Patient currentPatient;
         public NpcBase currentPatientNPC;
+        
+        private int amountOfPatients = 0;
+
+        private int amountOfPatientsDay = 10;
         public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
@@ -54,6 +58,7 @@ namespace _Scripts.Systems.Patients
             order.Money = GenerateMoney(order.PotionType);
             PatientsEvents.CurrentOrder = order;
         }
+
 
         private int GenerateMoney(PotionType t)
         {
@@ -94,10 +99,11 @@ namespace _Scripts.Systems.Patients
             currentPatient = patientScript;
             currentPatientNPC = npcScript;
             patientScript.SetOrder();
-            patientScript.SetState(PatientState.Entering);
-            StartCoroutine(Arrived(patientScript, npcScript));
+            patientScript.SetTime();
+            StartCoroutine(patientScript.CheckTime());
+            
         }
-        
+
         //Check if the agent arrived the destination
         // ReSharper disable Unity.PerformanceAnalysis
         public IEnumerator Arrived(Patient p, NpcBase npc)
@@ -137,12 +143,14 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderView += TypeWriteText;
             PatientsEvents.OnOrderDisable += DisableText;
             PatientsEvents.OnPatientArrived += InitializePatient;
+            PatientsEvents.StartDay += PatientsCall;
         }
         private void OnDisable()
         {
             PatientsEvents.OnOrderView -= TypeWriteText;
             PatientsEvents.OnOrderDisable -= DisableText;
             PatientsEvents.OnPatientArrived -= InitializePatient;
+            PatientsEvents.StartDay -= PatientsCall;
         }
 
         private void Start()
@@ -155,7 +163,21 @@ namespace _Scripts.Systems.Patients
             // {
             //     GeneratePatient();
             // }
+
+           
         }
+
+        private void PatientsCall()
+        {
+            
+            for (int i = 0; i < amountOfPatientsDay; i++)
+            {
+                // escolher uma hora do dia aleatoria para entrar
+                GeneratePatient();
+            }
+        }
+        
+        
 
         public void Initialize()
         {
@@ -168,10 +190,9 @@ namespace _Scripts.Systems.Patients
                 GeneratePatient();
             }
         }
-
         private void SetPatient()
         {
-            var patient = Instantiate(patientPrefab, patientEnd.position, Quaternion.identity).transform;
+            var patient = Instantiate(patientPrefab, patientEnd[Random.Range(0,patientEnd.Length)].position, Quaternion.identity).transform;
             currentPatient = patient.GetComponent<Patient>();
             currentPatient.SetState(PatientState.Waiting);
             currentPatientNPC = patient.GetComponent<NpcBase>();
