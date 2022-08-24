@@ -6,6 +6,7 @@ using _Scripts.Enums;
 using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Item;
+using _Scripts.U_Variables;
 using _Scripts.UI;
 using TMPro;
 using UnityEngine;
@@ -110,12 +111,10 @@ namespace _Scripts.Systems.Patients
                     p.SetState(PatientState.Waiting);
                     yield break;
                 }
-                else
-                {
-                    p.Destroy();
-                    Invoke(nameof(GeneratePatient), Random.Range(0.5f, 4));
-                    yield break;
-                }
+
+                p.Destroy();
+                Invoke(nameof(GeneratePatient), Random.Range(0.5f, 4));
+                yield break;
 
             }
             StartCoroutine(Arrived(p, npc));
@@ -184,6 +183,7 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.HasPatient = false;
             PatientsEvents.OnOrderDisableCall();
             currentPatient.SetState(PatientState.Leaving);
+            UniversalVariables.Instance.ModifyReputation(10, false);
             StartCoroutine(Arrived(currentPatient, currentPatientNPC));
         }
 
