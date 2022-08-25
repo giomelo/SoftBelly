@@ -17,8 +17,7 @@ namespace _Scripts.Systems.Patients
     public class Patient : NpcBase
     {
         public OrderObj Order;
-        private PotionBase _playerPotion = null;
-
+        
         public Time TimeToEnter;
         public PatientState State { get; private set; }
 
@@ -33,7 +32,7 @@ namespace _Scripts.Systems.Patients
                 DaysController.Instance.time.Minutes == TimeToEnter.Minutes)
             {
                 SetState(PatientState.Entering);
-                StartCoroutine(PatientsController.Instance.Arrived(this, this));
+                StartCoroutine(Arrived());
                 yield break;
             }
             yield return new WaitForSeconds(1);
@@ -52,6 +51,8 @@ namespace _Scripts.Systems.Patients
         public void OnTriggerEnter(Collider other)
         {
             if (State != PatientState.Waiting) return;
+            PatientsEvents.CurrentOrder = this.Order;
+            PatientsController.Instance.currentPatient = this;
             PatientsEvents.OnOrderViewCall(this);
         }
 
@@ -63,57 +64,34 @@ namespace _Scripts.Systems.Patients
 
         private void OnEnable()
         {
-            PatientsEvents.OnOrderDelivered += Deliver;
+            
         }
 
         private void OnDisable()
         {
-            PatientsEvents.OnOrderDelivered -= Deliver;
-        }
-        //Called when the player clicks a patient
-        private void Deliver(Patient p)
-        {
-            Debug.Log("Entregado");
-            _playerPotion = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order, p.Order.PotionType);
-            if (_playerPotion != null)
-            {
-                LabInventoryHolder.Instance.Storage.RemoveItem(_playerPotion);
-                LabInventoryHolder.Instance.UpdateExposedInventory();
-                SetState(PatientState.Leaving);
-                GiveMoney();
-                PatientsEvents.HasPatient = false;
-                StartCoroutine(PatientsController.Instance.Arrived(PatientsController.Instance.currentPatient, PatientsController.Instance.currentPatientNPC));
-            }
-            else
-            {
-               //nao possui o item
-            }  
-        }
-
-        private void GiveMoney()
-        {
-            int initialMoney = Order.Money;
-            var aux = _playerPotion.Cure.Where(s => s.Symptoms == Order.Order);
-            SymptomsNivel s;
-            foreach (var i in aux)
-            {
-                s = i;
-            }
-
-            s.Nivel = (SymtomsNivel) 0;
-            switch (s.Nivel)
-            {
-                case SymtomsNivel.Medium:
-                    initialMoney += 10;
-                    break;
-                case SymtomsNivel.Strong:
-                    initialMoney += 20;
-                    break;
-            }
             
-            UniversalVariables.Instance.ModifyMoney(initialMoney, true);
+        }
+
+        public IEnumerator Arrived()
+        {
+            yield return new WaitForSeconds(1.0f);
+            Debug.Log("Check");
+            if (CheckIfIsInDestination())
+            {
+                if (State == PatientState.Entering)
+                {
+                    SetState(PatientState.Waiting);
+                    yield break;
+                }
+
+                Destroy();
+                yield break;
+
+            }
+            StartCoroutine(Arrived());
         }
         
+       
         
         
         private void CheckState()
@@ -121,12 +99,12 @@ namespace _Scripts.Systems.Patients
             switch (State)
             {
                 case PatientState.Entering:
-                    MoveToPosition(PatientsController.Instance.patientEnd[Random.Range(0, PatientsController.Instance.patientEnd.Length)].position);
+                    MoveToPosition(PatientsController.Instance.patientEnd[Random.Range(0, PatientsController.Instance.patientEnd.Length -1 )].position);
                     break;
                 case PatientState.Waiting:
                     break;
                 case PatientState.Leaving:
-                    MoveToPosition(PatientsController.Instance.patientStart.position);
+                    MoveToPosition(PatientsController.Instance.exit.position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -10,6 +10,7 @@ namespace _Scripts.Systems.Patients
         public static Action OnOrderDisable;
         public static Action<Transform> OnPatientArrived;
         public static Action StartDay;
+        public static bool Day { get; set; }
 
         public static bool HasPatient;
         public static OrderObj CurrentOrder;
@@ -24,6 +25,7 @@ namespace _Scripts.Systems.Patients
         }
         public static void OnStartDayCall()
         {
+            Day = true;
             StartDay?.Invoke();
         }
 

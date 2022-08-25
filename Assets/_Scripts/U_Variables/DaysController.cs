@@ -6,10 +6,11 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.U_Variables
 {
+    [Serializable]
     public struct Time
     {
-        public int Hours { get; set; }
-        public int Minutes { get; set; }
+        public int Hours;
+        public int Minutes;
 
         public Time(int hours, int minutes)
         {
@@ -49,9 +50,10 @@ namespace _Scripts.U_Variables
                 time.Hours = 0;
             }
 
-            if (time.Hours == startHourPatient)
+            if (time.Hours == startHourPatient && !PatientsEvents.Day)
             {
                 PatientsEvents.OnStartDayCall();
+                
             }
 
             HUD_Controller.Instance.UpdateTimeText();

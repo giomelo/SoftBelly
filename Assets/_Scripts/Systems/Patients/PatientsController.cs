@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
 using _Scripts.Helpers;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
+using _Scripts.Systems.Lab;
+using _Scripts.Systems.Plants.Bases;
 using _Scripts.U_Variables;
 using _Scripts.UI;
 using TMPro;
@@ -37,12 +41,15 @@ namespace _Scripts.Systems.Patients
         private GameObject patientPrefab;
         [SerializeField]
         public Transform patientStart;
+        [SerializeField]
+        public Transform exit;
         public Transform[] patientEnd;
         
         public Patient currentPatient;
-        public NpcBase currentPatientNPC;
-        
+
         private int amountOfPatients = 0;
+        private PotionBase _playerPotion = null;
+
 
         private int amountOfPatientsDay = 10;
         public void GenerateRandomOrder(ref OrderObj order)
@@ -94,10 +101,7 @@ namespace _Scripts.Systems.Patients
         //Set patient order and move to destination
         private void InitializePatient(Transform p)
         {
-            if (!p.TryGetComponent<NpcBase>(out var npcScript)) return;
             if (!p.TryGetComponent<Patient>(out var patientScript)) return;
-            currentPatient = patientScript;
-            currentPatientNPC = npcScript;
             patientScript.SetOrder();
             patientScript.SetTime();
             StartCoroutine(patientScript.CheckTime());
@@ -106,25 +110,7 @@ namespace _Scripts.Systems.Patients
 
         //Check if the agent arrived the destination
         // ReSharper disable Unity.PerformanceAnalysis
-        public IEnumerator Arrived(Patient p, NpcBase npc)
-        {
-            yield return new WaitForSeconds(1.0f);
-            Debug.Log("Check");
-            if (npc.CheckIfIsInDestination())
-            {
-                if (p.State == PatientState.Entering)
-                {
-                    p.SetState(PatientState.Waiting);
-                    yield break;
-                }
 
-                p.Destroy();
-                Invoke(nameof(GeneratePatient), Random.Range(0.5f, 4));
-                yield break;
-
-            }
-            StartCoroutine(Arrived(p, npc));
-        }
 
         private void TypeWriteText(Patient p)
         {
@@ -144,6 +130,7 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderDisable += DisableText;
             PatientsEvents.OnPatientArrived += InitializePatient;
             PatientsEvents.StartDay += PatientsCall;
+            PatientsEvents.OnOrderDelivered += Deliver;
         }
         private void OnDisable()
         {
@@ -151,6 +138,7 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderDisable -= DisableText;
             PatientsEvents.OnPatientArrived -= InitializePatient;
             PatientsEvents.StartDay -= PatientsCall;
+            PatientsEvents.OnOrderDelivered -= Deliver;
         }
 
         private void Start()
@@ -187,7 +175,7 @@ namespace _Scripts.Systems.Patients
             }
             else
             {
-                GeneratePatient();
+               // GeneratePatient();
             }
         }
         private void SetPatient()
@@ -195,7 +183,6 @@ namespace _Scripts.Systems.Patients
             var patient = Instantiate(patientPrefab, patientEnd[Random.Range(0,patientEnd.Length)].position, Quaternion.identity).transform;
             currentPatient = patient.GetComponent<Patient>();
             currentPatient.SetState(PatientState.Waiting);
-            currentPatientNPC = patient.GetComponent<NpcBase>();
             currentPatient.Order = PatientsEvents.CurrentOrder;
         }
 
@@ -205,8 +192,51 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderDisableCall();
             currentPatient.SetState(PatientState.Leaving);
             UniversalVariables.Instance.ModifyReputation(10, false);
-            StartCoroutine(Arrived(currentPatient, currentPatientNPC));
+            StartCoroutine(currentPatient.Arrived());
         }
+        //Called when the player clicks a patient
+        private void Deliver(Patient p)
+        {
+            Debug.Log("Entregado");
+            _playerPotion = LabInventoryHolder.Instance.Storage.CheckIfContainsKey(p.Order.Order, p.Order.PotionType);
+            if (_playerPotion != null)
+            {
+                LabInventoryHolder.Instance.Storage.RemoveItem(_playerPotion);
+                LabInventoryHolder.Instance.UpdateExposedInventory();
+                currentPatient.SetState(PatientState.Leaving);
+                GiveMoney();
+                PatientsEvents.HasPatient = false;
+                StartCoroutine(currentPatient.Arrived());
+            }
+            else
+            {
+                //nao possui o item
+            }  
+        }
+        private void GiveMoney()
+        {
+            int initialMoney = currentPatient.Order.Money;
+            var aux = _playerPotion.Cure.Where(s => s.Symptoms == currentPatient.Order.Order);
+            SymptomsNivel s;
+            foreach (var i in aux)
+            {
+                s = i;
+            }
+
+            s.Nivel = (SymtomsNivel) 0;
+            switch (s.Nivel)
+            {
+                case SymtomsNivel.Medium:
+                    initialMoney += 10;
+                    break;
+                case SymtomsNivel.Strong:
+                    initialMoney += 20;
+                    break;
+            }
+            
+            UniversalVariables.Instance.ModifyMoney(initialMoney, true);
+        }
+
 
         public void DeliverOrder()
         {
