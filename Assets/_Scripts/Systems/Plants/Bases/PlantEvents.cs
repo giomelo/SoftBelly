@@ -39,7 +39,7 @@ namespace _Scripts.Systems.Plants.Bases
 
         public static void OnLabInventoryAction()
         {
-            LabInventoryAction.Invoke();
+            LabInventoryAction?.Invoke();
         }
         public static void OnPlantedSelected()
         {

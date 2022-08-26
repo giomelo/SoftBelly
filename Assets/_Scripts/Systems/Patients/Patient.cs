@@ -51,7 +51,6 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderDisableCall();
         }
         
-
         public IEnumerator Arrived()
         {
             yield return new WaitForSeconds(1.0f);
