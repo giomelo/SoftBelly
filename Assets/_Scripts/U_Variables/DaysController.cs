@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Scripts.Singleton;
 using _Scripts.Systems.Patients;
 using _Scripts.UI;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace _Scripts.U_Variables
@@ -29,10 +31,31 @@ namespace _Scripts.U_Variables
 
         public Action DayChangeAction;
         public Action NightStartAction;
+        [SerializeField]
+        private List<Time> _patientsTime = new List<Time>();
 
-        public Time GenerateRandomTime()
+        public Time GenerateRandomTime(int minH, int maxH, int minM, int maxM)
         {
-            return new Time(Random.Range(8, 18), Random.Range(0, 59));
+            return new Time(Random.Range(minH, maxH), Random.Range(minM, maxM));
+        }
+
+        public void GeneratePatientsTimeList()
+        {
+            for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay; i++)
+            {
+                Time t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
+                _patientsTime.Add(t);
+            }
+        }
+
+        private void OnEnable()
+        {
+            PatientsEvents.StartDay += GeneratePatientsTimeList;
+        }
+
+        private void OnDisable()
+        {
+            PatientsEvents.StartDay -= GeneratePatientsTimeList;
         }
 
         private void CountTime()
@@ -53,7 +76,12 @@ namespace _Scripts.U_Variables
             if (time.Hours == startHourPatient && !PatientsEvents.Day)
             {
                 PatientsEvents.OnStartDayCall();
-                
+            }
+
+            if (_patientsTime.Contains(time))
+            {
+                PatientsController.Instance.GeneratePatient();
+                _patientsTime.Remove(time);
             }
 
             HUD_Controller.Instance.UpdateTimeText();

@@ -51,7 +51,7 @@ namespace _Scripts.Systems.Patients
         private PotionBase _playerPotion = null;
 
 
-        private int amountOfPatientsDay = 10;
+        public int amountOfPatientsDay = 10;
         public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
@@ -92,7 +92,7 @@ namespace _Scripts.Systems.Patients
         }
         
         //Instantiate patient
-        private void GeneratePatient()
+        public void GeneratePatient()
         {
             var patient = Instantiate(patientPrefab, patientStart.position, Quaternion.identity).transform;
             PatientsEvents.OnPatientArrivedCall(patient);
@@ -103,8 +103,8 @@ namespace _Scripts.Systems.Patients
         {
             if (!p.TryGetComponent<Patient>(out var patientScript)) return;
             patientScript.SetOrder();
-            patientScript.SetTime();
-            StartCoroutine(patientScript.CheckTime());
+            //patientScript.SetTime();
+            //StartCoroutine(patientScript.CheckTime());
             
         }
 
@@ -129,7 +129,7 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderView += TypeWriteText;
             PatientsEvents.OnOrderDisable += DisableText;
             PatientsEvents.OnPatientArrived += InitializePatient;
-            PatientsEvents.StartDay += PatientsCall;
+            //PatientsEvents.StartDay += PatientsCall;
             PatientsEvents.OnOrderDelivered += Deliver;
         }
         private void OnDisable()
@@ -137,7 +137,7 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.OnOrderView -= TypeWriteText;
             PatientsEvents.OnOrderDisable -= DisableText;
             PatientsEvents.OnPatientArrived -= InitializePatient;
-            PatientsEvents.StartDay -= PatientsCall;
+            //PatientsEvents.StartDay -= PatientsCall;
             PatientsEvents.OnOrderDelivered -= Deliver;
         }
 

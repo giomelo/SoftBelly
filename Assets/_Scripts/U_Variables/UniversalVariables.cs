@@ -8,7 +8,8 @@ namespace _Scripts.U_Variables
         //Variavél de dinheiro para a loja e venda das curas para os pacientes
         public static int Money { get; set; } = 100;
         public static int Reputation { get; set; } = 30;
-
+        public static float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
+        
         public void Start()
         {
             DontDestroyOnLoad(this.gameObject);

@@ -118,6 +118,7 @@ namespace _Scripts.Entities.Player
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
                         if (LabEvents.CurrentMachine == machineScript.CurrentMachine) return;
                         if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
+                        if (machineScript.CurrentMachine.IsLocked) return;
                         LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
                         break;
                     case "Patient":

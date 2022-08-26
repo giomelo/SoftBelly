@@ -17,8 +17,8 @@ namespace _Scripts.Systems.Patients
     public class Patient : NpcBase
     {
         public OrderObj Order;
-        
-        public Time TimeToEnter;
+
+        public SocialLabel label;
         public PatientState State { get; private set; }
 
         public void SetOrder()
@@ -26,21 +26,10 @@ namespace _Scripts.Systems.Patients
             PatientsController.Instance.GenerateRandomOrder(ref Order);
         }
 
-        public IEnumerator CheckTime()
+        private void Start()
         {
-            if (DaysController.Instance.time.Hours == TimeToEnter.Hours &&
-                DaysController.Instance.time.Minutes == TimeToEnter.Minutes)
-            {
-                SetState(PatientState.Entering);
-                StartCoroutine(Arrived());
-                yield break;
-            }
-            yield return new WaitForSeconds(1);
-            StartCoroutine(CheckTime());
-        }
-        public void SetTime()
-        {
-            TimeToEnter = DaysController.Instance.GenerateRandomTime();
+            SetState(PatientState.Entering);
+            StartCoroutine(Arrived());
         }
 
         public void Destroy()
@@ -61,16 +50,7 @@ namespace _Scripts.Systems.Patients
             if(State != PatientState.Waiting) return;
             PatientsEvents.OnOrderDisableCall();
         }
-
-        private void OnEnable()
-        {
-            
-        }
-
-        private void OnDisable()
-        {
-            
-        }
+        
 
         public IEnumerator Arrived()
         {

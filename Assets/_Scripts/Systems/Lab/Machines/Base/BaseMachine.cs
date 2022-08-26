@@ -37,6 +37,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public bool CanBurn;
         [SerializeField]
         protected MachinesTypes MachineTypes;
+
+        public bool IsLocked = false;
         public static void GenerateNewPropriets()
         {
             
