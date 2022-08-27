@@ -97,10 +97,10 @@ namespace _Scripts.Store
         public void ClickBuy(ItemBehaviour _item, float price)
         {
             
-            if (UniversalVariables.Money >= price)
+            if (UniversalVariables.Instance.Money >= price)
             {
                 UniversalVariables.Instance.ModifyMoney(price, false);
-                ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Money;
+                ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
                 ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
                 StoreController.Instance.AddItem(_item);
             }

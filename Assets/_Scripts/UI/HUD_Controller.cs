@@ -24,13 +24,13 @@ namespace _Scripts.UI
 
         public void UpdateMoneyText()
         {
-            moneyText.text = UniversalVariables.Money.ToString();
+            moneyText.text = UniversalVariables.Instance.Money.ToString();
         }
         
         
         public void UpdateReputationText()
         {
-            reputationText.text = UniversalVariables.Reputation.ToString();
+            reputationText.text = UniversalVariables.Instance.Reputation.ToString();
         }
 
         public void UpdateTimeText()
