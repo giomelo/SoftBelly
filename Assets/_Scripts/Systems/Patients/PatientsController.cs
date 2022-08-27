@@ -52,6 +52,9 @@ namespace _Scripts.Systems.Patients
 
 
         public int amountOfPatientsDay = 10;
+
+        public List<Patient> fila = new List<Patient>();
+        public bool HasPatient { get; set; }
         public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();
@@ -103,9 +106,11 @@ namespace _Scripts.Systems.Patients
         {
             if (!p.TryGetComponent<Patient>(out var patientScript)) return;
             patientScript.SetOrder();
+            if (fila.Contains(patientScript)) return;
+            fila.Add(patientScript);
             //patientScript.SetTime();
             //StartCoroutine(patientScript.CheckTime());
-            
+
         }
 
         //Check if the agent arrived the destination
@@ -191,8 +196,19 @@ namespace _Scripts.Systems.Patients
             PatientsEvents.HasPatient = false;
             PatientsEvents.OnOrderDisableCall();
             currentPatient.SetState(PatientState.Leaving);
+            fila.Remove(currentPatient);
+            UpdateLine();
+            
             UniversalVariables.Instance.ModifyReputation(10, false);
             StartCoroutine(currentPatient.Arrived());
+        }
+
+        private void UpdateLine()
+        {
+            for (int i = 0; i < fila.Count; i++)
+            {
+                fila[i].MoveToPosition(patientEnd[i].position);
+            }
         }
         //Called when the player clicks a patient
         private void Deliver(Patient p)
@@ -206,6 +222,8 @@ namespace _Scripts.Systems.Patients
                 currentPatient.SetState(PatientState.Leaving);
                 GiveMoney();
                 PatientsEvents.HasPatient = false;
+                fila.Remove(currentPatient);
+                UpdateLine();
                 StartCoroutine(currentPatient.Arrived());
             }
             else

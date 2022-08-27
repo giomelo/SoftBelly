@@ -47,7 +47,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.6131601
+  m_Radius: 3.34
   m_Height: 3.9318805
   m_Direction: 1
   m_Center: {x: 0.05714178, y: 0.3469727, z: -0.046405792}
@@ -67,11 +67,11 @@ MonoBehaviour:
   Order:
     Order: 0
     OrderSprite: {fileID: 0}
-    Object: {fileID: 7207621149209005852}
     OrderDescription: "Ol\xE1, quebrei minha perna ontem voc\xEA tem algo para os
       ossos ai?"
     Money: 20
     PotionType: 0
+  label: 0
 --- !u!136 &7207621148705051298
 CapsuleCollider:
   m_ObjectHideFlags: 0

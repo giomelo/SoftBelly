@@ -69,21 +69,19 @@ namespace _Scripts.Systems.Patients
             }
             StartCoroutine(Arrived());
         }
-        
-       
-        
-        
+
         private void CheckState()
         {
             switch (State)
             {
                 case PatientState.Entering:
-                    MoveToPosition(PatientsController.Instance.patientEnd[Random.Range(0, PatientsController.Instance.patientEnd.Length -1 )].position);
+                    MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count - 1].position);
                     break;
                 case PatientState.Waiting:
                     break;
                 case PatientState.Leaving:
                     MoveToPosition(PatientsController.Instance.exit.position);
+                    
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
