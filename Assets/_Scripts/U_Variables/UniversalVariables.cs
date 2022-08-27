@@ -6,8 +6,19 @@ namespace _Scripts.U_Variables
     public class UniversalVariables : MonoSingleton<UniversalVariables>
     {
         //Variavél de dinheiro para a loja e venda das curas para os pacientes
-        public static float Money { get; set; } = 100;
-        public static int Reputation { get; set; } = 30;
+        private float money = 100;
+
+        public float Money
+        {
+            get => money;
+            set { money = value; }
+        }
+        private int reputation = 30;
+        public int Reputation
+        {
+            get => reputation;
+            set { reputation = value; }
+        }
         public static float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
         
         public void Start()

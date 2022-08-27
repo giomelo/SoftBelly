@@ -40,10 +40,10 @@ public class Store : MonoBehaviour
 
     public void ClickBuy()
     {
-        if (UniversalVariables.Money >= Price)
+        if (UniversalVariables.Instance.Money >= Price)
         {
             UniversalVariables.Instance.ModifyMoney(Price, false);
-            ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Money;
+            ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
             ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
             StoreController.Instance.AddItem(_item);
         }

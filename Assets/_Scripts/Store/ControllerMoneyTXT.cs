@@ -15,7 +15,7 @@ namespace _Scripts.Store
         public void Start()
         {
             controllerMoneyTxt = this;
-            TxtMoney.text = "Money: " + UniversalVariables.Money;
+            TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
         }
     }
 }
