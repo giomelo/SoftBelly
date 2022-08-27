@@ -71,6 +71,7 @@ namespace _Scripts.U_Variables
             if (time.Hours == 24)
             {
                 time.Hours = 0;
+                _Scripts.Store.StoreController.Instance.UpdateItem();
             }
 
             if (time.Hours == startHourPatient && !PatientsEvents.Day)

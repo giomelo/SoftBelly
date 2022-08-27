@@ -11,8 +11,7 @@ using UnityEngine.UI;
 public class Store : MonoBehaviour
 {
     public int Price = 0;
-    [SerializeField]
-    private ItemBehaviour _item;
+    [SerializeField] private ItemBehaviour _item;
     public Text textoBtn;
     
     public void Start()
@@ -34,6 +33,9 @@ public class Store : MonoBehaviour
     public void UpdateItem(ItemBehaviour newItem)
     {
         _item = newItem;
+        
+        NameBtn();
+        UpdatePrice();
     }
 
     public void ClickBuy()
