@@ -17,6 +17,12 @@ namespace _Scripts.Systems.Lab.Machines
         public List<ItemObj> ingredients = new List<ItemObj>();
         [HideInInspector]
         public List<ItemObj> results = new List<ItemObj>();
+
+        private PlantTemperature currentTemperature = PlantTemperature.Low;
+        [SerializeField]
+        private Transform[] tempButtons = new Transform[3];
+        [SerializeField]
+        private Transform seta;
         
         // ReSharper disable Unity.PerformanceAnalysis
         public override void CreateResult()
@@ -80,6 +86,24 @@ namespace _Scripts.Systems.Lab.Machines
             {
                 IngredientsSlots[i].ResetSlot();
             }
+        }
+
+        public void ChangeTemperature(int temp)
+        {
+            currentTemperature = (PlantTemperature)temp;
+           
+            LookAtSeta(tempButtons[(int) currentTemperature]);
+        }
+
+        private void Start()
+        {
+            base.Start();
+            LookAtSeta(tempButtons[(int) currentTemperature]);
+        }
+
+        private void LookAtSeta(Transform pos)
+        {
+            seta.LookAt(pos);
         }
 
         public void Work()

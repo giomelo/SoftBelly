@@ -45,7 +45,13 @@ namespace _Scripts.Systems.Plants.Bases
         public MedicalSymptoms Symptoms;
         public SymtomsNivel Nivel;
     }
-    
+    [Serializable]
+    public enum PlantTemperature
+    {
+        Low = 0,
+        Medium = 1,
+        High =2
+    }
     /// <summary>
     /// Base class for creating plants as scriptables objects
     /// </summary>
@@ -60,7 +66,7 @@ namespace _Scripts.Systems.Plants.Bases
         public PotionStuff PotionStuff;
         public BurnedPlant BurnedPlant;
         [HideInInspector] public List<MachinesTypes> MachineList = new List<MachinesTypes>();
-
+        public PlantTemperature plantTemperature;
 
         private void OnEnable()
         {

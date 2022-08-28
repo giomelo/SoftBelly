@@ -10,7 +10,9 @@ namespace _Scripts.Systems.Patients
         public static Action OnOrderDisable;
         public static Action<Transform> OnPatientArrived;
         public static Action StartDay;
+        public static Action StartNight;
         public static bool Day { get; set; }
+        public static bool Night { get; set; }
 
         public static bool HasPatient;
         public static OrderObj CurrentOrder;
@@ -27,6 +29,12 @@ namespace _Scripts.Systems.Patients
         {
             Day = true;
             StartDay?.Invoke();
+        }
+        public static void OnStartNightCall()
+        {
+            Night = true;
+            Day = false;
+            StartNight?.Invoke();
         }
 
         public static void OnOrderViewCall(Patient p)

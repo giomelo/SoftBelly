@@ -48,6 +48,16 @@ namespace _Scripts.U_Variables
             }
         }
 
+        private void ChangeNightCall()
+        {
+            NightStartAction?.Invoke();
+        }
+        private void ChangeDayCall()
+        {
+            DayChangeAction?.Invoke();
+        }
+
+
         private void OnEnable()
         {
             PatientsEvents.StartDay += GeneratePatientsTimeList;
@@ -68,6 +78,11 @@ namespace _Scripts.U_Variables
                 time.Hours++;
             }
 
+            if (time.Hours == 6)
+            {
+                ChangeDayCall();
+            }
+
             if (time.Hours == 24)
             {
                 time.Hours = 0;
@@ -77,6 +92,12 @@ namespace _Scripts.U_Variables
             if (time.Hours == startHourPatient && !PatientsEvents.Day)
             {
                 PatientsEvents.OnStartDayCall();
+            }
+
+            if (time.Hours == finisHourPatients && !PatientsEvents.Night)
+            {
+                ChangeNightCall();
+                PatientsEvents.OnStartNightCall();
             }
 
             if (_patientsTime.Contains(time))
