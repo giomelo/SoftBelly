@@ -153,6 +153,51 @@ namespace _Scripts.Systems.Lab.Machines
 
         protected override void StartMachine()
         {
+            PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
+            if (currentPlant.plantTemperature != currentTemperature)
+            {
+                // selecionou temperatura errada
+                switch (currentPlant.plantTemperature)
+                {
+                    case PlantTemperature.Low:
+                        switch (currentTemperature)
+                        {
+                            case PlantTemperature.Medium:
+                                machineWorkingTime -= 3;
+                                break;
+                            case PlantTemperature.High:
+                                machineWorkingTime -= 4;
+                                BurnTime -= 2;
+                                break;
+                        }
+                        break;
+                    case PlantTemperature.Medium:
+                        switch (currentTemperature)
+                        {
+                            case PlantTemperature.Low:
+                                machineWorkingTime += 2;
+                                break;
+                            case PlantTemperature.High:
+                                machineWorkingTime -= 2;
+                                break;
+                        }
+                        break;
+                    case PlantTemperature.High:
+                        switch (currentTemperature)
+                        {
+                            case PlantTemperature.Low:
+                                machineWorkingTime += 5;
+                                BurnTime += 2;
+                                break;
+                            case PlantTemperature.Medium:
+                                machineWorkingTime += 3;
+                                break;
+                        }
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
             SetSlotsLabTimer();
             LabEvents.OnMachineStartedCall(this);
             StartTime();

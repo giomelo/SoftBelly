@@ -18,9 +18,9 @@ MonoBehaviour:
   Price: 20
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Tanchagem Planta temperatura: < 100\xB0C\nPropriedades:
+    ItemProprietiesDescription: "Tanchagem Planta temperatura: Baixa\nPropriedades:
       Alergia, Infec\xE7\xE3o na garganta, hemorragia"
-  MedicalSymptoms: 34820
+  MedicalSymptoms: []
   DriedPlant:
     DriedPlantImage: {fileID: 21300000, guid: 3f4399109425916498fae6b42be70449, type: 3}
     DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
@@ -35,3 +35,4 @@ MonoBehaviour:
   BurnedPlant:
     BurnedPlantImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   MachineList: 
+  plantTemperature: 0

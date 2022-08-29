@@ -18,8 +18,10 @@ MonoBehaviour:
   Price: 20
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Eucalipto Planta temperatura: < 100\xB0C\nPropriedades:
-      Febre, Asma"
+    ItemProprietiesDescription: 'Eucalipto Planta temperatura: Baixa
+
+      Propriedades:
+      Febre, Asma'
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 1
@@ -39,3 +41,4 @@ MonoBehaviour:
   BurnedPlant:
     BurnedPlantImage: {fileID: 21300000, guid: f5e30084347bb7e42b3b87805ef24f4c, type: 3}
   MachineList: 
+  plantTemperature: 0

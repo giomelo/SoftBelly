@@ -18,7 +18,7 @@ MonoBehaviour:
   Price: 30
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Camomila Planta temperatura: < 100\xB0C\nPropriedades:
+    ItemProprietiesDescription: "Camomila Planta temperatura: Baixa\nPropriedades:
       Dor de cabe\xE7a, Alergia, Ansiedade, Dor no dente, Nauseas, Insonia, Estresse,
       Hemorragia"
   MedicalSymptoms:
@@ -52,3 +52,4 @@ MonoBehaviour:
   BurnedPlant:
     BurnedPlantImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   MachineList: 
+  plantTemperature: 0
