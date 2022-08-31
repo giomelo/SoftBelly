@@ -33,6 +33,15 @@ namespace _Scripts.U_Variables
         public Action NightStartAction;
         [SerializeField]
         private List<Time> _patientsTime = new List<Time>();
+        [SerializeField]
+        private Light mainLight;
+        [SerializeField]
+        private Color dayColor;
+        [SerializeField]
+        private Color nightColor;
+
+        private bool changed;
+        private Color currentColor;
 
         public Time GenerateRandomTime(int minH, int maxH, int minM, int maxM)
         {
@@ -57,15 +66,42 @@ namespace _Scripts.U_Variables
             DayChangeAction?.Invoke();
         }
 
+        private void ChangeLightColor(Color color)
+        {
+            mainLight.color = Color.Lerp(mainLight.color, color, UnityEngine.Time.deltaTime/2);
+        }
+        private void ChangeLightColorNight()
+        {
+            Debug.Log("Noite");
+            currentColor = nightColor;
+            changed = true;
+        }
+        private void ChangeLightColorDay()
+        {
+            Debug.Log("Day");
+            currentColor = dayColor;
+            changed = true;
+        }
+        private void Update()
+        {
+            if (!changed) return;
 
+            ChangeLightColor(currentColor);
+            if(mainLight.color == currentColor)
+                changed = false;
+        }
         private void OnEnable()
         {
             PatientsEvents.StartDay += GeneratePatientsTimeList;
+            DayChangeAction += ChangeLightColorDay;
+            NightStartAction += ChangeLightColorNight;
         }
 
         private void OnDisable()
         {
             PatientsEvents.StartDay -= GeneratePatientsTimeList;
+            DayChangeAction -= ChangeLightColorDay;
+            NightStartAction -= ChangeLightColorNight;
         }
 
         private void CountTime()
@@ -112,6 +148,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             InvokeRepeating("CountTime", 1, 1);
+            ChangeNightCall();
         }
     }
 }

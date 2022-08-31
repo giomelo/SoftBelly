@@ -94,5 +94,19 @@ namespace _Scripts.Systems.Patients
             State = state;
             CheckState();
         }
+
+        private void OnEnable()
+        {
+            PatientsEvents.StartNight += Out;
+        }
+
+        private void OnDisable()
+        {
+            PatientsEvents.StartNight -= Out;
+        }
+        private void Out()
+        {
+            SetState(PatientState.Leaving);
+        }
     }
 }
