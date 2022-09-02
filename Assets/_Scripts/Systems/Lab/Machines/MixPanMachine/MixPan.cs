@@ -31,16 +31,17 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         [SerializeField]
         private Button resetButton;
 
-        public static Action<IngredientObj> OnIngredientAdd;
-        private Dictionary<IngredientObj, int> decoratorsAdded = new Dictionary<IngredientObj, int>(); //lista para adicionar todos os ingredientes
+        public static Action<IngredientToppingSO> OnIngredientAdd;
+        private Dictionary<IngredientToppingSO, int> decoratorsAdded = new Dictionary<IngredientToppingSO, int>(); //lista para adicionar todos os ingredientes
         [SerializeField]
         private ProgressBar progressBar;
 
-        private float _coolDown = 0.5f;
+        private float _coolDown = 0.3f;
         private int _currentHits;
-        private int _hitsNecessaries = 10;
+        private int _hitsNecessaries = 30;
 
         public bool CanHit { get; set; }
+        public bool Holding { get; set; }
 
         public override void Start()
         {
@@ -63,7 +64,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             LabEvents.OnItemMixed -= AddHits;
         }
 
-        private void AddText(IngredientObj ingredient)
+        private void AddText(IngredientToppingSO ingredient)
         {
             
             if (decoratorsAdded.ContainsKey(ingredient))
@@ -79,7 +80,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             decoratorsText.text = "";
             decoratorsAdded.Clear();
         }
-        public static void OnIngredientAddCall(IngredientObj i)
+        public static void OnIngredientAddCall(IngredientToppingSO i)
         {
             OnIngredientAdd?.Invoke(i);
         }
@@ -143,9 +144,9 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         private void SetText()
         {
             decoratorsText.text = "";
-            foreach (KeyValuePair<IngredientObj, int> key in decoratorsAdded)
+            foreach (KeyValuePair<IngredientToppingSO, int> key in decoratorsAdded)
             {
-                decoratorsText.text += " - " + key.Value + "x" + " " + key.Key.Ingredient.IngredientDescription;
+                decoratorsText.text += " - " + key.Value + "x" + " " + key.Key.IngredientDescription;
             }
         }
         
@@ -171,13 +172,19 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         {
             if (MachineState is MachineState.Working or MachineState.Ready) return;
             
-            foreach (var ingredient in decorators)
-            {
-                ingredient.StartDrag();
-            }
-            spoonObj.StartDrag();
+            // drag 3d
+            // foreach (var ingredient in decorators)
+            // {
+            //     ingredient.StartDrag();
+            // }
+            // spoonObj.StartDrag();
             SetState(MachineState.Working);
-            Create();
+            //Create();
+        }
+
+        public void AddButton(IngredientToppingSO ingredient)
+        {
+            OnIngredientAddCall(ingredient);
         }
         
         private void Create()
@@ -188,6 +195,31 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 Quaternion.identity, pos);
         }
 
+        public void Hold()
+        {
+            if (!CanHit) return;
+            if (MachineState is MachineState.Ready or MachineState.Empty) return;
+            Debug.Log("oi");
+            Holding = true;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!Holding) return;
+            if (CanHit)
+                Hit();
+        }
+
+        public void StopHold()
+        {
+            Holding = false;
+        }
+
+        private void Hit()
+        {
+            LabEvents.OnItemMixedCall();
+            StartCoroutine(ResetCoolDown());
+        }
         public IEnumerator ResetCoolDown()
         {
             CanHit = false;
@@ -196,6 +228,11 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         }
         public void AddHits()
         {
+            if (MachineState is MachineState.Ready or MachineState.Empty)
+            {
+                Holding = false;
+            }
+            
             Debug.Log("hit");
             _currentHits++;
             progressBar.AddCurrentValue(1);
@@ -222,9 +259,9 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         private List<IngredientsList> GenerateToppingList()
         {
             List<IngredientsList> aux = new List<IngredientsList>();
-            foreach (KeyValuePair<IngredientObj, int> key in decoratorsAdded)
+            foreach (KeyValuePair<IngredientToppingSO, int> key in decoratorsAdded)
             {
-                IngredientsList obj = new IngredientsList(key.Key.Ingredient, key.Value);
+                IngredientsList obj = new IngredientsList(key.Key, key.Value);
                 aux.Add(obj);
             }
 

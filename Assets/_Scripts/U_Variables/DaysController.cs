@@ -148,7 +148,6 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             InvokeRepeating("CountTime", 1, 1);
-            ChangeNightCall();
         }
     }
 }

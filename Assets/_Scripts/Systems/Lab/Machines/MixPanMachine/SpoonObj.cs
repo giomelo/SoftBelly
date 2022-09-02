@@ -23,14 +23,12 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         }
         private void OnTriggerEnter(Collider other)
         { 
-            Debug.Log("oi");
-            if (!other.transform.CompareTag("Mixed")) return;
-            if (!Machine.CanHit) return;
-            if (LabEvents.CurrentMachine.MachineState != MachineState.Ready)
-            {
-                LabEvents.OnItemMixedCall();
-                StartCoroutine(Machine.ResetCoolDown());
-            }
+            // Debug.Log("oi");
+            // if (!other.transform.CompareTag("Mixed")) return;
+            // if (!Machine.CanHit) return;
+            // if (LabEvents.CurrentMachine.MachineState == MachineState.Ready) return;
+            // LabEvents.OnItemMixedCall();
+            // StartCoroutine(Machine.ResetCoolDown());
         }
     }
 }
