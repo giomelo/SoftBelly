@@ -8756,7 +8756,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_LocalScale.x
@@ -8966,7 +8966,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_LocalScale.x
@@ -10982,7 +10982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_LocalScale.x
@@ -14786,7 +14786,7 @@ MonoBehaviour:
     - Descriptionstring: "Constantemente tenho dores em minha cabe\xE7a, v\xE3o e
         passam sempre."
       isWrong: 0
-    - Descriptionstring: "\u2013 Estive em uma luta ontem e me bateram forte na cabe\xE7a,
+    - Descriptionstring: "Estive em uma luta ontem e me bateram forte na cabe\xE7a,
         est\xE1 doendo at\xE9 agora."
       isWrong: 0
     - Descriptionstring: "Cai do cavlo ontem acredita? Desde ent\xE3o minha cabe\xE7a
@@ -14797,8 +14797,8 @@ MonoBehaviour:
     - Descriptionstring: "Eu encostei em alguma planta e agora minha pele est\xE1
         vermelha e co\xE7ando!"
       isWrong: 0
-    - Descriptionstring: "\u2013 Meu tio estava comendo um doce de amendoim que minha
-        m\xE3e preparou, e agora est\xE1 inchado e tossindo."
+    - Descriptionstring: "Meu tio estava comendo um doce de amendoim que minha m\xE3e
+        preparou, e agora est\xE1 inchado e tossindo."
       isWrong: 0
     - Descriptionstring: "Eu estava simplesmente brincando com o gato da minha namorada
         e eu n\xE3o paro de espirrar!"
@@ -36924,7 +36924,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_LocalScale.x
@@ -38810,7 +38810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_LocalScale.x
@@ -45807,7 +45807,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_LocalScale.x
@@ -46604,8 +46604,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412025176}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 21.599998, y: 2.5, z: 5.4207044}
-  m_LocalScale: {x: 35.358482, y: 35.358482, z: 35.358482}
+  m_LocalPosition: {x: -5.07, y: 2.5, z: 5.4207044}
+  m_LocalScale: {x: 21.415703, y: 15.863936, z: 35.358482}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 834851063}
@@ -46633,7 +46633,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412025176}
   m_Enabled: 1
-  m_CastShadows: 3
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -46645,7 +46645,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c3069e30d6a539c44a0e16adc7c60daf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50177,7 +50177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5914538390864285462, guid: a60f9f3024ed540468c2468fe8151919, type: 3}
       propertyPath: m_LocalScale.x
@@ -57397,7 +57397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_LocalScale.x
@@ -59138,7 +59138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_LocalScale.x
@@ -67189,7 +67189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 83509157639951310, guid: 3ff7457e45775ca498e3c1ecdc7461f2, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 83509157639951310, guid: 3ff7457e45775ca498e3c1ecdc7461f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -67810,7 +67810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5005469960355629049, guid: 40b554f56fe1b0b4da7ee4110ca7b047, type: 3}
       propertyPath: m_LocalScale.x
