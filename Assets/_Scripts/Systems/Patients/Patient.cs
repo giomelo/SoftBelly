@@ -1,17 +1,8 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
-using _Scripts.Systems.Inventories;
-using _Scripts.Systems.Lab;
-using _Scripts.Systems.Plants.Bases;
-using _Scripts.U_Variables;
-using Random = UnityEngine.Random;
-using Time = _Scripts.U_Variables.Time;
-
 namespace _Scripts.Systems.Patients
 {
     public class Patient : NpcBase
@@ -24,6 +15,11 @@ namespace _Scripts.Systems.Patients
         public void SetOrder()
         {
             PatientsController.Instance.GenerateRandomOrder(ref Order);
+        }
+        public void SetLabel()
+        {
+            var type = RandomEnumValues.RandomEnumValue<SocialLabel>();
+            label = type;
         }
 
         private void Start()

@@ -3,7 +3,6 @@
     public enum SocialLabel
     {
         NOBRE,
-        CLERO,
         POBRE
     }
 }

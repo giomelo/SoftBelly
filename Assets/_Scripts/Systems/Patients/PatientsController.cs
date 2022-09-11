@@ -20,11 +20,18 @@ using Random = UnityEngine.Random;
 namespace _Scripts.Systems.Patients
 {
     [Serializable]
+    public struct Description
+    {
+        [TextArea]
+        public string Descriptionstring;
+        public bool isWrong;
+    }
+    
+    [Serializable]
     public struct OrdersAndDescriptions
     {
         public MedicalSymptoms Item;
-        [TextArea]
-        public List<string> PossibleDescriptions;
+        public List<Description> PossibleDescriptions;
     }
 
     public class PatientsController : MonoSingleton<PatientsController>
@@ -221,6 +228,19 @@ namespace _Scripts.Systems.Patients
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 currentPatient.SetState(PatientState.Leaving);
                 GiveMoney();
+                GiveReputation(10);
+                
+                switch (currentPatient.label)
+                {
+                    case SocialLabel.NOBRE:
+                        GiveSocialStatus(10, true);
+                        break;
+                    case SocialLabel.POBRE:
+                        GiveSocialStatus(10, false);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
                 PatientsEvents.HasPatient = false;
                 fila.Remove(currentPatient);
                 UpdateLine();
@@ -230,6 +250,16 @@ namespace _Scripts.Systems.Patients
             {
                 //nao possui o item
             }  
+        }
+
+        private void GiveReputation(int amount)
+        {
+            UniversalVariables.Instance.ModifyReputation(amount, true);
+        }
+
+        private void GiveSocialStatus(int amount, bool up)
+        {
+            UniversalVariables.Instance.ModifySocialAligment(amount, up);
         }
         private void GiveMoney()
         {

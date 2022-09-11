@@ -12,19 +12,18 @@ namespace _Scripts.Enums
         Alergia = 4,
         EliminaçãodeToxinas = 8,
         Ansiedade = 16,
-        DorNoEstomago = 32,
+        DorNoEstomagoNauseas = 32,
         DorDeDente = 64,
         Queimaduras = 128,
-        Nauseas = 256,
-        Insonia = 512,
-        Estresse = 1024,
-        InfeccaoNaGarganta = 2048,
-        Anemia = 4096,
-        AntiInflamatorio = 8192,
-        DoencasCardiovas = 16384,
-        Hemorragia = 32768,
-        Glaucoma = 65536,
-        Asma = 131072
+        Insonia = 256,
+        Estresse = 512,
+        InfeccaoNaGarganta = 1024,
+        Anemia = 2048,
+        AntiInflamatorio = 4096,
+        DoencasCardiovas = 8192,
+        Hemorragia = 16384, 
+        Glaucoma = 32768, 
+        Asma = 65536
 
     }
 }

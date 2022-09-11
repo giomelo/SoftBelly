@@ -17,7 +17,7 @@ namespace _Scripts.U_Variables
         public int Reputation
         {
             get => reputation;
-            set { reputation = value; }
+            private set {  }
         }
         public static float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
         
@@ -51,5 +51,21 @@ namespace _Scripts.U_Variables
             
             HUD_Controller.Instance.UpdateReputationText();
         }
+
+        public void ModifySocialAligment(int amount, bool add)
+        {
+            if (add)
+                SocialAlignment += amount;
+            else
+                SocialAlignment -= amount;
+
+            if (SocialAlignment <= 0)
+            {
+                SocialAlignment = 0;
+            }
+            
+            HUD_Controller.Instance.UpdateReputationText();
+        }
+        
     }
 }
