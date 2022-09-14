@@ -8,6 +8,7 @@ namespace _Scripts.Entities.Player
     public class PlayerMovement : MonoBehaviour
     {
         private CharacterController _chController;
+        public Animator animator;
 
         private float _playerSpeed = 10f;
         private Vector3 _playerVelocity;
@@ -33,6 +34,8 @@ namespace _Scripts.Entities.Player
             //move.y += gravityValue * Time.deltaTime;
             _chController.Move(move * Time.deltaTime * _playerSpeed);
             Vector3 angle = new Vector3(move.x, 0, move.z);
+            animator = GetComponent<Animator>();
+            animator.SetBool("walk", true);
             if (move == Vector3.zero) return;
             //gameObject.transform.forward = move;
             Quaternion toRotation = Quaternion.LookRotation(angle, Vector3.up);
