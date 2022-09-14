@@ -1,43 +1,45 @@
-
-using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
-public class Savesystem
+namespace _Scripts.SaveSystem
 {
-    public static void Save(_Scripts.U_Variables.UniversalVariables universalVariables)
+    public class Savesystem
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/character.features";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        SaveData data = new SaveData(universalVariables);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-    }
-
-    public static SaveData Load()
-    {
-        string path = Application.persistentDataPath + "/character.features";
-        if (File.Exists(path))
+        public static void Save(_Scripts.U_Variables.UniversalVariables universalVariables)
         {
-            Debug.Log("Path " + path);
-
-
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            string path = Application.persistentDataPath + "/character.features";
+            FileStream stream = new FileStream(path, FileMode.Create);
 
-            SaveData data = formatter.Deserialize(stream) as SaveData;
+            SaveData data = new SaveData(universalVariables);
 
+            formatter.Serialize(stream, data);
             stream.Close();
-            return data;
-        }
-        else
-        {
-            Debug.LogError("Save de Personagem não encontrado em " + path);
-            return null;
         }
 
+        public static SaveData Load()
+        {
+            string path = Application.persistentDataPath + "/character.features";
+            if (File.Exists(path))
+            {
+                Debug.Log("Path " + path);
+
+
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path, FileMode.Open);
+
+                SaveData data = formatter.Deserialize(stream) as SaveData;
+
+                stream.Close();
+                return data;
+            }
+            else
+            {
+                Debug.LogError("Save de Personagem não encontrado em " + path);
+                return null;
+            }
+
+        }
     }
 }

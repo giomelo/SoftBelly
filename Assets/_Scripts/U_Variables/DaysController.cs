@@ -27,8 +27,8 @@ namespace _Scripts.U_Variables
         public Time time = new Time(7,0);
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
-        
 
+        public int currentDay = 1;
         public Action DayChangeAction;
         public Action NightStartAction;
         [SerializeField]
@@ -42,6 +42,15 @@ namespace _Scripts.U_Variables
 
         private bool changed;
         private Color currentColor;
+        
+        
+
+        private void RestartDay()
+        {
+            time = new Time(7, 0);
+            ChangeDayCall();
+            _Scripts.Store.StoreController.Instance.UpdateItem();
+        }
 
         public Time GenerateRandomTime(int minH, int maxH, int minM, int maxM)
         {
@@ -94,37 +103,52 @@ namespace _Scripts.U_Variables
         {
             PatientsEvents.StartDay += GeneratePatientsTimeList;
             DayChangeAction += ChangeLightColorDay;
+            DayChangeAction += AddDay;
             NightStartAction += ChangeLightColorNight;
+            GameManager.Instance.Sleep += RestartDay;
+        }
+
+        private void AddDay()
+        {
+            currentDay++;
         }
 
         private void OnDisable()
         {
             PatientsEvents.StartDay -= GeneratePatientsTimeList;
             DayChangeAction -= ChangeLightColorDay;
+            DayChangeAction -= AddDay;
             NightStartAction -= ChangeLightColorNight;
+            GameManager.Instance.Sleep -= RestartDay;
         }
 
         private void CountTime()
         {
-            time.Minutes++;
             
-            if (time.Minutes == 60)
+            if (time.Hours == 3)
             {
-                time.Minutes = 0;
-                time.Hours++;
+                
+                //alerta para dormir
             }
-
-            if (time.Hours == 6)
+            else
             {
-                ChangeDayCall();
-            }
+                time.Minutes++;
+                if (time.Minutes == 60)
+                {
+                    time.Minutes = 0;
+                    time.Hours++;
+                }
 
-            if (time.Hours == 24)
-            {
-                time.Hours = 0;
-                _Scripts.Store.StoreController.Instance.UpdateItem();
-            }
+                if (time.Hours == 6)
+                {
+                   // ChangeDayCall();
+                }
 
+                if (time.Hours == 24)
+                {
+                    time.Hours = 0;
+                }
+            }
             if (time.Hours == startHourPatient && !PatientsEvents.Day)
             {
                 PatientsEvents.OnStartDayCall();

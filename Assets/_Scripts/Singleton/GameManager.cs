@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Helpers;
+using _Scripts.U_Variables;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,5 +14,22 @@ namespace _Scripts.Singleton
         public Camera MainCamera;
         public CineMachineSwitcher camSwitcher;
         public Transform Player;
+
+        public Action Sleep;
+        private bool sleeping;
+
+        public void SleepCall()
+        {
+            if (DaysController.Instance.time.Hours >= DaysController.Instance.finisHourPatients)
+            {
+                if (sleeping) return;
+                
+                Sleep?.Invoke();
+                sleeping = true;
+            }
+            else
+                Debug.LogWarning("YOU CANT SLEEP RIGHT NOW");
+            
+        }
     }
 }
