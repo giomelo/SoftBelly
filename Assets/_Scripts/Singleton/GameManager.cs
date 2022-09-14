@@ -18,6 +18,8 @@ namespace _Scripts.Singleton
         public Action Sleep;
         private bool sleeping;
 
+        public Action PromotionLevel;
+
         public void SleepCall()
         {
             if (DaysController.Instance.time.Hours >= DaysController.Instance.finisHourPatients)
@@ -30,6 +32,17 @@ namespace _Scripts.Singleton
             else
                 Debug.LogWarning("YOU CANT SLEEP RIGHT NOW");
             
+        }
+        
+
+
+        public void PromotionLevelCall()
+        {
+            PromotionLevel?.Invoke();
+        }
+        private void UpdateGameState()
+        {
+           
         }
     }
 }

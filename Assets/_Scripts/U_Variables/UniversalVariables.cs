@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Singleton;
 using _Scripts.UI;
 
@@ -20,6 +21,7 @@ namespace _Scripts.U_Variables
             private set {  }
         }
         public static float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
+        public float Nivel { get; set; } = 1; // de  1 a 5 acaba o jogo
         
         public void Start()
         {
@@ -38,9 +40,14 @@ namespace _Scripts.U_Variables
         
         public void ModifyReputation(int amount, bool add)
         {
-            
+
             if (add)
+            {
                 Reputation += amount;
+                Nivel += 10;
+                SetNivel();
+            }
+                
             else
                 Reputation -= amount;
 
@@ -48,7 +55,6 @@ namespace _Scripts.U_Variables
             {
                 Reputation = 0;
             }
-            
             HUD_Controller.Instance.UpdateReputationText();
         }
 
@@ -66,6 +72,14 @@ namespace _Scripts.U_Variables
             
             HUD_Controller.Instance.UpdateReputationText();
         }
+
+
+        private void SetNivel()
+        {
+            HUD_Controller.Instance.UpdateNivel();
+        }
+
+      
         
     }
 }

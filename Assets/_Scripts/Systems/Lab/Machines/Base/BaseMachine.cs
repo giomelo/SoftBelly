@@ -233,5 +233,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
             return false;
         }
+
+        public void UnlockMachine()
+        {
+            IsLocked = false;
+        }
     }
 }

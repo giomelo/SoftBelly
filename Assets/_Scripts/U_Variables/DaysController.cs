@@ -21,6 +21,11 @@ namespace _Scripts.U_Variables
         }
     }
     
+    public enum MoonPhase
+    {
+        
+    }
+    
     public class DaysController : MonoSingleton<DaysController>
     {
 
@@ -29,6 +34,7 @@ namespace _Scripts.U_Variables
         public int finisHourPatients { get; set; } = 18;
 
         public int currentDay = 1;
+        public int currentMoon = 1;
         public Action DayChangeAction;
         public Action NightStartAction;
         [SerializeField]
@@ -127,7 +133,6 @@ namespace _Scripts.U_Variables
             
             if (time.Hours == 3)
             {
-                
                 //alerta para dormir
             }
             else

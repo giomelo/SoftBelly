@@ -26,9 +26,9 @@ namespace _Scripts.Systems
         [SerializeField]
         private Vector3 position;
         [SerializeField]
-        private UnityEvent cameraChanger;
-        [SerializeField]
         private DoorLocations doorTransport;
+        [SerializeField]
+        private bool teleport;
         
         private void OnTriggerEnter(Collider other)
         {
@@ -39,7 +39,8 @@ namespace _Scripts.Systems
         {
             //ScreenFlow.Instance.LoadScene(scene);
             PlayerInputHandler.DisableInputCall();
-            GameManager.Instance.Player.position = position;
+            if(teleport)
+                GameManager.Instance.Player.position = position;
          
             switch (doorTransport)
             {
@@ -50,6 +51,8 @@ namespace _Scripts.Systems
                     break;
                 case DoorLocations.GARDEN:
                     StartCoroutine(BackInput());
+                    
+                   
                     break;
                 case DoorLocations.PATIENTS:
                     StartCoroutine(BackInput());
@@ -65,9 +68,10 @@ namespace _Scripts.Systems
 
         public IEnumerator BackInput()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
             PlayerInputHandler.EnableInputCall();
             StoreController.Instance.StorageObject.SetActive(false);
+          
         }
     }
 }

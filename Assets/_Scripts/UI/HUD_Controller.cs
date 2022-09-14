@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Singleton;
 using _Scripts.U_Variables;
 using TMPro;
@@ -12,6 +13,8 @@ namespace _Scripts.UI
         [SerializeField]
         private TextMeshProUGUI reputationText;
         [SerializeField]
+        private TextMeshProUGUI nivelText;
+        [SerializeField]
         private TextMeshProUGUI hoursText;
         [SerializeField]
         private TextMeshProUGUI secondsText;
@@ -20,6 +23,7 @@ namespace _Scripts.UI
         {
             UpdateMoneyText();
             UpdateReputationText();
+            UpdateNivel();
         }
 
         public void UpdateMoneyText()
@@ -30,7 +34,16 @@ namespace _Scripts.UI
         
         public void UpdateReputationText()
         {
-            reputationText.text = UniversalVariables.Instance.Reputation.ToString();
+            reputationText.text =  UniversalVariables.Instance.Reputation.ToString();
+        }
+        public void UpdateNivel()
+        {
+            
+            var aux = Math.Ceiling(UniversalVariables.Instance.Nivel / 100);
+            if (aux.ToString() == nivelText.text) return;
+            GameManager.Instance.PromotionLevelCall();
+            nivelText.text = aux.ToString();
+
         }
 
         public void UpdateTimeText()
