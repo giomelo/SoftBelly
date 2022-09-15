@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuTest/NovoMenu.unity
+    guid: 1a224e3218c220f46aef312c9b42fabf
+  - enabled: 1
     path: Assets/Scenes/Menu/Menu.unity
     guid: dfc669b330508614897b1806279d67db
   - enabled: 1

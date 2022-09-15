@@ -111,7 +111,7 @@ namespace _Scripts.U_Variables
             DayChangeAction += ChangeLightColorDay;
             DayChangeAction += AddDay;
             NightStartAction += ChangeLightColorNight;
-            GameManager.Instance.Sleep += RestartDay;
+            GameManager.Sleep += RestartDay;
         }
 
         private void AddDay()
@@ -125,7 +125,7 @@ namespace _Scripts.U_Variables
             DayChangeAction -= ChangeLightColorDay;
             DayChangeAction -= AddDay;
             NightStartAction -= ChangeLightColorNight;
-            GameManager.Instance.Sleep -= RestartDay;
+            GameManager.Sleep -= RestartDay;
         }
 
         private void CountTime()

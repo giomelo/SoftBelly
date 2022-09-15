@@ -64,7 +64,7 @@ namespace _Scripts.Helpers
             else
             {
                 potionCam.Priority = 1;
-                labCam.Priority = 2;
+                    labCam.Priority = 2;
             }
             
             _isOnWorld = !_isOnWorld;

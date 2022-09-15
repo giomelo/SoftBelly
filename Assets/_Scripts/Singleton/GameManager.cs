@@ -15,10 +15,10 @@ namespace _Scripts.Singleton
         public CineMachineSwitcher camSwitcher;
         public Transform Player;
 
-        public Action Sleep;
+        public static Action Sleep;
         private bool sleeping;
 
-        public Action PromotionLevel;
+        public static Action PromotionLevel;
 
         public void SleepCall()
         {

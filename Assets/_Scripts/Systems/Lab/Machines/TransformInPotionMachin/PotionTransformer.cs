@@ -95,7 +95,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
 
         protected override void InitMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCameraPotion();
+            
         }
         protected override void FinishMachine()
         {

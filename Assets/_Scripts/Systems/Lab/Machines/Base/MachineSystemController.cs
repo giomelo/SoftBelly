@@ -33,11 +33,11 @@ namespace _Scripts.Systems.Lab.Machines.Base
         
         private void OnEnable()
         {
-            GameManager.Instance.PromotionLevel += UnlockMachine;
+            GameManager.PromotionLevel += UnlockMachine;
         }
         private void OnDisable()
         {
-            GameManager.Instance.PromotionLevel -= UnlockMachine;
+            GameManager.PromotionLevel -= UnlockMachine;
         }
     }
 }
