@@ -144,7 +144,6 @@ namespace _Scripts.Systems.Lab.Machines
 
         protected override void FinishMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCameraPestle();
             //Pestle pesltle = LabEvents.CurrentMachine as Pestle;
             PestleObj.StopDrag();
             OnDisposeMachine();

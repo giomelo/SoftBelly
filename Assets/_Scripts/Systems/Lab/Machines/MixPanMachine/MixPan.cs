@@ -152,12 +152,11 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         
         protected override void InitMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCameraMix();
             ingredietnsShelf.SetActive(true);
         }
         protected override void FinishMachine()
         {
-            GameManager.Instance.camSwitcher.ChangeCameraMix();
+         
             OnDisposeMachine();
         }
 

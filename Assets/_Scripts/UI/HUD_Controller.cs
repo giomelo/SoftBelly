@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Singleton;
 using _Scripts.U_Variables;
 using TMPro;
@@ -18,6 +20,9 @@ namespace _Scripts.UI
         private TextMeshProUGUI hoursText;
         [SerializeField]
         private TextMeshProUGUI secondsText;
+        [SerializeField]
+        private GameObject confirmBuy;
+        public int popupOption = 0;
 
         private void Start()
         {
@@ -25,6 +30,28 @@ namespace _Scripts.UI
             UpdateReputationText();
             UpdateNivel();
         }
+
+        public void ShowBuyPopup(Action<bool, int> callback, int id)
+        {
+            StartCoroutine(_Showbuypopup(callback, id));
+        }
+
+        private IEnumerator _Showbuypopup(Action<bool, int> callback, int id)
+        {
+            confirmBuy.SetActive(true);
+
+            popupOption = 0;
+
+            while (popupOption == 0)
+                yield return new WaitForEndOfFrame();
+            
+            //close canvas
+            confirmBuy.SetActive(false);
+            
+            callback?.Invoke(popupOption != 2, id);
+        }
+        
+        public void SetPopupOption(int option) => popupOption = option;
 
         public void UpdateMoneyText()
         {

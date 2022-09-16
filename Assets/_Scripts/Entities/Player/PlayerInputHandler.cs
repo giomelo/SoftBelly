@@ -7,6 +7,8 @@ using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Patients;
 using _Scripts.Systems.Plantation;
 using _Scripts.Systems.Plants.Bases;
+using _Scripts.U_Variables;
+using _Scripts.UI;
 using UnityEngine;
 
 namespace _Scripts.Entities.Player
@@ -93,19 +95,34 @@ namespace _Scripts.Entities.Player
                 switch (hit.transform.tag)
                 {
                     case "Plot":
+                        
                         if (hit.transform.TryGetComponent<Plot>(out var plotScript))
                         {
-                            if (plotScript.CheckAvailable())
+                            if (!plotScript.IsLocked)
                             {
-                                //Inventory id
-                                PlantEvents.OnPlotSelected(0);
-                                PlantEvents.CurrentPlot = plotScript;
+                                if (plotScript.CheckAvailable())
+                                {
+                                    //Inventory id
+                                    PlantEvents.OnPlotSelected(0);
+                                    PlantEvents.CurrentPlot = plotScript;
+                                }
+                                else
+                                {
+                                    //Check if the plant is ready to harvest
+                                    if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
+                                    PlantEvents.OnHarvestCall(plotScript);
+                                }
                             }
                             else
                             {
-                                //Check if the plant is ready to harvest
-                                if(!plotScript.CheckIfReady() && !plotScript.IsDead) return;
-                                PlantEvents.OnHarvestCall(plotScript);
+                                //checar se tem o dinheiro
+                                if (UniversalVariables.Instance.Money > plotScript.PriceToUnlock)
+                                {
+                                    // se tem comprar
+                                    HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, plotScript.PlotId);
+                                    
+                                }
+
                             }
                         }
                         break;

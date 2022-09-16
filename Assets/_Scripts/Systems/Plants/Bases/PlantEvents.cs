@@ -16,6 +16,8 @@ namespace _Scripts.Systems.Plants.Bases
         public static Action<Plot> OnHarvest;
         public static Action LabInventoryAction;
         public static Action<int> OnPlotSelected;
+        public static Action<int> OnPlotUnlocked;
+        public static Action<bool, int> OnbuyConfirm;
 
         public static SeedBase CurrentPlant;
         public static Plot CurrentPlot;
@@ -30,6 +32,10 @@ namespace _Scripts.Systems.Plants.Bases
         public static void OnPlotSelectedCall(int id)
         {
             OnPlotSelected?.Invoke(id);
+        }
+        public static void OnPlotUnlockedCall(int id)
+        {
+            OnPlotUnlocked?.Invoke(id);
         }
 
         public static void OnHarvestCall(Plot id)

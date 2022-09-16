@@ -5,6 +5,7 @@ using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Plants.Bases;
+using _Scripts.U_Variables;
 using Systems.Plantation;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -24,9 +25,28 @@ namespace _Scripts.Systems.Plantation
         [SerializeField]
         private GameObject deathObj;
 
+        public bool IsLocked;
+        public int PriceToUnlock = 10;
+        [SerializeField]
+        private GameObject lockedObj;
+
         private void Start()
         {
             IsDestroyed = false;
+            Locked(IsLocked, PlotId);
+        }
+
+        public void UnLock()
+        {
+            IsLocked = false;
+            lockedObj.SetActive(false);
+        }
+        public void Locked(bool locked, int id)
+        {
+            if (id != PlotId) return;
+            UniversalVariables.Instance.ModifyMoney(PriceToUnlock, false);
+            IsLocked = locked;
+            lockedObj.SetActive(locked);
         }
         public void ChangePlant(Plot id)
         {
@@ -89,12 +109,14 @@ namespace _Scripts.Systems.Plantation
         {
             PlantEvents.OnPlanted += Display;
             PlantEvents.OnHarvest += Harvest;
-         
+            PlantEvents.OnbuyConfirm += Locked;
+
         }
         private void OnDestroy()
         {
             PlantEvents.OnPlanted -= Display;
             PlantEvents.OnHarvest -= Harvest;
+            PlantEvents.OnbuyConfirm -= Locked;
             IsDestroyed = true;
         }
 
