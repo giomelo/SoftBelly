@@ -13,7 +13,7 @@ namespace _Scripts
 
         private IEnumerator Look()
         {
-            transform.LookAt(GameManager.Instance.MainCamera.transform.transform.position, Vector3.up);
+            transform.LookAt(Camera.main.transform, Vector3.up);
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(Look());
         }
