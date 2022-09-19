@@ -31,12 +31,12 @@ namespace _Scripts.UI
             UpdateNivel();
         }
 
-        public void ShowBuyPopup(Action<bool, int> callback, int id)
+        public void ShowBuyPopup(Action<bool, int, bool> callback, int id, bool plot)
         {
-            StartCoroutine(_Showbuypopup(callback, id));
+            StartCoroutine(_Showbuypopup(callback, id, plot));
         }
 
-        private IEnumerator _Showbuypopup(Action<bool, int> callback, int id)
+        private IEnumerator _Showbuypopup(Action<bool, int, bool> callback, int id, bool plot)
         {
             confirmBuy.SetActive(true);
 
@@ -48,7 +48,7 @@ namespace _Scripts.UI
             //close canvas
             confirmBuy.SetActive(false);
             
-            callback?.Invoke(popupOption != 2, id);
+            callback?.Invoke(popupOption != 2, id, plot);
         }
         
         public void SetPopupOption(int option) => popupOption = option;
