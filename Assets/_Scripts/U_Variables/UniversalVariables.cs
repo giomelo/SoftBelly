@@ -33,8 +33,12 @@ namespace _Scripts.U_Variables
             if (add)
                 Money += amount;
             else
+            
                 Money -= amount;
-
+            if (Money < 0)
+            {
+                Money = 0;
+            }
             HUD_Controller.Instance.UpdateMoneyText();
         }
         
