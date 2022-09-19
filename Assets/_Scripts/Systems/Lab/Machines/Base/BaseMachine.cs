@@ -5,6 +5,7 @@ using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using _Scripts.Systems.Lab.Recipes;
+using _Scripts.Systems.Plants.Bases;
 using _Scripts.UI;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
     /// Class for all machines
     /// </summary>
     [RequireComponent(typeof(MachineHolder))]
-    public abstract class BaseMachine : MonoBehaviour
+    public abstract class BaseMachine : LockedObject
     {
         [SerializeField]
         private GameObject machineLayer;
@@ -37,8 +38,6 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public bool CanBurn;
         [SerializeField]
         protected MachinesTypes MachineTypes;
-
-        public bool IsLocked = false;
         public static void GenerateNewPropriets()
         {
             
@@ -47,12 +46,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
         public virtual void Start()
         {
             thisMachineHolder = gameObject.GetComponent<MachineHolder>();
+            Initialized(MachineId, false);
+            Locked(IsLocked, MachineId, false);
         }
         public virtual void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
             LabEvents.OnMachineDispose += OnDispose;
             LabEvents.OnMachineStarted += MachineProcess;
+            PlantEvents.OnbuyConfirm += Locked;
             IsDestroyed = false;
         }
         public virtual void OnDisable()
@@ -60,6 +62,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
             LabEvents.OnMachineSelected -= OnCLicked;
             LabEvents.OnMachineDispose -= OnDispose;
             LabEvents.OnMachineStarted -= MachineProcess;
+            PlantEvents.OnbuyConfirm -= Locked;
             IsDestroyed = true;
         }
         /// <summary>
