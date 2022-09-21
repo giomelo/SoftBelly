@@ -1,4 +1,5 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Entities.Player;
@@ -60,6 +61,10 @@ namespace _Scripts.UI
         [SerializeField]
         private int _limetedPos = 1520;
 
+        private int invClosing = 0;
+        [SerializeField]
+        private Animator anim;
+
         private void Start()
         {
             if (_slotsCreated) return;
@@ -102,6 +107,7 @@ namespace _Scripts.UI
             CreateSlots();
             UpdateInventory();
         }
+
         /// <summary>
         /// Instantiate and update slots of the inventory first time
         /// </summary>
@@ -201,11 +207,21 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
+            if(invClosing != 1)
+                StartCoroutine(DispInventory());
+        }
+
+        public IEnumerator DispInventory()
+        {
+            invClosing = 1;
+            anim.Play("PlantMenuAnim.HidePlantMenu");
+            yield return new WaitForSeconds(0.6f);
+            invClosing = 0;
             ResetCurrentProprieties();
             inventoryObject.SetActive(false);
             LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);
         }
-        
+
         /// <summary>
         /// Display plant proprieties for now
         /// </summary>
