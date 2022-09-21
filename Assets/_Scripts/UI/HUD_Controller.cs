@@ -22,6 +22,7 @@ namespace _Scripts.UI
         private TextMeshProUGUI secondsText;
         [SerializeField]
         private GameObject confirmBuy;
+        private Animator anim;
         public int popupOption = 0;
 
         private void Start()
@@ -29,6 +30,7 @@ namespace _Scripts.UI
             UpdateMoneyText();
             UpdateReputationText();
             UpdateNivel();
+            anim = confirmBuy.GetComponent <Animator> ();
         }
 
         public void ShowBuyPopup(Action<bool, int, bool> callback, int id, bool plot)
@@ -44,8 +46,10 @@ namespace _Scripts.UI
 
             while (popupOption == 0)
                 yield return new WaitForEndOfFrame();
-            
+
             //close canvas
+            anim.Play("PurchaseAnim.HideMenu");
+            yield return new WaitForSeconds(0.6f);
             confirmBuy.SetActive(false);
             
             callback?.Invoke(popupOption != 2, id, plot);
