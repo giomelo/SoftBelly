@@ -55,7 +55,7 @@ namespace _Scripts.U_Variables
         {
             time = new Time(7, 0);
             ChangeDayCall();
-            _Scripts.Store.StoreController.Instance.UpdateItem();
+            //_Scripts.Store.StoreController.Instance.UpdateItem();
         }
 
         public Time GenerateRandomTime(int minH, int maxH, int minM, int maxM)

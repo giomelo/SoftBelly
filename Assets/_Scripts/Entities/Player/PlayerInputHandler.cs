@@ -116,7 +116,7 @@ namespace _Scripts.Entities.Player
                             else
                             {
                                 //checar se tem o dinheiro
-                                if (UniversalVariables.Instance.Money > plotScript.PriceToUnlock)
+                                if (UniversalVariables.Instance.Money >= plotScript.PriceToUnlock)
                                 {
                                     // se tem comprar
                                     HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, plotScript.PlotId, true);
@@ -136,7 +136,7 @@ namespace _Scripts.Entities.Player
                         if (machineScript.CurrentMachine.IsLocked)
                         {
                             //checar se tem o dinheiro
-                            if (UniversalVariables.Instance.Money > machineScript.CurrentMachine.PriceToUnlock)
+                            if (UniversalVariables.Instance.Money >= machineScript.CurrentMachine.PriceToUnlock)
                             {
                                 // se tem comprar
                                 HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, machineScript.CurrentMachine.MachineId, false);

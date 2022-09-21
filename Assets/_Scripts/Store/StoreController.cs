@@ -26,8 +26,8 @@ namespace _Scripts.Store
         
         private void Start()
         {
-            a.onClick.AddListener(UpdateItem);
-            UpdateItem();
+            //a.onClick.AddListener(UpdateItem);
+            //UpdateItem();
             
             //pick the plantation storage
             var storagesInScene = FindObjectsOfType<StorageHolder>();
