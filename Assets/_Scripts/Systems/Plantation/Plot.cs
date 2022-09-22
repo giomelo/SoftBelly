@@ -12,7 +12,7 @@ using UnityEngine.Serialization;
 
 namespace _Scripts.Systems.Plantation
 {
-    public class Plot : MonoBehaviour
+    public class Plot : LockedObject
     {
         public int PlotId;
         public SeedBase CurrentPlant;
@@ -25,29 +25,14 @@ namespace _Scripts.Systems.Plantation
         [SerializeField]
         private GameObject deathObj;
 
-        public bool IsLocked;
-        public int PriceToUnlock = 10;
-        [SerializeField]
-        private GameObject lockedObj;
-
+        
         private void Start()
         {
             IsDestroyed = false;
-            Locked(IsLocked, PlotId);
+            Initialized(PlotId, true);
+            Locked(IsLocked, PlotId, true);
         }
 
-        public void UnLock()
-        {
-            IsLocked = false;
-            lockedObj.SetActive(false);
-        }
-        public void Locked(bool locked, int id)
-        {
-            if (id != PlotId) return;
-            UniversalVariables.Instance.ModifyMoney(PriceToUnlock, false);
-            IsLocked = locked;
-            lockedObj.SetActive(locked);
-        }
         public void ChangePlant(Plot id)
         {
             if (id.PlotId != this.PlotId) return;

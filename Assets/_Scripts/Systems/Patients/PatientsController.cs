@@ -70,7 +70,7 @@ namespace _Scripts.Systems.Patients
             order.Order = PossiblesOrders[index].Item;
             order.OrderDescription =
                 PossiblesOrders[index]
-                    .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)] +
+                    .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)].Descriptionstring +
                 "Tipo: " + order.PotionType ;
             order.Money = GenerateMoney(order.PotionType);
             PatientsEvents.CurrentOrder = order;

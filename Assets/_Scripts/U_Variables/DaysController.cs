@@ -176,7 +176,7 @@ namespace _Scripts.U_Variables
 
         private void Start()
         {
-            InvokeRepeating("CountTime", 1, 1);
+            InvokeRepeating("CountTime", 0.5f, 0.5f);
         }
     }
 }

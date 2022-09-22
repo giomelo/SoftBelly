@@ -119,7 +119,7 @@ namespace _Scripts.Entities.Player
                                 if (UniversalVariables.Instance.Money > plotScript.PriceToUnlock)
                                 {
                                     // se tem comprar
-                                    HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, plotScript.PlotId);
+                                    HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, plotScript.PlotId, true);
                                     
                                 }
 
@@ -133,10 +133,24 @@ namespace _Scripts.Entities.Player
                     case "Machine":
                         if (LabEvents.IsOnMachine) return;
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
-                        if (LabEvents.CurrentMachine == machineScript.CurrentMachine) return;
-                        if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
-                        if (machineScript.CurrentMachine.IsLocked) return;
-                        LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
+                        if (machineScript.CurrentMachine.IsLocked)
+                        {
+                            //checar se tem o dinheiro
+                            if (UniversalVariables.Instance.Money > machineScript.CurrentMachine.PriceToUnlock)
+                            {
+                                // se tem comprar
+                                HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, machineScript.CurrentMachine.MachineId, false);
+                                    
+                            }
+                        }
+                        else
+                        {
+                            if (LabEvents.CurrentMachine == machineScript.CurrentMachine) return;
+                            if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
+                            if (machineScript.CurrentMachine.IsLocked) return;
+                            LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
+                           
+                        }
                         break;
                     case "Patient":
                         Debug.Log("oi");
