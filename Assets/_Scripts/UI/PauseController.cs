@@ -25,7 +25,7 @@ namespace _Scripts.UI
         private GameObject optionsObj;
         private GameObject currentMenu;
 
-        //Mudanças de nova UI
+        //Mudanï¿½as de nova UI
         [SerializeField]
         private int menuState = 0;
         [SerializeField]
@@ -51,7 +51,7 @@ namespace _Scripts.UI
                 case UI.PauseButton.Resume:
                     PauseInput();
                     break;
-                case UI.PauseButton.Options:    //Ambos executam o mesmo código com poucas alterações
+                case UI.PauseButton.Options:    //Ambos executam o mesmo cï¿½digo com poucas alteraï¿½ï¿½es
                 case UI.PauseButton.Controlls:
                     if (menuState == 1)
                     {
@@ -79,7 +79,7 @@ namespace _Scripts.UI
                 case UI.PauseButton.MainMenu:
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
-                    ScreenFlow.Instance.LoadScene("Menu");
+                    ScreenFlow.Instance.LoadScene("NovoMenu");
                     break;
                 case UI.PauseButton.Exit:
                     Time.timeScale = 1;
@@ -90,7 +90,7 @@ namespace _Scripts.UI
 
         private IEnumerator SHMenu()
         {
-            float startTime = Time.realtimeSinceStartup;    //realtimeSinceStartup é usado aqui pois os yield waitfors das corotinas não funcionam com timescale 0
+            float startTime = Time.realtimeSinceStartup;    //realtimeSinceStartup ï¿½ usado aqui pois os yield waitfors das corotinas nï¿½o funcionam com timescale 0
             switch (menuState)
             {
                 case -1:

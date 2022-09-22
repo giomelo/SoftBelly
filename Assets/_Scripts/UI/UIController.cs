@@ -214,8 +214,11 @@ namespace _Scripts.UI
         public IEnumerator DispInventory()
         {
             invClosing = 1;
-            anim.Play("PlantMenuAnim.HidePlantMenu");
-            yield return new WaitForSeconds(0.6f);
+            if (anim != null)
+            {
+                anim.Play("PlantMenuAnim.HidePlantMenu");
+                yield return new WaitForSeconds(0.6f);
+            }
             invClosing = 0;
             ResetCurrentProprieties();
             inventoryObject.SetActive(false);
