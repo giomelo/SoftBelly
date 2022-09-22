@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1557944176115187818}
-  gravity: -3
+  gravity: 0
 --- !u!1 &1916144496890588729
 GameObject:
   m_ObjectHideFlags: 0
