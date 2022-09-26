@@ -161,6 +161,9 @@ namespace _Scripts.Entities.Player
                     case "Bed":
                         GameManager.Instance.SleepCall();
                         break;
+                    case "Drop":
+                        DailyPlantDrop.Instance.Collect();
+                        break;
                     // case "Book":
                     //     if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
                     //     bookScript.OpenBook();

@@ -183,7 +183,7 @@ namespace _Scripts.Systems.Plantation
             else
             {
                 if (CurrentPlant == null) return;
-                GridSystem.Instance.labStorage.Storage.AddItem(1, PlantEvents.PlantCollected);
+                GameManager.Instance.labStorage.Storage.AddItem(1, PlantEvents.PlantCollected);
                 PlantEvents.OnLabInventoryAction();
             }
 

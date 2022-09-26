@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Helpers;
+using _Scripts.Systems.Inventories;
 using _Scripts.U_Variables;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,6 +20,9 @@ namespace _Scripts.Singleton
         private bool sleeping;
 
         public static Action PromotionLevel;
+
+        public StorageHolder plantStorage;
+        public StorageHolder labStorage;
 
         public void SleepCall()
         {

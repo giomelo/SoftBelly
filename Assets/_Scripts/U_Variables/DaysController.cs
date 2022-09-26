@@ -35,8 +35,8 @@ namespace _Scripts.U_Variables
 
         public int currentDay = 1;
         public int currentMoon = 1;
-        public Action DayChangeAction;
-        public Action NightStartAction;
+        public static Action DayChangeAction;
+        public static Action NightStartAction;
         [SerializeField]
         private List<Time> _patientsTime = new List<Time>();
         [SerializeField]
@@ -48,9 +48,9 @@ namespace _Scripts.U_Variables
 
         private bool changed;
         private Color currentColor;
-        
-        
 
+
+      
         private void RestartDay()
         {
             time = new Time(7, 0);
@@ -78,6 +78,7 @@ namespace _Scripts.U_Variables
         }
         private void ChangeDayCall()
         {
+            Debug.Log("daty");
             DayChangeAction?.Invoke();
         }
 
@@ -177,6 +178,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             InvokeRepeating("CountTime", 0.5f, 0.5f);
+            ChangeDayCall();
         }
     }
 }

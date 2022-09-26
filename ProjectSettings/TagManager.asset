@@ -15,6 +15,7 @@ TagManager:
   - Patient
   - Plot
   - Bed
+  - Drop
   layers:
   - Default
   - TransparentFX

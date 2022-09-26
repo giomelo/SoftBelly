@@ -32,7 +32,7 @@ namespace Systems.Plantation
         
         public List<Plot> Plots = new List<Plot>();
         [HideInInspector]
-        public StorageHolder labStorage;
+        //public StorageHolder labStorage;
 
 
         public void CreatGrid()
@@ -70,15 +70,15 @@ namespace Systems.Plantation
             }
             PlantTimeController.Instance.CreatPlants();
             
-            var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
-            // ReSharper disable once SuggestVarOrType_SimpleTypes
-            foreach (StorageHolder s in storagesInScene)
-            {
-                if (s.Storage.InventoryType == InventoryType.Lab)
-                {
-                    labStorage = s;
-                }
-            }
+            // var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
+            // // ReSharper disable once SuggestVarOrType_SimpleTypes
+            // foreach (StorageHolder s in storagesInScene)
+            // {
+            //     if (s.Storage.InventoryType == InventoryType.Lab)
+            //     {
+            //         labStorage = s;
+            //     }
+            // }
         }
     }
 }

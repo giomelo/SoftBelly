@@ -14,7 +14,7 @@ namespace _Scripts.Store
 {
     public class StoreController : MonoSingleton<StoreController>
     {
-        private StorageHolder StorageHolder;
+        //private StorageHolder StorageHolder;
         public GameObject StorageObject;
         
         
@@ -29,16 +29,16 @@ namespace _Scripts.Store
             //a.onClick.AddListener(UpdateItem);
             //UpdateItem();
             
-            //pick the plantation storage
-            var storagesInScene = FindObjectsOfType<StorageHolder>();
-            // ReSharper disable once SuggestVarOrType_SimpleTypes
-            foreach (StorageHolder s in storagesInScene)
-            {
-                if (s.Storage.InventoryType == InventoryType.Plantation)
-                {
-                    StorageHolder = s;
-                }
-            }
+            // //pick the plantation storage
+            // var storagesInScene = FindObjectsOfType<StorageHolder>();
+            // // ReSharper disable once SuggestVarOrType_SimpleTypes
+            // foreach (StorageHolder s in storagesInScene)
+            // {
+            //     if (s.Storage.InventoryType == InventoryType.Plantation)
+            //     {
+            //         StorageHolder = s;
+            //     }
+            // }
         }
         
         public void UpdateItem()
@@ -118,7 +118,7 @@ namespace _Scripts.Store
         }
         public void AddItem(ItemBehaviour item)
         {
-            StorageHolder.Storage.AddItem(1,item);
+            GameManager.Instance.plantStorage.Storage.AddItem(1,item);
         }
     }
 }
