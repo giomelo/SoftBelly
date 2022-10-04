@@ -5,6 +5,7 @@ using _Scripts.Singleton;
 using _Scripts.U_Variables;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.UI
 {
@@ -25,12 +26,22 @@ namespace _Scripts.UI
         private Animator anim;
         public int popupOption = 0;
 
+        [SerializeField]
+        private Slider reputaionSlider;
+
+
+        [SerializeField] private Slider aligmentSlieder;
         private void Start()
         {
+            reputaionSlider.maxValue = 500;
+            aligmentSlieder.maxValue = 100;
             UpdateMoneyText();
             UpdateReputationText();
             UpdateNivel();
+            UpdateAlignment();
             anim = confirmBuy.GetComponent <Animator> ();
+    
+
         }
 
         public void ShowBuyPopup(Action<bool, int, bool> callback, int id, bool plot)
@@ -66,6 +77,11 @@ namespace _Scripts.UI
         public void UpdateReputationText()
         {
             reputationText.text =  UniversalVariables.Instance.Reputation.ToString();
+            reputaionSlider.value = UniversalVariables.Instance.Reputation;
+        }
+        public void UpdateAlignment()
+        {
+            aligmentSlieder.value = UniversalVariables.Instance.SocialAlignment;
         }
         public void UpdateNivel()
         {

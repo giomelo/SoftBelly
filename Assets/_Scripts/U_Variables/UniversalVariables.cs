@@ -20,7 +20,7 @@ namespace _Scripts.U_Variables
             get => reputation;
             private set {  }
         }
-        public static float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
+        public float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
         public float Nivel { get; set; } = 1; // de  1 a 5 acaba o jogo
         
         public void Start()
@@ -58,6 +58,7 @@ namespace _Scripts.U_Variables
             if (Reputation <= 0)
             {
                 Reputation = 0;
+                //game over
             }
             HUD_Controller.Instance.UpdateReputationText();
         }
@@ -74,7 +75,7 @@ namespace _Scripts.U_Variables
                 SocialAlignment = 0;
             }
             
-            HUD_Controller.Instance.UpdateReputationText();
+            HUD_Controller.Instance.UpdateAlignment();
         }
 
 
@@ -83,7 +84,5 @@ namespace _Scripts.U_Variables
             HUD_Controller.Instance.UpdateNivel();
         }
 
-      
-        
     }
 }
