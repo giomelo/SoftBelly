@@ -22,8 +22,6 @@ namespace _Scripts.Systems
     public class Door : MonoBehaviour
     {
         [SerializeField]
-        private string scene;
-        [SerializeField]
         private Vector3 position;
         [SerializeField]
         private DoorLocations doorTransport;
