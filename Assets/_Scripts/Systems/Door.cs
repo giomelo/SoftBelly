@@ -58,7 +58,8 @@ namespace _Scripts.Systems
                     break;
                 case DoorLocations.STORE:
                     PlayerInputHandler.DisableInputCall();
-                    StoreController.Instance.StorageObject.SetActive(true);
+                    //StoreController.Instance.StorageObject.SetActive(true);
+                    StoreController.Instance.IniciaLoja(); //Mudança para nova UI
                     break;
             }
             //cameraChanger.Invoke();

@@ -8,6 +8,7 @@ using _Scripts.U_Variables;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using _Scripts.Entities.Player;
 
 
 namespace _Scripts.Store
@@ -16,8 +17,12 @@ namespace _Scripts.Store
     {
         //private StorageHolder StorageHolder;
         public GameObject StorageObject;
-        
-        
+        public GameObject MainStore;
+        private Animator anim;
+        private bool transitioning = false;
+        private bool open = false;
+
+
         Text textoBtn;
         
         [SerializeField] private List<ItemBehaviour> seeds;
@@ -28,7 +33,7 @@ namespace _Scripts.Store
         {
             //a.onClick.AddListener(UpdateItem);
             //UpdateItem();
-            
+
             // //pick the plantation storage
             // var storagesInScene = FindObjectsOfType<StorageHolder>();
             // // ReSharper disable once SuggestVarOrType_SimpleTypes
@@ -118,7 +123,47 @@ namespace _Scripts.Store
         }
         public void AddItem(ItemBehaviour item)
         {
-            GameManager.Instance.plantStorage.Storage.AddItem(1,item);
+            GameManager.Instance.plantStorage.Storage.AddItem(1, item);
+        }
+
+        // ------ Nova UI ------
+        public void IniciaLoja()
+        {
+            if (transitioning)
+                return;
+            transitioning = true;
+            if (!open)
+                StartCoroutine("IniciarLoja");
+            else
+                StartCoroutine("FecharLoja");
+
+        }
+
+        private IEnumerator IniciarLoja()
+        {
+            StorageObject.SetActive(true);
+            anim = StorageObject.GetComponent<Animator>();
+            if (anim != null)
+                anim.Play("Base.Abre0");
+            yield return new WaitForSeconds(1.5f);
+            MainStore.SetActive(true);
+            GameObject.Find("Player").transform.position += Vector3.back; //Senão vamos ativar a loja infinitamente. Melhorar mais tarde.
+            transitioning = false;
+            open = true;
+        }
+
+        private IEnumerator FecharLoja()
+        {
+            anim = StorageObject.GetComponent<Animator>();
+            if (anim != null)
+                anim.Play("Base.Abre0");
+            yield return new WaitForSeconds(1.5f);
+            MainStore.SetActive(false);
+            PlayerInputHandler.EnableInputCall();
+            yield return new WaitForSeconds(1);
+            StorageObject.SetActive(false);
+            transitioning = false;
+            open = false;
         }
     }
 }
