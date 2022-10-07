@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Helpers;
 using _Scripts.Singleton;
 using _Scripts.Systems.Patients;
 using _Scripts.UI;
@@ -49,8 +50,6 @@ namespace _Scripts.U_Variables
         private bool changed;
         private Color currentColor;
 
-
-      
         private void RestartDay()
         {
             time = new Time(7, 0);
@@ -113,6 +112,7 @@ namespace _Scripts.U_Variables
             DayChangeAction += AddDay;
             NightStartAction += ChangeLightColorNight;
             GameManager.Sleep += RestartDay;
+            GameManager.Sleep += BalanceControl.ChangeDay;
         }
 
         private void AddDay()
@@ -127,6 +127,7 @@ namespace _Scripts.U_Variables
             DayChangeAction -= AddDay;
             NightStartAction -= ChangeLightColorNight;
             GameManager.Sleep -= RestartDay;
+            GameManager.Sleep -= BalanceControl.ChangeDay;
         }
 
         private void CountTime()

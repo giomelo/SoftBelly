@@ -33,6 +33,25 @@ namespace _Scripts.Systems.Patients
         public MedicalSymptoms Item;
         public List<Description> PossibleDescriptions;
     }
+    [Serializable]
+    public struct PotionTypeAndNivel
+    {
+        public PotionType PotionType;
+        public DificultyOfPotion Dificulty;
+
+        public PotionTypeAndNivel(PotionType potionType, DificultyOfPotion dificulty)
+        {
+            PotionType = potionType;
+            Dificulty = dificulty;
+        }
+    }
+
+    public enum DificultyOfPotion
+    {
+        Easy,
+        Medium,
+        Complex
+    }
 
     public class PatientsController : MonoSingleton<PatientsController>
     {
@@ -56,12 +75,13 @@ namespace _Scripts.Systems.Patients
 
         private int amountOfPatients = 0;
         private PotionBase _playerPotion = null;
-
-
+        [SerializeField]
+        private List<PotionTypeAndNivel> potionsDificulty = new List<PotionTypeAndNivel>();
         public int amountOfPatientsDay = 10;
 
         public List<Patient> fila = new List<Patient>();
         public bool HasPatient { get; set; }
+       
         public void GenerateRandomOrder(ref OrderObj order)
         {
             var type = RandomEnumValues.RandomEnumValue<PotionType>();

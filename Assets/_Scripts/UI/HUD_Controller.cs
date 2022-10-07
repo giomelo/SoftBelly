@@ -40,8 +40,6 @@ namespace _Scripts.UI
             UpdateNivel();
             UpdateAlignment();
             anim = confirmBuy.GetComponent <Animator> ();
-    
-
         }
 
         public void ShowBuyPopup(Action<bool, int, bool> callback, int id, bool plot)
