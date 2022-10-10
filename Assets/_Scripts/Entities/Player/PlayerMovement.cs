@@ -43,11 +43,11 @@ namespace _Scripts.Entities.Player
 
         void FixedUpdate()
         {
-            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) )
             {
                 animator.SetBool("Walk", true);
                 animator.SetBool("Idle", false);
-            }else
+            }else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
             {
                 animator.SetBool("Walk", false);
                 animator.SetBool("Idle", true);
