@@ -84,7 +84,8 @@ namespace _Scripts.Systems.Patients
        
         public void GenerateRandomOrder(ref OrderObj order)
         {
-            var type = RandomEnumValues.RandomEnumValue<PotionType>();
+            var options = potionsDificulty.Where(p => p.Dificulty == BalanceControl.GenerateDificultyOfPotion()).ToList();
+            var type = options[Random.Range(0, options.Count)].PotionType;
             order.PotionType = type;
             var index = Random.Range(0, PossiblesOrders.Count - 1);
             order.Order = PossiblesOrders[index].Item;

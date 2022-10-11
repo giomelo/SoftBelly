@@ -4,20 +4,28 @@ using UnityEngine;
 
 namespace _Scripts.Helpers
 {
-    public class BalanceControl
+    public static class BalanceControl
     {
         public static float EasyPotion = 1;
         public static float MediumPotion = 0;
         public static float HardPotion = 0;
-        // easy curve grow
+        // medium curve grow
+        // y = a^x a = 1.1
+        // hard curve grow
+        // y = logb(x + 2a) a = -5.7 b = 1.1
         public static void ChangeDay()
-        {
-            //EasyPotion = curveGrowth(day);
-            //MediumPotion = curveGrowth(day);
-           // HardPotion = curveGrowth(day);
+        { 
+            EasyPotion = CurveGrowth(); 
+            MediumPotion = CurveGrowth();
+            HardPotion = CurveGrowth();
         }
 
-        public DificultyOfPotion? GenerateDificultyOfPotion()
+        public static float CurveGrowth()
+        {
+            return 0;
+        }
+        
+        public static DificultyOfPotion? GenerateDificultyOfPotion()
         {
             var random = Random.Range(0, 1);
             var total = EasyPotion + MediumPotion + HardPotion;
