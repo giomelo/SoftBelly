@@ -1,6 +1,8 @@
-﻿using _Scripts.Singleton;
+﻿using System;
+using _Scripts.Singleton;
 using _Scripts.Systems.Patients;
-using UnityEngine;
+using _Scripts.U_Variables;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.Helpers
 {
@@ -9,20 +11,38 @@ namespace _Scripts.Helpers
         public static float EasyPotion = 1;
         public static float MediumPotion = 0;
         public static float HardPotion = 0;
+
+        private static float a = 1.2f;
+        private static float b = 1.1f;
+        private static float c = -8f;
+
+        public static float p = -1.9f;
+        public static float r = 50;
         // medium curve grow
         // y = a^x a = 1.1
         // hard curve grow
         // y = logb(x + 2a) a = -5.7 b = 1.1
+        
+        // easy curve grow
+        // y = px + r
         public static void ChangeDay()
         { 
-            EasyPotion = CurveGrowth(); 
-            MediumPotion = CurveGrowth();
-            HardPotion = CurveGrowth();
+            EasyPotion = CurveGrowth(DificultyOfPotion.Easy); 
+            MediumPotion = CurveGrowth(DificultyOfPotion.Medium);
+            HardPotion = CurveGrowth(DificultyOfPotion.Complex);
         }
 
-        public static float CurveGrowth()
+        public static float CurveGrowth(DificultyOfPotion dif)
         {
-            return 0;
+            float returnValue = dif switch
+            {
+                DificultyOfPotion.Easy => p * DaysController.Instance.currentDay + r,
+                DificultyOfPotion.Medium => (float) Math.Pow(a, DaysController.Instance.currentDay),
+                DificultyOfPotion.Complex => (float) Math.Log(DaysController.Instance.currentDay + 2 * c, b),
+                _ => throw new ArgumentOutOfRangeException(nameof(dif), dif, null)
+            };
+
+            return returnValue;
         }
         
         public static DificultyOfPotion? GenerateDificultyOfPotion()

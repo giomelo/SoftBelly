@@ -1,19 +1,39 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
+using Random = UnityEngine.Random;
+
 namespace _Scripts.Systems.Patients
 {
+    [Serializable]
+    internal struct ClothAcessories
+    {
+        public List<MeshRenderer> hats;
+        public List<MeshRenderer> topCloth;
+        public List<MeshRenderer> bottomCloth;
+        public List<MeshRenderer> acessorie;
+    }
+    
     public class Patient : NpcBase
     {
         public OrderObj Order;
 
         public SocialLabel label;
         public PatientState State { get; private set; }
+        
+        public List<Material> colors;
+        [SerializeField]
+        private ClothAcessories poor;
+        [SerializeField]
+        private ClothAcessories noble;
 
         public void SetOrder()
         {
+            SetLabel();
+            SetCloth();
             PatientsController.Instance.GenerateRandomOrder(ref Order);
         }
         public void SetLabel()
@@ -28,9 +48,40 @@ namespace _Scripts.Systems.Patients
             StartCoroutine(Arrived());
         }
 
+        private void SetCloth()
+        {
+            switch (label)
+            {
+                case SocialLabel.NOBRE:
+                    SetItem(noble);
+                    break;
+                case SocialLabel.POBRE:
+                    SetItem(poor);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void SetItem(ClothAcessories list)
+        {
+            MeshRenderer aux = list.hats[Random.Range(0, list.hats.Count)];
+            aux.gameObject.SetActive(true);
+            aux.material = colors[Random.Range(0,colors.Count)];
+            aux = list.topCloth[Random.Range(0, list.topCloth.Count)];
+            aux.gameObject.SetActive(true);
+            aux.material = colors[Random.Range(0,colors.Count)];
+            aux = list.bottomCloth[Random.Range(0, list.bottomCloth.Count)];
+            aux.gameObject.SetActive(true);
+            aux.material = colors[Random.Range(0,colors.Count)];
+            aux = list.acessorie[Random.Range(0, list.acessorie.Count)];
+            aux.gameObject.SetActive(true);
+            aux.material = colors[Random.Range(0,colors.Count)];
+        }
+
         public void Destroy()
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         public void OnTriggerEnter(Collider other)

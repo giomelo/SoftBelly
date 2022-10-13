@@ -114,6 +114,7 @@ namespace _Scripts.U_Variables
             GameManager.Sleep += RestartDay;
             GameManager.Sleep += BalanceControl.ChangeDay;
         }
+        
 
         private void AddDay()
         {
