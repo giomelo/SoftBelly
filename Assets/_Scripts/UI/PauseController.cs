@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using _Scripts.Screen_Flow;
 using UnityEngine;
+using _Scripts.Singleton;
 
 namespace _Scripts.UI
 {
@@ -35,7 +36,7 @@ namespace _Scripts.UI
         
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) && menuState != -1) { PauseInput(); }
+            if (Input.GetKeyDown(KeyCode.Escape) && menuState != -1 && !GameManager.Instance.noPause) { PauseInput(); }
         }
 
         private void PauseInput()

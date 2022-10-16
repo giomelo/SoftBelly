@@ -1,8 +1,11 @@
 using UnityEngine;
+using _Scripts.Systems.Item;
 
 public class ItemInterface : MonoBehaviour
 {
 
+    [Tooltip("Item a ser adicionado ao inventário.")]
+    public ItemBehaviour item;
 
     [Tooltip("Imagem a ser usaca como ícone do item.")]
     public Sprite icon;
@@ -28,6 +31,5 @@ public class ItemInterface : MonoBehaviour
 
     [Tooltip("Quanto custa esse item.")]
     public float value;
-
 
 }

@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using _Scripts.Systems.Item;
 
-public class PosComSlider : MonoBehaviour
+public class NewStoreInterface : MonoBehaviour
 {
     public GameObject info;
+    public ItemBehaviour info_item;
     public Image info_icon;
     public Text info_longName;
     public Text info_description;
@@ -46,6 +48,7 @@ public class PosComSlider : MonoBehaviour
             info.SetActive(true);
             ItemInterface interf = item.GetComponent<ItemInterface>();
 
+            info_item = interf.item;
             info_icon.sprite = interf.icon;
             info_longName.text = interf.longName;
             info_description.text = interf.description;

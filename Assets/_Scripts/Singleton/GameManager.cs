@@ -25,6 +25,7 @@ namespace _Scripts.Singleton
         public StorageHolder labStorage;
 
         public bool noRay = false;
+        public bool noPause = false;
 
         public void SleepCall()
         {

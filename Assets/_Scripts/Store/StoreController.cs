@@ -142,6 +142,7 @@ namespace _Scripts.Store
         private IEnumerator IniciarLoja()
         {
             GameManager.Instance.noRay = true;
+            GameManager.Instance.noPause = true;
             StorageObject.SetActive(true);
             anim = StorageObject.GetComponent<Animator>();
             if (anim != null)
@@ -162,6 +163,7 @@ namespace _Scripts.Store
             PlayerInputHandler.EnableInputCall();
             yield return new WaitForSeconds(1);
             GameManager.Instance.noRay = false;
+            GameManager.Instance.noPause = false;
             StorageObject.SetActive(false);
             transitioning = false;
             open = false;

@@ -7,7 +7,7 @@ public class UpdateMoney : MonoBehaviour
     [SerializeField]
     Text dosh;
 
-    private void Start()
+    private void OnEnable()
     {
         EGoodENoisNaoHave();
     }

@@ -26,8 +26,8 @@ public class ItemBehavior : MonoBehaviour
 
     void ButtonListener()
     {
-        PosComSlider itemDesc = GameObject.Find("Itens").GetComponent<PosComSlider>();
-        itemDesc.AtualizaInterface(this.gameObject);
+        NewStoreInterface itemDesc = GameObject.Find("Itens").GetComponent<NewStoreInterface>();
+        itemDesc.AtualizaInterface(gameObject);
     }
 
     public void BtnClick()
