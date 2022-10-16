@@ -141,13 +141,13 @@ namespace _Scripts.Store
 
         private IEnumerator IniciarLoja()
         {
+            GameManager.Instance.noRay = true;
             StorageObject.SetActive(true);
             anim = StorageObject.GetComponent<Animator>();
             if (anim != null)
                 anim.Play("Base.Abre0");
             yield return new WaitForSeconds(1.5f);
             MainStore.SetActive(true);
-            GameObject.Find("Player").transform.position += Vector3.back; //Senão vamos ativar a loja infinitamente. Melhorar mais tarde.
             transitioning = false;
             open = true;
         }
@@ -161,6 +161,7 @@ namespace _Scripts.Store
             MainStore.SetActive(false);
             PlayerInputHandler.EnableInputCall();
             yield return new WaitForSeconds(1);
+            GameManager.Instance.noRay = false;
             StorageObject.SetActive(false);
             transitioning = false;
             open = false;

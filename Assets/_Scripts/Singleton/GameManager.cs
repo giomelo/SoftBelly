@@ -24,6 +24,8 @@ namespace _Scripts.Singleton
         public StorageHolder plantStorage;
         public StorageHolder labStorage;
 
+        public bool noRay = false;
+
         public void SleepCall()
         {
             if (DaysController.Instance.time.Hours >= DaysController.Instance.finisHourPatients)
