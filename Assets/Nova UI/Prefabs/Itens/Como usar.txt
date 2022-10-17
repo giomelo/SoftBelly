@@ -1,19 +1,7 @@
 
- Para criar um ítem duplique um dos prefabs presentes e preencha as seguintes informações:
+    Para adicionar um ítem à loja duplique um dos prefabs presentes e modifique seu campo ITEM.
 
-    - ITEM: Objeto de item que será adicionado ao jogador ao final da compra
+    Idealmente os itens adicionados devem ter seus campos SHOP DESCRIPTION preenchidos e, opcionalmente, o campo LONG ID usado para nomes maiores que não possam ser digitados por completo na área de nomes da loja.
 
-    - ICON: Ícone do objeto a ser comprado
-
-    - SHORT NAME: Nome curto do objeto a ser usado à esquerda na loja
-
-    - LONG NAME: Nome longo usado à direita na loja
-
-    - DESCRIPTION: Descrição do ítem. Idealmente não deve ter mais que 3 linhas de texto.
-
-    - CURES: O que o ítem cura. Use pontos bala ( • ) e espaçamento manualmente
-
-    - VALUE: Preço do item.
-
- Após preencher estes campos adicione o item à loja através do array que está em...
+    Após preencher estes campos adicione o item à loja através do array que está em...
     [ Loja -> CanvasStore -> Loja principal -> Lado esquerdo -> Itens ]

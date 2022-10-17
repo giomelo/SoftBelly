@@ -101,9 +101,9 @@ namespace _Scripts.U_Variables
         {
             if (!changed) return;
 
-            ChangeLightColor(currentColor);
-            if(mainLight.color == currentColor)
-                changed = false;
+            //ChangeLightColor(currentColor);
+            //if(mainLight.color == currentColor)
+                //changed = false;
         }
         private void OnEnable()
         {

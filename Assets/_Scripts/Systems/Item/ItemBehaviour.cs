@@ -15,19 +15,24 @@ namespace _Scripts.Systems.Item
         [TextArea]
         public string ItemProprietiesDescription;
     }
-    
+
     /// <summary>
     /// Base item class behavior for all items
     /// </summary>
     public abstract class ItemBehaviour : ScriptableObject
     {
         [Header("Item Stuff")] public string ItemId = "";
+
+        public string ItemLongID = "";
         [EnumFlags]
         public ItemType ItemType;
 
         public Sprite ImageDisplay;
 
         public float Price;
+
+        [TextArea]
+        public string ShopDescription;
 
         public ItemProprietiesInspector ItemProprieties;
 

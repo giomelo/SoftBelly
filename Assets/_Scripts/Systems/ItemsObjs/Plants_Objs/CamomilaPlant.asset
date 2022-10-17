@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: CamomilaPlant
   m_EditorClassIdentifier: 
   ItemId: Camomila
+  ItemLongID: 
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: fd5c82022e1301647b333703662acb6f, type: 3}
   Price: 30
+  ShopDescription: Planta conhecida por seu aroma intenso e doce, capaz de perfumar
+    grandes ambientes.
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
     ItemProprietiesDescription: "Camomila Planta temperatura: Baixa\nPropriedades:

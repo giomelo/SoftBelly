@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using _Scripts.Systems.Item;
 
-public class ItemBehavior : MonoBehaviour
+public class ItemDisplay : MonoBehaviour
 {
     [SerializeField]
     float moveSpeed = 8;
-    [SerializeField]
-    ItemInterface interf;
 
+    public ItemBehaviour item;
     public bool clicked = false;
     Vector3 vLerp;
 
@@ -17,8 +17,8 @@ public class ItemBehavior : MonoBehaviour
 
         Image img = gameObject.GetComponentsInChildren<Image>()[1];
         Text txt = gameObject.GetComponentInChildren<Text>();
-        img.sprite = interf.icon;
-        txt.text = interf.shortName;
+        img.sprite = item.ImageDisplay;
+        txt.text = item.ItemId;
 
         Button btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(ButtonListener);
@@ -32,7 +32,7 @@ public class ItemBehavior : MonoBehaviour
 
     public void BtnClick()
     {
-        foreach (ItemBehavior item in transform.parent.GetComponentsInChildren<ItemBehavior>())
+        foreach (ItemDisplay item in transform.parent.GetComponentsInChildren<ItemDisplay>())
             if (item != this) { item.clicked = false; }
         clicked = !clicked;
     }

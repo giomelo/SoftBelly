@@ -69,10 +69,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2519556803d3e124ab6e244244cf67ed, type: 3}
-    m_FontSize: 42
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 3
     m_MaxSize: 71
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -181,14 +181,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2454976267925726262}
-  - component: {fileID: 6682096841515407278}
+  - component: {fileID: 2454976267925726269}
   - component: {fileID: 2454976267925726266}
   - component: {fileID: 2454976267925726267}
   - component: {fileID: 2454976267925726264}
   - component: {fileID: 2454976267925726265}
-  - component: {fileID: 2454976267925726269}
   m_Layer: 5
-  m_Name: I_Exemplo - JonTron
+  m_Name: P_Camomila
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +215,7 @@ RectTransform:
   m_AnchoredPosition: {x: -56, y: 0}
   m_SizeDelta: {x: 550, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6682096841515407278
+--- !u!114 &2454976267925726269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,15 +224,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2454976267925726263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1ad835132550d45838a27edbdfaadc, type: 3}
+  m_Script: {fileID: 11500000, guid: cb126f266cfda3d49975e0abc5bcf2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a67c30f10fdd6bf458eba2c6081c3757, type: 3}
-  shortName: JonTron
-  longName: Famoso youtuber JonTron
-  description: "Caralho mano \xE9 o JonTron, n\xE3o acredito."
-  cures: "\u2022 Depress\xE3o\t\t\u2022 AIDS\n\u2022 Calv\xEDcie"
-  value: 1500
+  moveSpeed: 8
+  item: {fileID: 11400000, guid: 12277013e969ede49942103b2a747dc8, type: 2}
+  clicked: 0
 --- !u!222 &2454976267925726266
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -316,18 +312,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 2454976267925726269}
         m_TargetAssemblyTypeName: ItemBehavior, Assembly-CSharp
         m_MethodName: BtnClick
@@ -355,18 +339,3 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4.5, y: 4.5}
   m_UseGraphicAlpha: 1
---- !u!114 &2454976267925726269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2454976267925726263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb126f266cfda3d49975e0abc5bcf2a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  interf: {fileID: 6682096841515407278}
-  clicked: 0

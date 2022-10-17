@@ -6830,6 +6830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224241580}
   - component: {fileID: 224241581}
+  - component: {fileID: 224241582}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -6904,7 +6905,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1354918962}
   m_Direction: 3
   m_MinValue: 130
-  m_MaxValue: 1300
+  m_MaxValue: 131
   m_WholeNumbers: 0
   m_Value: 130
   m_OnValueChanged:
@@ -6922,6 +6923,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &224241582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224241579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90630b402d392e408fc4614cd4b3a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: {fileID: 401574972}
 --- !u!1 &225110018
 GameObject:
   m_ObjectHideFlags: 0
@@ -12186,11 +12200,17 @@ MonoBehaviour:
   info_icon: {fileID: 805318510}
   info_longName: {fileID: 684764990}
   info_description: {fileID: 1392208414}
-  info_cures: {fileID: 578267042}
+  info_extraInfo: {fileID: 982672753}
+  info_extrasText: {fileID: 578267042}
   info_value: {fileID: 140644300}
+  slider: {fileID: 224241582}
   items:
-  - {fileID: 2454976267925726263, guid: a482847c29558064bb9e4fc4966ac895, type: 3}
+  - {fileID: 2454976267925726263, guid: 645cd68117aab3a4db43767ad49a1a52, type: 3}
   - {fileID: 2454976267925726263, guid: acdfd9678d263b541a7d18526d514866, type: 3}
+  - {fileID: 2454976267925726263, guid: b5c448b76669f0b4cb701efd19c48eb9, type: 3}
+  - {fileID: 2454976267925726263, guid: 0c1d94d2fde2ef04195b3fac484194a0, type: 3}
+  - {fileID: 2454976267925726263, guid: 1e9c59759c1d70b4ba44959535039ccd, type: 3}
+  - {fileID: 2454976267925726263, guid: c9e1cb96f87ba834498962c5659059a1, type: 3}
 --- !u!1 &402298987
 GameObject:
   m_ObjectHideFlags: 0
@@ -18271,7 +18291,7 @@ GameObject:
   - component: {fileID: 578267043}
   - component: {fileID: 578267042}
   m_Layer: 5
-  m_Name: Curas
+  m_Name: Texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18294,8 +18314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -75.5}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 172, y: -65}
+  m_SizeDelta: {x: 342, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578267042
 MonoBehaviour:
@@ -18356,7 +18376,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 35
+  m_lineSpacing: 12.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -21727,7 +21747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &689394310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30652,7 +30672,7 @@ GameObject:
   - component: {fileID: 982672752}
   - component: {fileID: 982672751}
   m_Layer: 5
-  m_Name: Cura para
+  m_Name: Texto extra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30742,7 +30762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cura para:'
+  m_Text: 
 --- !u!222 &982672754
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -69,10 +69,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2519556803d3e124ab6e244244cf67ed, type: 3}
-    m_FontSize: 42
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 3
     m_MaxSize: 71
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -181,14 +181,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2454976267925726262}
-  - component: {fileID: 6682096841515407278}
+  - component: {fileID: 2454976267925726269}
   - component: {fileID: 2454976267925726266}
   - component: {fileID: 2454976267925726267}
   - component: {fileID: 2454976267925726264}
   - component: {fileID: 2454976267925726265}
-  - component: {fileID: 2454976267925726269}
   m_Layer: 5
-  m_Name: I_SementeCamomila
+  m_Name: S_Sabugueiro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +215,7 @@ RectTransform:
   m_AnchoredPosition: {x: -56, y: 0}
   m_SizeDelta: {x: 550, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6682096841515407278
+--- !u!114 &2454976267925726269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,17 +224,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2454976267925726263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1ad835132550d45838a27edbdfaadc, type: 3}
+  m_Script: {fileID: 11500000, guid: cb126f266cfda3d49975e0abc5bcf2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 95705774772e77548aa8295edd0019ab, type: 2}
-  icon: {fileID: 21300000, guid: 2f6fc17f106b6ea42a65e68c15f9ed46, type: 3}
-  shortName: Camomila
-  longName: Sementes de camomila
-  description: Planta de aroma intenso e doce, capaz de perfumar grandes ambientes.
-    Conhecida pelas suas pequenas flores brancas que lembram margaridas.
-  cures: "\u2022 Inflama\xE7\xF5es"
-  value: 5
+  moveSpeed: 8
+  item: {fileID: 11400000, guid: e8f3150c682142a41bea9590c5e16c9b, type: 2}
+  clicked: 0
 --- !u!222 &2454976267925726266
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -345,18 +339,3 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4.5, y: 4.5}
   m_UseGraphicAlpha: 1
---- !u!114 &2454976267925726269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2454976267925726263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb126f266cfda3d49975e0abc5bcf2a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  interf: {fileID: 6682096841515407278}
-  clicked: 1
