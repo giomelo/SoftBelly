@@ -4,7 +4,7 @@ namespace _Scripts.Enums
 {
     public static class RandomEnumValues
     {
-        static Random _R = new Random ();
+        static Random _R = new();
         public static T RandomEnumValue<T> ()
         {
             var v = Enum.GetValues (typeof (T));

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Entities.Player;
 using _Scripts.Singleton;
 using _Scripts.U_Variables;
 using TMPro;
@@ -64,7 +65,11 @@ namespace _Scripts.UI
             callback?.Invoke(popupOption != 2, id, plot);
         }
         
-        public void SetPopupOption(int option) => popupOption = option;
+        public void SetPopupOption(int option)
+        {
+            popupOption = option;
+            PlayerInputHandler.EnableInputCall();
+        }
 
         public void UpdateMoneyText()
         {
@@ -83,7 +88,6 @@ namespace _Scripts.UI
         }
         public void UpdateNivel()
         {
-            
             var aux = Math.Ceiling(UniversalVariables.Instance.Nivel / 100);
             if (aux.ToString() == nivelText.text) return;
             GameManager.Instance.PromotionLevelCall();

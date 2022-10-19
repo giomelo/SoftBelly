@@ -61,9 +61,8 @@ namespace _Scripts.Entities.Player
         // Update is called once per frame
         private void Update()
         {
-            if(!disableInput)
-                 HandleMovementInput();
-            WaterInput();
+            HandleMovementInput();
+            //WaterInput();
         }
     
         /// <summary>
@@ -79,7 +78,8 @@ namespace _Scripts.Entities.Player
                playerMovement.Idle();
                return;
             }
-            playerMovement.ProcessInput(horizontal, vertical);
+            if(!disableInput)
+                playerMovement.ProcessInput(horizontal, vertical);
         }
     
         /// <summary>
@@ -88,7 +88,7 @@ namespace _Scripts.Entities.Player
         private void PlantInput()
         {
             if (GameManager.Instance && GameManager.Instance.noRay) return; //Adicionado para que nada seja clicado quando dentro da loja
-            if (!Input.GetMouseButton(0)) return;
+            if (!Input.GetMouseButtonDown(0)) return;
             Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
         
@@ -132,10 +132,12 @@ namespace _Scripts.Entities.Player
                         break;
                     case "Chest":
                         if (LabEvents.IsOnMachine) return;
+                        DisableInputCall();
                         LabEvents.OnChestSelectedCall(1);
                         break;
                     case "Machine":
                         if (LabEvents.IsOnMachine) return;
+                        DisableInputCall();
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
                         if (machineScript.CurrentMachine.IsLocked)
                         {
@@ -144,7 +146,6 @@ namespace _Scripts.Entities.Player
                             {
                                 // se tem comprar
                                 HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, machineScript.CurrentMachine.MachineId, false);
-                                    
                             }
                         }
                         else
@@ -172,6 +173,16 @@ namespace _Scripts.Entities.Player
                     //     if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
                     //     bookScript.OpenBook();
                     //     break;
+                    
+                    case "WateringCan":
+                        if (_isHolding)
+                            PutWaterCan(false);
+                        else
+                        {
+                            //if (!CheckDistanceFromPlayer(waterCanObj, DistanceWaterCan)) return;
+                            PutWaterCan(true);
+                        }
+                        break;
                 }
                 
             }
@@ -215,16 +226,15 @@ namespace _Scripts.Entities.Player
 
         private void PutWaterCan(bool option)
         {
+            _isHolding = option;
             if (option)
             {
-                _isHolding = true;
                 waterCanObj.SetParent(waterCanPlace);
                 waterCanObj.position = waterCanPlace.position;
                 waterCanObj.GetComponent<Rigidbody>().isKinematic = true;
             }
             else
             {
-                _isHolding = false;
                 waterCanObj.SetParent(null);
                 waterCanObj.GetComponent<Rigidbody>().isKinematic = false;
             }

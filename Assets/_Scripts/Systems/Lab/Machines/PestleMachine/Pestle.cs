@@ -111,6 +111,7 @@ namespace _Scripts.Systems.Lab.Machines
 
         public void AddHits()
         {
+            if (!CheckIfHasItem()) return;
             _currentHits++;
             progressBar.AddCurrentValue(1);
             if (_currentHits != _hitsNecessaries) return;

@@ -207,8 +207,12 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
-            if(invClosing != 1)
+            if (invClosing != 1)
+            {
                 StartCoroutine(DispInventory());
+                PlayerInputHandler.EnableInputCall();
+            }
+               
         }
 
         public IEnumerator DispInventory()
