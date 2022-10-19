@@ -11,7 +11,7 @@ namespace _Scripts.Entities.Player
         private CharacterController _chController;
         public Animator animator;
 
-        private float _playerSpeed = 10f;
+        private float _playerSpeed = 6f;
         private Vector3 _playerVelocity;
         [SerializeField]
         private float gravity = 2f;

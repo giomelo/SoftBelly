@@ -33,7 +33,7 @@ namespace _Scripts.Systems.Patients
         public void SetOrder()
         {
             SetLabel();
-            SetCloth();
+            //SetCloth();
             PatientsController.Instance.GenerateRandomOrder(ref Order);
         }
         public void SetLabel()
