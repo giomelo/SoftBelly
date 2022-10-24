@@ -122,7 +122,7 @@ namespace _Scripts.Systems.Patients
             switch (State)
             {
                 case PatientState.Entering:
-                    MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count - 1].position);
+                    MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count].position);
                     break;
                 case PatientState.Waiting:
                     break;

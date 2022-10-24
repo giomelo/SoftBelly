@@ -97,6 +97,8 @@ namespace _Scripts.UI
         public void DisplayInventory(int id)
         {
             if (inventoryId != id) return;
+            GameManager.hasInventory = true;
+            GameManager.Instance.currentUi = this;
             inventoryObject.SetActive(true);
             if (_slotsCreated)
             {
@@ -209,6 +211,7 @@ namespace _Scripts.UI
         {
             if (invClosing != 1)
             {
+                GameManager.hasInventory = false;
                 StartCoroutine(DispInventory());
                 PlayerInputHandler.EnableInputCall();
             }

@@ -36,7 +36,18 @@ namespace _Scripts.UI
         
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) && menuState != -1 && !GameManager.Instance.noPause) { PauseInput(); }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                if (GameManager.hasInventory)
+                {
+                    GameManager.Instance.currentUi.DisposeInventory();
+                    return;
+                }
+                    
+                if(menuState != -1 && !GameManager.Instance.noPause)
+                    PauseInput();
+            }
         }
 
         private void PauseInput()

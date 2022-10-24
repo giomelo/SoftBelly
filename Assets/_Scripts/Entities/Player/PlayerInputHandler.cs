@@ -40,6 +40,8 @@ namespace _Scripts.Entities.Player
         [SerializeField]
         private Transform waterCanPlace;
         private static bool disableInput;
+
+        private Vector3 waterCanPos;
         #endregion
 
         public static void DisableInputCall()
@@ -56,7 +58,8 @@ namespace _Scripts.Entities.Player
         private void Start()
         {
             InvokeRepeating(nameof(PutWaterInput), 1,0.1f);
-            InvokeRepeating(nameof(PlantInput), 1,0.05f); 
+            InvokeRepeating(nameof(PlantInput), 1,0.05f);
+            waterCanPos = waterCanObj.position;
         }
         // Update is called once per frame
         private void Update()
@@ -124,7 +127,6 @@ namespace _Scripts.Entities.Player
                                 {
                                     // se tem comprar
                                     HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, plotScript.PlotId, true);
-                                    
                                 }
 
                             }
@@ -173,15 +175,12 @@ namespace _Scripts.Entities.Player
                     //     if (!hit.transform.TryGetComponent<Book>(out var bookScript)) return;
                     //     bookScript.OpenBook();
                     //     break;
-                    
                     case "WateringCan":
                         if (_isHolding)
                             PutWaterCan(false);
                         else
-                        {
                             //if (!CheckDistanceFromPlayer(waterCanObj, DistanceWaterCan)) return;
                             PutWaterCan(true);
-                        }
                         break;
                 }
                 
@@ -237,6 +236,8 @@ namespace _Scripts.Entities.Player
             {
                 waterCanObj.SetParent(null);
                 waterCanObj.GetComponent<Rigidbody>().isKinematic = false;
+                waterCanObj.position = waterCanPos;
+                
             }
           
         }
