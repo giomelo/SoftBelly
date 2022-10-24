@@ -2,6 +2,7 @@
 using _Scripts.Helpers;
 using _Scripts.Systems.Inventories;
 using _Scripts.U_Variables;
+using _Scripts.UI;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,7 +27,9 @@ namespace _Scripts.Singleton
 
         public bool noRay = false;
         public bool noPause = false;
-
+        
+        public static bool hasInventory = false;
+        public UIController currentUi;
         public void SleepCall()
         {
             if (DaysController.Instance.time.Hours >= DaysController.Instance.finisHourPatients)
@@ -41,8 +44,6 @@ namespace _Scripts.Singleton
             
         }
         
-
-
         public void PromotionLevelCall()
         {
             PromotionLevel?.Invoke();
