@@ -8,11 +8,19 @@ TagManager:
   - Chest
   - Machine
   - WateringCan
+  - Drag
+  - Smash
+  - Mixed
+  - Book
+  - Patient
+  - Plot
+  - Bed
+  - Drop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ingredients
   - Water
   - UI
   - Interactive

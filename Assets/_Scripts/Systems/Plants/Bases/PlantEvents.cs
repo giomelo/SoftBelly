@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Plantation;
 using _Scripts.UI;
@@ -13,8 +14,10 @@ namespace _Scripts.Systems.Plants.Bases
     {
         public static Action<Plot> OnPlanted;
         public static Action<Plot> OnHarvest;
-        public static Action<int> LabInventoryAction;
+        public static Action LabInventoryAction;
         public static Action<int> OnPlotSelected;
+        public static Action<int> OnPlotUnlocked;
+        public static Action<bool, int, bool> OnbuyConfirm;
 
         public static SeedBase CurrentPlant;
         public static Plot CurrentPlot;
@@ -30,15 +33,19 @@ namespace _Scripts.Systems.Plants.Bases
         {
             OnPlotSelected?.Invoke(id);
         }
+        public static void OnPlotUnlockedCall(int id)
+        {
+            OnPlotUnlocked?.Invoke(id);
+        }
 
         public static void OnHarvestCall(Plot id)
         {
             OnHarvest?.Invoke(id);
         }
 
-        public static void OnLabInventoryAction(int id)
+        public static void OnLabInventoryAction()
         {
-            LabInventoryAction?.Invoke(id);
+            LabInventoryAction?.Invoke();
         }
         public static void OnPlantedSelected()
         {

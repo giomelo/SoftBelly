@@ -1,12 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
-using _Scripts.Systems.Lab.Machines;
+using _Scripts.Singleton;
 using UnityEngine;
 
-public class TimerFaceScreen : MonoBehaviour
+namespace _Scripts
 {
-    void Update()
+    public class TimerFaceScreen : MonoBehaviour
     {
-        transform.LookAt(Camera.main.transform.position, Vector3.up);
+        private void Start()
+        {
+            StartCoroutine(Look());
+        }
+
+        private IEnumerator Look()
+        {
+            transform.LookAt(Camera.main.transform, Vector3.up);
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(Look());
+        }
+    
+        private void OnDestroy()
+        {
+            StopCoroutine(Look());
+        }
     }
 }

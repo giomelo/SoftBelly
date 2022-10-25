@@ -4,6 +4,7 @@ using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
 using System;
+using _Scripts.Systems.Lab;
 
 namespace _Scripts.Systems.Inventories
 {
@@ -14,7 +15,7 @@ namespace _Scripts.Systems.Inventories
    {
       public Dictionary<int, ItemObj> Slots;
       public int maxAmountPerSlots = 20;
-      [EnumFlagsAttribute]
+      [EnumFlags]
       public ItemType itensType;
 
       [SerializeField] 
@@ -46,10 +47,8 @@ namespace _Scripts.Systems.Inventories
             index = CheckIfSlotAreAvailabe(item);
          }
          else
-         {
-            
+         { 
             index = ReturnFirstEmptySlot();
-            Debug.Log("Index: " + index);
          }
          Put(index, item, amount);
          Display();
@@ -81,7 +80,6 @@ namespace _Scripts.Systems.Inventories
 
       private int ReturnFirstEmptySlot()
       {
-         Debug.LogWarning("EmptySlot");
          for(int i = 0; i < Slots.Count; i++)
          {
             var amountInSlot = Slots.ElementAt(i).Value.amount;
@@ -152,6 +150,22 @@ namespace _Scripts.Systems.Inventories
          return Slots.Count;
       }
 
+      public PotionBase CheckIfContainsKey(MedicalSymptoms item, PotionType type)
+      {
+         PotionBase potion = null;
+         for(int i = 0; i < Slots.Count; i++)
+         {
+            //ser o item comparando nao eh uma poção
+            if (!(Slots.ElementAt(i).Value.item as PotionBase)) continue;
+            PotionBase auxInventory = Slots.ElementAt(i).Value.item as PotionBase;
+            if (!auxInventory.CheckIfPortionHasCure(item)) continue;
+            if (!auxInventory.CheckIfPotionIsType(type)) continue;
+            potion = auxInventory;
+         }
+
+         return potion;
+      }
+
       public bool CheckIfContainsKey(ItemBehaviour item)
       {
          for(int i = 0; i < Slots.Count; i++)
@@ -161,7 +175,14 @@ namespace _Scripts.Systems.Inventories
                return true;
             }
          }
+
          return false;
+      }
+      
+      
+      private int GenerateKey()
+      {
+         return Slots.Count;
       }
    }
 }

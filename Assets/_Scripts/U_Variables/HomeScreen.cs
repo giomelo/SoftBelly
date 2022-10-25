@@ -9,7 +9,7 @@ namespace _Scripts.U_Variables
         public void Start()
         {
             homeScreen = this;
-            UniversalVariables.Money = 100;
+            UniversalVariables.Instance.Money = 100;
         }
 
     }

@@ -5,7 +5,7 @@ using _Scripts.Enums;
 namespace _Scripts.Editor
 {
    
-    [CustomPropertyDrawer(typeof(EnumFlagsAttribute))]
+    [CustomPropertyDrawer(typeof(EnumFlags))]
     public class EnumFlagsAttributeDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect _position, SerializedProperty _property, GUIContent _label)

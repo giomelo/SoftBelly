@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlantInventory
   m_EditorClassIdentifier: 
   maxAmountPerSlots: 20
-  itensType: 3
+  itensType: 1
   Size: 30
   storageId: 0
-  InventoryType: 0
+  InventoryType: 1

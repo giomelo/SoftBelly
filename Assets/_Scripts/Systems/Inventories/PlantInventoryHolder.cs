@@ -2,7 +2,7 @@
 
 namespace _Scripts.Systems.Inventories
 {
-    public class PlantInventoryHolder : StorageHolder , IDontDestroyOnLoad<LabInventoryHolder>
+    public class PlantInventoryHolder : StorageHolder
     {
         private static PlantInventoryHolder _instance;
         

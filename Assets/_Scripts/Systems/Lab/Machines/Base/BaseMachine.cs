@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using _Scripts.Enums;
 using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Lab.Machines.MachineBehaviour;
 using _Scripts.Systems.Lab.Recipes;
+using _Scripts.Systems.Plants.Bases;
 using _Scripts.UI;
 using UnityEngine;
 
 namespace _Scripts.Systems.Lab.Machines.Base
 {
-    public abstract class BaseMachine : MonoBehaviour
+    /// <summary>
+    /// Class for all machines
+    /// </summary>
+    [RequireComponent(typeof(MachineHolder))]
+    public abstract class BaseMachine : LockedObject
     {
-        //public List<UIMachineSlot> Ingredients = new List<UIMachineSlot>();
-        //public List<UIMachineSlot> Results  = new List<UIMachineSlot>();
         [SerializeField]
         private GameObject machineLayer;
         [SerializeField]
@@ -27,46 +31,80 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public int MachineId;
         public RecipeObj CurrentRecipe;
-        public bool IsDestroyed { get; private set; }
-        private MachineHolder thisMachineHolder;
+        public bool IsDestroyed { get; protected set; }
+        [HideInInspector]
+        public MachineHolder thisMachineHolder;
 
         public bool CanBurn;
+        [SerializeField]
+        protected MachinesTypes MachineTypes;
+        public static void GenerateNewPropriets()
+        {
+            
+        }
 
-        private void Start()
+        public virtual void Start()
         {
             thisMachineHolder = gameObject.GetComponent<MachineHolder>();
+            Initialized(MachineId, false);
+            Locked(IsLocked, MachineId, false);
         }
-        private void OnEnable()
+        public virtual void OnEnable()
         {
             LabEvents.OnMachineSelected += OnCLicked;
             LabEvents.OnMachineDispose += OnDispose;
             LabEvents.OnMachineStarted += MachineProcess;
+            PlantEvents.OnbuyConfirm += Locked;
             IsDestroyed = false;
         }
-        private void OnDisable()
+        public virtual void OnDisable()
         {
             LabEvents.OnMachineSelected -= OnCLicked;
             LabEvents.OnMachineDispose -= OnDispose;
             LabEvents.OnMachineStarted -= MachineProcess;
+            PlantEvents.OnbuyConfirm -= Locked;
             IsDestroyed = true;
         }
-
-        private void OnCLicked(BaseMachine id)
+        /// <summary>
+        /// When machine is clicked
+        /// </summary>
+        /// <param name="id"></param>
+        protected void OnCLicked(BaseMachine id)
         {
             if (uiController.inventoryId != id.uiController.inventoryId) return;
+            InitMachine();
             machineLayer.SetActive(true);
             uiController.DisplayInventory(id.uiController.inventoryId);
+            uiController.ShowItemsAvailable(id);
         }
 
+        protected virtual void InitMachine()
+        {
+
+        }
+        
+        /// <summary>
+        /// Method for check all results in slot were collected, machines like the caldron only work if the player
+        /// had collected all the remaining results from previous work
+        /// </summary>
+        /// <returns></returns>
         public bool CheckIfCollectedAllResults()
         {
             foreach (var slots in ResultsSlots)
             {
                 if (slots.Slot.MachineSlot.item != null) return false;
             }
+            foreach (var slots in IngredientsSlots)
+            {
+                if (slots.Slot.MachineSlot.item != null) return false;
+            }
             return true;
         }
-        private void OnDispose(BaseMachine id)
+        /// <summary>
+        /// Close Machine
+        /// </summary>
+        /// <param name="id"></param>
+        protected void OnDispose(BaseMachine id)
         {
             if (LabEvents.CurrentMachine == null) return;
             if (uiController.inventoryId != id.uiController.inventoryId) return;
@@ -75,14 +113,43 @@ namespace _Scripts.Systems.Lab.Machines.Base
             foreach (var u in IngredientsSlots)
             {
                 u.UnHighLight();
+                OnSlotDispose(u);
             }
+            FinishMachine();
             LabEvents.CurrentMachine = null;
-            
+        }
+        
+        /// <summary>
+        /// When the machine is dispose what to do with the slot
+        /// </summary>
+        /// <param name="slot"></param>
+        protected virtual void OnSlotDispose(BaseMachineSlot slot)
+        {
+            slot.ResetSlot();
+        }
+
+        protected virtual void FinishMachine()
+        {
+
         }
         /// <summary>
         /// Button for machines that have timer
         /// </summary>
         protected virtual void StartMachine()
+        {
+            // SetRecipe();
+            //
+            // if (CurrentRecipe == null) return;
+
+            if (LabEvents.CurrentMachine is ITimerMachine)
+            {
+                StartTime();
+                Debug.LogWarning("Timer");
+                LabEvents.OnMachineStartedCall(this); //event for calling machine hud
+            }
+        }
+
+        private void SetRecipe()
         {
             //if (machine.MachineId != MachineId) return;
             List<ItemObj> ingredients = new List<ItemObj>();
@@ -94,16 +161,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
             auxRecipe.Init(ingredients);
             
             CurrentRecipe = AllRecipes.Instance.CheckRecipe(auxRecipe);
-            
-            if (CurrentRecipe == null) return;
-
-            Debug.Log("Receita Existe");
-           
-            StartTime();
-            
-            LabEvents.OnMachineStartedCall(this); //event for calling machine hud
         }
-
+        
         protected void StartTime()
         { 
             if (!LabTimeController.Instance.LabTimer.ContainsKey(MachineId))
@@ -114,7 +173,11 @@ namespace _Scripts.Systems.Lab.Machines.Base
             uiController.DisposeInventory();
             StartCoroutine(LabTimeController.Instance.WorkMachine(thisMachineHolder));
         }
-
+        
+        /// <summary>
+        /// ui machine process
+        /// </summary>
+        /// <param name="machine"></param>
         public void MachineProcess(BaseMachine machine)
         {
             if (machine.MachineId != MachineId) return;
@@ -136,14 +199,47 @@ namespace _Scripts.Systems.Lab.Machines.Base
         /// </summary>
         public abstract void CreateResult();
         
+        /// <summary>
+        /// Set ingredient slot for result slot, machines like herb dryer only have one slot for collection and putting
+        /// </summary>
         public void SetSlotType()
         {
-            Debug.LogWarning("SLOTTYPE CHANGED"); 
             foreach (var slot in IngredientsSlots)
             {
                 if (slot.Slot.MachineSlot.item == null) continue;
                 slot.Slot.Type = MachineSlotType.Result;
             }
+        }
+
+        public virtual bool CheckIfSlotCanReciveIngredient()
+        {
+            return LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType);
+        }
+        
+        /// <summary>
+        /// For all machines called after clicked in machine slot
+        /// </summary>
+        public virtual void CheckFinishMachine(BaseMachineSlot slot)
+        {
+            
+        }
+
+        public virtual bool CheckIfHasItem()
+        {
+            foreach (var item in IngredientsSlots)
+            {
+                if (item.Slot.MachineSlot.item != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void UnlockMachine()
+        {
+            IsLocked = false;
         }
     }
 }

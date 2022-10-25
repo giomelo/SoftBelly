@@ -1,0 +1,7 @@
+
+    Para adicionar um ítem à loja duplique um dos prefabs presentes e modifique seu campo ITEM.
+
+    Idealmente os itens adicionados devem ter seus campos SHOP DESCRIPTION preenchidos e, opcionalmente, o campo LONG ID usado para nomes maiores que não possam ser digitados por completo na área de nomes da loja.
+
+    Após preencher estes campos adicione o item à loja através do array que está em...
+    [ Loja -> CanvasStore -> Loja principal -> Lado esquerdo -> Itens ]

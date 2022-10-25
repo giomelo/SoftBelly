@@ -21,21 +21,21 @@ namespace _Scripts.UI
         
         public void MouseEnter()
         {
-            
+            Debug.Log("Enter");
             if (uiSlot.item == null)
             {
                 _subject.ResetCurrentProprieties();
                 return;
             }
 
-            if (uiSlot.item.ItemProprietiesGO == null) return;
-            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprietiesGO, this.transform);
+            if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
+            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.gameObject, uiSlot.item);
            
         }
         
         public void MouseExit()
         {
-            Debug.Log("mouseExit");
+            Debug.Log("Exit");
             _subject.ResetCurrentProprieties();
         }
     }

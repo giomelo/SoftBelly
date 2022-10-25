@@ -18,10 +18,13 @@ namespace _Scripts.Singleton
         public int key;
         public PlantPlot value;
     }
-
+    
+    /// <summary>
+    /// Class for control timer in plants
+    /// </summary>
     public class PlantTimeController : MonoSingleton<PlantTimeController>
     {
-        public Dictionary<int, PlantPlot> PlantTimer { get; } = new Dictionary<int,PlantPlot>();
+        public Dictionary<int, PlantPlot> PlantTimer { get; private set; } = new Dictionary<int,PlantPlot>();
         public List<ExposedDic> dic = new List<ExposedDic>();
         public void AddTime(int plotId, float time, SeedBase plant, float thirstTime, bool isThirsty)
         {
@@ -51,7 +54,13 @@ namespace _Scripts.Singleton
                 dic.Add(aux);
             }
         }
-
+        
+        
+        // The code is an example of how to create a new plant.
+        // The code starts by checking if the PlantTimer has reached 0, which means that no plants have been created yet.
+        // If it hasn't reached 0, then the code will loop through all of the plots in the grid system and check if their thirst time has passed.
+        // If so, then they will be set as thirsty and displayed on the plot.
+            
         public void CreatPlants()
         {
             if (PlantTimer.Count == 0)  return;
@@ -95,13 +104,11 @@ namespace _Scripts.Singleton
             var auxThirsty = PlantTimer[plot.PlotId].ThristTime;
             aux -= 1;
             auxThirsty += 1;
-            Debug.Log("Sede :" + auxThirsty);
-            Debug.Log("Plot ID :" + plot.PlotId);
+
             var p = new PlantPlot(plot.CurrentPlant, aux, auxThirsty, false);
             PlantTimer[plot.PlotId] = p;
-            Debug.LogWarning("Grow");
-            
-            
+
+
             //thrist cicle 
             Debug.Log("Thirst time: " + PlantTimer[plot.PlotId].ThristTime);
             if (PlantTimer[plot.PlotId].ThristTime >= plot.CurrentPlant.WaterCicles && !plot.IsThirsty)
@@ -201,11 +208,6 @@ namespace _Scripts.Singleton
             //         StartCoroutine(Grow(plot));
             //     }
             // }
-        }
-
-        private void SetDeadPlot(Plot plot)
-        {
-            
         }
     }
 }

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7311035e4c584d1fa853cb2e3f50e576, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: 
-  ItemId: Potion
-  ItemType: 4
+  ItemId: Garbage
+  ItemType: 32
   ImageDisplay: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Price: 0
-  ItemProprietiesGO: {fileID: 0}
+  ItemProprieties:
+    ItemProprietiesGO: {fileID: 0}
+    ItemProprietiesDescription: 
+  Cure: []
+  PotionType: 6

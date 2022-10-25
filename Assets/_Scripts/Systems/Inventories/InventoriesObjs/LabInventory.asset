@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LabInventory
   m_EditorClassIdentifier: 
   maxAmountPerSlots: 20
-  itensType: 14
+  itensType: 1006
   Size: 30
   storageId: 1
-  InventoryType: 1
+  InventoryType: 2

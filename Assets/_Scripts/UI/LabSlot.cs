@@ -20,20 +20,19 @@ namespace _Scripts.UI
             {
                 return;
             }
-            
-      
             LabEvents.IngredientSelected = uiSlot.item;
             //if (Slot.MachineSlot.amount >= Slot.maxPerSlot) return;
             if (LabEvents.IngredientSelected == null) return;
-            if (!LabEvents.MachineSlot.itemRequired.HasFlag(LabEvents.IngredientSelected.ItemType))
+            if (LabEvents.MachineSlot.MachineSlot.item != null)
             {
-                Debug.Log("This item cant be put in this slot");
+                // checa se o item so slot selecionado é igual ao item do slot do inventario
+                if (!LabEvents.IngredientSelected.Equals(LabEvents.MachineSlot.MachineSlot.item)) return;
+            }
+            //checa se o slot pode receber esse item
+            if (!LabEvents.CurrentMachine.CheckIfSlotCanReciveIngredient())
+            {
                 return;
             }
-
-            Debug.Log(LabEvents.MachineSlot.MachineSlot.amount);
-            Debug.Log(LabEvents.MachineSlot.maxPerSlot);
-
             if (LabEvents.MachineSlot.MachineSlot.amount >= LabEvents.MachineSlot.maxPerSlot) return;
             LabEvents.OnIngredientSelectedCall();
             //LabEvents.OnItemRemoved(uiSlot.slotId, 1, InventoryType.Lab);
@@ -46,6 +45,5 @@ namespace _Scripts.UI
             if (!TryGetComponent<Button>(out var button)) return;
             button.onClick.AddListener(OnSlotClicked);
         }
-        
     }
 }

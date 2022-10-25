@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Enums;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Plants.Bases;
+using _Scripts.U_Variables;
 using Systems.Plantation;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace _Scripts.Systems.Plantation
 {
-    public class Plot : MonoBehaviour
+    public class Plot : LockedObject
     {
         public int PlotId;
         public SeedBase CurrentPlant;
@@ -23,10 +25,14 @@ namespace _Scripts.Systems.Plantation
         [SerializeField]
         private GameObject deathObj;
 
+        
         private void Start()
         {
             IsDestroyed = false;
+            Initialized(PlotId, true);
+            Locked(IsLocked, PlotId, true);
         }
+
         public void ChangePlant(Plot id)
         {
             if (id.PlotId != this.PlotId) return;
@@ -49,8 +55,8 @@ namespace _Scripts.Systems.Plantation
             CurrentPlant = PlantEvents.CurrentPlant;
             if (!PlantTimeController.Instance.PlantTimer.ContainsKey(PlotId))
             {
-                PlantTimeController.Instance.PlantTimer.Add(PlotId, new PlantPlot(CurrentPlant, CurrentPlant.GrowTime, 0, false));
-                 StartCoroutine(PlantTimeController.Instance.Grow(this));
+                PlantTimeController.Instance.AddTime(PlotId, CurrentPlant.GrowTime, CurrentPlant, 0, false);
+                StartCoroutine(PlantTimeController.Instance.Grow(this));
             }
             
             CreatePlant();
@@ -88,12 +94,14 @@ namespace _Scripts.Systems.Plantation
         {
             PlantEvents.OnPlanted += Display;
             PlantEvents.OnHarvest += Harvest;
-         
+            PlantEvents.OnbuyConfirm += Locked;
+
         }
         private void OnDestroy()
         {
             PlantEvents.OnPlanted -= Display;
             PlantEvents.OnHarvest -= Harvest;
+            PlantEvents.OnbuyConfirm -= Locked;
             IsDestroyed = true;
         }
 
@@ -104,13 +112,9 @@ namespace _Scripts.Systems.Plantation
 
         private void CheckState()
         {
-            Debug.Log(PlantTimeController.Instance.PlantTimer[PlotId].ThristTime);
-            Debug.Log(CurrentPlant.WaterCicles);
             if (PlantTimeController.Instance.PlantTimer[PlotId].IsThirsty && !IsDead)
             {
-                Debug.LogWarning("Created thist");
-                SetThirsty(true); 
-                Debug.Log("DISPLATYYYTTYYTTT------------------------");
+                SetThirsty(true);
             }
             if (PlantTimeController.Instance.PlantTimer[PlotId].ThristTime >= CurrentPlant.WaterCicles * 3)
             {
@@ -172,11 +176,17 @@ namespace _Scripts.Systems.Plantation
             PlantTimeController.Instance.ClearSlot(PlotId);
             StartCoroutine(ClearPlot());
 
-            if (!IsDead)
+            if (IsDead)
             {
-                PlantEvents.OnLabInventoryAction(1);
+                IsDead = false;
             }
-            
+            else
+            {
+                if (CurrentPlant == null) return;
+                GameManager.Instance.labStorage.Storage.AddItem(1, PlantEvents.PlantCollected);
+                PlantEvents.OnLabInventoryAction();
+            }
+
         }
         
         /// <summary>

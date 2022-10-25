@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _Scripts.Enums;
 using _Scripts.Singleton;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Plantation;
 using UnityEngine;
 
@@ -27,8 +29,10 @@ namespace Systems.Plantation
         private GameObject plot;
 
         public static int PlotsId = 0;
-
+        
         public List<Plot> Plots = new List<Plot>();
+        [HideInInspector]
+        //public StorageHolder labStorage;
 
 
         public void CreatGrid()
@@ -65,6 +69,16 @@ namespace Systems.Plantation
                 PlotsId++;
             }
             PlantTimeController.Instance.CreatPlants();
+            
+            // var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();
+            // // ReSharper disable once SuggestVarOrType_SimpleTypes
+            // foreach (StorageHolder s in storagesInScene)
+            // {
+            //     if (s.Storage.InventoryType == InventoryType.Lab)
+            //     {
+            //         labStorage = s;
+            //     }
+            // }
         }
     }
 }

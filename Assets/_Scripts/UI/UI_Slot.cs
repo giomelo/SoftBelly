@@ -1,6 +1,5 @@
 ﻿using System;
 using _Scripts.Systems.Item;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.UI

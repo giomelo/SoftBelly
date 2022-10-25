@@ -1,4 +1,5 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Entities.Player;
@@ -7,6 +8,7 @@ using _Scripts.Singleton;
 using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab;
+using _Scripts.Systems.Lab.Machines.Base;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
 
@@ -42,18 +44,26 @@ namespace _Scripts.UI
         
         [SerializeField]
         private InventoryType inventoryType;
-
-        public int Width;
-        public int Height;
         private GameObject proprietiesObj;
         [SerializeField]
         private List<GameObject> poolProprieties = new List<GameObject>();
         
-        [SerializeField]
+        
         [Header("Offset for display proprieties")]
-        private float xOffsetProprieties = 210f;
+        private float xOffsetProprieties = 0.3f;
+       
+        private float yOffsetProprieties = 0.3f;
+        [Header("Show invenotry button")]
         [SerializeField]
-        private float yOffsetProprieties = 80f;
+        private GameObject showButton; // show invenotry button
+        [SerializeField]
+        private List<SlotBase> allSlots = new List<SlotBase>();
+        [SerializeField]
+        private int _limetedPos = 1520;
+
+        private int invClosing = 0;
+        [SerializeField]
+        private Animator anim;
 
         private void Start()
         {
@@ -71,7 +81,6 @@ namespace _Scripts.UI
         private void OnEnable()
         {
             PlantEvents.OnPlotSelected += DisplayInventory;
-            PlantEvents.LabInventoryAction += AddHarvestedPlant;
             LabEvents.OnChestSelected += DisplayInventory;
             LabEvents.OnItemRemoved += RemoveItemAllInventoryTypes;
         }
@@ -79,7 +88,6 @@ namespace _Scripts.UI
         private void OnDisable()
         {
             PlantEvents.OnPlotSelected -= DisplayInventory;
-            PlantEvents.LabInventoryAction -= AddHarvestedPlant;
             LabEvents.OnChestSelected -= DisplayInventory;
             LabEvents.OnItemRemoved -= RemoveItemAllInventoryTypes;
         }
@@ -89,6 +97,8 @@ namespace _Scripts.UI
         public void DisplayInventory(int id)
         {
             if (inventoryId != id) return;
+            GameManager.hasInventory = true;
+            GameManager.Instance.currentUi = this;
             inventoryObject.SetActive(true);
             if (_slotsCreated)
             {
@@ -99,6 +109,7 @@ namespace _Scripts.UI
             CreateSlots();
             UpdateInventory();
         }
+
         /// <summary>
         /// Instantiate and update slots of the inventory first time
         /// </summary>
@@ -125,9 +136,13 @@ namespace _Scripts.UI
                 var position = startPosition.position;
                 var pos = new Vector3(position.x ,position.y, position.z);
             
-                var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity);
-                slotInstance.transform.SetParent(slotDisplay);
-                UpdateSlots(slotInstance.transform, index);
+                var slotInstance = Instantiate(slotPrefab, pos, Quaternion.identity, slotDisplay);
+                //slotInstance.transform.SetParent(slotDisplay);
+                if (slotInstance.TryGetComponent<SlotBase>(out var slotScript))
+                {
+                    allSlots.Add(slotScript);
+                    UpdateSlots(slotScript, index);
+                }
                 index++;
             }
             _slotsCreated = true;
@@ -139,51 +154,53 @@ namespace _Scripts.UI
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void UpdateSlots(Transform slot, int index)
+        private void UpdateSlots(SlotBase slot, int index)
         {
-            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
-            slotScript.AddSubject(this);
-        
+            slot.AddSubject(this);
+            if (!_slotsCreated)
+            {
+                slot.uiSlot.slotId = _currentSlot;
+                _currentSlot++;
+            }
             if (index >= StorageHolder.Storage.Slots.Count) return; //not update an empty slot index is the slot position
 
             if (StorageHolder.Storage.Slots.ElementAt(index).Value.amount > 0)
             {
-                slotScript.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
-                slotScript.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
-                slotScript.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
-                if (_slotsCreated) return;
+                slot.uiSlot.amount.text = StorageHolder.Storage.Slots.ElementAt(index).Value.amount.ToString();
+                slot.uiSlot.item = StorageHolder.Storage.Slots.ElementAt(index).Value.item;
+                slot.uiSlot.itemImage.sprite = StorageHolder.Storage.Slots.ElementAt(index).Value.item.ImageDisplay;
                 
-                slotScript.uiSlot.slotId = _currentSlot;
-                _currentSlot++;
+
             }
             else
             {
                 ResetSlot(slot);
             }
+            
         }
-        
+
         /// <summary>
         /// Reset the slot to the original state(blank item)
         /// </summary>
         /// <param name="slot"></param>
         /// <param name="index"></param>
-        private void ResetSlot(Transform slot)
+        private void ResetSlot(SlotBase slot)
         {
-            if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
+            //if (!slot.TryGetComponent<SlotBase>(out var slotScript)) return;
             var prefabScript = slotPrefab.GetComponent<SlotBase>();
-            slotScript.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
-            slotScript.uiSlot.item = null;
-            slotScript.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
+            slot.uiSlot.amount.text = prefabScript.uiSlot.amount.text;
+            slot.uiSlot.item = null;
+            slot.uiSlot.itemImage.sprite = prefabScript.uiSlot.itemImage.sprite;
         }
-        
+
         /// <summary>
         /// Foreach slot update the slot with the new information in the dictionary
         /// </summary>
         public void UpdateInventory()
         {
-            for (int i = 0; i < slotDisplay.childCount; i++)
+            for (int i = 0; i < allSlots.Count; i++)
             {
-                UpdateSlots(slotDisplay.GetChild(i), i);
+                UpdateSlots(allSlots[i], i);
             }
         }
         
@@ -192,34 +209,60 @@ namespace _Scripts.UI
         /// </summary>
         public void DisposeInventory()
         {
+            if (invClosing != 1)
+            {
+                GameManager.hasInventory = false;
+                StartCoroutine(DispInventory());
+                PlayerInputHandler.EnableInputCall();
+            }
+               
+        }
+
+        public IEnumerator DispInventory()
+        {
+            invClosing = 1;
+            if (anim != null)
+            {
+                anim.Play("PlantMenuAnim.HidePlantMenu");
+                yield return new WaitForSeconds(0.6f);
+            }
+            invClosing = 0;
             ResetCurrentProprieties();
             inventoryObject.SetActive(false);
             LabEvents.OnMachineDisposeCall(LabEvents.CurrentMachine);
         }
-        
+
         /// <summary>
         /// Display plant proprieties for now
         /// </summary>
         /// <param name="item"></param>
-        public void DisplayCurrentProprieties(GameObject item, Transform local)
+        public void DisplayCurrentProprieties(GameObject item, GameObject local, ItemBehaviour itemS)
         {
             // //proprietiesDisplay.ScientificName.text = item.ScientificName;
             // proprietiesDisplay.PlantName.text = item.ItemId;
             // proprietiesDisplay.ProprietiesText.text = item.Proprieties;
-            Debug.Log("oi");
             GameObject aux = null;
-            var position = local.transform.position;
-            Debug.Log(position);
-            var pos = new Vector3(position.x + xOffsetProprieties, position.y - yOffsetProprieties, 0);
+            int sinal = 1;
+            RectTransform rect = local.GetComponent<RectTransform>();
+
+            var position = rect.position;
+            float xOffset = xOffsetProprieties * Screen.width/2;
+            float yOffset = yOffsetProprieties * Screen.height/2;
+            if (position.x >= _limetedPos)
+            {
+                sinal = -1;
+            }
+            else
+            {
+                sinal = 1;
+            }
+            var pos = new Vector3(position.x + xOffset * sinal, position.y - yOffset, 0);
             foreach (GameObject go in poolProprieties)
             {
-                Debug.Log(go);
-                Debug.Log(item);
                 if (go.name == $"{item.name}(Clone)")
                 {
                     aux = go;
                 }
-                
             }
             
             if (aux == null)
@@ -233,15 +276,13 @@ namespace _Scripts.UI
             {
                 aux.transform.position = pos;
                 aux.SetActive(true);
+                aux.transform.GetComponent<ItemProprieties>().text.text = itemS.ItemProprieties.ItemProprietiesDescription;
             }
     
         }
 
         public void ResetCurrentProprieties()
         {
-            // proprietiesDisplay.ScientificName.text = "";
-            // proprietiesDisplay.PlantName.text = "";
-            // proprietiesDisplay.ProprietiesText.text = "";
             foreach (GameObject go in poolProprieties)
             {
                 go.SetActive(false);
@@ -249,12 +290,13 @@ namespace _Scripts.UI
             }
         }
 
-        private void AddHarvestedPlant(int id)
-        {
-            if (StorageHolder.Storage.storageId != id) return;
-            StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
-            StorageHolder.UpdateExposedInventory();
-        }
+        // private void AddHarvestedPlant(InventoryType type)
+        // {
+        //     if (StorageHolder.Storage.InventoryType != type) return;
+        //     Debug.LogWarning("AddedPLant");
+        //     StorageHolder.Storage.AddItem(1, PlantEvents.PlantCollected);
+        //     StorageHolder.UpdateExposedInventory();
+        // }
         
         //remove em todos os inventários da cena o item
         private void RemoveItemAllInventoryTypes(int key, int amount, InventoryType type)
@@ -263,6 +305,34 @@ namespace _Scripts.UI
 
             StorageHolder.Storage.RemoveItem(key, amount);
             UpdateInventory();
+        }
+
+        public void HideInventory()
+        {
+            inventoryObject.SetActive(false);
+            showButton.SetActive(true);
+        }
+
+        public void ShowInventory()
+        {
+            inventoryObject.SetActive(true);
+            showButton.SetActive(false);
+        }
+
+        public void ShowItemsAvailable(BaseMachine machineSlot)
+        {
+            Debug.LogWarning("Items");
+            var slot = machineSlot.IngredientsSlots[0].Slot;
+            
+            for (int i = 0; i < allSlots.Count; i++)
+            {
+                if (allSlots[i].uiSlot.item == null) continue;
+                allSlots[i].uiSlot.itemImage.color = Color.white;
+                if (!slot.itemRequired.HasFlag(allSlots[i].uiSlot.item.ItemType))
+                {
+                    allSlots[i].uiSlot.itemImage.color = Color.black;
+                }
+            }
         }
     }
 }

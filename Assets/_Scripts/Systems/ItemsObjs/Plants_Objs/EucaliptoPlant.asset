@@ -7,16 +7,38 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: EucaliptoPlant
   m_EditorClassIdentifier: 
   ItemId: Eucalipto
   ItemType: 2
-  ImageDisplay: {fileID: 21300000, guid: 14d9cbcc7db785d43924d921d6de4aeb, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
   Price: 20
-  ItemProprietiesGO: {fileID: 6779772405570869347, guid: 16f63f920c2b13b488b9de8c72752d3a, type: 3}
-  isDried: 0
-  MedicalSymptoms: 0
-  DriedPlant: {fileID: 21300000, guid: caa3537358c561c438a5a2d3a8851b28, type: 3}
+  ItemProprieties:
+    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
+    ItemProprietiesDescription: 'Eucalipto Planta temperatura: Baixa
+
+      Propriedades:
+      Febre, Asma'
+  MedicalSymptoms:
+  - Symptoms: 2
+    Nivel: 1
+  - Symptoms: 131072
+    Nivel: 1
+  DriedPlant:
+    DriedPlantImage: {fileID: 21300000, guid: d6668924f6e627842abb098d8ad60bbe, type: 3}
+    DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
+  SmashedPlant:
+    SmashedPlantImage: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
+    SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
+  MixedPlant:
+    MixedPlantImage: {fileID: 21300000, guid: 5f77ac3cbfeeb804ebb96fe6ded13c90, type: 3}
+    MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
+  PotionStuff:
+    PotionSprite: {fileID: 21300000, guid: df4a643cba86e4643896817ab819b7a7, type: 3}
+  BurnedPlant:
+    BurnedPlantImage: {fileID: 21300000, guid: f5e30084347bb7e42b3b87805ef24f4c, type: 3}
+  MachineList: 
+  plantTemperature: 0

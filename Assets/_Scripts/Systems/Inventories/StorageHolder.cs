@@ -10,7 +10,6 @@ namespace _Scripts.Systems.Inventories
     /// <summary>
     /// Class tha holds the current storage
     /// </summary>
-    
     public class StorageHolder : MonoBehaviour
     {
         public StorageBehaviour Storage;
@@ -31,9 +30,12 @@ namespace _Scripts.Systems.Inventories
             for (int i = 0; i < exposedInventory.Count; i++)
             {
                 Storage.AddItem(exposedInventory[i].item.amount, exposedInventory[i].item.item);
+                exposedInventory[i].item.item.Init(exposedInventory[i].item.item.ItemId,exposedInventory[i].item.item.ItemType, exposedInventory[i].item.item.ImageDisplay, exposedInventory[i].item.item.Price, exposedInventory[i].item.item.ItemProprieties.ItemProprietiesGO,exposedInventory[i].item.item.ItemProprieties.ItemProprietiesDescription);
             }
         }
-
+        /// <summary>
+        /// Update the exposed inventory in the inspecto
+        /// </summary>
         public void UpdateExposedInventory()
         {
             exposedInventory.Clear();
@@ -47,7 +49,7 @@ namespace _Scripts.Systems.Inventories
                 exposedInventory.Add(aux);
             }
         }
+
     }
-    
-   
+
 }
