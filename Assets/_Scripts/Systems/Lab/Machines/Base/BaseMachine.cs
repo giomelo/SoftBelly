@@ -239,7 +239,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public void UnlockMachine()
         {
-            IsLocked = false;
+           gameObject.SetActive(true);
         }
     }
 }

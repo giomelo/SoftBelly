@@ -1,17 +1,21 @@
 ﻿using _Scripts.Singleton;
 using UnityEngine;
 
-namespace _Scripts.Helpers
+namespace _Scripts.Helpers.Audio
 {
     /// <summary>
     /// Basic audio system
     /// </summary>
-    public class AudioSystem : MonoSingleton<AudioSystem>
+    public class AudioManager : MonoSingleton<AudioManager>
     {
         [SerializeField]
         private AudioSource musicSource;
         [SerializeField]
         private AudioSource soundSource;
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
         public void PlayMusic(AudioClip clip)
         {

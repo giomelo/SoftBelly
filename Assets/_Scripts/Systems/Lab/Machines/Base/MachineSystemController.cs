@@ -19,7 +19,8 @@ namespace _Scripts.Systems.Lab.Machines.Base
             switch (UniversalVariables.Instance.Nivel)
             {
                 case 2:
-                    allMachines[2].CurrentMachine.UnlockMachine();                    break;
+                    allMachines[2].CurrentMachine.UnlockMachine();                   
+                    break;
                 case 3:
                     allMachines[3].CurrentMachine.UnlockMachine(); 
                     break;
