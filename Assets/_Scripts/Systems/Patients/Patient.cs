@@ -129,7 +129,7 @@ namespace _Scripts.Systems.Patients
             {
                 case PatientState.Entering:
                     // set animation walk
-                    MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count].position);
+                    MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count -1].position);
                     break;
                 case PatientState.Waiting:
                     // set animation idle

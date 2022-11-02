@@ -138,7 +138,6 @@ namespace _Scripts.Systems.Patients
             fila.Add(patientScript);
             //patientScript.SetTime();
             //StartCoroutine(patientScript.CheckTime());
-
         }
 
         //Check if the agent arrived the destination
