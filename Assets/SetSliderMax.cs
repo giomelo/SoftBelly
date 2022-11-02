@@ -18,7 +18,7 @@ public class SetSliderMax : MonoBehaviour
         if(items.transform.childCount >= 5) 
         {
             Slider slider = gameObject.GetComponent<Slider>();
-            slider.maxValue = 130 + 105 * (items.transform.childCount - 4);
+            slider.maxValue = 105 * (items.transform.childCount - 4);
         }
 
     }

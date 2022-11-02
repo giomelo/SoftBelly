@@ -19,9 +19,11 @@ public class NewStoreInterface : MonoBehaviour
 
     public GameObject[] items;
     Vector3 vec;
+    float YPos;
 
     private void Start()
     {
+        YPos = transform.position.y;
         vec = transform.position;
         for (int i = 0; i < items.Length; i++)
         {
@@ -45,7 +47,7 @@ public class NewStoreInterface : MonoBehaviour
 
     public void MudaPosY(float pos)
     {
-        vec.y = 250.8667f + pos; //ugh
+        vec.y = YPos + pos;
         transform.SetPositionAndRotation(vec, Quaternion.identity);
     }
 

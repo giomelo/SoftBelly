@@ -47,12 +47,12 @@ namespace _Scripts.Entities.Player
         public static void DisableInputCall()
         {
             disableInput = true;
-            Debug.LogWarning("disble");
+            //Debug.LogWarning("disabled");
         }
         public static void EnableInputCall()
         {
             disableInput = false;
-            Debug.LogWarning("enable");
+            //Debug.LogWarning("enabled");
         }
 
         private void Start()

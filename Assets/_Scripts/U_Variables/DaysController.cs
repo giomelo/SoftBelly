@@ -29,7 +29,6 @@ namespace _Scripts.U_Variables
     
     public class DaysController : MonoSingleton<DaysController>
     {
-
         public Time time = new Time(7,0);
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
@@ -174,7 +173,7 @@ namespace _Scripts.U_Variables
                 _patientsTime.Remove(time);
             }
 
-            HUD_Controller.Instance.UpdateTimeText();
+            //HUD_Controller.Instance.UpdateTimeText();
         }
 
         private void Start()
