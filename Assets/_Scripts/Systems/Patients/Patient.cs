@@ -106,6 +106,7 @@ namespace _Scripts.Systems.Patients
             {
                 if (State == PatientState.Entering)
                 {
+                    
                     SetState(PatientState.Waiting);
                     yield break;
                 }
@@ -116,17 +117,25 @@ namespace _Scripts.Systems.Patients
             }
             StartCoroutine(Arrived());
         }
+        
+        /// <summary>
+        /// Chek the patients state to do something
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
 
         private void CheckState()
         {
             switch (State)
             {
                 case PatientState.Entering:
+                    // set animation walk
                     MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count].position);
                     break;
                 case PatientState.Waiting:
+                    // set animation idle
                     break;
                 case PatientState.Leaving:
+                    // set animation walk
                     MoveToPosition(PatientsController.Instance.exit.position);
                     
                     break;
