@@ -65,6 +65,8 @@ namespace _Scripts.UI
         [SerializeField]
         private Animator anim;
 
+        public Canvas thisCanvas;
+
         private void Start()
         {
             if (_slotsCreated) return;
@@ -77,6 +79,8 @@ namespace _Scripts.UI
                     StorageHolder = s;
                 }
             }
+
+            thisCanvas = transform.parent.GetComponent<Canvas>();
         }
         private void OnEnable()
         {

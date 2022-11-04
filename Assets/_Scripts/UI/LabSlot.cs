@@ -14,7 +14,7 @@ namespace _Scripts.UI
     /// </summary>
     public class LabSlot : SlotBase
     {
-        private void OnSlotClicked()
+        public void OnSlotClicked()
         {
             if (!LabEvents.IsMachineSlotSelected)
             {
@@ -36,8 +36,8 @@ namespace _Scripts.UI
             if (LabEvents.MachineSlot.MachineSlot.amount >= LabEvents.MachineSlot.maxPerSlot) return;
             LabEvents.OnIngredientSelectedCall();
             //LabEvents.OnItemRemoved(uiSlot.slotId, 1, InventoryType.Lab);
-            _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
-            _subject.UpdateInventory();
+            Subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
+            Subject.UpdateInventory();
         }
 
         private void Start()

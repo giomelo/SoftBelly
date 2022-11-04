@@ -1,14 +1,18 @@
 ﻿using _Scripts.Enums;
+using _Scripts.Helpers.DragAndDrop;
 using _Scripts.Singleton;
 using _Scripts.Systems.Item;
+using _Scripts.UI;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Scripts.Systems.Lab.Machines.Base
 {
     /// <summary>
     /// Class for slots in machine
     /// </summary>
-    public class BaseMachineSlot : MonoBehaviour
+    public class BaseMachineSlot : MonoBehaviour , IDropHandler
     {
         public UIMachineSlot Slot;
 
@@ -125,6 +129,15 @@ namespace _Scripts.Systems.Lab.Machines.Base
         private void OnDisable()
         {
             LabEvents.OnIngredientSelected -= AddItemSlot;
+        }
+
+        public void OnDrop(PointerEventData eventData)
+        {
+            var slot = eventData.pointerDrag.transform.parent.GetComponent<LabSlot>();
+            var drag = eventData.pointerDrag.GetComponent<DragAndDropScript>();
+            OnMachineSlotSelected();
+            slot.OnSlotClicked();
+            drag.BackToPos();
         }
     }
 }

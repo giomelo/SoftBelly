@@ -18,9 +18,9 @@ namespace _Scripts.UI
         private void OnSlotClicked()
         {
             if (uiSlot.item == null) return;
-            _subject.DisposeInventory();
+            Subject.DisposeInventory();
             PlantEvents.CurrentPlant = (SeedBase)uiSlot.item;
-            _subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
+            Subject.StorageHolder.Storage.RemoveItem( uiSlot.slotId,1);
             PlantEvents.OnPlantedSelected();
         }
 

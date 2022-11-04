@@ -1,4 +1,5 @@
-﻿using _Scripts.Enums;
+﻿using System;
+using _Scripts.Enums;
 using UnityEngine;
 
 namespace _Scripts.UI
@@ -10,13 +11,18 @@ namespace _Scripts.UI
     {
         [SerializeField] 
         public UISlot uiSlot;
+        [HideInInspector]
+        public UIController Subject;
 
-        protected UIController _subject;
 
+        private void Start()
+        {
+            throw new NotImplementedException();
+        }
 
         public void AddSubject(UIController subject)
         {
-            _subject = subject;
+            Subject = subject;
         }
         
         public void MouseEnter()
@@ -24,19 +30,19 @@ namespace _Scripts.UI
             Debug.Log("Enter");
             if (uiSlot.item == null)
             {
-                _subject.ResetCurrentProprieties();
+                Subject.ResetCurrentProprieties();
                 return;
             }
 
             if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
-            _subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.gameObject, uiSlot.item);
+            Subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.gameObject, uiSlot.item);
            
         }
         
         public void MouseExit()
         {
             Debug.Log("Exit");
-            _subject.ResetCurrentProprieties();
+            Subject.ResetCurrentProprieties();
         }
     }
 }

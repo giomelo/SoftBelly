@@ -106,7 +106,6 @@ namespace _Scripts.Systems.Patients
             {
                 if (State == PatientState.Entering)
                 {
-                    
                     SetState(PatientState.Waiting);
                     yield break;
                 }
@@ -135,6 +134,7 @@ namespace _Scripts.Systems.Patients
                     // set animation idle
                     break;
                 case PatientState.Leaving:
+                    StartCoroutine(Arrived());
                     // set animation walk
                     MoveToPosition(PatientsController.Instance.exit.position);
                     
