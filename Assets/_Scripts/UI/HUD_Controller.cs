@@ -43,12 +43,12 @@ namespace _Scripts.UI
             anim = confirmBuy.GetComponent <Animator> ();
         }
 
-        public void ShowBuyPopup(Action<bool, int, bool> callback, int id, bool plot)
+        public void ShowBuyPopup(Action<bool, int, bool, bool> callback, int id, bool plot)
         {
             StartCoroutine(_Showbuypopup(callback, id, plot));
         }
 
-        private IEnumerator _Showbuypopup(Action<bool, int, bool> callback, int id, bool plot)
+        private IEnumerator _Showbuypopup(Action<bool, int, bool, bool> callback, int id, bool plot)
         {
             confirmBuy.SetActive(true);
 
@@ -62,7 +62,7 @@ namespace _Scripts.UI
             yield return new WaitForSeconds(0.6f);
             confirmBuy.SetActive(false);
             
-            callback?.Invoke(popupOption != 2, id, plot);
+            callback?.Invoke(popupOption != 2, id, plot, true);
         }
         
         public void SetPopupOption(int option)

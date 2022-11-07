@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Linq;
+using _Scripts.SaveSystem;
 using _Scripts.Singleton;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,8 +36,11 @@ namespace _Scripts.Screen_Flow
 
         IEnumerator LoadAsynchronously(string sceneIndex)
         {
+            
             AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
+           
+            
             LoadingScreen.SetActive(true);
 
             while (!operation.isDone)
@@ -44,6 +49,16 @@ namespace _Scripts.Screen_Flow
                 Slider.value = progress;
                 ProgressText.text = progress * 100f + "%";
                 yield return null;
+            }
+
+            if (operation.isDone)
+            {
+                var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
+                foreach (var o in objs)
+                {
+                    Debug.Log("Load");
+                    o.Load();
+                }
             }
         }
 

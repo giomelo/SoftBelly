@@ -21,7 +21,7 @@ namespace _Scripts.Singleton
             }
         }
 
-        private void Awake() {
+        protected void Awake() {
             if(_instance != null)
             {
                 Destroy(this.gameObject);

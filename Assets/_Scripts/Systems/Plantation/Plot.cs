@@ -30,7 +30,7 @@ namespace _Scripts.Systems.Plantation
         {
             IsDestroyed = false;
             Initialized(PlotId, true);
-            Locked(IsLocked, PlotId, true);
+            Locked(IsLocked, PlotId, true, false);
         }
 
         public void ChangePlant(Plot id)

@@ -1,31 +1,31 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using _Scripts.U_Variables;
 using UnityEngine;
 
 namespace _Scripts.SaveSystem
 {
     public class Savesystem
     {
-        public static void Save(_Scripts.U_Variables.UniversalVariables universalVariables)
+        public static void Save(SaveData universalVariables, DataObject obj)
         {
+            UniversalVariables.Instance.IsNewGame = false;
             BinaryFormatter formatter = new BinaryFormatter();
-            string path = Application.persistentDataPath + "/character.features";
+            string path = Application.persistentDataPath + obj.GetType();
             FileStream stream = new FileStream(path, FileMode.Create);
 
-            SaveData data = new SaveData(universalVariables);
-
-            formatter.Serialize(stream, data);
+            //SaveData data = new SaveData(universalVariables);
+            Debug.Log(universalVariables);
+            formatter.Serialize(stream, universalVariables);
             stream.Close();
         }
 
-        public static SaveData Load()
+        public static SaveData Load(DataObject obj)
         {
-            string path = Application.persistentDataPath + "/character.features";
+            string path = Application.persistentDataPath + obj.GetType();
             if (File.Exists(path))
             {
                 Debug.Log("Path " + path);
-
-
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(path, FileMode.Open);
 
@@ -34,11 +34,9 @@ namespace _Scripts.SaveSystem
                 stream.Close();
                 return data;
             }
-            else
-            {
-                Debug.LogError("Save de Personagem não encontrado em " + path);
-                return null;
-            }
+
+            Debug.LogError("Save não encontrado em " + path);
+            return null;
 
         }
     }

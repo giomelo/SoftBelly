@@ -17,7 +17,7 @@ namespace _Scripts.Systems.Plants.Bases
         public static Action LabInventoryAction;
         public static Action<int> OnPlotSelected;
         public static Action<int> OnPlotUnlocked;
-        public static Action<bool, int, bool> OnbuyConfirm;
+        public static Action<bool, int, bool, bool> OnbuyConfirm;
 
         public static SeedBase CurrentPlant;
         public static Plot CurrentPlot;
@@ -47,6 +47,7 @@ namespace _Scripts.Systems.Plants.Bases
         {
             LabInventoryAction?.Invoke();
         }
+        
         public static void OnPlantedSelected()
         {
             OnPlantedCall(CurrentPlot);

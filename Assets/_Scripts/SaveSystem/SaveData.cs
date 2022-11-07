@@ -1,27 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using _Scripts.U_Variables;
-using UnityEngine;
 
-public class SaveData
+namespace _Scripts.SaveSystem
 {
-    private float money;
-    private int reputation;
+    [Serializable]
+    public abstract class SaveData
+    {
+        public SaveData()
+        {
+            
+        }
+        
+        public SaveData(SaveData data)
+        {
+            
+        }
+        public abstract void DataToScript();
+    }
 
-    public float Money
+    public interface DataObject
     {
-        get => money;
-        set { money = value; }
+        public void Load();
+
+        public void Save();
     }
-    public float Reputation
+    [Serializable]
+    public class SaveHudVariables : SaveData
     {
-        get => reputation;
-        set { money = value; }
-    }
-    
-    public SaveData(_Scripts.U_Variables.UniversalVariables universalVariables)
-    {
-        Money = universalVariables.Money;
-        Reputation = universalVariables.Reputation;
+        public float Money { get; private set; }
+        public int Reputation { get; private set; }
+        
+        public SaveHudVariables(float money, int reputation)
+        {
+            Money = money;
+            Reputation = reputation;
+        }
+        
+        public override void DataToScript()
+        {
+            UniversalVariables.Instance.Money = Money;
+            UniversalVariables.Instance.Reputation = Reputation;
+        }
     }
 }

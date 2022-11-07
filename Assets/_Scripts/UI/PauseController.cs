@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Linq;
+using _Scripts.SaveSystem;
 using _Scripts.Screen_Flow;
 using UnityEngine;
 using _Scripts.Singleton;
@@ -91,10 +93,22 @@ namespace _Scripts.UI
                 case UI.PauseButton.MainMenu:
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
+                   
+                    var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
+                    foreach (var o in objs)
+                    {
+                        o.Save();
+                    }
                     ScreenFlow.Instance.LoadScene("NovoMenu");
                     break;
                 case UI.PauseButton.Exit:
                     Time.timeScale = 1;
+                    
+                    var objss = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
+                    foreach (var o in objss)
+                    {
+                        o.Save();
+                    }
                     Application.Quit();
                     break;
             }

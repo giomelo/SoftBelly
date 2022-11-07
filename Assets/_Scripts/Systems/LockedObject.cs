@@ -21,11 +21,11 @@ namespace _Scripts.Systems
             lockedObj.SetActive(false);
             priceText.gameObject.SetActive(false);
         }
-        public void Locked(bool locked, int id, bool plot)
+        public void Locked(bool locked, int id, bool plot, bool buy)
         {
             if (id != idAux) return;
             if(plot != plotAux) return;
-            if(!locked)
+            if(!locked && buy)
                 UniversalVariables.Instance.ModifyMoney(PriceToUnlock, false);
             IsLocked = locked;
             priceText.gameObject.SetActive(locked);

@@ -47,7 +47,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         {
             thisMachineHolder = gameObject.GetComponent<MachineHolder>();
             Initialized(MachineId, false);
-            Locked(IsLocked, MachineId, false);
+            Locked(IsLocked, MachineId, false, false);
         }
         public virtual void OnEnable()
         {
