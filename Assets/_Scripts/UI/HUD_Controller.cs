@@ -88,7 +88,7 @@ namespace _Scripts.UI
         }
         public void UpdateNivel()
         {
-            var aux = Math.Ceiling(UniversalVariables.Instance.Nivel / 100);
+            var aux = UniversalVariables.Instance.Nivel / 100;
             if (aux.ToString() == nivelText.text) return;
             GameManager.Instance.PromotionLevelCall();
             nivelText.text = aux.ToString();

@@ -1,3 +1,4 @@
+using _Scripts.SaveSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,14 +12,16 @@ public class ChecaSave : MonoBehaviour
 
     private bool SaveExiste()
     {
+        
         return false;
     }
 
     public void ConfirmaNovo()
     {
+        Savesystem.ClearSave();
         if (SaveExiste())
         {
-
+        
         } else
         {
             fade.StartFade();

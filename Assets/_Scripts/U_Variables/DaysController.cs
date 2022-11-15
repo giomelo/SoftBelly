@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Scripts.Helpers;
+using _Scripts.SaveSystem;
 using _Scripts.Singleton;
 using _Scripts.Systems.Patients;
 using _Scripts.UI;
@@ -27,14 +28,13 @@ namespace _Scripts.U_Variables
         
     }
     
-    public class DaysController : MonoSingleton<DaysController>
+    public class DaysController : MonoSingleton<DaysController> , DataObject
     {
         public Time time = new Time(7,0);
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
 
         public int currentDay = 1;
-        public int currentMoon = 1;
         public static Action DayChangeAction;
         public static Action NightStartAction;
         [SerializeField]
@@ -48,6 +48,7 @@ namespace _Scripts.U_Variables
 
         private bool changed;
         private Color currentColor;
+        private DataObject _dataObjectImplementation;
 
         private void RestartDay()
         {
@@ -176,10 +177,43 @@ namespace _Scripts.U_Variables
             //HUD_Controller.Instance.UpdateTimeText();
         }
 
+        private void Awake()
+        {
+            Savesystem.ClearSave();
+            base.Awake();
+            
+            Load();
+        }
         private void Start()
         {
+           
             InvokeRepeating("CountTime", 0.5f, 0.5f);
             ChangeDayCall();
+        }
+
+        public void Load()
+        {
+            SaveDay d = (SaveDay)Savesystem.Load(this);
+            // if (IsNewGame)
+            // {
+            //     //Developer.ClearSaves();
+            //     // clear save
+            //     Debug.Log("NewGame");
+            //     return;
+            // }
+            if (d != null)
+            {
+                // /*variavell*/ = /*variavel*/ = data./*variavel*/;
+
+                currentDay = d.Day;
+
+            }
+        }
+
+        public void Save()
+        {
+            SaveData data = new SaveDay(currentDay);
+            Savesystem.Save(data, this);
         }
     }
 }

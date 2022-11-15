@@ -15,7 +15,6 @@ namespace _Scripts.SaveSystem
         {
             
         }
-        public abstract void DataToScript();
     }
 
     public interface DataObject
@@ -25,21 +24,30 @@ namespace _Scripts.SaveSystem
         public void Save();
     }
     [Serializable]
+    public class SaveDay : SaveData
+    {
+        public int Day { get; private set; }
+        public SaveDay(int day)
+        {
+            Day = day;
+        }
+    }
+    
+    [Serializable]
     public class SaveHudVariables : SaveData
     {
         public float Money { get; private set; }
         public int Reputation { get; private set; }
+        public float SocialAlignment { get; private set; }
+        public int Nivel { get; private set; }
         
-        public SaveHudVariables(float money, int reputation)
+        public SaveHudVariables(float money, int reputation, float socialAlignment, int nivel)
         {
             Money = money;
             Reputation = reputation;
-        }
-        
-        public override void DataToScript()
-        {
-            UniversalVariables.Instance.Money = Money;
-            UniversalVariables.Instance.Reputation = Reputation;
+            SocialAlignment = socialAlignment;
+            Nivel = nivel;
+
         }
     }
 }

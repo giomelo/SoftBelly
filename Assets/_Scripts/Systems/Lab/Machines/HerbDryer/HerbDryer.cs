@@ -12,7 +12,6 @@ namespace _Scripts.Systems.Lab.Machines
 {
     public class HerbDryer : BaseMachine, ITimerMachine
     {
-        public List<Transform> plantsPos = new List<Transform>();
         [HideInInspector]
         public List<ItemObj> ingredients = new List<ItemObj>();
         public void Work()
@@ -45,18 +44,18 @@ namespace _Scripts.Systems.Lab.Machines
 
         public void RemovePlantObject(int index)
         {
-            if (plantsPos[index].transform.childCount <= 0) return;
-            Destroy(plantsPos[index].GetChild(0).gameObject);
+          //  if (plantsPos[index].transform.childCount <= 0) return;
+           // Destroy(plantsPos[index].GetChild(0).gameObject);
         }
 
         private void PlacePlants(int index)
         {
-            PlantBase currentPlant = IngredientsSlots[index].Slot.MachineSlot.item as PlantBase;
-            if (currentPlant != null)
-            {
-                var plant = Instantiate((Object) currentPlant.DriedPlant.DryingPlant, plantsPos[index].position,
-                    Quaternion.identity, plantsPos[index]);
-            }
+            // PlantBase currentPlant = IngredientsSlots[index].Slot.MachineSlot.item as PlantBase;
+            // if (currentPlant != null)
+            // {
+            //     var plant = Instantiate((Object) currentPlant.DriedPlant.DryingPlant, plantsPos[index].position,
+            //         Quaternion.identity, plantsPos[index]);
+            // }
         }
 
         protected override void StartMachine()

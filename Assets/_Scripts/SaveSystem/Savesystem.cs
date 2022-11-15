@@ -39,5 +39,28 @@ namespace _Scripts.SaveSystem
             return null;
 
         }
+
+        private bool CheckIfSaveExists()
+        {
+            return false;
+        }
+
+        public static void ClearSave()
+        {
+            //string path = Application.persistentDataPath + obj.GetType();
+           // File.Delete(path);
+   
+            DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath);
+            
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete(); 
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true); 
+            }
+            
+        }
     }
 }

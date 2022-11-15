@@ -37,6 +37,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public bool CanBurn;
         [SerializeField]
+        private GameObject web;
+        [SerializeField]
+        private GameObject machineObject;
+        [SerializeField]
         protected MachinesTypes MachineTypes;
         public static void GenerateNewPropriets()
         {
@@ -239,7 +243,9 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public void UnlockMachine()
         {
-           gameObject.SetActive(true);
+            if(web)
+                web.SetActive(false);
+            machineObject.SetActive(true);
         }
     }
 }
