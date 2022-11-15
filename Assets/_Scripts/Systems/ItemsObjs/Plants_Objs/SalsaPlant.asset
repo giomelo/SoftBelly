@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: SalsaPlant
   m_EditorClassIdentifier: 
   ItemId: Salsa
+  ItemLongID: 
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 46feb7ca248ca704f9091a42f307132a, type: 3}
   Price: 20
+  ShopDescription: 
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
     ItemProprietiesDescription: "Salsa Planta temperatura: Media\nPropriedades: Elimina\xE7\xE3o
@@ -25,18 +27,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 4096
     Nivel: 1
-  DriedPlant:
-    DriedPlantImage: {fileID: 21300000, guid: fffdcd23cf9e40e4d9a71edbf01d442d, type: 3}
-    DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
-  SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: aea097c9b594a7b4e862023cbea5456a, type: 3}
-    SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
-  MixedPlant:
-    MixedPlantImage: {fileID: 21300000, guid: 33054419c89d9fa40bcd9fd7f48429de, type: 3}
-    MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
-  PotionStuff:
-    PotionSprite: {fileID: 21300000, guid: f5e30084347bb7e42b3b87805ef24f4c, type: 3}
-  BurnedPlant:
-    BurnedPlantImage: {fileID: 21300000, guid: 341b02a4d10f75542bbbe81de896ad02, type: 3}
+  DriedPlant: {fileID: 21300000, guid: 18c5d84fe2cb91e4f8908b1b19455d89, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  PotionStuff: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: 9bb60d9b0987c3747b57516cc172d0c7, type: 3}
   MachineList: 
   plantTemperature: 1

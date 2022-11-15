@@ -39,7 +39,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
         [SerializeField]
         private GameObject web;
         [SerializeField]
-        private GameObject machineObject;
+        public GameObject machineObject;
         [SerializeField]
         protected MachinesTypes MachineTypes;
         public static void GenerateNewPropriets()

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: SabugueiroPlant
   m_EditorClassIdentifier: 
   ItemId: Sabugueiro
+  ItemLongID: 
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 65a27adb9e3060a43bb73b7d0ff0931b, type: 3}
   Price: 20
+  ShopDescription: 
   ItemProprieties:
     ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
     ItemProprietiesDescription: "Sabugueiro Planta temperatura: Alta\nPropriedades:
@@ -27,18 +29,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 8
     Nivel: 1
-  DriedPlant:
-    DriedPlantImage: {fileID: 21300000, guid: 2328352ff20678445828e9b20d57b9da, type: 3}
-    DryingPlant: {fileID: 7897824431601206407, guid: 7504c99feb3ef274fb5cbf0cbd2c1392, type: 3}
-  SmashedPlant:
-    SmashedPlantImage: {fileID: 21300000, guid: aea097c9b594a7b4e862023cbea5456a, type: 3}
-    SmashedPlantObj: {fileID: 3021073153231202159, guid: 96311bf5a37909541809ae897cd295a1, type: 3}
-  MixedPlant:
-    MixedPlantImage: {fileID: 21300000, guid: 33054419c89d9fa40bcd9fd7f48429de, type: 3}
-    MixedPlantObject: {fileID: 9131058791214526919, guid: d54ea1dc965a052489a4a50e44682828, type: 3}
-  PotionStuff:
-    PotionSprite: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
-  BurnedPlant:
-    BurnedPlantImage: {fileID: -1033114301, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
+  DriedPlant: {fileID: 21300000, guid: 9c0d6ec706e01ce448aea81584af092b, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 422567f6c15e85d48bec9d83e4bc5a00, type: 3}
+  MixedPlant: {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
+  PotionStuff: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: e36d1a38d7aa309409e80bf66a089330, type: 3}
   MachineList: 
   plantTemperature: 2

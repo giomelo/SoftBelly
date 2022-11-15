@@ -139,16 +139,22 @@ namespace _Scripts.Entities.Player
                         break;
                     case "Machine":
                         if (LabEvents.IsOnMachine) return;
-                        DisableInputCall();
+                       
                         if (!hit.transform.TryGetComponent<MachineHolder>(out var machineScript)) return;
                         if (machineScript.CurrentMachine.IsLocked)
                         {
-                            //checar se tem o dinheiro
-                            if (UniversalVariables.Instance.Money >= machineScript.CurrentMachine.PriceToUnlock)
+                            if (machineScript.CurrentMachine.machineObject.activeSelf)
                             {
-                                // se tem comprar
-                                HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, machineScript.CurrentMachine.MachineId, false);
+                                //checar se tem o dinheiro
+                                if (UniversalVariables.Instance.Money >= machineScript.CurrentMachine.PriceToUnlock)
+                                {
+                                    // se tem comprar
+                                    HUD_Controller.Instance.ShowBuyPopup(PlantEvents.OnbuyConfirm, machineScript.CurrentMachine.MachineId, false);
+                                    DisableInputCall();
+                                }
                             }
+                          
+                           
                         }
                         else
                         {
@@ -156,6 +162,7 @@ namespace _Scripts.Entities.Player
                             if (machineScript.CurrentMachine.MachineState == MachineState.Working) return;
                             if (machineScript.CurrentMachine.IsLocked) return;
                             LabEvents.OnMachineSelectedCall(machineScript.CurrentMachine);
+                            DisableInputCall();
                            
                         }
                         break;

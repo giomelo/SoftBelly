@@ -3032,6 +3032,10 @@ PrefabInstance:
       value: "M\xE1quina_Mistura"
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0679abaf30eb8224589c83b11c0c144e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0679abaf30eb8224589c83b11c0c144e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -9816,7 +9820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306189778}
   - component: {fileID: 306189779}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ' LockedIcon'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16810,6 +16814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514983453}
   - component: {fileID: 514983454}
+  - component: {fileID: 514983455}
   m_Layer: 0
   m_Name: AllScriptableobjects
   m_TagString: Untagged
@@ -16852,7 +16857,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16861,7 +16866,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16870,7 +16875,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16879,7 +16884,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16888,7 +16893,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16897,7 +16902,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16906,7 +16911,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16915,7 +16920,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16924,7 +16929,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16933,7 +16938,7 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
   - ItemId: 
     ItemLongID: 
@@ -16942,8 +16947,24 @@ MonoBehaviour:
     Price: 0
     ShopDescription: 
     ItemProprieties:
-      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesGO: 
       ItemProprietiesDescription: 
+--- !u!114 &514983455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514983452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28968d1832254a90a5977a5f8341093a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectOutline: {fileID: 0}
+  layyer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &515739999
 GameObject:
   m_ObjectHideFlags: 0
@@ -18243,7 +18264,7 @@ GameObject:
   - component: {fileID: 540813330}
   - component: {fileID: 540813331}
   - component: {fileID: 540813332}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32161,9 +32182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 0
   outlineColor: {r: 0.8815928, g: 0.8962264, b: 0.81590426, a: 1}
-  outlineWidth: 2.94
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -32541,6 +32562,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 555b0fefcd76058499d5ff940ff06c72, type: 3}
       propertyPath: m_Name
       value: "M\xE1quina_Secagem"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 555b0fefcd76058499d5ff940ff06c72, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 555b0fefcd76058499d5ff940ff06c72, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36347,22 +36372,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2842043177163242937, guid: 22440fc322079194ab525b21210f1048, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 22440fc322079194ab525b21210f1048, type: 3}
       propertyPath: m_Name
       value: RWChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22440fc322079194ab525b21210f1048, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4676334110247829007, guid: 22440fc322079194ab525b21210f1048, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eade95ac3b4b91d498499a06b6bf6b70, type: 2}
+    - target: {fileID: 5474380762432988528, guid: 22440fc322079194ab525b21210f1048, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5740509852858154681, guid: 22440fc322079194ab525b21210f1048, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1230e36a00d672644b2539f0bd21bedf, type: 2}
+    - target: {fileID: 5915573223780001809, guid: 22440fc322079194ab525b21210f1048, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8146979530442793101, guid: 22440fc322079194ab525b21210f1048, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b060fdb0bafe6548af90158c16283f1, type: 2}
+    - target: {fileID: 8866510070203245076, guid: 22440fc322079194ab525b21210f1048, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9053026552313704170, guid: 22440fc322079194ab525b21210f1048, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -38418,6 +38463,10 @@ PrefabInstance:
       value: "M\xE1quina_Fogo"
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 568792f0e4d6bd045bb0d115200e2209, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 568792f0e4d6bd045bb0d115200e2209, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -38440,9 +38489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 0
   outlineColor: {r: 0.8815928, g: 0.8962264, b: 0.81590426, a: 1}
-  outlineWidth: 2.94
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -52948,7 +52997,6 @@ GameObject:
   - component: {fileID: 1311109849}
   - component: {fileID: 1311109848}
   - component: {fileID: 1311109847}
-  - component: {fileID: 1311109852}
   m_Layer: 6
   m_Name: Pestle
   m_TagString: Machine
@@ -53074,19 +53122,6 @@ Transform:
   m_Father: {fileID: 722509227}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1311109852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311109846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28968d1832254a90a5977a5f8341093a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectOutline: {fileID: 2133992045}
 --- !u!1 &1312560672
 GameObject:
   m_ObjectHideFlags: 0
@@ -54218,12 +54253,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 0
   outlineColor: {r: 0.8815928, g: 0.8962264, b: 0.81590426, a: 1}
   outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1335370480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335370478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1337652353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55179,7 +55227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 0.8815928, g: 0.8962264, b: 0.81590426, a: 1}
-  outlineWidth: 2.94
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -58624,6 +58672,10 @@ PrefabInstance:
       value: "M\xE1quina_Pil\xE3o"
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9efefa204b9cf3740b025878de8a46ab, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9efefa204b9cf3740b025878de8a46ab, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -61010,7 +61062,7 @@ GameObject:
   - component: {fileID: 1516532586}
   - component: {fileID: 1516532585}
   - component: {fileID: 1516532584}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70160,7 +70212,6 @@ GameObject:
   - component: {fileID: 1822520764}
   - component: {fileID: 1822520763}
   - component: {fileID: 1822520762}
-  - component: {fileID: 1822520767}
   m_Layer: 6
   m_Name: MixPan
   m_TagString: Machine
@@ -70294,19 +70345,6 @@ Transform:
   m_Father: {fileID: 722509227}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1822520767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822520761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28968d1832254a90a5977a5f8341093a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectOutline: {fileID: 758260744}
 --- !u!1 &1823392968
 GameObject:
   m_ObjectHideFlags: 0
@@ -72598,7 +72636,6 @@ GameObject:
   - component: {fileID: 1865566372}
   - component: {fileID: 1865566371}
   - component: {fileID: 1865566370}
-  - component: {fileID: 1865566375}
   m_Layer: 6
   m_Name: HerbDryer
   m_TagString: Machine
@@ -72729,19 +72766,6 @@ Transform:
   m_Father: {fileID: 722509227}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1865566375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865566369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28968d1832254a90a5977a5f8341093a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectOutline: {fileID: 1376295818}
 --- !u!1 &1872726676
 GameObject:
   m_ObjectHideFlags: 0
@@ -75757,7 +75781,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1959824875}
   - component: {fileID: 1959824876}
-  - component: {fileID: 1959824877}
   m_Layer: 6
   m_Name: Chest
   m_TagString: Chest
@@ -75794,19 +75817,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1959824877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959824874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28968d1832254a90a5977a5f8341093a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectOutline: {fileID: 1335370479}
 --- !u!1 &1971806000
 GameObject:
   m_ObjectHideFlags: 0
@@ -77941,6 +77951,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectOutline: {fileID: 934453944}
+  layyer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &2027385949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79966,9 +79979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 0
   outlineColor: {r: 0.8815928, g: 0.8962264, b: 0.81590426, a: 1}
-  outlineWidth: 2.94
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
