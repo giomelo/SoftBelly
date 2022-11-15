@@ -46,7 +46,7 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newSmashedPlant.name = currentPlant.ItemId + "Smashed";
-                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", ItemType.Smashed, currentPlant.SmashedPlant.SmashedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name, currentPlant);
+                newSmashedPlant.Init(currentPlant.ItemId + "Smashed", ItemType.Smashed, currentPlant.SmashedPlant,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO,newSmashedPlant.name, currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newSmashedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newSmashedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -76,9 +76,9 @@ namespace _Scripts.Systems.Lab.Machines
         {
             if(MachineState == MachineState.Ready) return;
             PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
-            var plant = Instantiate(currentPlant.SmashedPlant.SmashedPlantObj, ingredientPos.position,
-                Quaternion.identity, ingredientPos);
-            itemSmashed.Add(plant);
+           // var plant = Instantiate(currentPlant.SmashedPlant.SmashedPlantObj, ingredientPos.position,
+           //     Quaternion.identity, ingredientPos);
+           // itemSmashed.Add(plant);
             //checa se foi o primeiro item criado
             if (itemSmashed.Count <= 1) return;
             

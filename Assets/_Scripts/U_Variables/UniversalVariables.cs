@@ -95,7 +95,7 @@ namespace _Scripts.U_Variables
 
         public void Load()
         {
-            SaveHudVariables d = (SaveHudVariables)Savesystem.Load(this);
+            SaveHudVariables d = (SaveHudVariables)Savesystem.Load(GetType().ToString());
             // if (IsNewGame)
             // {
             //     //Developer.ClearSaves();
@@ -117,7 +117,7 @@ namespace _Scripts.U_Variables
         public void Save()
         {
             SaveData data = new SaveHudVariables(Money, Reputation, SocialAlignment, Nivel);
-            Savesystem.Save(data, this);
+            Savesystem.Save(data, GetType().ToString());
         }
     }
 }

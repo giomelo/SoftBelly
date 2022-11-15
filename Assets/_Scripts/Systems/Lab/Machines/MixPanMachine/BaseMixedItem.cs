@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Scripts.Enums;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Plants.Bases;
 using UnityEngine;
@@ -23,6 +24,15 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
             ItemProprieties.ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
             IngredientsList = list;
+        }
+
+        public override void Initialized()
+        {
+            BasePlantMirror plantBase = new BasePlantMirror(BasePlant);
+            BaseMixedItemMirror p = new BaseMixedItemMirror(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO,
+                ItemProprieties.ItemProprietiesDescription, IngredientsList, plantBase);
+            
+            AllScriptableObjecst.Instance.AddInLisit(p);
         }
     }
 }

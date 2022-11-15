@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using _Scripts.SaveSystem;
 using _Scripts.Screen_Flow;
 using UnityEngine;
 using _Scripts.Singleton;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 namespace _Scripts.UI
 {
@@ -93,22 +96,43 @@ namespace _Scripts.UI
                 case UI.PauseButton.MainMenu:
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
-                   
-                    var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
-                    foreach (var o in objs)
+                    var saveables = new List<DataObject>();
+                    for(var i = 0; i < SceneManager.sceneCount; i++)
                     {
-                        o.Save();
+                        var rootObjs = SceneManager.GetSceneAt(i).GetRootGameObjects();
+                        foreach(var root in rootObjs)
+                        {
+                            saveables.AddRange(root.GetComponentsInChildren<DataObject>(true));
+                        }
                     }
+
+                    foreach (var i in saveables)
+                    {
+                        i.Save();
+                    }
+                    // var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
+                    // foreach (var o in objs)
+                    // {
+                    //     o.Save();
+                    // }
                     ScreenFlow.Instance.LoadScene("NovoMenu");
                     break;
                 case UI.PauseButton.Exit:
                     Time.timeScale = 1;
-                    
-                    var objss = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
-                    foreach (var o in objss)
+                    var saveabless = new List<DataObject>();
+                    for(var i = 0; i < SceneManager.sceneCount; i++)
                     {
-                        o.Save();
+                        var rootObjs = SceneManager.GetSceneAt(i).GetRootGameObjects();
+                        foreach(var root in rootObjs)
+                        {
+                            saveabless.AddRange(root.GetComponentsInChildren<DataObject>(true));
+                        }
                     }
+                    foreach (var i in saveabless)
+                    {
+                        i.Save();
+                    }
+                   
                     Application.Quit();
                     break;
             }

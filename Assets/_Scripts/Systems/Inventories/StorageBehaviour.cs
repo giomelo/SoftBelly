@@ -4,6 +4,7 @@ using _Scripts.Enums;
 using _Scripts.Systems.Item;
 using UnityEngine;
 using System;
+using _Scripts.SaveSystem;
 using _Scripts.Systems.Lab;
 
 namespace _Scripts.Systems.Inventories
@@ -14,6 +15,7 @@ namespace _Scripts.Systems.Inventories
    public abstract class StorageBehaviour : ScriptableObject
    {
       public Dictionary<int, ItemObj> Slots;
+      private Dictionary<int, MirrorItem> SlotsToSave;
       public int maxAmountPerSlots = 20;
       [EnumFlags]
       public ItemType itensType;
@@ -51,6 +53,7 @@ namespace _Scripts.Systems.Inventories
             index = ReturnFirstEmptySlot();
          }
          Put(index, item, amount);
+         item.Initialized();
          Display();
       }
 
@@ -178,11 +181,27 @@ namespace _Scripts.Systems.Inventories
 
          return false;
       }
-      
-      
+
+      public void Clear()
+      {
+         Slots.Clear();
+      }
       private int GenerateKey()
       {
          return Slots.Count;
+      }
+
+
+      private void SetList()
+      {
+         SlotsToSave.Clear();
+
+         foreach (var slot in Slots)
+         {
+            BaseMirrorItem b = new BaseMirrorItem(slot.Value.item.ItemId, slot.Value.item.ItemType, slot.Value.item.ImageDisplay, slot.Value.item.Price, slot.Value.item.ItemProprieties.ItemProprietiesGO, slot.Value.item.ItemProprieties.ItemProprietiesDescription);
+            MirrorItem m = new MirrorItem(slot.Value.amount, b);
+            SlotsToSave.Add(slot.Key, m);
+         }
       }
    }
 }

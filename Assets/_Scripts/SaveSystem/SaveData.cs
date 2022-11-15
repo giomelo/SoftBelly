@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using _Scripts.Systems.Inventories;
 using _Scripts.U_Variables;
 
 namespace _Scripts.SaveSystem
@@ -23,6 +25,42 @@ namespace _Scripts.SaveSystem
 
         public void Save();
     }
+    
+    [Serializable]
+    public class SaveStorage : SaveData
+    {
+        public Dictionary<int, MirrorItem> Slots { get; private set; }
+
+        public SaveStorage(Dictionary<int, MirrorItem> slots)
+        {
+            Slots = slots;
+        }
+    }
+
+    [Serializable]
+    public class SaveScript : SaveData
+    {
+        public List<BaseMirrorItem> Items { get; private set; }
+
+
+        public SaveScript(List<BaseMirrorItem> items)
+        {
+            Items = items;
+        }
+    }
+    
+    
+    [Serializable]
+    public class SaveLockedObject : SaveData
+    {
+        public bool IsLocked { get; private set; }
+
+        public SaveLockedObject(bool locked)
+        {
+            IsLocked = locked;
+        }
+    }
+    
     [Serializable]
     public class SaveDay : SaveData
     {

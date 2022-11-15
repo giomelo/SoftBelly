@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Enums;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.MixPanMachine;
 using _Scripts.Systems.Plants.Bases;
@@ -23,6 +24,8 @@ namespace _Scripts.Systems.Lab
             ItemProprieties.ItemProprietiesDescription = itemDescription;
             Cure = cure;
             PotionType = potionType;
+
+
         }
         
         // a planta que tiver o sintoma vai se transformar na poção que cura o sintoma
@@ -39,6 +42,12 @@ namespace _Scripts.Systems.Lab
         public bool CheckIfPotionIsType(PotionType type)
         {
             return PotionType == type;
+        }
+
+        public override void Initialized()
+        {
+            PotionMirror p = new PotionMirror(this);
+            AllScriptableObjecst.Instance.AddInLisit(p);
         }
     }
 }

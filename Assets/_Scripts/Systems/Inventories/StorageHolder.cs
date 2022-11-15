@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.SaveSystem;
 using _Scripts.Systems.Item;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace _Scripts.Systems.Inventories
     /// <summary>
     /// Class tha holds the current storage
     /// </summary>
-    public class StorageHolder : MonoBehaviour
+    public class StorageHolder : MonoBehaviour , DataObject
     {
         public StorageBehaviour Storage;
 
@@ -19,7 +20,9 @@ namespace _Scripts.Systems.Inventories
         private List<ExposedInventory> exposedInventory = new();
         private void Start()
         {
-            InitInventory();
+            Storage.Clear();
+            Load();
+         //   InitInventory();
         }
         
         /// <summary>
@@ -50,6 +53,22 @@ namespace _Scripts.Systems.Inventories
             }
         }
 
+
+        public void Load()
+        {
+            SaveStorage d = (SaveStorage)Savesystem.Load(GetType() + Storage.InventoryType.ToString());
+            if (d != null)
+            {
+                Storage.Slots = AllScriptableObjecst.Instance.ConvertList(d.Slots);
+            }
+        }
+
+        public void Save()
+        {
+            SaveStorage data = new SaveStorage(AllScriptableObjecst.Instance.ConvertListInverse(Storage.Slots));
+
+            Savesystem.Save(data, GetType() + Storage.InventoryType.ToString());
+        }
     }
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1502309506}
-  m_IndirectSpecularColor: {r: 0.18221089, g: 0.22791278, b: 0.3073625, a: 1}
+  m_IndirectSpecularColor: {r: 0.1822103, g: 0.22791213, b: 0.30736116, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16800,6 +16800,150 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0133ff51081d0564c9eb8c883e44fd89, type: 3}
+--- !u!1 &514983452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514983453}
+  - component: {fileID: 514983454}
+  m_Layer: 0
+  m_Name: AllScriptableobjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514983453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514983452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1713.3094, y: 348.98752, z: -163.71648}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 107
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514983454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514983452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396de2db7e444d4083f4d2d330a8a535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripotable:
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
+  - ItemId: 
+    ItemLongID: 
+    ItemType: 0
+    ImageDisplay: 
+    Price: 0
+    ShopDescription: 
+    ItemProprieties:
+      ItemProprietiesGO: {fileID: 0}
+      ItemProprietiesDescription: 
 --- !u!1 &515739999
 GameObject:
   m_ObjectHideFlags: 0
@@ -49183,7 +49327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239208009}
-  m_LocalRotation: {x: 0.44352794, y: 0.004429255, z: -0.0021919166, w: 0.89624697}
+  m_LocalRotation: {x: 0.44352794, y: 0.004429286, z: -0.0021919317, w: 0.89624697}
   m_LocalPosition: {x: -23.46, y: 7.0884876, z: -6.6492934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54679,7 +54823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362416649}
-  m_LocalRotation: {x: 0.44352794, y: 0.004429255, z: -0.0021919166, w: 0.89624697}
+  m_LocalRotation: {x: 0.44352794, y: 0.004429286, z: -0.0021919317, w: 0.89624697}
   m_LocalPosition: {x: -11.459999, y: 7.75, z: -51.269997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -77689,7 +77833,7 @@ MonoBehaviour:
   machineObject: {fileID: 0}
   MachineTypes: 0
   BurnedResult:
-    item: {fileID: 11400000, guid: 48644255e5517df41af3478c75904cf8, type: 2}
+    item: {fileID: 11400000, guid: 9825e5cb98c6dc54c9246a74113a0a99, type: 2}
     amount: 1
   BurnTime: 9
   ingredients: []

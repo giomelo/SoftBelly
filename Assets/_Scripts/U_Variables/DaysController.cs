@@ -193,7 +193,7 @@ namespace _Scripts.U_Variables
 
         public void Load()
         {
-            SaveDay d = (SaveDay)Savesystem.Load(this);
+            SaveDay d = (SaveDay)Savesystem.Load(GetType().ToString());
             // if (IsNewGame)
             // {
             //     //Developer.ClearSaves();
@@ -213,7 +213,7 @@ namespace _Scripts.U_Variables
         public void Save()
         {
             SaveData data = new SaveDay(currentDay);
-            Savesystem.Save(data, this);
+            Savesystem.Save(data, GetType().ToString());
         }
     }
 }

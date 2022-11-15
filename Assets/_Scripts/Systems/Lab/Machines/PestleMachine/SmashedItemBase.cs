@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Enums;
+using _Scripts.Systems.Inventories;
 using _Scripts.Systems.Item;
 using _Scripts.Systems.Lab.Machines.MixPanMachine;
 using _Scripts.Systems.Plants.Bases;
@@ -21,6 +22,14 @@ namespace _Scripts.Systems.Lab.Machines.PestleMachine
             ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
             ItemProprieties.ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
+        }
+
+        public override void Initialized()
+        {
+            BasePlantMirror plantBase = new BasePlantMirror(BasePlant);
+            SmashedPlantMirror p = new SmashedPlantMirror(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO,
+                ItemProprieties.ItemProprietiesDescription, plantBase);
+            AllScriptableObjecst.Instance.AddInLisit(p);
         }
     }
 }

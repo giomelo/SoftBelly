@@ -15,11 +15,19 @@ namespace _Scripts.Systems.Item
         [TextArea]
         public string ItemProprietiesDescription;
     }
+    [Serializable]
+    public struct ItensProprietiesMirror
+    {
+        public string ItemProprietiesGO;
+        [TextArea]
+        public string ItemProprietiesDescription;
+    }
+
 
     /// <summary>
     /// Base item class behavior for all items
     /// </summary>
-    public abstract class ItemBehaviour : ScriptableObject
+    public class ItemBehaviour : ScriptableObject
     {
         [Header("Item Stuff")] public string ItemId = "";
 
@@ -36,6 +44,8 @@ namespace _Scripts.Systems.Item
 
         public ItemProprietiesInspector ItemProprieties;
 
+        public virtual void Initialized(){}
+
         public virtual void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
         {
             ItemId = id;
@@ -49,6 +59,11 @@ namespace _Scripts.Systems.Item
         public bool Equals(ItemBehaviour other)
         {
             return ItemId == other.ItemId;
+        }
+
+        public bool Equals(string s)
+        {
+            return ItemId == s;
         }
 
         // public override bool Equals(object other)

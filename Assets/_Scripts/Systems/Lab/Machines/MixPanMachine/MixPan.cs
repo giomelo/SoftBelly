@@ -95,7 +95,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
 
-                newMixedPlant.Init(newMixedPlant.name, ItemType.MixedPlant, currentPlant.MixedPlant.MixedPlantImage,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name, GenerateToppingList(), currentPlant);
+                newMixedPlant.Init(newMixedPlant.name, ItemType.MixedPlant, currentPlant.MixedPlant,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, newMixedPlant.name, GenerateToppingList(), currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();
@@ -190,8 +190,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         {
             if(MachineState == MachineState.Ready) return;
             PlantBase currentPlant = IngredientsSlots[0].Slot.MachineSlot.item as PlantBase;
-            var plant = Instantiate(currentPlant.MixedPlant.MixedPlantObject, pos.position,
-                Quaternion.identity, pos);
+            //var plant = Instantiate(currentPlant.MixedPlant, pos.position,
+            //    Quaternion.identity, pos);
         }
 
         public void Hold()
