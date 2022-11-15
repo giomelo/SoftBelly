@@ -62,7 +62,7 @@ namespace _Scripts.SaveSystem
 
         }
 
-        private bool CheckIfSaveExists()
+        public static bool CheckIfSaveExists()
         {
             return false;
         }

@@ -10,16 +10,10 @@ public class ChecaSave : MonoBehaviour
     [SerializeField]
     private MenuSceneManager scene;
 
-    private bool SaveExiste()
-    {
-        
-        return false;
-    }
-
     public void ConfirmaNovo()
     {
         Savesystem.ClearSave();
-        if (SaveExiste())
+        if (Savesystem.CheckIfSaveExists())
         {
         
         } else
@@ -31,7 +25,7 @@ public class ChecaSave : MonoBehaviour
 
     private void Start()
     {
-        if (gameObject.name == "Carregar" && !SaveExiste()) 
+        if (gameObject.name == "Carregar" && !Savesystem.CheckIfSaveExists()) 
         {
             Color transp = Color.black;
             transp.a = 0.92f;
