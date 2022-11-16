@@ -12,17 +12,10 @@ namespace _Scripts.Helpers
         [MenuItem("Developer/Clear Saves")]
         public static void ClearSaves()
         {
-            string path = Application.persistentDataPath;
-            //File.SetAttributes(path, FileAttributes.Normal);
-            //File.Delete(path);
-            DirectoryInfo d = new DirectoryInfo(path);
-            
-            foreach (var file in d.GetFiles("*.txt"))
-            {
-               // Directory.Move(file.FullName, path + "\\TextFiles\\" + file.Name);
-                Debug.Log(file.FullName);
-                File.Delete(file.FullName);
-            }
+            string[] filePaths = Directory.GetFiles(Application.persistentDataPath);
+            Debug.Log(filePaths.Length);
+            foreach (string filePath in filePaths)
+                File.Delete(filePath);
         }
     }
 }

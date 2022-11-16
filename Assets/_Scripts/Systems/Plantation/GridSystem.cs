@@ -39,6 +39,7 @@ namespace Systems.Plantation
         {
             Plots.Clear();
             DeleteGrid();
+            int aux = 0;
             for (int i = 0; i < Width; i++)
             {
                 for (int j = 0; j < Height; j++)
@@ -47,7 +48,11 @@ namespace Systems.Plantation
                     var pos = new Vector3(position.x + OffsetX * j, position.y, position.z+ OffsetZ * i);
                     var plotInstance = Instantiate(plot, pos, Quaternion.identity);
                     plotInstance.transform.parent = this.transform;
-                    Plots.Add(plotInstance.transform.GetChild(0).GetComponent<Plot>());
+                    var script = plotInstance.transform.GetChild(0).GetComponent<Plot>();
+                    Plots.Add(script);
+                    script.PlotId = aux;
+                    aux++;
+         
                 }
             }
         }
@@ -60,14 +65,14 @@ namespace Systems.Plantation
                 DestroyImmediate(transform.GetChild(0).gameObject);
             }
         }
-        private void Start()
+        public void Start()
         {
-            PlotsId = 0;
-            foreach (var plot in Plots)
-            {
-                plot.PlotId = PlotsId;
-                PlotsId++;
-            }
+            // PlotsId = 0;
+            // foreach (var plot in Plots)
+            // {
+            //     plot.PlotId = PlotsId;
+            //     PlotsId++;
+            // }
             PlantTimeController.Instance.CreatPlants();
             
             // var storagesInScene = GameObject.FindObjectsOfType<StorageHolder>();

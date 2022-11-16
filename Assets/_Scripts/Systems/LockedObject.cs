@@ -12,7 +12,7 @@ namespace _Scripts.Systems
         public int PriceToUnlock = 10;
         [SerializeField]
         private GameObject lockedObj;
-        private int idAux;
+        public int idAux;
         private bool plotAux;
         [SerializeField]
         private TextMeshProUGUI priceText;
@@ -42,7 +42,7 @@ namespace _Scripts.Systems
             priceText.text = PriceToUnlock.ToString();
         }
 
-        private void Awake()
+        protected void Awake()
         {
             Load();
         }

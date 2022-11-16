@@ -30,8 +30,17 @@ namespace _Scripts.UI
         [SerializeField]
         private Slider reputaionSlider;
 
+        public TextMeshProUGUI diaText;
+        public Animation animm;
+        public AnimationClip clip;
 
         [SerializeField] private Slider aligmentSlieder;
+
+        public void DiaDisplay()
+        {
+            diaText.text = DaysController.Instance.currentDay.ToString();
+            animm.Play();
+        }
         private void Start()
         {
             reputaionSlider.maxValue = 500;

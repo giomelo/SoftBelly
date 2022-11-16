@@ -11,6 +11,7 @@ namespace _Scripts.SaveSystem
         public static void Save(SaveData universalVariables, string obj)
         {
            // UniversalVariables.Instance.IsNewGame = false;
+            Directory.CreateDirectory (Application.persistentDataPath + "FilesToDelete"); 
             BinaryFormatter formatter = new BinaryFormatter();
             string path = Application.persistentDataPath + obj;
             FileStream stream = new FileStream(path, FileMode.Create);
@@ -61,28 +62,19 @@ namespace _Scripts.SaveSystem
             return null;
 
         }
+        
 
         public static bool CheckIfSaveExists()
         {
-            return false;
+            string[] filePaths = Directory.GetFiles(Application.persistentDataPath);
+            return filePaths.Length > 0;
         }
 
         public static void ClearSave()
         {
-            //string path = Application.persistentDataPath + obj.GetType();
-           // File.Delete(path);
-   
-            DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath);
-            
-            foreach (FileInfo file in di.GetFiles())
-            {
-                file.Delete(); 
-            }
-            foreach (DirectoryInfo dir in di.GetDirectories())
-            {
-                dir.Delete(true); 
-            }
-            
+            string[] filePaths = Directory.GetFiles(Application.persistentDataPath);
+            foreach (string filePath in filePaths)
+                File.Delete(filePath);
         }
     }
 }

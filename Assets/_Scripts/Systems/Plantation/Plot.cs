@@ -25,12 +25,17 @@ namespace _Scripts.Systems.Plantation
         [SerializeField]
         private GameObject deathObj;
 
-        
+        private void Awake()
+        {
+            Initialized(PlotId, true);
+            base.Awake();
+           
+        }
         private void Start()
         {
             IsDestroyed = false;
-            Initialized(PlotId, true);
             Locked(IsLocked, PlotId, true, false);
+            
         }
 
         public void ChangePlant(Plot id)
