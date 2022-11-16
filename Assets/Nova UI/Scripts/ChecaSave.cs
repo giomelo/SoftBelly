@@ -19,7 +19,7 @@ public class ChecaSave : MonoBehaviour
         } else
         {
             fade.StartFade();
-            scene.ChangeWithDelay("SC_Garden");
+            scene.ChangeWithDelay("Intro");
         }
     }
 

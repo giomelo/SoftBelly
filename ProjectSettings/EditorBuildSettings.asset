@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden/SC_Garden.unity
     guid: b7a253850ad3a6043897af0cc9347db5
+  - enabled: 1
+    path: Assets/Scenes/Intro/Intro.unity
+    guid: 32af5ed5daf3dc748a3274220056a63d
   m_configObjects: {}
