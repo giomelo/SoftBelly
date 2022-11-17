@@ -11,9 +11,13 @@ namespace _Scripts.SaveSystem
         public static void Save(SaveData universalVariables, string obj)
         {
            // UniversalVariables.Instance.IsNewGame = false;
-            Directory.CreateDirectory (Application.persistentDataPath + "FilesToDelete"); 
-            BinaryFormatter formatter = new BinaryFormatter();
-            string path = Application.persistentDataPath + obj;
+          
+           BinaryFormatter formatter = new BinaryFormatter();
+           if (!Directory.Exists(Application.persistentDataPath + "/Saves"))
+           {
+               Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
+           }
+           string path = Application.persistentDataPath +"/Saves" + obj;
             FileStream stream = new FileStream(path, FileMode.Create);
 
             //SaveData data = new SaveData(universalVariables);
@@ -45,7 +49,7 @@ namespace _Scripts.SaveSystem
 
         public static SaveData Load(string obj)
         {
-            string path = Application.persistentDataPath + obj;
+            string path = Application.persistentDataPath +"/Saves" + obj;
             if (File.Exists(path))
             {
                 Debug.Log("Path " + path);
@@ -66,15 +70,20 @@ namespace _Scripts.SaveSystem
 
         public static bool CheckIfSaveExists()
         {
-            string[] filePaths = Directory.GetFiles(Application.persistentDataPath);
-            return filePaths.Length > 0;
+            string[] filePaths = Directory.GetFiles( Application.persistentDataPath);
+            return filePaths.Length > 1;
         }
 
         public static void ClearSave()
         {
-            string[] filePaths = Directory.GetFiles(Application.persistentDataPath);
-            foreach (string filePath in filePaths)
-                File.Delete(filePath);
+            string[] files = Directory.GetFiles(Application.persistentDataPath);
+            Debug.Log(files.Length);
+            Debug.Log(Application.persistentDataPath);
+            foreach(string s in files){
+                File.Delete(s);
+                Debug.Log("Apagado: " + s);
+              
+            }
         }
     }
 }

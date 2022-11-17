@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuSceneManager : MonoBehaviour
 {
     private IEnumerator coroutine;
-    public void ChangeWithDelay(string s)       //Muda para a cena S apÛs 1.2 segundos. Eu queria especificar o tempo mas OnClick n„o permite 2 argumentos.
+    public void ChangeWithDelay(string s)       //Muda para a cena S ap√≥s 1.2 segundos. Eu queria especificar o tempo mas OnClick n√£o permite 2 argumentos.
     {
         coroutine = CSD(s);
         StartCoroutine(coroutine);

@@ -34,7 +34,7 @@ namespace _Scripts.U_Variables
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
 
-        public int currentDay = 0;
+        public int currentDay = -1;
         public static Action DayChangeAction;
         public static Action NightStartAction;
         [SerializeField]
@@ -118,6 +118,7 @@ namespace _Scripts.U_Variables
 
         private void AddDay()
         {
+            Debug.Log("AddDay");
             currentDay++;
             HUD_Controller.Instance.DiaDisplay();
         }
@@ -180,7 +181,7 @@ namespace _Scripts.U_Variables
 
         private void Awake()
         {
-            Savesystem.ClearSave();
+            //Savesystem.ClearSave();
             base.Awake();
             
             Load();
