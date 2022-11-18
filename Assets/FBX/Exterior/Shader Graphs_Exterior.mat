@@ -23,8 +23,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: 66298a12c891d7245a0f26a8d71f3cfa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Base_Texturing_Normal:
+        m_Texture: {fileID: 2800000, guid: b5036d32a035dcc4991fa9a3cc48f840, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Red_Texturing:
         m_Texture: {fileID: 2800000, guid: c2d4a5033cc53cb4fa1c1d468fb2170c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Red_Texturing_Normal:
+        m_Texture: {fileID: 2800000, guid: 15dadb9c0927f114baacc7a4d2e41500, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
