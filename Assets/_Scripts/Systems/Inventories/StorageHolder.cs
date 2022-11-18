@@ -22,7 +22,7 @@ namespace _Scripts.Systems.Inventories
         {
             Storage.Clear();
             Load();
-         //   InitInventory();
+            InitInventory();
         }
         
         /// <summary>
