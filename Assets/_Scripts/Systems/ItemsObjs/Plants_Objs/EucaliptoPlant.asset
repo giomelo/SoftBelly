@@ -18,16 +18,11 @@ MonoBehaviour:
   ImageDisplay: {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
   Price: 20
   ShopDescription: 
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: 'Eucalipto Planta temperatura: Baixa
-
-      Propriedades:
-      Febre, Asma'
+  ItemProprietiesDescription: 
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 1
-  - Symptoms: 131072
+  - Symptoms: 1
     Nivel: 1
   DriedPlant: {fileID: 21300000, guid: df4a643cba86e4643896817ab819b7a7, type: 3}
   SmashedPlant: {fileID: -820880894, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}

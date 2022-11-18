@@ -29,3 +29,8 @@ MonoBehaviour:
     - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
     - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
     - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}
+  - id: Erva Doce Semente
+    fase:
+    - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
+    - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
+    - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}

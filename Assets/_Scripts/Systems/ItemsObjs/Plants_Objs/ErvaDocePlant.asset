@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
+  m_Name: ErvaDocePlant
+  m_EditorClassIdentifier: 
+  ItemId: Erva Doce
+  ItemLongID: 
+  ItemType: 2
+  ImageDisplay: {fileID: 21300000, guid: 5f77ac3cbfeeb804ebb96fe6ded13c90, type: 3}
+  Price: 20
+  ShopDescription: 
+  ItemProprietiesDescription: 
+  MedicalSymptoms:
+  - Symptoms: 1
+    Nivel: 2
+  - Symptoms: 64
+    Nivel: 1
+  DriedPlant: {fileID: 21300000, guid: 33054419c89d9fa40bcd9fd7f48429de, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: d88cdff46dcbb5e49853545e6865f89e, type: 3}
+  MixedPlant: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  PotionStuff: {fileID: 21300000, guid: 27f0de28d005b924fb87eeb246cd6964, type: 3}
+  BurnedPlant: {fileID: -2034143682, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
+  MachineList: 
+  plantTemperature: 1
