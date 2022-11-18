@@ -13,22 +13,21 @@ namespace _Scripts.Systems.Lab.Machines.PestleMachine
     {
         public PlantBase BasePlant;
         
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, PlantBase plant)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, PlantBase plant)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
         }
 
         public override void Initialized()
         {
             BasePlantMirror plantBase = new BasePlantMirror(BasePlant);
-            SmashedPlantMirror p = new SmashedPlantMirror(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO,
-                ItemProprieties.ItemProprietiesDescription, plantBase);
+            SmashedPlantMirror p = new SmashedPlantMirror(ItemId, ItemType, ImageDisplay, Price,
+                ItemProprietiesDescription, plantBase);
             AllScriptableObjecst.Instance.AddInLisit(p);
         }
     }

@@ -91,15 +91,14 @@ namespace _Scripts.Systems.Plants.Bases
             if (type == MachinesTypes.Nothing) return;
             MachineList.Add(type);
         }
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, Sprite burnedPlant, Sprite mixedPlant, Sprite driedPlant, Sprite potion, Sprite smashedPlant, List<SymptomsNivel> medicalSymptoms,
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, Sprite burnedPlant, Sprite mixedPlant, Sprite driedPlant, Sprite potion, Sprite smashedPlant, List<SymptomsNivel> medicalSymptoms,
             PlantTemperature temperature, List<MachinesTypes> machines)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             PotionStuff = potion;
             DriedPlant = driedPlant;
             SmashedPlant = smashedPlant;

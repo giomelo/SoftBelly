@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faae1fe552e542c3ba9f9367c4da4d5b, type: 3}
+  m_Name: SaveSprites
+  m_EditorClassIdentifier: 
+  allSprites:
+  - {fileID: 21300000, guid: fd5c82022e1301647b333703662acb6f, type: 3}
+  - {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
+  - {fileID: 21300000, guid: 65a27adb9e3060a43bb73b7d0ff0931b, type: 3}
+  - {fileID: 21300000, guid: 46feb7ca248ca704f9091a42f307132a, type: 3}
+  - {fileID: 21300000, guid: 2f6fc17f106b6ea42a65e68c15f9ed46, type: 3}
+  - {fileID: 21300000, guid: 6ae40ddafda74f944b46b32b52158a6f, type: 3}
+  - {fileID: 21300000, guid: 6790e552f75455d4aa9aa035766f3f51, type: 3}
+  - {fileID: 21300000, guid: a2d9de512cbcd544e8ee7f7612125a01, type: 3}
+  - {fileID: 21300000, guid: c30f0c0f797589c44a008a6e3365c98a, type: 3}
+  - {fileID: 21300000, guid: 76eb5ef3cf4b5c840b3aa92dacf7f47e, type: 3}
+  plantsAndGameObjects:
+  - id: Camomila semente
+    fase:
+    - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
+    - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
+    - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}

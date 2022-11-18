@@ -61,7 +61,7 @@ namespace _Scripts.Systems.Patients
         [SerializeField]
         private GameObject orderTextGameObject;
 
-        private const float TimePerCharacter = 0.1f;
+        private const float TimePerCharacter = 0.05f;
 
         [SerializeField]
         private GameObject patientPrefab;

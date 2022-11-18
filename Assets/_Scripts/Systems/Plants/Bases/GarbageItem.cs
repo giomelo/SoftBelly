@@ -9,7 +9,7 @@ namespace _Scripts.Systems.Plants.Bases
     {
         public override void Initialized()
         {
-            BaseMirrorItem plant = new BaseMirrorItem(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO, ItemProprieties.ItemProprietiesDescription);
+            BaseMirrorItem plant = new BaseMirrorItem(ItemId, ItemType, ImageDisplay, Price, ItemProprietiesDescription);
             AllScriptableObjecst.Instance.AddInLisit(plant);
         }
     }

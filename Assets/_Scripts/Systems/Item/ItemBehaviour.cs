@@ -8,21 +8,6 @@ using UnityEngine.UI;
 
 namespace _Scripts.Systems.Item
 {
-    [Serializable]
-    public struct ItemProprietiesInspector
-    {
-        public GameObject ItemProprietiesGO;
-        [TextArea]
-        public string ItemProprietiesDescription;
-    }
-    [Serializable]
-    public struct ItensProprietiesMirror
-    {
-        public string ItemProprietiesGO;
-        [TextArea]
-        public string ItemProprietiesDescription;
-    }
-
 
     /// <summary>
     /// Base item class behavior for all items
@@ -41,19 +26,17 @@ namespace _Scripts.Systems.Item
 
         [TextArea]
         public string ShopDescription;
-
-        public ItemProprietiesInspector ItemProprieties;
+        public string ItemProprietiesDescription;
 
         public virtual void Initialized(){}
 
-        public virtual void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
+        public virtual void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
         }
 
         public bool Equals(ItemBehaviour other)

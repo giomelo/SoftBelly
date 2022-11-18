@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Enums;
+using _Scripts.Systems.Inventories;
 using UnityEngine;
 
 namespace _Scripts.UI
@@ -34,8 +35,8 @@ namespace _Scripts.UI
                 return;
             }
 
-            if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
-            Subject.DisplayCurrentProprieties(uiSlot.item.ItemProprieties.ItemProprietiesGO.gameObject, this.gameObject, uiSlot.item);
+           // if (uiSlot.item.ItemProprieties.ItemProprietiesGO == null) return;
+            Subject.DisplayCurrentProprieties(AllScriptableObjecst.Instance.ItemProprietiesGo, this.gameObject, uiSlot.item);
            
         }
         

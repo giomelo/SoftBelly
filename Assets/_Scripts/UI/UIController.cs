@@ -280,7 +280,7 @@ namespace _Scripts.UI
             {
                 aux.transform.position = pos;
                 aux.SetActive(true);
-                aux.transform.GetComponent<ItemProprieties>().text.text = itemS.ItemProprieties.ItemProprietiesDescription;
+                aux.transform.GetComponent<ItemProprieties>().text.text = itemS.ItemProprietiesDescription;
             }
     
         }

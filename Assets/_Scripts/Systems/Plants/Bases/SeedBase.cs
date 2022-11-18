@@ -30,14 +30,14 @@ namespace _Scripts.Systems.Plants.Bases
         #endregion
 
 
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, GameObject[] plants, float grow, float water,PlantBase plantBase )
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, GameObject[] plants, float grow, float water,PlantBase plantBase )
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+      
+            ItemProprietiesDescription = itemDescription;
             PlantDisplayObjs = plants;
             GrowTime = grow;
             WaterCicles = water;
@@ -47,8 +47,8 @@ namespace _Scripts.Systems.Plants.Bases
         public override void Initialized()
         {
             BasePlantMirror plantBase = new BasePlantMirror(PlantBase);
-            SeedBaseMirror p = new SeedBaseMirror(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO,
-                ItemProprieties.ItemProprietiesDescription, PlantDisplayObjs, GrowTime, WaterCicles, plantBase);
+            SeedBaseMirror p = new SeedBaseMirror(ItemId, ItemType, ImageDisplay, Price,
+                ItemProprietiesDescription, GrowTime, WaterCicles, plantBase);
             AllScriptableObjecst.Instance.AddInLisit(p);
         }
     }

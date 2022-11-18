@@ -61,17 +61,17 @@ public class NewStoreInterface : MonoBehaviour
             info_item = display.item;                                                           //Item
             info_icon.sprite = display.item.ImageDisplay;                                       //Imagem
 
-            if (display.item.ItemLongID != "")                                                  //Nome longo, se necessário (para ítens com nomes maiores que seu display na loja)
+            if (display.item.ItemLongID != "")                                                  //Nome longo, se necessï¿½rio (para ï¿½tens com nomes maiores que seu display na loja)
                 info_longName.text = display.item.ItemLongID;
             else
                 info_longName.text = display.item.ItemId;
 
             if (display.item.ShopDescription != "")
-                info_description.text = display.item.ShopDescription;                           //Descrição do item própria da loja. Na falta desta usamos a descrição padrão
+                info_description.text = display.item.ShopDescription;                           //Descriï¿½ï¿½o do item prï¿½pria da loja. Na falta desta usamos a descriï¿½ï¿½o padrï¿½o
             else
-                info_description.text = display.item.ItemProprieties.ItemProprietiesDescription;    
+                info_description.text = display.item.ItemProprietiesDescription;    
 
-            info_value.text = "$ " + display.item.Price;                                        //Preço
+            info_value.text = "$ " + display.item.Price;                                        //Preï¿½o
 
             switch (display.item.ItemType)                                                      //Info extra (ex. o que uma planta cura)
             {
@@ -81,7 +81,7 @@ public class NewStoreInterface : MonoBehaviour
                     PlantBase plant = (PlantBase)display.item;
                     foreach (SymptomsNivel symptoms in plant.MedicalSymptoms)
                     {
-                        info_extrasText.text += "•" + symptoms.Symptoms.ToString() + "  ";
+                        info_extrasText.text += "ï¿½" + symptoms.Symptoms.ToString() + "  ";
                     }
                     break;
 

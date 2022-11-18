@@ -14,14 +14,13 @@ namespace _Scripts.Systems.Lab
     {
         public List<SymptomsNivel> Cure = new List<SymptomsNivel>();
         public PotionType PotionType;
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<SymptomsNivel> cure, PotionType potionType)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, List<SymptomsNivel> cure, PotionType potionType)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             Cure = cure;
             PotionType = potionType;
 

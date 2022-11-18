@@ -53,7 +53,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                     type = CreatePotionType(currentPlant.MachineList, null);
                 else
                     type = CreatePotionType(currentPlant.MachineList, mixedPlant.IngredientsList);
-                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff,currentPlant.Price, currentPlant.ItemProprieties.ItemProprietiesGO, potion.name + " " + symtoms + " " + type, currentPlant.MedicalSymptoms, 
+                potion.Init(potion.name, ItemType.Potion, currentPlant.PotionStuff,currentPlant.Price, potion.name + " " + symtoms + " " + type, currentPlant.MedicalSymptoms, 
                     type);
 
                 IngredientsSlots[i].Slot.Image.sprite = potion.ImageDisplay;

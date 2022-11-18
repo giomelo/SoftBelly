@@ -94,13 +94,13 @@ namespace _Scripts.Systems.Patients
 
         private void OnTriggerExit(Collider other)
         {
-            if(State != PatientState.Waiting) return;
+           // if(State != PatientState.Waiting) return;
             PatientsEvents.OnOrderDisableCall();
         }
         
         public IEnumerator Arrived()
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             Debug.Log("Check");
             if (CheckIfIsInDestination())
             {

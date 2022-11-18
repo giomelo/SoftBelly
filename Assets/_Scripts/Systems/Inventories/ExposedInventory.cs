@@ -28,14 +28,13 @@ namespace _Scripts.Systems.Inventories
     {
         public BasePlantMirror BasePlant;
 
-        public SmashedPlantMirror(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, BasePlantMirror plant)
+        public SmashedPlantMirror(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, BasePlantMirror plant)
         {
             ItemId = id;
             ItemType = itemType;
-            ImageDisplay = AssetDatabase.GetAssetPath(sprite);
+            ImageDisplay = AllScriptableObjecst.Instance.sprites.FindIndex(sprite);
             Price = price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath(itemProprietiesGo);
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
         }
     }
@@ -50,10 +49,9 @@ namespace _Scripts.Systems.Inventories
         {
             ItemId = potion.ItemId;
             ItemType = potion.ItemType;
-            ImageDisplay =  AssetDatabase.GetAssetPath(potion.ImageDisplay);
+            ImageDisplay =  AllScriptableObjecst.Instance.sprites.FindIndex(potion.ImageDisplay);
             Price = potion.Price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath( potion.ItemProprieties.ItemProprietiesGO);
-            ItemProprieties.ItemProprietiesDescription = potion.ItemProprieties.ItemProprietiesDescription;
+            ItemProprietiesDescription = potion.ItemProprietiesDescription;
             Cure = potion.Cure;
             PotionType = potion.PotionType;
         }
@@ -65,16 +63,14 @@ namespace _Scripts.Systems.Inventories
         public List<IngredientsList> IngredientsList = new List<IngredientsList>();
         public BasePlantMirror BasePlant;
 
-        public BaseMixedItemMirror(string id, ItemType itemType, Sprite sprite, float price,
-            GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, BasePlantMirror plant)
+        public BaseMixedItemMirror(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, List<IngredientsList> list, BasePlantMirror plant)
         {
             
             ItemId = id;
             ItemType = itemType;
-            ImageDisplay =  AssetDatabase.GetAssetPath(sprite);
+            ImageDisplay =  AllScriptableObjecst.Instance.sprites.FindIndex(sprite);
             Price = price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath(itemProprietiesGo);
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
             IngredientsList = list;
         }
@@ -83,8 +79,6 @@ namespace _Scripts.Systems.Inventories
     [Serializable]
     public class SeedBaseMirror : BaseMirrorItem
     {
-        public string[] PlantDisplayObjs = new string[3];
-
         [Header("Time needed to full grow the seed")]
         [Tooltip("In seconds")]
         public float GrowTime;
@@ -92,20 +86,14 @@ namespace _Scripts.Systems.Inventories
         [Header("Grow up seed")]
         public BasePlantMirror PlantBase;
 
-        public SeedBaseMirror(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, GameObject[] plants, float grow, float water,BasePlantMirror plantBase)
+        public SeedBaseMirror(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, float grow, float water,BasePlantMirror plantBase)
         {
             ItemId = id;
             ItemType = itemType;
-            ImageDisplay = AssetDatabase.GetAssetPath(sprite);
+            ImageDisplay = AllScriptableObjecst.Instance.sprites.FindIndex(sprite);
             Price = price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath(itemProprietiesGo);
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
 
-            for (int i =0; i< plants.Length; i++)
-            {
-                PlantDisplayObjs[i] = AssetDatabase.GetAssetPath(plants[i]) ;
-            }
-            
             GrowTime = grow;
             WaterCicles = water;
             PlantBase = plantBase;
@@ -115,19 +103,19 @@ namespace _Scripts.Systems.Inventories
     public class BasePlantMirror : BaseMirrorItem
     {
         public List<SymptomsNivel> MedicalSymptoms;
-        public string DriedPlant;
-        public string SmashedPlant;
-        public string MixedPlant;
-        public string PotionStuff;
-        public string BurnedPlant;
+        public int DriedPlant;
+        public int SmashedPlant;
+        public int MixedPlant;
+        public int PotionStuff;
+        public int BurnedPlant;
         public List<MachinesTypes> MachineList = new List<MachinesTypes>();
         public PlantTemperature plantTemperature;
 
         public PlantBase MirrorToBase()
         {
             var p = ScriptableObject.CreateInstance<PlantBase>();
-            p.Init(ItemId, ItemType, (Sprite)AssetDatabase.LoadAssetAtPath(ImageDisplay, typeof(Sprite)), Price, (GameObject)AssetDatabase.LoadAssetAtPath(ItemProprieties.ItemProprietiesGO, typeof(GameObject)), ItemProprieties.ItemProprietiesDescription,
-                (Sprite)AssetDatabase.LoadAssetAtPath(BurnedPlant, typeof(Sprite)), (Sprite)AssetDatabase.LoadAssetAtPath(MixedPlant, typeof(Sprite)), (Sprite)AssetDatabase.LoadAssetAtPath(DriedPlant, typeof(Sprite)), (Sprite)AssetDatabase.LoadAssetAtPath(PotionStuff, typeof(Sprite)), (Sprite)AssetDatabase.LoadAssetAtPath(SmashedPlant, typeof(Sprite)), MedicalSymptoms, plantTemperature, MachineList);
+            p.Init(ItemId, ItemType, AllScriptableObjecst.Instance.sprites.FindSprite(ImageDisplay), Price, ItemProprietiesDescription,
+                AllScriptableObjecst.Instance.sprites.FindSprite(BurnedPlant), AllScriptableObjecst.Instance.sprites.FindSprite(MixedPlant), AllScriptableObjecst.Instance.sprites.FindSprite(DriedPlant), AllScriptableObjecst.Instance.sprites.FindSprite(PotionStuff),AllScriptableObjecst.Instance.sprites.FindSprite(SmashedPlant), MedicalSymptoms, plantTemperature, MachineList);
             return p;
         }
 
@@ -135,15 +123,14 @@ namespace _Scripts.Systems.Inventories
         {
             ItemId = plantBase.ItemId;
             ItemType = plantBase.ItemType;
-            ImageDisplay = AssetDatabase.GetAssetPath(plantBase.ImageDisplay);
+            ImageDisplay = AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.ImageDisplay);
             Price = plantBase.Price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath(plantBase.ItemProprieties.ItemProprietiesGO);
-            ItemProprieties.ItemProprietiesDescription = plantBase.ItemProprieties.ItemProprietiesDescription;
-            PotionStuff = AssetDatabase.GetAssetPath(plantBase.PotionStuff);
-            DriedPlant = AssetDatabase.GetAssetPath(plantBase.DriedPlant);
-            SmashedPlant = AssetDatabase.GetAssetPath(plantBase.SmashedPlant);
-            MixedPlant = AssetDatabase.GetAssetPath(plantBase.MixedPlant);
-            BurnedPlant = AssetDatabase.GetAssetPath(plantBase.BurnedPlant);
+            ItemProprietiesDescription = plantBase.ItemProprietiesDescription;
+            PotionStuff =AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.PotionStuff);
+            DriedPlant = AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.DriedPlant);
+            SmashedPlant = AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.SmashedPlant);
+            MixedPlant = AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.MixedPlant);
+            BurnedPlant = AllScriptableObjecst.Instance.sprites.FindIndex(plantBase.BurnedPlant);
             MedicalSymptoms = plantBase.MedicalSymptoms;
         }
     }
@@ -158,23 +145,22 @@ namespace _Scripts.Systems.Inventories
         [EnumFlags]
         public ItemType ItemType;
 
-        public string ImageDisplay;
+        public int ImageDisplay;
 
         public float Price;
 
         [TextArea]
         public string ShopDescription;
 
-        public ItensProprietiesMirror ItemProprieties;
+        public string ItemProprietiesDescription;
         
-        public BaseMirrorItem(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription)
+        public BaseMirrorItem(string id, ItemType itemType, Sprite sprite, float price, string itemDescription)
         {
             ItemId = id;
             ItemType = itemType;
-            ImageDisplay = AssetDatabase.GetAssetPath(sprite);
+            ImageDisplay = AllScriptableObjecst.Instance.sprites.FindIndex(sprite);
             Price = price;
-            ItemProprieties.ItemProprietiesGO = AssetDatabase.GetAssetPath(itemProprietiesGo);
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription= itemDescription;
         }
 
         public BaseMirrorItem()

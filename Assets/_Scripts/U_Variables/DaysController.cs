@@ -99,11 +99,18 @@ namespace _Scripts.U_Variables
         }
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ChangeNightCall();
+                PatientsEvents.OnStartNightCall();
+            }
             if (!changed) return;
 
             //ChangeLightColor(currentColor);
             //if(mainLight.color == currentColor)
                 //changed = false;
+
+              
         }
         private void OnEnable()
         {
@@ -188,9 +195,9 @@ namespace _Scripts.U_Variables
         }
         private void Start()
         {
-           
+            HUD_Controller.Instance.DiaDisplay();
             InvokeRepeating("CountTime", 0.5f, 0.5f);
-            ChangeDayCall();
+           // ChangeDayCall();
         }
 
         public void Load()

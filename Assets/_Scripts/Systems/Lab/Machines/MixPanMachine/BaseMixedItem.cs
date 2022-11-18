@@ -14,14 +14,13 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         [Header("Plant Stuff")] 
         public List<IngredientsList> IngredientsList = new List<IngredientsList>();
         public PlantBase BasePlant;
-        public void Init(string id, ItemType itemType, Sprite sprite, float price, GameObject itemProprietiesGo, string itemDescription, List<IngredientsList> list, PlantBase plant)
+        public void Init(string id, ItemType itemType, Sprite sprite, float price, string itemDescription, List<IngredientsList> list, PlantBase plant)
         {
             ItemId = id;
             ItemType = itemType;
             ImageDisplay = sprite;
             Price = price;
-            ItemProprieties.ItemProprietiesGO = itemProprietiesGo;
-            ItemProprieties.ItemProprietiesDescription = itemDescription;
+            ItemProprietiesDescription = itemDescription;
             BasePlant = plant;
             IngredientsList = list;
         }
@@ -29,8 +28,8 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
         public override void Initialized()
         {
             BasePlantMirror plantBase = new BasePlantMirror(BasePlant);
-            BaseMixedItemMirror p = new BaseMixedItemMirror(ItemId, ItemType, ImageDisplay, Price, ItemProprieties.ItemProprietiesGO,
-                ItemProprieties.ItemProprietiesDescription, IngredientsList, plantBase);
+            BaseMixedItemMirror p = new BaseMixedItemMirror(ItemId, ItemType, ImageDisplay, Price,
+                ItemProprietiesDescription, IngredientsList, plantBase);
             
             AllScriptableObjecst.Instance.AddInLisit(p);
         }

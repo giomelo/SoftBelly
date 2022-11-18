@@ -198,7 +198,7 @@ namespace _Scripts.Systems.Inventories
 
          foreach (var slot in Slots)
          {
-            BaseMirrorItem b = new BaseMirrorItem(slot.Value.item.ItemId, slot.Value.item.ItemType, slot.Value.item.ImageDisplay, slot.Value.item.Price, slot.Value.item.ItemProprieties.ItemProprietiesGO, slot.Value.item.ItemProprieties.ItemProprietiesDescription);
+            BaseMirrorItem b = new BaseMirrorItem(slot.Value.item.ItemId, slot.Value.item.ItemType, slot.Value.item.ImageDisplay, slot.Value.item.Price, slot.Value.item.ItemProprietiesDescription);
             MirrorItem m = new MirrorItem(slot.Value.amount, b);
             SlotsToSave.Add(slot.Key, m);
          }
