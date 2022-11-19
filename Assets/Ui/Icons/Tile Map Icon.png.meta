@@ -108,8 +108,29 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 4
+        width: 217
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95216f82775b91d4b86ba59ef979ba02
+      internalID: 628565074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cadeado
+      rect:
+        serializedVersion: 2
+        x: 228
         y: 0
-        width: 63
+        width: 64
         height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -118,17 +139,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eae85be2084a4a45b3fded631fce2b1
-      internalID: 276596237
+      spriteID: 60d49edb74b5a114bae7c06ad54b3e1f
+      internalID: 1565591963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map Icon_1
+      name: caveira
       rect:
         serializedVersion: 2
-        x: 80
+        x: 309
         y: 1
         width: 77
         height: 84
@@ -139,17 +160,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b74c11516a9b7458d71352aeb2e188
-      internalID: -1897563137
+      spriteID: e4ab6201f72f8024cb805412480a00e3
+      internalID: -1408971983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map Icon_2
+      name: Tile Map Icon_3
       rect:
         serializedVersion: 2
-        x: 173
+        x: 402
         y: 5
         width: 48
         height: 77
@@ -160,17 +181,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c18b438cea4eaf4c8feb5d14e62aef6
-      internalID: -1972344722
+      spriteID: 10cb12330c26d8e4ca5a1f4db297c57d
+      internalID: -1749148246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map Icon_3
+      name: agua
       rect:
         serializedVersion: 2
-        x: 241
+        x: 470
         y: 5
         width: 50
         height: 77
@@ -181,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc80196b671b0c3428c281a722d290ef
-      internalID: 1968821631
+      spriteID: 19f543ac42df8af4c93df796b4fbc9e5
+      internalID: 1299870382
       vertices: []
       indices: 
       edges: []
@@ -190,7 +211,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f3ba7482ef93ea848b33ebd313183117
+    spriteID: e5aec68521dc6bd4c8c83352d5154f8e
     internalID: 0
     vertices: []
     indices: 
@@ -198,11 +219,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile Map Icon_3: 1968821631
-      Tile Map Icon_4: -523643020
-      Tile Map Icon_2: -1972344722
-      Tile Map Icon_1: -1897563137
-      Tile Map Icon_0: 276596237
+      Tile Map Icon_3: -1749148246
+      cadeado: 1565591963
+      Tile Map Icon_5: -1851050331
+      agua: 1299870382
+      caveira: -1408971983
+      Tile Map Icon_0: 628565074
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -196,7 +196,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             HUD_Controller.Instance.DiaDisplay();
-            InvokeRepeating("CountTime", 0.5f, 0.5f);
+            InvokeRepeating("CountTime", 0.3f, 0.3f);
            // ChangeDayCall();
         }
 

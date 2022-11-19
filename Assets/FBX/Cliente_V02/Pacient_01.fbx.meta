@@ -3,7 +3,12 @@ guid: 94f8539497293234abc9bf5443efb3ee
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tecido_01
+    second: {fileID: 2100000, guid: cb40f264fd322014cbb46994deaede61, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

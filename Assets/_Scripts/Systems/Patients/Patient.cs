@@ -8,15 +8,8 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.Systems.Patients
 {
-    [Serializable]
-    internal struct ClothAcessories
-    {
-        public List<MeshRenderer> hats;
-        public List<MeshRenderer> topCloth;
-        public List<MeshRenderer> bottomCloth;
-        public List<MeshRenderer> acessorie;
-    }
-    
+   
+   
     public class Patient : NpcBase
     {
         public OrderObj Order;
@@ -24,11 +17,14 @@ namespace _Scripts.Systems.Patients
         public SocialLabel label;
         public PatientState State { get; private set; }
         
-        public List<Material> colors;
+    
+        private Material couro1;
+        private Material couro2;
+        private Material pele;
+        private Material cabelo;
+        private Material roupa;
         [SerializeField]
-        private ClothAcessories poor;
-        [SerializeField]
-        private ClothAcessories noble;
+        private Renderer mesh;
 
         public void SetOrder()
         {
@@ -46,6 +42,8 @@ namespace _Scripts.Systems.Patients
         {
             SetState(PatientState.Entering);
             StartCoroutine(Arrived());
+            mesh = transform.GetChild(1).GetComponent<Renderer>();
+            SetCloth();
         }
 
         private void SetCloth()
@@ -53,30 +51,42 @@ namespace _Scripts.Systems.Patients
             switch (label)
             {
                 case SocialLabel.NOBRE:
-                    SetItem(noble);
+                    roupa = mesh.materials[0];
+                    couro1 = mesh.materials[1];
+                    pele = mesh.materials[2];
+                    cabelo = mesh.materials[3];
+                    couro2 = mesh.materials[4];
+                    SetItem();
                     break;
                 case SocialLabel.POBRE:
-                    SetItem(poor);
+                    roupa = mesh.materials[0];
+                    couro1 = mesh.materials[1];
+                    pele = mesh.materials[2];
+                    cabelo = mesh.materials[3];
+                    couro2 = mesh.materials[4];
+                    SetItem();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private void SetItem(ClothAcessories list)
+        private void SetItem()
         {
-            MeshRenderer aux = list.hats[Random.Range(0, list.hats.Count)];
-            aux.gameObject.SetActive(true);
-            aux.material = colors[Random.Range(0,colors.Count)];
-            aux = list.topCloth[Random.Range(0, list.topCloth.Count)];
-            aux.gameObject.SetActive(true);
-            aux.material = colors[Random.Range(0,colors.Count)];
-            aux = list.bottomCloth[Random.Range(0, list.bottomCloth.Count)];
-            aux.gameObject.SetActive(true);
-            aux.material = colors[Random.Range(0,colors.Count)];
-            aux = list.acessorie[Random.Range(0, list.acessorie.Count)];
-            aux.gameObject.SetActive(true);
-            aux.material = colors[Random.Range(0,colors.Count)];
+            Color c = PatientsController.Instance.listaRoupaPobre[Random.Range(0, PatientsController.Instance.listaRoupaPobre.Count)];
+            mesh.materials[0].color = c;
+            c = PatientsController.Instance.coresPeles[Random.Range(0, PatientsController.Instance.coresPeles.Count)];
+            mesh.materials[2].color = c;
+            c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
+            mesh.materials[1].color = c;
+            c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
+            mesh.materials[4].color = c;
+            c = new Color(
+                (float)Random.Range(0, 255), 
+                (float)Random.Range(0, 255), 
+                (float)Random.Range(0, 255)
+            );
+            mesh.materials[3].color = c;
         }
 
         public void Destroy()
@@ -109,8 +119,9 @@ namespace _Scripts.Systems.Patients
                     SetState(PatientState.Waiting);
                     yield break;
                 }
-
+                StopAllCoroutines();
                 Destroy();
+                
                 yield break;
 
             }

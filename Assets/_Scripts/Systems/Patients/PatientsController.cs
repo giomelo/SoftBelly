@@ -78,6 +78,10 @@ namespace _Scripts.Systems.Patients
         [SerializeField]
         private List<PotionTypeAndNivel> potionsDificulty = new List<PotionTypeAndNivel>();
         public int amountOfPatientsDay = 10;
+        public List<Color> coreCourouPobre;
+        public List<Color> coresPeles;
+        public List<Color> listaRoupaPobre;
+        public List<Color> roupaRico;
 
         public List<Patient> fila = new List<Patient>();
         public bool HasPatient { get; set; }
