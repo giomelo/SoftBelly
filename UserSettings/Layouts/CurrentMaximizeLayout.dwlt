@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 19666
+  controlID: 2265
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 300}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 19667
+  controlID: 2266
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 19668
+  controlID: 2267
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19620
+  controlID: 2219
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,24 +249,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 4836}
-      m_SelectedIDs: 402976ff302976ff2a2976ff
-      m_LastClickedID: -9033430
-      m_ExpandedIDs: c073a2ff627ba2ff52a3a2ffcaf9ffff92740000fe74000076750000fa7500003e77000098770000de790000287b0000347b0000727b0000b47c0000347d0000a67d0000e07d0000647e0000ae800000ac81000088870000d48700003a8900008c94010098950100bc960100de990100209a0100249a0100309a01006e9a0100ba9b0100809d0100d29e01001c9f0100829f0100c29f0100f8a1010016a30100baa40100b6a50100e0a5010098a6010036a80100
+      scrollPos: {x: 0, y: 2324}
+      m_SelectedIDs: 2ef3ffff
+      m_LastClickedID: -3282
+      m_ExpandedIDs: f0faffffd4740000e0750000807a0000907a0000d27a00002a7c000032800000828600000e890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GardenPlot
-        m_OriginalName: GardenPlot
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -9007634
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 6}
       m_SearchString: 
@@ -613,9 +613,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 91.33806, y: 7.8024745, z: -15.6660795}
+    m_Target: {x: 98.13463, y: 3.7651722, z: -30.154684}
     speed: 2
-    m_Value: {x: 91.33806, y: 7.8024745, z: -15.6660795}
+    m_Value: {x: 98.13463, y: 3.7651722, z: -30.154684}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -662,20 +662,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.30870807, y: 0.20748375, z: -0.06919509, w: 0.92566943}
+    m_Target: {x: 0.074097596, y: -0.9241685, z: 0.29287773, w: 0.2338102}
     speed: 2
-    m_Value: {x: 0.30870777, y: 0.20748356, z: -0.069195025, w: 0.92566854}
+    m_Value: {x: 0.07409677, y: -0.92415816, z: 0.29287446, w: 0.23380758}
   m_Size:
-    m_Target: 8.530961
+    m_Target: 6.358349
     speed: 2
-    m_Value: 8.530961
+    m_Value: 6.358349
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.06047
-    m_SpeedNormalized: 0.53
+    m_Speed: 1.3603196
+    m_SpeedNormalized: 0.6799998
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -931,11 +931,6 @@ MonoBehaviour:
     0\n            },\n            \"m_InputSlot\": {\n                \"m_Node\":
     {\n                    \"m_Id\": \"e80eb382762a4a48a60aafc9c48225eb\"\n               
     },\n                \"m_SlotId\": 1\n            }\n        },\n        {\n           
-    \"m_OutputSlot\": {\n                \"m_Node\": {\n                    \"m_Id\":
-    \"4044e716cf534e4fa0a1c44a8a8cfc73\"\n                },\n                \"m_SlotId\":
-    3\n            },\n            \"m_InputSlot\": {\n                \"m_Node\":
-    {\n                    \"m_Id\": \"bdc84ca4a4bc4a289e595fa2615fe014\"\n               
-    },\n                \"m_SlotId\": 0\n            }\n        },\n        {\n           
     \"m_OutputSlot\": {\n                \"m_Node\": {\n                    \"m_Id\":
     \"4188ee8cc10a41ebaac58dcdfc63eb43\"\n                },\n                \"m_SlotId\":
     0\n            },\n            \"m_InputSlot\": {\n                \"m_Node\":
@@ -2284,22 +2279,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/FBX/Assets_V4/PropsClient
+    - Assets/FBX/Assets_V4
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/FBX/Assets_V4/PropsClient
+  - Assets/FBX/Assets_V4
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Usuario\Desktop\Trabalho\SoftBelly\SoftBelly
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: 56aa0000
-    m_LastClickedID: 43606
-    m_ExpandedIDs: 0000000062930000929300009ea80000
+    scrollPos: {x: 0, y: 39}
+    m_SelectedIDs: 58ab0000
+    m_LastClickedID: 43864
+    m_ExpandedIDs: 0000000098950000f6950000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2327,7 +2322,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000062930000
+    m_ExpandedIDs: 0000000098950000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2352,9 +2347,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 402976ff302976ff2a2976ff
-    m_LastClickedInstanceID: -9033430
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 2ef3ffff
+    m_LastClickedInstanceID: -3282
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ae8c0000aa8c0000a88c0000848c0000908c0000988c00007a8c00009c8c00005a8c000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
