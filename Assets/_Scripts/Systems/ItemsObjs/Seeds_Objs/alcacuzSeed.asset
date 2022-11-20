@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
+  m_Name: alcacuzSeed
+  m_EditorClassIdentifier: 
+  ItemId: Alcacuz seed
+  ItemLongID: 
+  ItemType: 1
+  ImageDisplay: {fileID: 0}
+  Price: 25
+  ShopDescription: "O alca\xE7uz \xE9 uma planta medicinal, utilizada desde a antiguidade
+    para tratar v\xE1rios problemas de sa\xFAde, especialmente problemas de est\xF4mago,
+    inflama\xE7\xE3o e doen\xE7as respirat\xF3rias"
+  ItemProprietiesDescription: alcacuz
+  PlantDisplayObjs:
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 8790845063056844957, guid: 3bfc02a8304635b439c1ad1398894453, type: 3}
+  GrowTime: 8
+  WaterCicles: 3
+  PlantBase: {fileID: 11400000, guid: 8ec844be303a79c4f81a7e6c9b9a7c8a, type: 2}

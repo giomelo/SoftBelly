@@ -17,8 +17,9 @@ MonoBehaviour:
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 5f77ac3cbfeeb804ebb96fe6ded13c90, type: 3}
   Price: 20
-  ShopDescription: 
-  ItemProprietiesDescription: 
+  ShopDescription: "A erva-doce \xE9 uma planta medicinal indicada para aliviar gases,
+    n\xE1useas, pris\xE3o de ventre, c\xF3licas e m\xE1 digest\xE3o"
+  ItemProprietiesDescription: erva doce planta
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 2

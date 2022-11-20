@@ -17,12 +17,17 @@ MonoBehaviour:
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 76eb5ef3cf4b5c840b3aa92dacf7f47e, type: 3}
   Price: 20
-  ShopDescription: 
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Tanchagem Planta temperatura: Baixa\nPropriedades:
-      Alergia, Infec\xE7\xE3o na garganta, hemorragia"
-  MedicalSymptoms: []
+  ShopDescription: "A tanchagem \xE9 uma planta rica em flavonoides, alcaloides,
+    terpenoides, iridoides, mucilagem e outros compostos, o que garante as fun\xE7\xF5es
+    antibacteriana, antiviral e anti-inflamat\xF3ria dessa planta"
+  ItemProprietiesDescription: tanchagem planta
+  MedicalSymptoms:
+  - Symptoms: 4
+    Nivel: 1
+  - Symptoms: 1024
+    Nivel: 2
+  - Symptoms: 16384
+    Nivel: 3
   DriedPlant: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
   SmashedPlant: {fileID: 21300000, guid: b80f013b51ffaf94ebcc58d03e430ad2, type: 3}
   MixedPlant: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}

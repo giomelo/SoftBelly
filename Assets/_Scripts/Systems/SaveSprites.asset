@@ -26,11 +26,81 @@ MonoBehaviour:
   plantsAndGameObjects:
   - id: Camomila semente
     fase:
-    - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
-    - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
-    - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 248790460485695148, guid: bd35086378836b94e801890f4546a82c, type: 3}
   - id: Erva Doce Semente
     fase:
-    - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
-    - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
-    - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 1606004144569367579, guid: 835a623594884624da7308880fb0b2a8, type: 3}
+  - id: Agriao semente
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 5111067742201847846, guid: 2213fcea772323f499ddf0d518a1e322, type: 3}
+  - id: Alcacuz seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 8790845063056844957, guid: 3bfc02a8304635b439c1ad1398894453, type: 3}
+  - id: Alecrim seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 5967088460793643158, guid: c3053e6288d4d224c9ea259f0d959584, type: 3}
+  - id: AloeVera seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 5268529988737147347, guid: eff60e93c51c7af4b896870908edf0f4, type: 3}
+  - id: Boldo seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 1599161228319023832, guid: 0525e595e2ae219428314e738d5d9784, type: 3}
+  - id: ChaVerde seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 8518482244362041147, guid: f214d6c483f5c9442a793378b4ece222, type: 3}
+  - id: ErvaCidreira seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 868151094047217045, guid: 9626b88d2372f554e8690660f24eabaf, type: 3}
+  - id: Gengibre seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 1541508510650760274, guid: 055ede376c06dfb40a20526ccdf92ab8, type: 3}
+  - id: Hortela seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 6641462110946716855, guid: 0ddc3b51c1e505b46a73f775f7d3d179, type: 3}
+  - id: Lavanda seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 4886368664144289586, guid: 31f9db5ee50285d418507273150f0a47, type: 3}
+  - id: Sabugueiro Semente
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 6160130608436073787, guid: 5af49672dd6f51a44be02cae706ee915, type: 3}
+  - id: Salsa semente
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 417920275814821594, guid: 683d3b27f8409d442a19e71f326429d3, type: 3}
+  - id: Tanchagem semente
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 4002161249389821978, guid: 853ab9a1d41f330479694dbcc4430925, type: 3}
+  - id: Valeriana seed
+    fase:
+    - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+    - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+    - {fileID: 1394286444686579982, guid: 257d3ee85d82ba4448a1da3efb5c3a33, type: 3}

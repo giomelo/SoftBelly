@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
+  m_Name: hortelaSeed
+  m_EditorClassIdentifier: 
+  ItemId: Hortela seed
+  ItemLongID: 
+  ItemType: 1
+  ImageDisplay: {fileID: 0}
+  Price: 11
+  ShopDescription: "A hortel\xE3  \xE9 uma planta medicinal e arom\xE1tica, com propriedades
+    que ajudam a tratar problemas digestivos, como m\xE1 digest\xE3o, acidez, n\xE1useas
+    ou v\xF4mitos, al\xE9m de possuir efeito calmante e sedativo que diminuem os
+    n\xEDveis de ansiedade, melhoram o estado de \xE2nimo e a qualidade do sono."
+  ItemProprietiesDescription: hortela
+  PlantDisplayObjs:
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 6641462110946716855, guid: 0ddc3b51c1e505b46a73f775f7d3d179, type: 3}
+  GrowTime: 5
+  WaterCicles: 3
+  PlantBase: {fileID: 11400000, guid: 8bf35f69960527649aaaed38368ad11d, type: 2}

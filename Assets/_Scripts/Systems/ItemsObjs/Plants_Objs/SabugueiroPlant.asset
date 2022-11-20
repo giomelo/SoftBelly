@@ -17,11 +17,10 @@ MonoBehaviour:
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 65a27adb9e3060a43bb73b7d0ff0931b, type: 3}
   Price: 20
-  ShopDescription: 
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Sabugueiro Planta temperatura: Alta\nPropriedades:
-      Febre, Alergia, Elimina\xE7\xE3o de toxinas"
+  ShopDescription: "O sabugueiro \xE9 um arbusto com flores brancas e bagas pretas,
+    cujas flores podem ser utilizadas para preparar um ch\xE1, que pode ser usado
+    como auxiliar no tratamento da gripe ou resfriado."
+  ItemProprietiesDescription: sabugueiro planta
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 2

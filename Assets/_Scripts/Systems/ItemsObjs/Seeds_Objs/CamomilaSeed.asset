@@ -17,12 +17,13 @@ MonoBehaviour:
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 2f6fc17f106b6ea42a65e68c15f9ed46, type: 3}
   Price: 20
-  ShopDescription: 
+  ShopDescription: Planta conhecida por seu aroma intenso e doce, capaz de perfumar
+    grandes ambientes.
   ItemProprietiesDescription: 'Camomila Semente '
   PlantDisplayObjs:
-  - {fileID: 410886368486421786, guid: 8f9da71379fdde24eaaf2944795c29f3, type: 3}
-  - {fileID: 7897824431601206407, guid: 9c8cb46a7b26ed64db4e4ea7e13b64a5, type: 3}
-  - {fileID: 7447280070264944617, guid: 5274a759ccaa0f1459e98ca0ca4ede0f, type: 3}
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 248790460485695148, guid: bd35086378836b94e801890f4546a82c, type: 3}
   GrowTime: 10
   WaterCicles: 3
   PlantBase: {fileID: 11400000, guid: 12277013e969ede49942103b2a747dc8, type: 2}

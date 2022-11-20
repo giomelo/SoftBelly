@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
+  m_Name: chaVerdePlanta
+  m_EditorClassIdentifier: 
+  ItemId: chaVerde
+  ItemLongID: 
+  ItemType: 2
+  ImageDisplay: {fileID: 0}
+  Price: 22
+  ShopDescription: "O ch\xE1 verde possui diversas propriedades como a\xE7\xF5es
+    anticarcinog\xEAnicas (ou seja, atua contra o c\xE2ncer), anti-inflamat\xF3rias,
+    antimicrobianas, antioxidantes e um consequente papel na preven\xE7\xE3o e controle
+    de doen\xE7as cardiovasculares, diabetes, obesidade, al\xE9m da atua\xE7\xE3o
+    na sa\xFAde"
+  ItemProprietiesDescription: chaVerde planta
+  MedicalSymptoms:
+  - Symptoms: 8192
+    Nivel: 3
+  - Symptoms: 32768
+    Nivel: 2
+  - Symptoms: 65536
+    Nivel: 2
+  DriedPlant: {fileID: 0}
+  SmashedPlant: {fileID: 0}
+  MixedPlant: {fileID: 0}
+  PotionStuff: {fileID: 0}
+  BurnedPlant: {fileID: 0}
+  MachineList: 
+  plantTemperature: 2

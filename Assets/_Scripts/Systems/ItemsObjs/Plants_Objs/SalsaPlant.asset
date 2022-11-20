@@ -17,11 +17,11 @@ MonoBehaviour:
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 46feb7ca248ca704f9091a42f307132a, type: 3}
   Price: 20
-  ShopDescription: 
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Salsa Planta temperatura: Media\nPropriedades: Elimina\xE7\xE3o
-      de toxinas, Anemia"
+  ShopDescription: "Muito comum na culin\xE1ria brasileira, a salsa, conhecida popularmente
+    como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,
+    al\xE9m de minerais que s\xE3o muito importantes para a sa\xFAde, como o ferro,
+    cobre e magn\xE9sio"
+  ItemProprietiesDescription: salsa planta
   MedicalSymptoms:
   - Symptoms: 8
     Nivel: 1

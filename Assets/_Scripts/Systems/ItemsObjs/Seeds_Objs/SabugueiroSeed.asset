@@ -16,13 +16,15 @@ MonoBehaviour:
   ItemLongID: 
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 6790e552f75455d4aa9aa035766f3f51, type: 3}
-  Price: 10
-  ShopDescription: 
-  ItemProprietiesDescription: 
+  Price: 20
+  ShopDescription: "O sabugueiro \xE9 um arbusto com flores brancas e bagas pretas,
+    cujas flores podem ser utilizadas para preparar um ch\xE1, que pode ser usado
+    como auxiliar no tratamento da gripe ou resfriado."
+  ItemProprietiesDescription: sabugueiro semente
   PlantDisplayObjs:
-  - {fileID: 410886368486421786, guid: b5ec352a6821fb44c89cc84509024b69, type: 3}
-  - {fileID: 7897824431601206407, guid: 960584cb4c193384aa9089053d9d36ed, type: 3}
-  - {fileID: 7447280070264944617, guid: d870703279b7a9144a4852d54e9b03f3, type: 3}
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 6160130608436073787, guid: 5af49672dd6f51a44be02cae706ee915, type: 3}
   GrowTime: 12
   WaterCicles: 2
   PlantBase: {fileID: 11400000, guid: a87e6fc264e5c5f49bb8b311a7bd0bf4, type: 2}

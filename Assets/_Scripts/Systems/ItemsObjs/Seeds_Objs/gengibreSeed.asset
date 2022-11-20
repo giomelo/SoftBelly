@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
+  m_Name: gengibreSeed
+  m_EditorClassIdentifier: 
+  ItemId: Gengibre seed
+  ItemLongID: 
+  ItemType: 1
+  ImageDisplay: {fileID: 0}
+  Price: 10
+  ShopDescription: "O gengibre \xE9 uma raiz comest\xEDvel que, quando adicionada
+    na dieta, pode trazer v\xE1rios benef\xEDcios para a sa\xFAde, desde ajudar a
+    emagrecer at\xE9 tratar m\xE1 digest\xE3o, azia, enjoo, gastrite, resfriados,
+    colesterol alto, press\xE3o alta, tosse e problemas de circula\xE7\xE3o sangu\xEDnea"
+  ItemProprietiesDescription: gengibre
+  PlantDisplayObjs:
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 1541508510650760274, guid: 055ede376c06dfb40a20526ccdf92ab8, type: 3}
+  GrowTime: 9
+  WaterCicles: 3
+  PlantBase: {fileID: 11400000, guid: d7e070d73f8cee04b9a7c10951f1b628, type: 2}

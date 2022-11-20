@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
+  m_Name: boldoSeed
+  m_EditorClassIdentifier: 
+  ItemId: Boldo seed
+  ItemLongID: 
+  ItemType: 2
+  ImageDisplay: {fileID: 0}
+  Price: 9
+  ShopDescription: "O boldo \xE9 uma planta rica em propriedades medicinais, muito
+    utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es
+    do f\xEDgado, melhorar a digest\xE3o e aliviar sintomas de ressaca."
+  ItemProprietiesDescription: boldo
+  PlantDisplayObjs:
+  - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
+  - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
+  - {fileID: 1599161228319023832, guid: 0525e595e2ae219428314e738d5d9784, type: 3}
+  GrowTime: 4
+  WaterCicles: 2
+  PlantBase: {fileID: 11400000, guid: 349795e17a183164a8ce17e1288d9b9f, type: 2}

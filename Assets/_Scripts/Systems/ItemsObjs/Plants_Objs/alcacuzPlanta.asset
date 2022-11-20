@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
+  m_Name: alcacuzPlanta
+  m_EditorClassIdentifier: 
+  ItemId: alcacuz
+  ItemLongID: 
+  ItemType: 2
+  ImageDisplay: {fileID: 0}
+  Price: 25
+  ShopDescription: "O alca\xE7uz \xE9 uma planta medicinal, utilizada desde a antiguidade
+    para tratar v\xE1rios problemas de sa\xFAde, especialmente problemas de est\xF4mago,
+    inflama\xE7\xE3o e doen\xE7as respirat\xF3rias"
+  ItemProprietiesDescription: alcacuz planta
+  MedicalSymptoms:
+  - Symptoms: 1024
+    Nivel: 3
+  - Symptoms: 4096
+    Nivel: 2
+  - Symptoms: 65536
+    Nivel: 1
+  DriedPlant: {fileID: 0}
+  SmashedPlant: {fileID: 0}
+  MixedPlant: {fileID: 0}
+  PotionStuff: {fileID: 0}
+  BurnedPlant: {fileID: 0}
+  MachineList: 
+  plantTemperature: 2

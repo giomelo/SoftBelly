@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
+  m_Name: alecrimPlanta
+  m_EditorClassIdentifier: 
+  ItemId: alecrim
+  ItemLongID: 
+  ItemType: 2
+  ImageDisplay: {fileID: 0}
+  Price: 14
+  ShopDescription: "O alecrim (Salvia Rosmarinus) \xE9 uma erva arom\xE1tica comum
+    na regi\xE3o do Mediterr\xE2neo ocorrendo dos 0 a 1500 metros de altitude, preferencialmente
+    em solos de origem calc\xE1ria"
+  ItemProprietiesDescription: alecrim planta
+  MedicalSymptoms:
+  - Symptoms: 16
+    Nivel: 3
+  DriedPlant: {fileID: 0}
+  SmashedPlant: {fileID: 0}
+  MixedPlant: {fileID: 0}
+  PotionStuff: {fileID: 0}
+  BurnedPlant: {fileID: 0}
+  MachineList: 
+  plantTemperature: 0
