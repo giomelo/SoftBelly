@@ -123,11 +123,6 @@ namespace _Scripts.U_Variables
             GameManager.Sleep += BalanceControl.ChangeDay;
         }
 
-        private void SaveGame()
-        {
-            
-        }
-
         private void AddDay()
         {
             Debug.Log("AddDay");
@@ -187,6 +182,8 @@ namespace _Scripts.U_Variables
             {
                 PatientsController.Instance.GeneratePatient();
                 _patientsTime.Remove(time);
+                if (_patientsTime.Count == 0)
+                    HUD_Controller.Instance.EndDay();
             }
 
             //HUD_Controller.Instance.UpdateTimeText();

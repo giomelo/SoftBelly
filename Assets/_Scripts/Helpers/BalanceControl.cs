@@ -27,13 +27,17 @@ namespace _Scripts.Helpers
         // y = px + r
         
         // amount of patients curve
+        public static int maxPatientsPerDay = 7;
         
+        public static float d = 0.4f;
+        public static float e = 3f;
         public static void ChangeDay()
         { 
             EasyPotion = CurveGrowth(DificultyOfPotion.Easy); 
             MediumPotion = CurveGrowth(DificultyOfPotion.Medium);
             HardPotion = CurveGrowth(DificultyOfPotion.Complex);
-        }
+            GenerateAmountOfPatients();
+        } 
 
         public static float CurveGrowth(DificultyOfPotion dif)
         {
@@ -46,6 +50,11 @@ namespace _Scripts.Helpers
             };
 
             return returnValue;
+        }
+
+        public static void GenerateAmountOfPatients()
+        {
+            PatientsController.Instance.amountOfPatientsDay = (int) (d * DaysController.Instance.currentDay + e) <= 7 ? (int) (d * DaysController.Instance.currentDay + e) : 7;
         }
         
         public static DificultyOfPotion? GenerateDificultyOfPotion()

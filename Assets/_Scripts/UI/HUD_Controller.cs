@@ -111,6 +111,11 @@ namespace _Scripts.UI
             levelText.text = "Subiu de Nível!";
             levelAnim.Play();
         }
+        public void EndDay()
+        {
+            levelText.text = "Não há mais pacientes para chegar!";
+            levelAnim.Play();
+        }
         public void AvisoCama()
         {
             levelText.text = "Está muito cedo para dormir!";

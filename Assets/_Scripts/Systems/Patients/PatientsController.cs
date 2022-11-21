@@ -77,7 +77,7 @@ namespace _Scripts.Systems.Patients
         private PotionBase _playerPotion = null;
         [SerializeField]
         private List<PotionTypeAndNivel> potionsDificulty = new List<PotionTypeAndNivel>();
-        public int amountOfPatientsDay = 10;
+        public int amountOfPatientsDay = 7;
         public List<Color> coreCourouPobre;
         public List<Color> coresPeles;
         public List<Color> listaRoupaPobre;
@@ -143,11 +143,6 @@ namespace _Scripts.Systems.Patients
             //patientScript.SetTime();
             //StartCoroutine(patientScript.CheckTime());
         }
-
-        //Check if the agent arrived the destination
-        // ReSharper disable Unity.PerformanceAnalysis
-
-
         private void TypeWriteText(Patient p)
         {
             orderTextGameObject.SetActive(true);

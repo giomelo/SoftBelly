@@ -154,8 +154,6 @@ namespace _Scripts.Entities.Player
                                     DisableInputCall();
                                 }
                             }
-                          
-                           
                         }
                         else
                         {
