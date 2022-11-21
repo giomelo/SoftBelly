@@ -25,6 +25,9 @@ namespace _Scripts.Helpers
         
         // easy curve grow
         // y = px + r
+        
+        // amount of patients curve
+        
         public static void ChangeDay()
         { 
             EasyPotion = CurveGrowth(DificultyOfPotion.Easy); 

@@ -81,11 +81,7 @@ namespace _Scripts.Systems.Patients
             mesh.materials[1].color = c;
             c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
             mesh.materials[4].color = c;
-            c = new Color(
-                (float)Random.Range(0, 255), 
-                (float)Random.Range(0, 255), 
-                (float)Random.Range(0, 255)
-            );
+            c = Random.ColorHSV();
             mesh.materials[3].color = c;
         }
 

@@ -106,9 +106,9 @@ namespace _Scripts.U_Variables
             }
             if (!changed) return;
 
-            //ChangeLightColor(currentColor);
-            //if(mainLight.color == currentColor)
-                //changed = false;
+            ChangeLightColor(currentColor);
+            if(mainLight.color == currentColor)
+                changed = false;
 
               
         }
@@ -120,8 +120,13 @@ namespace _Scripts.U_Variables
             NightStartAction += ChangeLightColorNight;
             GameManager.Sleep += RestartDay;
             GameManager.Sleep += BalanceControl.ChangeDay;
+            GameManager.Sleep += BalanceControl.ChangeDay;
         }
-        
+
+        private void SaveGame()
+        {
+            
+        }
 
         private void AddDay()
         {
@@ -146,6 +151,7 @@ namespace _Scripts.U_Variables
             if (time.Hours == 3)
             {
                 //alerta para dormir
+                HUD_Controller.Instance.AvisoDromir();
             }
             else
             {

@@ -96,20 +96,7 @@ namespace _Scripts.UI
                 case UI.PauseButton.MainMenu:
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
-                    var saveables = new List<DataObject>();
-                    for(var i = 0; i < SceneManager.sceneCount; i++)
-                    {
-                        var rootObjs = SceneManager.GetSceneAt(i).GetRootGameObjects();
-                        foreach(var root in rootObjs)
-                        {
-                            saveables.AddRange(root.GetComponentsInChildren<DataObject>(true));
-                        }
-                    }
-
-                    foreach (var i in saveables)
-                    {
-                        i.Save();
-                    }
+                    GameManager.Instance.Save();
                     // var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
                     // foreach (var o in objs)
                     // {
@@ -118,25 +105,15 @@ namespace _Scripts.UI
                     ScreenFlow.Instance.LoadScene("NovoMenu");
                     break;
                 case UI.PauseButton.Exit:
+                    
                     Time.timeScale = 1;
-                    var saveabless = new List<DataObject>();
-                    for(var i = 0; i < SceneManager.sceneCount; i++)
-                    {
-                        var rootObjs = SceneManager.GetSceneAt(i).GetRootGameObjects();
-                        foreach(var root in rootObjs)
-                        {
-                            saveabless.AddRange(root.GetComponentsInChildren<DataObject>(true));
-                        }
-                    }
-                    foreach (var i in saveabless)
-                    {
-                        i.Save();
-                    }
+                    GameManager.Instance.Save();
                    
                     Application.Quit();
                     break;
             }
         }
+
 
         private IEnumerator SHMenu()
         {

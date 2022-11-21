@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 5268529988737147347, guid: eff60e93c51c7af4b896870908edf0f4, type: 3}
-  GrowTime: 7
-  WaterCicles: 4
+  GrowTime: 20
+  WaterCicles: 9
   PlantBase: {fileID: 11400000, guid: 2135f7db9dec25b4ba892757423e21ce, type: 2}

@@ -20,11 +20,13 @@ MonoBehaviour:
   ShopDescription: "O alca\xE7uz \xE9 uma planta medicinal, utilizada desde a antiguidade
     para tratar v\xE1rios problemas de sa\xFAde, especialmente problemas de est\xF4mago,
     inflama\xE7\xE3o e doen\xE7as respirat\xF3rias"
-  ItemProprietiesDescription: alcacuz
+  ItemProprietiesDescription: "O alca\xE7uz \xE9 uma planta medicinal, utilizada
+    desde a antiguidade para tratar v\xE1rios problemas de sa\xFAde, especialmente
+    problemas de est\xF4mago, inflama\xE7\xE3o e doen\xE7as respirat\xF3rias"
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 8790845063056844957, guid: 3bfc02a8304635b439c1ad1398894453, type: 3}
-  GrowTime: 8
-  WaterCicles: 3
+  GrowTime: 20
+  WaterCicles: 9
   PlantBase: {fileID: 11400000, guid: 8ec844be303a79c4f81a7e6c9b9a7c8a, type: 2}

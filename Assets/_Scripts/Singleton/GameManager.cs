@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Scripts.Helpers;
+using _Scripts.SaveSystem;
 using _Scripts.Systems.Inventories;
 using _Scripts.U_Variables;
 using _Scripts.UI;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Scripts.Singleton
 {
@@ -38,10 +41,32 @@ namespace _Scripts.Singleton
                 
                 Sleep?.Invoke();
                 sleeping = true;
+                Save();
             }
             else
+            {
+                HUD_Controller.Instance.AvisoCama();
                 Debug.LogWarning("YOU CANT SLEEP RIGHT NOW");
+            }
+               
             
+        }
+        
+        public void Save()
+        {
+            var saveabless = new List<DataObject>();
+            for(var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var rootObjs = SceneManager.GetSceneAt(i).GetRootGameObjects();
+                foreach(var root in rootObjs)
+                {
+                    saveabless.AddRange(root.GetComponentsInChildren<DataObject>(true));
+                }
+            }
+            foreach (var i in saveabless)
+            {
+                i.Save();
+            }
         }
         
         public void PromotionLevelCall()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using _Scripts.Entities.Player;
 using _Scripts.Singleton;
 using _Scripts.U_Variables;
@@ -32,7 +33,8 @@ namespace _Scripts.UI
 
         public TextMeshProUGUI diaText;
         public Animation animm;
-        public AnimationClip clip;
+        public TextMeshProUGUI levelText;
+        public Animation levelAnim;
 
         [SerializeField] private Slider aligmentSlieder;
 
@@ -97,11 +99,27 @@ namespace _Scripts.UI
         }
         public void UpdateNivel()
         {
-            var aux = UniversalVariables.Instance.Nivel / 100;
-            if (aux.ToString() == nivelText.text) return;
-            GameManager.Instance.PromotionLevelCall();
-            nivelText.text = aux.ToString();
+            var aux = Math.Ceiling((UniversalVariables.Instance.Nivel / 100));
+            if (aux.ToString(CultureInfo.InvariantCulture) == nivelText.text) return;
+            nivelText.text = aux.ToString(CultureInfo.InvariantCulture);
+            if(aux != 1) LevelUp();
+        }
 
+        private void LevelUp()
+        {
+            GameManager.Instance.PromotionLevelCall();
+            levelText.text = "Subiu de Nível!";
+            levelAnim.Play();
+        }
+        public void AvisoCama()
+        {
+            levelText.text = "Está muito cedo para dormir!";
+            levelAnim.Play();
+        }
+        public void AvisoDromir()
+        {
+            levelText.text = "Está ficando tarde é melhor dormir parar terminar o dia!";
+            levelAnim.Play();
         }
 
         public void UpdateTimeText()

@@ -57,14 +57,15 @@ namespace _Scripts.Entities.Player
 
         private void Start()
         {
-            InvokeRepeating(nameof(PutWaterInput), 1,0.1f);
-            InvokeRepeating(nameof(PlantInput), 1,0.05f);
+            InvokeRepeating(nameof(PutWaterInput), 1,0.05f);
+           // InvokeRepeating(nameof(PlantInput), 1,0.05f);
             waterCanPos = waterCanObj.position;
         }
         // Update is called once per frame
         private void Update()
         {
             HandleMovementInput();
+            PlantInput();
             //WaterInput();
         }
     

@@ -77,9 +77,9 @@ namespace _Scripts.SaveSystem
         public float Money { get; private set; }
         public int Reputation { get; private set; }
         public float SocialAlignment { get; private set; }
-        public int Nivel { get; private set; }
+        public float Nivel { get; private set; }
         
-        public SaveHudVariables(float money, int reputation, float socialAlignment, int nivel)
+        public SaveHudVariables(float money, int reputation, float socialAlignment, float nivel)
         {
             Money = money;
             Reputation = reputation;

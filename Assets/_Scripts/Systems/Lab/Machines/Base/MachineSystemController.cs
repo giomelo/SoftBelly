@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.Singleton;
 using _Scripts.U_Variables;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace _Scripts.Systems.Lab.Machines.Base
 
         public void UnlockMachine()
         {
-            switch (UniversalVariables.Instance.Nivel)
+            switch (Math.Ceiling((UniversalVariables.Instance.Nivel / 100)))
             {
                 case 2:
                     allMachines[2].CurrentMachine.UnlockMachine();                   
