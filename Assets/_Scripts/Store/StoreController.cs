@@ -107,7 +107,7 @@ namespace _Scripts.Store
                 UniversalVariables.Instance.ModifyMoney(price, false);
                 ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
                 ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
-                StoreController.Instance.AddItem(_item);
+                StoreController.Instance.AddItem(_item, _item.ItemType);
             }
             else
             {

@@ -13,15 +13,15 @@ public class ChecaSave : MonoBehaviour
     public void ConfirmaNovo()
     {
        
-     //   if (Savesystem.CheckIfSaveExists())
-    //    {
-    //        Debug.Log("SaveExit");
-    //    } else
-    //    {
-           // Savesystem.ClearSave();
+       if (Savesystem.CheckIfSaveExists())
+       {
+           Debug.Log("SaveExit");
+       } else
+       {
+           Savesystem.ClearSave();
             fade.StartFade();
             scene.ChangeWithDelay("Intro");
-    //    }
+       }
     }
 
     private void Start()
