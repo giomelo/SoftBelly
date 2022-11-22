@@ -91,6 +91,7 @@ namespace _Scripts.Entities.Player
         /// </summary>
         private void PlantInput()
         {
+            if (GameManager.hasInventory) return;
             if (GameManager.Instance && GameManager.Instance.noRay) return; //Adicionado para que nada seja clicado quando dentro da loja
             if (!Input.GetMouseButtonDown(0)) return;
             Ray direction = GameManager.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);

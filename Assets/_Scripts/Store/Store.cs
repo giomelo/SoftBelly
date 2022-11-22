@@ -45,7 +45,7 @@ public class Store : MonoBehaviour
             UniversalVariables.Instance.ModifyMoney(Price, false);
             ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
             ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
-            StoreController.Instance.AddItem(_item);
+            StoreController.Instance.AddItem(_item, _item.ItemType);
         }
         else
         {

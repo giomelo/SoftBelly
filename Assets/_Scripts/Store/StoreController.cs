@@ -121,9 +121,17 @@ namespace _Scripts.Store
             yield return new WaitForSeconds(1f);
             ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
         }
-        public void AddItem(ItemBehaviour item)
+        public void AddItem(ItemBehaviour item, ItemType isPlant)
         {
-            GameManager.Instance.plantStorage.Storage.AddItem(1, item);
+            if (isPlant == ItemType.Plant)
+            {
+                GameManager.Instance.labStorage.Storage.AddItem(1, item);
+            }
+            else
+            {
+                GameManager.Instance.plantStorage.Storage.AddItem(1, item);
+            }
+                
         }
 
         // ------ Nova UI ------
