@@ -12,16 +12,10 @@ public class ChecaSave : MonoBehaviour
 
     public void ConfirmaNovo()
     {
-       
-       if (Savesystem.CheckIfSaveExists())
-       {
-           Debug.Log("SaveExit");
-       } else
-       {
-           Savesystem.ClearSave();
-            fade.StartFade();
-            scene.ChangeWithDelay("Intro");
-       }
+        //Confirmação de novo jogo removida devido à falta de tempo
+        Savesystem.ClearSave();
+        fade.StartFade();
+        scene.ChangeWithDelay("Intro");
     }
 
     private void Start()

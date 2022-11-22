@@ -51,7 +51,10 @@ namespace _Scripts.UI
                 }
                     
                 if(menuState != -1 && !GameManager.Instance.noPause)
+                {
+                    GameManager.Instance.noRay = !GameManager.Instance.noRay;
                     PauseInput();
+                }
             }
         }
 
@@ -96,6 +99,7 @@ namespace _Scripts.UI
                 case UI.PauseButton.MainMenu:
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
+                    GameManager.Instance.noRay = false;
                     GameManager.Instance.Save();
                     // var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
                     // foreach (var o in objs)
@@ -107,6 +111,7 @@ namespace _Scripts.UI
                 case UI.PauseButton.Exit:
                     
                     Time.timeScale = 1;
+                    GameManager.Instance.noRay = false;
                     GameManager.Instance.Save();
                    
                     Application.Quit();
