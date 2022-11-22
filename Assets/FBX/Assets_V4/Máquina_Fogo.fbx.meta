@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Couldron_SHadder
+    second: {fileID: 2100000, guid: 93a4d3675464e4949b9ae5fb267c1378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TrimSheet_A
     second: {fileID: 2100000, guid: 9e10ef9ec9f55a24ba906da081f4458b, type: 2}
   - first:

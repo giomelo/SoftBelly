@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mixes_Shadder
+    second: {fileID: 2100000, guid: 93a4d3675464e4949b9ae5fb267c1378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TrimSheet_B
     second: {fileID: 2100000, guid: adf7a61d02456974aae416bdc34c17d6, type: 2}
   materials:
