@@ -16,8 +16,8 @@ namespace _Scripts.Helpers
         private static float b = 1.1f;
         private static float c = -4.7f;
 
-        public static float p = -1.9f;
-        public static float r = 32.3f;
+        public static float p = -0.8f;
+        public static float r = 17f;
         // medium curve grow
         // y = a^x a = 1.1
         // hard curve grow
