@@ -99,8 +99,6 @@ namespace _Scripts.Systems.Plantation
             {
                var obj = Instantiate(PlantTimeController.Instance.particle,
                     transform.position, Quaternion.identity);
-
-               obj.transform.parent = transform.GetChild(0);
             }
         }
         private void OnEnable()

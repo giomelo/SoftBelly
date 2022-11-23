@@ -57,7 +57,7 @@ namespace _Scripts.Entities.Player
 
         private void Start()
         {
-            InvokeRepeating(nameof(PutWaterInput), 1,0.05f);
+          //  InvokeRepeating(nameof(PutWaterInput), 1,0.05f);
            // InvokeRepeating(nameof(PlantInput), 1,0.05f);
             waterCanPos = waterCanObj.position;
         }
@@ -66,6 +66,7 @@ namespace _Scripts.Entities.Player
         {
             HandleMovementInput();
             PlantInput();
+            PutWaterInput();
             //WaterInput();
         }
     
