@@ -28,7 +28,7 @@ namespace _Scripts.Systems.Patients
         private Renderer Meshcabelo;
         [SerializeField]
         private Renderer meshRoupa;
-
+        [SerializeField]
         private Animator anim;
 
         public void SetOrder()
@@ -45,7 +45,7 @@ namespace _Scripts.Systems.Patients
 
         private void Start()
         {
-            anim = transform.GetComponent<Animator>();
+          //  anim = transform.GetComponent<Animator>();
             SetState(PatientState.Entering);
             StartCoroutine(Arrived());
             SetCloth();
@@ -78,7 +78,7 @@ namespace _Scripts.Systems.Patients
             meshcouro2.material.color = c;
             c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
             meshCouro.material.color = c;
-            c = Random.ColorHSV();
+            c = PatientsController.Instance.cabelos[Random.Range(0, PatientsController.Instance.cabelos.Count)];
             Meshcabelo.material.color = c;
         }
 

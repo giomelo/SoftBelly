@@ -82,6 +82,7 @@ namespace _Scripts.Systems.Patients
         public List<Color> coresPeles;
         public List<Color> listaRoupaPobre;
         public List<Color> roupaRico;
+        public List<Color> cabelos;
 
         public List<Patient> fila = new List<Patient>();
         public bool HasPatient { get; set; }

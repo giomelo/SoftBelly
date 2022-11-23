@@ -1430,7 +1430,6 @@ GameObject:
   - component: {fileID: 7207621148705051325}
   - component: {fileID: 7207621148705051298}
   - component: {fileID: 4613488298326647100}
-  - component: {fileID: 1147811685027461618}
   m_Layer: 6
   m_Name: Patient
   m_TagString: Patient
@@ -1491,16 +1490,12 @@ MonoBehaviour:
     Money: 20
     PotionType: 0
   label: 0
-  couro1: {fileID: 2100000, guid: cb40f264fd322014cbb46994deaede61, type: 2}
-  couro2: {fileID: 0}
-  pele: {fileID: 0}
-  cabelo: {fileID: 0}
-  roupa: {fileID: 0}
   meshCouro: {fileID: 4611595030218977046}
   meshcouro2: {fileID: 2523016632988033046}
   meshpele: {fileID: 5405492670971996231}
   Meshcabelo: {fileID: 9166568292571561261}
   meshRoupa: {fileID: 3070832445752014126}
+  anim: {fileID: 7942408853779304180}
 --- !u!136 &7207621148705051298
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1537,26 +1532,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &1147811685027461618
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207621148705051324}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c703e3aa108358c42aaf472ad0521d6d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7207621149209005852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7223213830867375612}
+  - component: {fileID: 7942408853779304180}
   m_Layer: 0
   m_Name: Patience_Sad_Walk (1)
   m_TagString: Untagged
@@ -1778,6 +1754,26 @@ Transform:
   m_Father: {fileID: 7207621148705051297}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7942408853779304180
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031556519180472134}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c703e3aa108358c42aaf472ad0521d6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8152019520325142010
 GameObject:
   m_ObjectHideFlags: 0
