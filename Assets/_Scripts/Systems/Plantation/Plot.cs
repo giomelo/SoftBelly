@@ -94,6 +94,14 @@ namespace _Scripts.Systems.Plantation
             var newDisplay = Instantiate(CurrentPlant.PlantDisplayObjs[(int)PlantState],
                 this.transform.position, Quaternion.identity);
             newDisplay.transform.parent = this.transform;
+
+            if ((int)PlantState == 2)
+            {
+               var obj = Instantiate(PlantTimeController.Instance.particle,
+                    transform.position, Quaternion.identity);
+
+               obj.transform.parent = transform.GetChild(0);
+            }
         }
         private void OnEnable()
         {
@@ -137,19 +145,14 @@ namespace _Scripts.Systems.Plantation
             if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)
             {
                 SetState(PlantState.Ready);
-                
             }
           
         }
 
-        private void CreateFeedBack()
-        {
-            
-        }
-        
         public void SetState(PlantState state)
         {
             PlantState = state;
+
         }
 
         public void SetThirsty(bool value)
@@ -180,6 +183,7 @@ namespace _Scripts.Systems.Plantation
             thirstyObj.SetActive(false);
             deathObj.SetActive(false);
             Destroy(transform.GetChild(0).gameObject);
+        //    Destroy(transform.GetChild(1).gameObject);
             PlantEvents.PlantCollected = id.CurrentPlant.PlantBase;
             
             StopCoroutine(PlantTimeController.Instance.Thirst(this));
