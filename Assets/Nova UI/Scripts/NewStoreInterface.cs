@@ -75,13 +75,13 @@ public class NewStoreInterface : MonoBehaviour
 
             switch (display.item.ItemType)                                                      //Info extra (ex. o que uma planta cura)
             {
-
                 case _Scripts.Enums.ItemType.Plant:     //Plantas
                     info_extraInfo.text = "Cura para:";
                     PlantBase plant = (PlantBase)display.item;
+                    info_extrasText.text = "";
                     foreach (SymptomsNivel symptoms in plant.MedicalSymptoms)
                     {
-                        info_extrasText.text += "�" + symptoms.Symptoms.ToString() + "  ";
+                        info_extrasText.text += ">" + symptoms.Symptoms.ToString() + "  ";
                     }
                     break;
 
