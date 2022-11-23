@@ -137,8 +137,14 @@ namespace _Scripts.Systems.Plantation
             if (PlantTimeController.Instance.PlantTimer[PlotId].Time <= 0)
             {
                 SetState(PlantState.Ready);
+                
             }
           
+        }
+
+        private void CreateFeedBack()
+        {
+            
         }
         
         public void SetState(PlantState state)

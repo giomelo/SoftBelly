@@ -26,6 +26,8 @@ namespace _Scripts.Singleton
     {
         public Dictionary<int, PlantPlot> PlantTimer { get; private set; } = new Dictionary<int,PlantPlot>();
         public List<ExposedDic> dic = new List<ExposedDic>();
+        [SerializeField]
+        private GameObject particle;
         public void AddTime(int plotId, float time, SeedBase plant, float thirstTime, bool isThirsty)
         {
             PlantTimer.Add(plotId, new PlantPlot(plant, time, thirstTime, isThirsty));

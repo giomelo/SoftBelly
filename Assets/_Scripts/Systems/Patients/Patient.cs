@@ -17,14 +17,19 @@ namespace _Scripts.Systems.Patients
         public SocialLabel label;
         public PatientState State { get; private set; }
         
-    
-        private Material couro1;
-        private Material couro2;
-        private Material pele;
-        private Material cabelo;
-        private Material roupa;
+
         [SerializeField]
-        private Renderer mesh;
+        private Renderer meshCouro;
+        [SerializeField]
+        private Renderer meshcouro2;
+        [SerializeField]
+        private Renderer meshpele;
+        [SerializeField]
+        private Renderer Meshcabelo;
+        [SerializeField]
+        private Renderer meshRoupa;
+
+        private Animator anim;
 
         public void SetOrder()
         {
@@ -40,9 +45,9 @@ namespace _Scripts.Systems.Patients
 
         private void Start()
         {
+            anim = transform.GetComponent<Animator>();
             SetState(PatientState.Entering);
             StartCoroutine(Arrived());
-            mesh = transform.GetChild(1).GetComponent<Renderer>();
             SetCloth();
         }
 
@@ -51,19 +56,11 @@ namespace _Scripts.Systems.Patients
             switch (label)
             {
                 case SocialLabel.NOBRE:
-                    roupa = mesh.materials[0];
-                    couro1 = mesh.materials[1];
-                    pele = mesh.materials[2];
-                    cabelo = mesh.materials[3];
-                    couro2 = mesh.materials[4];
+                    
                     SetItem();
                     break;
                 case SocialLabel.POBRE:
-                    roupa = mesh.materials[0];
-                    couro1 = mesh.materials[1];
-                    pele = mesh.materials[2];
-                    cabelo = mesh.materials[3];
-                    couro2 = mesh.materials[4];
+            
                     SetItem();
                     break;
                 default:
@@ -74,15 +71,15 @@ namespace _Scripts.Systems.Patients
         private void SetItem()
         {
             Color c = PatientsController.Instance.listaRoupaPobre[Random.Range(0, PatientsController.Instance.listaRoupaPobre.Count)];
-            mesh.materials[0].color = c;
+            meshRoupa.material.color = c;
             c = PatientsController.Instance.coresPeles[Random.Range(0, PatientsController.Instance.coresPeles.Count)];
-            mesh.materials[2].color = c;
+            meshpele.material.color = c;
             c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
-            mesh.materials[1].color = c;
+            meshcouro2.material.color = c;
             c = PatientsController.Instance.coreCourouPobre[Random.Range(0, PatientsController.Instance.coreCourouPobre.Count)];
-            mesh.materials[4].color = c;
+            meshCouro.material.color = c;
             c = Random.ColorHSV();
-            mesh.materials[3].color = c;
+            Meshcabelo.material.color = c;
         }
 
         public void Destroy()
@@ -135,14 +132,18 @@ namespace _Scripts.Systems.Patients
             {
                 case PatientState.Entering:
                     // set animation walk
+                    
+                    anim.SetTrigger("walk");
                     MoveToPosition(PatientsController.Instance.patientEnd[PatientsController.Instance.fila.Count -1].position);
                     break;
                 case PatientState.Waiting:
                     // set animation idle
+                    anim.SetTrigger("idle");
                     break;
                 case PatientState.Leaving:
                     StartCoroutine(Arrived());
                     // set animation walk
+                    anim.SetTrigger("walk");
                     MoveToPosition(PatientsController.Instance.exit.position);
                     
                     break;
