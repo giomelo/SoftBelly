@@ -14,10 +14,10 @@ namespace _Scripts.Helpers
 
         private static float a = 1.2f;
         private static float b = 1.1f;
-        private static float c = -8f;
+        private static float c = -4.7f;
 
         public static float p = -1.9f;
-        public static float r = 50;
+        public static float r = 32.3f;
         // medium curve grow
         // y = a^x a = 1.1
         // hard curve grow
