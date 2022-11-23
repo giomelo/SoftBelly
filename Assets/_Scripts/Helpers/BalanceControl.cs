@@ -59,16 +59,16 @@ namespace _Scripts.Helpers
         
         public static DificultyOfPotion? GenerateDificultyOfPotion()
         {
-            var random = Random.Range(0, 1);
+            var random = Random.Range(0, 1.0f);
             var total = EasyPotion + MediumPotion + HardPotion;
             var probabilityEasy = EasyPotion / total;
             var probabilityMedium = MediumPotion / total;
             var probabilityHard = HardPotion / total;
 
 
-            if (random <= probabilityHard) return DificultyOfPotion.Complex;
-            if (random <= probabilityMedium) return DificultyOfPotion.Medium;
-            if (random <= probabilityEasy) return DificultyOfPotion.Easy;
+            if (random < probabilityHard) return DificultyOfPotion.Complex;
+            if (random < probabilityMedium) return DificultyOfPotion.Medium;
+            if (random < probabilityEasy) return DificultyOfPotion.Easy;
 
             return null;
         }
