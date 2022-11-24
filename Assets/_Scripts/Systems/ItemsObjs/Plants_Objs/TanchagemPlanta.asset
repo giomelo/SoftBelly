@@ -20,7 +20,8 @@ MonoBehaviour:
   ShopDescription: "A tanchagem \xE9 uma planta rica em flavonoides, alcaloides,
     terpenoides, iridoides, mucilagem e outros compostos, o que garante as fun\xE7\xF5es
     antibacteriana, antiviral e anti-inflamat\xF3ria dessa planta"
-  ItemProprietiesDescription: tanchagem planta
+  ItemProprietiesDescription: "Tanchagem: Temperatura Baixa - Cura: Alergia, Infec\xE7\xE3o
+    na garganta, Hemorragia"
   MedicalSymptoms:
   - Symptoms: 4
     Nivel: 1
@@ -31,7 +32,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: 2a0a55f4c1c6cc94ea6694e3fd29ec6c, type: 3}
   SmashedPlant: {fileID: 21300000, guid: f75e6e223bd5f3a4ab4f28eb4c9261ca, type: 3}
   MixedPlant: {fileID: 21300000, guid: 5523d71047aff414aaeb0c05b700ad66, type: 3}
-  PotionStuff: {fileID: 21300000, guid: 17035c204825f6340a252046ab6476fd, type: 3}
+  PotionStuff: {fileID: 21300000, guid: cbff2b014776be1408bceb7094edf76f, type: 3}
   BurnedPlant: {fileID: 21300000, guid: c7fe10725642de34ca6f110c8beda55a, type: 3}
   MachineList: 
   plantTemperature: 0

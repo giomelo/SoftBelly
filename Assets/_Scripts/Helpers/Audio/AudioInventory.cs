@@ -5,10 +5,6 @@ namespace _Scripts.Helpers.Audio
 {
     public class AudioInventory : MonoSingleton<AudioInventory>
     {
-        public AudioClip rightAudio;
-        public AudioClip wrongAudio;
-        public AudioClip wonSound;
-        public AudioClip looseSound;
-        public AudioClip walkSound;
+        public AudioClip pacientes;
     }
 }

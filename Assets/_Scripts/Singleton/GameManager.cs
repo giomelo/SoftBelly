@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using _Scripts.Helpers;
 using _Scripts.SaveSystem;
+using _Scripts.Screen_Flow;
 using _Scripts.Systems.Inventories;
 using _Scripts.U_Variables;
 using _Scripts.UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Time = UnityEngine.Time;
 
 namespace _Scripts.Singleton
 {
@@ -35,7 +37,7 @@ namespace _Scripts.Singleton
         public UIController currentUi;
         public void SleepCall()
         {
-            if (DaysController.Instance.time.Hours >= DaysController.Instance.finisHourPatients)
+            if (DaysController.Instance.Timee.Hours >= DaysController.Instance.finisHourPatients)
             {
                 if (sleeping) return;
                 
@@ -51,6 +53,15 @@ namespace _Scripts.Singleton
                
             
         }
+
+        public void GameOver()
+        {
+            Time.timeScale = 1;
+            noPause = false;
+            Savesystem.ClearSave();
+            ScreenFlow.Instance.LoadScene("NovoMenu");
+        }
+        
         
         public void Save()
         {

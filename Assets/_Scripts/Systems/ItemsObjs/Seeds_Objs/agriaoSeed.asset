@@ -19,8 +19,7 @@ MonoBehaviour:
   Price: 6
   ShopDescription: "O agri\xE3o \xE9 uma verdura rica em vitamina C e vitamina A,
     com propriedades antioxidantes e anti-inflamat\xF3rias"
-  ItemProprietiesDescription: "O agri\xE3o \xE9 uma verdura rica em vitamina C e
-    vitamina A, com propriedades antioxidantes e anti-inflamat\xF3rias"
+  ItemProprietiesDescription: Agriao semente
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

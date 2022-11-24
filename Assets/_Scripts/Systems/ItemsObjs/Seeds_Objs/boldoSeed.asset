@@ -20,7 +20,7 @@ MonoBehaviour:
   ShopDescription: "O boldo \xE9 uma planta rica em propriedades medicinais, muito
     utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es
     do f\xEDgado, melhorar a digest\xE3o e aliviar sintomas de ressaca."
-  ItemProprietiesDescription: boldo
+  ItemProprietiesDescription: Boldo semente
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

@@ -21,7 +21,8 @@ MonoBehaviour:
     como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,
     al\xE9m de minerais que s\xE3o muito importantes para a sa\xFAde, como o ferro,
     cobre e magn\xE9sio"
-  ItemProprietiesDescription: salsa planta
+  ItemProprietiesDescription: "Salsa: Temperatura M\xE9dia - Cura: Elimina\xE7\xE3o
+    de Toxinas, Anti-Inflamat\xF3rio"
   MedicalSymptoms:
   - Symptoms: 8
     Nivel: 1
@@ -30,7 +31,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: 499795110258cea4ea786837c3452d1d, type: 3}
   SmashedPlant: {fileID: 21300000, guid: 6c7e81224b282524c81ec889dcd63401, type: 3}
   MixedPlant: {fileID: 21300000, guid: 1b0e4cba944ed48418c9abcdb476820b, type: 3}
-  PotionStuff: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  PotionStuff: {fileID: 21300000, guid: 1452f7953e6bf964690e6369c16ea3ed, type: 3}
   BurnedPlant: {fileID: 21300000, guid: ebf9d2b883d8db9409fa2210cbda739e, type: 3}
   MachineList: 
   plantTemperature: 1

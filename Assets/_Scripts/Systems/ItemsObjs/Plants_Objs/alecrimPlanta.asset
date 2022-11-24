@@ -20,14 +20,19 @@ MonoBehaviour:
   ShopDescription: "O alecrim (Salvia Rosmarinus) \xE9 uma erva arom\xE1tica comum
     na regi\xE3o do Mediterr\xE2neo ocorrendo dos 0 a 1500 metros de altitude, preferencialmente
     em solos de origem calc\xE1ria"
-  ItemProprietiesDescription: alecrim planta
+  ItemProprietiesDescription: "Alecrim: Temperatura Baixa - Cura: Ansiedade, Anemia,
+    Doen\xE7as intestinais"
   MedicalSymptoms:
   - Symptoms: 16
+    Nivel: 1
+  - Symptoms: 2048
     Nivel: 3
+  - Symptoms: 32
+    Nivel: 1
   DriedPlant: {fileID: 21300000, guid: b7fdd83fc59663b40adcaff4cb33e38e, type: 3}
   SmashedPlant: {fileID: 21300000, guid: 7c6a14cea668d9f49af9e1be106cab69, type: 3}
   MixedPlant: {fileID: 21300000, guid: 59371123d11754946af6d18650358652, type: 3}
-  PotionStuff: {fileID: 0}
+  PotionStuff: {fileID: 21300000, guid: 1452f7953e6bf964690e6369c16ea3ed, type: 3}
   BurnedPlant: {fileID: 21300000, guid: 0215705a840bed34490b02d7a62a1cc4, type: 3}
   MachineList: 
   plantTemperature: 0

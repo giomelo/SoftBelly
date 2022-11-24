@@ -20,7 +20,8 @@ MonoBehaviour:
   ShopDescription: "A erva-cidreira \xE9 a planta medicinal Melissa officinalis,
     tamb\xE9m conhecida como cidreira ou melissa, muito utilizada para tratar v\xE1rios
     problemas de sa\xFAde, especialmente problemas digestivos, de ansiedade e estresse."
-  ItemProprietiesDescription: 'ervaCidreira planta '
+  ItemProprietiesDescription: "Erva Cidreira: Temperatura M\xE9dia - Cura: Ansiedade,
+    Dor de dente"
   MedicalSymptoms:
   - Symptoms: 16
     Nivel: 2
@@ -29,7 +30,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: d8f4f1274421f9e4f98cd78c34b6a8d9, type: 3}
   SmashedPlant: {fileID: 21300000, guid: 63cde6861f963ab48957a566eec91d34, type: 3}
   MixedPlant: {fileID: 21300000, guid: 5376872d545fc9c4989412fc8fbea066, type: 3}
-  PotionStuff: {fileID: 0}
+  PotionStuff: {fileID: 21300000, guid: cbff2b014776be1408bceb7094edf76f, type: 3}
   BurnedPlant: {fileID: 21300000, guid: 9251fd4dd790f814890f0fbdb513e4a2, type: 3}
   MachineList: 
-  plantTemperature: 2
+  plantTemperature: 1

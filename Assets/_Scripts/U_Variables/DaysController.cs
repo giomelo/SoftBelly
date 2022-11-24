@@ -11,12 +11,12 @@ using Random = UnityEngine.Random;
 namespace _Scripts.U_Variables
 {
     [Serializable]
-    public struct Time
+    public struct Timee
     {
         public int Hours;
         public int Minutes;
 
-        public Time(int hours, int minutes)
+        public Timee(int hours, int minutes)
         {
             Hours = hours;
             Minutes = minutes;
@@ -30,7 +30,7 @@ namespace _Scripts.U_Variables
     
     public class DaysController : MonoSingleton<DaysController> , DataObject
     {
-        public Time time = new Time(7,0);
+        public Timee Timee = new Timee(7,0);
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
 
@@ -38,7 +38,7 @@ namespace _Scripts.U_Variables
         public static Action DayChangeAction;
         public static Action NightStartAction;
         [SerializeField]
-        private List<Time> _patientsTime = new List<Time>();
+        private List<Timee> _patientsTime = new List<Timee>();
         [SerializeField]
         private Light mainLight;
         [SerializeField]
@@ -52,21 +52,21 @@ namespace _Scripts.U_Variables
 
         private void RestartDay()
         {
-            time = new Time(7, 0);
+            Timee = new Timee(7, 0);
             ChangeDayCall();
             //_Scripts.Store.StoreController.Instance.UpdateItem();
         }
 
-        public Time GenerateRandomTime(int minH, int maxH, int minM, int maxM)
+        public Timee GenerateRandomTime(int minH, int maxH, int minM, int maxM)
         {
-            return new Time(Random.Range(minH, maxH), Random.Range(minM, maxM));
+            return new Timee(Random.Range(minH, maxH), Random.Range(minM, maxM));
         }
 
         public void GeneratePatientsTimeList()
         {
             for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay; i++)
             {
-                Time t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
+                Timee t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
                 _patientsTime.Add(t);
             }
         }
@@ -143,45 +143,45 @@ namespace _Scripts.U_Variables
         private void CountTime()
         {
             
-            if (time.Hours == 3)
+            if (Timee.Hours == 3)
             {
                 //alerta para dormir
                 HUD_Controller.Instance.AvisoDromir();
             }
             else
             {
-                time.Minutes++;
-                if (time.Minutes == 60)
+                Timee.Minutes++;
+                if (Timee.Minutes == 60)
                 {
-                    time.Minutes = 0;
-                    time.Hours++;
+                    Timee.Minutes = 0;
+                    Timee.Hours++;
                 }
 
-                if (time.Hours == 6)
+                if (Timee.Hours == 6)
                 {
                    // ChangeDayCall();
                 }
 
-                if (time.Hours == 24)
+                if (Timee.Hours == 24)
                 {
-                    time.Hours = 0;
+                    Timee.Hours = 0;
                 }
             }
-            if (time.Hours == startHourPatient && !PatientsEvents.Day)
+            if (Timee.Hours == startHourPatient && !PatientsEvents.Day)
             {
                 PatientsEvents.OnStartDayCall();
             }
 
-            if (time.Hours == finisHourPatients && !PatientsEvents.Night)
+            if (Timee.Hours == finisHourPatients && !PatientsEvents.Night)
             {
                 ChangeNightCall();
                 PatientsEvents.OnStartNightCall();
             }
 
-            if (_patientsTime.Contains(time))
+            if (_patientsTime.Contains(Timee))
             {
                 PatientsController.Instance.GeneratePatient();
-                _patientsTime.Remove(time);
+                _patientsTime.Remove(Timee);
                 if (_patientsTime.Count == 0)
                     HUD_Controller.Instance.EndDay();
             }

@@ -8,12 +8,7 @@ namespace Misc.Audios
         
         # region SFX
         
-        public static Action WrongSound = () => AudioManager.Instance.PlaySound(AudioInventory.Instance.wrongAudio);
-        public static Action RightSound  = () => AudioManager.Instance.PlaySound(AudioInventory.Instance.rightAudio);
-        public static Action WonSound = () => AudioManager.Instance.PlaySound(AudioInventory.Instance.wonSound);
-        public static Action LooseSound = () => AudioManager.Instance.PlaySound(AudioInventory.Instance.looseSound);
-        public static Action WalkSound;
-        
+        public static Action Patients = () => AudioManager.Instance.PlaySound(AudioInventory.Instance.pacientes);
         #endregion
 
         #region Music

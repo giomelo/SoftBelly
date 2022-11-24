@@ -94,12 +94,14 @@ namespace _Scripts.Systems.Plantation
             var newDisplay = Instantiate(CurrentPlant.PlantDisplayObjs[(int)PlantState],
                 this.transform.position, Quaternion.identity);
             newDisplay.transform.parent = this.transform;
-
-            if ((int)PlantState == 2)
-            {
-               var obj = Instantiate(PlantTimeController.Instance.particle,
-                    transform.position, Quaternion.identity);
-            }
+            //
+            // if ((int)PlantState == 2)
+            // {
+            //    var obj = Instantiate(PlantTimeController.Instance.particle,
+            //         transform.position, Quaternion.identity);
+            //
+            //    obj.transform.parent = transform.GetChild(0);
+            // }
         }
         private void OnEnable()
         {

@@ -19,7 +19,7 @@ MonoBehaviour:
   Price: 15
   ShopDescription: "A erva-doce \xE9 uma planta medicinal indicada para aliviar gases,
     n\xE1useas, pris\xE3o de ventre, c\xF3licas e m\xE1 digest\xE3o"
-  ItemProprietiesDescription: Erva Doce
+  ItemProprietiesDescription: Erva Doce semente
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

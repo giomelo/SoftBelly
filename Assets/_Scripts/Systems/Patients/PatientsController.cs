@@ -12,6 +12,7 @@ using _Scripts.Systems.Lab;
 using _Scripts.Systems.Plants.Bases;
 using _Scripts.U_Variables;
 using _Scripts.UI;
+using Misc.Audios;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -130,6 +131,7 @@ namespace _Scripts.Systems.Patients
         //Instantiate patient
         public void GeneratePatient()
         {
+            AudioEvents.Patients?.Invoke();
             var patient = Instantiate(patientPrefab, patientStart.position, Quaternion.identity).transform;
             PatientsEvents.OnPatientArrivedCall(patient);
         }

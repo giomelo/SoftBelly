@@ -10,6 +10,8 @@ namespace _Scripts.U_Variables
     public class UniversalVariables : MonoSingleton<UniversalVariables> , DataObject
     {
         public bool IsNewGame = true;
+        [SerializeField]
+        private GameObject gameover;
         //Variavél de dinheiro para a loja e venda das curas para os pacientes
         private float money = 100;
 
@@ -79,6 +81,9 @@ namespace _Scripts.U_Variables
             if (Reputation <= 0)
             {
                 Reputation = 0;
+                gameover.SetActive(true);
+                Time.timeScale = 0;
+               
                 //game over
             }
             HUD_Controller.Instance.UpdateReputationText();

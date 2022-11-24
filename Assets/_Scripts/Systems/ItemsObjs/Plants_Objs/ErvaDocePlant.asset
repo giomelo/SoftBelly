@@ -19,7 +19,8 @@ MonoBehaviour:
   Price: 20
   ShopDescription: "A erva-doce \xE9 uma planta medicinal indicada para aliviar gases,
     n\xE1useas, pris\xE3o de ventre, c\xF3licas e m\xE1 digest\xE3o"
-  ItemProprietiesDescription: erva doce planta
+  ItemProprietiesDescription: "Erva Doce: Temperatura M\xE9dia - Cura: Dor de Cabe\xE7a,
+    Dor de dente"
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 2
@@ -28,7 +29,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: a9479209ad5ee8c4da621581ab80b2b8, type: 3}
   SmashedPlant: {fileID: 21300000, guid: c3ebfcc5c59646a43b7c1f84d9906925, type: 3}
   MixedPlant: {fileID: 21300000, guid: de83e9af67b929d4b979364ef7396c85, type: 3}
-  PotionStuff: {fileID: 21300000, guid: 27f0de28d005b924fb87eeb246cd6964, type: 3}
+  PotionStuff: {fileID: 21300000, guid: c0c2eae4810614d40a7fb12e81768c46, type: 3}
   BurnedPlant: {fileID: 21300000, guid: 707700324769dcc448c35e11aefeba16, type: 3}
   MachineList: 
   plantTemperature: 1

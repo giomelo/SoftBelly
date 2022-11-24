@@ -129,8 +129,8 @@ namespace _Scripts.UI
 
         public void UpdateTimeText()
         {
-            hoursText.text= DaysController.Instance.time.Hours.ToString("").PadLeft(2, '0');
-            secondsText.text= DaysController.Instance.time.Minutes.ToString("").PadLeft(2, '0');
+            hoursText.text= DaysController.Instance.Timee.Hours.ToString("").PadLeft(2, '0');
+            secondsText.text= DaysController.Instance.Timee.Minutes.ToString("").PadLeft(2, '0');
         }
     }
 }

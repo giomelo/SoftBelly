@@ -21,7 +21,7 @@ MonoBehaviour:
     que ajudam a tratar problemas digestivos, como m\xE1 digest\xE3o, acidez, n\xE1useas
     ou v\xF4mitos, al\xE9m de possuir efeito calmante e sedativo que diminuem os
     n\xEDveis de ansiedade, melhoram o estado de \xE2nimo e a qualidade do sono."
-  ItemProprietiesDescription: hortela
+  ItemProprietiesDescription: "Hortel\xE3 semente"
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

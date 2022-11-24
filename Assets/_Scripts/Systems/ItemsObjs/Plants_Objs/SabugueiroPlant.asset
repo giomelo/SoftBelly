@@ -20,7 +20,8 @@ MonoBehaviour:
   ShopDescription: "O sabugueiro \xE9 um arbusto com flores brancas e bagas pretas,
     cujas flores podem ser utilizadas para preparar um ch\xE1, que pode ser usado
     como auxiliar no tratamento da gripe ou resfriado."
-  ItemProprietiesDescription: sabugueiro planta
+  ItemProprietiesDescription: "Sabugueiro: Temperatura Baixa - Cura: Febre, Alergia,
+    Elimina\xE7\xE3o de Toxinas"
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 2
@@ -31,7 +32,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: 4ca13850a4fdee94f9ab089d5b609c19, type: 3}
   SmashedPlant: {fileID: 21300000, guid: b00b8b882d350b24f8cf1e28514f577f, type: 3}
   MixedPlant: {fileID: 21300000, guid: c28126c4ecfaa114eb71979053cebb05, type: 3}
-  PotionStuff: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
+  PotionStuff: {fileID: 21300000, guid: c42896f6ec95d9946b0a51d513aa2b79, type: 3}
   BurnedPlant: {fileID: 21300000, guid: a3f2f0a46aa845e49acca88639b98573, type: 3}
   MachineList: 
   plantTemperature: 2

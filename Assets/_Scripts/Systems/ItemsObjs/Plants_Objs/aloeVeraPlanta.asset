@@ -21,7 +21,8 @@ MonoBehaviour:
     por benef\xEDcios como efeito calmante, cicatrizante, anest\xE9sico, anti-t\xE9rmico
     e anti-inflamat\xF3rio, al\xE9m de ser \xF3tima para hidratar cabelos e pele,
     pois estimula a produ\xE7\xE3o de col\xE1geno."
-  ItemProprietiesDescription: aloeVera planta
+  ItemProprietiesDescription: 'Aloe Verda: Temperatura Baixa - Cura: Queimaduras,
+    Hemorragia'
   MedicalSymptoms:
   - Symptoms: 128
     Nivel: 3
@@ -30,7 +31,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: 252bb1447d88097469667b472587dab6, type: 3}
   SmashedPlant: {fileID: 21300000, guid: 207448709f0186b469e83920f1c471b6, type: 3}
   MixedPlant: {fileID: 21300000, guid: f4303ff66c465cc46839a5284dbefe41, type: 3}
-  PotionStuff: {fileID: 0}
+  PotionStuff: {fileID: 21300000, guid: 469badac53f7eae45b9f88ec82233ba9, type: 3}
   BurnedPlant: {fileID: 21300000, guid: 4f95ab85f36ab73449139f943bdcde04, type: 3}
   MachineList: 
   plantTemperature: 0

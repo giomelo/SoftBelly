@@ -21,7 +21,7 @@ MonoBehaviour:
     como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,
     al\xE9m de minerais que s\xE3o muito importantes para a sa\xFAde, como o ferro,
     cobre e magn\xE9sio"
-  ItemProprietiesDescription: 'salsa '
+  ItemProprietiesDescription: Salsa semente
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

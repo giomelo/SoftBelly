@@ -20,14 +20,14 @@ MonoBehaviour:
   ShopDescription: "O boldo \xE9 uma planta rica em propriedades medicinais, muito
     utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es
     do f\xEDgado, melhorar a digest\xE3o e aliviar sintomas de ressaca."
-  ItemProprietiesDescription: boldo planta
+  ItemProprietiesDescription: "Boldo: Temperatura M\xE9dia - Cura: Doen\xE7as Intestinais"
   MedicalSymptoms:
   - Symptoms: 32
     Nivel: 3
   DriedPlant: {fileID: 21300000, guid: b6a3f8fef1bad2b4ea5018f47ab62870, type: 3}
   SmashedPlant: {fileID: 21300000, guid: d542cadd73be90f47b1b340c30c747e6, type: 3}
   MixedPlant: {fileID: 21300000, guid: 4f25b9c54ce0c034eb2e4cccc31177f3, type: 3}
-  PotionStuff: {fileID: 0}
+  PotionStuff: {fileID: 21300000, guid: c42896f6ec95d9946b0a51d513aa2b79, type: 3}
   BurnedPlant: {fileID: 21300000, guid: 88aa8114009defc499e8b31505d027ac, type: 3}
   MachineList: 
-  plantTemperature: 0
+  plantTemperature: 1

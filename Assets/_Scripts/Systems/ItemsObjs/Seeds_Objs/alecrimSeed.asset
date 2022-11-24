@@ -20,7 +20,7 @@ MonoBehaviour:
   ShopDescription: "O alecrim (Salvia Rosmarinus) \xE9 uma erva arom\xE1tica comum
     na regi\xE3o do Mediterr\xE2neo ocorrendo dos 0 a 1500 metros de altitude, preferencialmente
     em solos de origem calc\xE1ria"
-  ItemProprietiesDescription: alecrim
+  ItemProprietiesDescription: Alecrim semente
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
