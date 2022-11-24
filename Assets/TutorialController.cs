@@ -22,10 +22,10 @@ public class TutorialController : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        if (!Savesystem.CheckIfSaveExists())
-        {
+        //if (!Savesystem.CheckIfSaveExists())
+        //{
             Invoke("StartTut", 1);
-        }
+        //}
     }
 
     private void StartGame()
