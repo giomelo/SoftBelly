@@ -170,6 +170,7 @@ namespace _Scripts.Systems.Patients
         }
         private void Out()
         {
+            PatientsController.Instance.fila.Clear();
             SetState(PatientState.Leaving);
         }
     }

@@ -44,6 +44,7 @@ namespace _Scripts.Singleton
                 Sleep?.Invoke();
                 sleeping = true;
                 Save();
+                
             }
             else
             {

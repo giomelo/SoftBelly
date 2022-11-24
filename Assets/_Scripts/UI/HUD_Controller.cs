@@ -123,7 +123,7 @@ namespace _Scripts.UI
         }
         public void AvisoDromir()
         {
-            levelText.text = "Está ficando tarde é melhor dormir parar terminar o dia!";
+            levelText.text = "Está ficando tarde é melhor dormir para terminar o dia!";
             levelAnim.Play();
         }
 

@@ -120,7 +120,7 @@ namespace _Scripts.Systems.Patients
                     return 40;
                 case PotionType.Xarope:
                     return 40;
-                case PotionType.Wrong:
+                case PotionType.Errado:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(t), t, null);

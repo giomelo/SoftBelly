@@ -11,6 +11,6 @@
         Cataplasma,
         Maceração,
         Infusao,
-        Wrong
+        Errado
     }
 }

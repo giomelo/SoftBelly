@@ -120,7 +120,6 @@ namespace _Scripts.U_Variables
             NightStartAction += ChangeLightColorNight;
             GameManager.Sleep += RestartDay;
             GameManager.Sleep += BalanceControl.ChangeDay;
-            GameManager.Sleep += BalanceControl.ChangeDay;
         }
 
         private void AddDay()
@@ -150,7 +149,14 @@ namespace _Scripts.U_Variables
             }
             else
             {
-                Timee.Minutes++;
+                if (Timee.Hours == 6)
+                {
+                    // ChangeDayCall();
+                }
+                else
+                {
+                    Timee.Minutes++;
+                }
                 if (Timee.Minutes == 60)
                 {
                     Timee.Minutes = 0;
@@ -199,7 +205,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             HUD_Controller.Instance.DiaDisplay();
-            InvokeRepeating("CountTime", 0.3f, 0.3f);
+            InvokeRepeating("CountTime", 1f, 1f);
            // ChangeDayCall();
         }
 

@@ -81,7 +81,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
             string returnvalue = "";
             foreach (var value in symptoms)
             {
-                returnvalue += " " + value.Symptoms + "-" + value.Nivel;
+                returnvalue += " " + value.Symptoms + "-" /*+ value.Nivel*/;
             }
             // foreach (var value in Enum.GetValues(typeof(MedicalSymptoms)))
             // {
@@ -125,7 +125,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
 
         private PotionType CreatePotionType(List<MachinesTypes> types,  [CanBeNull] List<IngredientsList> ingredientsList)
         {
-            PotionType potionType = PotionType.Wrong;
+            PotionType potionType = PotionType.Errado;
             foreach (var type in PotionsTypes)
             {
                 if (!types.SequenceEqual(type.MachinesTypes)) continue;
