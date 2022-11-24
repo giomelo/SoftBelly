@@ -53,17 +53,6 @@ namespace _Scripts.U_Variables
             }
             HUD_Controller.Instance.UpdateMoneyText();
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                Nivel += 10;
-                SetNivel();
-                
-            }
-          
-        }
         
         public void ModifyReputation(int amount, bool add)
         {

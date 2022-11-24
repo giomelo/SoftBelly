@@ -9,7 +9,7 @@ namespace _Scripts.Helpers.Audio
     public class AudioManager : MonoSingleton<AudioManager>
     {
         [SerializeField]
-        private AudioSource musicSource;
+        public AudioSource musicSource;
         [SerializeField]
         private AudioSource soundSource;
         private void Start()

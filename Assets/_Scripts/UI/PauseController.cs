@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Helpers.Audio;
 using _Scripts.SaveSystem;
 using _Scripts.Screen_Flow;
 using UnityEngine;
@@ -97,6 +98,7 @@ namespace _Scripts.UI
                     }
                     break;
                 case UI.PauseButton.MainMenu:
+                    AudioManager.Instance.musicSource.Stop();
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
                     GameManager.Instance.noRay = false;
