@@ -6,7 +6,7 @@ public class BracoRelogio : MonoBehaviour
 
     private void Update()
     {
-        if (!DaysController.Instance) { return; }
+    //    if (!DaysController.Instance) { return; }
         Quaternion rot = Quaternion.Euler(0, 0,
                             Mathf.Clamp(hourMap(DaysController.Instance.Timee.Hours, 0, 90), 0, 90)
                          );

@@ -149,7 +149,7 @@ namespace _Scripts.U_Variables
             }
             else
             {
-                if (Timee.Hours == 6)
+                if (Timee.Hours == 5)
                 {
                     // ChangeDayCall();
                 }
@@ -205,7 +205,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             HUD_Controller.Instance.DiaDisplay();
-            InvokeRepeating("CountTime", 1f, 1f);
+            InvokeRepeating("CountTime", 0.8f, 0.8f);
            // ChangeDayCall();
         }
 
