@@ -23,7 +23,7 @@ public class NewStoreInterface : MonoBehaviour
 
     private void Start()
     {
-        YPos = transform.position.y;
+        YPos = transform.localPosition.y;
         vec = transform.localPosition;
         for (int i = 0; i < items.Length; i++)
         {
