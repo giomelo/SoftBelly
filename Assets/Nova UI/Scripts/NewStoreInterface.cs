@@ -24,7 +24,7 @@ public class NewStoreInterface : MonoBehaviour
     private void Start()
     {
         YPos = transform.position.y;
-        vec = transform.position;
+        vec = transform.localPosition;
         for (int i = 0; i < items.Length; i++)
         {
             ItemDisplay item = items[i].GetComponent<ItemDisplay>();
@@ -48,7 +48,8 @@ public class NewStoreInterface : MonoBehaviour
     public void MudaPosY(float pos)
     {
         vec.y = YPos + pos;
-        transform.SetPositionAndRotation(vec, Quaternion.identity);
+        transform.localPosition = vec;
+        //transform.SetPositionAndRotation(vec, Quaternion.identity);
     }
 
     public void AtualizaInterface(GameObject item)

@@ -32,7 +32,7 @@ MonoBehaviour:
   DriedPlant: {fileID: 21300000, guid: 4ca13850a4fdee94f9ab089d5b609c19, type: 3}
   SmashedPlant: {fileID: 21300000, guid: b00b8b882d350b24f8cf1e28514f577f, type: 3}
   MixedPlant: {fileID: 21300000, guid: c28126c4ecfaa114eb71979053cebb05, type: 3}
-  PotionStuff: {fileID: 21300000, guid: c42896f6ec95d9946b0a51d513aa2b79, type: 3}
+  PotionStuff: {fileID: 21300000, guid: eafb9886991a8ca4785997c6e440cd98, type: 3}
   BurnedPlant: {fileID: 21300000, guid: a3f2f0a46aa845e49acca88639b98573, type: 3}
   MachineList: 
   plantTemperature: 2

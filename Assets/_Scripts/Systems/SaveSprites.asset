@@ -115,12 +115,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c7e81224b282524c81ec889dcd63401, type: 3}
   - {fileID: 21300000, guid: f75e6e223bd5f3a4ab4f28eb4c9261ca, type: 3}
   - {fileID: 21300000, guid: d3e8a9206a01a434c824a9ba352a36e6, type: 3}
-  - {fileID: 21300000, guid: 469badac53f7eae45b9f88ec82233ba9, type: 3}
-  - {fileID: 21300000, guid: 1452f7953e6bf964690e6369c16ea3ed, type: 3}
-  - {fileID: 21300000, guid: c0c2eae4810614d40a7fb12e81768c46, type: 3}
-  - {fileID: 21300000, guid: cbff2b014776be1408bceb7094edf76f, type: 3}
-  - {fileID: 21300000, guid: c42896f6ec95d9946b0a51d513aa2b79, type: 3}
-  - {fileID: 21300000, guid: 294acf11d2d2f364485ab4a4be71b1a7, type: 3}
+  - {fileID: 21300000, guid: 5694390db4af03f43a2d0578c98ad10a, type: 3}
+  - {fileID: 21300000, guid: 8fabe634702955f4b93624dc1b648d09, type: 3}
+  - {fileID: 21300000, guid: 6c46638d9deacf84ab66fb16607ac61f, type: 3}
+  - {fileID: 21300000, guid: d88c7796367fd7c4fa775b50333d9bbb, type: 3}
+  - {fileID: 21300000, guid: 3c948ed9f80137f4c92cd5a590631b6b, type: 3}
+  - {fileID: 21300000, guid: d3f48744701e9864abc178c741ed814a, type: 3}
+  - {fileID: 21300000, guid: 2e9c9c44b95cd724ea556d6127eb3c42, type: 3}
+  - {fileID: 21300000, guid: bb792c2908de6db4087a0a30a2bf6df1, type: 3}
+  - {fileID: 21300000, guid: cbfcb9d548ff90048ada565138f1d8d4, type: 3}
+  - {fileID: 21300000, guid: 59f8caebeab8fc9438656bc61bc698b8, type: 3}
+  - {fileID: 21300000, guid: ed6340ca2fd583149ae45aae3d9b5f76, type: 3}
+  - {fileID: 21300000, guid: 8a0e5cd828ba5384c8be01f576f25dcc, type: 3}
+  - {fileID: 21300000, guid: e7222cbb893bec54c8bac85e7461dff3, type: 3}
+  - {fileID: 21300000, guid: eafb9886991a8ca4785997c6e440cd98, type: 3}
+  - {fileID: 21300000, guid: aaddea33f3d98734592576a72a3502ed, type: 3}
+  - {fileID: 21300000, guid: 4e13399d4c0aacf408c8e7e38fa1a2a1, type: 3}
+  - {fileID: 21300000, guid: 2d479ae524d9e98489c5cbd3a4d6fa76, type: 3}
   plantsAndGameObjects:
   - id: Camomila semente
     fase:
