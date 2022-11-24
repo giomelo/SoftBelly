@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EucaliptoPlant
   m_EditorClassIdentifier: 
   ItemId: Eucalipto
-  ItemLongID: 
+  ItemLongID: Eucalipto
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
   Price: 20
@@ -24,10 +24,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 1
     Nivel: 1
-  DriedPlant: {fileID: 21300000, guid: df4a643cba86e4643896817ab819b7a7, type: 3}
-  SmashedPlant: {fileID: -820880894, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
-  MixedPlant: {fileID: -2034143682, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
+  DriedPlant: {fileID: 21300000, guid: 0deb768295ce15047ba82f6af600808f, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: fb02425f0d1969f46bfa798d97eabc5c, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 48df2410a4376934f9540f4d2e70c7cb, type: 3}
   PotionStuff: {fileID: 21300000, guid: fd5c82022e1301647b333703662acb6f, type: 3}
-  BurnedPlant: {fileID: 21300000, guid: 03b0e789f56a0b64693c8c02a4838b07, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: ff3c4b35d7fe6864fbfb0d1b72ad990e, type: 3}
   MachineList: 
   plantTemperature: 0

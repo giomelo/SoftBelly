@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: gengibrePlanta
   m_EditorClassIdentifier: 
   ItemId: gengibre
-  ItemLongID: 
+  ItemLongID: Gengibre
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: babdc37acb14389449de5536fac7efd3, type: 3}
   Price: 10
   ShopDescription: "O gengibre \xE9 uma raiz comest\xEDvel que, quando adicionada
     na dieta, pode trazer v\xE1rios benef\xEDcios para a sa\xFAde, desde ajudar a
@@ -33,10 +33,10 @@ MonoBehaviour:
     Nivel: 2
   - Symptoms: 65536
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: e82a1b36ccb17ea46b141f16c864b0b1, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 2eac79ab7b3a2f04e919e811ac9200f8, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 23d2052b625711342acf57617c43780b, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: c7cc7b476cc71c144818ede988fdb600, type: 3}
   MachineList: 
   plantTemperature: 0

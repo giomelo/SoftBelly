@@ -44,7 +44,10 @@ public class CheckThenBuy : MonoBehaviour
         {
             float val = float.Parse(valString.text.Substring(2));
             UniversalVariables.Instance.Money -= val;
-            GameManager.Instance.plantStorage.Storage.AddItem(1, item);
+            if(item.ItemType == _Scripts.Enums.ItemType.Seed)
+                GameManager.Instance.plantStorage.Storage.AddItem(1, item);
+            else
+                GameManager.Instance.labStorage.Storage.AddItem(1, item);
         }
         else
         {

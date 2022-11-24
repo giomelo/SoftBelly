@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Camomila semente
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 21300000, guid: 2f6fc17f106b6ea42a65e68c15f9ed46, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 29547410038a4464a96937e0d906c0e9, type: 3}
   Price: 20
   ShopDescription: Planta conhecida por seu aroma intenso e doce, capaz de perfumar
     grandes ambientes.

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: hortelaPlanta
   m_EditorClassIdentifier: 
   ItemId: hortela
-  ItemLongID: 
+  ItemLongID: "Hortel\xE3"
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 07440f31b7cef944bb2e0ca1c8290f0b, type: 3}
   Price: 11
   ShopDescription: "A hortel\xE3  \xE9 uma planta medicinal e arom\xE1tica, com propriedades
     que ajudam a tratar problemas digestivos, como m\xE1 digest\xE3o, acidez, n\xE1useas
@@ -35,10 +35,10 @@ MonoBehaviour:
     Nivel: 2
   - Symptoms: 4096
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: f4373ef813f394942859bfa73b3b8dfc, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: c2d2230e3f18e8b4aaae44b044a887e7, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 6de38bd8a9765984dac10bc15405729e, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: afe30ab1610eea1429ddddecd92e9ed3, type: 3}
   MachineList: 
   plantTemperature: 2

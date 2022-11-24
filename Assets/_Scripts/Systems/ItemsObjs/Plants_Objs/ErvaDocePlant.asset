@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ErvaDocePlant
   m_EditorClassIdentifier: 
   ItemId: Erva Doce
-  ItemLongID: 
+  ItemLongID: Erva Doce
   ItemType: 2
-  ImageDisplay: {fileID: 21300000, guid: 5f77ac3cbfeeb804ebb96fe6ded13c90, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 3dcf417df706b05458dd0a284c7fa2e8, type: 3}
   Price: 20
   ShopDescription: "A erva-doce \xE9 uma planta medicinal indicada para aliviar gases,
     n\xE1useas, pris\xE3o de ventre, c\xF3licas e m\xE1 digest\xE3o"
@@ -25,10 +25,10 @@ MonoBehaviour:
     Nivel: 2
   - Symptoms: 64
     Nivel: 1
-  DriedPlant: {fileID: 21300000, guid: 33054419c89d9fa40bcd9fd7f48429de, type: 3}
-  SmashedPlant: {fileID: 21300000, guid: d88cdff46dcbb5e49853545e6865f89e, type: 3}
-  MixedPlant: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  DriedPlant: {fileID: 21300000, guid: a9479209ad5ee8c4da621581ab80b2b8, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: c3ebfcc5c59646a43b7c1f84d9906925, type: 3}
+  MixedPlant: {fileID: 21300000, guid: de83e9af67b929d4b979364ef7396c85, type: 3}
   PotionStuff: {fileID: 21300000, guid: 27f0de28d005b924fb87eeb246cd6964, type: 3}
-  BurnedPlant: {fileID: -2034143682, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: 707700324769dcc448c35e11aefeba16, type: 3}
   MachineList: 
   plantTemperature: 1

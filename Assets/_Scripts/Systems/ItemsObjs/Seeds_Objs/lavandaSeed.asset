@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Lavanda seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 39913dee94bdba943999dced699b6c13, type: 3}
   Price: 24
   ShopDescription: "Dentre as propriedades mais conhecidas da lavanda s\xE3o as de
     acalmar, estimular, cicatrizar, conservar alimentos e desinfetar"

@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Alecrim seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 8995efe7ae940e1448cf25b35cf404d4, type: 3}
   Price: 14
   ShopDescription: "O alecrim (Salvia Rosmarinus) \xE9 uma erva arom\xE1tica comum
     na regi\xE3o do Mediterr\xE2neo ocorrendo dos 0 a 1500 metros de altitude, preferencialmente

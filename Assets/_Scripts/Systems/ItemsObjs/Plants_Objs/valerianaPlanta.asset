@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: valerianaPlanta
   m_EditorClassIdentifier: 
   ItemId: valeriana
-  ItemLongID: 
+  ItemLongID: Valeriana
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: ad72c2a54681a1c4a8055fc43e3f5822, type: 3}
   Price: 18
   ShopDescription: "Valeriana officinalis \xE9 indicado como sedativo moderado, como
     agente promotor do sono e no tratamento de dist\xFArbios do sono associados \xE0
@@ -28,10 +28,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 512
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: 4458fe50be5f7a94592ab42cb24dcbae, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: d3e8a9206a01a434c824a9ba352a36e6, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 872c72fadc2268f449693e1288e31d20, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: 3e6111da298f8fc43bbb805077e4a463, type: 3}
   MachineList: 
   plantTemperature: 0

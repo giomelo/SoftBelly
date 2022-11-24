@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Salsa semente
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 21300000, guid: a2d9de512cbcd544e8ee7f7612125a01, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 940f7cfa8b140e34a982b8ff02b143fa, type: 3}
   Price: 10
   ShopDescription: "Muito comum na culin\xE1ria brasileira, a salsa, conhecida popularmente
     como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,

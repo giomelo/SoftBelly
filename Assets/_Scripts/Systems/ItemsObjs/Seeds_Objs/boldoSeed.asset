@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Boldo seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: b424037d9330227408b15e9658be360a, type: 3}
   Price: 9
   ShopDescription: "O boldo \xE9 uma planta rica em propriedades medicinais, muito
     utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: agriaoPlanta
   m_EditorClassIdentifier: 
   ItemId: agriao
-  ItemLongID: 
+  ItemLongID: "Agri\xE3o"
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: e4fee8d157f972b4faac28f2debd0034, type: 3}
   Price: 6
   ShopDescription: "O Agri\xE3o \xE9 uma verdura rica em vitamina C, Vitamina A e
     flavonoides, compostos com propriedades e antioxidantes "
@@ -27,10 +27,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 8192
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: fb787d6012d803b4db6fba40c38a8d1f, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: c64033b773a58044d98af44b464c78c8, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 18e321e4acdc3eb4da63fdfec65430bd, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: 674fc5d0661fc464297ebc655a781852, type: 3}
   MachineList: 
   plantTemperature: 0

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ervaCidreiraPlanta
   m_EditorClassIdentifier: 
   ItemId: ervaCidreira
-  ItemLongID: 
+  ItemLongID: Erva Cidreira
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: c44a60a3ee8ff144086189842150ae01, type: 3}
   Price: 15
   ShopDescription: "A erva-cidreira \xE9 a planta medicinal Melissa officinalis,
     tamb\xE9m conhecida como cidreira ou melissa, muito utilizada para tratar v\xE1rios
@@ -26,10 +26,10 @@ MonoBehaviour:
     Nivel: 2
   - Symptoms: 64
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: d8f4f1274421f9e4f98cd78c34b6a8d9, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 63cde6861f963ab48957a566eec91d34, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 5376872d545fc9c4989412fc8fbea066, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: 9251fd4dd790f814890f0fbdb513e4a2, type: 3}
   MachineList: 
   plantTemperature: 2

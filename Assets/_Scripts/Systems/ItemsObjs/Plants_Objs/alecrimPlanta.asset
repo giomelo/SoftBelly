@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: alecrimPlanta
   m_EditorClassIdentifier: 
   ItemId: alecrim
-  ItemLongID: 
+  ItemLongID: Alecrim
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 46f4bfd1348bfae48932b0f3c8436177, type: 3}
   Price: 14
   ShopDescription: "O alecrim (Salvia Rosmarinus) \xE9 uma erva arom\xE1tica comum
     na regi\xE3o do Mediterr\xE2neo ocorrendo dos 0 a 1500 metros de altitude, preferencialmente
@@ -24,10 +24,10 @@ MonoBehaviour:
   MedicalSymptoms:
   - Symptoms: 16
     Nivel: 3
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: b7fdd83fc59663b40adcaff4cb33e38e, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 7c6a14cea668d9f49af9e1be106cab69, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 59371123d11754946af6d18650358652, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: 0215705a840bed34490b02d7a62a1cc4, type: 3}
   MachineList: 
   plantTemperature: 0

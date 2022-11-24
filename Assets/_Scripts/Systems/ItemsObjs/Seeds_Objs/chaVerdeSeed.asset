@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: ChaVerde seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 86ed19571105acd41b2b535c405d5ff1, type: 3}
   Price: 22
   ShopDescription: "O ch\xE1 verde possui diversas propriedades como a\xE7\xF5es
     anticarcinog\xEAnicas (ou seja, atua contra o c\xE2ncer), anti-inflamat\xF3rias,

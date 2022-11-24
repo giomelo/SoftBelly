@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SalsaPlant
   m_EditorClassIdentifier: 
   ItemId: Salsa
-  ItemLongID: 
+  ItemLongID: Salsa
   ItemType: 2
-  ImageDisplay: {fileID: 21300000, guid: 46feb7ca248ca704f9091a42f307132a, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 7b9e9d89b10732643acc17564ae4fcce, type: 3}
   Price: 20
   ShopDescription: "Muito comum na culin\xE1ria brasileira, a salsa, conhecida popularmente
     como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,
@@ -27,10 +27,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 4096
     Nivel: 1
-  DriedPlant: {fileID: 21300000, guid: 18c5d84fe2cb91e4f8908b1b19455d89, type: 3}
-  SmashedPlant: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
-  MixedPlant: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  DriedPlant: {fileID: 21300000, guid: 499795110258cea4ea786837c3452d1d, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 6c7e81224b282524c81ec889dcd63401, type: 3}
+  MixedPlant: {fileID: 21300000, guid: 1b0e4cba944ed48418c9abcdb476820b, type: 3}
   PotionStuff: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
-  BurnedPlant: {fileID: 21300000, guid: 9bb60d9b0987c3747b57516cc172d0c7, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: ebf9d2b883d8db9409fa2210cbda739e, type: 3}
   MachineList: 
   plantTemperature: 1

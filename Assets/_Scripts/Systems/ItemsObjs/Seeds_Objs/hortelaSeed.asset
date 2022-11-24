@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Hortela seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: b6d53e254bb729e4da41753d86fd9025, type: 3}
   Price: 11
   ShopDescription: "A hortel\xE3  \xE9 uma planta medicinal e arom\xE1tica, com propriedades
     que ajudam a tratar problemas digestivos, como m\xE1 digest\xE3o, acidez, n\xE1useas

@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: Valeriana seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 23e0c98c818a82a4f83588967b3ece01, type: 3}
   Price: 18
   ShopDescription: "Valeriana officinalis \xE9 indicado como sedativo moderado, como
     agente promotor do sono e no tratamento de dist\xFArbios do sono associados \xE0

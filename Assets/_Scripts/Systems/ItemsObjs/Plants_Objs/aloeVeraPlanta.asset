@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: aloeVeraPlanta
   m_EditorClassIdentifier: 
   ItemId: aloeVera
-  ItemLongID: 
+  ItemLongID: Aloe Vera
   ItemType: 2
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 57148ad4144a8f74bb1ff11d1b84676d, type: 3}
   Price: 27
   ShopDescription: "A Aloe vera, conhecida como babosa, \xE9 uma planta conhecida
     por benef\xEDcios como efeito calmante, cicatrizante, anest\xE9sico, anti-t\xE9rmico
@@ -27,10 +27,10 @@ MonoBehaviour:
     Nivel: 3
   - Symptoms: 16384
     Nivel: 2
-  DriedPlant: {fileID: 0}
-  SmashedPlant: {fileID: 0}
-  MixedPlant: {fileID: 0}
+  DriedPlant: {fileID: 21300000, guid: 252bb1447d88097469667b472587dab6, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: 207448709f0186b469e83920f1c471b6, type: 3}
+  MixedPlant: {fileID: 21300000, guid: f4303ff66c465cc46839a5284dbefe41, type: 3}
   PotionStuff: {fileID: 0}
-  BurnedPlant: {fileID: 0}
+  BurnedPlant: {fileID: 21300000, guid: 4f95ab85f36ab73449139f943bdcde04, type: 3}
   MachineList: 
   plantTemperature: 0

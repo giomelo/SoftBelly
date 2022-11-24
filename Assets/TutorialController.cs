@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using _Scripts.Singleton;
 using _Scripts.SaveSystem;
 
@@ -10,6 +11,7 @@ public class TutorialController : MonoBehaviour
     private GameObject myFade;
     [SerializeField]
     private GameObject botao;
+    private Button butt;
     [SerializeField]
     private GameObject[] janelas;
     [SerializeField]
@@ -43,6 +45,7 @@ public class TutorialController : MonoBehaviour
         GameManager.Instance.noPause = true;
         myFade.SetActive(true);
         botao.SetActive(true);
+        butt = botao.GetComponent<Button>();
         for (int i = 0; i < janelas.Length; i++)
             janelas[i].SetActive(true);
         Time.timeScale = 0;
@@ -51,6 +54,8 @@ public class TutorialController : MonoBehaviour
     public void PassaTutorial()
     {
         if (tut >= janelas.Length) { return; }
+        butt.interactable = false;
+        StartCoroutine("WaitForFrames");
         anim.Play("Tut.Passa_" + tut);
         tut++;
     }
@@ -58,5 +63,11 @@ public class TutorialController : MonoBehaviour
     public void DesativaJanela(int n)
     {
         janelas[n].SetActive(false);
+    }
+
+    private IEnumerator WaitForFrames()
+    {
+        yield return new WaitForSecondsRealtime(0.9f);
+        butt.interactable = true;
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemId: AloeVera seed
   ItemLongID: 
   ItemType: 1
-  ImageDisplay: {fileID: 0}
+  ImageDisplay: {fileID: 21300000, guid: 7027da5c51eb44045a8761d8e188cd83, type: 3}
   Price: 27
   ShopDescription: "A Aloe vera, conhecida como babosa, \xE9 uma planta conhecida
     por benef\xEDcios como efeito calmante, cicatrizante, anest\xE9sico, anti-t\xE9rmico

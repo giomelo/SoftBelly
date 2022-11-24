@@ -13,17 +13,13 @@ MonoBehaviour:
   m_Name: CamomilaPlant
   m_EditorClassIdentifier: 
   ItemId: Camomila
-  ItemLongID: 
+  ItemLongID: Camomila
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: fd5c82022e1301647b333703662acb6f, type: 3}
   Price: 30
   ShopDescription: Planta conhecida por seu aroma intenso e doce, capaz de perfumar
     grandes ambientes.
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: "Camomila Planta temperatura: Baixa\nPropriedades:
-      Dor de cabe\xE7a, Alergia, Ansiedade, Dor no dente, Nauseas, Insonia, Estresse,
-      Hemorragia"
+  ItemProprietiesDescription: 
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 1
@@ -41,10 +37,10 @@ MonoBehaviour:
     Nivel: 1
   - Symptoms: 32768
     Nivel: 1
-  DriedPlant: {fileID: -1033114301, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
-  SmashedPlant: {fileID: 21300000, guid: e36d1a38d7aa309409e80bf66a089330, type: 3}
-  MixedPlant: {fileID: 1149296502, guid: f296e054983b7ab458575a1c8e93c1d1, type: 3}
+  DriedPlant: {fileID: 21300000, guid: f041af32fb8e81b4f9a5cf3bb4b4445f, type: 3}
+  SmashedPlant: {fileID: 21300000, guid: f488713d9ae81be4282b8dbb17804235, type: 3}
+  MixedPlant: {fileID: 21300000, guid: c18341ae49192074d971f4a6bc2bf336, type: 3}
   PotionStuff: {fileID: 21300000, guid: 9c0d6ec706e01ce448aea81584af092b, type: 3}
-  BurnedPlant: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  BurnedPlant: {fileID: 21300000, guid: d779e74bdb48e6c4db8b787653f49cdb, type: 3}
   MachineList: 
   plantTemperature: 0

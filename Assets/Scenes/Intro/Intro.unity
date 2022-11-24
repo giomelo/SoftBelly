@@ -2033,21 +2033,14 @@ MonoBehaviour:
   proximaCena: SC_Garden
   tmp: {fileID: 1659465481}
   textos:
-  - '
-
-
-
-
-
-
-
-    Texto 1'
-  - '
-
-
-
-
-
-
-
-    Texto 2'
+  - "Oportunidades\r\n\r\nSacro Imp\xE9rio Romano, Imp\xE9rio de Ot\xE3o I. A Europa
+    est\xE1 passando por conturbadas mudan\xE7as pol\xEDticas e a popula\xE7\xE3o
+    tem sofrido as consequ\xEAncias como fome, enfermidades em abund\xE2ncia e crises
+    religiosas. Por\xE9m onde alguns n\xE3o veem esperan\xE7a, voc\xEA viu uma oportnidade.\r\n\r\nEm
+    uma certa noite em um ferrenho estado febril, sem dinheiro para comprar rem\xE9dios,
+    voc\xEA decide tentar algo que sua m\xE3e costumava fazer. Indo at\xE9 o jardim,
+    avista algumas ervas curativas e utilizando um antigo varal e seu fog\xE3o faz
+    uma nutritiva po\xE7\xE3o que parece espantar o resfriado.\r\n\r\nO Feito da
+    \xFAltima noite lhe da a ideia de ajudar outros vendendo seu rec\xE9m descoberto
+    potencial e voc\xEA decide investir em um poss\xEDvel novo neg\xF3cio, Fazer
+    Po\xE7\xF5es!"
