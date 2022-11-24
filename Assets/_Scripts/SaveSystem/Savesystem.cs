@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using _Scripts.Systems.Inventories;
@@ -76,14 +77,23 @@ namespace _Scripts.SaveSystem
 
         public static void ClearSave()
         {
-            string[] files = Directory.GetFiles(Application.persistentDataPath);
-            Debug.Log(files.Length);
-            Debug.Log(Application.persistentDataPath);
-            foreach(string s in files){
-                File.Delete(s);
-                Debug.Log("Apagado: " + s);
+            try
+            {
+                string[] files = Directory.GetFiles(Application.persistentDataPath);
+                Debug.Log(files.Length);
+                Debug.Log(Application.persistentDataPath);
+                foreach(string s in files){
+                    File.Delete(s);
+                    Debug.Log("Apagado: " + s);
               
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+       
         }
     }
 }

@@ -59,8 +59,9 @@ namespace _Scripts.Singleton
         {
             Time.timeScale = 1;
             noPause = false;
-            Savesystem.ClearSave();
+           
             ScreenFlow.Instance.LoadScene("NovoMenu");
+            //Savesystem.ClearSave();
         }
         
         
