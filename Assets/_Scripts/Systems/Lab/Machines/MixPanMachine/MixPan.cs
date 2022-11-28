@@ -93,7 +93,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 var newMixedPlant = ScriptableObject.CreateInstance<BaseMixedItem>();
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
-                newMixedPlant.name = currentPlant.ItemId + "Mixed " + decoratorsText.text;
+                newMixedPlant.name = currentPlant.ItemId + "Misturada " + decoratorsText.text;
 
                 newMixedPlant.Init(newMixedPlant.name, ItemType.MixedPlant, currentPlant.MixedPlant,currentPlant.Price ,newMixedPlant.name, GenerateToppingList(), currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;

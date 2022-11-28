@@ -85,7 +85,7 @@ namespace _Scripts.Systems.Lab.Machines
                 
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
 
-                newDriedPlant.name = currentPlant.ItemId + "Dried";
+                newDriedPlant.name = currentPlant.ItemId + "Seca";
                 newDriedPlant.Init(currentPlant.ItemId + " Seca", ItemType.Dryed, currentPlant.DriedPlant,currentPlant.Price,newDriedPlant.name, currentPlant.BurnedPlant,currentPlant.MixedPlant, currentPlant.DriedPlant, currentPlant.PotionStuff, 
                     currentPlant.SmashedPlant, currentPlant.MedicalSymptoms, currentPlant.plantTemperature, currentPlant.MachineList);
 

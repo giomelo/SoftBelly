@@ -45,7 +45,7 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                         break;
                 }
 
-                potion.name = currentPlant.ItemId + " Potion ";
+                potion.name = currentPlant.ItemId + " Poção ";
                 string symtoms = GenerateSymptomsDescription(currentPlant.MedicalSymptoms);
                 Debug.Log(symtoms);
                 PotionType type;
