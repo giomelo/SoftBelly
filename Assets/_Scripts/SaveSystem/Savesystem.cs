@@ -72,20 +72,20 @@ namespace _Scripts.SaveSystem
         public static bool CheckIfSaveExists()
         {
             string[] filePaths = Directory.GetFiles( Application.persistentDataPath);
-            return filePaths.Length > 1;
+            Console.WriteLine(filePaths.Length);
+            return filePaths.Length > 2;
         }
 
         public static void ClearSave()
         {
             try
             {
+                if (!CheckIfSaveExists()) return;
+     
                 string[] files = Directory.GetFiles(Application.persistentDataPath);
-                Debug.Log(files.Length);
-                Debug.Log(Application.persistentDataPath);
+        
                 foreach(string s in files){
                     File.Delete(s);
-                    Debug.Log("Apagado: " + s);
-              
                 }
             }
             catch (Exception e)

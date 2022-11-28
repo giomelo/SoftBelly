@@ -13,7 +13,7 @@ public class ChecaSave : MonoBehaviour
     public void ConfirmaNovo()
     {
         //Confirma��o de novo jogo removida devido � falta de tempo
-        //Savesystem.ClearSave();
+        Savesystem.ClearSave();
         fade.StartFade();
         scene.ChangeWithDelay("Intro");
     }
