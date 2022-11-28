@@ -224,13 +224,14 @@ namespace _Scripts.U_Variables
                 // /*variavell*/ = /*variavel*/ = data./*variavel*/;
 
                 currentDay = d.Day;
+                _patientsTime = d.patients;
 
             }
         }
 
         public void Save()
         {
-            SaveData data = new SaveDay(currentDay);
+            SaveData data = new SaveDay(currentDay, _patientsTime);
             Savesystem.Save(data, GetType().ToString());
         }
     }

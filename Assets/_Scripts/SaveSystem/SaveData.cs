@@ -65,9 +65,11 @@ namespace _Scripts.SaveSystem
     public class SaveDay : SaveData
     {
         public int Day { get; private set; }
-        public SaveDay(int day)
+        public List<Timee> patients { get; private set; }
+        public SaveDay(int day, List<Timee> patientsTime)
         {
             Day = day;
+            patients = patientsTime;
         }
     }
     
