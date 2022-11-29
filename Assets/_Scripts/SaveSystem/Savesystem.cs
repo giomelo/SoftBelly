@@ -20,9 +20,8 @@ namespace _Scripts.SaveSystem
            }
            string path = Application.persistentDataPath +"/Saves" + obj;
             FileStream stream = new FileStream(path, FileMode.Create);
-
+            
             //SaveData data = new SaveData(universalVariables);
-            Debug.Log(universalVariables);
             formatter.Serialize(stream, universalVariables);
             stream.Close();
         }
@@ -30,13 +29,13 @@ namespace _Scripts.SaveSystem
         {
           //  UniversalVariables.Instance.IsNewGame = false;
             string s = JsonUtility.ToJson(universalVariables);
-            
-            string path = Application.persistentDataPath + obj.GetType();
+
+            string path = Application.persistentDataPath + obj;
             File.WriteAllText(path + "/save.json",s);
         }
         public static SaveData LoadJson(string obj)
         {
-            string path = Application.persistentDataPath + obj.GetType() + "/save.json";
+            string path = Application.persistentDataPath + obj + "/save.json";
             if (File.Exists(path))
             {
                 string s = File.ReadAllText(path);
@@ -71,9 +70,11 @@ namespace _Scripts.SaveSystem
 
         public static bool CheckIfSaveExists()
         {
+            if(!Directory.Exists(Application.persistentDataPath + "/Saves"))
+                return false;
             string[] filePaths = Directory.GetFiles( Application.persistentDataPath);
             Console.WriteLine(filePaths.Length);
-            return filePaths.Length > 2;
+            return filePaths.Length > 1;
         }
 
         public static void ClearSave()
@@ -85,7 +86,10 @@ namespace _Scripts.SaveSystem
                 string[] files = Directory.GetFiles(Application.persistentDataPath);
         
                 foreach(string s in files){
-                    File.Delete(s);
+                    Console.WriteLine(Application.persistentDataPath +@"\Player.log");
+                    Console.WriteLine(s);
+                    if(s != Application.persistentDataPath +@"\Player.log")
+                        File.Delete(s);
                 }
             }
             catch (Exception e)
