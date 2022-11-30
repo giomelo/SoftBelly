@@ -11,7 +11,10 @@ public class TutorialController : MonoBehaviour
     private GameObject myFade;
     [SerializeField]
     private GameObject botao;
+    [SerializeField]
+    private GameObject skip;
     private Button butt;
+    private Button skipButt;
     [SerializeField]
     private GameObject[] janelas;
     [SerializeField]
@@ -28,12 +31,13 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         myFade.SetActive(false);
         for (int i = 0; i < janelas.Length; i++)
             janelas[i].SetActive(false);
         botao.SetActive(false);
+        skip.SetActive(false);
         GameManager.Instance.noRay = false;
         GameManager.Instance.noPause = false;
         Time.timeScale = 1;
@@ -45,7 +49,9 @@ public class TutorialController : MonoBehaviour
         GameManager.Instance.noPause = true;
         myFade.SetActive(true);
         botao.SetActive(true);
+        skip.SetActive(true);
         butt = botao.GetComponent<Button>();
+        skipButt = skip.GetComponent<Button>();
         for (int i = 0; i < janelas.Length; i++)
             janelas[i].SetActive(true);
         Time.timeScale = 0;
@@ -55,6 +61,7 @@ public class TutorialController : MonoBehaviour
     {
         if (tut >= janelas.Length) { return; }
         butt.interactable = false;
+        skipButt.interactable = false;
         StartCoroutine("WaitForFrames");
         anim.Play("Tut.Passa_" + tut);
         tut++;
@@ -69,5 +76,6 @@ public class TutorialController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.9f);
         butt.interactable = true;
+        skipButt.interactable = true;
     }
 }

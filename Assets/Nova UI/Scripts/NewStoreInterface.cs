@@ -88,7 +88,12 @@ public class NewStoreInterface : MonoBehaviour
 
                 case _Scripts.Enums.ItemType.Seed:
                     info_extraInfo.text = "Cura para:";
-                    info_extrasText.text = display.item.shopExtra;
+                    SeedBase seed = (SeedBase)display.item;
+                    info_extrasText.text = "";
+                    foreach (SymptomsNivel symptoms in seed.PlantBase.MedicalSymptoms)
+                    {
+                        info_extrasText.text += ">" + symptoms.Symptoms.ToString() + "  ";
+                    }
                     break;
 
 
