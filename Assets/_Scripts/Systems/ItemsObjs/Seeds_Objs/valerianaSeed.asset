@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: valerianaSeed
   m_EditorClassIdentifier: 
-  ItemId: Valeriana seed
-  ItemLongID: 
+  ItemId: Valeriana [semente]
+  ItemLongID: Semente de valeriana
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 23e0c98c818a82a4f83588967b3ece01, type: 3}
   Price: 18

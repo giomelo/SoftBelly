@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  item: {fileID: 11400000, guid: 34ec5799de7e8194e9b59ede6e3656dd, type: 2}
+  item: {fileID: 11400000, guid: 3e350902b3ccc8b47b977b330333e7fd, type: 2}
   clicked: 0
 --- !u!222 &2454976267925726266
 CanvasRenderer:

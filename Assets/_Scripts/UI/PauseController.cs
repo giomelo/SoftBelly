@@ -53,7 +53,7 @@ namespace _Scripts.UI
                     
                 if(menuState != -1 && !GameManager.Instance.noPause)
                 {
-                    GameManager.Instance.noRay = !GameManager.Instance.noRay;
+                    GameManager.Instance.noRay = true;
                     PauseInput();
                 }
             }
@@ -152,6 +152,7 @@ namespace _Scripts.UI
                     menuState = 0;
                     pauseObj.SetActive(!pauseObj.activeInHierarchy);
                     Time.timeScale = 1;
+                    GameManager.Instance.noRay = false;
                     break;
 
                 case 2:

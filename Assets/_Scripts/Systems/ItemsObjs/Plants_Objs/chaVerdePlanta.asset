@@ -12,18 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: chaVerdePlanta
   m_EditorClassIdentifier: 
-  ItemId: chaVerde
+  ItemId: "Ch\xE1 Verde"
   ItemLongID: "Ch\xE1 Verde"
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 44083c1f8b336db47ac75286e209d6ca, type: 3}
   Price: 22
-  ShopDescription: "O ch\xE1 verde possui diversas propriedades como a\xE7\xF5es
-    anticarcinog\xEAnicas (ou seja, atua contra o c\xE2ncer), anti-inflamat\xF3rias,
-    antimicrobianas, antioxidantes e um consequente papel na preven\xE7\xE3o e controle
-    de doen\xE7as cardiovasculares, diabetes, obesidade, al\xE9m da atua\xE7\xE3o
-    na sa\xFAde"
+  ShopDescription: "Possui diversas propriedades como a\xE7\xF5es anticarcinog\xEAnicas
+    (ou seja, atua contra o c\xE2ncer) e um consequente papel na preven\xE7\xE3o
+    e controle de doen\xE7as cardiovasculares."
   ItemProprietiesDescription: "Cha Verde: Temperatura Alta - Cura: Doen\xE7as Cardiovasculares,
     Glaucoma, Asma"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 8192
     Nivel: 3

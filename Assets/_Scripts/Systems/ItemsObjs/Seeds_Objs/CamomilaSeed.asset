@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: CamomilaSeed
   m_EditorClassIdentifier: 
-  ItemId: Camomila semente
-  ItemLongID: 
+  ItemId: Camomila [semente]
+  ItemLongID: Semente de camomila
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 29547410038a4464a96937e0d906c0e9, type: 3}
   Price: 20

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: EucaliptoSeed
   m_EditorClassIdentifier: 
-  ItemId: Eucalipto Semente
-  ItemLongID: 
+  ItemId: Eucalipto [semente]
+  ItemLongID: Semente de eucalipto
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: a691389e19c566c478f29c6a7a933807, type: 3}
   Price: 10

@@ -27,6 +27,8 @@ namespace _Scripts.Systems.Item
         [TextArea]
         public string ShopDescription;
         public string ItemProprietiesDescription;
+        [TextArea]
+        public string shopExtra;
 
         public virtual void Initialized(){}
 

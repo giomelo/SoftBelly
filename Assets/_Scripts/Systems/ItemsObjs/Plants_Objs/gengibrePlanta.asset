@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: gengibrePlanta
   m_EditorClassIdentifier: 
-  ItemId: gengibre
+  ItemId: Gengibre
   ItemLongID: Gengibre
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: babdc37acb14389449de5536fac7efd3, type: 3}
   Price: 10
-  ShopDescription: "O gengibre \xE9 uma raiz comest\xEDvel que, quando adicionada
-    na dieta, pode trazer v\xE1rios benef\xEDcios para a sa\xFAde, desde ajudar a
-    emagrecer at\xE9 tratar m\xE1 digest\xE3o, azia, enjoo, gastrite, resfriados,
-    colesterol alto, press\xE3o alta, tosse e problemas de circula\xE7\xE3o sangu\xEDnea"
+  ShopDescription: "Raiz comest\xEDvel que, quando adicionada na dieta, pode trazer
+    v\xE1rios benef\xEDcios para a sa\xFAde, desde ajudar a emagrecer at\xE9 tratar
+    m\xE1 digest\xE3o at\xE9 tosse e problemas de circula\xE7\xE3o sangu\xEDnea"
   ItemProprietiesDescription: "Gengibre: Temperatura Baixa - Cura: Doen\xE7as intestinais,
     Dor de cabe\xE7a, Infec\xE7\xE3o na garganta, Anti Inflamat\xF3rio, Asma"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 32
     Nivel: 2

@@ -152,6 +152,9 @@ namespace _Scripts.Systems.Inventories
         [TextArea]
         public string ShopDescription;
 
+        [TextArea]
+        public string ShopExtra;
+
         public string ItemProprietiesDescription;
         
         public BaseMirrorItem(string id, ItemType itemType, Sprite sprite, float price, string itemDescription)

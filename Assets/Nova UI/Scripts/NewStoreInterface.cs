@@ -86,6 +86,11 @@ public class NewStoreInterface : MonoBehaviour
                     }
                     break;
 
+                case _Scripts.Enums.ItemType.Seed:
+                    info_extraInfo.text = "Cura para:";
+                    info_extrasText.text = display.item.shopExtra;
+                    break;
+
 
                 default:
                     info_extraInfo.text = "";

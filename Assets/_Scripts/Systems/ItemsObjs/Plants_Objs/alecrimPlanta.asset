@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: alecrimPlanta
   m_EditorClassIdentifier: 
-  ItemId: alecrim
+  ItemId: Alecrim
   ItemLongID: Alecrim
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 46f4bfd1348bfae48932b0f3c8436177, type: 3}
@@ -22,6 +22,7 @@ MonoBehaviour:
     em solos de origem calc\xE1ria"
   ItemProprietiesDescription: "Alecrim: Temperatura Baixa - Cura: Ansiedade, Anemia,
     Doen\xE7as intestinais"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 16
     Nivel: 1

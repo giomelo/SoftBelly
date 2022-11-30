@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: lavandaPlanta
   m_EditorClassIdentifier: 
-  ItemId: lavanda
+  ItemId: Lavanda
   ItemLongID: Lavanda
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 0609106b37b91c04aaef7332fee372ef, type: 3}
@@ -21,6 +21,7 @@ MonoBehaviour:
     acalmar, estimular, cicatrizar, conservar alimentos e desinfetar"
   ItemProprietiesDescription: "Lavanda: Temperatura Baixa - Cura: Dor de cabe\xE7a,
     Insonia, Estresse"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 1

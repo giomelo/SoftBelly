@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: SalsaSeed
   m_EditorClassIdentifier: 
-  ItemId: Salsa semente
-  ItemLongID: 
+  ItemId: Salsa [semente]
+  ItemLongID: Semente de salsa
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 940f7cfa8b140e34a982b8ff02b143fa, type: 3}
   Price: 10
-  ShopDescription: "Muito comum na culin\xE1ria brasileira, a salsa, conhecida popularmente
-    como salsinha, \xE9 uma planta rica em vitaminas A, B, C, E, K e \xE1cido f\xF3lico,
-    al\xE9m de minerais que s\xE3o muito importantes para a sa\xFAde, como o ferro,
-    cobre e magn\xE9sio"
+  ShopDescription: "Conhecida popularmente como salsinha, \xE9 uma planta rica em
+    vitaminas A, B, C, E, K e \xE1cido f\xF3lico, al\xE9m de minerais que s\xE3o
+    muito importantes para a sa\xFAde, como o ferro, cobre e magn\xE9sio"
   ItemProprietiesDescription: Salsa semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

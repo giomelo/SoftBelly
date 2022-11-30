@@ -12,17 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: chaVerdeSeed
   m_EditorClassIdentifier: 
-  ItemId: ChaVerde seed
-  ItemLongID: 
+  ItemId: "Ch\xE1 Verde [semente]"
+  ItemLongID: "Semente de ch\xE1 verde"
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 86ed19571105acd41b2b535c405d5ff1, type: 3}
   Price: 22
-  ShopDescription: "O ch\xE1 verde possui diversas propriedades como a\xE7\xF5es
-    anticarcinog\xEAnicas (ou seja, atua contra o c\xE2ncer), anti-inflamat\xF3rias,
-    antimicrobianas, antioxidantes e um consequente papel na preven\xE7\xE3o e controle
-    de doen\xE7as cardiovasculares, diabetes, obesidade, al\xE9m da atua\xE7\xE3o
-    na sa\xFAde"
+  ShopDescription: "Possui diversas propriedades como a\xE7\xF5es anticarcinog\xEAnicas
+    (ou seja, atua contra o c\xE2ncer) e um consequente papel na preven\xE7\xE3o
+    e controle de doen\xE7as cardiovasculares."
   ItemProprietiesDescription: ChaVerde semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

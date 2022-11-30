@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96c9c6c118908946aa0297f2451f3cb, type: 3}
   m_Name: boldoPlanta
   m_EditorClassIdentifier: 
-  ItemId: boldo
+  ItemId: Boldo
   ItemLongID: Boldo
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: bd05ab19abf626e41b667effb03c4ec1, type: 3}
@@ -21,6 +21,7 @@ MonoBehaviour:
     utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es
     do f\xEDgado, melhorar a digest\xE3o e aliviar sintomas de ressaca."
   ItemProprietiesDescription: "Boldo: Temperatura M\xE9dia - Cura: Doen\xE7as Intestinais"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 32
     Nivel: 3

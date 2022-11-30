@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: aloeVeraSeed
   m_EditorClassIdentifier: 
-  ItemId: AloeVera seed
-  ItemLongID: 
+  ItemId: Aloe Vera [semente]
+  ItemLongID: Semente de aloe Vera
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 7027da5c51eb44045a8761d8e188cd83, type: 3}
   Price: 27
-  ShopDescription: "A Aloe vera, conhecida como babosa, \xE9 uma planta conhecida
-    por benef\xEDcios como efeito calmante, cicatrizante, anest\xE9sico, anti-t\xE9rmico
-    e anti-inflamat\xF3rio, al\xE9m de ser \xF3tima para hidratar cabelos e pele,
-    pois estimula a produ\xE7\xE3o de col\xE1geno."
+  ShopDescription: "Planta conhecida por seu efeito calmante, cicatrizante, anest\xE9sico,
+    anti-t\xE9rmico e anti-inflamat\xF3rio, al\xE9m de ser \xF3tima para hidratar
+    cabelos e pele."
   ItemProprietiesDescription: AloeVera semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}

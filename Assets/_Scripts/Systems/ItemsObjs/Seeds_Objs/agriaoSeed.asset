@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939eb361f2f5a347a40ef4a34d78a9c, type: 3}
   m_Name: agriaoSeed
   m_EditorClassIdentifier: 
-  ItemId: Agriao semente
-  ItemLongID: 
+  ItemId: "Agri\xE3o [semente]"
+  ItemLongID: "Semente de agri\xE3o"
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 56e27accefe28a74c81c5002e8a48d9c, type: 3}
   Price: 6
