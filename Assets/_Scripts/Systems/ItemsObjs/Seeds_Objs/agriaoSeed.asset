@@ -20,10 +20,11 @@ MonoBehaviour:
   ShopDescription: "O agri\xE3o \xE9 uma verdura rica em vitamina C e vitamina A,
     com propriedades antioxidantes e anti-inflamat\xF3rias"
   ItemProprietiesDescription: Agriao semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 5111067742201847846, guid: 2213fcea772323f499ddf0d518a1e322, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: dba745cc8cf4e1a4da0247e0a2d6d49b, type: 2}

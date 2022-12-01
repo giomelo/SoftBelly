@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLocked: 1
-  PriceToUnlock: 10
+  PriceToUnlock: 20
   lockedObj: {fileID: 8106798936742800972}
   idAux: 0
   priceText: {fileID: 3214066810259900729}
