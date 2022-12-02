@@ -70,7 +70,7 @@ namespace _Scripts.U_Variables
             _patientsTime.Add(time);
             for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay -1; i++)
             {
-                Timee t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
+                Timee t = GenerateRandomTime(startHourPatient, finisHourPatients -1, 0, 59);
                 _patientsTime.Add(t);
             }
             _patientsTimeInitial = _patientsTime;
