@@ -109,17 +109,17 @@ namespace _Scripts.Systems.Patients
             switch (t)
             {
                 case PotionType.Chá:
-                    return 10;
+                    return 20;
                 case PotionType.Cataplasma:
-                    return 20;
+                    return 25;
                 case PotionType.Infusao:
-                    return 20;
-                case PotionType.Maceração:
                     return 30;
+                case PotionType.Maceração:
+                    return 35;
                 case PotionType.Vinho:
                     return 40;
                 case PotionType.Xarope:
-                    return 40;
+                    return 45;
                 case PotionType.Errado:
                     break;
                 default:

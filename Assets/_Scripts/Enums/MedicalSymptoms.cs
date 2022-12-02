@@ -20,7 +20,7 @@ namespace _Scripts.Enums
         InfeccaoNaGarganta = 1024,
         Anemia = 2048,
         AntiInflamatorio = 4096,
-        DoencasCardiovas = 8192,
+        DoencasCardiovasculares = 8192,
         Hemorragia = 16384, 
         Glaucoma = 32768, 
         Asma = 65536

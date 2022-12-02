@@ -39,6 +39,7 @@ namespace _Scripts.U_Variables
         public static Action NightStartAction;
         [SerializeField]
         private List<Timee> _patientsTime = new List<Timee>();
+        private List<Timee> _patientsTimeInitial = new List<Timee>();
         [SerializeField]
         private Light mainLight;
         [SerializeField]
@@ -64,11 +65,13 @@ namespace _Scripts.U_Variables
 
         public void GeneratePatientsTimeList()
         {
+            _patientsTime.Clear();
             for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay; i++)
             {
                 Timee t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
                 _patientsTime.Add(t);
             }
+            _patientsTimeInitial = _patientsTime;
         }
 
         private void ChangeNightCall()
@@ -231,7 +234,7 @@ namespace _Scripts.U_Variables
 
         public void Save()
         {
-            SaveData data = new SaveDay(currentDay, _patientsTime);
+            SaveData data = new SaveDay(currentDay, _patientsTimeInitial);
             Savesystem.Save(data, GetType().ToString());
         }
     }
