@@ -60,7 +60,7 @@ namespace _Scripts.U_Variables
             if (add)
             {
                 Reputation += amount;
-                Nivel += 10;
+                Nivel += 20;
                 SetNivel();
             }
                 

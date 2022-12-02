@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Salsa
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 7b9e9d89b10732643acc17564ae4fcce, type: 3}
-  Price: 18
+  Price: 21
   ShopDescription: "Conhecida popularmente como salsinha, \xE9 uma planta rica em
     vitaminas A, B, C, E, K e \xE1cido f\xF3lico, al\xE9m de minerais que s\xE3o
     muito importantes para a sa\xFAde, como o ferro, cobre e magn\xE9sio"

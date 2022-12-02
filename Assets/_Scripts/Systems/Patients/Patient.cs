@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Entities.Npcs;
 using _Scripts.Enums;
+using _Scripts.Singleton;
 using Random = UnityEngine.Random;
 
 namespace _Scripts.Systems.Patients
@@ -161,11 +162,13 @@ namespace _Scripts.Systems.Patients
         private void OnEnable()
         {
             PatientsEvents.StartNight += Out;
+            GameManager.Sleep += Out;
         }
 
         private void OnDisable()
         {
             PatientsEvents.StartNight -= Out;
+            GameManager.Sleep -= Out;
         }
         private void Out()
         {

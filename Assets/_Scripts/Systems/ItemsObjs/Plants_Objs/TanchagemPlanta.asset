@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Tanchagem
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 76eb5ef3cf4b5c840b3aa92dacf7f47e, type: 3}
-  Price: 20
+  Price: 23
   ShopDescription: "Planta rica em flavonoides, alcaloides, terpenoides, iridoides,
     mucilagem e outros compostos, o que garante as fun\xE7\xF5es antibacteriana,
     antiviral e anti-inflamat\xF3ria dessa planta"

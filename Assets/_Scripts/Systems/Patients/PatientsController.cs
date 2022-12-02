@@ -260,7 +260,7 @@ namespace _Scripts.Systems.Patients
                 LabInventoryHolder.Instance.UpdateExposedInventory();
                 currentPatient.SetState(PatientState.Leaving);
                 GiveMoney();
-                GiveReputation(10);
+                GiveReputation(5);
                 
                 switch (currentPatient.label)
                 {

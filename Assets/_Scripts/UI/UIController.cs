@@ -330,8 +330,9 @@ namespace _Scripts.UI
             
             for (int i = 0; i < allSlots.Count; i++)
             {
-                if (allSlots[i].uiSlot.item == null) continue;
                 allSlots[i].uiSlot.itemImage.color = Color.white;
+                if (allSlots[i].uiSlot.item == null) continue;
+                
                 if (!slot.itemRequired.HasFlag(allSlots[i].uiSlot.item.ItemType))
                 {
                     allSlots[i].uiSlot.itemImage.color = Color.black;

@@ -37,7 +37,7 @@ namespace _Scripts.Singleton
         public UIController currentUi;
         public void SleepCall()
         {
-            if (DaysController.Instance.Timee.Hours >= DaysController.Instance.finisHourPatients)
+            if (DaysController.Instance.Timee.Hours >= DaysController.Instance.finisHourPatients || DaysController.Instance._patientsTime.Count == 0)
             {
                 if (sleeping) return;
                 

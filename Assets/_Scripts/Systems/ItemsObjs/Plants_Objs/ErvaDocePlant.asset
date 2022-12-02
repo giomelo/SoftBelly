@@ -16,11 +16,12 @@ MonoBehaviour:
   ItemLongID: Erva Doce
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 3dcf417df706b05458dd0a284c7fa2e8, type: 3}
-  Price: 20
+  Price: 23
   ShopDescription: "A erva-doce \xE9 uma planta medicinal indicada para aliviar gases,
     n\xE1useas, pris\xE3o de ventre, c\xF3licas e m\xE1 digest\xE3o"
   ItemProprietiesDescription: "Erva Doce: Temperatura M\xE9dia - Cura: Dor de Cabe\xE7a,
     Dor de dente"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 2

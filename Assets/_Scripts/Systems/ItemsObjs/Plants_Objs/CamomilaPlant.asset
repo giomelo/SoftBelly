@@ -16,11 +16,12 @@ MonoBehaviour:
   ItemLongID: Camomila
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: fd5c82022e1301647b333703662acb6f, type: 3}
-  Price: 30
+  Price: 33
   ShopDescription: Planta conhecida por seu aroma intenso e doce, capaz de perfumar
     grandes ambientes.
   ItemProprietiesDescription: "Camomila: Temperatura Baixa - Cura: Dor de Caba\xE7a,
     Alergia, Ansiedade, Dor de Dente, Isonia, Estresse"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 1
     Nivel: 1

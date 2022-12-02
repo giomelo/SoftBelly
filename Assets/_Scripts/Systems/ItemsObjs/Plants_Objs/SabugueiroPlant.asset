@@ -16,12 +16,13 @@ MonoBehaviour:
   ItemLongID: Sabugueiro
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 65a27adb9e3060a43bb73b7d0ff0931b, type: 3}
-  Price: 20
+  Price: 23
   ShopDescription: "O sabugueiro \xE9 um arbusto com flores brancas e bagas pretas,
     cujas flores podem ser utilizadas para preparar um ch\xE1, que pode ser usado
     como auxiliar no tratamento da gripe ou resfriado."
   ItemProprietiesDescription: "Sabugueiro: Temperatura Baixa - Cura: Febre, Alergia,
     Elimina\xE7\xE3o de Toxinas"
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 2

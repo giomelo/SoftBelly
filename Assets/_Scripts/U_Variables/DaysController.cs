@@ -37,8 +37,7 @@ namespace _Scripts.U_Variables
         public int currentDay = -1;
         public static Action DayChangeAction;
         public static Action NightStartAction;
-        [SerializeField]
-        private List<Timee> _patientsTime = new List<Timee>();
+        public List<Timee> _patientsTime = new List<Timee>();
         private List<Timee> _patientsTimeInitial = new List<Timee>();
         [SerializeField]
         private Light mainLight;
@@ -211,7 +210,7 @@ namespace _Scripts.U_Variables
         private void Start()
         {
             HUD_Controller.Instance.DiaDisplay();
-            InvokeRepeating("CountTime", 0.5f, 0.5f);
+            InvokeRepeating("CountTime", 0.8f, 0.8f);
            // ChangeDayCall();
         }
 

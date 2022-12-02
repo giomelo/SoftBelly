@@ -56,6 +56,7 @@ namespace _Scripts.UI
 
         public void ShowBuyPopup(Action<bool, int, bool, bool> callback, int id, bool plot)
         {
+            GameManager.hasInventory = true;
             StartCoroutine(_Showbuypopup(callback, id, plot));
         }
 
@@ -74,6 +75,7 @@ namespace _Scripts.UI
             confirmBuy.SetActive(false);
             
             callback?.Invoke(popupOption != 2, id, plot, true);
+            GameManager.hasInventory = false;
         }
         
         public void SetPopupOption(int option)

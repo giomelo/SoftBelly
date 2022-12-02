@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Aloe Vera
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 57148ad4144a8f74bb1ff11d1b84676d, type: 3}
-  Price: 25
+  Price: 28
   ShopDescription: "Planta conhecida por seu efeito calmante, cicatrizante, anest\xE9sico,
     anti-t\xE9rmico e anti-inflamat\xF3rio, al\xE9m de ser \xF3tima para hidratar
     cabelos e pele."

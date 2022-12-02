@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: "Hortel\xE3"
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 07440f31b7cef944bb2e0ca1c8290f0b, type: 3}
-  Price: 30
+  Price: 33
   ShopDescription: "Planta medicinal e arom\xE1tica, com propriedades que ajudam
     a tratar problemas digestivos, al\xE9m de possuir efeito calmante e sedativo
     que melhoram o estado de \xE2nimo e a qualidade do sono."

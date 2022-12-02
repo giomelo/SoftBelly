@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: "Agri\xE3o"
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: e4fee8d157f972b4faac28f2debd0034, type: 3}
-  Price: 21
+  Price: 24
   ShopDescription: "O agri\xE3o \xE9 uma verdura rica em vitamina C e vitamina A,
     com propriedades antioxidantes e anti-inflamat\xF3rias"
   ItemProprietiesDescription: "Agri\xE3o: Temperatura Baixa - Cura: Anemias, Anti-Inflamat\xF3rio,

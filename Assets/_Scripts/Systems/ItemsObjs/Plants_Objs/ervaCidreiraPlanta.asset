@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Erva Cidreira
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: c44a60a3ee8ff144086189842150ae01, type: 3}
-  Price: 20
+  Price: 23
   ShopDescription: "Melissa officinalis, tamb\xE9m conhecida como cidreira ou melissa,
     muito utilizada para tratar v\xE1rios problemas de sa\xFAde, especialmente problemas
     digestivos, de ansiedade e estresse."

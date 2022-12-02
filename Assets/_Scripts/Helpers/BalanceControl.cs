@@ -30,7 +30,7 @@ namespace _Scripts.Helpers
         public static int maxPatientsPerDay = 7;
         
         public static float d = 0.4f;
-        public static float e = 4f;
+        public static float e = 3f;
         public static void ChangeDay()
         { 
             EasyPotion = CurveGrowth(DificultyOfPotion.Easy); 
@@ -66,8 +66,8 @@ namespace _Scripts.Helpers
             var probabilityHard = HardPotion / total;
 
 
-            if (random < probabilityHard) return DificultyOfPotion.Complex;
-            if (random < probabilityMedium) return DificultyOfPotion.Medium;
+            if (random < probabilityHard) return  Math.Ceiling((UniversalVariables.Instance.Nivel / 100)) >= 3 ? DificultyOfPotion.Complex : DificultyOfPotion.Easy;
+            if (random < probabilityMedium) return Math.Ceiling((UniversalVariables.Instance.Nivel / 100)) >= 2 ? DificultyOfPotion.Medium : DificultyOfPotion.Easy;
             if (random < probabilityEasy) return DificultyOfPotion.Easy;
 
             return null;

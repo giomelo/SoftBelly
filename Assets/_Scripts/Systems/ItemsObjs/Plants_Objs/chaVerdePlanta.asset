@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: "Ch\xE1 Verde"
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: 44083c1f8b336db47ac75286e209d6ca, type: 3}
-  Price: 22
+  Price: 25
   ShopDescription: "Possui diversas propriedades como a\xE7\xF5es anticarcinog\xEAnicas
     (ou seja, atua contra o c\xE2ncer) e um consequente papel na preven\xE7\xE3o
     e controle de doen\xE7as cardiovasculares."
