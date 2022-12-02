@@ -84,6 +84,7 @@ namespace _Scripts.UI
 
         public void UpdateMoneyText()
         {
+                Debug.Log("money");
             moneyText.text = UniversalVariables.Instance.Money.ToString();
         }
         

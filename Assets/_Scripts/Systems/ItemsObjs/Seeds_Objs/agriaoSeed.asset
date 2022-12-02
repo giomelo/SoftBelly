@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: "Semente de agri\xE3o"
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 56e27accefe28a74c81c5002e8a48d9c, type: 3}
-  Price: 6
+  Price: 7
   ShopDescription: "O agri\xE3o \xE9 uma verdura rica em vitamina C e vitamina A,
     com propriedades antioxidantes e anti-inflamat\xF3rias"
   ItemProprietiesDescription: Agriao semente

@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Semente de erva cidreira
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 42e8d1458ae457842b0a4b5c26402598, type: 3}
-  Price: 15
+  Price: 9
   ShopDescription: "Melissa officinalis, tamb\xE9m conhecida como cidreira ou melissa,
     muito utilizada para tratar v\xE1rios problemas de sa\xFAde, especialmente problemas
     digestivos, de ansiedade e estresse."
@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 868151094047217045, guid: 9626b88d2372f554e8690660f24eabaf, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: 34ec5799de7e8194e9b59ede6e3656dd, type: 2}

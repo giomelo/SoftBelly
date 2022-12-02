@@ -102,7 +102,7 @@ namespace _Scripts.UI
                     pauseObj.SetActive(false);
                     Time.timeScale = 1;
                     GameManager.Instance.noRay = false;
-                    GameManager.Instance.Save();
+                    //GameManager.Instance.Save();
                     // var objs = FindObjectsOfType<MonoBehaviour>().OfType<DataObject>();
                     // foreach (var o in objs)
                     // {
@@ -114,7 +114,7 @@ namespace _Scripts.UI
                     
                     Time.timeScale = 1;
                     GameManager.Instance.noRay = false;
-                    GameManager.Instance.Save();
+                    //GameManager.Instance.Save();
                    
                     Application.Quit();
                     break;

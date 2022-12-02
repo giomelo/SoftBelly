@@ -30,7 +30,7 @@ namespace _Scripts.U_Variables
     
     public class DaysController : MonoSingleton<DaysController> , DataObject
     {
-        public Timee Timee = new Timee(7,0);
+        public Timee Timee = new Timee(7,50);
         public int startHourPatient { get; set; } = 8;
         public int finisHourPatients { get; set; } = 18;
 
@@ -53,7 +53,7 @@ namespace _Scripts.U_Variables
 
         private void RestartDay()
         {
-            Timee = new Timee(7, 0);
+            Timee = new Timee(7, 50);
             ChangeDayCall();
             //_Scripts.Store.StoreController.Instance.UpdateItem();
         }
@@ -66,7 +66,9 @@ namespace _Scripts.U_Variables
         public void GeneratePatientsTimeList()
         {
             _patientsTime.Clear();
-            for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay; i++)
+            Timee time = new Timee(8, 10);
+            _patientsTime.Add(time);
+            for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay -1; i++)
             {
                 Timee t = GenerateRandomTime(startHourPatient, finisHourPatients, 0, 59);
                 _patientsTime.Add(t);
@@ -202,13 +204,14 @@ namespace _Scripts.U_Variables
         {
             //Savesystem.ClearSave();
             base.Awake();
-            
+           
             Load();
+            BalanceControl.ChangeDay();
         }
         private void Start()
         {
             HUD_Controller.Instance.DiaDisplay();
-            InvokeRepeating("CountTime", 0.8f, 0.8f);
+            InvokeRepeating("CountTime", 0.5f, 0.5f);
            // ChangeDayCall();
         }
 

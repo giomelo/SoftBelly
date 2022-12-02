@@ -173,6 +173,7 @@ namespace _Scripts.Systems.Inventories
       {
          for(int i = 0; i < Slots.Count; i++)
          {
+            if (Slots.ElementAt(i).Value.item == null) continue;
             if (Slots.ElementAt(i).Value.item.Equals(item))
             {
                return true;

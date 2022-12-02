@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Gengibre
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: babdc37acb14389449de5536fac7efd3, type: 3}
-  Price: 10
+  Price: 25
   ShopDescription: "Raiz comest\xEDvel que, quando adicionada na dieta, pode trazer
     v\xE1rios benef\xEDcios para a sa\xFAde, desde ajudar a emagrecer at\xE9 tratar
     m\xE1 digest\xE3o at\xE9 tosse e problemas de circula\xE7\xE3o sangu\xEDnea"

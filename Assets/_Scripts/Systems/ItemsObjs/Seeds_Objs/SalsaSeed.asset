@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Semente de salsa
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 940f7cfa8b140e34a982b8ff02b143fa, type: 3}
-  Price: 10
+  Price: 8
   ShopDescription: "Conhecida popularmente como salsinha, \xE9 uma planta rica em
     vitaminas A, B, C, E, K e \xE1cido f\xF3lico, al\xE9m de minerais que s\xE3o
     muito importantes para a sa\xFAde, como o ferro, cobre e magn\xE9sio"
@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 417920275814821594, guid: 683d3b27f8409d442a19e71f326429d3, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: f26ebfe23e1ede6419b41a8c7ffb75ff, type: 2}

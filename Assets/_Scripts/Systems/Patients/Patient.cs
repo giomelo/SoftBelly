@@ -43,9 +43,8 @@ namespace _Scripts.Systems.Patients
             label = type;
         }
 
-        private void Start()
+        public void StartPatient()
         {
-          //  anim = transform.GetComponent<Animator>();
             SetState(PatientState.Entering);
             StartCoroutine(Arrived());
             SetCloth();

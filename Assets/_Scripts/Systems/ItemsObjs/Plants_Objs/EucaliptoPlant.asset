@@ -16,9 +16,10 @@ MonoBehaviour:
   ItemLongID: Eucalipto
   ItemType: 2
   ImageDisplay: {fileID: 21300000, guid: aec89a5a37f86ae4ebd6745b6862d48b, type: 3}
-  Price: 20
+  Price: 16
   ShopDescription: 
   ItemProprietiesDescription: 
+  shopExtra: 
   MedicalSymptoms:
   - Symptoms: 2
     Nivel: 1

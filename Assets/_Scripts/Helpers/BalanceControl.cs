@@ -30,7 +30,7 @@ namespace _Scripts.Helpers
         public static int maxPatientsPerDay = 7;
         
         public static float d = 0.4f;
-        public static float e = 3f;
+        public static float e = 4f;
         public static void ChangeDay()
         { 
             EasyPotion = CurveGrowth(DificultyOfPotion.Easy); 
@@ -45,7 +45,7 @@ namespace _Scripts.Helpers
             {
                 DificultyOfPotion.Easy => p * DaysController.Instance.currentDay + r,
                 DificultyOfPotion.Medium => (float) Math.Pow(a, DaysController.Instance.currentDay),
-                DificultyOfPotion.Complex => (float) Math.Log(DaysController.Instance.currentDay + 2 * c, b),
+                DificultyOfPotion.Complex => !Double.IsNaN(Math.Log(DaysController.Instance.currentDay + 2 * c, b)) ? (float) Math.Log(DaysController.Instance.currentDay + 2 * c, b) : 0,
                 _ => throw new ArgumentOutOfRangeException(nameof(dif), dif, null)
             };
 

@@ -16,15 +16,16 @@ MonoBehaviour:
   ItemLongID: Semente de boldo
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: b424037d9330227408b15e9658be360a, type: 3}
-  Price: 9
+  Price: 8
   ShopDescription: "O boldo \xE9 uma planta rica em propriedades medicinais, muito
     utilizada como recurso caseiro principalmente para estimular as fun\xE7\xF5es
     do f\xEDgado, melhorar a digest\xE3o e aliviar sintomas de ressaca."
   ItemProprietiesDescription: Boldo semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 1599161228319023832, guid: 0525e595e2ae219428314e738d5d9784, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: 349795e17a183164a8ce17e1288d9b9f, type: 2}

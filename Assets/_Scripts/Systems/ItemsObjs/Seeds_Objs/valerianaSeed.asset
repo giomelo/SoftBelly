@@ -16,15 +16,16 @@ MonoBehaviour:
   ItemLongID: Semente de valeriana
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 23e0c98c818a82a4f83588967b3ece01, type: 3}
-  Price: 18
+  Price: 9
   ShopDescription: "Valeriana officinalis \xE9 indicado como sedativo moderado, como
     agente promotor do sono e no tratamento de dist\xFArbios do sono associados \xE0
     ansiedade"
   ItemProprietiesDescription: Valeriana semente
+  shopExtra: 
   PlantDisplayObjs:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 1394286444686579982, guid: 257d3ee85d82ba4448a1da3efb5c3a33, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: 185fd2afc2673a44099cc519dd01166b, type: 2}

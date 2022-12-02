@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: Semente de aloe Vera
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 7027da5c51eb44045a8761d8e188cd83, type: 3}
-  Price: 27
+  Price: 15
   ShopDescription: "Planta conhecida por seu efeito calmante, cicatrizante, anest\xE9sico,
     anti-t\xE9rmico e anti-inflamat\xF3rio, al\xE9m de ser \xF3tima para hidratar
     cabelos e pele."
@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 5268529988737147347, guid: eff60e93c51c7af4b896870908edf0f4, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: 2135f7db9dec25b4ba892757423e21ce, type: 2}

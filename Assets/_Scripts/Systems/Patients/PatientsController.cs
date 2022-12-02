@@ -90,6 +90,15 @@ namespace _Scripts.Systems.Patients
        
         public void GenerateRandomOrder(ref OrderObj order)
         {
+            /*var dif = BalanceControl.GenerateDificultyOfPotion();
+            List<PotionTypeAndNivel> aux = new List<PotionTypeAndNivel>();
+            foreach (var i in potionsDificulty)
+            {
+                if (i.Dificulty == dif)
+                {
+                    aux.Add(i);
+                }
+            }*/
             var options = potionsDificulty.Where(p => p.Dificulty == BalanceControl.GenerateDificultyOfPotion()).ToList();
             var type = options[Random.Range(0, options.Count)].PotionType;
             order.PotionType = type;
@@ -98,7 +107,7 @@ namespace _Scripts.Systems.Patients
             order.OrderDescription =
                 PossiblesOrders[index]
                     .PossibleDescriptions[Random.Range(0, PossiblesOrders[index].PossibleDescriptions.Count)].Descriptionstring +
-                "Tipo: " + order.PotionType ;
+                " Tipo: " + order.PotionType ;
             order.Money = GenerateMoney(order.PotionType);
             PatientsEvents.CurrentOrder = order;
         }
@@ -143,6 +152,7 @@ namespace _Scripts.Systems.Patients
             patientScript.SetOrder();
             if (fila.Contains(patientScript)) return;
             fila.Add(patientScript);
+            patientScript.StartPatient();
             //patientScript.SetTime();
             //StartCoroutine(patientScript.CheckTime());
         }

@@ -43,7 +43,7 @@ public class CheckThenBuy : MonoBehaviour
         if (item)
         {
             float val = float.Parse(valString.text.Substring(2));
-            UniversalVariables.Instance.Money -= val;
+            UniversalVariables.Instance.ModifyMoney(val, false);
             if(item.ItemType == _Scripts.Enums.ItemType.Seed)
                 GameManager.Instance.plantStorage.Storage.AddItem(1, item);
             else
@@ -51,7 +51,7 @@ public class CheckThenBuy : MonoBehaviour
         }
         else
         {
-            Debug.LogError("O prefab não possui um item dentro de si!");
+            Debug.LogError("O prefab nï¿½o possui um item dentro de si!");
         }
 
     }

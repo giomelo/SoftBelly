@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using _Scripts.Entities.Player;
+using _Scripts.UI;
 
 
 namespace _Scripts.Store
@@ -107,7 +108,7 @@ namespace _Scripts.Store
                 UniversalVariables.Instance.ModifyMoney(price, false);
                 ControllerMoneyTXT.controllerMoneyTxt.TxtMoney.text = "Money: " + UniversalVariables.Instance.Money;
                 ControllerMoneyTXT.controllerMoneyTxt.PainelAviso.SetActive(false);
-                StoreController.Instance.AddItem(_item, _item.ItemType);
+                AddItem(_item, _item.ItemType);
             }
             else
             {
@@ -123,6 +124,7 @@ namespace _Scripts.Store
         }
         public void AddItem(ItemBehaviour item, ItemType isPlant)
         {
+            HUD_Controller.Instance.UpdateMoneyText();
             if (isPlant == ItemType.Plant)
             {
                 GameManager.Instance.labStorage.Storage.AddItem(1, item);

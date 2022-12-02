@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemLongID: "Semente de ch\xE1 verde"
   ItemType: 1
   ImageDisplay: {fileID: 21300000, guid: 86ed19571105acd41b2b535c405d5ff1, type: 3}
-  Price: 22
+  Price: 13
   ShopDescription: "Possui diversas propriedades como a\xE7\xF5es anticarcinog\xEAnicas
     (ou seja, atua contra o c\xE2ncer) e um consequente papel na preven\xE7\xE3o
     e controle de doen\xE7as cardiovasculares."
@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 1347091443904982768, guid: c9a37e69f8f711943bea2a5ae27cfaf6, type: 3}
   - {fileID: 6369464883086803655, guid: d1f8112bc542da541871d5b77a790ea3, type: 3}
   - {fileID: 8518482244362041147, guid: f214d6c483f5c9442a793378b4ece222, type: 3}
-  GrowTime: 20
-  WaterCicles: 9
+  GrowTime: 100
+  WaterCicles: 49
   PlantBase: {fileID: 11400000, guid: 4e9abc4fce8f953418d4927d5b8f5e65, type: 2}
