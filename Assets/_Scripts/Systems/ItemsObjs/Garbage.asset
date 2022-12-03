@@ -15,9 +15,8 @@ MonoBehaviour:
   ItemId: Lixo
   ItemLongID: 
   ItemType: 32
-  ImageDisplay: {fileID: 21300000, guid: b80f013b51ffaf94ebcc58d03e430ad2, type: 3}
+  ImageDisplay: {fileID: 21300000, guid: 5f77ac3cbfeeb804ebb96fe6ded13c90, type: 3}
   Price: 0
   ShopDescription: Garbage
-  ItemProprieties:
-    ItemProprietiesGO: {fileID: 6779772405570869347, guid: 13c0a308dbcd92d47af3a2c645ff40e4, type: 3}
-    ItemProprietiesDescription: Lixo
+  ItemProprietiesDescription: Queimado
+  shopExtra: 
