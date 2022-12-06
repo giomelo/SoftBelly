@@ -14,9 +14,9 @@ namespace _Scripts.Enums
         Ingredient = 8,
         Other = 16,
         Garbage = 32,
-        MixedPlant = 64,
-        Burned = 128,
-        Dryed = 256,
-        Smashed = 512
+        Misturada = 64,
+        Cozida = 128,
+        Seca = 256,
+        Amassada = 512
     }
 }

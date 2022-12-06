@@ -59,25 +59,25 @@ namespace _Scripts.Systems.Inventories
                     garbage.Init(g.ItemId, g.ItemType, sprites.FindSprite(g.ImageDisplay), g.Price, g.ItemProprietiesDescription);
                     item = garbage;
                     break;
-                case ItemType.MixedPlant:
+                case ItemType.Misturada:
                     var mix = ScriptableObject.CreateInstance<BaseMixedItem>();
                     BaseMixedItemMirror m = i as BaseMixedItemMirror;
                     mix.Init(m.ItemId, m.ItemType, sprites.FindSprite(m.ImageDisplay), m.Price, m.ItemProprietiesDescription, m.IngredientsList, m.BasePlant.MirrorToBase());
                     item = mix;
                     break;
-                case ItemType.Burned:
+                case ItemType.Cozida:
                     var plant2 = ScriptableObject.CreateInstance<PlantBase>();
                     BasePlantMirror msplant2 = i as BasePlantMirror;
-                    plant2.Init(msplant2.ItemId, ItemType.Burned, sprites.FindSprite(msplant2.ImageDisplay), msplant2.Price, msplant2.ItemProprietiesDescription + " Burned", sprites.FindSprite(msplant2.BurnedPlant), sprites.FindSprite(msplant2.MixedPlant), sprites.FindSprite(msplant2.DriedPlant), sprites.FindSprite(msplant2.PotionStuff), sprites.FindSprite(msplant2.SmashedPlant), msplant2.MedicalSymptoms, msplant2.plantTemperature, msplant2.MachineList);
+                    plant2.Init(msplant2.ItemId, ItemType.Cozida, sprites.FindSprite(msplant2.ImageDisplay), msplant2.Price, msplant2.ItemProprietiesDescription + " Burned", sprites.FindSprite(msplant2.BurnedPlant), sprites.FindSprite(msplant2.MixedPlant), sprites.FindSprite(msplant2.DriedPlant), sprites.FindSprite(msplant2.PotionStuff), sprites.FindSprite(msplant2.SmashedPlant), msplant2.MedicalSymptoms, msplant2.plantTemperature, msplant2.MachineList);
                     item = plant2;
                     break;
-                case ItemType.Dryed:
+                case ItemType.Seca:
                     var plant3 = ScriptableObject.CreateInstance<PlantBase>();
                     BasePlantMirror msplant3 = i as BasePlantMirror;
-                    plant3.Init(msplant3.ItemId, ItemType.Dryed, sprites.FindSprite(msplant3.ImageDisplay), msplant3.Price, msplant3.ItemProprietiesDescription + " Dryed", sprites.FindSprite(msplant3.BurnedPlant), sprites.FindSprite(msplant3.MixedPlant), sprites.FindSprite(msplant3.DriedPlant), sprites.FindSprite(msplant3.PotionStuff),sprites.FindSprite(msplant3.SmashedPlant),msplant3.MedicalSymptoms, msplant3.plantTemperature, msplant3.MachineList);
+                    plant3.Init(msplant3.ItemId, ItemType.Seca, sprites.FindSprite(msplant3.ImageDisplay), msplant3.Price, msplant3.ItemProprietiesDescription + " Dryed", sprites.FindSprite(msplant3.BurnedPlant), sprites.FindSprite(msplant3.MixedPlant), sprites.FindSprite(msplant3.DriedPlant), sprites.FindSprite(msplant3.PotionStuff),sprites.FindSprite(msplant3.SmashedPlant),msplant3.MedicalSymptoms, msplant3.plantTemperature, msplant3.MachineList);
                     item = plant3;
                     break;
-                case ItemType.Smashed:
+                case ItemType.Amassada:
                     var smahsed = ScriptableObject.CreateInstance<SmashedItemBase>();
                     SmashedPlantMirror smasehdd = i as SmashedPlantMirror;
                     smahsed.Init(smasehdd.ItemId, smasehdd.ItemType, sprites.FindSprite(smasehdd.ImageDisplay), smasehdd.Price, smasehdd.ItemProprietiesDescription, smasehdd.BasePlant.MirrorToBase());
@@ -124,6 +124,7 @@ namespace _Scripts.Systems.Inventories
         public void AddInLisit(BaseMirrorItem item)
         {
             if (scripotable.Contains(item)) return;
+            Debug.Log("ItemADde");
             scripotable.Add(item);
         }
 

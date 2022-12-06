@@ -27,7 +27,7 @@ namespace _Scripts.U_Variables
             set {reputation = value; }
         }
         public float SocialAlignment { get; set; } = 50; // pra perto de 0 esta alinhado aos humildes mais perto de 100 aos ricos
-        public float Nivel { get; set; } = 1; // de  1 a 5 acaba o jogo
+        public float Nivel = 300; // de  1 a 5 acaba o jogo
 
         void Awake()
         {

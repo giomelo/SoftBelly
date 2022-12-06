@@ -26,8 +26,10 @@ namespace _Scripts.Systems.Lab.Machines.Base
                     allMachines[3].CurrentMachine.UnlockMachine(); 
                     break;
                 case 4:
+                    allMachines[3].CurrentMachine.UnlockMachine(); 
                     break;
                 case 5:
+                    allMachines[3].CurrentMachine.UnlockMachine(); 
                     // tecnicamente fim de jogo
                     break;
             }

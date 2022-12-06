@@ -70,7 +70,7 @@ namespace _Scripts.Helpers
             if (random < probabilityMedium) return Math.Ceiling((UniversalVariables.Instance.Nivel / 100)) >= 2 ? DificultyOfPotion.Medium : DificultyOfPotion.Easy;
             if (random < probabilityEasy) return DificultyOfPotion.Easy;
 
-            return null;
+            return DificultyOfPotion.Easy;
         }
     }
 }

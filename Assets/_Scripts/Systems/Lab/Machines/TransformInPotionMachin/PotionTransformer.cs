@@ -36,11 +36,11 @@ namespace _Scripts.Systems.Lab.Machines.TransformInPotionMachin
                 BaseMixedItem mixedPlant = null;
                 switch (IngredientsSlots[i].Slot.MachineSlot.item.ItemType)
                 {
-                    case ItemType.MixedPlant:
+                    case ItemType.Misturada:
                         mixedPlant = IngredientsSlots[i].Slot.MachineSlot.item as BaseMixedItem;
                         currentPlant = mixedPlant.BasePlant;
                         break;
-                    case ItemType.Burned:
+                    case ItemType.Cozida:
                         currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                         break;
                 }

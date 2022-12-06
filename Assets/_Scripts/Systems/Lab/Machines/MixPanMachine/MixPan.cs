@@ -95,7 +95,7 @@ namespace _Scripts.Systems.Lab.Machines.MixPanMachine
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
                 newMixedPlant.name = currentPlant.ItemId + " Misturada " + decoratorsText.text;
 
-                newMixedPlant.Init(newMixedPlant.name, ItemType.MixedPlant, currentPlant.MixedPlant,currentPlant.Price ,currentPlant.ItemProprietiesDescription, GenerateToppingList(), currentPlant);
+                newMixedPlant.Init(newMixedPlant.name, ItemType.Misturada, currentPlant.MixedPlant,currentPlant.Price ,currentPlant.ItemProprietiesDescription + " Misturada ", GenerateToppingList(), currentPlant);
                 IngredientsSlots[i].Slot.Image.sprite = newMixedPlant.ImageDisplay;
                 IngredientsSlots[i].Slot.MachineSlot.item = newMixedPlant;
                 IngredientsSlots[i].Slot.Amount.text = 1.ToString();

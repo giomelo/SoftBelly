@@ -86,7 +86,7 @@ namespace _Scripts.Systems.Lab.Machines
                 PlantBase currentPlant = IngredientsSlots[i].Slot.MachineSlot.item as PlantBase;
 
                 newDriedPlant.name = currentPlant.ItemId + "Seca";
-                newDriedPlant.Init(currentPlant.ItemId + " Seca", ItemType.Dryed, currentPlant.DriedPlant,currentPlant.Price,currentPlant.ItemProprietiesDescription, currentPlant.BurnedPlant,currentPlant.MixedPlant, currentPlant.DriedPlant, currentPlant.PotionStuff, 
+                newDriedPlant.Init(currentPlant.ItemId + " Seca", ItemType.Seca, currentPlant.DriedPlant,currentPlant.Price,currentPlant.ItemProprietiesDescription, currentPlant.BurnedPlant,currentPlant.MixedPlant, currentPlant.DriedPlant, currentPlant.PotionStuff, 
                     currentPlant.SmashedPlant, currentPlant.MedicalSymptoms, currentPlant.plantTemperature, currentPlant.MachineList);
 
                 IngredientsSlots[i].Slot.Image.sprite = newDriedPlant.ImageDisplay;
@@ -125,7 +125,7 @@ namespace _Scripts.Systems.Lab.Machines
             if (!(LabEvents.IngredientSelected as PlantBase)) return true;
             var plant = LabEvents.IngredientSelected as PlantBase;
             
-            return !(plant.ItemType == ItemType.Dryed);
+            return !(plant.ItemType == ItemType.Seca);
         }
 
         protected override void OnSlotDispose(BaseMachineSlot slot)

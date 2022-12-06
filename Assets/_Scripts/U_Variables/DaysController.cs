@@ -53,6 +53,7 @@ namespace _Scripts.U_Variables
         private void RestartDay()
         {
             Timee = new Timee(7, 50);
+            GameManager.Instance.sleeping = false;
             ChangeDayCall();
             //_Scripts.Store.StoreController.Instance.UpdateItem();
         }
@@ -69,7 +70,7 @@ namespace _Scripts.U_Variables
             _patientsTime.Add(time);
             for (int i = 0; i < PatientsController.Instance.amountOfPatientsDay -1; i++)
             {
-                Timee t = GenerateRandomTime(startHourPatient, finisHourPatients -1, 0, 59);
+                Timee t = GenerateRandomTime(startHourPatient, finisHourPatients -2, 0, 59);
                 _patientsTime.Add(t);
             }
             _patientsTimeInitial = _patientsTime;

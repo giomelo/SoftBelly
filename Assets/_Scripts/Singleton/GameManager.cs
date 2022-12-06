@@ -4,6 +4,7 @@ using _Scripts.Helpers;
 using _Scripts.SaveSystem;
 using _Scripts.Screen_Flow;
 using _Scripts.Systems.Inventories;
+using _Scripts.Systems.Patients;
 using _Scripts.U_Variables;
 using _Scripts.UI;
 using Unity.VisualScripting;
@@ -23,7 +24,7 @@ namespace _Scripts.Singleton
         public Transform Player;
 
         public static Action Sleep;
-        private bool sleeping;
+        public bool sleeping;
 
         public static Action PromotionLevel;
 
@@ -40,7 +41,8 @@ namespace _Scripts.Singleton
             if (DaysController.Instance.Timee.Hours >= DaysController.Instance.finisHourPatients || DaysController.Instance._patientsTime.Count == 0)
             {
                 if (sleeping) return;
-                
+                PatientsEvents.Day = false;
+                PatientsEvents.Night = false;
                 Sleep?.Invoke();
                 sleeping = true;
                 Save();

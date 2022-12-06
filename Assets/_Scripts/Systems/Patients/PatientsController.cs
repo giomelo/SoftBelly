@@ -99,7 +99,9 @@ namespace _Scripts.Systems.Patients
                     aux.Add(i);
                 }
             }*/
+            
             var options = potionsDificulty.Where(p => p.Dificulty == BalanceControl.GenerateDificultyOfPotion()).ToList();
+            Debug.LogWarning(options);
             var type = options[Random.Range(0, options.Count)].PotionType;
             order.PotionType = type;
             var index = Random.Range(0, PossiblesOrders.Count - 1);
